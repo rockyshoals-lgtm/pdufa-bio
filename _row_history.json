@@ -2,9 +2,9 @@
 "first_sha": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
 "first_ts": "2026-07-26 00:07 ET",
 "first_rows": 388,
-"versions": 451,
-"last_sha": "99b8487e8f03a6b960af388b89b24163d7d4b294",
-"last_ts": "2026-11-23 05:13 ET",
+"versions": 453,
+"last_sha": "5d5564eb7c1761d8139cce3537c8d61e120a9630",
+"last_ts": "2026-11-23 23:47 ET",
 "rebuilds": [],
 "changes": [
 {
@@ -27174,6 +27174,54 @@
 "name": "EORTC-NCI-AACR Symposium on Molecular Targets",
 "st_was": "In progress",
 "st_now": "Ended"
+},
+{
+"sha": "5d5564eb7c1761d8139cce3537c8d61e120a9630",
+"ts": "2026-11-23 23:47 ET",
+"id": "pdufa_bbio_2026-11-27",
+"field": "st",
+"old": "Upcoming",
+"new": "Decided",
+"t": "BBIO",
+"name": "BBP-418 (ribitol) - (FORTIFY)",
+"st_was": "Upcoming",
+"st_now": "Decided"
+},
+{
+"sha": "5d5564eb7c1761d8139cce3537c8d61e120a9630",
+"ts": "2026-11-23 23:47 ET",
+"id": "pdufa_bbio_2026-11-27",
+"field": "oc",
+"old": "",
+"new": "Approved",
+"t": "BBIO",
+"name": "BBP-418 (ribitol) - (FORTIFY)",
+"st_was": "Upcoming",
+"st_now": "Decided"
+},
+{
+"sha": "5d5564eb7c1761d8139cce3537c8d61e120a9630",
+"ts": "2026-11-23 23:47 ET",
+"id": "pdufa_bbio_2026-11-27",
+"field": "dcd",
+"old": "",
+"new": "2026-11-23",
+"t": "BBIO",
+"name": "BBP-418 (ribitol) - (FORTIFY)",
+"st_was": "Upcoming",
+"st_now": "Decided"
+},
+{
+"sha": "5d5564eb7c1761d8139cce3537c8d61e120a9630",
+"ts": "2026-11-23 23:47 ET",
+"id": "pdufa_bbio_2026-11-27",
+"field": "url",
+"old": "/pdufa/BBIO-bbp-418",
+"new": "/fda-decision/BBIO-2026-11-23",
+"t": "BBIO",
+"name": "BBP-418 (ribitol) - (FORTIFY)",
+"st_was": "Upcoming",
+"st_now": "Decided"
 }
 ]
 }

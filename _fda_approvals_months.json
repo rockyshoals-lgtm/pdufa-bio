@@ -3297,7 +3297,7 @@
 "complete": true
 },
 "2025-10": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-24",
 "items": [
 {
 "app": "BLA761377",
@@ -3543,8 +3543,8 @@
 },
 {
 "app": "NDA219910",
-"brand": "Epioxa Cross-Linking",
-"generic": "riboflavin 5-phosphate ophthalmic",
+"brand": "Epioxa Hd/Epioxa Kit",
+"generic": "riboflavin 5'-phosphate sodium",
 "sponsor": "Glaukos",
 "kind": "new application",
 "sub": "ORIG-1",
@@ -3849,10 +3849,12 @@
 "date": "2025-10-29",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761404Orig2s000ltr.pdf"
 }
-]
+],
+"openfda_total": 286,
+"complete": true
 },
 "2025-11": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-24",
 "items": [
 {
 "app": "NDA219792",
@@ -3979,7 +3981,7 @@
 "app": "NDA215390",
 "brand": "Igalmi",
 "generic": "dexmedetomidine hydrochloride",
-"sponsor": "Bioxcel",
+"sponsor": "Teva",
 "kind": "efficacy supplement",
 "sub": "SUPPL-2",
 "class": "Efficacy",
@@ -4195,10 +4197,12 @@
 "date": "2025-11-28",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761340Orig2s000ltr.pdf"
 }
-]
+],
+"openfda_total": 246,
+"complete": true
 },
 "2025-12": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-24",
 "items": [
 {
 "app": "NDA216059",
@@ -4662,7 +4666,9 @@
 "date": "2025-12-30",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/220152Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 497,
+"complete": true
 },
 "2026-01": {
 "fetched": "2026-11-12",
@@ -7636,7 +7642,7 @@
 ]
 },
 "2026-10": {
-"fetched": "2026-11-23",
+"fetched": "2026-11-24",
 "items": [
 {
 "app": "NDA219617",
@@ -8094,7 +8100,7 @@
 "complete": true
 },
 "2026-11": {
-"fetched": "2026-11-23",
+"fetched": "2026-11-24",
 "items": [
 {
 "app": "BLA761433",

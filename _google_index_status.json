@@ -4026,10 +4026,10 @@
 "verdict": "NEUTRAL"
 },
 "/decisions/2026": {
-"checked": "2026-11-23",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
+"checked": "2026-11-24",
+"crawled": "2026-11-25",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/decisions/approvals": {
 "checked": "2026-11-20",
@@ -8250,10 +8250,10 @@
 "verdict": "PASS"
 },
 "/fda-approval-letters": {
-"checked": "2026-11-23",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
+"checked": "2026-11-24",
+"crawled": "2026-11-25",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/fda-approval-rate": {
 "checked": "2026-11-20",
@@ -8948,6 +8948,12 @@
 "/fda-decision/BAYRY-2026-11-09": {
 "checked": "2026-11-20",
 "crawled": "2026-11-17",
+"state": "Submitted and indexed",
+"verdict": "PASS"
+},
+"/fda-decision/BBIO-2026-11-23": {
+"checked": "2026-11-24",
+"crawled": "2026-11-25",
 "state": "Submitted and indexed",
 "verdict": "PASS"
 },
@@ -11316,10 +11322,10 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/CORT-relacorilant": {
-"checked": "2026-11-23",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
+"checked": "2026-11-24",
+"crawled": "2026-11-23",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/pdufa/CYTK": {
 "checked": "2026-11-20",
@@ -11370,10 +11376,10 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/GILD-anito-cel": {
-"checked": "2026-11-23",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
+"checked": "2026-11-24",
+"crawled": "2026-11-25",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/pdufa/GILD-bictegravir-and-lenacapavi": {
 "checked": "2026-11-20",
@@ -11538,10 +11544,10 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/MLYS-lorundrostat": {
-"checked": "2026-11-23",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
+"checked": "2026-11-24",
+"crawled": "2026-11-23",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/pdufa/MRK": {
 "checked": "2026-11-20",
@@ -11832,9 +11838,9 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/RHHBY-giredestrant": {
-"checked": "2026-11-23",
-"crawled": null,
-"state": "Discovered - currently not indexed",
+"checked": "2026-11-24",
+"crawled": "2026-11-23",
+"state": "Crawled - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/pdufa/RHHBY-giredestrant-evera": {
@@ -11940,9 +11946,9 @@
 "verdict": "PASS"
 },
 "/pdufa/VNDA-imsidolimab": {
-"checked": "2026-11-23",
-"crawled": null,
-"state": "URL is unknown to Google",
+"checked": "2026-11-24",
+"crawled": "2026-11-23",
+"state": "Crawled - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/pdufa/VRTX": {
@@ -11952,10 +11958,10 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/VRTX-povetacicept": {
-"checked": "2026-11-23",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
+"checked": "2026-11-24",
+"crawled": "2026-11-23",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/pdufa/VSTM": {
 "checked": "2026-11-20",
@@ -12132,10 +12138,10 @@
 "verdict": "NEUTRAL"
 },
 "/readouts/oncology": {
-"checked": "2026-11-23",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
+"checked": "2026-11-24",
+"crawled": "2026-11-25",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/readouts/rare-disease": {
 "checked": "2026-11-20",
@@ -12210,10 +12216,10 @@
 "verdict": "PASS"
 },
 "/sitemap": {
-"checked": "2026-11-23",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
+"checked": "2026-11-24",
+"crawled": "2026-11-25",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/sls": {
 "checked": "2026-11-20",

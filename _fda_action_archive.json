@@ -33,7 +33,7 @@
   ]
  },
  "ABBV-2026-06-16": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "JUVÉDERM - (SKINVIVE) (injectable HA)",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
@@ -41,7 +41,7 @@
   ]
  },
  "ABBV-2026-06-26": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "SKYRIZI (risankizumab-rzaa)",
   "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -50,7 +50,7 @@
   ]
  },
  "ADMA-2026-05-04": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "ASCENIV (RI-002)",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
@@ -98,15 +98,15 @@
   ]
  },
  "AMPH-2026-02-24": {
-  "checked": "2026-11-17",
-  "name": "Ipratropium Bromide HFA Inhalation Aerosol 1",
+  "checked": "2026-11-24",
+  "name": "Ipratropium Bromide HFA Inhalation Aerosol",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
    "Ipratropium"
   ]
  },
  "AMRX-2026-06-04": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "Romidepsin injection solution, 27.5 mg/5.5 m",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
@@ -114,7 +114,7 @@
   ]
  },
  "ANIP-2026-04-08": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "Isosorbide Mononitrate Tablet USP (generic o",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
@@ -122,7 +122,7 @@
   ]
  },
  "ARGX-2026-05-08": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "VYVGART - (ADAPT SERON)",
   "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -211,12 +211,12 @@
   ]
  },
  "AZN-2026-05-15": {
-  "checked": "2026-11-17",
-  "name": "ENHERTU (trastuzumab deruxtecan) - (DESTINY-",
+  "checked": "2026-11-24",
+  "name": "ENHERTU (fam-trastuzumab deruxtecan-nxki)",
   "reason": "3 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
    "ENHERTU",
-   "trastuzumab"
+   "fam-trastuzumab"
   ]
  },
  "AZN-2026-05-18": {
@@ -308,6 +308,14 @@
   "terms": [
    "AMBELVIST",
    "gadoquatrane"
+  ]
+ },
+ "BBIO-2026-11-23": {
+  "checked": "2026-11-24",
+  "name": "Welgemda (BBP-418, ribitol)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Welgemda"
   ]
  },
  "BIIB-2026-03-30": {
@@ -406,7 +414,7 @@
   "source_url": "https://download.open.fda.gov/crl/CRL_NDA219398_20260128.pdf"
  },
  "CRSP-2026-07-01": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "Casgevy (exagamglogene autotemcel)",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
@@ -467,7 +475,7 @@
   "source_url": "https://download.open.fda.gov/crl/CRL_NDA211241_20250930.pdf"
  },
  "GILD-2026-02-06": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "Yescarta (axicabtagene ciloleucel) - label update, primary CNS lymphoma",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
@@ -489,7 +497,7 @@
   ]
  },
  "GILD-2026-06-24": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "Trodelvy (sacituzumab govitecan-hziy) plus K",
   "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -695,7 +703,7 @@
   ]
  },
  "LLY-2026-08-27": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "Mounjaro (tirzepatide)",
   "reason": "3 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -765,7 +773,7 @@
   ]
  },
  "MRK-2026-02-11": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "KEYTRUDA and KEYTRUDA QLEX",
   "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -786,7 +794,7 @@
   ]
  },
  "MRK-2026-06-12": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "KEYTRUDA (pembrolizumab) and KEYTRUDA QLEX (",
   "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -795,7 +803,7 @@
   ]
  },
  "MRK-2026-06-18": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "CAPVAXIVE (Pneumococcal 21-valent Conjugate ",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
@@ -803,7 +811,7 @@
   ]
  },
  "MRK-2026-06-24": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "Trodelvy (sacituzumab govitecan-hziy) plus K",
   "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -812,7 +820,7 @@
   ]
  },
  "MRK-2026-07-10": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "KEYTRUDA (pembrolizumab) plus Padcev (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304)",
   "reason": "4 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -852,7 +860,7 @@
   "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209637Orig1s025ltr.pdf"
  },
  "NVO-2026-03-03": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "Sogroya (somapacitan) - (REAL8)",
   "reason": "3 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -947,7 +955,7 @@
   "source_url": "https://download.open.fda.gov/crl/CRL_BLA761320_20250827.pdf"
  },
  "PFE-2026-02-24": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "BRAFTOVI (encorafenib) in combination with c",
   "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -982,7 +990,7 @@
   ]
  },
  "PFE-2026-06-24": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "IBRANCE (palbociclib) in combination with tr",
   "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -991,7 +999,7 @@
   ]
  },
  "PFE-2026-07-10": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "KEYTRUDA (pembrolizumab) plus Padcev (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304)",
   "reason": "4 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -1048,7 +1056,7 @@
   ]
  },
  "RCKT-2026-03-27": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "KRESLADI (marnetegragene autotemcel)",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
@@ -1093,11 +1101,11 @@
   ]
  },
  "REGN-2026-04-23": {
-  "checked": "2026-11-17",
-  "name": "Otarmeni (lunsotogene parvec-cwha)",
+  "checked": "2026-11-24",
+  "name": "OTARMENI (lunsotogene parvec-cwha)",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
-   "Otarmeni",
+   "OTARMENI",
    "lunsotogene"
   ]
  },
@@ -1129,7 +1137,7 @@
   "source_url": "https://download.open.fda.gov/crl/CRL_BLA125840_20260207.pdf"
  },
  "RHHBY-2026-02-20": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "CALQUENCE plus venetoclax",
   "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
   "terms": [
@@ -1331,7 +1339,7 @@
   ]
  },
  "VRTX-2026-07-01": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-24",
   "name": "Casgevy (exagamglogene autotemcel)",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [

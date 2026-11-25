@@ -2263,3 +2263,7 @@ time_et,commit,row_id,ticker,name,field,old,new,status_was,status_now
 2026-11-21 09:14 ET,012d17ff9fa52435140774d680f33adbd439bd4e,pdufa_capr_2026-08-22,CAPR,Deramiocel (CAP-1002) - (HOPE-3),dcd,,2026-11-20,Upcoming,Decided
 2026-11-21 09:14 ET,012d17ff9fa52435140774d680f33adbd439bd4e,pdufa_capr_2026-08-22,CAPR,Deramiocel (CAP-1002) - (HOPE-3),url,/pdufa/CAPR-deramiocel,/fda-decision/CAPR-2026-11-20,Upcoming,Decided
 2026-11-21 09:41 ET,4be82ce2eb0b3f288fccfcb627b3a19bf26d38d0,conf_ena_2026-11-18,ENA,EORTC-NCI-AACR Symposium on Molecular Targets,st,In progress,Ended,In progress,Ended
+2026-11-23 23:47 ET,5d5564eb7c1761d8139cce3537c8d61e120a9630,pdufa_bbio_2026-11-27,BBIO,BBP-418 (ribitol) - (FORTIFY),st,Upcoming,Decided,Upcoming,Decided
+2026-11-23 23:47 ET,5d5564eb7c1761d8139cce3537c8d61e120a9630,pdufa_bbio_2026-11-27,BBIO,BBP-418 (ribitol) - (FORTIFY),oc,,Approved,Upcoming,Decided
+2026-11-23 23:47 ET,5d5564eb7c1761d8139cce3537c8d61e120a9630,pdufa_bbio_2026-11-27,BBIO,BBP-418 (ribitol) - (FORTIFY),dcd,,2026-11-23,Upcoming,Decided
+2026-11-23 23:47 ET,5d5564eb7c1761d8139cce3537c8d61e120a9630,pdufa_bbio_2026-11-27,BBIO,BBP-418 (ribitol) - (FORTIFY),url,/pdufa/BBIO-bbp-418,/fda-decision/BBIO-2026-11-23,Upcoming,Decided

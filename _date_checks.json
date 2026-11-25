@@ -72,11 +72,18 @@
    "note": "Q2 8-K EX-99.1 (2026-08-11) contains the quote. Q3 release (2026-11-09, company IR site): 'The U.S. FDA accepted the varegacestat NDA in July 2026 and assigned a PDUFA target action date of April 28,"
   },
   "pdufa_mlys_2026-12-22": {
-   "checked": "2026-11-17",
-   "verdict": "FIXED",
+   "checked": "2026-11-24",
+   "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395833/0/en/mineralys-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
-   "by": "red team 2026-11-17",
-   "note": "Date is right, but the stored source_quote is raw EDGAR wrapper text ('EX-99.1 3 mlys2026q28kex991.htm EX-99.1 Document Exhibit 99.1 ...'), not a clean quote. The Q2 8-K does say 'with a Prescription"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "FIXED",
+    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395833/0/en/mineralys-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+    "by": "red team 2026-11-17",
+    "note": "Date is right, but the stored source_quote is raw EDGAR wrapper text ('EX-99.1 3 mlys2026q28kex991.htm EX-99.1 Document Exhibit 99.1 ...'), not a clean quote. The Q2 8-K does say 'with a Prescription"
+   }
   },
   "pdufa_pvla_2027-02-28": {
    "checked": "2026-11-17",
@@ -317,11 +324,18 @@
    "note": "Merck Q3 2026 release (2026-10-29) contains 'U.S. FDA set Prescription Drug User Fee Act (PDUFA) date of June 15, 2027.' for sac-TMT (TroFuse-005). Newer items: Oct 26 TroFuse-005 data release and Nov"
   },
   "pdufa_gild_2026-12-23": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
-   "by": "red team 2026-11-17",
-   "note": "Gilead/Arcellx acquisition release (2026-02-23) contains 'with an anticipated Prescription Drug User Fee Act (PDUFA) action date of December 23, 2026.' Newer: Gilead ASH 2026 release dated 2026-11-04"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
+    "by": "red team 2026-11-17",
+    "note": "Gilead/Arcellx acquisition release (2026-02-23) contains 'with an anticipated Prescription Drug User Fee Act (PDUFA) action date of December 23, 2026.' Newer: Gilead ASH 2026 release dated 2026-11-04"
+   }
   },
   "pdufa_gild_2027-02-02": {
    "checked": "2026-11-17",
@@ -345,11 +359,18 @@
    "note": "Exact filing for the cited exhibit: Axsome Form 8-K filed 2026-07-15 (Item 8.01, accession 0001193125-26-304039), EX-99.1 press release dated July 15, 2026: 'The FDA has set a Prescription Drug User F"
   },
   "pdufa_cort_2026-12-17": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/1088856/000162828026069494/cort110326ex991pressrelease.htm",
-   "by": "red team 2026-11-17",
-   "note": "Cited 2026-07-29 release contains 'We expect a decision on our NDA by December 17, 2026.' Corcept Q3 release (8-K EX-99.1, 2026-11-03) restates 'Prescription Drug User Fee Act (PDUFA) date of December"
+   "source": "https://www.sec.gov/Archives/edgar/data/1088856/000162828026050607/cort072926ex991pressrelease.htm",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.sec.gov/Archives/edgar/data/1088856/000162828026069494/cort110326ex991pressrelease.htm",
+    "by": "red team 2026-11-17",
+    "note": "Cited 2026-07-29 release contains 'We expect a decision on our NDA by December 17, 2026.' Corcept Q3 release (8-K EX-99.1, 2026-11-03) restates 'Prescription Drug User Fee Act (PDUFA) date of December"
+   }
   },
   "pdufa_hrmy_2027-04-01": {
    "checked": "2026-11-17",
@@ -380,11 +401,18 @@
    "note": "Cited 2026-07-30 release contains 'with a target action date in November 2026.' Regeneron Q3 release (8-K EX-99.1, 2026-10-30): 'We expect an FDA decision for cemdisiran in generalized myasthenia grav"
   },
   "pdufa_vrtx_2026-11-30": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
-   "by": "red team 2026-11-17",
-   "note": "Cited Q2 release contains 'assigned a PDUFA target action date of November 30, 2026'. Vertex Q3 release (8-K EX-99.1, filed 2026-11-02): 'with an assigned PDUFA target action date of November 30, 2026"
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+    "by": "red team 2026-11-17",
+    "note": "Cited Q2 release contains 'assigned a PDUFA target action date of November 30, 2026'. Vertex Q3 release (8-K EX-99.1, filed 2026-11-02): 'with an assigned PDUFA target action date of November 30, 2026"
+   }
   },
   "readout_dnli_2027-03-31": {
    "checked": "2026-11-17",
@@ -919,11 +947,18 @@
    "note": "Cited 2026-09-24 release contains 'MediciNova expects to report topline results from the double-blind portion of the study by the end of 2026.' verbatim. Newer: CEO shareholder update 2026-10-12 says"
   },
   "readout_phar_2026-11-30": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/10/27/3388693/0/en/pharming-group-reports-third-quarter-2026-financial-results-strong-revenue-growth-joenja-apds-expansion-and-cvid-topline-data-in-november.html",
-   "by": "red team 2026-11-17",
-   "note": "Opened Pharming Q3 release (GlobeNewswire, 2026-10-27): 'Pharming expects to report Phase II results for leniolisib in CVID patients with immune dysregulation ... in November 2026'; summary bullet 'Ph"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.globenewswire.com/news-release/2026/10/27/3388693/0/en/pharming-group-reports-third-quarter-2026-financial-results-strong-revenue-growth-joenja-apds-expansion-and-cvid-topline-data-in-november.html",
+    "by": "red team 2026-11-17",
+    "note": "Opened Pharming Q3 release (GlobeNewswire, 2026-10-27): 'Pharming expects to report Phase II results for leniolisib in CVID patients with immune dysregulation ... in November 2026'; summary bullet 'Ph"
+   }
   },
   "readout_rcus_2027-12-31": {
    "checked": "2026-11-17",
@@ -1087,11 +1122,18 @@
    "note": "Cullinan Q3 release 2026-11-10 verbatim: 'CLN-978 (CD19 TCE) multi-dose regimen data in SLE, RA, and Sjögren's disease will be shared in December' and 'In a December webcast, the Company will share da"
   },
   "readout_cgem_2026-12-13": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/10/3399334/0/en/cullinan-therapeutics-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
-   "by": "red team 2026-11-17",
-   "note": "Cullinan Q3 release 2026-11-10: 'The updated dose escalation results will be further detailed in a poster presentation at the 2026 ASH Annual Meeting on December 13, 2026.' NOTE: same release says 'In"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.globenewswire.com/news-release/2026/11/10/3399334/0/en/cullinan-therapeutics-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+    "by": "red team 2026-11-17",
+    "note": "Cullinan Q3 release 2026-11-10: 'The updated dose escalation results will be further detailed in a poster presentation at the 2026 ASH Annual Meeting on December 13, 2026.' NOTE: same release says 'In"
+   }
   },
   "readout_ipha_2027-06-30": {
    "checked": "2026-11-17",
@@ -1115,11 +1157,18 @@
    "note": "Moderna Analyst Day release (Newswire.com, Moderna's own, 2026-11-12) verbatim: 'Moderna expects a registrational study readout in late 2026.' Q3 8-K exhibit (11-06) says 'pivotal data expected in 202"
   },
   "readout_mrna_2026-12-12": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000194/exhibit9912026q3pressrelea.htm",
-   "by": "red team 2026-11-17",
-   "note": "Q3 8-K EX-99.1 (2026-11-06) verbatim: 'Abstract accepted for oral presentation at American Society of Hematology meeting on December 12th in New Orleans.' NOTE: Analyst Day release 2026-11-12 already"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000194/exhibit9912026q3pressrelea.htm",
+    "by": "red team 2026-11-17",
+    "note": "Q3 8-K EX-99.1 (2026-11-06) verbatim: 'Abstract accepted for oral presentation at American Society of Hematology meeting on December 12th in New Orleans.' NOTE: Analyst Day release 2026-11-12 already"
+   }
   },
   "readout_sldb_2027-03-31": {
    "checked": "2026-11-17",
@@ -1157,11 +1206,18 @@
    "note": "Atea Q3 release (GNW 2026-11-09 16:05 ET) verbatim: 'Topline results from C-FORWARD, Atea’s Phase 3 trial in patients with HCV outside of North America, are anticipated in early 2027.' Headline also '"
   },
   "readout_cogt_2026-12-15": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
-   "by": "red team 2026-11-17",
-   "note": "Cogent 8-K EX-99.1 (2026-11-05) verbatim: 'Plan to present multiple posters featuring bezuclastinib at the 68th Annual Meeting of the American Society of Hematology (ASH) being held December 12-15, 20"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
+    "by": "red team 2026-11-17",
+    "note": "Cogent 8-K EX-99.1 (2026-11-05) verbatim: 'Plan to present multiple posters featuring bezuclastinib at the 68th Annual Meeting of the American Society of Hematology (ASH) being held December 12-15, 20"
+   }
   },
   "readout_dyn_2027-03-31": {
    "checked": "2026-11-17",
@@ -1444,11 +1500,18 @@
    "note": "'Confirmed clinical activity in both CSCC and MCC was observed, and initial results are expected in 1H27.' verbatim (Iovance Q3, 11-05). d=2027-06-30 with dp='year' is internally inconsistent (would d"
   },
   "readout_kytx_2026-12-15": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/12/3401507/0/en/kyverna-therapeutics-announces-completion-of-bla-submission-for-miv-cel-in-stiff-person-syndrome-and-reports-third-quarter-2026-financial-results.html",
-   "by": "red team 2026-11-17",
-   "note": "Kyverna 11-12 release: 'additional one-year biomarker data from KYSA-8 will be presented at ASH 2026' verbatim; no session date given. Kyverna IR list shows nothing newer. ASH runs Dec 12-15, 2026 so"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.globenewswire.com/news-release/2026/11/12/3401507/0/en/kyverna-therapeutics-announces-completion-of-bla-submission-for-miv-cel-in-stiff-person-syndrome-and-reports-third-quarter-2026-financial-results.html",
+    "by": "red team 2026-11-17",
+    "note": "Kyverna 11-12 release: 'additional one-year biomarker data from KYSA-8 will be presented at ASH 2026' verbatim; no session date given. Kyverna IR list shows nothing newer. ASH runs Dec 12-15, 2026 so"
+   }
   },
   "readout_mbx_2026-12-31": {
    "checked": "2026-11-17",
@@ -1563,25 +1626,46 @@
    "note": "Biohaven Q3 release 2026-10-29: 'were selected for an oral presentation at the 38th EORTC-NCI-AACR Symposium (ENA 2026), to be held November 18 to 20, 2026' and '(presentation scheduled for November 1"
   },
   "readout_legn_2026-12-13": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
-   "by": "red team 2026-11-17",
-   "note": "Legend GNW 2026-11-04 ASH list: LB2501 first-in-human update, poster #4169, Dec 13, 2026, 6:00-8:00 PM. No newer Legend release changes it (Q3 results release seen in search, ASH schedule unchanged)."
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
+    "by": "red team 2026-11-17",
+    "note": "Legend GNW 2026-11-04 ASH list: LB2501 first-in-human update, poster #4169, Dec 13, 2026, 6:00-8:00 PM. No newer Legend release changes it (Q3 results release seen in search, ASH schedule unchanged)."
+   }
   },
   "readout_legn_2026-12-12": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
-   "by": "red team 2026-11-17",
-   "note": "Legend GNW 2026-11-04: 'First report of durable survival outcomes with ciltacabtagene autoleucel (cilta-cel) in patients with daratumumab-refractory relapsed/refractory multiple myeloma: CARTITUDE-4 s"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
+    "by": "red team 2026-11-17",
+    "note": "Legend GNW 2026-11-04: 'First report of durable survival outcomes with ciltacabtagene autoleucel (cilta-cel) in patients with daratumumab-refractory relapsed/refractory multiple myeloma: CARTITUDE-4 s"
+   }
   },
   "readout_legn_2026-12-13-lucarg39d": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
-   "by": "red team 2026-11-17",
-   "note": "Legend GNW 2026-11-04: 'Update of a phase 1 study of LUCAR-G39D: An allogeneic CD20/CD19 dual-targeted CAR gamma delta T cells in adults with relapsed / refractory B-cell non-Hodgkin lymphoma (NHL)',"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
+    "by": "red team 2026-11-17",
+    "note": "Legend GNW 2026-11-04: 'Update of a phase 1 study of LUCAR-G39D: An allogeneic CD20/CD19 dual-targeted CAR gamma delta T cells in adults with relapsed / refractory B-cell non-Hodgkin lymphoma (NHL)',"
+   }
   },
   "readout_sttk_2026-09-30": {
    "checked": "2026-11-17",
@@ -1696,11 +1780,18 @@
    "note": "Can-Fite GNW 2026-11-06: 'interim efficacy and safety data expected in the first quarter of 2027' (company description) and 'with results expected in the first quarter of 2027.' (bullet). Later Can-Fi"
   },
   "readout_crdf_2026-12-13": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/12/3401392/0/en/cardiff-oncology-reports-third-quarter-2026-results-and-provides-business-update.html",
-   "by": "red team 2026-11-17",
-   "note": "Cardiff Q3 release GNW 2026-11-12: 'Updated data from an investigator-sponsored clinical trial in CMML will be presented at the American Society of Hematology (\"ASH\") Annual Meeting on December 13, 20"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.globenewswire.com/news-release/2026/11/12/3401392/0/en/cardiff-oncology-reports-third-quarter-2026-results-and-provides-business-update.html",
+    "by": "red team 2026-11-17",
+    "note": "Cardiff Q3 release GNW 2026-11-12: 'Updated data from an investigator-sponsored clinical trial in CMML will be presented at the American Society of Hematology (\"ASH\") Annual Meeting on December 13, 20"
+   }
   },
   "readout_guts_2027-03-31": {
    "checked": "2026-11-17",
@@ -1745,11 +1836,18 @@
    "note": "Palvella Q3 release GNW 2026-11-05: 'Topline results from LOTU are expected in the second half of 2027.' verbatim (Phase 2 QTORIN rapamycin, angiokeratomas). Later items found are conference notices o"
   },
   "readout_slgl_2026-12-31": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-24",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/12/3401588/0/en/sol-gel-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
-   "by": "red team 2026-11-17",
-   "note": "Sol-Gel Q3 release GNW 2026-11-12: 'top-line results expected in late November 2026' (highlight) and 'Top-line results are expected in late November 2026.' Searches found no SGT-610 top-line release t"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.globenewswire.com/news-release/2026/11/12/3401588/0/en/sol-gel-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+    "by": "red team 2026-11-17",
+    "note": "Sol-Gel Q3 release GNW 2026-11-12: 'top-line results expected in late November 2026' (highlight) and 'Top-line results are expected in late November 2026.' Searches found no SGT-610 top-line release t"
+   }
   },
   "readout_ttrx_2026-12-31": {
    "checked": "2026-11-17",
