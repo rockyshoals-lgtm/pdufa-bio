@@ -4245,8 +4245,14 @@
    "date": "2025-11-07",
    "asset": "Aficamten (CK-274) - (MAPLE-HCM)",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-24",
+    "why": "Aficamten was not refused on this date; the FDA approved it as MYQORZO on December 19, 2025, which has its own page.",
+    "source": "the retired page's own CRL-reason line; the MYQORZO decision page"
+   }
   },
   "FBIO-2025-10-01": {
    "ticker": "FBIO",
@@ -4299,8 +4305,14 @@
    "date": "2025-07-28",
    "asset": "PH-762",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-24",
+    "why": "The page's own record said Phio had no PDUFA date on this date and that the CRL label was an error.",
+    "source": "the retired page's own CRL-reason line"
+   }
   },
   "RGNX-2026-02-08": {
    "ticker": "RGNX",
@@ -4328,8 +4340,14 @@
    "date": "2025-04-27",
    "asset": "UGN-102 - (OPTIMA II)",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-24",
+    "why": "UroGen had no CRL in April 2025; the FDA approved ZUSDURI (UGN-102) on June 12, 2025, which has its own page.",
+    "source": "the retired page's own CRL-reason line; the ZUSDURI decision page"
+   }
   },
   "ABBV-2026-04-23": {
    "ticker": "ABBV",

@@ -7,7 +7,7 @@
  "application": "BL 125842",
  "letter_file": "CRL_BLA125842_20250709.pdf",
  "letter_date": "2025-07-09",
- "read": "2026-11-21 and 2026-11-22",
+ "read": "2026-11-21, 2026-11-22 and 2026-11-25",
  "letter_quotes": [
   {
    "topic": "Primary endpoint",
@@ -130,6 +130,14 @@
    "who": "Capricor",
    "what": "Capricor announces a second CRL. It says the FDA \"does not consider the data sufficient to establish substantial evidence of effectiveness\" and \"cites certain other clinical deficiencies\". The release gives no date for the letter.",
    "url": "https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html",
+   "src": "Capricor release"
+  },
+  {
+   "date": "2026-11-23",
+   "time": "6:30 a.m.",
+   "who": "Capricor",
+   "what": "Capricor reschedules the conference call it had planned for that day and says details will follow. It says it \"is actively preparing its regulatory response\"; the release gives no date for a response or for the call.",
+   "url": "https://www.globenewswire.com/news-release/2026/11/23/3408177/0/en/capricor-therapeutics-reschedules-conference-call-to-provide-deramiocel-update.html",
    "src": "Capricor release"
   }
  ],
@@ -259,7 +267,10 @@
     "2026-11-20",
     7.59
    ],
-   "after": null
+   "after": [
+    "2026-11-23",
+    1.92
+   ]
   }
  ],
  "pages": {

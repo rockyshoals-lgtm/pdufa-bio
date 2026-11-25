@@ -75,6 +75,9 @@ def pretty(iso, short=False):
     return f"{(MON3 if short else MON)[d.month]} {d.day}, {d.year}"
 
 
+NO_DRUG_FALLBACK = {"MIST-2025-03-28"}   # see the "Drug" fallback below
+
+
 def page_facts(doc):
     """(outcome, drug) from the existing machine-written title; None if unparseable."""
     tm = re.search(r"<title[^>]*>(.*?)</title>", doc, re.S)
@@ -202,7 +205,16 @@ def main():
         # 4.7 (#65): the drug name comes from the page's own "Drug / candidate" fact (or the API
         # row), cleaned by drug_names.py -- NEVER from this script's previous <title>, which it had
         # cut to fit and then re-read as the name ("Ipratropium Bromide HFA Inhala", ten pages).
+        # 2026-11-25: older pages built from the FDA's released CRL files label the fact "Drug", not "Drug / candidate"
+        # (CAPR-2025-07-11 "Deramiocel", ALDX, ATRA, OTLK, PHAR, REPL, UNCY). Read only the one, so seven CRL
+        # titles named no drug ("CAPR FDA Decision: CRL Jul 9, 2025") and /drug/deramiocel counted one CRL of two.
+        # The fallback is used only when nothing else names the drug: on the pages that already have a name, the
+        # "Drug" fact is a longer form ("Troriluzole (BHV4157-206-RWE)", a study code) that would reword 190 titles.
+        # Not MIST-2025-03-28: its fact, "Etripamil nasal spray", would key a second drug page (/drug/etripamil-nasal)
+        # beside /drug/cardamyst, the same drug's approval page, which build_drug_pages.py's alias join does not merge.
         kvm = re.search(r"<span>Drug / candidate</span><b>(.*?)</b>", doc)
+        if not kvm and not names.get((tk, dcd)) and not drug and slug not in NO_DRUG_FALLBACK:
+            kvm = re.search(r"<span>Drug</span><b>(.*?)</b>", doc)
         rown = names.get((tk, dcd))
         src_name = rown or (_html.unescape(kvm.group(1)) if kvm else "")
         if src_name and src_name.lower() not in JUNK:

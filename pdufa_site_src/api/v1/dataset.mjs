@@ -10250,7 +10250,7 @@ export default [
     "post_5d": null,
     "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
-   "review": "PDUFA target action date extended from August 22, 2026 to November 22, 2026. Capricor submitted a BLA amendment after the July 2026 advisory committee meeting containing 24-month open-label extension data from the pivotal Phase 3 HOPE-3 study and additional robustness analyses, in support of a refined proposed indication focused on upper limb function (the HOPE-3 primary endpoint). CBER accepted it, classified it a major amendment, and added three months to review it. The application remains under review: this is an extension, not a Complete Response Letter.",
+   "review": "PDUFA target action date extended from August 22, 2026 to November 22, 2026. Capricor submitted a BLA amendment after the July 2026 advisory committee meeting containing 24-month open-label extension data from the pivotal Phase 3 HOPE-3 study and additional robustness analyses, in support of a refined proposed indication focused on upper limb function (the HOPE-3 primary endpoint). CBER accepted it, classified it a major amendment, and added three months to review it. That review ended in a Complete Response Letter, announced by Capricor on November 20, 2026.",
    "prior_pdufa_date": "2026-08-22",
    "date_history": [
     {

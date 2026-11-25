@@ -54,6 +54,12 @@ try:
     RETRACTED.update({s: why for s, (_, why, _) in _R1118C.items()})
 except Exception:  # noqa: BLE001
     pass
+# 2026-11-25: 15 pages titled and listed as a CRL whose own record said it was not one (apply_1125_currency.py).
+try:
+    from apply_1125_currency import RETIRE as _R1125
+    RETRACTED.update({s: why for s, (_, why, _) in _R1125.items()})
+except Exception:  # noqa: BLE001
+    pass
 # Pages allowed to mention a retracted slug, because their job is to document the retraction.
 ALLOWED = {"corrections/index.html", "changelog/index.html"}
 DEC_LINK = re.compile(r"/fda-decision/([A-Z]+-\d{4}-\d{2}-\d{2})")
