@@ -21,6 +21,7 @@ open Pro only after about 500 alert subscribers (plus about 5K visitors a month 
 | Sample | `alerts/preview/digest_2026-11-22.html` and `.txt` | This week's real data: 6 decisions recorded, 3 goal dates ahead. |
 | Privacy policy | `pdufa_site_src/privacy/index.html` | Draft. |
 | Terms of use | `pdufa_site_src/terms/index.html` | Draft. Data licence matches the CC BY 4.0 the datasets already declare. |
+| About: who runs it, contact | `pdufa_site_src/about/index.html` | Draft section between `ABOUT-DRAFT` markers: name, short bio, optional location and profile, holdings policy, contact email. |
 
 ## Email provider: Resend (no account opened)
 
@@ -44,6 +45,8 @@ subscribers wasn't readable from the page.
 1. Fill the bracketed placeholders on the privacy and terms pages: operator's legal name, contact
    email, postal address, governing-law state, effective date, and the Pro section.
    The code already mentions `pro@pdufa.bio` and `support@pdufa.bio`; confirm which inbox is real.
+   The same details go in the draft "Who runs it" and "Contact" sections of `/about` (added Nov 25
+   after a journalist said the site has no information about who runs it). Show only what you choose.
 2. A postal address must be in every email (US CAN-SPAM). A PO box or registered-agent address works.
 3. In Resend: verify the pdufa.bio domain for `alerts@pdufa.bio` (SPF, DKIM, DMARC records), and keep
    open and click tracking off, because the privacy page promises no tracking.
