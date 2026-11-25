@@ -213,7 +213,7 @@ def main():
          f'<p class="sub" data-adrug="method" style="font-size:13px">{esc(method)}</p>',
          '<p class="sub">Every approval, one row each: <a href="/fda-approvals/data/approvals-by-drug.csv">CSV</a>, '
          'free under CC BY 4.0: cite pdufa.bio and link this page. By month: <a href="/fda-approvals">FDA approvals by '
-         'month</a> &middot; by sponsor: <a href="/fda-approvals/companies">FDA approvals by company</a> &middot; '
+         'month</a> &middot; by sponsor: <a href="/fda-approvals/companies">FDA approvals by company</a> &middot; by NDA type: <a href="/fda-approvals/types">original approvals by classification code</a> &middot; '
          'letters: <a href="/crl">the CRL database</a></p>',
          '<table data-adrug="table"><tr><th>Drug</th><th>Application</th><th>Original approvals</th>'
          '<th>Efficacy supplements</th><th>Latest action date</th><th>Released CRLs, same application</th></tr>']
