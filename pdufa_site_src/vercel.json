@@ -2354,6 +2354,81 @@
    "permanent": true
   },
   {
+   "source": "/fda-decision/ALLO-2025-02-14",
+   "destination": "/ticker/ALLO",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ENGN-2025-11-11",
+   "destination": "/ticker/ENGN",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/EQ-2025-03-27",
+   "destination": "/ticker/EQ",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ESLA-2025-11-03",
+   "destination": "/ticker/ESLA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IBRX-2026-01-16",
+   "destination": "/ticker/IBRX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/JSPR-2025-01-08",
+   "destination": "/ticker/JSPR",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/JSPR-2025-07-07",
+   "destination": "/ticker/JSPR",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/LSTA-2025-01-22",
+   "destination": "/ticker/LSTA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/PHIO-2025-01-13",
+   "destination": "/ticker/PHIO",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/PHIO-2025-07-28",
+   "destination": "/ticker/PHIO",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/SNSE-2025-10-17",
+   "destination": "/ticker/SNSE",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/SVRA-2025-05-27",
+   "destination": "/ticker/SVRA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/TRAW-2025-06-03",
+   "destination": "/ticker/TRAW",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CYTK-2025-11-07",
+   "destination": "/fda-decision/CYTK-2025-12-19",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/URGN-2025-04-27",
+   "destination": "/fda-decision/URGN-2025-06-12",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -2510,7 +2585,7 @@
   },
   {
    "source": "/drug/bevacizumab-vikg",
-   "destination": "/drug/lytenava",
+   "destination": "/drug/bevacizumab",
    "permanent": true
   },
   {

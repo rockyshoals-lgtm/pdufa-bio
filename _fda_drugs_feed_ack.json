@@ -15,7 +15,10 @@
   "pdufa_mrk_2027-06-15|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-sacituzumab-govitecan-advanced-urothelial-cancer",
   "pdufa_rhhby_2026-11-30|http://www.fda.gov/drugs/cancer-approvals/fda-approves-giredestrant-combination-everolimus-er-positive-her2-negative-esr1-mutated-locally",
   "pdufa_rhhby_2026-12-18|http://www.fda.gov/drugs/cancer-approvals/fda-approves-giredestrant-combination-everolimus-er-positive-her2-negative-esr1-mutated-locally",
-  "pdufa_nuvl_2026-11-27|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk"
+  "pdufa_nuvl_2026-11-27|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk",
+  "pdufa_cogt_2026-11-30|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
+  "pdufa_cogt_2026-12-30|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
+  "pdufa_cogt_2027-06-29|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors"
  ],
  "reasons": {
   "pdufa_rhhby_2026-10-15|http://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-mct8-deficiency": "FDA notice 'FDA Approves First Treatment for MCT8 Deficiency' matched Enspryng (thyroid eye disease) on the lone word 'thyroid'. Not a satralizumab decision. Audit 10-03 Tier 0; matcher rule 1.3(d) now forbids lone organ-word matches.",
@@ -32,6 +35,9 @@
   "pdufa_mrk_2027-06-15|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-sacituzumab-govitecan-advanced-urothelial-cancer": "Republished April 13, 2021 Trodelvy urothelial notice (withdrawn Nov 22, 2024) with a Nov 12, 2026 pubDate; not MRK's sacituzumab tirumotecan.",
   "pdufa_rhhby_2026-11-30|http://www.fda.gov/drugs/cancer-approvals/fda-approves-giredestrant-combination-everolimus-er-positive-her2-negative-esr1-mutated-locally": "evERA (giredestrant + everolimus, Wilserdly) approval Nov 16, 2026; the lidERA row is a different application, goal Nov 30, still pending.",
   "pdufa_rhhby_2026-12-18|http://www.fda.gov/drugs/cancer-approvals/fda-approves-giredestrant-combination-everolimus-er-positive-her2-negative-esr1-mutated-locally": "Published 2026-11-17: /fda-decision/RHHBY-2026-11-16.",
-  "pdufa_nuvl_2026-11-27|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk": "Published 2026-11-17: Nelkarmi (neladalkib) accelerated approval Nov 17, 2026 (FDA day), /fda-decision/GSK-2026-11-17; goal Nov 27, 10 days early."
+  "pdufa_nuvl_2026-11-27|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk": "Published 2026-11-17: Nelkarmi (neladalkib) accelerated approval Nov 17, 2026 (FDA day), /fda-decision/GSK-2026-11-17; goal Nov 27, 10 days early.",
+  "pdufa_cogt_2026-11-30|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors": "Published 2026-11-25: Ekitna (bezuclastinib) + sunitinib, GIST, approved Nov 24, 2026 (FDA day), /fda-decision/COGT-2026-11-24; goal Nov 30, 6 days early.",
+  "pdufa_cogt_2026-12-30|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors": "Not this row: the Nov 24, 2026 FDA notice approves bezuclastinib with sunitinib for GIST (PEAK) only. This row is the NonAdvSM application (SUMMIT), goal Dec 30, 2026, still open.",
+  "pdufa_cogt_2027-06-29|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors": "Not this row: the Nov 24, 2026 FDA notice approves bezuclastinib with sunitinib for GIST (PEAK) only. This row is the AdvSM application, goal Jun 29, 2027, still open."
  }
 }

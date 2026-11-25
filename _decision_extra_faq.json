@@ -237,5 +237,47 @@
    "What did the FORTIFY trial show?",
    "Per BridgeBio, at 12 months the 100-meter timed test showed a 0.27 m/s velocity benefit relative to placebo (p<0.0001), and forced vital capacity (percent predicted) a 4.89% benefit (p=0.0071)."
   ]
+ ],
+ "COGT-2026-11-24": [
+  [
+   "Was bezuclastinib approved by the FDA?",
+   "Yes. The FDA approved bezuclastinib (Ekitna) on November 24, 2026, in combination with sunitinib, for adults with advanced gastrointestinal stromal tumors who have received prior treatment with imatinib, per the FDA's own notification."
+  ],
+  [
+   "Was the Ekitna decision early?",
+   "Yes, by 6 days. The FDA acted on November 24, 2026; the goal date was November 30, 2026, as stated by Cogent in its 8-K of August 10, 2026."
+  ],
+  [
+   "Does this approval cover systemic mastocytosis?",
+   "No. The FDA notice names only GIST with sunitinib. Cogent's applications in nonadvanced systemic mastocytosis (goal date December 30, 2026) and advanced systemic mastocytosis (goal date June 29, 2027) are tracked separately and remain open."
+  ],
+  [
+   "What did the PEAK trial show?",
+   "Per the FDA, in 413 patients median progression-free survival was 16.5 months with bezuclastinib plus sunitinib and 9.2 months with sunitinib alone (hazard ratio 0.50). Overall survival data were not mature."
+  ]
+ ],
+ "RHHBY-2026-11-23": [
+  [
+   "Was giredestrant approved for early breast cancer?",
+   "Yes. The FDA approved giredestrant (Wilserdly) on November 23, 2026 as a single agent for the adjuvant treatment of adults with ER-positive, HER2-negative, stage I, II and III breast cancer at intermediate to high risk of recurrence, per the FDA's own notification. Genentech announced it the same day."
+  ],
+  [
+   "Was the adjuvant Wilserdly decision early?",
+   "Yes, by 7 days. The FDA acted on November 23, 2026; Genentech had said on June 1, 2026 that the FDA was expected to decide by November 30, 2026."
+  ],
+  [
+   "Is this the same approval as Wilserdly with everolimus?",
+   "No. The FDA approved Wilserdly with everolimus for ESR1-mutated advanced or metastatic breast cancer on November 16, 2026. The November 23 approval is the separate adjuvant use, on the lidERA trial."
+  ]
+ ],
+ "PYPD-2026-11-24": [
+  [
+   "Was D-PLEX100 approved by the FDA?",
+   "Yes. PolyPid announced on November 24, 2026 that the FDA approved its NDA for BACFENSSI (doxycycline hyclate), previously known as D-PLEX100, to reduce the occurrence of surgical site infections in adults and pediatric patients weighing 45 kg or more undergoing colorectal surgery with incisions longer than 20 cm."
+  ],
+  [
+   "Was the Bacfenssi decision early?",
+   "PolyPid announced the approval on November 24, 2026, four days before the November 28, 2026 goal date it had disclosed. pdufa.bio publishes a margin only from the FDA's own record of the action day, which had not been read when this page was published."
+  ]
  ]
 }

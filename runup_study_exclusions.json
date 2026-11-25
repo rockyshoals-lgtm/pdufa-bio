@@ -155,6 +155,96 @@
    "document": "FDA approval letter, NDA 219792 (Kygevvi), applicant UCB Inc",
    "finding": "Drugs@FDA lists UCB Inc as the applicant; the page and the study row had put the approval on AGIO.",
    "checked": "2026-11-18"
+  },
+  "ALLO-2025-02-14": {
+   "reason": "not an FDA decision: Allogene announced the journal publication of Phase 1 ALPHA and ALPHA2 data that day (release dated February 13, 2025). No FDA action; no CRL.",
+   "document": "Allogene release of February 13, 2025 (GlobeNewswire)",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "ENGN-2025-11-11": {
+   "reason": "not an FDA decision: enGene reported a 62% complete response rate at 6 months for detalimogene in the LEGEND trial; \"complete response\" there is the trial's clinical measure, not an FDA letter. No CRL.",
+   "document": "enGene release of November 11, 2025 (Business Wire)",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "EQ-2025-03-27": {
+   "reason": "not an FDA decision: Equillium reported topline results of the Phase 3 EQUATOR study of itolizumab. No FDA action; no CRL.",
+   "document": "Equillium release of March 27, 2025 (Business Wire)",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "ESLA-2025-11-03": {
+   "reason": "not an FDA decision: Estrella's 8-K reported completion of the second dose cohort of the Phase I STARLIGHT-1 study. No FDA action; no CRL.",
+   "document": "Estrella Immunopharma 8-K, report date November 3, 2025",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "IBRX-2026-01-16": {
+   "reason": "not an FDA decision: ImmunityBio reported discussions with the FDA about information to support a potential resubmission of an ANKTIVA supplemental BLA (release dated January 20, 2026). No CRL that day.",
+   "document": "ImmunityBio release, January 2026 (ir.immunitybio.com)",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "JSPR-2025-01-08": {
+   "reason": "not an FDA decision: Jasper reported preliminary data from the Phase 1b/2a BEACON study of briquilimab. No FDA action; no CRL.",
+   "document": "Jasper Therapeutics release of January 8, 2025 (GlobeNewswire)",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "JSPR-2025-07-07": {
+   "reason": "not an FDA decision: Jasper reported a briquilimab clinical data update. No FDA action; no CRL.",
+   "document": "Jasper Therapeutics release of July 7, 2025 (GlobeNewswire)",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "LSTA-2025-01-22": {
+   "reason": "not an FDA decision: Lisata reported preliminary Phase 2b ASCEND cohort data for certepetide; \"complete responses\" is the trial's clinical measure. No FDA action; no CRL.",
+   "document": "Lisata Therapeutics release of January 22, 2025",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "PHIO-2025-01-13": {
+   "reason": "not an FDA decision: Phio reported results from the second cohort of its PH-762 clinical study. No FDA action; no CRL.",
+   "document": "Phio Pharmaceuticals release of January 13, 2025",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "PHIO-2025-07-28": {
+   "reason": "not an FDA decision: The page's own record said Phio had no PDUFA date on this date and that the CRL label was an error.",
+   "document": "the retired page's own CRL-reason line",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "SNSE-2025-10-17": {
+   "reason": "not an FDA decision: Sensei reported clinical results for solnerstotug at ESMO 2025. No FDA action; no CRL.",
+   "document": "Sensei Biotherapeutics release of October 17, 2025 (GlobeNewswire)",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "SVRA-2025-05-27": {
+   "reason": "not an FDA decision: Savara announced a refusal-to-file letter for the MOLBREEVI BLA: the FDA declined to file the application for review, which is not a Complete Response Letter.",
+   "document": "Savara release of May 27, 2025 (Business Wire)",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "TRAW-2025-06-03": {
+   "reason": "not an FDA decision: The page's only cited source, Traws's 10-K for 2024, reports no Complete Response Letter, and no source we found records an FDA action for Traws on this date.",
+   "document": "Traws Pharma 10-K for the year ended December 31, 2024",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "CYTK-2025-11-07": {
+   "reason": "not an FDA decision: Aficamten was not refused on this date; the FDA approved it as MYQORZO on December 19, 2025, which has its own page.",
+   "document": "the retired page's own CRL-reason line; the MYQORZO decision page",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
+  },
+  "URGN-2025-04-27": {
+   "reason": "not an FDA decision: UroGen had no CRL in April 2025; the FDA approved ZUSDURI (UGN-102) on June 12, 2025, which has its own page.",
+   "document": "the retired page's own CRL-reason line; the ZUSDURI decision page",
+   "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
+   "checked": "2026-11-24"
   }
  }
 }
