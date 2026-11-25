@@ -48,7 +48,15 @@ def plant_period(rel, ttxt):
 
 
 def toks(s):
-    return {w for w in re.findall(r"[a-z0-9]{4,}", html.unescape(str(s or "")).lower()) if w not in STOP}
+    """Name tokens: words of 4+ letters or digits, plus product codes (BBP-418 -> bbp418).
+
+    2026-11-24: codes were lost here. 'BBP-418' splits into 'bbp' and '418', both under 4 characters, so the
+    calendar row 'BBP-418: Limb Girdle Muscular Dystrophy' and its own decision page 'Welgemda (BBP-418, ribitol)'
+    shared nothing and the rebuild blocked (issue 190). page_drug() already collects a page's codes for exactly this
+    match; joining a code's letters and digits makes that match work. A shared code is the same product."""
+    t = html.unescape(str(s or "")).lower()
+    words = {w for w in re.findall(r"[a-z0-9]{4,}", t) if w not in STOP}
+    return words | {a + b for a, b in re.findall(r"\b([a-z]{2,5})-?(\d{2,6}[a-z]?)\b", t)}
 
 
 def txt(s):
