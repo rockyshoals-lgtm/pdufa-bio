@@ -145,7 +145,9 @@ def clean_name(raw, rescue=True):
     # Cut from the stage word to the end; never inside a word ("PhaseBio" keeps its name).
     # 2026-11-20 (repeated phrases): a disease stage ("paxalisib Stage IV TNBC study") and a dosing-arm word
     # ("VK2735 maintenance dosing study") are the event too; without them CORE published /drug/paxalisib-stage.
-    cut = re.sub(r"\s+(?:Phase\s*(?:[0-9IV]|$)|study\b|trial\b|Stage\s+(?:[0-9]|[IV]+\b)|maintenance\b).*$", "", s,
+    # 2026-11-25 (readout mine): a hyphenated stage word ("zoldonrasib Earlier-phase CRC studies") is the event
+    # too; without it CORE published /drug/zoldonrasib-earlier-phase and test_drug_slugs_not_events blocked the rebuild.
+    cut = re.sub(r"\s+(?:Phase\s*(?:[0-9IV]|$)|[A-Za-z]+-(?:phase|stage)\b|study\b|trial\b|Stage\s+(?:[0-9]|[IV]+\b)|maintenance\b).*$", "", s,
                  flags=re.I).strip(" -:\u2013")
     # What is left of "VLU study" is an indication acronym (venous leg ulcer), not a drug: a bare capitals word
     # with no digit, left by a study or trial cut, names the study.
