@@ -29411,7 +29411,7 @@ export default [
   "company": "Rapport Therapeutics, Inc.",
   "d": "2026-12-07",
   "dp": "day",
-  "name": "RAP-219 Phase 2a (RNS) — seizure severity and seizure-burden analyses Two Phase 2a…",
+  "name": "RAP-219 Phase 2a (RNS): seizure severity and seizure-burden analyses Two Phase 2a…",
   "type": "Readout",
   "ta": "CNS",
   "cap": "",
