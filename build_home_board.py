@@ -608,8 +608,28 @@ def main():
     ap.add_argument("--upcoming", type=int, default=8)
     ap.add_argument("--decided", type=int, default=10)
     ap.add_argument("--dry-run", action="store_true")
+    # 2026-11-25 (BLOCKED run 45687661301): the board runs early; a CRL letter the FDA releases that same run gives its
+    # decision page the FDA's own day only later (link_crl_letters.py), so the card still said "announced". This
+    # re-renders the Recently decided cards alone, after the letter steps, leaving the rest of index.html as it is.
+    ap.add_argument("--decided-only", action="store_true")
     a = ap.parse_args()
     key = load_key() or "price_source"   # 2026-11-10: prices come from price_source (FMP); no Polygon key needed
+    if a.decided_only:
+        decs = load_decisions()[:a.decided]
+        html = open(HOME, encoding="utf-8").read()
+        lab = re.compile(r'href="/fda-decision/([A-Z.]+-\d{4}-\d{2}-\d{2})"[^>]*>.*?<span class="dd">([^<·]*)', re.S)
+        i = html.find('<div class="decs">')
+        cur = lab.findall(html[i:html.find("</div>", i)]) if i >= 0 else []
+        want = [(f"{tk}-{d}", (fda_day(tk, d)[0] if fda_day(tk, d)[1] else f"{d} announced") + " ")
+                for tk, d, _o, _r in sorted(decs, key=lambda r: (fda_day(r[0], r[1])[0], r[1]), reverse=True)]
+        if cur == want:                      # every card already shows its day: leave the board (and its prices) alone
+            print(f"decided cards: {len(decs)} already show the FDA's day; unchanged")
+            return
+        new = replace_block(html, '<div class="decs">', render_decided(decs, key))
+        print(f"decided cards: {len(decs)} re-rendered (a card's day or label changed)")
+        if not a.dry_run:
+            open(HOME, "w", encoding="utf-8").write(new)
+        return
 
     cats = load_slate()[:a.upcoming]
     decs = load_decisions()[:a.decided]

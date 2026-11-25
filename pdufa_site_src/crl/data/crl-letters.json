@@ -22,7 +22,8 @@
    "deficiency_sections: the letter's own section headings read from its PDF text layer, labeling and administrative sections left out; only 2024+ letters whose PDF holds this letter alone; blank when none was read.",
    "signing_division_as_printed and signing_office_as_printed: the first Division of and the first Office of (other than the Office of New Drugs when a narrower office is named) in the letter's signature block, from its last Sincerely to the electronic signature page legend, as printed with OCR misreads, or from openFDA's approver_center field where the scan missed one; signing_center is CDER or CBER where the block or that field names the Center; signer_name_shown_as_b4 is true where (b) (4) stands in that block or on the line after the legend. Blank where none is read (see /crl/offices).",
    "pdufa_bio_page: pdufa.bio's decision page that cites this letter's PDF, when exactly one indexable page does and the PDF holds this letter alone; blank otherwise.",
-   "In the CSV, booleans are true or false, and a text cell that starts with = + - or @ is written with a leading apostrophe so a spreadsheet shows it as text; the JSON keeps every value as printed."
+   "In the CSV, booleans are true or false, and a text cell that starts with = + - or @ is written with a leading apostrophe so a spreadsheet shows it as text; the JSON keeps every value as printed.",
+   "openfda_last_updated is the date openFDA's own meta gives for the release. openFDA can add a letter without changing that date, so a row can be dated after it; snapshot_read is the day pdufa.bio read the release, and no row is dated after that day."
   ],
   "columns": [
    "letter_date",

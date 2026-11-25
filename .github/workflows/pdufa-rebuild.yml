@@ -446,6 +446,13 @@ jobs:
           python build_fda_letters_hub.py
           python inject_calendar_explainer.py
           python sync_learn_timing.py
+      # 2026-11-25 (BLOCKED run 45687661301): the home board ran before the letter; its Recently decided card for the
+      # newly lettered page (CAPR-2026-11-20) still said "announced". Re-render those cards only, and only when a card's
+      # day or label changed (no change on a run with no new letter).
+      - name: "New CRL letter: home Recently decided cards again"
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python build_home_board.py --decided-only
 
       # /crl hub -- asked in three audits: the full released-CRL corpus, by year, each
       # letter linking FDA's own PDF; counts never rates. Runs after the letter linker

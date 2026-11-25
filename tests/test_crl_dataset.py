@@ -8,7 +8,8 @@
     for a second copy of one release, the day it was read).
   * /crl/facts carries the download line and one schema.org Dataset with a licence and both downloads, and the row
     count equals the CRL count /crl/facts and the /crl hub state.
-  * No row is dated after the release; every letter_pdf is the FDA's own address.
+  * No row is dated after the day the release was read (openFDA can add a letter without moving its own
+    last_updated; a row after that stated date needs the meta rule saying so); every letter_pdf is the FDA's own address.
 
 PLANT=1 drops one CSV row in memory and must FAIL.
 
@@ -63,9 +64,23 @@ def main():
         dm = json.load(io.open(p, encoding="utf-8")).get("meta", {})
         if not m or dm.get("openfda_last_updated") != m.group(1) or (m.group(2) and dm.get("snapshot_read") != m.group(2)):
             fails.append(f"{nm} is not the release its name says")
+    # 2026-11-25 (BLOCKED run 45687661301): openFDA added Capricor's 2026-11-20 letter (BL 125842) to the release and
+    # left its own meta.last_updated at 2026-11-18, so a row can be dated after the date openFDA states. What can never
+    # happen is a row dated after the day pdufa.bio read the release (snapshot_read, the corpus file's date), and a row
+    # after openFDA's stated date must sit under the meta rule that tells a reader why.
+    snap = meta.get("snapshot_read") or ""
+    from build_crl_facts import CORPUS
+    want_snap = (re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(CORPUS)) or [None, ""])[1]
+    if snap != want_snap:
+        fails.append(f"meta.snapshot_read {snap!r} is not the day the corpus was read ({want_snap!r})")
+    late = [r["letter_date"] for r in rows if last_updated and r["letter_date"] > last_updated]
+    if late and not any(B.LATE_RULE == x for x in meta.get("rules", [])):
+        fails.append(f"{len(late)} row(s) dated after openFDA's stated update ({last_updated}) and no meta rule says why")
     for r in rows:
-        if last_updated and r["letter_date"] > last_updated:
-            fails.append(f"row dated {r['letter_date']} after the release ({last_updated})")
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", snap) and r["letter_date"] > snap:
+            fails.append(f"row dated {r['letter_date']} after the day the release was read ({snap})")
+        elif not re.fullmatch(r"\d{4}-\d{2}-\d{2}", snap) and last_updated and r["letter_date"] > last_updated:
+            fails.append(f"row dated {r['letter_date']} after the release ({last_updated}) and no read date")
         if r["letter_pdf"] and not r["letter_pdf"].startswith("https://download.open.fda.gov/crl/"):
             fails.append(f"row {r['letter_date']} {r['application_numbers']}: letter_pdf is not the FDA's address")
     fp = os.path.join(SITE, "crl", "facts", "index.html")
