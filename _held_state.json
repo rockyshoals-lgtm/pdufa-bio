@@ -1,72 +1,8 @@
 {
- "held_since": "2026-11-25T02:58:45Z",
- "consecutive_held_runs": 1,
+ "held_since": null,
+ "consecutive_held_runs": 0,
  "emailed_at": null,
- "leads": [
-  {
-   "source": "edgar",
-   "row_id": "pdufa_pypd_2026-11-28",
-   "key": "edgar:https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm",
-   "text": "6-K filed 2026-11-24 states an approval of 'PLEX100' https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm",
-   "first_seen": "2026-11-25T02:58:45Z"
-  },
-  {
-   "source": "drug_pages",
-   "row_id": "drug:rap-219-long-acting",
-   "key": "rap-219-long-acting|fda-press:fda-approves-first-treatment-limb-girdle-muscular-dystrophy-",
-   "text": "/drug/rap-219-long-acting fda-press:fda-approves-first-treatment-limb-girdle-muscular-dystrophy- 'acting' appears with approval language",
-   "first_seen": "2026-11-25T02:58:45Z"
-  },
-  {
-   "source": "drug_pages",
-   "row_id": "drug:bezuclastinib-summit",
-   "key": "bezuclastinib-summit|fda-oncology-notifications",
-   "text": "/drug/bezuclastinib-summit fda-oncology-notifications 'bezuclastinib' appears with approval language",
-   "first_seen": "2026-11-25T02:58:45Z"
-  },
-  {
-   "source": "drug_pages",
-   "row_id": "drug:bezuclastinib",
-   "key": "bezuclastinib|fda-oncology-notifications",
-   "text": "/drug/bezuclastinib fda-oncology-notifications 'bezuclastinib' appears with approval language",
-   "first_seen": "2026-11-25T02:58:45Z"
-  },
-  {
-   "source": "fda_drugs_feed",
-   "row_id": "pdufa_cogt_2026-11-30",
-   "key": "pdufa_cogt_2026-11-30|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
-   "text": "2026-11-24 \"FDA approves bezuclastinib in combination with sunitinib for advanced gastrointestinal stromal tumors\" [Bezuclastinib] http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
-   "first_seen": "2026-11-25T02:58:45Z"
-  },
-  {
-   "source": "fda_drugs_feed",
-   "row_id": "pdufa_cogt_2026-12-30",
-   "key": "pdufa_cogt_2026-12-30|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
-   "text": "2026-11-24 \"FDA approves bezuclastinib in combination with sunitinib for advanced gastrointestinal stromal tumors\" [Bezuclastinib] http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
-   "first_seen": "2026-11-25T02:58:45Z"
-  },
-  {
-   "source": "fda_drugs_feed",
-   "row_id": "pdufa_cogt_2027-06-29",
-   "key": "pdufa_cogt_2027-06-29|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
-   "text": "2026-11-24 \"FDA approves bezuclastinib in combination with sunitinib for advanced gastrointestinal stromal tumors\" [Bezuclastinib] http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
-   "first_seen": "2026-11-25T02:58:45Z"
-  },
-  {
-   "source": "sponsor_feed",
-   "row_id": "pdufa_rhhby_2026-11-30",
-   "key": "pdufa_rhhby_2026-11-30|https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede",
-   "text": "[decision] 2026-11-23 \"FDA Approves Genentech’s WILSERDLY (giredestrant) for Early-Stage ER-Positive Breast Cancer, Making it the First New  Endocrine Therapy in This Setting in Over \" [Giredestrant] https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede",
-   "first_seen": "2026-11-25T02:58:45Z"
-  },
-  {
-   "source": "edgar_8k",
-   "row_id": "pdufa_pypd_2026-11-28",
-   "key": "pdufa_pypd_2026-11-28|0001213900-26-123719",
-   "text": "6-K 2026-11-24 [D-PLEX100] ON NOVEMBER 24, 2026, TITLED \"POLYPID ANNOUNCES FDA APPROVAL OF BACFENSSI (D-PLEX100) TO REDUCE THE OCCURRENCE OF SURGICAL SITE INFECTIONS IN PATIENTS UNDERGOING COLORECTAL SURGERY.\" <TEXT> Document 2 https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/0001213900-26-123719-index-headers.html",
-   "first_seen": "2026-11-25T02:58:45Z"
-  }
- ],
+ "leads": [],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
@@ -112,6 +48,6 @@
   "sponsor_feed|pdufa_regn_2026-11-30|https://investor.regeneron.com/news-releases/news-release-details/livsayistm-cemdisiran-approved-fda-first-and-only-sirna-therapy",
   "sponsor_feed|pdufa_rhhby_2026-11-30|https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede"
  ],
- "last_clear_run": "2026-11-20T09:12:44Z",
+ "last_clear_run": "2026-11-25T05:47:00Z",
  "email_status": "mention-issue (already open)"
 }

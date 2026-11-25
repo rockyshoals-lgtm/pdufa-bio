@@ -208,6 +208,14 @@
    "approved": 312,
    "unapproved": 154,
    "snapshot": null
+  },
+  {
+   "checked": "2026-11-25",
+   "last_updated": "2026-11-18",
+   "total": 466,
+   "approved": 312,
+   "unapproved": 154,
+   "snapshot": null
   }
  ]
 }

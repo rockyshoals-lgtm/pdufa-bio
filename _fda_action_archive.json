@@ -1055,6 +1055,14 @@
    "icotrokinra"
   ]
  },
+ "PYPD-2026-11-24": {
+  "checked": "2026-11-25",
+  "name": "Bacfenssi (D-PLEX100, doxycycline hyclate)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Bacfenssi"
+  ]
+ },
  "RCKT-2026-03-27": {
   "checked": "2026-11-24",
   "name": "KRESLADI (marnetegragene autotemcel)",
