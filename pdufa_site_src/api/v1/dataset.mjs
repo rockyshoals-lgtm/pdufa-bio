@@ -11188,36 +11188,6 @@ export default [
   "dm": "2026-11"
  },
  {
-  "id": "readout_cnta_2026-12-15",
-  "t": "CNTA",
-  "company": "",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "cleminorexton",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06752668",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06752668",
-    "status": "recruiting",
-    "pcd": "2026-12",
-    "pcd_type": "estimated",
-    "updated": "2026-04-22",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06752668",
-   "ta_basis": "ClinicalTrials.gov conditions: Narcolepsy Type 1, Narcolepsy Type 2, Idiopathic Hypersomnia"
-  },
-  "dm": "2026-12"
- },
- {
   "id": "readout_cort_2026-12-15",
   "t": "CORT",
   "company": "Corcept Therapeutics Inc",
@@ -16866,36 +16836,6 @@ export default [
   "dm": "2027-09"
  },
  {
-  "id": "readout_cnta_2027-09-15",
-  "t": "CNTA",
-  "company": "",
-  "d": "2027-09-15",
-  "dp": "month",
-  "name": "cleminorexton",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT07598708",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT07598708",
-    "status": "recruiting",
-    "pcd": "2027-09-30",
-    "pcd_type": "estimated",
-    "updated": "2026-11-02",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07598708",
-   "ta_basis": "ClinicalTrials.gov conditions: Narcolepsy Type 1, Narcolepsy Type 2"
-  },
-  "dm": "2027-09"
- },
- {
   "id": "readout_cstl_2027-09-15",
   "t": "CSTL",
   "company": "Castle Biosciences Inc",
@@ -17485,40 +17425,6 @@ export default [
   "dm": "2027-12"
  },
  {
-  "id": "readout_nuvl_2027-12-15",
-  "t": "NUVL",
-  "company": "Nuvalent Inc.",
-  "d": "2027-12-15",
-  "dp": "month",
-  "name": "Neladalkib",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05384626",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05384626",
-    "status": "recruiting",
-    "pcd": "2027-12",
-    "pcd_type": "estimated",
-    "updated": "2026-11-04",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05384626",
-   "registry_match": {
-    "checked": "2026-11-17",
-    "sponsor": "Nuvalent Inc.",
-    "basis": "Neladalkib (NVL-655) ALKOVE-1 Ph1/2, PCD 2027-12, Nuvalent-led (only neladalkib record with PCD Oct-Dec 2027)."
-   }
-  },
-  "dm": "2027-12"
- },
- {
   "id": "readout_otlk_2027-12-15",
   "t": "OTLK",
   "company": "Outlook Therapeutics, Inc.",
@@ -18091,47 +17997,6 @@ export default [
    "ta_basis": "ClinicalTrials.gov conditions: NonSegmental Vitiligo"
   },
   "dm": "2028-06"
- },
- {
-  "id": "readout_crnx_2027-11-15",
-  "t": "CRNX",
-  "company": "Crinetics Pharmaceuticals, Inc.",
-  "d": "2029-07-15",
-  "dp": "month",
-  "name": "Atumelnant",
-  "type": "Readout",
-  "ta": "Endocrinology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06712823",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06712823",
-    "status": "recruiting",
-    "pcd": "2029-07",
-    "pcd_type": "estimated",
-    "updated": "2026-06-24",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "date_history": [
-    {
-     "date": "2027-11-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2029-07-15",
-     "changed": "2026-07-11",
-     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06712823",
-   "ta_basis": "ClinicalTrials.gov conditions: Congenital Adrenal Hyperplasia, Classic Congenital Adrenal Hyperplasia"
-  },
-  "dm": "2029-07"
  },
  {
   "id": "readout_agio_2026-06-15",

@@ -244,10 +244,12 @@ def load_data():
                                            drug=str(pres.get('drug') or ''),
                                            ptype=str(pres.get('pres_type') or '')))
 
-    # /pdufa/{slug} detail pages that exist, grouped by ticker
+    # /pdufa/{slug} detail pages that exist, grouped by ticker. 2026-11-25: a folder counts only when it holds a
+    # page; six leftover folders (SMMT, INCY, INO, IRD, MLYS, PHVS) hold just an og.png and 301 to the real page
+    # in vercel.json, and counting them printed "DEAD /pdufa/SMMT" every run for a link no page carries.
     slugs = collections.defaultdict(list)
     for d in sorted(os.listdir(os.path.join(SITE, 'pdufa'))):
-        if os.path.isdir(os.path.join(SITE, 'pdufa', d)):
+        if os.path.isfile(os.path.join(SITE, 'pdufa', d, 'index.html')):
             mm = re.match(r'([A-Z]{2,6})(?:-.*)?$', d)
             if mm:
                 slugs[mm.group(1)].append(d)
