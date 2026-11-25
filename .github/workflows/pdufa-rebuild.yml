@@ -446,6 +446,13 @@ jobs:
           python build_fda_letters_hub.py
           python inject_calendar_explainer.py
           python sync_learn_timing.py
+      # 2026-11-25 (BLOCKED run 45687661301): the home board ran before the letter; its Recently decided card for the
+      # newly lettered page (CAPR-2026-11-20) still said "announced". Re-render those cards only, and only when a card's
+      # day or label changed (no change on a run with no new letter).
+      - name: "New CRL letter: home Recently decided cards again"
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python build_home_board.py --decided-only
 
       # /crl hub -- asked in three audits: the full released-CRL corpus, by year, each
       # letter linking FDA's own PDF; counts never rates. Runs after the letter linker
@@ -916,6 +923,11 @@ jobs:
       # test_no_past_target_pending_pages.py fails if either treatment goes missing.
       - name: Goal-date-passed statements (no decision to name)
         run: python mark_goal_date_passed.py
+      # 2026-11-25 (David: "add a past due box on the home page for pdufas that missed their date so it stays current
+      # and accurate"): the home page's "Past their goal date" box, from the same dataset rule as the step above.
+      # build_home_board.py keeps these goals out of Next FDA decisions. tests/test_home_past_due.py recounts it.
+      - name: "Home: Past their goal date box"
+        run: python build_home_past_due.py
 
       - name: "Goal date moved: date_history shown on event pages and calendar rows"
         run: python inject_goal_date_moves.py

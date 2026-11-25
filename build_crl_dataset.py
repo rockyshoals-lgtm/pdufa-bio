@@ -56,6 +56,11 @@ COLS = ["letter_date", "application_numbers", "company_name_as_printed", "compan
         "signing_center", "signer_name_shown_as_b4", "pdufa_bio_page"]
 
 
+LATE_RULE = ("openfda_last_updated is the date openFDA's own meta gives for the release. openFDA can add a letter "
+             "without changing that date, so a row can be dated after it; snapshot_read is the day pdufa.bio read "
+             "the release, and no row is dated after that day.")
+
+
 def rows(corpus=None):
     letters, last_updated, _ = crl_letters(include_rescinded=True, corpus=corpus)
     ob, ob_as_of = orange_book()
@@ -170,6 +175,7 @@ def main():
             "does and the PDF holds this letter alone; blank otherwise.",
             "In the CSV, booleans are true or false, and a text cell that starts with = + - or @ is written with a "
             "leading apostrophe so a spreadsheet shows it as text; the JSON keeps every value as printed.",
+            LATE_RULE,
         ],
         "columns": COLS,
         "not_advice": "Facts from FDA documents. Not a prediction about any application and not investment advice.",
