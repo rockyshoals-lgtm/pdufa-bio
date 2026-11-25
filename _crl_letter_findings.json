@@ -102,6 +102,31 @@
    ],
    "not_approvability": [],
    "note": "The application under review is Corcept's resubmission of this NDA, with a PDUFA goal date of December 17, 2026. The letter is the FDA's statement of what the resubmission has to answer."
+  },
+  {
+   "file_name": "CRL_BLA761401_20260410.pdf",
+   "application": "BLA 761401",
+   "company": "Telix Pharmaceuticals (US) Inc.",
+   "drug": "89Zr-TLX250 (TLX250-CDx, Zircaix)",
+   "letter_date": "2026-04-10",
+   "fda_action_date": "2025-08-27",
+   "pages": [
+    "TLX-2025-08-28"
+   ],
+   "verified": "2026-11-25, openFDA's text of the letter only (the FDA's PDF host is not reachable from this session); no deficiency summaries are given, so the page shows the letter's own section headings",
+   "letter_type_note": "Corrected complete response letter dated April 10, 2026. It states that the CRL sent on August 27, 2025 'included incorrect information', that this corrected CRL replaces it, and that 'the original action date will remain the same as that stated in the original CRL'."
+  },
+  {
+   "file_name": "CRL_BLA761451_20251010.pdf",
+   "application": "BLA 761451",
+   "company": "AstraZeneca Pharmaceuticals LP",
+   "drug": "anifrolumab (subcutaneous)",
+   "letter_date": "2025-10-10",
+   "fda_action_date": "2025-10-10",
+   "pages": [
+    "AZN-2026-02-03"
+   ],
+   "verified": "2026-11-25, openFDA's text of the letter only (the FDA's PDF host is not reachable from this session); mapped by hand because AstraZeneca disclosed the letter 116 days after its date"
   }
  ]
 }

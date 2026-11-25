@@ -1,0 +1,32 @@
+[
+ {
+  "ticker": "TLX",
+  "date": "2025-08-28",
+  "fda_action_date": "2025-08-27",
+  "outcome": "CRL",
+  "drug": "Zircaix (TLX250-CDx, 89Zr-DFO-girentuximab)",
+  "indication": "PET imaging to characterize renal masses as clear cell renal cell carcinoma (ccRCC)",
+  "company": "Telix Pharmaceuticals Limited",
+  "cap": "Mid",
+  "headline": "Telix announced on August 28, 2025 (Melbourne) that the FDA issued a Complete Response Letter on the BLA for Zircaix (TLX250-CDx), its PET imaging agent for characterizing renal masses as clear cell renal cell carcinoma.",
+  "pdufa_note": "Per Telix's release, dated Melbourne and Indianapolis, 28 August 2025, the CRL identifies deficiencies relating to the Chemistry, Manufacturing, and Controls (CMC) package, and notices of deficiency (Form 483) issued to two third-party manufacturing and supply chain partners will require remediation before resubmission (<a href=\"https://www.sec.gov/Archives/edgar/data/2007191/000200719125000065/zircprcrl.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">Telix release, SEC Exhibit 99.1</a>). Telix set its investor call for 10:30 AM AEST on August 28, which was 8:30 PM Eastern on Wednesday August 27; the first U.S. trading day after the release was August 28. The letter the FDA has released for BLA 761401 is a corrected Complete Response Letter dated April 10, 2026; it states that it replaces the original CRL issued on August 27, 2025 and that the original action date stays the same (<a href=\"/crl/letter/bla-761401-2026-04-10\" style=\"color:#e3ba5e\">the letter's text</a>). Telix's release states no PDUFA goal date, so no early or late margin is stated. A Complete Response Letter means the FDA will not approve the application in its present form; the sponsor can resubmit.",
+  "source": "https://www.sec.gov/Archives/edgar/data/2007191/000200719125000065/zircprcrl.htm",
+  "source_label": "Telix Pharmaceuticals release, 28 August 2025 (SEC Exhibit 99.1)",
+  "h1": "Zircaix (TLX250-CDx) <span class=\"g\">FDA Complete Response Letter</span>: Aug 28, 2025"
+ },
+ {
+  "ticker": "AZN",
+  "date": "2026-02-03",
+  "fda_action_date": "2025-10-10",
+  "outcome": "CRL",
+  "drug": "Saphnelo (anifrolumab) for subcutaneous use",
+  "indication": "Systemic lupus erythematosus in adults, subcutaneous administration",
+  "company": "AstraZeneca PLC",
+  "cap": "Large",
+  "headline": "AstraZeneca disclosed on February 3, 2026 that the FDA had issued a Complete Response Letter on the BLA for subcutaneous Saphnelo (anifrolumab) in adults with systemic lupus erythematosus; the FDA's letter is dated October 10, 2025.",
+  "pdufa_note": "The FDA's released letter on BLA 761451 (anifrolumab) is dated October 10, 2025 (<a href=\"/crl/letter/bla-761451-2025-10-10\" style=\"color:#e3ba5e\">the letter's text</a>). It states that an amendment with a corrected interim dataset for study D3465C00001, submitted late in the review cycle, identifies critical data quality issues that affect key analyses, including the primary endpoint, and that the corrected data can be submitted for a new review cycle. AstraZeneca's release of February 3, 2026 says the FDA issued a CRL and that the company has since provided the information the CRL requested; it does not state when the letter was received (<a href=\"https://www.astrazeneca.com/media-centre/press-releases/2026/update-on-saphnelo-subcutaneous-administration.html\" rel=\"noopener\" style=\"color:#e3ba5e\">AstraZeneca, February 3, 2026</a>). This page is filed under the day AstraZeneca disclosed the letter, 116 days after the letter's date. The FDA later approved BLA 761451, Saphnelo for subcutaneous use, on April 24, 2026 (<a href=\"/fda-decision/AZN-2026-04-27\" style=\"color:#e3ba5e\">that decision</a>). A Complete Response Letter means the FDA will not approve the application in its present form; the sponsor can resubmit.",
+  "source": "https://www.astrazeneca.com/media-centre/press-releases/2026/update-on-saphnelo-subcutaneous-administration.html",
+  "source_label": "AstraZeneca press release, February 3, 2026",
+  "h1": "Saphnelo subcutaneous (anifrolumab) <span class=\"g\">FDA Complete Response Letter</span>: disclosed Feb 3, 2026"
+ }
+]
