@@ -22,6 +22,7 @@
   }
  ],
  "redirects": [
+  {"source": "/pdufa/COGT-bezuclastinib-summit/summit_bak", "destination": "/pdufa/COGT-bezuclastinib-summit", "permanent": true},
   {
    "source": "/pdufa/RHHBY-giredestrant-in-combinatio",
    "destination": "/pdufa/RHHBY-giredestrant-evera",
