@@ -6041,6 +6041,28 @@ export default [
   }
  },
  {
+  "id": "pdufa_uncy_2027-03-25",
+  "t": "UNCY",
+  "company": "Unicycive Therapeutics Inc.",
+  "d": "2027-03-25",
+  "dp": "day",
+  "name": "Oxylanthanum Carbonate (OLC)",
+  "type": "PDUFA",
+  "ta": "Nephrology",
+  "cap": "Micro",
+  "st": "Upcoming",
+  "ua": "2026-11-25T23:57:06Z",
+  "url": "/pdufa/UNCY-olc",
+  "_d": {
+   "indication": "Hyperphosphatemia in patients with chronic kidney disease on dialysis (Class 2 resubmission after the June 29, 2026 CRL)",
+   "event_slug": "UNCY-olc",
+   "source": "Unicycive press release 2026-10-21 (NDA resubmission accepted)",
+   "source_url": "https://ir.unicycive.com/news/detail/128/unicycive-therapeutics-announces-fda-acceptance-of",
+   "source_quote": "Unicycive Therapeutics Announces FDA Acceptance of Oxylanthanum Carbonate New Drug Application Resubmission and PDUFA Date of March 25, 2027",
+   "source_note": "Resubmitted with CMC data from a new third-party drug product manufacturing vendor (Unicycive 8-K 2026-09-29, EX-99.1: https://www.sec.gov/Archives/edgar/data/1766140/000121390026104314/ea030696701ex99-1.htm). The FDA classed it a Class 2 resubmission with a six-month review (Unicycive release 2026-10-21), and Unicycive restated the date in its Q3 2026 8-K (2026-11-16, EX-99.1: https://www.sec.gov/Archives/edgar/data/1766140/000121390026120261/ea031236501ex99-1.htm). Both earlier CRLs on NDA 218607 (June 27, 2025 and June 29, 2026) cited inspection deficiencies at a manufacturing facility listed in the application, which Unicycive says is a third-party vendor; neither letter names a clinical efficacy or safety deficiency."
+  }
+ },
+ {
   "id": "readout_mltx_2026-09-15",
   "t": "MLTX",
   "company": "MoonLake Immunotherapeutics",
