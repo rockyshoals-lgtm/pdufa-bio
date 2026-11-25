@@ -17,9 +17,17 @@ Each change carries an <!--ANNONLY--> marker. When the Verified line later names
 fills it), the page is put back to the canonical form, and fix_decision_h1_action_date / fix_chart_captions then state
 the FDA day. Runs after inject_verified_against.py and before fix_decision_h1_action_date.py. Idempotent.
 Guard: tests/test_announcement_only_dates.py. Facts only; not investment advice.
+
+2026-11-25 (currency red team): the "after the close" note lived only in the labelled form, so once the FDA's own day
+reached the record (CAPR-2026-11-20: FDA letter dated Nov 20, Capricor's release 7:55 PM ET that evening) the restore
+to canonical form dropped it. The home card then called the Nov 20 close "reaction day up 1%", a close taken before the
+news. The note now survives in canonical form as its own row, <!--ANNLATE-->Announced | YYYY-MM-DD, after the
+close<!--/ANNLATE-->, right after the FDA decision date. Its source is the page itself or the hand-verified ledger
+_announced_after_close.json (sponsor release time stamps). Guard: tests/test_decision_timing_current.py.
 """
 import glob
 import io
+import json
 import os
 import re
 import sys
@@ -40,6 +48,9 @@ KV = re.compile(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-
 KV_DONE = re.compile(r'<!--ANNONLY:KV--><div class="kv"><span>FDA decision date</span><b>(?:not yet posted on Drugs@FDA|not found in a public FDA record)</b></div>'
                      r'<div class="kv"><span>Announced</span><b>(\d{4}-\d{2}-\d{2})(?:, after the close)?</b></div><!--/ANNONLY:KV-->')
 AFTER_CLOSE = re.compile(r'<span>Announced</span><b>(\d{4}-\d{2}-\d{2}), after the close</b>')
+LATE_ROW = re.compile(r'<!--ANNLATE--><div class="kv"><span>Announced</span><b>\d{4}-\d{2}-\d{2}, after the close</b></div>'
+                      r'<!--/ANNLATE-->')
+LEDGER = os.path.join(HERE, "_announced_after_close.json")
 CAP = re.compile(r"FDA decision (\d{1,2}/\d{1,2}/\d{2})\. ")
 CAP_DONE = re.compile(r"<!--ANNONLY-->Decision announced (\d{1,2}/\d{1,2}/\d{2})\. ")
 
@@ -68,7 +79,31 @@ def label(doc):
     return "".join(parts)
 
 
+def after_close_ledger():
+    """{page slug: announcement day} for decisions the sponsor made public after that day's close (hand-verified)."""
+    try:
+        led = json.load(io.open(LEDGER, encoding="utf-8")).get("after_close", {})
+        return {k: v["announced"] for k, v in led.items() if re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(v.get("announced")))}
+    except Exception:  # noqa: BLE001
+        return {}
+
+
+def keep_late(doc, day):
+    """The page says the news came after the close on `day`: on the Announced row when it has one, else in a row of its
+    own right after the FDA decision date."""
+    if f"<span>Announced</span><b>{day}, after the close</b>" in doc:
+        return doc
+    if f"<span>Announced</span><b>{day}</b>" in doc:
+        return doc.replace(f"<span>Announced</span><b>{day}</b>", f"<span>Announced</span><b>{day}, after the close</b>", 1)
+    m = KV.search(doc)
+    if not m:
+        return doc
+    return (doc[:m.end()] + f'<!--ANNLATE--><div class="kv"><span>Announced</span><b>{day}, after the close</b></div>'
+            f"<!--/ANNLATE-->" + doc[m.end():])
+
+
 def unlabel(doc):
+    doc = LATE_ROW.sub("", doc)
     doc = H1_DONE.sub(lambda m: m.group(1) + m.group(2) + m.group(3), doc)
     doc = KV_DONE.sub(lambda m: f'<div class="kv"><span>FDA decision date</span><b>{m.group(1)}</b></div>', doc)
     doc = CAP_DONE.sub(lambda m: "FDA decision " + m.group(1) + ". ", doc)
@@ -76,27 +111,32 @@ def unlabel(doc):
 
 
 def main():
-    n_lab = n_un = 0
+    n_lab = n_un = n_late = 0
+    led = after_close_ledger()
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
+        slug = os.path.basename(os.path.dirname(p))
         doc = io.open(p, encoding="utf-8", errors="replace").read()
-        if "ANNONLY" not in doc and not NOT_POSTED_RX.search(doc):
+        if "ANNONLY" not in doc and "ANNLATE" not in doc and slug not in led and not NOT_POSTED_RX.search(doc):
             continue
         base = unlabel(doc)
         new = label(base) if NOT_POSTED_RX.search(verified_block(base)) else base
-        # an "after the close" note survives the unlabel/label round trip (it lives only in the labelled form)
+        # an "after the close" note survives the unlabel/label round trip, and the restore to canonical form
         late = AFTER_CLOSE.search(doc)
-        if late and new is not base:
-            new = new.replace(f'<span>Announced</span><b>{late.group(1)}</b>',
-                              f'<span>Announced</span><b>{late.group(1)}, after the close</b>', 1)
+        day = late.group(1) if late else led.get(slug)
+        if day:
+            new = keep_late(new, day)
         if new != doc:
             io.open(p, "w", encoding="utf-8", newline="").write(new)
             if NOT_POSTED_RX.search(verified_block(base)):
                 n_lab += 1
                 print(f"  labelled announcement-only: {os.path.relpath(p, SITE)}")
-            else:
+            elif "ANNONLY" in doc:
                 n_un += 1
                 print(f"  FDA day now on record, canonical form restored: {os.path.relpath(p, SITE)}")
-    print(f"announcement-only decision pages labelled: {n_lab}; restored: {n_un}")
+            else:
+                n_late += 1
+                print(f"  announced after the close, noted in key facts: {os.path.relpath(p, SITE)}")
+    print(f"announcement-only decision pages labelled: {n_lab}; restored: {n_un}; after-close notes added: {n_late}")
     return 0
 
 

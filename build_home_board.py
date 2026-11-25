@@ -494,10 +494,12 @@ def render_decided(decs, key):
         pub, after_close = disclosure(tk, date)
         spk, move, rday = sparkline_reaction(poly_daily(key, tk), pub, after_close)   # gold dot: reaction day
         mv = ""
-        why = (f"FDA action {_md(act)}" + (f", made public {_md(pub)}" if pub != act else "") if known else
-               f"Announced {_md(pub)}; no public FDA record of the action day")
-        if after_close:
-            why += " after the close"
+        # 2026-11-25: "after the close" belongs to the announcement. It used to be appended after the whole phrase, so
+        # CAPR's card read "FDA action Nov 20 after the close" (the FDA's letter is dated Nov 20; Capricor's release
+        # went out at 7:55 PM ET).
+        late = " after the close" if after_close else ""
+        why = ((f"FDA action {_md(act)}" + (f", made public {_md(pub)}{late}" if pub != act or late else ""))
+               if known else f"Announced {_md(pub)}{late}; no public FDA record of the action day")
         if move is not None and move == move:   # NaN: no move to print
             r = round(move)
             mc = "#46d17f" if r > 0 else ("#ff7a72" if r < 0 else "#94a9c9")
