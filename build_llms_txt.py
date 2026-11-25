@@ -204,6 +204,7 @@ Full archive: https://www.pdufa.bio/decisions
 - /research/fda-approval-weekdays - the weekday of every FDA original and efficacy supplement approval action date in Drugs@FDA since January 2025, with the Orange Book's NDA approval dates since 1982, US federal holidays, and the 2026 decisions whose goal date fell on a weekend or holiday (two CSVs)
 - /fda-approvals/companies - every FDA original NDA/BLA and efficacy supplement approval in Drugs@FDA since January 2025, grouped by sponsor company, each with its FDA letter (CSV)
 - /fda-approvals/drugs - the same Drugs@FDA approvals grouped by NDA or BLA number: how many original and efficacy-supplement approvals each application has had since January 2025, with FDA letters where Drugs@FDA lists one, and the released Complete Response Letters on the same application number (CSV)
+- /fda-approvals/types - every original NDA/BLA approval in Drugs@FDA since January 2025 under the NDA classification code (chemical type) Drugs@FDA prints for it, Type 1 new molecular entity through Type 10, with the meaning of each code from the FDA's MAPP 5018.2 and counts by year (CSV)
 - /research/readout-reaction - how much clinical readouts actually move stocks
 - /research/conference-runup - the conference run-up study
 - /research/short-interest-fda - why short interest does not predict FDA outcomes
