@@ -34,16 +34,16 @@ the price move. /decisions publishes how many of each there are.
   event to the last close before it: **-0.03%**. The "conference run-up" retail
   investors remember is largely a **2020 artifact** (median +17.3% that year; negative
   in 2022, 2023 and 2024). Nano-cap presenters are the weakest cohort, not the strongest.
-- FDA decision timing, 2026, sourced decisions only: of **43** decisions with both a
-  documented goal date and a documented action date, **29** came before the goal
+- FDA decision timing, 2026, sourced decisions only: of **44** decisions with both a
+  documented goal date and a documented action date, **30** came before the goal
   date, **13** on it and **1** after. (/research/fda-decision-timing)
   The census is downloadable as CSV under CC BY 4.0, one row per decision with the goal day, FDA action
   day, announcement day, margin and the source URL of each date, versioned by row count:
-  /research/fda-decision-timing/fda-decision-timing-2026-v43.csv (always-current copy:
+  /research/fda-decision-timing/fda-decision-timing-2026-v44.csv (always-current copy:
   /research/fda-decision-timing/fda-decision-timing-2026.csv; earlier versions stay at their own addresses).
-  Cite as "pdufa.bio, FDA decision timing 2026 (v43)". The counts grow as decisions are added;
+  Cite as "pdufa.bio, FDA decision timing 2026 (v44)". The counts grow as decisions are added;
   an older page copy quoting a smaller census (for example v32) is superseded by the figures above.
-- Released FDA Complete Response Letters (openFDA): **466** letters, of which
+- Released FDA Complete Response Letters (openFDA): **467** letters, of which
   **312** went to applications the FDA has since approved. That ratio reflects
   which letters the FDA chose to release, not an approval rate. (/crl)
 
@@ -71,7 +71,7 @@ Full list: https://www.pdufa.bio/calendar
 - COGT, Bezuclastinib + sunitinib - (PEAK): Approved, FDA action 2026-11-24. https://www.pdufa.bio/fda-decision/COGT-2026-11-24
 - RHHBY, Giredestrant (lidERA): Approved, FDA action 2026-11-23. https://www.pdufa.bio/fda-decision/RHHBY-2026-11-23
 - BBIO, BBP-418 (ribitol) - (FORTIFY): Approved, announced 2026-11-23 (no public FDA record of the day yet). https://www.pdufa.bio/fda-decision/BBIO-2026-11-23
-- CAPR, Deramiocel (CAP-1002) - (HOPE-3): CRL, announced 2026-11-20 (no public FDA record of the day yet). https://www.pdufa.bio/fda-decision/CAPR-2026-11-20
+- CAPR, Deramiocel (CAP-1002) - (HOPE-3): CRL, FDA action 2026-11-20. https://www.pdufa.bio/fda-decision/CAPR-2026-11-20
 - REGN, Cemdisiran (C5 RNAi) - (NIMBLE): Approved, FDA action 2026-11-18. https://www.pdufa.bio/fda-decision/REGN-2026-11-18
 - GSK, Neladalkib (NVL-655) - (ALKOVE-1): Approved, FDA action 2026-11-17. https://www.pdufa.bio/fda-decision/GSK-2026-11-17
 - TEVA, IGALMI (dexmedetomidine sublingual film) - (SERENITY At-Home): Approved, FDA action 2026-11-13. https://www.pdufa.bio/fda-decision/TEVA-2026-11-16

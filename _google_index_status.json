@@ -761,6 +761,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/crl/company/capricor": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/crl/company/celitrion": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -1201,6 +1207,12 @@
 },
 "/crl/letter/bl-125842-2025-07-09": {
 "checked": "2026-11-22",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/bl-125842-2026-11-20": {
+"checked": "2026-11-25",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -8861,6 +8873,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/AZN-2026-02-03": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/AZN-2026-02-20": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -10551,6 +10569,12 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/TLX-2025-08-28": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/fda-decision/TLX-2026-09-14": {
@@ -12335,6 +12359,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/ticker/ALLO": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/ticker/ALMS": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -13981,6 +14011,12 @@
 },
 "/ticker/SPRY": {
 "checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/ticker/SPTX": {
+"checked": "2026-11-25",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"

@@ -8374,17 +8374,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220936Orig1s000ltr.pdf"
 },
 {
-"app": "NDA221313",
-"brand": "",
-"generic": "",
-"sponsor": "Lupin Ltd",
-"kind": "new application",
-"sub": "ORIG-1",
-"class": "Type 3 - New Dosage Form",
-"date": "2026-11-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221313Orig1s000ltr.pdf"
-},
-{
 "app": "NDA217062",
 "brand": "",
 "generic": "",
@@ -8394,6 +8383,17 @@
 "class": "Type 3 - New Dosage Form",
 "date": "2026-11-18",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217062Orig1s000ltr.pdf"
+},
+{
+"app": "NDA221313",
+"brand": "",
+"generic": "",
+"sponsor": "Lupin Ltd",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 3 - New Dosage Form",
+"date": "2026-11-18",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221313Orig1s000ltr.pdf"
 },
 {
 "app": "NDA221144",

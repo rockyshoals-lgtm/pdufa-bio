@@ -8,10 +8,10 @@
   "source": "FDA CRL release, openFDA transparency/crl",
   "source_url": "https://open.fda.gov/apis/transparency/completeresponseletters/",
   "openfda_last_updated": "2026-11-18",
-  "snapshot_read": "2026-11-22",
+  "snapshot_read": "2026-11-25",
   "orange_book_files_dated": "2026-11-13",
-  "rows": 452,
-  "rows_not_rescinded": 450,
+  "rows": 453,
+  "rows_not_rescinded": 451,
   "rules": [
    "Only records the FDA typed COMPLETE RESPONSE; tentative approvals, refusals to file, provisional determinations, rescissions and untyped records are left out.",
    "A record repeats another when its letter date, application numbers and text are the same; it is kept once.",
@@ -46,6 +46,24 @@
   "not_advice": "Facts from FDA documents. Not a prediction about any application and not investment advice."
  },
  "rows": [
+  {
+   "letter_date": "2026-11-20",
+   "application_numbers": "BL 125842",
+   "company_name_as_printed": "Capricor, Inc.",
+   "company_group": "Capricor",
+   "openfda_approval_status": "Unapproved",
+   "rescinded_by_fda": false,
+   "rescission_date": "",
+   "letter_pdf": "https://download.open.fda.gov/crl/CRL_BLA125842_20261120.pdf",
+   "orange_book_nda_first_approval_after_letter": "",
+   "orange_book_trade_name": "",
+   "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": true,
+   "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/CAPR-2026-11-20"
+  },
   {
    "letter_date": "2026-11-13",
    "application_numbers": "BLA 761524",
@@ -530,7 +548,7 @@
    "signing_office_as_printed": "",
    "signing_center": "CDER",
    "signer_name_shown_as_b4": true,
-   "pdufa_bio_page": ""
+   "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/TLX-2025-08-28"
   },
   {
    "letter_date": "2026-04-10",
@@ -1088,7 +1106,7 @@
    "signing_office_as_printed": "",
    "signing_center": "CDER",
    "signer_name_shown_as_b4": true,
-   "pdufa_bio_page": ""
+   "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/AZN-2026-02-03"
   },
   {
    "letter_date": "2025-10-07",
