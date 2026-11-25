@@ -1,0 +1,12 @@
+{
+  "_about": "Decisions made public after that day's 4:00 PM ET close, hand-verified from the sponsor's own release time stamp. label_announcement_only_dates.py keeps an 'Announced | YYYY-MM-DD, after the close' key-facts row on each page, also once the FDA's own day is on record, so sync_decision_runup_chip.py and build_home_board.py never call that day's close the reaction. Eastern time (CLAUDE.md rule 1). Guard: tests/test_decision_timing_current.py.",
+  "after_close": {
+    "CAPR-2026-11-20": {
+      "announced": "2026-11-20",
+      "time_et": "7:55 PM ET",
+      "source_label": "Capricor press release, GlobeNewswire, November 20, 2026 19:55 ET (published 2026-11-21T00:55:21Z UTC)",
+      "source": "https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html",
+      "verified": "2026-11-25"
+    }
+  }
+}

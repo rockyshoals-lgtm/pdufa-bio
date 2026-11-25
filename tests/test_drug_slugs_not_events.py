@@ -34,6 +34,7 @@ CASES = {
     "REGAL Phase 3 (galinpepimut-S) topline, event-driven": "galinpepimut-S",
     "Zanidatamab": "Zanidatamab",
     "IDOSE TR": "IDOSE TR",
+    "zoldonrasib Earlier-phase CRC studies Clinical data update": "zoldonrasib",
 }
 BAD_SLUG = re.compile(r"-(?:phase|study|trial)$|^\d+-(?:week|day|month)s?\b")
 
