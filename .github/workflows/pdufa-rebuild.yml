@@ -827,6 +827,13 @@ jobs:
         # FDA payload as the approval date; every approval self-populates its brand.
         run: python fetch_fda_brands.py && python fetch_chembl_synonyms.py && python add_drug_schema.py && python link_pdufa_explainer.py
 
+      # 2026-11-25 (David: link the readout dates): the company-guided table on /readouts links each program to
+      # its /drug page only when that page exists (readout_links.py). The first pass above runs before this
+      # build's drug pages, so a readout added today would ship unlinked for a day. This second pass replaces
+      # only the GUIDED block (idempotent) once every drug page of this build is on disk.
+      - name: "Readouts: relink company-guided rows to this build's drug pages"
+        run: python build_guided_readouts.py
+
       # 2026-11-17: one page per FDA application (/fda-application/nda-NNNNNN) joining brand, ingredient,
       # code names, FDA applicant of record, owner and ticker. FDA facts are read from the Orange Book
       # (fetched above); every other name comes from _fda_applications.json with a primary-source quote.

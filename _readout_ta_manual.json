@@ -1677,6 +1677,840 @@
    "basis": "Company release: indication stated as chronic hepatitis delta (CHD)",
    "source": "https://www.businesswire.com/news/home/20261108631000/en/Vir-Biotechnology-Announces-Primary-Endpoint-Met-in-Pivotal-Phase-3-ECLIPSE-1-Trial-for-Elebsiran-and-Tobevibart-in-Chronic-Hepatitis-Delta/",
    "tagged": "2026-11-17 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_aapg_2026-12-13": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Relapsed/refractory T-cell lymphoma",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395961/0/en/ascentage-pharma-to-present-data-from-multiple-trials-including-an-oral-presentation-of-apg-5918-at-ash-2026.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_aapg_2026-12-13-olverembat": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Venetoclax relapsed/refractory AML",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395961/0/en/ascentage-pharma-to-present-data-from-multiple-trials-including-an-oral-presentation-of-apg-5918-at-ash-2026.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_allo_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as First-line consolidation in large B-cell lymphoma",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397016/0/en/allogene-therapeutics-reports-third-quarter-2026-financial-results-and-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_alxo_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as HER2-positive metastatic breast cancer",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403470/0/en/alx-oncology-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_alxo_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as EGFR-expressing advanced/metastatic solid tumors",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403470/0/en/alx-oncology-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_anab_2028-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Untreated T4N0 or stage III dMMR/MSI-H resectable colon cancer",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402246/0/en/anaptys-reports-fiscal-first-quarter-2027-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_anab_2028-12-31-jemperli": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Locally advanced unresected head and neck squamous cell carcinoma after chemoradiation",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402246/0/en/anaptys-reports-fiscal-first-quarter-2027-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_aura_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Early choroidal melanoma",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398237/0/en/aura-biosciences-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_autl_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Pediatric relapsed/refractory B-ALL",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399322/0/en/autolus-therapeutics-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_avbp_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Late-line colorectal cancer",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398921/0/en/arrivent-biopharma-reports-third-quarter-2026-financial-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_avbp_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Colorectal cancer",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398921/0/en/arrivent-biopharma-reports-third-quarter-2026-financial-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_bctx_2026-12-11": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Metastatic breast cancer",
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409117/0/en/briacell-to-present-five-clinical-posters-including-late-breaking-phase-3-biomarker-and-safety-findings-at-sabcs-2026.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_bntx_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Metastatic squamous NSCLC after platinum chemotherapy and PD-(L)1 inhibitor",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394017/0/en/biontech-announces-third-quarter-2026-financial-results-and-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_cccc_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Multiple myeloma (1-4 prior lines)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396251/0/en/c4-therapeutics-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_cccc_2027-12-31-cemsidomid": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Late-line relapsed/refractory multiple myeloma",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396251/0/en/c4-therapeutics-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_cgon_2026-12-04": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as BCG-exposed high-risk and BCG-unresponsive NMIBC",
+   "source": "https://www.globenewswire.com/news-release/2026/11/25/3410154/0/en/cg-oncology-to-present-new-data-on-cretostimogene-grenadenorepvec-at-the-society-of-urologic-oncology-27th-annual-meeting.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_cgon_2026-12-04-cretostimo": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as BCG-unresponsive high-grade Ta/T1 papillary-only NMIBC",
+   "source": "https://www.globenewswire.com/news-release/2026/11/25/3410154/0/en/cg-oncology-to-present-new-data-on-cretostimogene-grenadenorepvec-at-the-society-of-urologic-oncology-27th-annual-meeting.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_clrb_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Refractory triple-negative breast cancer",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399351/29076/en/cellectar-biosciences-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_clrb_2026-12-15": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Relapsed/refractory Waldenstrom macroglobulinemia",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395373/29076/en/cellectar-biosciences-to-present-three-posters-highlighting-durable-clinical-activity-of-iopofosine-i-131-in-waldenstr%c3%b6m-macroglobulinemia-at-the-american-society-of-hematology-ann.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_crsp_2026-12-31-zugocabtag": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as B-cell malignancies",
+   "source": "https://www.globenewswire.com/news-release/2026/11/2/3393703/0/en/crispr-therapeutics-provides-business-update-and-reports-third-quarter-2026-financial-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_exel_2027-03-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Previously untreated advanced non-clear cell renal cell carcinoma",
+   "source": "https://www.businesswire.com/news/home/20261029052392/en/Exelixis-Announces-Third-Quarter-2026-Financial-Results-and-Provides-Corporate-Update/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_fth_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as HR+/HER2- advanced breast cancer",
+   "source": "https://www.businesswire.com/news/home/20261103631868/en/Faeth-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Operational-Updates/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_gmab_2026-12-14": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Relapsed/refractory diffuse large B-cell lymphoma",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395343/0/en/genmab-to-present-results-from-comprehensive-epcoritamab-development-program-highlighting-potential-across-b-cell-malignancies-at-the-2026-american-society-of-hematology-ash-annual.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_immp_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as soft tissue sarcoma (neoadjuvant)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/19/3406250/0/en/immutep-reports-encouraging-disease-free-survival-from-eftisarc-neo-phase-ii-trial-in-soft-tissue-sarcoma.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_janx_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Metastatic castration-resistant prostate cancer",
+   "source": "https://www.businesswire.com/news/home/20261105303093/en/Janux-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Business-Highlights/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_kura_2028-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Newly diagnosed AML (frontline)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400190/35186/en/kura-oncology-reports-third-quarter-2026-financial-results-and-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_kura_2026-12-15": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as NPM1-m/FLT3-ITD+ newly diagnosed AML; R/R NPM1/FLT3 co-mutated AML",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400190/35186/en/kura-oncology-reports-third-quarter-2026-financial-results-and-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_kura_2026-12-15-ziftomenib": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Newly diagnosed NPM1-m AML",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400190/35186/en/kura-oncology-reports-third-quarter-2026-financial-results-and-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_kura_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Cabozantinib-naive clear cell renal cell carcinoma",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400190/35186/en/kura-oncology-reports-third-quarter-2026-financial-results-and-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_kura_2027-12-31-darlifarni": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as 2L+ KRAS-mutated pancreatic ductal adenocarcinoma",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400190/35186/en/kura-oncology-reports-third-quarter-2026-financial-results-and-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_lyel_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as 3L+ relapsed/refractory large B-cell lymphoma",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395800/0/en/lyell-immunopharma-reports-business-highlights-and-financial-results-for-the-third-quarter-2026.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_lyel_2027-12-31-lyl273": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as 3L+ R/R metastatic colorectal cancer",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395800/0/en/lyell-immunopharma-reports-business-highlights-and-financial-results-for-the-third-quarter-2026.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_mgnx_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Solid tumors (lead indication)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402151/0/en/macrogenics-reports-third-quarter-2026-financial-results-and-highlights-recent-corporate-progress.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_mgnx_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Squamous cell carcinoma of the head and neck",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402151/0/en/macrogenics-reports-third-quarter-2026-financial-results-and-highlights-recent-corporate-progress.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_mgnx_2027-06-30-lorigerlim": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Advanced clear cell gynecologic cancer",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402151/0/en/macrogenics-reports-third-quarter-2026-financial-results-and-highlights-recent-corporate-progress.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_mrkr_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Relapsed/refractory lymphoma after CAR-T therapy",
+   "source": "https://www.globenewswire.com/news-release/2026/11/19/3406436/0/en/marker-therapeutics-awarded-16-2-million-cprit-grant-to-advance-mt-601-in-phase-2-apollo-study.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_nrix_2026-12-15": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Relapsed/refractory CLL/SLL",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396262/0/en/nurix-therapeutics-to-present-new-and-updated-data-from-ongoing-phase-1a-1b-trial-of-bexobrutideg-nx-5948-in-relapsed-refractory-cll-sll-at-the-68th-ash-annual-meeting-and-expositi.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_vstm_2026-12-05": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as KRAS G12D-mutated metastatic NSCLC (previously treated)",
+   "source": "https://www.businesswire.com/news/home/20261110841945/en/Verastem-Oncology-Announces-Late-Breaking-Oral-Presentation-of-VS-7375-Lung-Cancer-Data-at-IASLCASCO-2026-North-America-Conference-on-Lung-Cancer/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_pbyi_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Chemotherapy-naive HER2-negative, HR-positive metastatic breast cancer",
+   "source": "https://www.sec.gov/Archives/edgar/data/1401667/000143774926035279/ex_1011140.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_pbyi_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Extensive-stage small cell lung cancer",
+   "source": "https://www.sec.gov/Archives/edgar/data/1401667/000143774926035279/ex_1011140.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_plrx_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as ICI-refractory solid tumors (NSCLC, ccRCC, high TMB cohorts)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1746473/000174647326000127/plrx-20261112xexx991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_rvmd_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Previously treated RAS mutant NSCLC",
+   "source": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-reports-third-quarter-2026-financial",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_rvmd_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as RAS G12D metastatic colorectal cancer",
+   "source": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-reports-third-quarter-2026-financial",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_rvmd_2027-12-31-rmc5127": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as RAS G12V-mutant solid tumors",
+   "source": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-reports-third-quarter-2026-financial",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_xncr_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Advanced clear cell renal cell carcinoma",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326732/000132673226000062/xncr-20261104xexx991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_xncr_2027-06-30-xmab819": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Advanced clear cell renal cell carcinoma",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326732/000132673226000062/xncr-20261104xexx991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_zlab_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as 2L+ extrapulmonary neuroendocrine carcinomas",
+   "source": "https://www.businesswire.com/news/home/20261105430679/en/Zai-Lab-Presents-Updated-Clinical-Data-Demonstrating-Zocilurtatug-Pelitecan-Zoci-Induces-Clinically-Meaningful-Responses-and-a-Manageable-Safety-Profile-in-Previously-Treated-Extrapulmonary-Neuroendocrine-Carcinomas/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_zlab_2027-12-31-zocilurtat": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Small cell lung cancer (2L)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1704292/000162828026070517/zlab-2026115x8kex991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_zlab_2027-06-30-zl6201": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as Sarcoma and selected solid tumors",
+   "source": "https://www.sec.gov/Archives/edgar/data/1704292/000162828026070517/zlab-2026115x8kex991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_acad_2027-12-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Major depressive disorder",
+   "source": "https://www.businesswire.com/news/home/20261104772757/en/Acadia-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_acad_2027-12-31-remlifanse": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Lewy body dementia psychosis",
+   "source": "https://www.businesswire.com/news/home/20261104772757/en/Acadia-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_argx_2026-12-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Multifocal motor neuropathy",
+   "source": "https://www.globenewswire.com/news-release/2026/10/22/3386023/0/en/argenx-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_argx_2027-12-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Chronic inflammatory demyelinating polyneuropathy",
+   "source": "https://www.globenewswire.com/news-release/2026/10/22/3386023/0/en/argenx-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_autl_2027-10-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Progressive multiple sclerosis",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399322/0/en/autolus-therapeutics-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_biib_2027-09-30": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Dravet syndrome",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000875045/000087504526000094/exhibit991-q32026pressrele.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_bivi_2027-03-20": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Early Parkinson's disease (levodopa-naive)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399434/0/en/biovie-invited-to-present-data-on-bezisterim-in-parkinson-s-disease-at-the-ad-pd2027-international-conference-on-alzheimer-s-parkinson-s-diseases.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_dftx_2027-12-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Major depressive disorder",
+   "source": "https://www.businesswire.com/news/home/20261106929797/en/Definium-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Highlights/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_evmn_2027-12-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Refractory migraine",
+   "source": "https://www.businesswire.com/news/home/20261112392424/en/Evommune-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Highlights/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_mplt_2028-12-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Schizophrenia",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403378/0/en/maplight-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_mplt_2027-12-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Alzheimer's disease psychosis",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403378/0/en/maplight-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_prax_2027-12-31-prax215": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as pain",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-company.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_rapp_2026-12-07": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as drug-resistant focal seizures",
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409113/0/en/rapport-to-present-new-long-term-open-label-safety-data-in-focal-onset-seizures-and-analyses-of-seizure-severity-and-burden-at-the-2026-aes-annual-meeting.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_vygr_2027-03-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Alzheimer's disease",
+   "source": "https://www.sec.gov/Archives/edgar/data/1640266/000119312526467226/d184454dex991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_xene_2026-12-07": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as focal seizures",
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409267/33485/en/xenon-to-present-new-azetukalner-data-in-focal-seizures-at-aes-2026.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_prta_2027-06-30": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Early Alzheimer's disease",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001559053/000155905326000030/exhibit991q32026earningsre.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_sptx_2027-06-30": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Major depressive disorder (with or without anxious distress)",
+   "source": "https://www.businesswire.com/news/home/20261102054810/en/Seaport-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Corporate-and-Clinical-Progress/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_sptx_2028-12-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Generalized anxiety disorder with sleep disturbance (sleep benefit)",
+   "source": "https://www.businesswire.com/news/home/20261102054810/en/Seaport-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Corporate-and-Clinical-Progress/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_sptx_2028-12-31-glyphago": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Generalized anxiety disorder",
+   "source": "https://www.businesswire.com/news/home/20261102054810/en/Seaport-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Corporate-and-Clinical-Progress/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_vrtx_2027-12-31": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Diabetic peripheral neuropathy (painful DPN)",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_vrtx_2027-12-31-vx993": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Diabetic peripheral neuropathy (painful DPN)",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_vrtx_2027-06-30": {
+   "ta": "CNS",
+   "basis": "Company release: indication stated as Generalized myasthenia gravis",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_allo_2027-12-31-allo329": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Autoimmune disease (SSc, myositis, lupus)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398329/0/en/allogene-therapeutics-reports-first-clinical-data-from-phase-1-resolution-study-of-allo-329-in-autoimmune-disease.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_autl_2028-12-31": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Refractory lupus nephritis",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399322/0/en/autolus-therapeutics-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_biib_2026-12-15-litifilima": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as systemic lupus erythematosus",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000875045/000087504526000094/exhibit991-q32026pressrele.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_biib_2027-06-30": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as antibody-mediated rejection",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000875045/000087504526000094/exhibit991-q32026pressrele.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_eq_2027-06-30": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Healthy participants (AhR agonist; autoimmune/inflammatory)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402196/0/en/equillium-reports-third-quarter-2026-financial-results-and-recent-corporate-and-clinical-highlights.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_evmn_2027-12-31-evo570": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Healthy volunteers (VAV1 degrader; immunology)",
+   "source": "https://www.businesswire.com/news/home/20261112392424/en/Evommune-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Highlights/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_evmn_2027-12-31-evo646": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Healthy volunteers (TLR7/8 antagonist; lupus and other)",
+   "source": "https://www.businesswire.com/news/home/20261112392424/en/Evommune-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Highlights/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_evmn_2028-12-31": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Ulcerative colitis",
+   "source": "https://www.businesswire.com/news/home/20261112392424/en/Evommune-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Highlights/",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_sndx_2026-12-15": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as R/R chronic GVHD",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395377/0/en/syndax-highlights-acceptance-of-19-revuforj-revumenib-and-niktimvo-axatilimab-csfr-abstracts-including-7-for-oral-presentation-at-ash-2026.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_spry_2027-03-31": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Chronic spontaneous urticaria",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001671858/000119312526449748/spry-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_spry_2027-12-31": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Chronic spontaneous urticaria",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001671858/000119312526449748/spry-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_xncr_2027-12-31": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Moderately to severely active ulcerative colitis",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326732/000132673226000062/xncr-20261104xexx991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_xncr_2027-06-30-xmab412": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Healthy participants (autoimmune/inflammatory disease program)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326732/000132673226000062/xncr-20261104xexx991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_zura_2027-06-30": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Systemic sclerosis",
+   "source": "https://www.sec.gov/Archives/edgar/data/1855644/000110465926124149/tm2629310d1_ex99-1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_jspr_2026-12-31-briquilima": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Conditioning for HSCT in SCID",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403434/0/en/jasper-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_alms_2026-12-31": {
+   "ta": "Dermatology",
+   "basis": "Company release: indication stated as Moderate-to-severe plaque psoriasis",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402170/0/en/alumis-reports-third-quarter-2026-financial-results-and-highlights-recent-business-updates.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_krys_2026-12-31": {
+   "ta": "Dermatology",
+   "basis": "Company release: indication stated as Hailey-Hailey disease",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392990/0/en/krystal-biotech-announces-third-quarter-2026-financial-and-operating-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_zlab_2027-06-30": {
+   "ta": "Dermatology",
+   "basis": "Company release: indication stated as Moderate-to-severe atopic dermatitis",
+   "source": "https://ir.zailaboratory.com/news-releases/news-release-details/zai-lab-presents-positive-first-human-data-zl-1503-novel-il-13il",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_ardx_2027-12-31": {
+   "ta": "Gastroenterology",
+   "basis": "Company release: indication stated as Chronic idiopathic constipation in adults",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394744/0/en/ardelyx-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_fbio_2027-12-31": {
+   "ta": "Gastroenterology",
+   "basis": "Company release: indication stated as Irritable bowel syndrome with diarrhea (IBS-D)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402542/28889/en/fortress-biotech-reports-third-quarter-2026-financial-results-and-recent-corporate-highlights.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_phat_2026-12-31": {
+   "ta": "Gastroenterology",
+   "basis": "Company release: indication stated as Eosinophilic Esophagitis (EoE)",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391109/0/en/phathom-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_phat_2028-03-31": {
+   "ta": "Gastroenterology",
+   "basis": "Company release: indication stated as Non-Erosive GERD (as-needed use)",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391109/0/en/phathom-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_tara_2026-12-31": {
+   "ta": "Gastroenterology",
+   "basis": "Company release: indication stated as Intestinal failure in patients dependent on parenteral support (PS) with choline deficiency",
+   "source": "https://www.sec.gov/Archives/edgar/data/1359931/000121390026116607/ea030956701ex99-1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_argx_2027-06-30": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Primary immune thrombocytopenia",
+   "source": "https://www.globenewswire.com/news-release/2026/10/22/3386023/0/en/argenx-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_autl_2026-12-31": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Light-chain (AL) amyloidosis",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399322/0/en/autolus-therapeutics-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_beam_2026-12-15-ristogloge": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Sickle cell disease",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399328/0/en/beam-therapeutics-announces-positive-topline-pivotal-data-from-beacon-phase-1-2-trial-of-risto-cel-in-patients-with-sickle-cell-disease.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_beam_2027-12-31": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Sickle cell disease",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399328/0/en/beam-therapeutics-announces-positive-topline-pivotal-data-from-beacon-phase-1-2-trial-of-risto-cel-in-patients-with-sickle-cell-disease.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_immx_2026-12-14": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Relapsed/refractory AL amyloidosis",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402248/0/en/immix-biopharma-reports-third-quarter-2026-financial-results-and-update-on-corporate-progress.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_iron_2026-12-31": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Anemia of myelofibrosis",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396436/0/en/disc-medicine-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_iron_2026-12-31-disc3405": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Polycythemia vera",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396436/0/en/disc-medicine-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_iron_2026-12-15": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Sickle cell disease",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396436/0/en/disc-medicine-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_iron_2027-12-31": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Inflammatory bowel disease (anemia)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396436/0/en/disc-medicine-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_sln_2026-12-15": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Polycythemia vera",
+   "source": "https://s27.q4cdn.com/622061554/files/doc_news/Silence-Therapeutics-Highlights-Recent-Business-Achievements-and-Reports-Third-Quarter-2026-Financial-Results-2026.pdf",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_tecx_2027-12-31-tx2100": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Hereditary hemorrhagic telangiectasia (hematologic-support-dependent HHT)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1681087/000119312526449965/tecx-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_crsp_2026-12-31": {
+   "ta": "Hematology",
+   "basis": "Company release: indication stated as Thromboprophylaxis in total knee arthroplasty",
+   "source": "https://www.globenewswire.com/news-release/2026/11/2/3393703/0/en/crispr-therapeutics-provides-business-update-and-reports-third-quarter-2026-financial-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_bcrx_2027-09-30": {
+   "ta": "Rare disease",
+   "basis": "Company release: indication stated as Hereditary angioedema",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395167/29446/en/biocryst-reports-third-quarter-2026-financial-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_bcrx_2026-12-31": {
+   "ta": "Rare disease",
+   "basis": "Company release: indication stated as Netherton syndrome",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395167/29446/en/biocryst-reports-third-quarter-2026-financial-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_rckt_2028-12-31": {
+   "ta": "Rare disease",
+   "basis": "Company release: indication stated as Danon disease",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001281895/000114036126043434/ef20085455_ex99-1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_srpt_2026-12-31": {
+   "ta": "Rare disease",
+   "basis": "Company release: indication stated as Myotonic dystrophy type 1 (DM1)",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000873303/000119312526449822/srpt-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_srpt_2026-12-31-srp1001": {
+   "ta": "Rare disease",
+   "basis": "Company release: indication stated as Facioscapulohumeral muscular dystrophy type 1 (FSHD1)",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000873303/000119312526449822/srpt-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_tvtx_2027-12-31": {
+   "ta": "Rare disease",
+   "basis": "Company release: indication stated as Classical homocystinuria",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001438533/000143853326000074/a2026q3_8-kxex991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_vrtx_2026-12-31": {
+   "ta": "Rare disease",
+   "basis": "Company release: indication stated as Myotonic dystrophy type 1",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_wve_2026-12-31": {
+   "ta": "Rare disease",
+   "basis": "Company release: indication stated as Alpha-1 antitrypsin deficiency (AATD)",
+   "source": "https://ir.wavelifesciences.com/news-releases/news-release-details/wave-life-sciences-reports-third-quarter-2026-financial-results",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_calc_2027-12-31": {
+   "ta": "Respiratory",
+   "basis": "Company release: indication stated as Pulmonary hypertension",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399306/0/en/calcimedica-reports-third-quarter-2026-financial-results-and-provides-clinical-corporate-updates.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_krys_2027-06-30": {
+   "ta": "Respiratory",
+   "basis": "Company release: indication stated as Cystic fibrosis",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392990/0/en/krystal-biotech-announces-third-quarter-2026-financial-and-operating-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_krys_2027-12-31-kb408": {
+   "ta": "Respiratory",
+   "basis": "Company release: indication stated as Alpha-1 antitrypsin deficiency lung disease",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392990/0/en/krystal-biotech-announces-third-quarter-2026-financial-and-operating-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_tecx_2027-01-31": {
+   "ta": "Respiratory",
+   "basis": "Company release: indication stated as Pulmonary hypertension with HFpEF (PH-HFpEF)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1681087/000119312526449965/tecx-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_tecx_2027-12-31": {
+   "ta": "Respiratory",
+   "basis": "Company release: indication stated as Pulmonary hypertension associated with interstitial lung disease (PH-ILD)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1681087/000119312526449965/tecx-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_trvi_2027-12-31": {
+   "ta": "Respiratory",
+   "basis": "Company release: indication stated as Chronic cough in idiopathic pulmonary fibrosis",
+   "source": "https://www.sec.gov/Archives/edgar/data/1563880/000119312526453670/trvi-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_trvi_2028-06-30": {
+   "ta": "Respiratory",
+   "basis": "Company release: indication stated as Chronic cough in idiopathic pulmonary fibrosis",
+   "source": "https://www.sec.gov/Archives/edgar/data/1563880/000119312526453670/trvi-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_trvi_2028-06-30-haduvio": {
+   "ta": "Respiratory",
+   "basis": "Company release: indication stated as Chronic cough in non-IPF interstitial lung disease",
+   "source": "https://www.sec.gov/Archives/edgar/data/1563880/000119312526453670/trvi-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_trvi_2027-12-31-haduvio": {
+   "ta": "Respiratory",
+   "basis": "Company release: indication stated as Refractory chronic cough",
+   "source": "https://www.sec.gov/Archives/edgar/data/1563880/000119312526453670/trvi-ex99_1.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_clls_2027-12-31": {
+   "ta": "Metabolic",
+   "basis": "Company release: indication stated as Severe hypertriglyceridemia",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402347/0/en/cellectis-reports-third-quarter-2026-financial-results-and-provides-a-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_clls_2028-06-30": {
+   "ta": "Metabolic",
+   "basis": "Company release: indication stated as Severe hypercholesterolemia",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402347/0/en/cellectis-reports-third-quarter-2026-financial-results-and-provides-a-business-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_wve_2027-12-31": {
+   "ta": "Metabolic",
+   "basis": "Company release: indication stated as Obesity",
+   "source": "https://ir.wavelifesciences.com/news-releases/news-release-details/wave-life-sciences-highlights-wve-007-inhbe-sirna-progress",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_mist_2028-12-31": {
+   "ta": "Cardiovascular",
+   "basis": "Company release: indication stated as Atrial fibrillation with rapid ventricular rate (AFib-RVR)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402500/0/en/milestone-pharmaceuticals-reports-third-quarter-2026-financial-results-and-announces-cost-efficiency-measures-designed-to-extend-cash-runway-through-afib-rvr-phase-3-data.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_cocp_2026-12-31": {
+   "ta": "Infectious",
+   "basis": "Company release: indication stated as Norovirus prevention and treatment",
+   "source": "https://www.globenewswire.com/news-release/2026/11/15/3403093/0/en/cocrystal-pharma-provides-business-update-and-reports-third-quarter-2026-financial-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_kod_2026-12-31": {
+   "ta": "Ophthalmology",
+   "basis": "Company release: indication stated as Macular edema secondary to inflammation (MESI)",
+   "source": "https://www.prnewswire.com/news-releases/kodiak-sciences-announces-recent-business-highlights-and-third-quarter-2026-financial-results-302938390.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_kod_2027-06-30": {
+   "ta": "Ophthalmology",
+   "basis": "Company release: indication stated as Macular edema secondary to inflammation (MESI)",
+   "source": "https://www.prnewswire.com/news-releases/kodiak-sciences-announces-recent-business-highlights-and-third-quarter-2026-financial-results-302938390.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_krys_2027-12-31": {
+   "ta": "Ophthalmology",
+   "basis": "Company release: indication stated as Corneal abrasions in dystrophic epidermolysis bullosa",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392990/0/en/krystal-biotech-announces-third-quarter-2026-financial-and-operating-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_krys_2027-12-31-kb801": {
+   "ta": "Ophthalmology",
+   "basis": "Company release: indication stated as Neurotrophic keratitis",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392990/0/en/krystal-biotech-announces-third-quarter-2026-financial-and-operating-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_iva_2026-12-31": {
+   "ta": "Hepatology",
+   "basis": "Company release: indication stated as MASH",
+   "source": "https://www.globenewswire.com/news-release/2026/11/23/3408877/0/en/inventiva-reports-unaudited-2026-third-quarter-financial-results.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_jspr_2026-12-31": {
+   "ta": "Nephrology",
+   "basis": "Company release: indication stated as IgA nephropathy",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403434/0/en/jasper-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_jspr_2027-03-31": {
+   "ta": "Nephrology",
+   "basis": "Company release: indication stated as IgA nephropathy",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403434/0/en/jasper-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_tvtx_2027-12-31-filspari": {
+   "ta": "Nephrology",
+   "basis": "Company release: indication stated as Post-transplant recurrent IgAN or FSGS",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001438533/000143853326000074/a2026q3_8-kxex991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_vrtx_2027-12-31-inaxaplin": {
+   "ta": "Nephrology",
+   "basis": "Company release: indication stated as APOL1-mediated kidney disease",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_xers_2028-12-31": {
+   "ta": "Endocrinology",
+   "basis": "Company release: indication stated as Hypothyroidism",
+   "source": "https://www.sec.gov/Archives/edgar/data/1867096/000186709626000114/exh991q32026earningsrelease.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_zlab_2027-12-31-elegrobart": {
+   "ta": "Endocrinology",
+   "basis": "Company release: indication stated as Thyroid eye disease (China)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1704292/000162828026070517/zlab-2026115x8kex991.htm",
+   "tagged": "2026-11-25 readout mine; hand decision from the company's stated indication"
   }
  },
  "nct_mismatch": [
