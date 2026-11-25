@@ -22,6 +22,8 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from readout_links import drug_page, pdufa_page  # noqa: E402
 SITE = os.path.join(HERE, "pdufa_site_src")
 PAGE = os.path.join(SITE, "readouts", "index.html")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
@@ -104,11 +106,19 @@ def main():
                          f'<div style="font-size:11px;color:{col}">{esc(oc)}{mvtxt} &middot; '
                          f'<a href="{esc(rep.get("source_url") or "#")}" rel="nofollow" '
                          f'style="color:{col}">company release</a></div>')
+        # 2026-11-25 (David: link the readouts): the program links to its drug page and the company cell to the
+        # company's PDUFA-history page, each only when that page exists (readout_links.py).
+        dpg = drug_page(r)
+        ppg = pdufa_page(r.get("t"))
+        progc = f'<a href="{esc(dpg)}">{esc(prog)}</a>' if dpg else esc(prog)
+        coc = esc((r.get("company") or "")[:38])
+        if ppg:
+            coc += f'<div style="font-size:11px"><a href="{esc(ppg)}">PDUFA history</a></div>'
         trs.append(
             f'<tr><td class="dt">{date_cell}</td>'
             f'<td class="tk"><a href="/ticker/{esc(r["t"])}">{esc(r["t"])}</a></td>'
-            f'<td>{esc(prog)} {ev}</td>'
-            f'<td class="co">{esc((r.get("company") or "")[:38])}</td>'
+            f'<td>{progc} {ev}</td>'
+            f'<td class="co">{coc}</td>'
             f'<td class="sr">{srcbit}</td></tr>')
 
     block = (
@@ -120,7 +130,7 @@ def main():
         '.gtbl td.dt{color:#eef4fc;font-weight:700;white-space:nowrap}'
         '.gtbl td.tk a{color:#6fb6ff;font-weight:700}'
         '.gtbl td.co{color:#7c93b6}.gtbl td.sr{white-space:nowrap;font-size:12px}'
-        '.gtbl td.sr a{color:#6fb6ff}'
+        '.gtbl td.sr a{color:#6fb6ff}.gtbl td a{color:#6fb6ff}'
         '.pill{display:inline-block;font-size:10px;font-weight:700;padding:1px 6px;border-radius:20px}'
         '</style>'
         '<div class="mhead" style="color:#f0c86a;margin-top:22px">Company-guided readouts</div>'

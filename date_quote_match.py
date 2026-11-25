@@ -36,7 +36,9 @@ ORD_H = {1: "first", 2: "second"}
 def norm(s):
     s = (s or "").replace(" ", " ").replace("‑", "-").replace("–", "-").replace("—", "-")
     s = s.replace("’", "'").replace("…", " ")
-    return re.sub(r"\s+", " ", s).strip().lower()
+    s = re.sub(r"\s+", " ", s).strip().lower()
+    # 2026-11-25: "CY2027" (calendar year 2027, Immutep's wording) states the year 2027.
+    return re.sub(r"\bcy\s?(20\d\d)\b", r"calendar year \1", s)
 
 
 def _month_pat(m):
@@ -120,6 +122,8 @@ def resolve_relative_years(q, ref):
         return q
     q = re.sub(r"\b(?:this|the current) (?:calendar )?year\b", str(ref.year), q)
     q = re.sub(r"\bnext (?:calendar )?year\b", str(ref.year + 1), q)
+    # "before/by the end of the year" written in a dated release means that release's calendar year.
+    q = re.sub(r"\b(?:the )?end of the year\b", f"end of {ref.year}", q)
     q = re.sub(r"\b(first|second|third|fourth) quarter of (?:the )?year\b", rf"\1 quarter of {ref.year}", q)
     return q
 

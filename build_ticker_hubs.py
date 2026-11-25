@@ -28,6 +28,9 @@ Usage:  python build_ticker_hubs.py            # build all, update sitemap
 import os, re, json, html, argparse, datetime as dt, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+import sys as _sys
+_sys.path.insert(0, HERE)
+from readout_links import drug_page as _drug_page, drug_title as _drug_title  # noqa: E402
 SITE = os.path.join(HERE, 'pdufa_site_src')
 TODAY = dt.date.today().isoformat()
 try:
@@ -186,7 +189,8 @@ def load_data():
                                       precision=r.get('dp') or 'day',
                                       label=(r.get('_d') or {}).get('guided_label'),
                                       status=r.get('st'),
-                                      resolution=((r.get('_d') or {}).get('resolution') or {}).get('state')))
+                                      resolution=((r.get('_d') or {}).get('resolution') or {}).get('state'),
+                                      drug_page=_drug_page(r)))
             nm = r.get('company')
             if nm and str(nm).strip() not in ('', tkr):
                 votes[tkr][str(nm).strip()] += 1
@@ -357,6 +361,17 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
             out.append(f'<a class="row" href="{esc(href)}"{ext}>'
                        f'<span class="t">{when}{badge}</span>'
                        f'<span class="d">{esc(r.get("drug") or "Clinical readout")}</span></a>')
+
+        # 2026-11-25 (David: link the readouts): each readout row links its source, so the drug pages those
+        # readouts belong to are listed once beneath them (only pages that exist; readout_links.py).
+        dps = []
+        for r in rh:
+            dp_ = r.get('drug_page')
+            if dp_ and dp_ not in [x[0] for x in dps]:
+                dps.append((dp_, _drug_title(dp_) or dp_.rsplit('/', 1)[-1]))
+        if dps:
+            out.append('<div style="margin:10px 0 4px">' + ''.join(
+                f'<a class="chip" href="{esc(u)}">{esc(n[:40])} drug page →</a>' for u, n in dps[:12]) + '</div>')
 
     ch = sorted(confs.get(tk, []), key=lambda x: x['date'])
     if ch:
