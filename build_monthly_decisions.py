@@ -62,7 +62,10 @@ def ev_sentence(r, decided=False):
     # Red team 2026-11-01: indications that already open with a preposition or regimen word published
     # "in in combination with..." and "in with BCG..." -- no extra "in" before those.
     lead = re.match(r"(?i)(in|with|for|as|after|plus|and|to)\b", ind)
-    ind_txt = (f" {esc(ind)}" if lead else f" in {esc(ind)}") if ind else ""
+    # 2026-11-25: an indication that opens with a verb ("reduce the occurrence of surgical site infections", PYPD
+    # Bacfenssi) published "in reduce the occurrence ..."; it takes "to".
+    verb = re.match(r"(?i)(reduce|prevent|treat|lower|delay|improve|maintain|increase|decrease)\b", ind)
+    ind_txt = (f" {esc(ind)}" if lead else f" to {esc(ind)}" if verb else f" in {esc(ind)}") if ind else ""
     d = str(r.get("d") or "")
     day = dt.date.fromisoformat(d)
     href = str(r.get("url") or f"/ticker/{tk}")

@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "BBIO",
+  "date": "2026-11-23",
+  "outcome": "Approved",
+  "drug": "Welgemda (BBP-418, ribitol)",
+  "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9), patients weighing at least 30 kg",
+  "company": "BridgeBio Pharma",
+  "cap": "Large",
+  "headline": "BridgeBio announced on November 23, 2026 that the FDA granted traditional approval to Welgemda (BBP-418, ribitol) for LGMD2I/R9, on the Phase 3 FORTIFY trial.",
+  "pdufa_note": "BridgeBio announced on November 23, 2026 that the FDA granted traditional (full) approval to Welgemda (BBP-418, ribitol), an oral treatment for limb-girdle muscular dystrophy type 2I/R9 in adult and pediatric patients weighing at least 30 kg (<a href=\"https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">BridgeBio 8-K, Exhibit 99.1</a>). BridgeBio had disclosed a PDUFA goal date of November 27, 2026 under Priority Review (<a href=\"https://www.sec.gov/Archives/edgar/data/1743881/000174388126000026/bbio-20260630xex991.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">BridgeBio 8-K, August 10, 2026</a>), so the announcement came four days before it. The FDA's own record of the action day had not been read when this page was published, so no early or late margin is given yet. Per BridgeBio, in the Phase 3 FORTIFY trial the 100-meter timed test showed a 0.27 m/s velocity benefit relative to placebo at 12 months (p&lt;0.0001).",
+  "source": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm",
+  "source_label": "BridgeBio 8-K Exhibit 99.1, November 23, 2026"
+ }
+]

@@ -1356,7 +1356,7 @@
    "signing_division_as_printed": "",
    "signing_office_as_printed": "",
    "signing_center": "CBER",
-   "signer_name_shown_as_b4": false,
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/REPL-2025-07-22"
   },
   {
@@ -1374,7 +1374,7 @@
    "signing_division_as_printed": "",
    "signing_office_as_printed": "",
    "signing_center": "CBER",
-   "signer_name_shown_as_b4": false,
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/CAPR-2025-07-11"
   },
   {
@@ -1392,7 +1392,7 @@
    "signing_division_as_printed": "",
    "signing_office_as_printed": "",
    "signing_center": "CBER",
-   "signer_name_shown_as_b4": false,
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/RARE-2025-07-11"
   },
   {
@@ -1788,7 +1788,7 @@
    "signing_division_as_printed": "",
    "signing_office_as_printed": "",
    "signing_center": "CBER",
-   "signer_name_shown_as_b4": false,
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/ATRA-2025-01-16"
   },
   {
@@ -2454,7 +2454,7 @@
    "signing_division_as_printed": "",
    "signing_office_as_printed": "",
    "signing_center": "CBER",
-   "signer_name_shown_as_b4": false,
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {

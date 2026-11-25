@@ -6,6 +6,8 @@
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
+  "drug_pages|bezuclastinib-summit|fda-oncology-notifications",
+  "drug_pages|bezuclastinib|fda-oncology-notifications",
   "drug_pages|enflonsia|openfda:20261014",
   "drug_pages|european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
   "drug_pages|european-respiratory|sponsor:INO:2026-10-30",
@@ -13,6 +15,7 @@
   "drug_pages|neladalkib|sponsor:GSK:2026-11-17",
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
   "drug_pages|rap-219-long-acting|fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset-",
+  "drug_pages|rap-219-long-acting|fda-press:fda-approves-first-treatment-limb-girdle-muscular-dystrophy-",
   "drug_pages|remibrutinib|openfda:20261006",
   "drug_pages|tecentriq|fda-oncology-notifications",
   "drug_pages|ultomiris|openfda:20261021",
@@ -22,11 +25,16 @@
   "edgar_8k|pdufa_nuvl_2026-11-27|0001654954-26-009181",
   "edgar_8k|pdufa_nvcr_2026-11-15|0001645113-26-000081",
   "edgar_8k|pdufa_nvcr_2026-11-15|0001645113-26-000085",
+  "edgar_8k|pdufa_pypd_2026-11-28|0001213900-26-123719",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1133869/000110465926125150/capr-ex99d1.htm",
+  "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_ex2-1.htm",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
   "fda_drugs_feed|pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-darzalex-faspro-newly-diagnosed-light-chain-amyloidosis",
+  "fda_drugs_feed|pdufa_cogt_2026-11-30|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
+  "fda_drugs_feed|pdufa_cogt_2026-12-30|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
+  "fda_drugs_feed|pdufa_cogt_2027-06-29|http://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
   "fda_drugs_feed|pdufa_jazz_2027-04-16|http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation",
@@ -37,8 +45,9 @@
   "fda_press|press:http://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
   "sponsor_feed|pdufa_ino_2026-10-30|https://ir.inovio.com/news/news-details/2026/INOVIO-Announces-FDA-Accelerated-Approval-of-VOCERYQ-an-Immunotherapy-to-Reduce-the-Frequency-of-Surgery-in-Adults-with-Recurrent-Respiratory-Papillomatosis-RRP/default.aspx",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
-  "sponsor_feed|pdufa_regn_2026-11-30|https://investor.regeneron.com/news-releases/news-release-details/livsayistm-cemdisiran-approved-fda-first-and-only-sirna-therapy"
+  "sponsor_feed|pdufa_regn_2026-11-30|https://investor.regeneron.com/news-releases/news-release-details/livsayistm-cemdisiran-approved-fda-first-and-only-sirna-therapy",
+  "sponsor_feed|pdufa_rhhby_2026-11-30|https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede"
  ],
- "last_clear_run": "2026-11-20T09:12:44Z",
+ "last_clear_run": "2026-11-25T05:47:00Z",
  "email_status": "mention-issue (already open)"
 }

@@ -50,7 +50,15 @@ SITE_LINKS = [
     # 2026-11-21 (round 4, internal links): each of these had ONE inbound link site-wide
     ("PDUFA date changes", "/pdufa-date-changes"), ("Trial success rates", "/clinical-trial-success-rates"),
     ("Data coverage", "/coverage"),
-    ("Decisions 2026", "/decisions/2026"), ("Decisions 2025", "/decisions/2025"), ("CRL database", "/crl"), ("FDA approvals by month", "/fda-approvals"),
+    ("Decisions 2026", "/decisions/2026"), ("Decisions 2025", "/decisions/2025"), ("CRL database", "/crl"),
+    # 2026-11-22: Google URL Inspection showed /crl/facts and /learn/what-is-a-crl "unknown to Google" and
+    # /crl/companies "Discovered - currently not indexed" with no referring page; a sitewide link fixes discovery
+    ("CRL facts", "/crl/facts"), ("CRLs by company", "/crl/companies"), ("What is a CRL", "/learn/what-is-a-crl"),
+    ("FDA approvals by month", "/fda-approvals"),
+    # 2026-11-23: new pages each had 2-3 inbound links; Google URL Inspection showed /fda-approvals/companies
+    # "URL is unknown to Google" and /research/fda-approval-weekdays "Discovered - currently not indexed"
+    ("FDA approvals by company", "/fda-approvals/companies"), ("FDA approvals by drug", "/fda-approvals/drugs"), ("FDA approvals by NDA type", "/fda-approvals/types"), ("Approval weekdays", "/research/fda-approval-weekdays"),
+    ("CRL review clock", "/crl/review-clock"), ("Dataset changes", "/changes"),
     ("FDA approval letters", "/fda-approval-letters"), ("Decision timing study", "/research/fda-decision-timing"),
     ("Run-up study", "/runup-by-year"), ("FDA approval rate", "/fda-approval-rate"), ("Oncology readouts", "/readouts/oncology"),
     ("Readouts", "/readouts"), ("Conferences", "/conferences"), ("Corrections", "/corrections"), ("All pages", "/sitemap"),

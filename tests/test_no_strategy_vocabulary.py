@@ -23,6 +23,9 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import sys  # noqa: E402
+sys.path.insert(0, HERE)
+from crl_verbatim import strip_verbatim  # noqa: E402
 SITE = os.path.join(HERE, "pdufa_site_src")
 
 BANNED = [
@@ -37,8 +40,10 @@ BANNED = [
 SKIP = re.compile(r"[\\/](?:node_modules|_backup|\.git)[\\/]")
 
 
-def _visible_text(doc):
+def _visible_text(doc, path=""):
     doc = re.sub(r"<script[\s\S]*?</script>", " ", doc, flags=re.I)
+    # the FDA's own words on /crl/letter pages (build_crl_letters.py): a signer named Kelly is not a strategy
+    doc = strip_verbatim(doc, path)
     doc = re.sub(r"<style[\s\S]*?</style>", " ", doc, flags=re.I)
     doc = re.sub(r"<!--[\s\S]*?-->", " ", doc)
     return re.sub(r"<[^>]+>", " ", doc)
@@ -50,7 +55,7 @@ def test_no_strategy_vocabulary_on_public_pages():
     for p in sorted(glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True)):
         if SKIP.search(p):
             continue
-        text = _visible_text(io.open(p, encoding="utf-8", errors="replace").read())
+        text = _visible_text(io.open(p, encoding="utf-8", errors="replace").read(), p)
         for pat in pats:
             m = None
             for cand in pat.finditer(text):

@@ -25,8 +25,8 @@ the price move. /decisions publishes how many of each there are.
 
 ## Key facts you may want to cite (each with its n; updated by the daily build)
 
-- FDA decisions in our run-up study: **n=1,130** (2020-2026). Share ending in
-  approval rather than a Complete Response Letter, all review cycles: **86.7%**.
+- FDA decisions in our run-up study: **n=1,134** (2020-2026). Share ending in
+  approval rather than a Complete Response Letter, all review cycles: **86.8%**.
   That is a description of our archive, not a forecast for any pending application.
 - Clinical readouts matched to real stock returns: **n=1,752** (2022-2026).
   **56.5%** moved the stock less than ±5%.
@@ -34,14 +34,14 @@ the price move. /decisions publishes how many of each there are.
   event to the last close before it: **-0.03%**. The "conference run-up" retail
   investors remember is largely a **2020 artifact** (median +17.3% that year; negative
   in 2022, 2023 and 2024). Nano-cap presenters are the weakest cohort, not the strongest.
-- FDA decision timing, 2026, sourced decisions only: of **41** decisions with both a
-  documented goal date and a documented action date, **27** came before the goal
+- FDA decision timing, 2026, sourced decisions only: of **43** decisions with both a
+  documented goal date and a documented action date, **29** came before the goal
   date, **13** on it and **1** after. (/research/fda-decision-timing)
   The census is downloadable as CSV under CC BY 4.0, one row per decision with the goal day, FDA action
   day, announcement day, margin and the source URL of each date, versioned by row count:
-  /research/fda-decision-timing/fda-decision-timing-2026-v41.csv (always-current copy:
+  /research/fda-decision-timing/fda-decision-timing-2026-v43.csv (always-current copy:
   /research/fda-decision-timing/fda-decision-timing-2026.csv; earlier versions stay at their own addresses).
-  Cite as "pdufa.bio, FDA decision timing 2026 (v41)". The counts grow as decisions are added;
+  Cite as "pdufa.bio, FDA decision timing 2026 (v43)". The counts grow as decisions are added;
   an older page copy quoting a smaller census (for example v32) is superseded by the figures above.
 - Released FDA Complete Response Letters (openFDA): **466** letters, of which
   **312** went to applications the FDA has since approved. That ratio reflects
@@ -53,28 +53,28 @@ Each date is the goal date the sponsor or the FDA disclosed; each page links tha
 date is a deadline, not a prediction: the FDA can act before it, on it, or after it.
 
 - 2026-11-22: SVRA (Savara), MOLBREEVI (molgramostim inhalation) - (IMPALA-2). Indication: Autoimmune pulmonary alveolar proteinosis (aPAP). The sponsor said on 2026-11-20 that the FDA will not act by this date; the review is ongoing. https://www.pdufa.bio/pdufa/SVRA-molbreevi
-- 2026-11-27: BBIO (BridgeBio Pharma, Inc.), BBP-418 (ribitol) - (FORTIFY). Indication: Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9). https://www.pdufa.bio/pdufa/BBIO-bbp-418
-- 2026-11-28: PYPD (PolyPid Ltd.), D-PLEX100 - prevention of surgical site infections. Indication: Prevention of surgical site infections in patients undergoing abdominal colorectal surgery. https://www.pdufa.bio/pdufa/PYPD-d-plex100
-- 2026-11-30: COGT (Cogent Biosciences), Bezuclastinib + sunitinib - (PEAK). Indication: Gastrointestinal stromal tumors (GIST), 2L+. https://www.pdufa.bio/pdufa/COGT-bezuclastinib
-- 2026-11-30: RHHBY (Roche Holding AG), Giredestrant (lidERA). Indication: Adjuvant early breast cancer (ER+/HER2-). https://www.pdufa.bio/pdufa/RHHBY-giredestrant
 - 2026-11-30: VRTX (Vertex), Povetacicept (ALPN-303). Indication: IgA nephropathy. https://www.pdufa.bio/pdufa/VRTX-povetacicept
 - 2026-12-12: VNDA (Vanda Pharmaceuticals Inc.), Imsidolimab. https://www.pdufa.bio/pdufa/VNDA-imsidolimab
 - 2026-12-17: CORT (Corcept Therapeutics Inc), Relacorilant - (GRACE resubmission). Indication: Cushing's syndrome (hypercortisolism). https://www.pdufa.bio/pdufa/CORT-relacorilant
 - 2026-12-22: MLYS (Mineralys Therapeutics, Inc.), Lorundrostat. Indication: Hypertension. https://www.pdufa.bio/pdufa/MLYS-lorundrostat
 - 2026-12-23: GILD (Gilead Sciences, Inc.), Anito-cel (anitocabtagene autoleucel). Indication: Relapsed or refractory multiple myeloma (fourth-line), BCMA CAR-T. https://www.pdufa.bio/pdufa/GILD-anito-cel
+- 2026-12-27: PRAX (Praxis Precision Medicines Inc.), Relutrigine (PRAX-562) - (EMBOLD). Indication: Developmental epileptic encephalopathies (DEEs). https://www.pdufa.bio/pdufa/PRAX-relutrigine
+- 2026-12-27: VTRS (Viatris Inc.), MR-107A-02 (fast-acting meloxicam). Indication: Moderate-to-severe acute pain (non-opioid). https://www.pdufa.bio/pdufa/VTRS-mr-107a-02
+- 2026-12-30: COGT (Cogent Biosciences), Bezuclastinib (CGT9486) - (SUMMIT). Indication: Nonadvanced systemic mastocytosis (NonAdvSM). https://www.pdufa.bio/pdufa/COGT-bezuclastinib-summit
+- 2027-01-10: RHHBY (Roche Holding AG), Enspryng (satralizumab) - MOGAD (METEOROID). Indication: Myelin oligodendrocyte glycoprotein antibody-associated disease (MOGAD). https://www.pdufa.bio/pdufa/RHHBY-enspryng-mogad
 
 Full list: https://www.pdufa.bio/calendar
 
 ## Latest FDA decisions in our archive
 
+- PYPD, D-PLEX100 - prevention of surgical site infections: Approved, announced 2026-11-24 (no public FDA record of the day yet). https://www.pdufa.bio/fda-decision/PYPD-2026-11-24
+- COGT, Bezuclastinib + sunitinib - (PEAK): Approved, FDA action 2026-11-24. https://www.pdufa.bio/fda-decision/COGT-2026-11-24
+- RHHBY, Giredestrant (lidERA): Approved, FDA action 2026-11-23. https://www.pdufa.bio/fda-decision/RHHBY-2026-11-23
+- BBIO, BBP-418 (ribitol) - (FORTIFY): Approved, announced 2026-11-23 (no public FDA record of the day yet). https://www.pdufa.bio/fda-decision/BBIO-2026-11-23
 - CAPR, Deramiocel (CAP-1002) - (HOPE-3): CRL, announced 2026-11-20 (no public FDA record of the day yet). https://www.pdufa.bio/fda-decision/CAPR-2026-11-20
 - REGN, Cemdisiran (C5 RNAi) - (NIMBLE): Approved, FDA action 2026-11-18. https://www.pdufa.bio/fda-decision/REGN-2026-11-18
 - GSK, Neladalkib (NVL-655) - (ALKOVE-1): Approved, FDA action 2026-11-17. https://www.pdufa.bio/fda-decision/GSK-2026-11-17
 - TEVA, IGALMI (dexmedetomidine sublingual film) - (SERENITY At-Home): Approved, FDA action 2026-11-13. https://www.pdufa.bio/fda-decision/TEVA-2026-11-16
-- RHHBY, Giredestrant (+ everolimus): Approved, FDA action 2026-11-16. https://www.pdufa.bio/fda-decision/RHHBY-2026-11-16
-- CYTK, Aficamten - (MAPLE-HCM): Approved, FDA action 2026-11-13. https://www.pdufa.bio/fda-decision/CYTK-2026-11-16
-- SMMT, Ivonescimab: CRL, FDA action 2026-11-13. https://www.pdufa.bio/fda-decision/SMMT-2026-11-15
-- RHHBY, Gazyva (obinutuzumab) - primary membranous nephropathy (MAJESTY): Approved, FDA action 2026-11-13. https://www.pdufa.bio/fda-decision/RHHBY-2026-11-13
 
 Full archive: https://www.pdufa.bio/decisions
 
@@ -98,12 +98,20 @@ Full archive: https://www.pdufa.bio/decisions
 - /crl - every released FDA Complete Response Letter, by year, linking the FDA's PDF
 - /fda-approval-letters - the FDA's own record (approval letter, notice or CRL) behind every decision we date
 - /pdufa-date-changes - PDUFA dates the FDA or sponsor moved, with before and after
+- /changes - changes to 12 fields of each row of pdufa.bio's published dataset since July 2026 (dates, status, outcome, names, links and more), each linked to its public commit (CSV and JSON at /changes/data/)
 - /crl/offices - which FDA division and office signed each released CRL, counted from the letters' signature blocks
+- /crl/review-clock - days from the date each released CRL says the FDA received the application (or a response to an earlier letter) to the letter, from the letters' own text; median and percentiles with n, every letter listed (CSV at /crl/data/crl-review-clock.csv)
+- /crl/phrases - how many released CRLs contain each of a fixed list of regulatory terms in their text, each letter listed at /crl/phrase/<term>
+- /crl/letter/<application>-<date> - one page per released CRL (for example /crl/letter/nda-218995-2026-06-20): the letter's text as the FDA released it, its facts and its PDF
 - /feed - Atom feeds: /feed/decisions.xml (sourced FDA decisions and goal-date changes) and /feed/crl.xml (CRLs as the FDA releases them)
 - /adcomm - advisory committee meetings and outcomes
 - /readouts - clinical trial readouts, by month
 - /conferences - medical conference presentations by US-listed sponsors
 - /research/fda-decision-timing - does the FDA decide early? Sourced cases only
+- /research/fda-approval-weekdays - the weekday of every FDA original and efficacy supplement approval action date in Drugs@FDA since January 2025, with the Orange Book's NDA approval dates since 1982, US federal holidays, and the 2026 decisions whose goal date fell on a weekend or holiday (two CSVs)
+- /fda-approvals/companies - every FDA original NDA/BLA and efficacy supplement approval in Drugs@FDA since January 2025, grouped by sponsor company, each with its FDA letter (CSV)
+- /fda-approvals/drugs - the same Drugs@FDA approvals grouped by NDA or BLA number: how many original and efficacy-supplement approvals each application has had since January 2025, with FDA letters where Drugs@FDA lists one, and the released Complete Response Letters on the same application number (CSV)
+- /fda-approvals/types - every original NDA/BLA approval in Drugs@FDA since January 2025 under the NDA classification code (chemical type) Drugs@FDA prints for it, Type 1 new molecular entity through Type 10, with the meaning of each code from the FDA's MAPP 5018.2 and counts by year (CSV)
 - /research/readout-reaction - how much clinical readouts actually move stocks
 - /research/conference-runup - the conference run-up study
 - /research/short-interest-fda - why short interest does not predict FDA outcomes

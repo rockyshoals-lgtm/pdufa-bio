@@ -145,6 +145,30 @@
    "date": "2026-10-26",
    "brand": "Talzenna",
    "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-talazoparib-enzalutamide-metastatic-androgen-pathway-modulation-naive-or-sensitive"
+  },
+  {
+   "slug": "bbp-418",
+   "date": "2026-11-23",
+   "brand": "Welgemda",
+   "source": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm"
+  },
+  {
+   "slug": "bezuclastinib",
+   "date": "2026-11-24",
+   "brand": "Ekitna",
+   "source": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors"
+  },
+  {
+   "slug": "giredestrant",
+   "date": "2026-11-23",
+   "brand": "Wilserdly",
+   "source": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-giredestrant-adjuvant-treatment-er-positive-her2-negative-stage-i-ii-and-iii-breast"
+  },
+  {
+   "slug": "d-plex100",
+   "date": "2026-11-24",
+   "brand": "Bacfenssi",
+   "source": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm"
   }
  ]
 }

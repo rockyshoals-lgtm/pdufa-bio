@@ -84,6 +84,18 @@ jobs:
         run: pip install --quiet requests pandas openpyxl python-dateutil pillow
              google-api-python-client google-auth
 
+      # 2026-11-23 (audit 11-17, moat move 4): /changes, the changes to 12 fields of each row of the published dataset,
+      # read from the public commits (ledger _row_history.json, append-only). It reads committed versions only, so
+      # this run's own changes are recorded by the next run, under the commit that published them. The checkout is
+      # shallow; fetch back past the ledger's last commit first. With no committed ledger the step does nothing: a
+      # ledger started from a shallow checkout would name the wrong first version (build_row_history.py refuses it).
+      - name: "/changes: dataset changes field by field, from the public commits"
+        run: |
+          if [ ! -f _row_history.json ]; then echo "::warning::_row_history.json is not in the checkout; /changes not updated"; exit 0; fi
+          SINCE=$(python -c "import json;print(json.load(open('_row_history.json'))['last_ts'][:10])")
+          git fetch --quiet --shallow-since="$(date -d "$SINCE -3 days" +%Y-%m-%d)" origin "${GITHUB_REF_NAME:-main}" || git fetch --quiet --unshallow origin
+          python build_row_history.py || echo "::warning::/changes not updated this run (history fetch or read failed); the next run catches up"
+
       # 2026-11-10 (audit 11-09 §4): FMP via price_source.py, ~20 s (Polygon's free tier took ~25 min and a 429 on
       # 10-22 froze three runs). Everything that refreshed is written; if any forward ticker not on
       # _price_no_feed.json got no data, the step fails NAMING it and the next step opens one PRICES issue. The
@@ -170,7 +182,10 @@ jobs:
       - name: Regenerate homepage board (sorted + sparklines w/ decision-day reaction + auto-promote)
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
-        run: python build_home_board.py
+        # 2026-11-24: the listing first. The board drops a goal only when /decisions holds its decision, and the listing
+        # row for a new decision page was written further down, after the board. A decision page pushed without its
+        # listing row (Welgemda, BBIO 2026-11-23) left its goal on the board, and the home guard blocked every run.
+        run: python sync_decisions_listing.py && python build_home_board.py
 
       # 2026-11-18 (design red team, change 7): /calendar is committed shaped (open months first, decided months
       # folded, notes at the end). Every calendar writer below expects date order, so put the page back first;
@@ -446,6 +461,9 @@ jobs:
           python build_crl_capricor.py
           python build_crl_companies.py   # 2026-11-22: /crl/companies and /crl/company/<slug>, every letter by company
           python build_crl_offices.py     # 2026-11-22: /crl/offices, the FDA division and office each letter's signature names
+          python build_crl_letters.py     # 2026-11-23: /crl/letter/<slug>, one page per released CRL with the FDA's own text
+          python build_crl_phrases.py     # 2026-11-23: /crl/phrases, which released CRLs contain which regulatory terms
+          python build_crl_review_clock.py || echo "::warning::/crl/review-clock not rebuilt"   # 2026-11-23: days between the dates each CRL prints (after the slug ledger)
           python build_crl_dataset.py     # 2026-11-22 (moat move 6): /crl/data CSV and JSON, a dated copy per FDA release
 
 
@@ -643,6 +661,14 @@ jobs:
       - name: Rebuild the ticker hubs (decided events must leave the upcoming lists)
         run: python build_ticker_hubs.py
 
+      # 2026-11-25 (red team): the /tickers A-Z index was built by hand in August and never in this
+      # workflow, so it showed 26 goal dates that had passed as each company's next catalyst and listed
+      # 208 of 367 ticker hubs. --refresh rewrites only its counts and rows; the normalisers below keep the
+      # rest. tests/test_tickers_index_current.py fails if this step goes missing or a passed date is shown
+      # as upcoming.
+      - name: /tickers A-Z index from the living dataset (rows and counts only)
+        run: python build_tickers_hub.py --refresh
+
       # Third instance of the build-once-never-rebuild class (ticker hubs 08-26, calendar
       # month pages before that). /condition/* was built once from a June CSV and froze;
       # by late August it presented past events as upcoming and carried wrong-drug labels
@@ -741,6 +767,26 @@ jobs:
           # audit 2026-10-03 item 3.4: one fact-first sentence (dates + city) under every /conference h1
           python inject_conference_lede.py
           python build_early_decisions.py
+          # 2026-11-23 (audit move 8): weekday of every dated NDA first approval in the Orange Book, and the 2026
+          # decisions with a weekend or holiday goal date. Reads build_early_decisions' rows, so it runs after it.
+          # 2026-11-23: refresh the Drugs@FDA month cache FIRST. Run 45131808182 built the weekdays page here and
+          # refreshed the cache later, so the page no longer matched the cache and the guard blocked the deploy.
+          # /fda-approvals/companies (every approval by company, CSV, a line on each /crl/company page) reads the
+          # same cache. tests/test_fda_approval_weekdays.py, test_fda_approvals_companies.py.
+          python build_fda_approvals_months.py
+          python build_fda_approvals_companies.py || echo "::warning::/fda-approvals/companies not rebuilt this run; tests/test_fda_approvals_companies.py checks it against the cache"
+          # 2026-11-25: /fda-approvals/drugs (every approval by application, CSV, with the released CRLs on the same
+          # application number) and a line on each /crl/letter page; after build_crl_letters.py, which redraws those
+          # pages earlier in the run. tests/test_fda_approvals_drugs.py.
+          python build_fda_approvals_drugs.py || echo "::warning::/fda-approvals/drugs not rebuilt this run; tests/test_fda_approvals_drugs.py checks it against the cache"
+          # 2026-11-25: /fda-approvals/types (original approvals under the NDA classification code Drugs@FDA prints,
+          # with the FDA's MAPP 5018.2 meanings, CSV) from the same cache. tests/test_fda_approvals_types.py.
+          python build_fda_approvals_types.py || echo "::warning::/fda-approvals/types not rebuilt this run; tests/test_fda_approvals_types.py checks it against the cache"
+          python build_fda_approval_weekdays.py || echo "::warning::/research/fda-approval-weekdays not rebuilt"
+          # 2026-11-23: the BLA section of /crl/facts (last released CRL to the ORIG-1 approval Drugs@FDA lists) reads the
+          # same refreshed cache, so it is written here, after build_crl_facts.py wrote the page earlier in the run.
+          # tests/test_crl_bla_approvals.py recounts it from the CRL release and the cache.
+          python build_crl_bla_approvals.py || echo "::warning::/crl/facts BLA section not rebuilt"
           python add_amlx_avexitide.py
 
       - name: Explain what a PDUFA date is (plain English + FAQ schema)
@@ -1018,7 +1064,9 @@ jobs:
         run: python gsc_index_status.py --max 150
 
       - name: Internal links (site links, homepage hub, related, /sitemap)
-        run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
+        # /fda-approvals (months, companies) are built in the conferences step, before the weekdays page, so every
+        # page that reads _fda_approvals_months.json reads the same refreshed cache (run 45131808182).
+        run: python inject_site_links.py && python build_google_request_list.py
 
       # 2026-11-18 design red team (change 4, one page per event): every link to an event lands on the event's own
       # page in one hop, never on a retired bare /pdufa/{T} or an old slug that vercel.json redirects. After every pass
@@ -1240,9 +1288,15 @@ jobs:
           # surface is born, and it wasn't. Backups are excluded explicitly instead.
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
-          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json _crl_first_seen.json
+          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json _crl_first_seen.json _crl_letter_slugs.json _row_history.json
           git add -f runup_study_excluded.csv   # .gitignore has *.csv; this one is the study's audit trail of removed rows
           git add -f pdufa_site_src/crl/data/crl-letters.csv 2>/dev/null || true   # *.csv is ignored; the CRL dataset download
+          git add -f pdufa_site_src/crl/data/crl-review-clock.csv 2>/dev/null || true   # /crl/review-clock download
+          git add -f pdufa_site_src/changes/data/row-history.csv 2>/dev/null || true   # *.csv is ignored; the /changes download
+          git add -f pdufa_site_src/research/fda-approval-weekdays/data/drugs-at-fda-approval-dates.csv pdufa_site_src/research/fda-approval-weekdays/data/orange-book-nda-dates.csv _fda_approval_weekdays.json 2>/dev/null || true   # the weekday study's download and guard file
+          git add -f pdufa_site_src/fda-approvals/data/approvals-by-company.csv 2>/dev/null || true   # /fda-approvals/companies download
+          git add -f pdufa_site_src/fda-approvals/data/approvals-by-drug.csv 2>/dev/null || true   # /fda-approvals/drugs download (*.csv is ignored)
+          git add -f pdufa_site_src/fda-approvals/data/approvals-by-type.csv 2>/dev/null || true   # /fda-approvals/types download (*.csv is ignored)
           # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot
           # reach openFDA reads the newest release, not the August 2026 file (red team of /crl/data, Nov 22)
           git add CRL_corpus_openFDA_*.json 2>/dev/null || true

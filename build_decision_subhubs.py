@@ -39,7 +39,12 @@ def is_ok(r):
 
 
 def is_crl(r):
-    return 'class="no">CRL' in r or '<span class="no">' in r.split('class="d"', 1)[-1][:60]
+    # 2026-11-24: sync_decisions_listing.py writes a new CRL row as <span class="bad">CRL</span>; reading only the
+    # older class="no" style dropped SNY 2025-12-24, SMMT 2026-11-15 and CAPR 2026-11-20 from /decisions/crl, the
+    # year pages' CRL counts and the /crl/{year}/{month} pages.
+    # "bad" also marks a Withdrawn label elsewhere on the site, so for that class only the word CRL counts.
+    return ('class="no">CRL' in r or '<span class="no">' in r.split('class="d"', 1)[-1][:60]
+            or '<span class="bad">CRL</span>' in r.split('class="d"', 1)[-1][:60])
 
 
 def grid(secs):

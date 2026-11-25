@@ -191,12 +191,20 @@ Full archive: https://www.pdufa.bio/decisions
 - /crl - every released FDA Complete Response Letter, by year, linking the FDA's PDF
 - /fda-approval-letters - the FDA's own record (approval letter, notice or CRL) behind every decision we date
 - /pdufa-date-changes - PDUFA dates the FDA or sponsor moved, with before and after
+- /changes - changes to 12 fields of each row of pdufa.bio's published dataset since July 2026 (dates, status, outcome, names, links and more), each linked to its public commit (CSV and JSON at /changes/data/)
 - /crl/offices - which FDA division and office signed each released CRL, counted from the letters' signature blocks
+- /crl/review-clock - days from the date each released CRL says the FDA received the application (or a response to an earlier letter) to the letter, from the letters' own text; median and percentiles with n, every letter listed (CSV at /crl/data/crl-review-clock.csv)
+- /crl/phrases - how many released CRLs contain each of a fixed list of regulatory terms in their text, each letter listed at /crl/phrase/<term>
+- /crl/letter/<application>-<date> - one page per released CRL (for example /crl/letter/nda-218995-2026-06-20): the letter's text as the FDA released it, its facts and its PDF
 - /feed - Atom feeds: /feed/decisions.xml (sourced FDA decisions and goal-date changes) and /feed/crl.xml (CRLs as the FDA releases them)
 - /adcomm - advisory committee meetings and outcomes
 - /readouts - clinical trial readouts, by month
 - /conferences - medical conference presentations by US-listed sponsors
 - /research/fda-decision-timing - does the FDA decide early? Sourced cases only
+- /research/fda-approval-weekdays - the weekday of every FDA original and efficacy supplement approval action date in Drugs@FDA since January 2025, with the Orange Book's NDA approval dates since 1982, US federal holidays, and the 2026 decisions whose goal date fell on a weekend or holiday (two CSVs)
+- /fda-approvals/companies - every FDA original NDA/BLA and efficacy supplement approval in Drugs@FDA since January 2025, grouped by sponsor company, each with its FDA letter (CSV)
+- /fda-approvals/drugs - the same Drugs@FDA approvals grouped by NDA or BLA number: how many original and efficacy-supplement approvals each application has had since January 2025, with FDA letters where Drugs@FDA lists one, and the released Complete Response Letters on the same application number (CSV)
+- /fda-approvals/types - every original NDA/BLA approval in Drugs@FDA since January 2025 under the NDA classification code (chemical type) Drugs@FDA prints for it, Type 1 new molecular entity through Type 10, with the meaning of each code from the FDA's MAPP 5018.2 and counts by year (CSV)
 - /research/readout-reaction - how much clinical readouts actually move stocks
 - /research/conference-runup - the conference run-up study
 - /research/short-interest-fda - why short interest does not predict FDA outcomes

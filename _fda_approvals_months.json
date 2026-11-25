@@ -1,6 +1,6 @@
 {
 "2025-01": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "BLA761279",
@@ -36,23 +36,23 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219122Orig1s000ltr.pdf"
 },
 {
-"app": "NDA210259",
-"brand": "Calquence",
-"generic": "acalabrutinib",
-"sponsor": "Astrazeneca",
-"kind": "efficacy supplement",
-"sub": "SUPPL-11",
-"class": "Efficacy",
-"date": "2025-01-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210259Orig1s011;216387Orig1s005ltr.pdf"
-},
-{
 "app": "NDA216387",
 "brand": "Calquence",
 "generic": "acalabrutinib",
 "sponsor": "Astrazeneca",
 "kind": "efficacy supplement",
 "sub": "SUPPL-5",
+"class": "Efficacy",
+"date": "2025-01-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210259Orig1s011;216387Orig1s005ltr.pdf"
+},
+{
+"app": "NDA210259",
+"brand": "Calquence",
+"generic": "acalabrutinib",
+"sponsor": "Astrazeneca",
+"kind": "efficacy supplement",
+"sub": "SUPPL-11",
 "class": "Efficacy",
 "date": "2025-01-16",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210259Orig1s011;216387Orig1s005ltr.pdf"
@@ -255,10 +255,12 @@
 "date": "2025-01-31",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217188Orig1s008ltr.pdf"
 }
-]
+],
+"openfda_total": 444,
+"complete": true
 },
 "2025-02": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "NDA220266",
@@ -579,10 +581,12 @@
 "date": "2025-02-28",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/103909Orig1s5197ltr.pdf"
 }
-]
+],
+"openfda_total": 343,
+"complete": true
 },
 "2025-03": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "BLA761380",
@@ -969,10 +973,12 @@
 "date": "2025-03-28",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219019Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 427,
+"complete": true
 },
 "2025-04": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "NDA219208",
@@ -1008,23 +1014,23 @@
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761142Orig1s003ltr.pdf"
 },
 {
-"app": "NDA205436",
-"brand": "Sivextro",
-"generic": "tedizolid phosphate",
-"sponsor": "Cubist Pharms Llc",
-"kind": "efficacy supplement",
-"sub": "SUPPL-13",
-"class": "Efficacy",
-"date": "2025-04-04",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/205435Orig1s016, 205436Orig1s013ltr.pdf"
-},
-{
 "app": "NDA205435",
 "brand": "Sivextro",
 "generic": "tedizolid phosphate",
 "sponsor": "Cubist Pharms Llc",
 "kind": "efficacy supplement",
 "sub": "SUPPL-16",
+"class": "Efficacy",
+"date": "2025-04-04",
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/205435Orig1s016, 205436Orig1s013ltr.pdf"
+},
+{
+"app": "NDA205436",
+"brand": "Sivextro",
+"generic": "tedizolid phosphate",
+"sponsor": "Cubist Pharms Llc",
+"kind": "efficacy supplement",
+"sub": "SUPPL-13",
 "class": "Efficacy",
 "date": "2025-04-04",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/205435Orig1s016, 205436Orig1s013ltr.pdf"
@@ -1096,17 +1102,6 @@
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761175Orig1s000ltr.pdf"
 },
 {
-"app": "NDA210861",
-"brand": "Vitrakvi",
-"generic": "larotrectinib",
-"sponsor": "Bayer Hlthcare",
-"kind": "efficacy supplement",
-"sub": "SUPPL-12",
-"class": "Efficacy",
-"date": "2025-04-09",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210861Orig1s012ltr.pdf"
-},
-{
 "app": "NDA211710",
 "brand": "Vitrakvi",
 "generic": "larotrectinib",
@@ -1116,6 +1111,17 @@
 "class": "Efficacy",
 "date": "2025-04-09",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211710Orig1s010ltr.pdf"
+},
+{
+"app": "NDA210861",
+"brand": "Vitrakvi",
+"generic": "larotrectinib",
+"sponsor": "Bayer Hlthcare",
+"kind": "efficacy supplement",
+"sub": "SUPPL-12",
+"class": "Efficacy",
+"date": "2025-04-09",
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210861Orig1s012ltr.pdf"
 },
 {
 "app": "BLA761036",
@@ -1295,7 +1301,7 @@
 },
 {
 "app": "NDA220073",
-"brand": "Eliquis",
+"brand": "Eliquis Sprinkle",
 "generic": "apixaban",
 "sponsor": "Bristol",
 "kind": "new application",
@@ -1404,23 +1410,23 @@
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761232Orig1s006ltr.pdf"
 },
 {
-"app": "NDA212436",
-"brand": "Ibrance",
-"generic": "palbociclib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-8",
-"class": "Efficacy",
-"date": "2025-04-23",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s020; 212436Orig1s008ltr.pdf"
-},
-{
 "app": "NDA207103",
 "brand": "Ibrance",
 "generic": "palbociclib",
 "sponsor": "Pfizer",
 "kind": "efficacy supplement",
 "sub": "SUPPL-20",
+"class": "Efficacy",
+"date": "2025-04-23",
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s020; 212436Orig1s008ltr.pdf"
+},
+{
+"app": "NDA212436",
+"brand": "Ibrance",
+"generic": "palbociclib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-8",
 "class": "Efficacy",
 "date": "2025-04-23",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s020; 212436Orig1s008ltr.pdf"
@@ -1492,17 +1498,6 @@
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761338Orig2s000ltr.pdf"
 },
 {
-"app": "BLA761425",
-"brand": "Ustekinumab-Ttwe",
-"generic": "ustekinumab-ttwe",
-"sponsor": "Samsung Bioepis Co Ltd",
-"kind": "new application",
-"sub": "ORIG-2",
-"class": "Type 3 - New Dosage Form",
-"date": "2025-04-30",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761373Orig2s000; 761425Orig2s000ltr.pdf"
-},
-{
 "app": "BLA761373",
 "brand": "Ustekinumab-Ttwe",
 "generic": "ustekinumab-ttwe",
@@ -1512,6 +1507,17 @@
 "class": "Type 2 - New Active Ingredient",
 "date": "2025-04-30",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761373Orig2s000; 761425Orig2s000ltr.pdf"
+},
+{
+"app": "BLA761425",
+"brand": "Ustekinumab-Ttwe",
+"generic": "ustekinumab-ttwe",
+"sponsor": "Samsung Bioepis Co Ltd",
+"kind": "new application",
+"sub": "ORIG-2",
+"class": "Type 3 - New Dosage Form",
+"date": "2025-04-30",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761373Orig2s000; 761425Orig2s000ltr.pdf"
 },
 {
 "app": "BLA761406",
@@ -1524,10 +1530,12 @@
 "date": "2025-04-30",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761406Orig2s000ltr.pdf"
 }
-]
+],
+"openfda_total": 338,
+"complete": true
 },
 "2025-05": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "NDA219616",
@@ -1651,23 +1659,23 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761197Orig1s007ltr.pdf"
 },
 {
-"app": "NDA207925",
-"brand": "Kalydeco",
-"generic": "ivacaftor",
-"sponsor": "Vertex Pharms Inc",
-"kind": "efficacy supplement",
-"sub": "SUPPL-19",
-"class": "Efficacy",
-"date": "2025-05-22",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/203188Orig1s041,207925Orig1s019ltr.pdf"
-},
-{
 "app": "NDA203188",
 "brand": "Kalydeco",
 "generic": "ivacaftor",
 "sponsor": "Vertex Pharms",
 "kind": "efficacy supplement",
 "sub": "SUPPL-41",
+"class": "Efficacy",
+"date": "2025-05-22",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/203188Orig1s041,207925Orig1s019ltr.pdf"
+},
+{
+"app": "NDA207925",
+"brand": "Kalydeco",
+"generic": "ivacaftor",
+"sponsor": "Vertex Pharms Inc",
+"kind": "efficacy supplement",
+"sub": "SUPPL-19",
 "class": "Efficacy",
 "date": "2025-05-22",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/203188Orig1s041,207925Orig1s019ltr.pdf"
@@ -1859,10 +1867,12 @@
 "date": "2025-05-30",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210854Orig1s023,214410Orig1s008ltr.pdf"
 }
-]
+],
+"openfda_total": 244,
+"complete": true
 },
 "2025-06": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "BLA125514",
@@ -2041,23 +2051,23 @@
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125514Orig1s180ltr.pdf"
 },
 {
-"app": "NDA217439",
-"brand": "Talzenna",
-"generic": "talazoparib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-3",
-"class": "Efficacy",
-"date": "2025-06-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211651Orig1s013,217439Orig1s003ltr.pdf"
-},
-{
 "app": "NDA211651",
 "brand": "Talzenna",
 "generic": "talazoparib",
 "sponsor": "Pfizer",
 "kind": "efficacy supplement",
 "sub": "SUPPL-13",
+"class": "Efficacy",
+"date": "2025-06-12",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211651Orig1s013,217439Orig1s003ltr.pdf"
+},
+{
+"app": "NDA217439",
+"brand": "Talzenna",
+"generic": "talazoparib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-3",
 "class": "Efficacy",
 "date": "2025-06-12",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211651Orig1s013,217439Orig1s003ltr.pdf"
@@ -2304,10 +2314,12 @@
 "date": "2025-06-27",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211962Orig1s017ltr.pdf"
 }
-]
+],
+"openfda_total": 386,
+"complete": true
 },
 "2025-07": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "BLA761248",
@@ -2431,17 +2443,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219935Orig1s000ltr.pdf"
 },
 {
-"app": "NDA214919",
-"brand": "Glycopyrrolate",
-"generic": "glycopyrrolate",
-"sponsor": "Fresenius Kabi Usa",
-"kind": "efficacy supplement",
-"sub": "SUPPL-2",
-"class": "Efficacy",
-"date": "2025-07-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/214919Orig1s002ltr.pdf"
-},
-{
 "app": "NDA017558",
 "brand": "Glycopyrrolate",
 "generic": "glycopyrrolate",
@@ -2451,6 +2452,17 @@
 "class": "Efficacy",
 "date": "2025-07-16",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/017558Orig1s068ltr.pdf"
+},
+{
+"app": "NDA214919",
+"brand": "Glycopyrrolate",
+"generic": "glycopyrrolate",
+"sponsor": "Fresenius Kabi Usa",
+"kind": "efficacy supplement",
+"sub": "SUPPL-2",
+"class": "Efficacy",
+"date": "2025-07-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/214919Orig1s002ltr.pdf"
 },
 {
 "app": "NDA210997",
@@ -2661,10 +2673,12 @@
 "date": "2025-07-31",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218585Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 414,
+"complete": true
 },
 "2025-08": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "NDA219840",
@@ -2865,17 +2879,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/216403Orig1s005ltr.pdf"
 },
 {
-"app": "NDA217700",
-"brand": "Ojemda",
-"generic": "tovorafenib",
-"sponsor": "Day One Biopharms",
-"kind": "efficacy supplement",
-"sub": "SUPPL-2",
-"class": "Efficacy",
-"date": "2025-08-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217700Orig1s002, s003, s004ltr.pdf"
-},
-{
 "app": "NDA218033",
 "brand": "Ojemda",
 "generic": "tovorafenib",
@@ -2885,6 +2888,17 @@
 "class": "Efficacy",
 "date": "2025-08-27",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218033Orig1s002, s003ltr.pdf"
+},
+{
+"app": "NDA217700",
+"brand": "Ojemda",
+"generic": "tovorafenib",
+"sponsor": "Day One Biopharms",
+"kind": "efficacy supplement",
+"sub": "SUPPL-2",
+"class": "Efficacy",
+"date": "2025-08-27",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217700Orig1s002, s003, s004ltr.pdf"
 },
 {
 "app": "NDA218698",
@@ -2963,10 +2977,12 @@
 "date": "2025-08-29",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219685Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 274,
+"complete": true
 },
 "2025-09": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "BLA761105",
@@ -3035,17 +3051,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/208692Orig1s018ltr.pdf"
 },
 {
-"app": "NDA213756",
-"brand": "Koselugo",
-"generic": "selumetinib",
-"sponsor": "Astrazeneca",
-"kind": "efficacy supplement",
-"sub": "SUPPL-5",
-"class": "Efficacy",
-"date": "2025-09-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213756Orig1s005ltr.pdf"
-},
-{
 "app": "NDA219943",
 "brand": "Koselugo",
 "generic": "selumetinib",
@@ -3055,6 +3060,17 @@
 "class": "Type 3 - New Dosage Form",
 "date": "2025-09-10",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219943Orig1s000ltr.pdf"
+},
+{
+"app": "NDA213756",
+"brand": "Koselugo",
+"generic": "selumetinib",
+"sponsor": "Astrazeneca",
+"kind": "efficacy supplement",
+"sub": "SUPPL-5",
+"class": "Efficacy",
+"date": "2025-09-10",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213756Orig1s005ltr.pdf"
 },
 {
 "app": "NDA219500",
@@ -3090,23 +3106,23 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761436Orig1s000ltr.pdf"
 },
 {
-"app": "NDA212436",
-"brand": "Ibrance",
-"generic": "palbociclib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-11",
-"class": "Efficacy",
-"date": "2025-09-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s023;212436Orig1s011ltr.pdf"
-},
-{
 "app": "NDA207103",
 "brand": "Ibrance",
 "generic": "palbociclib",
 "sponsor": "Pfizer",
 "kind": "efficacy supplement",
 "sub": "SUPPL-23",
+"class": "Efficacy",
+"date": "2025-09-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s023;212436Orig1s011ltr.pdf"
+},
+{
+"app": "NDA212436",
+"brand": "Ibrance",
+"generic": "palbociclib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-11",
 "class": "Efficacy",
 "date": "2025-09-16",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s023;212436Orig1s011ltr.pdf"
@@ -3276,10 +3292,12 @@
 "date": "2025-09-30",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218436Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 325,
+"complete": true
 },
 "2025-10": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-24",
 "items": [
 {
 "app": "BLA761377",
@@ -3525,8 +3543,8 @@
 },
 {
 "app": "NDA219910",
-"brand": "Epioxa Cross-Linking",
-"generic": "riboflavin 5-phosphate ophthalmic",
+"brand": "Epioxa Hd/Epioxa Kit",
+"generic": "riboflavin 5'-phosphate sodium",
 "sponsor": "Glaukos",
 "kind": "new application",
 "sub": "ORIG-1",
@@ -3831,10 +3849,12 @@
 "date": "2025-10-29",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761404Orig2s000ltr.pdf"
 }
-]
+],
+"openfda_total": 286,
+"complete": true
 },
 "2025-11": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-24",
 "items": [
 {
 "app": "NDA219792",
@@ -3961,7 +3981,7 @@
 "app": "NDA215390",
 "brand": "Igalmi",
 "generic": "dexmedetomidine hydrochloride",
-"sponsor": "Bioxcel",
+"sponsor": "Teva",
 "kind": "efficacy supplement",
 "sub": "SUPPL-2",
 "class": "Efficacy",
@@ -4177,10 +4197,12 @@
 "date": "2025-11-28",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761340Orig2s000ltr.pdf"
 }
-]
+],
+"openfda_total": 246,
+"complete": true
 },
 "2025-12": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-24",
 "items": [
 {
 "app": "NDA216059",
@@ -4644,10 +4666,12 @@
 "date": "2025-12-30",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/220152Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 497,
+"complete": true
 },
 "2026-01": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "BLA020367",
@@ -4771,17 +4795,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218010Orig1s004ltr.pdf"
 },
 {
-"app": "NDA214770",
-"brand": "Noxafil",
-"generic": "posaconazole",
-"sponsor": "Msd Merck Co",
-"kind": "efficacy supplement",
-"sub": "SUPPL-9",
-"class": "Efficacy",
-"date": "2026-01-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf"
-},
-{
 "app": "NDA205596",
 "brand": "Noxafil",
 "generic": "posaconazole",
@@ -4799,6 +4812,17 @@
 "sponsor": "Schering",
 "kind": "efficacy supplement",
 "sub": "SUPPL-34",
+"class": "Efficacy",
+"date": "2026-01-27",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf"
+},
+{
+"app": "NDA214770",
+"brand": "Noxafil",
+"generic": "posaconazole",
+"sponsor": "Msd Merck Co",
+"kind": "efficacy supplement",
+"sub": "SUPPL-9",
 "class": "Efficacy",
 "date": "2026-01-27",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf"
@@ -4836,10 +4860,12 @@
 "date": "2026-01-28",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220142Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 238,
+"complete": true
 },
 "2026-02": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA221287",
@@ -4985,23 +5011,23 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221337Orig1s000MGLtr.pdf"
 },
 {
-"app": "NDA210259",
-"brand": "Calquence",
-"generic": "acalabrutinib",
-"sponsor": "Astrazeneca",
-"kind": "efficacy supplement",
-"sub": "SUPPL-12",
-"class": "Efficacy",
-"date": "2026-02-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210259Orig1s012, 216387Orig1s006ltr.pdf"
-},
-{
 "app": "NDA216387",
 "brand": "Calquence",
 "generic": "acalabrutinib",
 "sponsor": "Astrazeneca",
 "kind": "efficacy supplement",
 "sub": "SUPPL-6",
+"class": "Efficacy",
+"date": "2026-02-19",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210259Orig1s012, 216387Orig1s006ltr.pdf"
+},
+{
+"app": "NDA210259",
+"brand": "Calquence",
+"generic": "acalabrutinib",
+"sponsor": "Astrazeneca",
+"kind": "efficacy supplement",
+"sub": "SUPPL-12",
 "class": "Efficacy",
 "date": "2026-02-19",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210259Orig1s012, 216387Orig1s006ltr.pdf"
@@ -5226,10 +5252,12 @@
 "date": "2026-02-27",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219164Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 275,
+"complete": true
 },
 "2026-03": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "BLA761291",
@@ -5333,7 +5361,7 @@
 {
 "app": "NDA220149",
 "brand": "Icotyde",
-"generic": "icotrokinra",
+"generic": "icotrokinra hydrochloride",
 "sponsor": "Janssen Biotech",
 "kind": "new application",
 "sub": "ORIG-1",
@@ -5366,7 +5394,7 @@
 {
 "app": "NDA213793",
 "brand": "Imcivree",
-"generic": "setmelanotide",
+"generic": "setmelanotide acetate",
 "sponsor": "Rhythm",
 "kind": "efficacy supplement",
 "sub": "SUPPL-9",
@@ -5561,10 +5589,12 @@
 "date": "2026-03-30",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761334Orig1s008ltr.pdf"
 }
-]
+],
+"openfda_total": 307,
+"complete": true
 },
 "2026-04": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA220934",
@@ -5712,7 +5742,7 @@
 {
 "app": "BLA761068",
 "brand": "Crysvita",
-"generic": "burosumab",
+"generic": "burosumab-twza",
 "sponsor": "Kyowa Kirin",
 "kind": "efficacy supplement",
 "sub": "SUPPL-11",
@@ -5852,10 +5882,12 @@
 "date": "2026-04-30",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215430Orig1s009, s018correctedltr.pdf"
 }
-]
+],
+"openfda_total": 275,
+"complete": true
 },
 "2026-05": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA220837",
@@ -5937,7 +5969,7 @@
 {
 "app": "BLA761304",
 "brand": "Vyvgart Hytrulo",
-"generic": "efgartigimod alfa and hyaluronidase (human recombinant)",
+"generic": "efgartigimod alfa and hyaluronidase-qvfc",
 "sponsor": "Argenx Bv",
 "kind": "efficacy supplement",
 "sub": "SUPPL-18",
@@ -5990,7 +6022,7 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212576Orig1s008ltr.pdf"
 },
 {
-"app": "NDA209817",
+"app": "NDA209816",
 "brand": "Nuzyra",
 "generic": "omadacycline",
 "sponsor": "Paratek Pharms",
@@ -6001,7 +6033,7 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209816Orig1s018,209817Orig1s018ltr.pdf"
 },
 {
-"app": "NDA209816",
+"app": "NDA209817",
 "brand": "Nuzyra",
 "generic": "omadacycline",
 "sponsor": "Paratek Pharms",
@@ -6253,10 +6285,12 @@
 "date": "2026-05-29",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220787Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 266,
+"complete": true
 },
 "2026-06": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "BLA761480",
@@ -6435,17 +6469,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214231Orig1s004ltr.pdf"
 },
 {
-"app": "NDA212436",
-"brand": "Ibrance",
-"generic": "palbociclib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-12",
-"class": "Efficacy",
-"date": "2026-06-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212436Orig1s012ltr.pdf"
-},
-{
 "app": "NDA207103",
 "brand": "Ibrance",
 "generic": "palbociclib",
@@ -6455,6 +6478,17 @@
 "class": "Efficacy",
 "date": "2026-06-24",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/207103Orig1s024ltr.pdf"
+},
+{
+"app": "NDA212436",
+"brand": "Ibrance",
+"generic": "palbociclib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-12",
+"class": "Efficacy",
+"date": "2026-06-24",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212436Orig1s012ltr.pdf"
 },
 {
 "app": "BLA125514",
@@ -6577,10 +6611,12 @@
 "date": "2026-06-29",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215985Orig1s015ltr.pdf"
 }
-]
+],
+"openfda_total": 614,
+"complete": true
 },
 "2026-07": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA209092",
@@ -6872,7 +6908,7 @@
 "app": "NDA218145",
 "brand": "Simtriyo",
 "generic": "centanafadine hydrochloride",
-"sponsor": "Otsuka Pharmaceutical Co Ltd",
+"sponsor": "Otsuka",
 "kind": "new application",
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
@@ -6967,10 +7003,12 @@
 "date": "2026-07-31",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761376Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 352,
+"complete": true
 },
 "2026-08": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA220860",
@@ -7258,10 +7296,12 @@
 "date": "2026-08-28",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761044Orig1s021,125261Orig1s173ltr.pdf"
 }
-]
+],
+"openfda_total": 365,
+"complete": true
 },
 "2026-09": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA220613",
@@ -7615,10 +7655,12 @@
 "date": "2026-09-30",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214998Orig1s013ltr.pdf"
 }
-]
+],
+"openfda_total": 281,
+"complete": true
 },
 "2026-10": {
-"fetched": "2026-11-22",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA219617",
@@ -8017,17 +8059,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761105Orig1s053; 761262Orig1s019ltr.pdf"
 },
 {
-"app": "NDA211651",
-"brand": "Talzenna",
-"generic": "talazoparib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-14",
-"class": "Efficacy",
-"date": "2026-10-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211651Orig1s014ltr.pdf"
-},
-{
 "app": "NDA217439",
 "brand": "Talzenna",
 "generic": "talazoparib",
@@ -8039,6 +8070,17 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217439Orig1s004ltr.pdf"
 },
 {
+"app": "NDA211651",
+"brand": "Talzenna",
+"generic": "talazoparib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-14",
+"class": "Efficacy",
+"date": "2026-10-26",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211651Orig1s014ltr.pdf"
+},
+{
 "app": "BLA761187",
 "brand": "Lucamzi",
 "generic": "ranibizumab",
@@ -8047,7 +8089,7 @@
 "sub": "ORIG-1",
 "class": "Type 2 - New Active Ingredient",
 "date": "2026-10-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761187Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761187Orig1s000correctedltr.pdf"
 },
 {
 "app": "NDA220748",
@@ -8071,10 +8113,12 @@
 "date": "2026-10-29",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761067Orig1s031ltr.pdf"
 }
-]
+],
+"openfda_total": 295,
+"complete": true
 },
 "2026-11": {
-"fetched": "2026-11-22",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "BLA761433",
@@ -8151,7 +8195,7 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2026-11-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761501Orig1s000Correctedltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761501Orig1s000correctedltr.pdf"
 },
 {
 "app": "BLA125486",
@@ -8338,7 +8382,7 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2026-11-18",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221313Orig1s000ltr.pdf"
 },
 {
 "app": "NDA217062",
@@ -8349,7 +8393,7 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2026-11-18",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217062Orig1s000TAltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217062Orig1s000ltr.pdf"
 },
 {
 "app": "NDA221144",
@@ -8360,7 +8404,7 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-11-18",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221144Orig1s000ltr.pdf"
 },
 {
 "app": "NDA221251",
@@ -8371,8 +8415,32 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-11-18",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221251Orig1s001ltr.pdf"
+},
+{
+"app": "BLA761156",
+"brand": "Sogroya",
+"generic": "somapacitan-beco",
+"sponsor": "Novo Nordisk Inc",
+"kind": "efficacy supplement",
+"sub": "SUPPL-17",
+"class": "Efficacy",
+"date": "2026-11-20",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761156Orig1s016,s017ltr.pdf"
+},
+{
+"app": "BLA761156",
+"brand": "Sogroya",
+"generic": "somapacitan-beco",
+"sponsor": "Novo Nordisk Inc",
+"kind": "efficacy supplement",
+"sub": "SUPPL-16",
+"class": "Efficacy",
+"date": "2026-11-20",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761156Orig1s016,s017ltr.pdf"
 }
-]
+],
+"openfda_total": 200,
+"complete": true
 }
 }

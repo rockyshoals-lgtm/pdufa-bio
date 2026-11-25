@@ -36,6 +36,8 @@ CACHE = os.path.join(HERE, "_fda_approvals_months.json")
 BASE = "https://www.pdufa.bio"
 MON = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november",
        "december"]
+SKIP_CAP = 25000
+RECHECK_PER_RUN = 3   # older months cached before completeness was recorded, re-read a few a run
 UA = {"User-Agent": "pdufa.bio-research-script/1.0"}
 esc = lambda s: html.escape(str(s or ""), quote=True)
 
@@ -90,11 +92,14 @@ def fetch_month(y, m):
                             "date": f"{d[:4]}-{d[4:6]}-{d[6:8]}", "letter": letter})
         skip += len(res)
         total = ((j.get("meta") or {}).get("results") or {}).get("total", 0)
-        if not res or skip >= total or skip >= 1000:
+        # 2026-11-23 red team: the query matches every application with any submission in the month (ANDAs too),
+        # so the old 1,000-result stop could cut a month short with no sign. Read to openFDA's total (its skip
+        # ceiling is 25,000) and say whether every result was read.
+        if not res or skip >= total or skip >= SKIP_CAP:
             break
         time.sleep(0.3)
     out.sort(key=lambda x: (x["date"], x["brand"]))
-    return out
+    return out, total, skip >= total
 
 
 def crumbs(items):
@@ -146,6 +151,10 @@ def page(y, m, items, fetched, prev_, next_, tpl):
     for pat in (r'(<link rel="canonical" href=")[^"]*(")', r'(<meta property="og:url" content=")[^"]*(")'):
         head = re.sub(pat, lambda mm: mm.group(1) + url + mm.group(2), head)
     head = re.sub(r'(<meta property="og:title" content=")[^"]*(")', lambda mm: mm.group(1) + esc(title.split(" | ")[0]) + mm.group(2), head)
+    # red team 2026-11-23: the methodology template's twitter title and visible breadcrumb were left in
+    head = re.sub(r'(<meta name="twitter:title" content=")[^"]*(")', lambda mm: mm.group(1) + esc(title) + mm.group(2), head)
+    head = re.sub(r'<div class="bc">.*?</div>', f'<div class="bc"><a href="/">Home</a> › <a href="/fda-approvals">FDA '
+                  f'approvals</a> › {esc(name)}</div>', head, count=1, flags=re.S)
     head = re.sub(r'<script type="application/ld\+json"[^>]*>.*?</script>', "", head, flags=re.S)
     head = re.sub(r"<!--DMOD:BEGIN-->.*?<!--DMOD:END-->", "", head, flags=re.S)
     head = head.replace("</head>", f'<script type="application/ld+json">{json.dumps(faq, ensure_ascii=False)}</script>' + crumbs([("Home", "/"), ("FDA approvals by month", "/fda-approvals"), (name, f"/fda-approvals/{y}/{MON[m - 1]}")]) + "</head>", 1)
@@ -164,14 +173,21 @@ def main():
         months.append((y, m)); m += 1
         if m == 13:
             y, m = y + 1, 1
+    recheck = 0
     for (y, m) in months:
         k = f"{y}-{m:02d}"
-        if a.refetch_all or k not in cache or (y, m) >= months[-2]:
+        unchecked = k in cache and "complete" not in cache[k]
+        if a.refetch_all or k not in cache or (y, m) >= months[-2] or cache[k].get("complete") is False or (
+                unchecked and recheck < RECHECK_PER_RUN):
+            recheck += unchecked
             got = fetch_month(y, m)
             if got is None:
                 print(f"  {k}: openFDA unreachable; keeping cached copy ({len((cache.get(k) or {}).get('items', []))} items)")
                 continue
-            cache[k] = {"fetched": td.isoformat(), "items": got}
+            items, total, complete = got
+            if not complete:
+                print(f"::warning::{k}: openFDA returned more results ({total:,}) than were read; month marked incomplete")
+            cache[k] = {"fetched": td.isoformat(), "items": items, "openfda_total": total, "complete": complete}
             time.sleep(0.3)
     if not a.dry_run:
         io.open(CACHE, "w", encoding="utf-8").write(json.dumps(cache, indent=0, ensure_ascii=False))
@@ -202,6 +218,9 @@ def main():
         head = re.sub(pat, lambda mm: mm.group(1) + esc(f"Every FDA drug approval by month from Drugs@FDA: {tot_n} new drug and biologic applications so far in {td.year}, each with its letter.") + mm.group(2), head)
     for pat in (r'(<link rel="canonical" href=")[^"]*(")', r'(<meta property="og:url" content=")[^"]*(")'):
         head = re.sub(pat, lambda mm: mm.group(1) + f"{BASE}/fda-approvals" + mm.group(2), head)
+    head = re.sub(r'(<meta name="twitter:title" content=")[^"]*(")', lambda mm: mm.group(1) + esc(ttl) + mm.group(2), head)
+    head = re.sub(r'<div class="bc">.*?</div>', '<div class="bc"><a href="/">Home</a> › FDA approvals</div>', head,
+                  count=1, flags=re.S)
     head = re.sub(r'<script type="application/ld\+json"[^>]*>.*?</script>', "", head, flags=re.S)
     head = re.sub(r"<!--DMOD:BEGIN-->.*?<!--DMOD:END-->", "", head, flags=re.S)
     head = head.replace("</head>", crumbs([("Home", "/"), ("FDA approvals by month", "/fda-approvals")]) + "</head>", 1)
@@ -211,6 +230,9 @@ def main():
         os.makedirs(os.path.join(SITE, "fda-approvals"), exist_ok=True)
         io.open(os.path.join(SITE, "fda-approvals", "index.html"), "w", encoding="utf-8").write(
             head + f'<h1>FDA approvals by month</h1><p class="sub" style="color:#cfe0f5">{esc(hub_first)}</p>'
+            f'<p class="sub"><a href="/fda-approvals/companies">Every approval by company</a>, with its FDA letter &middot; '
+            f'<a href="/fda-approvals/drugs">every approval by drug application</a>, with any released CRL &middot; '
+            f'<a href="/fda-approvals/types">original approvals by NDA type</a>, Type 1 new molecular entity and the rest</p>'
             f'<ul style="line-height:1.9">{lis}</ul>' + foot)
     for y, m, nn, ne in rows[-3:]:
         print(f"  /fda-approvals/{y}/{MON[m - 1]:9s} new {nn}, efficacy supplements {ne}")

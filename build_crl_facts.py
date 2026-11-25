@@ -118,11 +118,12 @@ def orange_book():
     return out, as_of
 
 
-def main():
-    raw = json.load(io.open(CORPUS, encoding="utf-8"))
+def load_letters(corpus=None):
+    """The release as distinct letters. Shared with build_crl_bla_approvals.py so both read one rule."""
+    raw = json.load(io.open(corpus or CORPUS, encoding="utf-8"))
     recs = raw.get("results") if isinstance(raw, dict) else raw
     last_updated = str((raw.get("meta") or {}).get("last_updated") or "") if isinstance(raw, dict) else ""
-    snap = re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(CORPUS))
+    snap = re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(corpus or CORPUS))
     snap = snap.group(1) if snap else ""
 
     # one row per letter, a repeat counted once. Red team: keying on (file, date) alone merged two different
@@ -157,6 +158,14 @@ def main():
                 if L["date"] == vd and set(L["apps"]) & set(R["apps"]):
                     voided.add(id(L))
     counted = [L for L in crl if id(L) not in voided]
+    return {"letters": letters, "crl": crl, "rescind": rescind, "voided": voided, "counted": counted,
+            "last_updated": last_updated, "snap": snap, "recs": recs}
+
+
+def main():
+    R = load_letters()
+    letters, crl, rescind, voided, counted = R["letters"], R["crl"], R["rescind"], R["voided"], R["counted"]
+    last_updated, snap, recs = R["last_updated"], R["snap"], R["recs"]
     n_all, n_cr = len(letters), len(crl)
     types = collections.Counter(L["type"] for L in letters if L["type"] != CR)
     by_year = collections.Counter(L["date"].year for L in crl)
@@ -266,7 +275,9 @@ def main():
              f'{n_cr} are Complete Response Letters dated {yr0} to {yr1}. Each count below says which files it comes from and how it is made, so '
              f'anyone can redo it. Counts and date differences only: no approval rates, no predictions. '
              f'<a href="/crl">Every letter, by year</a>; <a href="/crl/companies">every CRL, by company</a>; '
-             f'<a href="/crl/offices">which FDA office signed each</a>; <a href="/feed">new letters by feed</a>.</p>')
+             f'<a href="/crl/offices">which FDA office signed each</a>; <a href="/crl/phrases">what the letters '
+             f'say, term by term</a>; <a href="/crl/review-clock">days from receipt to each letter, by the letters\' own '
+             f'dates</a>; <a href="/feed">new letters by feed</a>.</p>')
 
     B.append('<h2>Letters in the release, by year</h2><table><tr><th>Letter year</th><th>Complete Response Letters</th></tr>')
     for y in sorted(by_year, reverse=True):

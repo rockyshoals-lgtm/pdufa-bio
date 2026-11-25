@@ -58,6 +58,20 @@ def main():
             bad.append(f"/crl/{y}/{mon}: says {'?' if rel is None else rel} released, corpus has {by.get(k, 0)}")
         if trk != len(ours.get(k, [])):
             bad.append(f"/crl/{y}/{mon}: says {'?' if trk is None else trk} tracked CRLs, /decisions/crl has {len(ours.get(k, []))}")
+    # 2026-11-24: /crl/{year} states the same two counts for the year; each must equal its own record's sum.
+    years = sorted({k[:4] for k in by} | {k[:4] for k in ours})
+    for y in years:
+        p = os.path.join(HERE, "pdufa_site_src", "crl", y, "index.html")
+        if int(y) < 2025:
+            continue
+        if not os.path.exists(p):
+            bad.append(f"/crl/{y}: no year page"); continue
+        lede = re.search(r"<!--CRLYEARLEDE:BEGIN-->(.*?)<!--CRLYEARLEDE:END-->", io.open(p, encoding="utf-8").read(), re.S)
+        rel, trk = stated(lede.group(1)) if lede else (None, None)
+        want_rel = sum(v for k, v in by.items() if k[:4] == y)
+        want_trk = sum(len(v) for k, v in ours.items() if k[:4] == y)
+        if (rel, trk) != (want_rel, want_trk):
+            bad.append(f"/crl/{y}: says {rel} released / {trk} tracked, records have {want_rel} / {want_trk}")
     if bad:
         print(f"FAIL: {len(bad)} CRL month page problem(s)")
         for x in bad[:20]:

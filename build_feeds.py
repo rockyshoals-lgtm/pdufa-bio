@@ -199,14 +199,17 @@ SIG_STOP = {"Office", "Division", "Center", "U.S.", "Food", "Silver", "Spring,",
 SIG_SMALL = {"and", "of", "&", "for", "the", "I", "II", "III", "IV", "V", "1", "2", "3", "|", "products", "Products"}
 SINCERELY = re.compile(r"Sin\S*\s?cere\s?[l1]?y|Sincere\s?y|Sincerely", re.I)
 LEGEND = re.compile(r"This is a representation of an electronic record", re.I)
-B4 = re.compile(r"\((?:b|©|bp)\)\s?\(4\)")
+B4 = re.compile(r"\((?:b|©|bp|1b|o)\)\s?\(4\)")
+# right after "Sincerely,": the mark with its brackets misread or lost ("b) (4", a lone "4") before the signer's unit
+B4_AFTER = re.compile(r"^[,\s]*\(?[b©o1]{0,2}\)?\s?\(?4\)?\s+(?:Center|Office|Division|Director)")
 NOISE = re.compile(r"Silver Spring,? MD 20993|www\.fda\.gov|Reference ID:? ?\d+|(?:NDA|BLA|BL) ?\d{6}\S* Page \d+")
 
 
 def signature(text, center_field=None):
     """What the letter's own signature block prints: the divisions and offices it names (in order, as printed, OCR
     and all), whether it names the Center for Drug Evaluation and Research or for Biologics, and whether the
-    signature shows the FOIA exemption 4 mark "(b) (4)" (or its OCR forms "(©) (4)", "(bp) (4)").
+    signature shows the FOIA exemption 4 mark "(b) (4)" (or its OCR forms "(©) (4)", "(bp) (4)", "(1b) (4)",
+    "(o) (4)", and "b) (4" or a lone "4" right after "Sincerely," before the signer's unit).
 
     The block runs from the last "Sincerely" (OCR forms included) to the electronic signature page legend, or 900
     characters; the address, page headers and reference ids inside it are dropped (a page break can put the address
@@ -238,7 +241,8 @@ def signature(text, center_field=None):
         if re.match(r"(Office|Division) of ", e) and e not in units:
             units.append(e)
     tail = t[leg.end():leg.end() + 160] if leg else ""
-    withheld = bool(B4.search(blk) or B4.search(tail))
+    after = t[ms[-1].end():ms[-1].end() + 40] if ms else ""
+    withheld = bool(B4.search(blk) or B4.search(tail) or B4_AFTER.search(after))
     both = blk + " " + " ".join(cf)
     center = ("CDER" if re.search(r"Center [ft]or Drug Evaluation", both) else
               "CBER" if re.search(r"Center [ft]or Biologics", both) else "")
@@ -275,7 +279,8 @@ def crl_letters(include_rescinded=False, corpus=None):
                         "url": PDF + _urlq(fn) if fn.lower().endswith(".pdf") else "",
                         "ckey": key_of(nm) if nm and not GARBLED.search(nm) else "",
                         "status": str(r.get("approval_status") or "").strip(), "resc_date": None,
-                        "sig": signature(r.get("text"), r.get("approver_center"))})
+                        "sig": signature(r.get("text"), r.get("approver_center")),
+                        "text": str(r.get("text") or "")})
     for R in rescinds:                                # letters the FDA rescinded as issued in error (as /crl/facts)
         m = re.search(r"refer to our letters? dated (.{0,120}?)(?:,? informing|\.)", R["text"], re.I)
         for ds in re.findall(r"(?:" + "|".join(MON[1:]) + r") \d{1,2}, \d{4}", m.group(1) if m else ""):

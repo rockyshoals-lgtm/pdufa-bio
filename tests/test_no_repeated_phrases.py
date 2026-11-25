@@ -31,11 +31,13 @@ import sys
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, HERE)
 from text_hygiene import find_repeat  # noqa: E402
+from crl_verbatim import strip_verbatim  # noqa: E402
 
 SITE = os.path.join(HERE, "pdufa_site_src")
 ALLOW = set()
 PLANT = os.environ.get("PLANT") == "1"
-STRIP = re.compile(r"<(script|style|svg)\b.*?</\1>|<!--.*?-->", re.S | re.I)
+STRIP = re.compile(r"<(script|style|svg)\b.*?</\1>|<!--.*?-->",
+                   re.S | re.I)
 FOOTERS = re.compile(r'<div class="legal"[^>]*>(.*?)</div>|<footer[^>]*>(.*?)</footer>', re.S)
 DOTS = [("pdufa.bio", "pdufabio"), ("U.S.", "US"), ("e.g.", "eg"), ("i.e.", "ie"), ("Inc.", "Inc"), ("vs.", "vs")]
 
@@ -97,7 +99,9 @@ def main():
             raw = re.sub(r'(<div class="legal"[^>]*>.*?)(</div>)',
                          r"\1 Past behaviour does not predict future outcomes.\2", raw, count=1, flags=re.S)
         rel = os.path.relpath(p, SITE).replace("\\", "/")
-        txt = STRIP.sub(" ", raw)
+        # quoted text is kept as recorded, stutters included (crl_verbatim.py): the FDA's words on /crl/letter pages and
+        # the dataset values in the /changes record table
+        txt = strip_verbatim(STRIP.sub(" ", raw), p)
         for node in re.findall(r">([^<]{6,})<", txt):
             rp = repeat(html.unescape(node))
             if rp:
