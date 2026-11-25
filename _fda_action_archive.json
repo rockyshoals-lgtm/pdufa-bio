@@ -185,6 +185,15 @@
    "AUVELITY"
   ]
  },
+ "AZN-2026-02-03": {
+  "basis": "red team 2026-11-25: openFDA's text of the FDA's Complete Response Letter, dated 2025-10-10",
+  "checked": "2026-11-25",
+  "date": "2025-10-10",
+  "name": "Saphnelo (anifrolumab) for subcutaneous use",
+  "oc": "CRL",
+  "record": "BLA 761451 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761451_20251010.pdf"
+ },
  "AZN-2026-04-27": {
   "checked": "2026-10-03",
   "class": "TYPE 5",
@@ -1310,6 +1319,15 @@
    "IGALMI",
    "dexmedetomidine"
   ]
+ },
+ "TLX-2025-08-28": {
+  "basis": "red team 2026-11-25: openFDA's text of the FDA's corrected Complete Response Letter dated 2026-04-10, which states the original action date (August 27, 2025) stands",
+  "checked": "2026-11-25",
+  "date": "2025-08-27",
+  "name": "Zircaix (TLX250-CDx, 89Zr-DFO-girentuximab)",
+  "oc": "CRL",
+  "record": "BLA 761401 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761401_20260410.pdf"
  },
  "TVTX-2026-04-13": {
   "checked": "2026-10-03",

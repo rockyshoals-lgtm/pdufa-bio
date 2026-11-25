@@ -787,6 +787,10 @@ jobs:
           # same refreshed cache, so it is written here, after build_crl_facts.py wrote the page earlier in the run.
           # tests/test_crl_bla_approvals.py recounts it from the CRL release and the cache.
           python build_crl_bla_approvals.py || echo "::warning::/crl/facts BLA section not rebuilt"
+          # 2026-11-25: each /fda-decision page lists the other FDA actions on its own application number (every
+          # released CRL and every 2025+ Drugs@FDA approval), from the CRL release and the same refreshed cache.
+          # tests/test_crl_app_history.py recounts every block.
+          python link_crl_app_history.py || echo "::warning::application history blocks not rebuilt"
           python add_amlx_avexitide.py
 
       - name: Explain what a PDUFA date is (plain English + FAQ schema)

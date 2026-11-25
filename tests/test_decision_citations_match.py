@@ -62,7 +62,10 @@ PARTNERS = {
     "TEVA": {1720893: "BioXcel: the goal date's source"},
 }
 # openFDA CRL files whose file date is not the action date (a corrected letter keeps the original action date)
-CORRECTED = {"CRL_NDA219398_20260128.pdf": "2025-12-30"}
+CORRECTED = {"CRL_NDA219398_20260128.pdf": "2025-12-30",
+             # 2026-11-25: Telix Zircaix. The corrected letter (April 10, 2026) states the original CRL issued on
+             # August 27, 2025 and that the original action date stays the same.
+             "CRL_BLA761401_20260410.pdf": "2025-08-27"}
 BADGE_Q = re.compile(r"Was (?:source-verified|primary-sourced|verified|price-only)[^?<]{0,20} approved by the FDA\?", re.I)
 
 
