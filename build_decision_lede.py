@@ -70,6 +70,35 @@ def novel_match(name, day, novel):
     return None
 
 
+VERB_LEAD = re.compile(r"(?i)(reduce|prevent|treat|lower|delay|improve|maintain|increase|decrease|induce|"
+                       r"slow|control|manage|relieve|restore|replace|diagnose)(?=\s)")
+QUAL_LEAD = re.compile(r"(?i)^(in combination with [^,]{1,120}|with an? [^,]{1,120}|with [^,]{1,120}|"
+                       r"(?:as )?(?:a )?single[- ]agent|as monotherapy|monotherapy),\s+(.+)$")
+
+
+def lede_what(ind):
+    """' for {indication}', worded so it reads as a sentence. 2026-11-25: labels phrased as the FDA's use text
+    published "for reduce the occurrence ..." (PYPD), "for in combination with sunitinib, adults with ..." (COGT),
+    "for single agent, adjuvant treatment ..." (RHHBY), "for with an androgen receptor pathway inhibitor, ..." (NVS)
+    and "for to reduce ..." (AMGN). A verb takes "to"; a leading qualifier clause moves after the indication."""
+    ind = (ind or "").strip()
+    if not ind:
+        return ""
+    if re.match(r"(?i)to\s", ind):
+        return f" {ind[0].lower()}{ind[1:]}"
+    if VERB_LEAD.match(ind):
+        return f" to {lower_first(ind)}"
+    q = QUAL_LEAD.match(ind)
+    if q:
+        qual, rest = q.group(1), q.group(2)
+        if re.match(r"(?i)(?:as )?(?:a )?single[- ]agent$", qual):
+            qual = "as a single agent"
+        elif re.match(r"(?i)(?:as )?monotherapy$", qual):
+            qual = "as monotherapy"
+        return f" for {lower_first(rest)}, {qual[0].lower()}{qual[1:]}"
+    return f" for {lower_first(ind)}"
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -164,7 +193,7 @@ def main():
             use = re.sub(r"^To\s+", "to ", nv["use"].rstrip("."))
         if not ind and not use:
             ind = clean_indication(html.unescape(kvi.group(1)) if kvi else old_ind)
-        what = (f" {use}" if use else f" for {lower_first(ind)}" if ind else "")
+        what = (f" {use}" if use else lede_what(ind) if ind else "")
         # the FDA's date, only from an FDA record
         fad = d.get("fda_action_date") or (arch.get(slug) or {}).get("date") or (nv or {}).get("date")
         notice_only = bool(d.get("decision_date_unsourced")) and re.match(

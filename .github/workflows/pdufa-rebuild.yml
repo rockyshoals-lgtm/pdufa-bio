@@ -446,6 +446,13 @@ jobs:
           python build_fda_letters_hub.py
           python inject_calendar_explainer.py
           python sync_learn_timing.py
+      # 2026-11-25 (BLOCKED run 45687661301): the home board ran before the letter; its Recently decided card for the
+      # newly lettered page (CAPR-2026-11-20) still said "announced". Re-render those cards only, and only when a card's
+      # day or label changed (no change on a run with no new letter).
+      - name: "New CRL letter: home Recently decided cards again"
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python build_home_board.py --decided-only
 
       # /crl hub -- asked in three audits: the full released-CRL corpus, by year, each
       # letter linking FDA's own PDF; counts never rates. Runs after the letter linker
@@ -787,6 +794,10 @@ jobs:
           # same refreshed cache, so it is written here, after build_crl_facts.py wrote the page earlier in the run.
           # tests/test_crl_bla_approvals.py recounts it from the CRL release and the cache.
           python build_crl_bla_approvals.py || echo "::warning::/crl/facts BLA section not rebuilt"
+          # 2026-11-25: each /fda-decision page lists the other FDA actions on its own application number (every
+          # released CRL and every 2025+ Drugs@FDA approval), from the CRL release and the same refreshed cache.
+          # tests/test_crl_app_history.py recounts every block.
+          python link_crl_app_history.py || echo "::warning::application history blocks not rebuilt"
           python add_amlx_avexitide.py
 
       - name: Explain what a PDUFA date is (plain English + FAQ schema)
@@ -822,6 +833,13 @@ jobs:
         # fetch_fda_brands: final audit 09-02 §4 -- the brand (MIMRYLO) is in the same
         # FDA payload as the approval date; every approval self-populates its brand.
         run: python fetch_fda_brands.py && python fetch_chembl_synonyms.py && python add_drug_schema.py && python link_pdufa_explainer.py
+
+      # 2026-11-25 (David: link the readout dates): the company-guided table on /readouts links each program to
+      # its /drug page only when that page exists (readout_links.py). The first pass above runs before this
+      # build's drug pages, so a readout added today would ship unlinked for a day. This second pass replaces
+      # only the GUIDED block (idempotent) once every drug page of this build is on disk.
+      - name: "Readouts: relink company-guided rows to this build's drug pages"
+        run: python build_guided_readouts.py
 
       # 2026-11-17: one page per FDA application (/fda-application/nda-NNNNNN) joining brand, ingredient,
       # code names, FDA applicant of record, owner and ticker. FDA facts are read from the Orange Book
@@ -905,6 +923,11 @@ jobs:
       # test_no_past_target_pending_pages.py fails if either treatment goes missing.
       - name: Goal-date-passed statements (no decision to name)
         run: python mark_goal_date_passed.py
+      # 2026-11-25 (David: "add a past due box on the home page for pdufas that missed their date so it stays current
+      # and accurate"): the home page's "Past their goal date" box, from the same dataset rule as the step above.
+      # build_home_board.py keeps these goals out of Next FDA decisions. tests/test_home_past_due.py recounts it.
+      - name: "Home: Past their goal date box"
+        run: python build_home_past_due.py
 
       - name: "Goal date moved: date_history shown on event pages and calendar rows"
         run: python inject_goal_date_moves.py

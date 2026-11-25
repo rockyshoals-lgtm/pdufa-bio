@@ -2573,6 +2573,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/bel-sar",
+   "destination": "/drug/belzupacap-sarotalocan",
+   "permanent": true
+  },
+  {
    "source": "/drug/belimumab",
    "destination": "/drug/benlysta",
    "permanent": true
@@ -2615,6 +2620,11 @@
   {
    "source": "/drug/calquence-plus",
    "destination": "/drug/calquence",
+   "permanent": true
+  },
+  {
+   "source": "/drug/cema-cel",
+   "destination": "/drug/cemacabtagene-ansegedleucel",
    "permanent": true
   },
   {
@@ -2728,11 +2738,6 @@
    "permanent": true
   },
   {
-   "source": "/drug/efgartigimod",
-   "destination": "/drug/vyvgart-hytrulo",
-   "permanent": true
-  },
-  {
    "source": "/drug/elinzanetant",
    "destination": "/drug/lynkuet",
    "permanent": true
@@ -2765,11 +2770,6 @@
   {
    "source": "/drug/esketamine",
    "destination": "/drug/spravato",
-   "permanent": true
-  },
-  {
-   "source": "/drug/etripamil",
-   "destination": "/drug/cardamyst",
    "permanent": true
   },
   {
@@ -3083,8 +3083,18 @@
    "permanent": true
   },
   {
+   "source": "/drug/neldaleucel",
+   "destination": "/drug/mt-601",
+   "permanent": true
+  },
+  {
    "source": "/drug/nusinersen",
    "destination": "/drug/spinraza",
+   "permanent": true
+  },
+  {
+   "source": "/drug/obe-cel",
+   "destination": "/drug/obecabtagene-autoleucel",
    "permanent": true
   },
   {
@@ -3208,6 +3218,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/pivotal",
+   "destination": "/drug/navenibart-alpha-orbit",
+   "permanent": true
+  },
+  {
    "source": "/drug/plozasiran",
    "destination": "/drug/redemplo",
    "permanent": true
@@ -3275,6 +3290,11 @@
   {
    "source": "/drug/roflumilast",
    "destination": "/drug/zoryve",
+   "permanent": true
+  },
+  {
+   "source": "/drug/rondecabtagene-autoleucel",
+   "destination": "/drug/ronde-cel",
    "permanent": true
   },
   {
@@ -3365,6 +3385,11 @@
   {
    "source": "/drug/tambiciclib",
    "destination": "/drug/sls009",
+   "permanent": true
+  },
+  {
+   "source": "/drug/tau-lowering",
+   "destination": "/drug/vy1706",
    "permanent": true
   },
   {
@@ -3463,11 +3488,6 @@
    "permanent": true
   },
   {
-   "source": "/drug/ziftomenib",
-   "destination": "/drug/komzifti",
-   "permanent": true
-  },
-  {
    "source": "/drug/zilurgisertib",
    "destination": "/drug/atebrioz",
    "permanent": true
@@ -3480,6 +3500,11 @@
   {
    "source": "/drug/zopapogene-imadenovec-drba",
    "destination": "/drug/papzimeos",
+   "permanent": true
+  },
+  {
+   "source": "/drug/zugo-cel",
+   "destination": "/drug/zugocabtagene-geleucel",
    "permanent": true
   },
   {

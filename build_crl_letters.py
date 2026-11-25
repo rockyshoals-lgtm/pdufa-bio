@@ -24,6 +24,7 @@ page adds no summary, reading or forecast of its own.
     python build_crl_letters.py
 """
 import collections
+import datetime as dt
 import glob
 import hashlib
 import html
@@ -159,6 +160,36 @@ def decision_pages(letters):
             if (L["date"].isoformat(), L["url"]) in page_of}
 
 
+_MON = r"(?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}"
+
+
+def corrected_action(L):
+    """For a letter the FDA heads "Corrected Complete Response": the action date the letter itself says stands (the
+    original letter's), else None. 2026-11-25 (CRL red team): /crl/letter/bla-761401-2026-04-10 and
+    nda-219398-2026-01-28 showed only the correction's date, though each letter says the FDA's action date is the
+    original letter's (August 27, 2025; December 30, 2025). The hand ledger's fda_action_date wins; otherwise the
+    letter's own words are read, and nothing is shown when they name no date."""
+    t = re.sub(r"\s+", " ", L.get("text") or "")
+    if not re.search(r"CORRECTED COMPLETE RESPONSE|corrected (?:CRL|complete response letter|action letter)", t, re.I):
+        return None
+    fn = os.path.basename(str(L.get("url") or ""))
+    try:
+        led = {x["file_name"]: x for x in json.load(io.open(os.path.join(HERE, "_crl_letter_findings.json"),
+                                                               encoding="utf-8"))["letters"]}
+    except Exception:  # noqa: BLE001
+        led = {}
+    fad = (led.get(fn) or {}).get("fda_action_date")
+    if fad:
+        return pretty(dt.date.fromisoformat(fad))
+    for pat in (rf"effective action date will remain ({_MON})",
+                rf"(?:original CRL|original complete response letter|original letter) (?:issued|sent to you|dated) on ({_MON})",
+                rf"(?:CRL|complete response letter) sent to you on ({_MON})"):
+        m = re.search(pat, t, re.I)
+        if m:
+            return m.group(1)
+    return None
+
+
 def name_of(L):
     """openFDA's company field when it reads as a name (not a misread such as "CLASS 2 RESUBMISSION" or "LLC")."""
     return L["name"] if L["name"] and L["ckey"] else ""
@@ -185,6 +216,10 @@ def facts(L):
             ("Signed by (division, office)", unit or "none named in text this page can read"),
             ("Center", CENTER.get(g["center"], "none named in the letter's text or openFDA's center field")),
             ("Signature shows (b) (4)", "yes" if g["withheld"] else "no")]
+    ca = corrected_action(L)
+    if ca:
+        rows.insert(1, ("Corrected letter", f"yes; it states the FDA's action date remains {ca}, the date of the "
+                                            f"original letter"))
     if L["rescinded"]:
         rows.append(("Rescinded by the FDA", f"yes, by a letter dated {pretty(L['resc_date'])}, as issued in error"))
     return rows
@@ -194,7 +229,9 @@ def lede_text(L, last_updated):
     who = name_of(L) or "the applicant"                # a misread name is not repeated
     return (f"The FDA's Complete Response Letter to {who}, dated {pretty(L['date'])}. It is one of the letters in "
             f"the FDA's public CRL release (openFDA transparency/crl, last updated {last_updated})."
-            + (" The FDA later rescinded it as issued in error." if L["rescinded"] else ""))
+            + (" The FDA later rescinded it as issued in error." if L["rescinded"] else "")
+            + (f" It is a corrected letter: it states that the FDA's action date remains {corrected_action(L)}, the "
+               f"date of the original letter." if corrected_action(L) else ""))
 
 
 def title_desc(L):

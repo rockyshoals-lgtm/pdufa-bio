@@ -100,11 +100,11 @@
    "note": "Q1 10-Q (2026-05-12) contains the major-amendment / three-month extension sentence with the November 22, 2026 date. Q3 10-Q (filed ~Nov 2026) financial notes say MOLBREEVI is 'under regulatory review"
   },
   "pdufa_vstm_2027-02-07": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.sec.gov/Archives/edgar/data/1526119/000110465926123386/tm2628982d2_ex99-1.htm",
-   "by": "red team 2026-11-17",
-   "note": "Nov 2026 corporate presentation (8-K EX-99.1, 2026-11-05) contains 'FDA decision on NDA for AVMAPKI FAKZYNJA CO-PACK Blister Pack by February 7, 2027' and 'PDUFA date: February 7, 2027'. Q3 results re"
+   "by": "manual",
+   "note": "2026-11-25: Verastem's only newer release (2026-11-18, Business Wire) is a VS-7375 conference notice; it does not touch this goal date"
   },
   "pdufa_bbio_2026-11-27": {
    "checked": "2026-11-17",
@@ -562,11 +562,11 @@
    "note": "Opened Immutep 2026-11-10 (Sydney 11-11): 'Further detail and analyses will be presented in a poster discussion session on 19 November 2026' at CTOS (18-21 Nov, Seoul). Companion 11-05 release: '19 No"
   },
   "readout_immp_2026-12-14": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/05/3396391/0/en/immutep-announces-upcoming-poster-presentations-at-ctos-2026-and-esmo-immuno-oncology-advanced-therapies-congress-2026.html",
-   "by": "red team 2026-11-17",
-   "note": "Opened Immutep 2026-11-05: TACTI-003 Part B final median OS poster at ESMO IO 2026 '14 December 2026, 17:30 GMT (15 December 2026, 4:30am AEDT)' = 12:30 ET 2026-12-14. No later change."
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_mbrx_2026-09-30": {
    "checked": "2026-11-17",
@@ -695,46 +695,46 @@
    "note": "Opened Vanda Q3 release 2026-10-28: 'The Phase III study of BYSANTI(TM) as a once-daily adjunctive treatment for major depressive disorder (MDD) is ongoing,' with results expected in the first half of"
   },
   "readout_vstm_2027-06-30": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
-   "by": "red team 2026-11-17",
-   "note": "Opened Verastem Q3 2026 release (Business Wire, 2026-11-05); bullet 'Plan to report initial Phase 2 data from TARGET-D 201 in 2L PDAC in Q2 2027' present. Verastem investor newsroom lists no release a"
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_vstm_2027-12-31": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
-   "by": "red team 2026-11-17",
-   "note": "Same Q3 release: 'expect to report initial data from TARGET-D 202 in 2L NSCLC and TARGET-D 203 in 2L CRC in 2H 2027' present verbatim; nothing newer from Verastem. 2027-12-31 is the correct window end"
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_vstm_2027-06-30-vs7375": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
-   "by": "red team 2026-11-17",
-   "note": "Q3 release: 'Expect to report initial data from the 1L mPDAC combination with gemcitabine/Nab-paclitaxel in early Q2 2027' present verbatim; no newer Verastem release."
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_vstm_2027-12-31-vs7375": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
-   "by": "red team 2026-11-17",
-   "note": "Q3 release: 'Plan to report initial data from the TARGET-D 101 mPDAC cohort evaluating VS-7375 600 mg plus cetuximab in early 2027' present; no newer release. 'early 2027' carried as year envelope (20"
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_vstm_2027-03-31": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
-   "by": "red team 2026-11-17",
-   "note": "Q3 release: 'Plan to report mature data from the TARGET-D 101 mCRC cohort evaluating VS-7375 900 mg in combination ... in Q1 2027 to allow for additional patient follow-up' present; no newer release."
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_vstm_2027-12-31-avutometin": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
-   "by": "red team 2026-11-17",
-   "note": "Q3 release: 'Report a topline readout of the primary endpoint in the RAMP 301 trial ... in mid-2027.' present; same mid-2027 guidance stated since Dec 2025; no newer release. 'mid-2027' carried as yea"
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_alny_2027-02-28": {
    "checked": "2026-11-17",
@@ -779,25 +779,25 @@
    "note": "Same release: 'The Phase 3 ACTION 3 trial is fully enrolled, with pivotal data expected in 2028.' (BMN 820/DMX-200). Nothing newer from BioMarin."
   },
   "readout_rapp_2026-12-31-rap219": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395175/0/en/rapport-therapeutics-reports-third-quarter-2026-financials-and-provides-business-update.html",
-   "by": "red team 2026-11-17",
-   "note": "Opened Rapport Q3 release (GlobeNewswire, 2026-11-04); subtitle reads 'Data from the Phase 2 FOS open-label long-term safety trial expected in 4Q 2026'; body: 'Initial data expected in fourth quarter"
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_rapp_2027-09-30": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395175/0/en/rapport-therapeutics-reports-third-quarter-2026-financials-and-provides-business-update.html",
-   "by": "red team 2026-11-17",
-   "note": "Q3 release Upcoming Milestones bullet: 'RAP-219 LAI: Phase 1 pharmacokinetic data expected in third quarter of 2027.' No newer Rapport release."
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_rapp_2027-12-31": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395175/0/en/rapport-therapeutics-reports-third-quarter-2026-financials-and-provides-business-update.html",
-   "by": "red team 2026-11-17",
-   "note": "Q3 release Upcoming Milestones bullet: 'RAP-641: Phase 1 preliminary results expected in the second half of 2027.' No newer Rapport release. 2027-12-31 is the correct window end for 2H 2027 (dataset c"
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_zbio_2026-12-31": {
    "checked": "2026-11-17",
@@ -1780,18 +1780,18 @@
    "note": "Tarsus Q3 release 2026-11-03: 'Topline results are expected in the first half of 2027 and are anticipated to support a Phase 3-ready package.' verbatim (TP-05 Calliope). No newer release."
   },
   "readout_xene_2026-12-31": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/09/3398912/33485/en/xenon-reports-q3-2026-financial-results-and-provides-business-update.html",
-   "by": "red team 2026-11-17",
-   "note": "Xenon Q3 release GNW 2026-11-09: 'Enrollment in Phase 3 X-NOVA2 study of azetukalner in MDD completed with topline data readout now expected in December 2026' verbatim. Searches found no later Xenon r"
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_xene_2027-12-31": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/09/3398912/33485/en/xenon-reports-q3-2026-financial-results-and-provides-business-update.html",
-   "by": "red team 2026-11-17",
-   "note": "Xenon Q3 release 2026-11-09: 'Data from the Phase 1b study are expected in 2027.' verbatim (NBI-921355 with Neurocrine). No newer release."
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_canf_2027-03-31": {
    "checked": "2026-11-17",
@@ -1885,11 +1885,11 @@
    "note": "Both quote fragments are on Erasca's Nov 12 Q3 release (ENA Nov 18-20, Barcelona). Erasca's Sep 10 ENA release gives the exact slot: the ERAS-0015 AURORAS-1 oral (Plenary Session 6) is Friday Nov 20,"
   },
   "readout_eras_2027-06-30": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/12/3402156/0/en/erasca-reports-third-quarter-2026-business-updates-and-financial-results.html",
-   "by": "red team 2026-11-17",
-   "note": "Re-opened Erasca Nov 12 Q3 release: 'Phase 1 monotherapy expansion data expected in the first half of 2027' is verbatim. Newer Erasca releases (Nov 16 investor event, Nov 17 BMS collaboration) give no"
+   "by": "manual",
+   "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_eras_2027-06-30-eras0015": {
    "checked": "2026-11-17",
@@ -2149,6 +2149,69 @@
    "source": "https://www.prnewswire.com/news-releases/tyra-biosciences-reports-third-quarter-2026-financial-results-and-recent-highlights-302934907.html",
    "by": "red team 2026-11-17",
    "note": "Tyra Nov 10 Q3 release milestone list: 'LG-UTUC: Initial Phase 2 results – 2027' verbatim. No newer Tyra release beyond conference notices."
+  },
+  "readout_cgon_2026-12-04": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/25/3410154/0/en/cg-oncology-to-present-new-data-on-cretostimogene-grenadenorepvec-at-the-society-of-urologic-oncology-27th-annual-meeting.html",
+   "by": "manual",
+   "note": "2026-11-25 readout mine: source re-opened by an independent red-team pass"
+  },
+  "readout_cgon_2026-12-04-cretostimo": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/25/3410154/0/en/cg-oncology-to-present-new-data-on-cretostimogene-grenadenorepvec-at-the-society-of-urologic-oncology-27th-annual-meeting.html",
+   "by": "manual",
+   "note": "2026-11-25 readout mine: source re-opened by an independent red-team pass"
+  },
+  "readout_rapp_2026-12-07": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409113/0/en/rapport-to-present-new-long-term-open-label-safety-data-in-focal-onset-seizures-and-analyses-of-seizure-severity-and-burden-at-the-2026-aes-annual-meeting.html",
+   "by": "manual",
+   "note": "2026-11-25 readout mine: source re-opened by an independent red-team pass"
+  },
+  "readout_vstm_2026-12-05": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261110841945/en/Verastem-Oncology-Announces-Late-Breaking-Oral-Presentation-of-VS-7375-Lung-Cancer-Data-at-IASLCASCO-2026-North-America-Conference-on-Lung-Cancer/",
+   "by": "manual",
+   "note": "2026-11-25 readout mine: source re-opened by an independent red-team pass"
+  },
+  "readout_xene_2026-12-07": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409267/33485/en/xenon-to-present-new-azetukalner-data-in-focal-seizures-at-aes-2026.html",
+   "by": "manual",
+   "note": "2026-11-25 readout mine: source re-opened by an independent red-team pass"
+  },
+  "readout_bctx_2026-12-11": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409117/0/en/briacell-to-present-five-clinical-posters-including-late-breaking-phase-3-biomarker-and-safety-findings-at-sabcs-2026.html",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
+  },
+  "readout_beam_2026-12-15-ristogloge": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399328/0/en/beam-therapeutics-announces-positive-topline-pivotal-data-from-beacon-phase-1-2-trial-of-risto-cel-in-patients-with-sickle-cell-disease.html",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
+  },
+  "readout_nrix_2026-12-15": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396262/0/en/nurix-therapeutics-to-present-new-and-updated-data-from-ongoing-phase-1a-1b-trial-of-bexobrutideg-nx-5948-in-relapsed-refractory-cll-sll-at-the-68th-ash-annual-meeting-and-expositi.html",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
+  },
+  "readout_sndx_2026-12-15": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395377/0/en/syndax-highlights-acceptance-of-19-revuforj-revumenib-and-niktimvo-axatilimab-csfr-abstracts-including-7-for-oral-presentation-at-ash-2026.html",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
   }
  }
 }
