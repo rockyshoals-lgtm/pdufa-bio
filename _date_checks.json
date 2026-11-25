@@ -1311,25 +1311,46 @@
    "note": "Re-opened Corcept Q3 release (BW 2026-11-03): SYNERGY bullet and 'Results expected by the end of next year' verbatim; 'next year' from a 2026 release = 2027. Corcept IR list shows only the 11-16 case-"
   },
   "readout_adct_2026-12-14": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "by": "red team 2026-11-17",
-   "note": "ADCT 2026-11-04 release lists LOTIS-5 full results (Abstract #920) oral, Monday, December 14, 2026, 3:00-3:15 p.m. CT. Q3 release (11-09) gives no change."
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
+    "by": "red team 2026-11-17",
+    "note": "ADCT 2026-11-04 release lists LOTIS-5 full results (Abstract #920) oral, Monday, December 14, 2026, 3:00-3:15 p.m. CT. Q3 release (11-09) gives no change."
+   }
   },
   "readout_adct_2026-12-13": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "by": "red team 2026-11-17",
-   "note": "ADCT 2026-11-04 release lists LOTIS-7 updated results (Abstract #619) oral, Sunday, December 13, 2026, 12:00-12:15 p.m. CT. Q3 release (11-09) gives no change."
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
+    "by": "red team 2026-11-17",
+    "note": "ADCT 2026-11-04 release lists LOTIS-7 updated results (Abstract #619) oral, Sunday, December 13, 2026, 12:00-12:15 p.m. CT. Q3 release (11-09) gives no change."
+   }
   },
   "readout_adct_2026-12-14-zynlonta": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "by": "red team 2026-11-17",
-   "note": "ADCT 2026-11-04 release lists fixed-duration loncastuximab multicenter Phase II IIT (Abstract #784) oral, Monday, December 14, 2026, 11:15-11:30 a.m. CT. Nothing newer changes it."
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
+    "by": "red team 2026-11-17",
+    "note": "ADCT 2026-11-04 release lists fixed-duration loncastuximab multicenter Phase II IIT (Abstract #784) oral, Monday, December 14, 2026, 11:15-11:30 a.m. CT. Nothing newer changes it."
+   }
   },
   "readout_avln_2027-12-31": {
    "checked": "2026-11-17",
