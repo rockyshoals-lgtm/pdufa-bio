@@ -10363,11 +10363,11 @@ export default [
   "type": "PDUFA",
   "ta": "Infectious Disease",
   "cap": "Micro",
-  "st": "Upcoming",
-  "ua": "2026-11-23T10:32:03Z",
-  "url": "/pdufa/PYPD-d-plex100",
+  "st": "Decided",
+  "ua": "2026-11-25T04:10:25Z",
+  "url": "/fda-decision/PYPD-2026-11-24",
   "_d": {
-   "indication": "Prevention of surgical site infections in patients undergoing abdominal colorectal surgery",
+   "indication": "Reduce the occurrence of surgical site infections in adults and pediatric patients weighing 45 kg or more undergoing colorectal surgery with incision lengths greater than 20 cm",
    "event_slug": "PYPD-d-plex100",
    "source": "PolyPid 6-K 2026-07-29 (EX-99.1, NDA accepted, priority review)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026082564/ea029964201ex99-1.htm",
@@ -10382,8 +10382,21 @@ export default [
     "t30": 20.71,
     "t7": -7.27,
     "source": "FMP split-adjusted daily closes"
-   }
-  }
+   },
+   "brand": "Bacfenssi",
+   "inn": "doxycycline hyclate",
+   "trial": "SHIELD II",
+   "decision_source": "PolyPid 6-K Exhibit 99.1, November 24, 2026 (SEC EDGAR)",
+   "decision_source_url": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm",
+   "decision_date_unsourced": true,
+   "decision_quote": "the U.S. Food and Drug Administration (“FDA”) has approved the Company’s New Drug Application (“NDA”) for BACFENSSI",
+   "decision_note": "PolyPid announced the approval on November 24, 2026, four days before the November 28, 2026 goal date it disclosed. The FDA's own record of the action day was not read when this row was updated, so no early or late margin is published yet.",
+   "announcement": "PolyPid 6-K Exhibit 99.1, November 24, 2026 (SEC EDGAR)",
+   "announcement_url": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm",
+   "review": "NDA under Priority Review, PDUFA target action date November 28, 2026 (PolyPid 6-K, July 29, 2026). Per PolyPid, in the Phase 3 SHIELD II trial (798 patients in the primary analysis population) the primary endpoint event occurred in 10.9% of patients on BACFENSSI plus standard of care and 18.1% on standard of care alone (p=0.004); surgical site infection, a key secondary endpoint, in 3.8% and 9.5% (p=0.001)."
+  },
+  "oc": "Approved",
+  "dcd": "2026-11-24"
  },
  {
   "id": "pdufa_bayry_2026-11-30",
@@ -10444,12 +10457,12 @@ export default [
   "type": "PDUFA",
   "ta": "",
   "cap": "Mid",
-  "st": "Upcoming",
-  "url": "/pdufa/COGT-bezuclastinib",
-  "ua": "2026-11-23T10:32:03Z",
+  "st": "Decided",
+  "url": "/fda-decision/COGT-2026-11-24",
+  "ua": "2026-11-25T04:10:25Z",
   "_d": {
-   "nct_id": null,
-   "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
+   "nct_id": "NCT05208047",
+   "indication": "In combination with sunitinib, adults with advanced gastrointestinal stromal tumors (GIST) who have received prior treatment with imatinib",
    "market_cap_usd": 4648249710.0,
    "cash_runway_months": 36.5,
    "days_to_decision": 143,
@@ -10469,8 +10482,23 @@ export default [
    "source": "Cogent Biosciences, Inc. 8-K 2026-08-10",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm",
    "source_quote": "K2 V617F myeloproliferative neoplasm propagating cells and induce molecular remission with improved hematologic tolerability. Anticipated Upcoming Milestones Potential FDA approval of bezuclastinib in GIST PDUFA date of November 30, 2026 Potential FDA approval of bezuclastinib in NonAdvSM PDUFA date of December 30, 2026 Submit Investigational New Drug (IN",
-   "trial": "PEAK"
-  }
+   "trial": "PEAK",
+   "brand": "Ekitna",
+   "inn": "bezuclastinib",
+   "decision_source": "FDA oncology approval notification, November 24, 2026 (Cancer Approvals)",
+   "decision_source_url": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
+   "fda_notice_title": "FDA approves bezuclastinib in combination with sunitinib for advanced gastrointestinal stromal tumors",
+   "decision_quote": "On November 24, 2026, the Food and Drug Administration approved bezuclastinib (Ekitna, Cogent Biosciences, Inc)",
+   "decision_note": "Approved on November 24, 2026, 6 days before the November 30, 2026 goal date Cogent disclosed (8-K, August 10, 2026).",
+   "fda_action_date": "2026-11-24",
+   "fda_action_source_url": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
+   "fda_action_record": "FDA oncology approval notification, November 24, 2026 (letter not yet on Drugs@FDA)",
+   "announcement": "FDA oncology approval notification, November 24, 2026",
+   "announcement_url": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
+   "review": "NDA under Priority Review. Per the FDA, PEAK (NCT05208047) is an open-label, randomized trial in 413 patients: median progression-free survival was 16.5 months with bezuclastinib plus sunitinib and 9.2 months with sunitinib alone (hazard ratio 0.50, 95% CI 0.39 to 0.65); overall response rate 46% and 26%. Overall survival data were not mature."
+  },
+  "oc": "Approved",
+  "dcd": "2026-11-24"
  },
  {
   "id": "pdufa_nuvl_2026-11-27",
@@ -10650,12 +10678,12 @@ export default [
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/RHHBY-giredestrant",
-  "ua": "2026-11-23T10:32:03Z",
+  "st": "Decided",
+  "url": "/fda-decision/RHHBY-2026-11-23",
+  "ua": "2026-11-25T04:10:25Z",
   "_d": {
-   "nct_id": null,
-   "indication": "Adjuvant early breast cancer (ER+/HER2-)",
+   "nct_id": "NCT04961996",
+   "indication": "Single agent, adjuvant treatment of adults with ER-positive, HER2-negative, stage I, II and III breast cancer at intermediate to high risk of recurrence",
    "market_cap_usd": 374649264285.0,
    "cash_runway_months": null,
    "days_to_decision": 143,
@@ -10675,8 +10703,23 @@ export default [
    "source": "Genentech press release 2026-06-01",
    "source_url": "https://www.gene.com/media/press-releases/15115/2026-06-01/fda-accepts-new-drug-application-for-gen",
    "source_quote": "The FDA is expected to make a decision on the approval by November 30, 2026.",
-   "trial": "lidERA"
-  }
+   "trial": "lidERA",
+   "brand": "Wilserdly",
+   "inn": "giredestrant",
+   "decision_source": "FDA oncology approval notification, November 23, 2026 (Cancer Approvals)",
+   "decision_source_url": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-giredestrant-adjuvant-treatment-er-positive-her2-negative-stage-i-ii-and-iii-breast",
+   "fda_notice_title": "FDA approves giredestrant for adjuvant treatment of ER-positive, HER2-negative, Stage I, II, and III breast cancer at intermediate to high risk of recurrence",
+   "decision_quote": "On November 23, 2026, the Food and Drug Administration approved giredestrant (Wilserdly, Genentech, Inc.)",
+   "decision_note": "Approved on November 23, 2026, 7 days before the November 30, 2026 decision date Genentech disclosed (June 1, 2026). This is the adjuvant application; the metastatic use with everolimus was approved on November 16, 2026.",
+   "fda_action_date": "2026-11-23",
+   "fda_action_source_url": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-giredestrant-adjuvant-treatment-er-positive-her2-negative-stage-i-ii-and-iii-breast",
+   "fda_action_record": "FDA oncology approval notification, November 23, 2026",
+   "announcement": "Genentech press release, November 23, 2026",
+   "announcement_url": "https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede",
+   "review": "Per the FDA, lidERA (NCT04961996) randomized 4,170 patients 1:1 to giredestrant or standard endocrine therapy: the 36-month invasive disease-free survival rate was 92.4% and 89.6% (hazard ratio 0.70, 95% CI 0.57 to 0.87; two-sided p=0.0014)."
+  },
+  "oc": "Approved",
+  "dcd": "2026-11-23"
  },
  {
   "id": "pdufa_rhhby_2026-11-30_pmn",
