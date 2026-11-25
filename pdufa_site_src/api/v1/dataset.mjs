@@ -11276,46 +11276,6 @@ export default [
   "dm": "2026-12"
  },
  {
-  "id": "readout_dwtx_2026-07-15",
-  "t": "DWTX",
-  "company": "Dogwood Therapeutics, Inc.",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "Halneuron",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06848348",
-  "ua": "2026-10-12T00:26:33Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06848348",
-    "status": "active_not_recruiting",
-    "pcd": "2026-12",
-    "pcd_type": "estimated",
-    "updated": "2026-09-14",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06848348",
-   "date_history": [
-    {
-     "date": "2026-07-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-12-15",
-     "changed": "2026-10-11",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT06848348 is now 2026-12 (estimated; registry status active_not_recruiting, record updated 2026-09-14); the row's window moved from 2026-07 to 2026-12 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ]
-  },
-  "dm": "2026-12"
- },
- {
   "id": "readout_goss_2026-12-15",
   "t": "GOSS",
   "company": "Gossamer Bio, Inc.",
@@ -16248,35 +16208,6 @@ export default [
     "sponsor": "University of Ulm",
     "basis": "Only CPX-351 trial with PCD 2027-06: Ph3 standard vs CPX-351 induction in AML (AMLSG), sponsor University of Ulm, not Jazz."
    }
-  },
-  "dm": "2027-06"
- },
- {
-  "id": "readout_kymr_2027-06-15",
-  "t": "KYMR",
-  "company": "Kymera Therapeutics, Inc.",
-  "d": "2027-06-15",
-  "dp": "month",
-  "name": "KT-621",
-  "type": "Readout",
-  "ta": "Immunology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT07217015",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT07217015",
-    "status": "active_not_recruiting",
-    "pcd": "2027-06",
-    "pcd_type": "estimated",
-    "updated": "2026-10-02",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07217015"
   },
   "dm": "2027-06"
  },
