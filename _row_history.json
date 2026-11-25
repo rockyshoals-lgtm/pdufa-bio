@@ -2,9 +2,9 @@
 "first_sha": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
 "first_ts": "2026-07-26 00:07 ET",
 "first_rows": 388,
-"versions": 461,
-"last_sha": "44f2435d29265c7d1f4ac725abc25903ca17ddb6",
-"last_ts": "2026-11-25 16:50 ET",
+"versions": 463,
+"last_sha": "ad0dbadd4660d43949cddcb52e45a07d7372075c",
+"last_ts": "2026-11-25 17:18 ET",
 "rebuilds": [],
 "changes": [
 {
@@ -29454,6 +29454,78 @@
 "name": "RAP-219 Phase 2a (RNS): seizure severity and seizure-burden analyses Two Phase 2a…",
 "st_was": "Guided",
 "st_now": "Guided"
+},
+{
+"sha": "122f4aa8128d6307c2774269441ebee35dd485e4",
+"ts": "2026-11-25 17:10 ET",
+"id": "readout_axsm_2026-07-15",
+"field": "d",
+"old": "2026-07-15",
+"new": "2026-08-15",
+"t": "AXSM",
+"name": "AXS-14",
+"st_was": "Estimated",
+"st_now": "Estimated"
+},
+{
+"sha": "122f4aa8128d6307c2774269441ebee35dd485e4",
+"ts": "2026-11-25 17:10 ET",
+"id": "readout_biib_2026-12-15",
+"field": "d",
+"old": "2026-12-15",
+"new": "2026-11-15",
+"t": "BIIB",
+"name": "Felzartamab",
+"st_was": "Estimated",
+"st_now": "Estimated"
+},
+{
+"sha": "122f4aa8128d6307c2774269441ebee35dd485e4",
+"ts": "2026-11-25 17:10 ET",
+"id": "readout_sln_2026-09-15",
+"field": "d",
+"old": "2026-09-15",
+"new": "2026-06-15",
+"t": "SLN",
+"name": "SLN124",
+"st_was": "Estimated",
+"st_now": "Estimated"
+},
+{
+"sha": "122f4aa8128d6307c2774269441ebee35dd485e4",
+"ts": "2026-11-25 17:10 ET",
+"id": "readout_vnda_2026-12-15",
+"field": "d",
+"old": "2026-12-15",
+"new": "2026-08-15",
+"t": "VNDA",
+"name": "VQW-765",
+"st_was": "Estimated",
+"st_now": "Estimated"
+},
+{
+"sha": "ad0dbadd4660d43949cddcb52e45a07d7372075c",
+"ts": "2026-11-25 17:18 ET",
+"id": "readout_dwtx_2026-07-15",
+"field": "row",
+"old": "",
+"new": "left",
+"t": "DWTX",
+"name": "Halneuron",
+"st_was": "Estimated",
+"st_now": ""
+},
+{
+"sha": "ad0dbadd4660d43949cddcb52e45a07d7372075c",
+"ts": "2026-11-25 17:18 ET",
+"id": "readout_kymr_2027-06-15",
+"field": "row",
+"old": "",
+"new": "left",
+"t": "KYMR",
+"name": "KT-621",
+"st_was": "Estimated",
+"st_now": ""
 }
 ]
 }

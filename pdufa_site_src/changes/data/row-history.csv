@@ -2453,3 +2453,9 @@ time_et,commit,row_id,ticker,name,field,old,new,status_was,status_now
 2026-11-25 15:50 ET,6ca31e67b25f211a073159ece8866add7cf5841b,readout_zlab_2027-12-31-zocilurtat,ZLAB,"zocilurtatug pelitecan (zoci, DLL3 ADC) Global pivotal Phase 3 DLLEVATE Potential Phase…",row,,entered,,Guided
 2026-11-25 15:50 ET,6ca31e67b25f211a073159ece8866add7cf5841b,readout_zura_2027-06-30,ZURA,tibulizumab (ZB-106) Phase 2 TibuSURE Phase 2 topline,row,,entered,,Guided
 2026-11-25 16:50 ET,44f2435d29265c7d1f4ac725abc25903ca17ddb6,readout_rapp_2026-12-07,RAPP,RAP-219 Phase 2a (RNS): seizure severity and seizure-burden analyses Two Phase 2a…,name,RAP-219 Phase 2a (RNS) — seizure severity and seizure-burden analyses Two Phase 2a…,RAP-219 Phase 2a (RNS): seizure severity and seizure-burden analyses Two Phase 2a…,Guided,Guided
+2026-11-25 17:10 ET,122f4aa8128d6307c2774269441ebee35dd485e4,readout_axsm_2026-07-15,AXSM,AXS-14,d,2026-07-15,2026-08-15,Estimated,Estimated
+2026-11-25 17:10 ET,122f4aa8128d6307c2774269441ebee35dd485e4,readout_biib_2026-12-15,BIIB,Felzartamab,d,2026-12-15,2026-11-15,Estimated,Estimated
+2026-11-25 17:10 ET,122f4aa8128d6307c2774269441ebee35dd485e4,readout_sln_2026-09-15,SLN,SLN124,d,2026-09-15,2026-06-15,Estimated,Estimated
+2026-11-25 17:10 ET,122f4aa8128d6307c2774269441ebee35dd485e4,readout_vnda_2026-12-15,VNDA,VQW-765,d,2026-12-15,2026-08-15,Estimated,Estimated
+2026-11-25 17:18 ET,ad0dbadd4660d43949cddcb52e45a07d7372075c,readout_dwtx_2026-07-15,DWTX,Halneuron,row,,left,Estimated,
+2026-11-25 17:18 ET,ad0dbadd4660d43949cddcb52e45a07d7372075c,readout_kymr_2027-06-15,KYMR,KT-621,row,,left,Estimated,
