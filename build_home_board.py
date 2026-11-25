@@ -232,8 +232,17 @@ def load_slate():
                    and r.get("st") in ("Upcoming", "Awaiting") and (not gtok or gtok & _drug_tokens(r.get("name")))
                    for r in ds)
 
+    # 2026-11-25 (David: "add a past due box on the home page"): a goal whose date has passed with no decision on record
+    # is listed in the home page's "Past their goal date" box (build_home_past_due.py), for as long as it stays open,
+    # not here as "0 due" for ten days. Same rule as the box, so a goal shows in exactly one of the two.
+    try:
+        from build_home_past_due import keys as _past_due_keys
+        overdue = _past_due_keys(TODAY)
+    except Exception:  # noqa: BLE001
+        overdue = set()
     cats = [c for c in slate["catalysts"] if c.get("ticker") and c.get("date")
             and str(c["date"])[:10] >= grace
+            and (str(c["ticker"]).upper(), str(c["date"])[:10]) not in overdue
             and (open_in_dataset(c["ticker"].upper(), str(c["date"])[:10], c.get("drug") or c.get("drug_name") or "")
                  or not resolved(c["ticker"].upper(), str(c["date"])[:10],
                                  c.get("drug") or c.get("drug_name") or ""))]
