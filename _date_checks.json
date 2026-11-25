@@ -2184,6 +2184,34 @@
    "source": "https://www.globenewswire.com/news-release/2026/11/24/3409267/33485/en/xenon-to-present-new-azetukalner-data-in-focal-seizures-at-aes-2026.html",
    "by": "manual",
    "note": "2026-11-25 readout mine: source re-opened by an independent red-team pass"
+  },
+  "readout_bctx_2026-12-11": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409117/0/en/briacell-to-present-five-clinical-posters-including-late-breaking-phase-3-biomarker-and-safety-findings-at-sabcs-2026.html",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
+  },
+  "readout_beam_2026-12-15-ristogloge": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399328/0/en/beam-therapeutics-announces-positive-topline-pivotal-data-from-beacon-phase-1-2-trial-of-risto-cel-in-patients-with-sickle-cell-disease.html",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
+  },
+  "readout_nrix_2026-12-15": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396262/0/en/nurix-therapeutics-to-present-new-and-updated-data-from-ongoing-phase-1a-1b-trial-of-bexobrutideg-nx-5948-in-relapsed-refractory-cll-sll-at-the-68th-ash-annual-meeting-and-expositi.html",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
+  },
+  "readout_sndx_2026-12-15": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395377/0/en/syndax-highlights-acceptance-of-19-revuforj-revumenib-and-niktimvo-axatilimab-csfr-abstracts-including-7-for-oral-presentation-at-ash-2026.html",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
   }
  }
 }
