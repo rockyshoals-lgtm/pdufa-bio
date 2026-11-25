@@ -8423,6 +8423,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-approvals/drugs": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/ABBV-2025-02-07": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -12323,12 +12329,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/ticker/ALLO": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/ticker/ALMS": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -12929,12 +12929,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/ticker/ENGN": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/ticker/ENTA": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -12951,12 +12945,6 @@
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/ticker/ESLA": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/ticker/ETON": {
@@ -13971,12 +13959,6 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/ticker/SNSE": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/ticker/SNY": {

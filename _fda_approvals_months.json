@@ -5594,7 +5594,7 @@
 "complete": true
 },
 "2026-04": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA220934",
@@ -5742,7 +5742,7 @@
 {
 "app": "BLA761068",
 "brand": "Crysvita",
-"generic": "burosumab",
+"generic": "burosumab-twza",
 "sponsor": "Kyowa Kirin",
 "kind": "efficacy supplement",
 "sub": "SUPPL-11",
@@ -5882,10 +5882,12 @@
 "date": "2026-04-30",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215430Orig1s009, s018correctedltr.pdf"
 }
-]
+],
+"openfda_total": 275,
+"complete": true
 },
 "2026-05": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA220837",
@@ -5967,7 +5969,7 @@
 {
 "app": "BLA761304",
 "brand": "Vyvgart Hytrulo",
-"generic": "efgartigimod alfa and hyaluronidase (human recombinant)",
+"generic": "efgartigimod alfa and hyaluronidase-qvfc",
 "sponsor": "Argenx Bv",
 "kind": "efficacy supplement",
 "sub": "SUPPL-18",
@@ -6020,7 +6022,7 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212576Orig1s008ltr.pdf"
 },
 {
-"app": "NDA209817",
+"app": "NDA209816",
 "brand": "Nuzyra",
 "generic": "omadacycline",
 "sponsor": "Paratek Pharms",
@@ -6031,7 +6033,7 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209816Orig1s018,209817Orig1s018ltr.pdf"
 },
 {
-"app": "NDA209816",
+"app": "NDA209817",
 "brand": "Nuzyra",
 "generic": "omadacycline",
 "sponsor": "Paratek Pharms",
@@ -6283,10 +6285,12 @@
 "date": "2026-05-29",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220787Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 266,
+"complete": true
 },
 "2026-06": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "BLA761480",
@@ -6465,17 +6469,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214231Orig1s004ltr.pdf"
 },
 {
-"app": "NDA212436",
-"brand": "Ibrance",
-"generic": "palbociclib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-12",
-"class": "Efficacy",
-"date": "2026-06-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212436Orig1s012ltr.pdf"
-},
-{
 "app": "NDA207103",
 "brand": "Ibrance",
 "generic": "palbociclib",
@@ -6485,6 +6478,17 @@
 "class": "Efficacy",
 "date": "2026-06-24",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/207103Orig1s024ltr.pdf"
+},
+{
+"app": "NDA212436",
+"brand": "Ibrance",
+"generic": "palbociclib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-12",
+"class": "Efficacy",
+"date": "2026-06-24",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212436Orig1s012ltr.pdf"
 },
 {
 "app": "BLA125514",
@@ -6607,7 +6611,9 @@
 "date": "2026-06-29",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215985Orig1s015ltr.pdf"
 }
-]
+],
+"openfda_total": 614,
+"complete": true
 },
 "2026-07": {
 "fetched": "2026-11-12",
