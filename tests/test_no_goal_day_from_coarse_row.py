@@ -40,6 +40,12 @@ def main():
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read().replace("\x00", "")
     rows = json.loads(src[src.index("["):src.rindex("]") + 1])
     coarse = []
+    # 2026-11-25: a ticker can hold a day-precision row and a coarse row with the same end date (RHHBY: giredestrant
+    # lidERA goal November 30, dp=day; Gazyva MAJESTY window November 2026, d=2026-11-30, dp=month). The ticker then
+    # does not say which row a "November 30 goal date" sentence is about, so such a coarse row is matched by its
+    # drug name alone. Run 45545587232 blocked on the giredestrant sentence, which is correct.
+    day_rows = {(str(r.get("t") or "").upper(), str(r.get("d") or "")) for r in rows
+                if r.get("type") == "PDUFA" and (r.get("dp") or "day") == "day"}
     for r in rows:
         if r.get("type") != "PDUFA" or (r.get("dp") or "day") == "day":
             continue
@@ -48,7 +54,8 @@ def main():
             continue
         y, m, dd = d.split("-")
         first = re.split(r"[\s(\-:]", str(r.get("name") or "").strip())[0].lower()
-        coarse.append((str(r.get("t") or "").upper(), first, f"{MONTHS[int(m)]} {int(dd)}", d))
+        tk = str(r.get("t") or "").upper()
+        coarse.append((tk, first, f"{MONTHS[int(m)]} {int(dd)}", d, (tk, d) in day_rows))
     fails = []
     for rel in PAGES:
         p = os.path.join(SITE, rel)
@@ -58,10 +65,11 @@ def main():
         if re.search(r'name="robots"[^>]*noindex', doc[:4000]):
             continue
         t = text(doc)
-        for tk, first, label, d in coarse:
+        for tk, first, label, d, shared in coarse:
             for m in re.finditer(rf"(?:{re.escape(label)},? \d{{4}} goal date|{re.escape(label)} goal date|goal date of {re.escape(label)}|goal date, {re.escape(label)})", t):
                 win = t[max(0, m.start() - 220): m.end() + 220]
-                if re.search(rf"\b{re.escape(tk)}\b", win) or (first and len(first) > 4 and first in win.lower()):
+                named = bool(first and len(first) > 4 and first in win.lower())
+                if named or (not shared and re.search(rf"\b{re.escape(tk)}\b", win)):
                     fails.append(f"/{rel.replace('/index.html', '')}: '{m.group(0)}' stated for {tk} ({d}, precision != day)")
                     break
     if fails:
