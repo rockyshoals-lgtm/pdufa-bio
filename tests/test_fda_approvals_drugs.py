@@ -268,7 +268,11 @@ def main():
         fails.append("the workflow does not force-add approvals-by-drug.csv; *.csv is ignored, so it would 404 live")
 
     # ---- words ------------------------------------------------------------------------------------------------------
-    body = text(doc[doc.index("<h1"):doc.index("<footer") if "<footer" in doc else len(doc)])
+    # 2026-11-25: the rebuild's inject_site_links.py adds a sitewide nav ("Trial success rates", "FDA approval rate")
+    # between SITELINKS/RELATED markers before the footer, which this word check read as page text and blocked the
+    # 9:22 PM PT run. Injected link blocks are not this page's words; test_fda_approvals_companies.py stops there too.
+    page = re.sub(r"(?s)<!--(SITELINKS|RELATED|LINKHUB|DMOD):BEGIN-->.*?<!--\1:END-->", "", doc)
+    body = text(page[page.index("<h1"):page.index("<footer") if "<footer" in page else len(page)])
     for m in BAD.finditer(body):
         fails.append(f"forbidden word on the page: {body[max(0, m.start() - 40):m.end() + 40]!r}")
 
