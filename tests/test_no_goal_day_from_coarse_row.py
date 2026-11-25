@@ -40,6 +40,12 @@ def main():
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read().replace("\x00", "")
     rows = json.loads(src[src.index("["):src.rindex("]") + 1])
     coarse = []
+    # 2026-11-25: Roche had a coarse row (Gazyva, "November 2026") and a day row (adjuvant giredestrant, "by November
+    # 30") ending on the same day. The day row's correct "Ahead of its November 30 goal date ... (RHHBY)" sentence
+    # matched the coarse row on the ticker alone. Where a ticker has a day-precision row with the same goal day, the
+    # ticker says nothing about which row a sentence is for, so only the coarse row's drug name counts.
+    day_rows = {(str(r.get("t") or "").upper(), str(r.get("d") or "")) for r in rows
+                if r.get("type") == "PDUFA" and (r.get("dp") or "day") == "day"}
     for r in rows:
         if r.get("type") != "PDUFA" or (r.get("dp") or "day") == "day":
             continue
@@ -48,7 +54,8 @@ def main():
             continue
         y, m, dd = d.split("-")
         first = re.split(r"[\s(\-:]", str(r.get("name") or "").strip())[0].lower()
-        coarse.append((str(r.get("t") or "").upper(), first, f"{MONTHS[int(m)]} {int(dd)}", d))
+        tk = str(r.get("t") or "").upper()
+        coarse.append((tk, first, f"{MONTHS[int(m)]} {int(dd)}", d, (tk, d) in day_rows))
     fails = []
     for rel in PAGES:
         p = os.path.join(SITE, rel)
@@ -58,10 +65,11 @@ def main():
         if re.search(r'name="robots"[^>]*noindex', doc[:4000]):
             continue
         t = text(doc)
-        for tk, first, label, d in coarse:
+        for tk, first, label, d, shared in coarse:
             for m in re.finditer(rf"(?:{re.escape(label)},? \d{{4}} goal date|{re.escape(label)} goal date|goal date of {re.escape(label)}|goal date, {re.escape(label)})", t):
                 win = t[max(0, m.start() - 220): m.end() + 220]
-                if re.search(rf"\b{re.escape(tk)}\b", win) or (first and len(first) > 4 and first in win.lower()):
+                by_ticker = not shared and re.search(rf"\b{re.escape(tk)}\b", win)
+                if by_ticker or (first and len(first) > 4 and first in win.lower()):
                     fails.append(f"/{rel.replace('/index.html', '')}: '{m.group(0)}' stated for {tk} ({d}, precision != day)")
                     break
     if fails:

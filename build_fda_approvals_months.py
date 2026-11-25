@@ -230,7 +230,8 @@ def main():
         os.makedirs(os.path.join(SITE, "fda-approvals"), exist_ok=True)
         io.open(os.path.join(SITE, "fda-approvals", "index.html"), "w", encoding="utf-8").write(
             head + f'<h1>FDA approvals by month</h1><p class="sub" style="color:#cfe0f5">{esc(hub_first)}</p>'
-            f'<p class="sub"><a href="/fda-approvals/companies">Every approval by company</a>, with its FDA letter</p>'
+            f'<p class="sub"><a href="/fda-approvals/companies">Every approval by company</a>, with its FDA letter &middot; '
+            f'<a href="/fda-approvals/drugs">every approval by drug application</a>, with any released CRL</p>'
             f'<ul style="line-height:1.9">{lis}</ul>' + foot)
     for y, m, nn, ne in rows[-3:]:
         print(f"  /fda-approvals/{y}/{MON[m - 1]:9s} new {nn}, efficacy supplements {ne}")

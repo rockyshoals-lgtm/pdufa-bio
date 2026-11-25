@@ -767,6 +767,10 @@ jobs:
           # same cache. tests/test_fda_approval_weekdays.py, test_fda_approvals_companies.py.
           python build_fda_approvals_months.py
           python build_fda_approvals_companies.py || echo "::warning::/fda-approvals/companies not rebuilt this run; tests/test_fda_approvals_companies.py checks it against the cache"
+          # 2026-11-25: /fda-approvals/drugs (every approval by application, CSV, with the released CRLs on the same
+          # application number) and a line on each /crl/letter page; after build_crl_letters.py, which redraws those
+          # pages earlier in the run. tests/test_fda_approvals_drugs.py.
+          python build_fda_approvals_drugs.py || echo "::warning::/fda-approvals/drugs not rebuilt this run; tests/test_fda_approvals_drugs.py checks it against the cache"
           python build_fda_approval_weekdays.py || echo "::warning::/research/fda-approval-weekdays not rebuilt"
           # 2026-11-23: the BLA section of /crl/facts (last released CRL to the ORIG-1 approval Drugs@FDA lists) reads the
           # same refreshed cache, so it is written here, after build_crl_facts.py wrote the page earlier in the run.
@@ -1280,6 +1284,7 @@ jobs:
           git add -f pdufa_site_src/changes/data/row-history.csv 2>/dev/null || true   # *.csv is ignored; the /changes download
           git add -f pdufa_site_src/research/fda-approval-weekdays/data/drugs-at-fda-approval-dates.csv pdufa_site_src/research/fda-approval-weekdays/data/orange-book-nda-dates.csv _fda_approval_weekdays.json 2>/dev/null || true   # the weekday study's download and guard file
           git add -f pdufa_site_src/fda-approvals/data/approvals-by-company.csv 2>/dev/null || true   # /fda-approvals/companies download
+          git add -f pdufa_site_src/fda-approvals/data/approvals-by-drug.csv 2>/dev/null || true   # /fda-approvals/drugs download (*.csv is ignored)
           # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot
           # reach openFDA reads the newest release, not the August 2026 file (red team of /crl/data, Nov 22)
           git add CRL_corpus_openFDA_*.json 2>/dev/null || true
