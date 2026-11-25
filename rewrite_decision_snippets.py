@@ -202,7 +202,14 @@ def main():
         # 4.7 (#65): the drug name comes from the page's own "Drug / candidate" fact (or the API
         # row), cleaned by drug_names.py -- NEVER from this script's previous <title>, which it had
         # cut to fit and then re-read as the name ("Ipratropium Bromide HFA Inhala", ten pages).
+        # 2026-11-25: older pages built from the FDA's released CRL files label the fact "Drug", not "Drug / candidate"
+        # (CAPR-2025-07-11 "Deramiocel", ALDX, ATRA, MIST, OTLK, PHAR, REPL, UNCY). Read only the one, so eight CRL
+        # titles named no drug ("CAPR FDA Decision: CRL Jul 9, 2025") and /drug/deramiocel counted one CRL of two.
+        # The fallback is used only when nothing else names the drug: on the pages that already have a name, the
+        # "Drug" fact is a longer form ("Troriluzole (BHV4157-206-RWE)", a study code) that would reword 190 titles.
         kvm = re.search(r"<span>Drug / candidate</span><b>(.*?)</b>", doc)
+        if not kvm and not names.get((tk, dcd)) and not drug:
+            kvm = re.search(r"<span>Drug</span><b>(.*?)</b>", doc)
         rown = names.get((tk, dcd))
         src_name = rown or (_html.unescape(kvm.group(1)) if kvm else "")
         if src_name and src_name.lower() not in JUNK:

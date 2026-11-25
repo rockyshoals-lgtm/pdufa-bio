@@ -21,13 +21,6 @@
 "status": "decided"
 },
 {
-"ticker": "IBRX",
-"date": "2026-01-16",
-"outcome": "CRL",
-"drug": "CD19 CAR-NK cell therapy  with rituxim",
-"status": "decided"
-},
-{
 "ticker": "JNJ",
 "date": "2026-01-27",
 "outcome": "APPROVAL",

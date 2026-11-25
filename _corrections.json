@@ -273,6 +273,111 @@
    "was": "A decision page for AGIO dated 2025-11-03 recording UCB's Kygevvi approval as an Agios approval.",
    "now": "FDA approved Kygevvi (doxecitine and doxribtimine) on November 3, 2025 under NDA 219792, whose applicant is UCB, not Agios. Agios had no FDA action that day; its Aqvesme (mitapivat) approval of December 23, 2025 has its own page. The page is retired and redirects to /ticker/AGIO.",
    "source": "Drugs@FDA, NDA 219792 (applicant UCB Inc, approved 2025-11-03), and the FDA approval letter https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219792Orig1000ltr.pdf"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/ALLO-2025-02-14",
+   "was": "A decision page for ALLO dated 2025-02-14, titled and listed as a Complete Response Letter.",
+   "now": "Allogene announced the journal publication of Phase 1 ALPHA and ALPHA2 data that day (release dated February 13, 2025). No FDA action; no CRL. The page is retired and redirects to /ticker/ALLO.",
+   "source": "Allogene release of February 13, 2025 (GlobeNewswire)"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/ENGN-2025-11-11",
+   "was": "A decision page for ENGN dated 2025-11-11, titled and listed as a Complete Response Letter.",
+   "now": "enGene reported a 62% complete response rate at 6 months for detalimogene in the LEGEND trial; \"complete response\" there is the trial's clinical measure, not an FDA letter. No CRL. The page is retired and redirects to /ticker/ENGN.",
+   "source": "enGene release of November 11, 2025 (Business Wire)"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/EQ-2025-03-27",
+   "was": "A decision page for EQ dated 2025-03-27, titled and listed as a Complete Response Letter.",
+   "now": "Equillium reported topline results of the Phase 3 EQUATOR study of itolizumab. No FDA action; no CRL. The page is retired and redirects to /ticker/EQ.",
+   "source": "Equillium release of March 27, 2025 (Business Wire)"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/ESLA-2025-11-03",
+   "was": "A decision page for ESLA dated 2025-11-03, titled and listed as a Complete Response Letter.",
+   "now": "Estrella's 8-K reported completion of the second dose cohort of the Phase I STARLIGHT-1 study. No FDA action; no CRL. The page is retired and redirects to /ticker/ESLA.",
+   "source": "Estrella Immunopharma 8-K, report date November 3, 2025"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/IBRX-2026-01-16",
+   "was": "A decision page for IBRX dated 2026-01-16, titled and listed as a Complete Response Letter.",
+   "now": "ImmunityBio reported discussions with the FDA about information to support a potential resubmission of an ANKTIVA supplemental BLA (release dated January 20, 2026). No CRL that day. The page is retired and redirects to /ticker/IBRX.",
+   "source": "ImmunityBio release, January 2026 (ir.immunitybio.com)"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/JSPR-2025-01-08",
+   "was": "A decision page for JSPR dated 2025-01-08, titled and listed as a Complete Response Letter.",
+   "now": "Jasper reported preliminary data from the Phase 1b/2a BEACON study of briquilimab. No FDA action; no CRL. The page is retired and redirects to /ticker/JSPR.",
+   "source": "Jasper Therapeutics release of January 8, 2025 (GlobeNewswire)"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/JSPR-2025-07-07",
+   "was": "A decision page for JSPR dated 2025-07-07, titled and listed as a Complete Response Letter.",
+   "now": "Jasper reported a briquilimab clinical data update. No FDA action; no CRL. The page is retired and redirects to /ticker/JSPR.",
+   "source": "Jasper Therapeutics release of July 7, 2025 (GlobeNewswire)"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/LSTA-2025-01-22",
+   "was": "A decision page for LSTA dated 2025-01-22, titled and listed as a Complete Response Letter.",
+   "now": "Lisata reported preliminary Phase 2b ASCEND cohort data for certepetide; \"complete responses\" is the trial's clinical measure. No FDA action; no CRL. The page is retired and redirects to /ticker/LSTA.",
+   "source": "Lisata Therapeutics release of January 22, 2025"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/PHIO-2025-01-13",
+   "was": "A decision page for PHIO dated 2025-01-13, titled and listed as a Complete Response Letter.",
+   "now": "Phio reported results from the second cohort of its PH-762 clinical study. No FDA action; no CRL. The page is retired and redirects to /ticker/PHIO.",
+   "source": "Phio Pharmaceuticals release of January 13, 2025"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/PHIO-2025-07-28",
+   "was": "A decision page for PHIO dated 2025-07-28, titled and listed as a Complete Response Letter.",
+   "now": "The page's own record said Phio had no PDUFA date on this date and that the CRL label was an error. The page is retired and redirects to /ticker/PHIO.",
+   "source": "the retired page's own CRL-reason line"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/SNSE-2025-10-17",
+   "was": "A decision page for SNSE dated 2025-10-17, titled and listed as a Complete Response Letter.",
+   "now": "Sensei reported clinical results for solnerstotug at ESMO 2025. No FDA action; no CRL. The page is retired and redirects to /ticker/SNSE.",
+   "source": "Sensei Biotherapeutics release of October 17, 2025 (GlobeNewswire)"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/SVRA-2025-05-27",
+   "was": "A decision page for SVRA dated 2025-05-27, titled and listed as a Complete Response Letter.",
+   "now": "Savara announced a refusal-to-file letter for the MOLBREEVI BLA: the FDA declined to file the application for review, which is not a Complete Response Letter. The page is retired and redirects to /ticker/SVRA.",
+   "source": "Savara release of May 27, 2025 (Business Wire)"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/TRAW-2025-06-03",
+   "was": "A decision page for TRAW dated 2025-06-03, titled and listed as a Complete Response Letter.",
+   "now": "The page's only cited source, Traws's 10-K for 2024, reports no Complete Response Letter, and no source we found records an FDA action for Traws on this date. The page is retired and redirects to /ticker/TRAW.",
+   "source": "Traws Pharma 10-K for the year ended December 31, 2024"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/CYTK-2025-11-07",
+   "was": "A decision page for CYTK dated 2025-11-07, titled and listed as a Complete Response Letter.",
+   "now": "Aficamten was not refused on this date; the FDA approved it as MYQORZO on December 19, 2025, which has its own page. The page is retired and redirects to /fda-decision/CYTK-2025-12-19.",
+   "source": "the retired page's own CRL-reason line; the MYQORZO decision page"
+  },
+  {
+   "date": "2026-11-24",
+   "page": "/fda-decision/URGN-2025-04-27",
+   "was": "A decision page for URGN dated 2025-04-27, titled and listed as a Complete Response Letter.",
+   "now": "UroGen had no CRL in April 2025; the FDA approved ZUSDURI (UGN-102) on June 12, 2025, which has its own page. The page is retired and redirects to /fda-decision/URGN-2025-06-12.",
+   "source": "the retired page's own CRL-reason line; the ZUSDURI decision page"
   }
  ],
  "legacy": [
