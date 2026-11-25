@@ -27,7 +27,11 @@ TICKER_DIR = os.path.join(SITE, "ticker")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 DECISIONS = os.path.join(SITE, "decisions", "index.html")
 OUT = os.path.join(SITE, "tickers")
-TODAY = dt.date.today()
+try:   # RULE 1: the site's "today" is Eastern; CI runs in UTC.
+    from zoneinfo import ZoneInfo
+    TODAY = dt.datetime.now(ZoneInfo("America/New_York")).date()
+except Exception:
+    TODAY = (dt.datetime.utcnow() - dt.timedelta(hours=5)).date()
 
 NAV = ('<nav><a href="/calendar">Calendar</a><a href="/conferences">Conferences</a>'
        '<a href="/adcomm">AdComm</a><a href="/decisions">Decisions</a>'
@@ -36,12 +40,25 @@ NAV = ('<nav><a href="/calendar">Calendar</a><a href="/conferences">Conferences<
        '<a class="pro" href="/pricing" style="color:var(--gold)">Pro</a></nav>')
 
 
+def when(d, dp):
+    """A row's date at the precision the dataset holds it: a coarse row's d is the END of its window, so a
+    quarter row reads Q1 2027 and a year row 2027, never a made-up day (2026-11-25)."""
+    if dp == "year":
+        return d[:4]
+    if dp == "quarter":
+        return f"Q{(int(d[5:7]) - 1) // 3 + 1} {d[:4]}"
+    if dp == "month":
+        return d[:7]
+    return d
+
+
 def esc(s):
     return (str(s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--refresh", action="store_true", help="rewrite only the counts and rows of the live page")
     a = ap.parse_args()
 
     tickers = sorted(d for d in os.listdir(TICKER_DIR)
@@ -51,7 +68,7 @@ def main():
     # what do we know about each ticker?
     src = open(DATASET, encoding="utf-8", errors="replace").read().replace("\x00", "")
     arr, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
-    upcoming, company = {}, {}
+    upcoming, company, passed = {}, {}, {}
     for r in arr:
         t = r.get("t")
         if not t:
@@ -59,16 +76,24 @@ def main():
         if r.get("company"):
             company.setdefault(t, r["company"])
         d = str(r.get("d") or "")[:10]
-        if r.get("st") not in ("Decided",) and d >= TODAY.isoformat():
+        # 2026-11-25: Withdrawn, Reported, Ended and Held rows are over, not upcoming, whatever their date.
+        if r.get("st") in ("Decided", "Withdrawn", "Reported", "Ended", "Held") or not d:
+            continue
+        if d >= TODAY.isoformat():
             cur = upcoming.get(t)
             if cur is None or d < cur[0]:
-                upcoming[t] = (d, r.get("type") or "", r.get("name") or "")
+                upcoming[t] = (d, r.get("type") or "", r.get("name") or "", when(d, r.get("dp")))
+        elif re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) and (r.get("type") or "") == "PDUFA":
+            # 2026-11-25: a goal date that has passed with no decision recorded is not "upcoming".
+            cur = passed.get(t)
+            if cur is None or d > cur[0]:
+                passed[t] = (d, r.get("name") or "")
 
     dec_count = {}
     if os.path.exists(DECISIONS):
         html = open(DECISIONS, encoding="utf-8", errors="replace").read()
-        for m in re.finditer(r'href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"', html):
-            dec_count[m.group(1)] = dec_count.get(m.group(1), 0) + 1
+        for tk, day in set(re.findall(r'href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"', html)):
+            dec_count[tk] = dec_count.get(tk, 0) + 1   # each decision page once, however often it is linked
 
     groups = {}
     for t in tickers:
@@ -88,16 +113,18 @@ def main():
             up = upcoming.get(t)
             n = dec_count.get(t, 0)
             bits = []
+            if t in passed and (not up or up[1] != "PDUFA"):
+                bits.append(f'PDUFA goal date {passed[t][0]} passed; no decision on record here yet')
             if up:
-                bits.append(f'<b style="color:var(--gold)">{up[1] or "Catalyst"} {up[0]}</b>'
-                            + (f' &middot; {esc(up[2])[:40]}' if up[2] else ""))
+                bits.append(f'<b style="color:var(--gold)">{up[1] or "Catalyst"} {up[3]}</b>'
+                            + (f' &middot; {esc(up[2][:40])}' if up[2] else ""))
             if n:
                 bits.append(f'{n} decision{"s" if n != 1 else ""} on record')
             if not bits:
                 bits.append("no catalyst on record")
             rows.append(
                 f'<a class="trow" href="/ticker/{t}"><span class="tk">{t}</span>'
-                f'<span class="tm"><span class="cn">{esc(company.get(t, ""))[:44]}</span>'
+                f'<span class="tm"><span class="cn">{esc(company.get(t, "")[:44])}</span>'
                 f'<span class="dd">{" &middot; ".join(bits)}</span></span></a>')
         body.append(f'<h2 id="{L}">{L}</h2><div class="grid">{"".join(rows)}</div>')
 
@@ -168,7 +195,24 @@ primary FDA / SEC / company filings. &copy; 2026 pdufa.bio</div>
     if a.dry_run:
         print("DRY RUN -- not written."); return
     os.makedirs(OUT, exist_ok=True)
-    open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(html)
+    page = os.path.join(OUT, "index.html")
+    if a.refresh and os.path.exists(page):
+        # 2026-11-25 (red team): the daily rebuild never ran this builder, so /tickers kept the rows of its
+        # last hand run and showed passed goal dates as next catalysts. --refresh rewrites only the counts and
+        # the A-Z rows, from the sub-heading to the closing note, and leaves everything the site-wide
+        # normalisers added (fonts, header, search, freshness stamp, FAQ, footer) as it is.
+        cur = open(page, encoding="utf-8").read()
+        A, B = '<p class="sub">', '<p class="note" style="margin-top:26px">'
+        a0, b0 = html.find(A), html.find(B)
+        a1, b1 = cur.find(A), cur.find(B)
+        if min(a0, b0, a1, b1) < 0 or cur.count(A) != 1 or cur.count(B) != 1:
+            print("::warning::/tickers refresh: page markers not found; page left as it was"); return
+        cur = cur[:a1] + html[a0:b0] + cur[b1:]
+        head_end = cur.find("</head>")
+        cur = re.sub(r"\(\d+ companies\)", f"({len(tickers)} companies)", cur[:head_end]) + cur[head_end:]
+        open(page, "w", encoding="utf-8").write(cur)
+        print(f"refreshed tickers/index.html rows and counts ({len(tickers)} tickers)"); return
+    open(page, "w", encoding="utf-8").write(html)
     print(f"wrote tickers/index.html ({len(html)} bytes, {len(tickers)} server-rendered anchors)")
 
 
