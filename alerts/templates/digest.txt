@@ -1,0 +1,18 @@
+pdufa.bio weekly FDA alert, $date_long
+
+FDA DECISIONS RECORDED THIS WEEK
+$decided_txt
+
+PDUFA GOAL DATES, NEXT SEVEN DAYS
+$upcoming_txt
+
+Goal dates are the FDA's target action dates as disclosed by the company. The FDA can act earlier or later.
+Full calendar: https://www.pdufa.bio/calendar
+
+Facts only: dates and outcomes as the public record shows them, with sources. Not investment advice, and not a recommendation to buy or sell any security. pdufa.bio is not affiliated with the FDA.
+Corrections: https://www.pdufa.bio/corrections
+
+You get this because you signed up and confirmed at pdufa.bio/alerts.
+Unsubscribe (one click): $unsubscribe_url
+Privacy: https://www.pdufa.bio/privacy
+$postal_address
