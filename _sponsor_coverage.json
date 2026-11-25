@@ -1,11 +1,10 @@
 {
- "as_of": "2026-11-24",
+ "as_of": "2026-11-25",
  "horizon_days": 60,
  "sponsors": {
   "COGT": {
    "company": "Cogent Biosciences",
    "goals": [
-    "2026-11-30",
     "2026-12-30"
    ],
    "channels": [
@@ -20,7 +19,6 @@
     "2026-12-17"
    ],
    "channels": [
-    "sponsor_feed",
     "edgar_8k",
     "fda_feeds"
    ],
@@ -71,22 +69,9 @@
    ],
    "cik": 1689548
   },
-  "PYPD": {
-   "company": "PolyPid Ltd.",
-   "goals": [
-    "2026-11-28"
-   ],
-   "channels": [
-    "sponsor_feed",
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1611842
-  },
   "RHHBY": {
    "company": "Roche Holding AG",
    "goals": [
-    "2026-11-30",
     "2026-12-31",
     "2027-01-10"
    ],

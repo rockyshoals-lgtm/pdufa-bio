@@ -1,11 +1,11 @@
 {
  "daf": {
   "first": "2025-01-01",
-  "last": "2026-11-18",
-  "fetched": "2026-11-24",
+  "last": "2026-11-20",
+  "fetched": "2026-11-25",
   "read_first": "2026-11-12",
   "n_orig": 283,
-  "n_supp": 459,
+  "n_supp": 461,
   "orig_by_weekday": [
    28,
    44,
@@ -20,7 +20,7 @@
    63,
    81,
    101,
-   160,
+   162,
    3,
    0
   ],
@@ -127,7 +127,7 @@
   ],
   "earlier": 0
  },
- "study_n": 41,
+ "study_n": 43,
  "goal_rows": [
   {
    "slug": "ACHV-2026-06-22",
@@ -202,9 +202,9 @@
    "kind": "Drugs@FDA action date"
   }
  ],
- "lede": "Of the 283 original NDA and BLA approvals in Drugs@FDA (medical gases aside) from January 1, 2025 to November 18, 2026, 89 (31%) carry a Friday action date and none a Saturday or Sunday date. Of the 459 efficacy supplement approvals, 160 (35%) are Fridays and 3 fall on a weekend.",
- "goal_lede": "Of the 41 sourced 2026 decisions in our timing study, 12 had a goal date on a Saturday, Sunday or federal holiday. The FDA record is dated before the goal date in 10 of them (7 within 3 days before, 5 of those on the Friday just before), on the goal date in 1 and after it in 1. None of these goal dates fell on a federal holiday. The record dated after the goal date is an FDA web notice.",
+ "lede": "Of the 283 original NDA and BLA approvals in Drugs@FDA (medical gases aside) from January 1, 2025 to November 20, 2026, 89 (31%) carry a Friday action date and none a Saturday or Sunday date. Of the 461 efficacy supplement approvals, 162 (35%) are Fridays and 3 fall on a weekend.",
+ "goal_lede": "Of the 43 sourced 2026 decisions in our timing study, 12 had a goal date on a Saturday, Sunday or federal holiday. The FDA record is dated before the goal date in 10 of them (7 within 3 days before, 5 of those on the Friday just before), on the goal date in 1 and after it in 1. None of these goal dates fell on a federal holiday. The record dated after the goal date is an FDA web notice.",
  "ob_lede": "For NDAs since 1982, the Orange Book, the FDA's list of approved drug products, gives a longer record. Of the 3,977 NDAs with an approval date on every product they list, from January 5, 1982 to October 30, 2026, the earliest date listed is a Friday for 1,283 (32%) and a Saturday or Sunday for 12.",
- "title": "FDA Approval Dates by Day of the Week: 742 Actions Counted | pdufa.bio",
+ "title": "FDA Approval Dates by Day of the Week: 744 Actions Counted | pdufa.bio",
  "desc": "89 of 283 original FDA drug approvals since 2025 are dated on a Friday. Weekday counts from Drugs@FDA and the Orange Book, with every record as data."
 }

@@ -1,8 +1,8 @@
 {
  "source": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
  "year": 2026,
- "read_at": "2026-11-24",
- "fda_content_current_as_of": "2026-11-23",
+ "read_at": "2026-11-25",
+ "fda_content_current_as_of": "2026-11-24",
  "note": "CDER's Novel Drug Approvals list. CBER-regulated products are not on it.",
  "rows": [
   {
@@ -396,6 +396,13 @@
    "ingredient": "ribitol",
    "date": "2026-11-23",
    "use": "To treat limb-girdle muscular dystrophy type 2I/R9"
+  },
+  {
+   "n": 57,
+   "brand": "Ekitna",
+   "ingredient": "bezuclastinib",
+   "date": "2026-11-24",
+   "use": "To treat advanced gastrointestinal stromal tumors, in combination with sunitinib, in adults who have received prior treatment with imatinib"
   }
  ]
 }

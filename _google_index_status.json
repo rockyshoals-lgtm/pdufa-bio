@@ -455,6 +455,12 @@
 "state": "Submitted and indexed",
 "verdict": "PASS"
 },
+"/crl/2025": {
+"checked": "2026-11-25",
+"crawled": "2026-11-25",
+"state": "Submitted and indexed",
+"verdict": "PASS"
+},
 "/crl/2025/april": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -526,6 +532,12 @@
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
+},
+"/crl/2026": {
+"checked": "2026-11-25",
+"crawled": "2026-11-25",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/crl/2026/april": {
 "checked": "2026-11-20",
@@ -8537,12 +8549,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/fda-decision/ALLO-2025-02-14": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/fda-decision/ALNY-2025-03-20": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9077,6 +9083,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/COGT-2026-11-24": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/CORT-2026-03-25": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9143,25 +9155,7 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/fda-decision/ENGN-2025-11-11": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/fda-decision/ENTA-2025-06-11": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/EQ-2025-03-27": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/ESLA-2025-11-03": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -9348,12 +9342,6 @@
 "verdict": "NEUTRAL"
 },
 "/fda-decision/HRMY-2026-02-17": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/IBRX-2026-01-16": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -9593,18 +9581,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/fda-decision/JSPR-2025-01-08": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/JSPR-2025-07-07": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/fda-decision/KALV-2025-07-07": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -9720,12 +9696,6 @@
 "verdict": "NEUTRAL"
 },
 "/fda-decision/LQDA-2025-05-23": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/LSTA-2025-01-22": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -10145,12 +10115,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/fda-decision/PHIO-2025-01-13": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/fda-decision/PHRRF-2025-08-11": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -10177,6 +10141,12 @@
 },
 "/fda-decision/PTGX-2026-08-28": {
 "checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/PYPD-2026-11-24": {
+"checked": "2026-11-25",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -10373,6 +10343,12 @@
 "state": "Submitted and indexed",
 "verdict": "PASS"
 },
+"/fda-decision/RHHBY-2026-11-23": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/ROIV-2026-08-27": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -10407,12 +10383,6 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/SNSE-2025-10-17": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/fda-decision/SNY-2025-03-28": {
@@ -10499,12 +10469,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/fda-decision/SVRA-2025-05-27": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/fda-decision/SWTX-2025-02-11": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -10587,12 +10551,6 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/TRAW-2025-06-03": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/fda-decision/TURN-2025-02-14": {

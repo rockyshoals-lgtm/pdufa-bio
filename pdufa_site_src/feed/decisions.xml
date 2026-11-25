@@ -5,9 +5,39 @@
 <id>https://www.pdufa.bio/feed/decisions.xml</id>
 <link rel="self" type="application/atom+xml" href="https://www.pdufa.bio/feed/decisions.xml"/>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/feed"/>
-<updated>2026-11-24T01:24:57Z</updated>
+<updated>2026-11-25T04:14:14Z</updated>
 <author><name>pdufa.bio</name><uri>https://www.pdufa.bio</uri></author>
 <rights>Facts from FDA and sponsor documents, each linked. Not investment advice.</rights>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/PYPD-2026-11-24</id>
+<title>Bacfenssi (doxycycline hyclate) Approval Announced Nov 24, 2026 | PYPD FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/PYPD-2026-11-24"/>
+<published>2026-11-24T17:00:00Z</published>
+<updated>2026-11-25T04:14:14Z</updated>
+<category term="Approved"/>
+<summary>Bacfenssi (D-PLEX100, doxycycline hyclate), PolyPid: Approved. FDA action date: not on record. Announced: November 24, 2026.</summary>
+<content type="html">&lt;p&gt;Bacfenssi (D-PLEX100, doxycycline hyclate), PolyPid: Approved. FDA action date: not on record. Announced: November 24, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm"&gt;PolyPid 6-K Exhibit 99.1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1611842/000121390026082564/ea029964201ex99-1.htm"&gt;PolyPid 6-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 24, 2026, 11:14 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/COGT-2026-11-24</id>
+<title>Ekitna (bezuclastinib) Approved Nov 24, 2026, 6 Days Early | COGT FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/COGT-2026-11-24"/>
+<published>2026-11-24T17:00:00Z</published>
+<updated>2026-11-25T04:14:14Z</updated>
+<category term="Approved"/>
+<summary>Ekitna (bezuclastinib), Cogent Biosciences: Approved. FDA action date: November 24, 2026.</summary>
+<content type="html">&lt;p&gt;Ekitna (bezuclastinib), Cogent Biosciences: Approved. FDA action date: November 24, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors"&gt;FDA oncology approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm"&gt;Cogent Biosciences, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 24, 2026, 11:14 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/RHHBY-2026-11-23</id>
+<title>Wilserdly (giredestrant) Approved Nov 23, 2026, 7 Days Early | RHHBY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RHHBY-2026-11-23"/>
+<published>2026-11-23T17:00:00Z</published>
+<updated>2026-11-25T04:14:14Z</updated>
+<category term="Approved"/>
+<summary>Wilserdly (giredestrant), Roche (Genentech): Approved. FDA action date: November 23, 2026.</summary>
+<content type="html">&lt;p&gt;Wilserdly (giredestrant), Roche (Genentech): Approved. FDA action date: November 23, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/cancer-approvals/fda-approves-giredestrant-adjuvant-treatment-er-positive-her2-negative-stage-i-ii-and-iii-breast"&gt;FDA oncology approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede"&gt;Genentech press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15115/2026-06-01/fda-accepts-new-drug-application-for-gen"&gt;Genentech press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 24, 2026, 11:14 PM ET.&lt;/p&gt;</content>
+</entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/BBIO-2026-11-23</id>
 <title>Welgemda (ribitol) Approval Announced Nov 23, 2026 | BBIO FDA Decision</title>
@@ -577,36 +607,6 @@
 <category term="Approved"/>
 <summary>Ameluz (aminolevulinic acid hydrochloride) with RhodoLED red light, Biofrontera Inc.: Approved. FDA action date: September 9, 2026.</summary>
 <content type="html">&lt;p&gt;Ameluz (aminolevulinic acid hydrochloride) with RhodoLED red light, Biofrontera Inc.: Approved. FDA action date: September 9, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/208081Orig1s040ltr.pdf"&gt;NDA 208081 S-040&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1858685/000149315226042508/ex99-1.htm"&gt;Biofrontera 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 14, 2026, 11:54 AM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/BAYRY-2026-09-09</id>
-<title>HYRNUO (sevabertinib) - HER2-mutant NSCLC Approved Sep 9, 2026 | BAYRY FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/BAYRY-2026-09-09"/>
-<published>2026-09-09T16:00:00Z</published>
-<updated>2026-09-14T15:54:05Z</updated>
-<category term="Approved"/>
-<summary>HYRNUO (sevabertinib), Bayer: Approved. FDA action date: September 9, 2026.</summary>
-<content type="html">&lt;p&gt;HYRNUO (sevabertinib), Bayer: Approved. FDA action date: September 9, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219972Orig1s001ltr.pdf"&gt;NDA 219972 S-001&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 14, 2026, 11:54 AM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/AZN-2026-09-04</id>
-<title>Etcamah (camizestrant) Approved Sep 4, 2026 | AZN FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/AZN-2026-09-04"/>
-<published>2026-09-04T16:00:00Z</published>
-<updated>2026-09-05T20:38:55Z</updated>
-<category term="Approved"/>
-<summary>Etcamah (camizestrant), AstraZeneca PLC: Approved. FDA action date: September 4, 2026.</summary>
-<content type="html">&lt;p&gt;Etcamah (camizestrant), AstraZeneca PLC: Approved. FDA action date: September 4, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220359Orig1s000ltr.pdf"&gt;NDA 220359 ORIG-1 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 5, 2026, 4:38 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/IONS-2026-09-03</id>
-<title>Zilganersen (ION373) Approved Sep 3, 2026, 19 Days Early | IONS FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/IONS-2026-09-03"/>
-<published>2026-09-03T16:00:00Z</published>
-<updated>2026-09-05T20:38:55Z</updated>
-<category term="Approved"/>
-<summary>Zanvastro (zilganersen), Ionis Pharmaceuticals, Inc.: Approved. FDA action date: September 3, 2026.</summary>
-<content type="html">&lt;p&gt;Zanvastro (zilganersen), Ionis Pharmaceuticals, Inc.: Approved. FDA action date: September 3, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220210Orig1s000ltr.pdf"&gt;NDA 220210 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/874015/000114036126029960/ef20078953_ex99-1.htm"&gt;Ionis 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 5, 2026, 4:38 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>tag:pdufa.bio,2026:pdufa-date-change/CAPR/2026-08-22/2026-11-22</id>
