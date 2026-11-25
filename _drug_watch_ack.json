@@ -113,6 +113,24 @@
    "source": "openfda:20261019",
    "acked": "2026-11-20",
    "reason": "Not this drug: openFDA AP 2026-10-19 ORIG-1 is NDA219456 CALREZDY (calcium chloride), Fresenius Medical Care; matched only on the salt word CALCIUM. Vidofludimus calcium (IMUX) has no FDA action. Salt words now in STOP."
+  },
+  {
+   "slug": "bezuclastinib",
+   "source": "fda-oncology-notifications",
+   "acked": "2026-11-25",
+   "reason": "Published 2026-11-25: Ekitna (bezuclastinib) + sunitinib approved for GIST Nov 24, 2026, /fda-decision/COGT-2026-11-24 (FDA notification read)."
+  },
+  {
+   "slug": "bezuclastinib-summit",
+   "source": "fda-oncology-notifications",
+   "acked": "2026-11-25",
+   "reason": "Not this drug page's application: the FDA's Nov 24, 2026 notice is the GIST approval with sunitinib (PEAK). The SUMMIT NonAdvSM application (goal Dec 30, 2026) has no FDA action."
+  },
+  {
+   "slug": "rap-219-long-acting",
+   "source": "fda-press:fda-approves-first-treatment-limb-girdle-muscular-dystrophy-",
+   "acked": "2026-11-25",
+   "reason": "Not this drug: the FDA press item is about the first limb-girdle muscular dystrophy treatment (the Welgemda approval of Nov 23, 2026, published as /fda-decision/BBIO-2026-11-23). RAP-219 is not named; matched only on the word 'acting'."
   }
  ]
 }
