@@ -1,3 +1,3 @@
 # Google Search Console: request indexing for these, in order (2026-11-24 Eastern).
 # About 10 requests a day per property. Then run: python build_google_request_list.py --requested <paths>
-# Skipped: 87 known indexed (_google_indexed.json), 30 requested in the last 7 days.
+# Skipped: 87 known indexed (_google_indexed.json), 40 requested in the last 7 days.
