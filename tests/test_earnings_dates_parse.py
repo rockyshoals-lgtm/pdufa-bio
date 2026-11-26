@@ -37,6 +37,20 @@ CASES = [
       "Therapeutics, Inc. (Viking) (Nasdaq: VKTX), ... today announced its financial results for the third quarter",
       "url": "u2"},
      {"kind": "results", "period_key": "2026Q3", "published_et": "2026-10-28 16:05"}),
+    # real, 2026-11-26 page red team: "Year-End" was not read as the full year, so the release had no period
+    ("VKTX", "Viking Therapeutics, Inc.",
+     {"publishedDate": "2026-02-11 16:16:00", "title": "Viking Therapeutics Reports Fourth Quarter and Year-End 2025 "
+      "Financial Results and Provides Corporate Update", "text": "SAN DIEGO, Feb. 11, 2026 /PRNewswire/ -- Viking "
+      "Therapeutics, Inc. (Viking) (Nasdaq: VKTX), ... today announced its financial results for the fourth quarter "
+      "and year ended December 31, 2025", "url": "u2b"},
+     {"kind": "results", "period_key": "2025Q4+FY", "published_et": "2026-02-11 16:16"}),
+    ("VKTX", "Viking Therapeutics, Inc.",
+     {"publishedDate": "2026-02-04 16:05:00", "title": "Viking Therapeutics to Report Financial Results for Fourth "
+      "Quarter and Year-End 2025 on February 11, 2026", "text": "Conference Call Scheduled for Wednesday, February 11 at "
+      "4:30 p.m. Eastern Time  SAN DIEGO, Feb. 4, 2026 /PRNewswire/ -- Viking Therapeutics, Inc. (\"Viking\") (NASDAQ: "
+      "VKTX), ... today announced that the company will release financial results for the fourth quarter and year-end "
+      "2025 after the market close on Wednesday, February 11, 2026.", "url": "u2c"},
+     {"kind": "schedule", "period_key": "2025Q4+FY", "report_date": "2026-02-11", "timing": "after_close"}),
     ("SRPT", "Sarepta Therapeutics, Inc.",
      {"publishedDate": "2026-10-22 08:30:00", "title": "Sarepta Therapeutics to Announce Third Quarter 2026 Financial "
       "Results", "text": "CAMBRIDGE, Mass.--(BUSINESS WIRE)--Sarepta Therapeutics, Inc. (NASDAQ:SRPT), the leader in "
@@ -199,6 +213,8 @@ CONSTRUCTED = [
     (V, VN, {"publishedDate": "2026-08-10 16:05:00", "title": 'Viking Therapeutics Reports First Quarter Fiscal 2027 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e12"}, {"kind": "results", "period_key": "FY2027Q1"}),
     (V, VN, {"publishedDate": "2026-08-10 16:05:00", "title": 'Viking Therapeutics Reports Q1 Fiscal 2027 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e13"}, {"kind": "results", "period_key": "FY2027Q1"}),
     (V, VN, {"publishedDate": "2026-02-25 16:05:00", "title": 'Viking Therapeutics Reports Fourth Quarter and Full Year 2025 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e14"}, {"kind": "results", "period_key": "2025Q4+FY"}),
+    (V, VN, {"publishedDate": "2026-02-25 16:05:00", "title": 'Viking Therapeutics Reports Q4 and Full Year 2025 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e14b"}, {"kind": "results", "period_key": "2025Q4+FY"}),
+    (V, VN, {"publishedDate": "2026-02-25 16:05:00", "title": 'Viking Therapeutics Reports Fourth-Quarter and Year-Ended 2025 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e14c"}, {"kind": "results", "period_key": "2025Q4+FY"}),
     (V, VN, {"publishedDate": "2026-10-28 16:05:00", "title": 'Viking Therapeutics Reports Third Quarter 2027 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e15"}, None),
 ]
 

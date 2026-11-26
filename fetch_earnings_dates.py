@@ -56,7 +56,7 @@ UA = {"User-Agent": "pdufa.bio-research-script/1.0"}
 FROM = "2024-01-01"
 # Bump when the parse rules change: every ticker is then re-read from FROM (90 a run), so no row parsed by older
 # rules stays in the cache.
-PARSER_VERSION = 3
+PARSER_VERSION = 4
 
 MONTHS = {m: i + 1 for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july", "august",
                                           "september", "october", "november", "december"])}
@@ -67,7 +67,8 @@ ORD = {"first": 1, "second": 2, "third": 3, "fourth": 4, "1st": 1, "2nd": 2, "3r
 # period as printed: "Third Quarter 2026", "Third-Quarter 2026", "Q3 2026", "3Q26", "Fourth Quarter and Full Year 2025",
 # "Full Year 2025", "Fiscal 2027 First Quarter", "first half 2026" (semiannual filers)
 P_QUARTER = re.compile(r"\b(first|second|third|fourth|1st|2nd|3rd|4th)[\s-]+quarter\b(?:[\s,]+(?:and|&)[\s,]+"
-                       r"(?:full|fiscal)[\s-]+year)?(?:\s+(?:of\s+)?(?:fiscal\s+(?:year\s+)?)?(20\d\d))?", re.I)
+                       r"(?:(?:full|fiscal)[\s-]+year|year[\s-]+end(?:ed)?))?(?:\s+(?:of\s+)?(?:fiscal\s+(?:year\s+)?)?(20\d\d))?",
+                       re.I)
 P_QN = re.compile(r"\b(?:Q([1-4])|([1-4])Q)[\s'-]*(?:FY)?\s*((?:20)?\d\d)\b", re.I)
 P_FY = re.compile(r"\b(?:full[\s-]+year|fiscal[\s-]+(?:year[\s-]+)?(20\d\d)?\s*(?:full[\s-]+year)?|year[\s-]+end(?:ed)?)"
                   r"\s*(20\d\d)?\b", re.I)
@@ -143,20 +144,25 @@ def period_of(text, published=None):
         y = m.group(2) or m.group(3) or m.group(6)
         y = y if len(y) == 4 else "20" + y
         return m.group(0), f"FY{y}Q{q}"
+    # "Q4 and Full Year 2025", "4Q and Year-End 2025": the fourth quarter and the year together
+    m = re.search(r"\b(?:Q4|4Q)\s+(?:and|&)\s+(?:full[\s-]+year|fiscal[\s-]+year|year[\s-]+end(?:ed)?)\s+(20\d\d)\b", t, re.I)
+    if m and int(m.group(1)) <= pub_y:
+        return m.group(0), f"{m.group(1)}Q4+FY"
     m = P_QUARTER.search(t)
     if m:
         q = ORD[m.group(1).lower()]
         yr = m.group(2)
-        full = bool(re.search(r"(and|&)[\s,]+(full|fiscal)[\s-]+year", m.group(0), re.I))
+        full = bool(re.search(r"(and|&)[\s,]+((full|fiscal)[\s-]+year|year[\s-]+end)", m.group(0), re.I))
         fiscal = bool(re.search(r"\bfiscal\b", m.group(0), re.I)) and not full
         if yr:
             return m.group(0), (f"FY{yr}Q{q}" if fiscal else f"{yr}Q{q}") + ("+FY" if full else "")
         # year printed after "full year" or "fiscal": "Fourth Quarter and Full Year 2025", "First Quarter Fiscal 2027"
         tail = t[m.end():m.end() + 25]
-        y2 = re.match(r"\s*(?:(?:and|&)\s+full[\s-]+year\s+|(fiscal)\s+(?:year\s+)?|of\s+)?(20\d\d)\b(?!\s*/)", tail, re.I)
+        y2 = re.match(r"\s*(?:(?:and|&)\s+(?:full[\s-]+year|year[\s-]+end(?:ed)?)\s+|(fiscal)\s+(?:year\s+)?|of\s+)?"
+                      r"(20\d\d)\b(?!\s*/)", tail, re.I)
         if y2 and int(y2.group(2)) <= pub_y:
             fy = bool(y2.group(1))
-            full = full or bool(re.match(r"\s*(and|&)\s+full", tail, re.I))
+            full = full or bool(re.match(r"\s*(and|&)\s+(full|year[\s-]+end)", tail, re.I))
             return m.group(0) + tail[:y2.end()], (f"FY{y2.group(2)}Q{q}" if fy else f"{y2.group(2)}Q{q}") + \
                 ("+FY" if full else "")
         return m.group(0), None
@@ -573,8 +579,8 @@ def main():
     tks = cache.setdefault("tickers", {})
     if cache.get("parser_version") != PARSER_VERSION:
         for ent in tks.values():
-            ent.pop("backfilled", None)          # re-read and re-parse everything under the new rules
-            ent["releases"] = []                 # and drop rows parsed by the old ones
+            ent.pop("backfilled", None)          # re-read and re-parse everything under the new rules; a full read
+            #                                      replaces the ticker's rows, so old rows stay until it is re-read
         cache["parser_version"] = PARSER_VERSION
     uni = universe()
     tracked = set(uni)

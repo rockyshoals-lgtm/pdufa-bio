@@ -70,6 +70,8 @@ SITE_LINKS = [
     # referring page "None detected"; it had 2 inbound links site-wide (the study hub and /sitemap)
     ("Early or late since 2024", "/research/fda-decision-timing/since-2024"),
     ("Run-up study", "/runup-by-year"), ("FDA approval rate", "/fda-approval-rate"), ("Oncology readouts", "/readouts/oncology"),
+    # 2026-11-26 (moat: earnings dates): the new /earnings hub, linked site-wide so its company pages sit 2 clicks from /
+    ("Earnings dates", "/earnings"),
     ("Readouts", "/readouts"), ("Conferences", "/conferences"), ("Corrections", "/corrections"), ("All pages", "/sitemap"),
 ]
 
@@ -80,7 +82,7 @@ SITE_LINKS = [
 # tests/test_browse_footer.py fails if one does not.
 SITE_GROUPS = [
     ("Calendar", ["/calendar", "/calendar/2027", "/fda-decisions-today", "/fda-approval-decisions-this-week",
-                  "/fda-this-month"]),
+                  "/fda-this-month", "/earnings"]),
     ("Decisions", ["/decisions/2026", "/decisions/2025", "/pdufa-date-changes", "/fda-approval-letters",
                    "/fda-approval-rate"]),
     ("Approvals", ["/fda-approvals", "/fda-approvals/companies", "/fda-approvals/drugs", "/fda-approvals/types",
