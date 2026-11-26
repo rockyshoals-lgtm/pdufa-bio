@@ -66,7 +66,9 @@ var d=e.querySelector('[data-fresh-next]');
 var n=j.next_days;if(j.next_date){var td=new Date();var t0=Date.UTC(td.getFullYear(),td.getMonth(),td.getDate());var p=j.next_date.split('-');n=Math.round((Date.UTC(+p[0],+p[1]-1,+p[2])-t0)/86400000);}
 /* A goal date that has PASSED with no decision is not "today" and not a negative countdown.
    Audit 09-14 P0-D: build-info published next_days:-3 for TLX. Say 'awaiting' instead. */
-if(d&&n!=null)d.textContent=(j.next_status==='awaiting'||n<0)?'awaiting a decision':(n===0?'today':(n===1?'tomorrow':'in '+n+' days'));
+/* 2026-11-26 design pass: the stamp read "next FDA decision awaiting a decision SVRA". The ticker now comes first and
+   the state follows it: "next FDA decision: VNDA in 16 days" / "next FDA decision: SVRA, past its goal date". */
+if(d&&n!=null)d.textContent=(j.next_status==='awaiting'||n<0)?', past its goal date':(n===0?' today':(n===1?' tomorrow':' in '+n+' days'));
 /* Audit 2026-10-03 Tier 1.4: the stamp also says when the DATA was last rebuilt, read from
    build-info's data_built_at (the same value the API serves as meta.data_built_at). On 10-03 the
    stamps sat on 09-27 for six days with nothing on the page to say the build had stopped. */
@@ -204,8 +206,8 @@ def block(date_iso, home=False):
         f'background:#46d17f"></span>'
         f'<span>{when}</span>'
         f'<span style="color:var(--mut2)">·</span>'
-        f'<span>next FDA decision <b data-fresh-next style="color:#eef4fc">on the calendar</b> '
-        f'<a data-fresh-tk href="/calendar" style="color:var(--mut2)"></a></span>'
+        f'<span>next FDA decision:<a data-fresh-tk href="/calendar" style="color:#eef4fc;margin-left:4px"></a>'
+        f'<b data-fresh-next style="color:#eef4fc;font-weight:400"> on the calendar</b></span>'
         f'<span style="color:var(--mut2)">·</span><span data-fresh-built style="color:var(--mut2)" title="when the dataset was last rebuilt (Eastern)">Data as of {built_eastern_label()}</span>'
         f'</div>{SCRIPT}{E}')
 

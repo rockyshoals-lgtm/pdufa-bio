@@ -14,6 +14,8 @@ page event_pages.resolve() picks for each pending row (the one that states the r
         another pending row of the same ticker names the same drug.
   TRIAL <!--TRIAL:BEGIN-->...<!--TRIAL:END--> the sentence from _event_trial_facts.json, quoted from the
         source it links; and that file's description replaces the meta/og/twitter description (<=158).
+  KF    (no markers) the Key facts card, sub line and generated FAQ state the row's company and indication where
+        the page still shows the bare ticker or no indication (key_facts()).
 
 Marker-bounded and idempotent. A page's content changes only when a fact changes, so the content-change
 date (and with it dateModified / article:modified_time, owned by build_date_modified.py) moves only then.
@@ -86,6 +88,57 @@ def insert_after_sub(doc, block):
     return doc[:e + 5] + block + doc[e + 5:] if e >= 0 else doc
 
 
+def _rep_ctx(doc, old, new):
+    """Replace a plain-text phrase wherever a page states it: JSON-escaped inside JSON-LD, HTML-escaped elsewhere."""
+    out, pos = [], 0
+    for m in re.finditer(r'(<script type="application/ld\+json">)(.*?)(</script>)', doc, re.S):
+        out.append(doc[pos:m.start(2)].replace(esc(old), esc(new)))
+        jo, jn = json.dumps(old, ensure_ascii=False)[1:-1], json.dumps(new, ensure_ascii=False)[1:-1]
+        out.append(m.group(2).replace(jo, jn))
+        pos = m.end(2)
+    out.append(doc[pos:].replace(esc(old), esc(new)))
+    return "".join(out)
+
+
+def key_facts(doc, row):
+    """KF: an event page states the row's own company and indication (design pass 2026-11-26).
+
+    build_pdufa_event_pages.py never rewrites an existing page, so a page built before its row carried a company
+    or an indication kept "Company: CORT", "CORT (CORT)" and no indication at all while the dataset row (sourced to
+    the sponsor's release) had both. This fills only those gaps, in place: the Company value when the page shows the
+    bare ticker, an Indication row after Drug / candidate when the card has none, the sub line's bare ticker, and
+    the two generated FAQ answers. It never removes or rewrites a value a page already states differently."""
+    tk = str(row.get("t") or "").upper()
+    comp = str(row.get("company") or "").strip()
+    ind = str((row.get("_d") or {}).get("indication") or "").strip()
+    k = doc.find("Key facts</h2>")
+    if k >= 0:
+        c0 = doc.find('<div class="card">', k)
+        c1 = doc.find("</div></div>", c0) + len("</div></div>") if c0 >= 0 else -1
+        if c0 >= 0 and c1 > c0 and doc.find("<h2", k + 5, c0) < 0:
+            card = doc[c0:c1]
+            new = card
+            if comp and comp.upper() != tk:
+                new = new.replace(f"<span>Company</span><b>{esc(tk)}</b>", f"<span>Company</span><b>{esc(comp)}</b>")
+            if ind and "<span>Indication</span>" not in new:
+                new = re.sub(r'(<div class="kv"><span>Drug / candidate</span><b>.*?</b></div>)',
+                             lambda m: m.group(1) + f'<div class="kv"><span>Indication</span><b>{esc(ind)}</b></div>',
+                             new, count=1, flags=re.S)
+            doc = doc[:c0] + new + doc[c1:]
+    if comp and comp.upper() != tk:
+        doc = re.sub(r'(FDA decision \(PDUFA\) target <b>[^<]*</b> &middot; )' + re.escape(esc(tk)) + r'(</div>)',
+                     lambda m: m.group(1) + esc(comp) + ((" &middot; " + esc(ind)) if ind else "") + m.group(2),
+                     doc, count=1)
+        doc = _rep_ctx(doc, f"{tk} ({tk})", f"{tk} ({comp})")
+        doc = _rep_ctx(doc, f"is {tk}'s candidate under FDA review.", f"is {comp}'s candidate under FDA review.")
+    if ind:
+        # the page's own name for the sponsor (it can differ from the row's: "Praxis Precision Medicines" vs "... Inc")
+        for who in sorted({html.unescape(m.group(1)) for m in re.finditer(
+                r"is ([^<>\"]{1,90}?)(?:'|&#x27;)s candidate under FDA review\.", doc)}):
+            doc = _rep_ctx(doc, f"is {who}'s candidate under FDA review.", f"is {who}'s candidate under FDA review for {ind}.")
+    return doc
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -97,7 +150,7 @@ def main():
     groups = {}
     for r in pend:
         groups.setdefault((str(r.get("t") or "").upper(), EP.drug_token(r)), []).append(r)
-    n_evt = n_sib = n_trial = n_desc = n_pages = 0
+    n_evt = n_sib = n_trial = n_desc = n_kf = n_pages = 0
     unresolved = []
     for r in pend:
         url = EP.resolve(r)
@@ -108,6 +161,10 @@ def main():
         doc = io.open(p, encoding="utf-8").read()
         orig = doc
         full = "https://www.pdufa.bio" + url
+        # KF
+        doc2 = key_facts(doc, r)
+        if doc2 != doc:
+            doc = doc2; n_kf += 1
         # EVT
         ld = f'<!--EVT:BEGIN--><script type="application/ld+json">{event_ld(r, full)}</script><!--EVT:END-->'
         if "<!--EVT:BEGIN-->" in doc:
@@ -169,7 +226,7 @@ def main():
             if not a.dry_run:
                 io.open(p, "w", encoding="utf-8", newline="\n").write(doc)
     print(f"event pages enriched: {n_pages} page(s) changed; Event schema {n_evt}, sibling links {n_sib}, "
-          f"trial facts {n_trial}, descriptions {n_desc}; {len(pend)} pending rows, "
+          f"trial facts {n_trial}, descriptions {n_desc}, key facts {n_kf}; {len(pend)} pending rows, "
           f"{len(pend) - len(unresolved)} resolve to a page")
     if unresolved:
         print("  no page states the row's date: " + ", ".join(unresolved))
