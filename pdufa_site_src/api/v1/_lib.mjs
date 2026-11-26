@@ -374,7 +374,7 @@ export async function serve(req, res, type) {
       source: 'pdufa.bio', license: 'Attribution + link-back required. Facts and historical statistics only — not investment advice.',
       tier: tier, quota_state: m.state, total, limit, offset, returned: data.length,
       as_of: new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' }), data_built_at: DATA_BUILT_AT, request_id: rid,
-      ...(TIERS[tier].depth ? {} : { pro_features: ['runup_series','export','calendar.ics','webhooks'], upgrade: 'https://www.pdufa.bio/pricing?ref=api_meta' }),
+      ...(TIERS[tier].depth ? {} : { pro_features: ['runup_series','export','calendar.ics'], ultra_features: ['history','implied'], upgrade: 'https://www.pdufa.bio/pricing?ref=api_meta' }),
     },
     data,
   });

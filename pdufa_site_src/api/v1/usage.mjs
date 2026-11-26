@@ -7,7 +7,7 @@ export default async (req,res)=>{
   const m=await meter(req,tier,key,0);
   head(res,{rid,tier,m,cost:0});
   res.setHeader('Cache-Control','no-store');
-  res.status(200).json({tier,quota:{limit:m.limit,used:m.used,remaining:m.remaining,
+  res.status(200).json({tier,plan:({quant:'ULTRA',pro:'Pro',free:'Free',anonymous:'Anonymous'})[tier]||tier,quota:{limit:m.limit,used:m.used,remaining:m.remaining,
     state:m.state,resets_at:new Date(m.reset*1000).toISOString(),window:TIERS[tier].window},
     credits_remaining:m.credits,burst_per_min:TIERS[tier].burst,
     depth_access:TIERS[tier].depth,history_access:TIERS[tier].history,

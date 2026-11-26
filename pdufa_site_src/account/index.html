@@ -106,7 +106,7 @@ fetch('/api/account/me',{cache:'no-store'}).then(function(r){
   document.getElementById('app').style.display='block';
   document.getElementById('who').textContent='Signed in as '+j.email+'.';
   K.textContent=j.api_key||'no key on this account';
-  var t=j.tier.charAt(0).toUpperCase()+j.tier.slice(1);
+  var t=({quant:'ULTRA',pro:'Pro',free:'Free',anonymous:'Anonymous'})[j.tier]||(j.tier.charAt(0).toUpperCase()+j.tier.slice(1));
   document.getElementById('plan').textContent=t+(j.depth_access?' (Depth unlocked)':'');
   var s=j.subscription;
   document.getElementById('planx').textContent = s

@@ -47,9 +47,11 @@ def main():
         "index.html": [rf"{n:,} events in the run-up study"],
         "decisions/index.html": [rf"{n:,} PDUFA decisions, 2020 to \d{{4}}, {rate:.1f}% approved"],
         "pricing.html": [rf"T-120→T\+5 daily data for {t120:,} of the study’s {n:,} events \(those with 120 trading "
-                         r"days of history before the decision; the days after fill in as they trade\)"],
+                         r"days of history before the decision; the days after fill in as they trade\)",
+                         rf": all {n:,} FDA decisions from 2020 on in one feed"],
         "developers/index.html": [rf"price path for {t120:,} FDA decisions \(of the study’s {n:,}, those with 120 "
-                                  r"trading days of history before the decision; the days after fill in as they trade\)"],
+                                  r"trading days of history before the decision; the days after fill in as they trade\)",
+                                  rf"one row per FDA decision \(all {n:,} in the study, 2020 on\)"],
         "vktx/index.html": [rf"run-up study \({n:,} FDA decisions\)"],
         "fda-approval-rate/index.html": [rf"{rate:.1f}% approvals / \(approvals \+ CRLs\), all review cycles: our universe, n={n:,}",
                                          rf"Our figure: {n:,} FDA decisions on listed biotechs"],
