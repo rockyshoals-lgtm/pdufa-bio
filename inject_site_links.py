@@ -137,6 +137,22 @@ def browse_block(items, b, e):
             f'<div class="pd-bg">{"".join(cols)}</div>{last}</nav>{e}')
 
 
+def browse_for(u):
+    """The Browse block for page u: every SITE_LINKS page that exists, except u itself."""
+    return browse_block([(t, h) for t, h in SITE_LINKS if page_exists(h) and h != u],
+                        "<!--SITELINKS:BEGIN-->", "<!--SITELINKS:END-->")
+
+
+def refresh_browse(doc, u):
+    """A page that already carries the Browse block gets it in the current layout; any other page is unchanged.
+    2026-11-26: quarantine_leads.py restores a held row's pages from the last commit, which can predate a change to
+    this block (run 540 put the old dotted row back on /ticker/VRTX and /pdufa/VRTX-povetacicept and
+    tests/test_browse_footer.py blocked the deploy), so it calls this on every page it restores."""
+    if "<!--SITELINKS:BEGIN-->" not in doc:
+        return doc
+    return put(doc, "<!--SITELINKS:BEGIN-->", "<!--SITELINKS:END-->", browse_for(u))
+
+
 def nav_block(title, items, b, e):
     links = " &middot; ".join(f'<a href="{h}" {A}>{esc(t)}</a>' for t, h in items)
     return (f'{b}<nav aria-label="{esc(title)}" style="margin:22px 0 6px;padding-top:12px;border-top:1px solid #1a3358;'
@@ -202,8 +218,7 @@ def main():
         parts = u.strip("/").split("/")
         if len(parts) == 2 and parts[0] in ("drug", "ticker", "conference", "condition") and live(u):
             fam[parts[0]].append(u)
-    browse = lambda u: browse_block([(t, h) for t, h in SITE_LINKS if page_exists(h) and h != u],
-                                    "<!--SITELINKS:BEGIN-->", "<!--SITELINKS:END-->")
+    browse = browse_for
     for u, doc in docs.items():
         if u in noindex:
             # 2026-11-26: a noindex page gets no new links, but one that already carries the Browse block (14 retired
