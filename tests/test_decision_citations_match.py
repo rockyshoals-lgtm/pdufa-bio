@@ -58,7 +58,12 @@ SITE = os.path.join(HERE, "pdufa_site_src", "fda-decision")
 PARTNERS = {
     "GSK": {1701108: "Spero Therapeutics: tebipenem partner", 874015: "Ionis: GSK-licensed program"},
     "INCY": {1759425: "Mirum Pharmaceuticals: the goal date's source"},
-    "JAZZ": {1937653: "Zymeworks: zanidatamab partner"},
+    "JAZZ": {1937653: "Zymeworks: zanidatamab partner",
+             1117480: "Chimerix (Jazz acquired it in 2025): MODEYSO's applicant and the goal date's source"},
+    # 2026-11-26: the decision-timing census names the goal date's source on these 2025 pages (Verified line)
+    "LGND": {1438533: "Travere Therapeutics: FILSPARI's applicant (Ligand royalty), the goal date's source"},
+    "ABBV": {1434265: "Genmab: EPKINLY's US applicant (co-developed with AbbVie), the goal date's source"},
+    "ALNY": {1121404: "Sanofi: QFITLIA's applicant (Alnylam royalty), the goal date's source"},
     "TEVA": {1720893: "BioXcel: the goal date's source"},
 }
 # openFDA CRL files whose file date is not the action date (a corrected letter keeps the original action date)

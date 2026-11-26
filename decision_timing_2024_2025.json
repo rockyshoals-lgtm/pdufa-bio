@@ -1,5 +1,5 @@
 {
- "about": "pdufa.bio decision-timing census, FDA actions dated 2024-01-01 to 2025-12-31. Candidates: every PDUFA decision on the pdufa.bio tracked list for those years plus every FDA-released complete response letter dated in those years. Goal dates from sponsor or partner documents dated before the action; action dates from FDA records or a sponsor document that states the day. Researched and red-teamed 2026-11-26.",
+ "about": "pdufa.bio decision-timing census, FDA actions dated 2024-01-01 to 2025-12-31. Candidates: every PDUFA decision on the pdufa.bio tracked list for those years plus every FDA-released complete response letter dated in those years. Goal dates from sponsor or partner documents dated before the action; action dates from FDA records or a sponsor document that states the day. Researched and red-teamed 2026-11-26 (three research passes).",
  "candidates": {
   "tracked": 334,
   "crl_letter": 129
@@ -3385,9 +3385,7 @@
    "drug": "ROMVIMZA (vimseltinib)",
    "application": "NDA 219304",
    "sponsor": "Deciphera Pharmaceuticals (Ono Pharmaceutical group)",
-   "tickers": [
-    "TURN"
-   ],
+   "tickers": [],
    "goal_date_original": "2025-02-17",
    "goal_original_url": "https://deciphera.gcs-web.com/static-files/fc0c044a-6cbb-47d1-b31b-0e447aa33780",
    "goal_original_doc_date": "2024-08-15",
@@ -3414,7 +3412,7 @@
    "excluded": null,
    "scope_note": null,
    "red_team": null,
-   "notes": "Goal fell on federal holiday Monday Feb 17; FDA acted Friday Feb 14 (last business day before). Ono's Aug 16, 2024 release also cites Feb 17, 2025."
+   "notes": "Goal fell on federal holiday Monday Feb 17; FDA acted Friday Feb 14 (last business day before). Ono's Aug 16, 2024 release also cites Feb 17, 2025. Ticker corrected 2026-11-26: the tracked list filed this under TURN; the applicant is Deciphera Pharmaceuticals (Ono Pharmaceutical group), which has no US listing."
   },
   {
    "cid": "C182",
@@ -5783,7 +5781,7 @@
    "application": "BLA 761458",
    "sponsor": "GSK",
    "tickers": [
-    "GILD"
+    "GSK"
    ],
    "goal_date_original": "2025-12-16",
    "goal_original_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495425002180/a0169z.htm",
@@ -5812,7 +5810,7 @@
    "excluded": null,
    "scope_note": null,
    "red_team": null,
-   "notes": "Goal from GSK release 'Depemokimab applications accepted for review by the US FDA' (6-K, issued Mar 3, 2025) covering both asthma and CRSwNP indications. Approval 2025-12-16 (Tuesday) = ON GOAL DATE. Possible split action: batch crl_corpus lists CRL_BLA761458_20251216.pdf (GlaxoSmithKline LLC) dated the same day - likely one indication approved and the other got a CRL; either way the action fell on the goal date. Drugs@FDA page showed only ORIG-1. Split: the FDA approved one indication and issued a CRL (CRL_BLA761458_20251216) on the other the same day."
+   "notes": "Goal from GSK release 'Depemokimab applications accepted for review by the US FDA' (6-K, issued Mar 3, 2025) covering both asthma and CRSwNP indications. Approval 2025-12-16 (Tuesday) = ON GOAL DATE. Possible split action: batch crl_corpus lists CRL_BLA761458_20251216.pdf (GlaxoSmithKline LLC) dated the same day - likely one indication approved and the other got a CRL; either way the action fell on the goal date. Drugs@FDA page showed only ORIG-1. Split: the FDA approved one indication and issued a CRL (CRL_BLA761458_20251216) on the other the same day. Ticker corrected 2026-11-26: the tracked list filed this GSK approval under GILD; the sponsor is GSK."
   },
   {
    "cid": "C325",
@@ -6383,6 +6381,653 @@
    "scope_note": null,
    "red_team": "confirmed",
    "notes": "PARTIAL ACTION: this CRL covers BLA 761427/Original 2 (HoFH, ages 10+); the letter says a separate action letter will be issued for Original 1 (ASCVD/HeFH), which pdufa.bio lists as approved (Lerochol) the same day (not verified here). Both originals were in the one BLA accepted with the Dec 12, 2025 goal (release covers HoFH patients 10 years or older). CRL dated Dec 12, 2025 (Friday) = ON the goal date. Business Wire page shows no dateline; date from release ID 20250210. No extension found. Dr"
+  },
+  {
+   "cid": "C079",
+   "drug": "EPKINLY (epcoritamab-bysp), relapsed/refractory follicular lymphoma",
+   "application": "BLA 761324 S-003 (FDA appletter 761324Orig1s003ltr.pdf seen in search result; accelerated approval)",
+   "sponsor": "Genmab US, Inc. (applicant) / AbbVie",
+   "tickers": [
+    "ABBV",
+    "GMAB"
+   ],
+   "goal_date_original": "2024-06-28",
+   "goal_original_url": "https://www.businesswire.com/news/home/20240227092202/en",
+   "goal_original_doc_date": "2024-02-27",
+   "goal_original_quote": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of June 28, 2024.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-06-28",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-06-26",
+   "action_basis": "fda_record",
+   "action_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-epcoritamab-bysp-relapsed-or-refractory-follicular-lymphoma",
+   "action_quote": "On June 26, 2024, the Food and Drug Administration granted accelerated approval to epcoritamab-bysp",
+   "announcement_date": "2024-06-26",
+   "announcement_url": "https://news.abbvie.com/2024-06-26-U-S-Food-and-Drug-Administration-Grants-Second-Approval-for-EPKINLY-R-epcoritamab-bysp-to-Treat-Patients-with-Relapsed-or-Refractory-Follicular-Lymphoma",
+   "members": [
+    "C079"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Goal from joint Genmab/AbbVie Business Wire release of Feb 27, 2024 (priority review of sBLA; fetched). FDA acted 2 days before the goal. No extension found (Genmab Q1 2024 interim report, May 2, 2024, still describes the FL submission as under review)."
+  },
+  {
+   "cid": "C294",
+   "drug": "WINREVAIR (sotatercept-csrk) - (ZENITH)",
+   "application": "BLA 761363 SUPPL-7",
+   "sponsor": "Merck Sharp & Dohme LLC (Merck & Co.)",
+   "tickers": [
+    "MRK"
+   ],
+   "goal_date_original": "2025-10-25",
+   "goal_original_url": "https://www.merck.com/news/fda-grants-priority-review-for-winrevair-sotatercept-csrk-to-update-label-based-on-results-from-zenith-trial/",
+   "goal_original_doc_date": "2025-07-02",
+   "goal_original_quote": "The FDA has set a Prescription Drug User Fee Act (PDUFA), or target action date, of Oct. 25, 2025.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-10-25",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-10-24",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761363",
+   "action_quote": "Drugs@FDA BLA 761363: 10/24/2025 SUPPL-7 Supplement (only October 2025 action; letter listed)",
+   "announcement_date": "2025-10-27",
+   "announcement_url": "https://www.merck.com/news/u-s-fda-approves-updated-indication-for-winrevair-sotatercept-csrk-in-adults-with-pulmonary-arterial-hypertension-pah-who-group-1-pulmonary-hypertension-based-on-phase-3-zenith-study/",
+   "members": [
+    "C294"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Goal day fell on a Saturday; FDA acted the Friday before (1 day early). SUPPL-7 is matched to ZENITH by date: it is the only Drugs@FDA action on BLA 761363 in Oct 2025, and Merck announced the ZENITH approval Monday Oct 27, 2025 ('today announced that the U.S. Food and Drug Administration (FDA) has approved an update'); Drugs@FDA did not show the supplement category. Merck release of Jul 2, 2025 fetched."
+  },
+  {
+   "cid": "C134",
+   "drug": "VYLOY (zolbetuximab-clzb)",
+   "application": "BLA 761365",
+   "sponsor": "Astellas",
+   "tickers": [
+    "ALPMY"
+   ],
+   "goal_date_original": "2024-11-09",
+   "goal_original_url": "https://astellas.com/system/files/news/2024-05/5570e94a2e/20240531_en_1.pdf",
+   "goal_original_doc_date": "2024-05-30",
+   "goal_original_quote": "Under the Prescription Drug User Fee Act (PDUFA), the FDA has set a new target action date of November 9, 2024.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-11-09",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-10-18",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761365",
+   "action_quote": "Drugs@FDA BLA 761365 ORIG-1 Approval action date 10/18/2024",
+   "announcement_date": "2024-10-18",
+   "announcement_url": "https://www.prnewswire.com/news-releases/astellas-vyloy-zolbetuximab-clzb-approved-by-us-fda-for-treatment-of-advanced-gastric-and-gej-cancer-302280716.html",
+   "members": [
+    "C134"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Resubmission goal (BLA resubmitted May 9, 2024 after Jan 4, 2024 CRL for third-party manufacturing deficiencies), per Astellas release dated Tokyo, May 30, 2024 (fetched). Action date 2024-10-18 from Drugs@FDA (prior pass). FDA acted 22 days before the goal date. No extension found."
+  },
+  {
+   "cid": "L059",
+   "drug": "Izervay (avacincaptad pegol) expanded dosing beyond 12 months (prior-approval supplement)",
+   "application": "NDA 217225/S-001",
+   "sponsor": "Astellas Pharma US, Inc.",
+   "tickers": [
+    "ALPMY"
+   ],
+   "goal_date_original": "2024-11-19",
+   "goal_original_url": "https://newsroom.astellas.com/2024-04-01-U-S-FDA-Accepts-Astellas-Supplemental-New-Drug-Application-for-IZERVAY-TM-avacincaptad-pegol-intravitreal-solution-for-Geographic-Atrophy",
+   "goal_original_doc_date": "2024-04-01",
+   "goal_original_quote": "Under the Prescription Drug User Fee Act (PDUFA), the FDA has set a target action date of November 19, 2024.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-11-19",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-11-15",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/217225-s001_OtherActionLtrs.pdf",
+   "action_quote": "NDA 217225/S-001 COMPLETE RESPONSE (openFDA letter_date 2024-11-15)",
+   "announcement_date": "2024-11-19",
+   "announcement_url": "https://newsroom.astellas.com/2024-11-19-Astellas-Provides-Update-on-IZERVAY-TM-avacincaptad-pegol-intravitreal-solution-Supplemental-New-Drug-Application",
+   "members": [
+    "L059"
+   ],
+   "origin": "crl_letter",
+   "outcome": "CRL",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Astellas Nov 19, 2024 release (fetched) confirms: 'the U.S. Food and Drug Administration (FDA) issued a Complete Response Letter (CRL) on November 15, 2024' and refers to the 'PDUFA action date of November 19, 2024' (so no extension). FDA letter dated 2024-11-15 (openFDA CRL corpus). CRL 4 days before the goal date. Later class 1 resubmission (goal Feb 26, 2025) approved Feb 2025 is a separate action."
+  },
+  {
+   "cid": "C127",
+   "drug": "Opdivo (nivolumab) - CheckMate-77T perioperative resectable NSCLC",
+   "application": "BLA 125554 S-127",
+   "sponsor": "Bristol-Myers Squibb",
+   "tickers": [
+    "BMY"
+   ],
+   "goal_date_original": "2024-10-08",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427224000094/q12024ex991-filing.htm",
+   "goal_original_doc_date": "2024-04-25",
+   "goal_original_quote": "The FDA assigned a PDUFA goal date of October 8, 2024.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-10-08",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-10-03",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125554",
+   "action_quote": "Drugs@FDA BLA 125554 SUPPL-127 (Efficacy-New Indication) action date 10/03/2024",
+   "announcement_date": "2024-10-03",
+   "announcement_url": "https://www.businesswire.com/news/home/20240925486233/en/U.S.-Food-and-Drug-Administration-Approves-Perioperative-Treatment-of-Neoadjuvant-Opdivo%C2%AE-nivolumab-and-Chemotherapy-Followed-by-Surgery-and-Adjuvant-Single-Agent-Opdivo-for-Resectable-Non-Small-Cell-Lung-Cancer-NSCLC/",
+   "members": [
+    "C127"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Goal date from BMS Q1 2024 earnings release (8-K Ex. 99.1, filed 2024-04-25), in the item on the Opdivo sBLA acceptance based on CheckMate -77T ('The FDA's sBLA acceptance and the EMA's application validation are based on results from the Phase 3 CheckMate -77T trial.'). No extension found (BMS Q2 2024 10-Q mentions no change). Action 2024-10-03 (Drugs@FDA S-127, pass 1) = 5 days before goal (early). Only one Opdivo supplement acted on Aug-Oct 2024 (pass 1)."
+  },
+  {
+   "cid": "C304",
+   "drug": "Tarlatamab (AMG 757) - (DeLLphi-304)",
+   "application": "BLA 761344 S-001",
+   "sponsor": "Amgen",
+   "tickers": [
+    "AMGN"
+   ],
+   "goal_date_original": "2025-12-18",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000070/amgn-20250930earningsrelea.htm",
+   "goal_original_doc_date": "2025-11-04",
+   "goal_original_quote": "The U.S. regulatory submission of DeLLphi 304 a global Phase 3 confirmatory study ... was accepted with a PDUFA date of December 18, 2025.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-12-18",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-11-19",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761344",
+   "action_quote": "Drugs@FDA BLA 761344: 11/19/2025 SUPPL-1 Supplement, Efficacy",
+   "announcement_date": null,
+   "announcement_url": null,
+   "members": [
+    "C304"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Goal date from Amgen Q3 2025 earnings release (8-K filed 2025-11-04). Amgen Q2 2025 release (8-K filed 2025-08-05) said only 'Regulatory filing activities are underway.' No extension found. Action 2025-11-19 is 29 days before the goal (early). Announcement release not fetched."
+  },
+  {
+   "cid": "L041",
+   "drug": "lidocaine topical system (resubmission)",
+   "application": "NDA 215029",
+   "sponsor": "MEDRx USA, Inc. (subsidiary of MEDRx Co., Ltd., TSE 4586)",
+   "tickers": [
+    "4586.T"
+   ],
+   "goal_date_original": "2024-07-11",
+   "goal_original_url": "https://www2.jpx.co.jp/disc/45860/140120240209531688.pdf",
+   "goal_original_doc_date": "2024-02-09",
+   "goal_original_quote": "審査終了目標日は、2024年７月11日に設定されています。 (\"The target completion date for the review has been set for July 11, 2024.\")",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-07-11",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-07-11",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/CRL_NDA215029_20240711.pdf",
+   "action_quote": "NDA 215029 COMPLETE RESPONSE (openFDA letter_date 2024-07-11)",
+   "announcement_date": null,
+   "announcement_url": null,
+   "members": [
+    "L041"
+   ],
+   "origin": "crl_letter",
+   "outcome": "CRL",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Goal source is MEDRx Co., Ltd.'s own FY2023 consolidated results (kessan tanshin) filed on the Tokyo Stock Exchange disclosure system, 2024-02-09 (Japanese; translation ours). Same document: NDA resubmitted in January 2024 and accepted the same month. Action = FDA CRL letter dated 2024-07-11 (openFDA corpus), i.e. on the goal date. Later cycle (resubmitted Mar 2025, PDUFA Sept 24, 2025) is a separate action."
+  },
+  {
+   "cid": "C195",
+   "drug": "QFITLIA (fitusiran), hemophilia A or B with or without inhibitors",
+   "application": "NDA 219019",
+   "sponsor": "Genzyme (Sanofi); Alnylam royalty",
+   "tickers": [
+    "ALNY",
+    "INTE",
+    "SNY"
+   ],
+   "goal_date_original": "2025-03-28",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312524174204/d627610dex992.htm",
+   "goal_original_doc_date": "2024-06-21",
+   "goal_original_quote": "Regulatory submissions for fitusiran ... have been completed in China, Brazil and the US with a US Food and Drug Administration (FDA) target action date of March 28, 2025.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-03-28",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-03-28",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219019",
+   "action_quote": "03/28/2025 | ORIG-1 | Approval | Type 1 - New Molecular Entity | STANDARD; Orphan",
+   "announcement_date": null,
+   "announcement_url": null,
+   "members": [
+    "C195"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Pass 3: goal day stated by Sanofi (press release dated June 21, 2024, filed as exhibit to Sanofi 6-K on 2024-07-02) and confirmed unchanged by Alnylam 8-K exhibit dated Jan 12, 2025 (https://www.sec.gov/Archives/edgar/data/1178670/000117867025000008/alny2025q1exhibit991.htm): 'Sanofi expects to secure FDA approval by the PDUFA target action date of March 28, 2025.' No extension found. Action ON the goal date (Friday)."
+  },
+  {
+   "cid": "L028",
+   "drug": "rivoceranib tablet",
+   "application": "NDA 216586",
+   "sponsor": "Elevar Therapeutics, Inc. (HLB Co., Ltd. subsidiary)",
+   "tickers": null,
+   "goal_date_original": "2024-05-16",
+   "goal_original_url": "https://elevartx.com/2023/07/17/elevar-therapeutics-announces-fda-acceptance-for-filing-of-new-drug-application-for-rivoceranib-in-combination-with-camrelizumab-as-a-first-line-treatment-for-unresectable-hepatocellular-carcinoma/",
+   "goal_original_doc_date": "2023-07-17",
+   "goal_original_quote": "The FDA assigned a Prescription Drug User Fee Act (PDUFA) target action date of May 16, 2024.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-05-16",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-05-16",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/CRL_NDA216586_20240516.pdf",
+   "action_quote": "FDA-published CRL letter for NDA 216586 dated 2024-05-16 (file CRL_NDA216586_20240516.pdf)",
+   "announcement_date": null,
+   "announcement_url": null,
+   "members": [
+    "L028"
+   ],
+   "origin": "crl_letter",
+   "outcome": "CRL",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Pass 3: Elevar's own July 17, 2023 acceptance release (company newsroom; also distributed on GlobeNewswire) states the May 16, 2024 target date. No extension found (later Elevar releases concern the Sept 2024 resubmission with a new goal date). CRL ON the goal date (Thursday). Companion camrelizumab BLA (Hengrui) CRL same day."
+  },
+  {
+   "cid": "C271",
+   "drug": "Opzelura (ruxolitinib) cream, pediatric AD (2 to <12 y)",
+   "application": "NDA 215309 S-007",
+   "sponsor": "Incyte",
+   "tickers": [
+    "INCY"
+   ],
+   "goal_date_original": null,
+   "goal_original_url": null,
+   "goal_original_doc_date": null,
+   "goal_original_quote": null,
+   "extended": true,
+   "goal_date_extended": "2025-09-19",
+   "goal_extended_url": "https://www.businesswire.com/news/home/20250620553806/en",
+   "goal_extended_doc_date": "2025-06-20",
+   "goal_extended_quote": "The Prescription Drug User Fee Act (PDUFA) action date has been extended by three months to September 19, 2025.",
+   "extension_reason": "FDA needed time to review additional CMC data on the 0.75% strength submitted in response to an FDA information request (Incyte release, June 20, 2025)",
+   "goal_in_effect": "2025-09-19",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-09-18",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215309",
+   "action_quote": "Drugs@FDA: SUPPL-7, 09/18/2025, Efficacy-New Patient Population",
+   "announcement_date": "2025-09-19",
+   "announcement_url": null,
+   "members": [
+    "C271"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Extended goal also restated in Incyte Q2 2025 results release, 8-K EX-99.1 filed 2025-07-29 (https://www.sec.gov/Archives/edgar/data/879169/000087916925000100/incy-q22025xexx991.htm, fetched): 'The Prescription Drug User Fee Act (PDUFA) action date was extended by three months to September 19, 2025.' Original pre-extension goal day was not stated as a day in any sponsor document read (Incyte Q1 2025 10-Q read in full: no PDUFA day); not inferred. Goal 2025-09-19 is a Friday; FDA acted 2025-09-18 (one day early). Announcement date 2025-09-19 from tracked row, not verified."
+  },
+  {
+   "cid": "L089",
+   "drug": "20% soybean oil emulsion for IV infusion",
+   "application": "NDA 217382",
+   "sponsor": "ResQ Pharma (private)",
+   "tickers": null,
+   "goal_date_original": "2025-06-02",
+   "goal_original_url": "https://www.prnewswire.com/news-releases/resq-pharma-receives-pdufa-date-for-lipidrescue-as-a-potential-first-ever-fda-approved-treatment-for-last-302300661.html",
+   "goal_original_doc_date": "2024-11-11",
+   "goal_original_quote": "received a PDUFA (Prescription Drug User Fee Act) date of June 2, 2025, for its LipidRescue Kit.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-06-02",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-06-02",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/CRL_NDA217382_20250602.pdf",
+   "action_quote": "FDA-published Complete Response letter for NDA 217382, letter date 2025-06-02",
+   "announcement_date": null,
+   "announcement_url": null,
+   "members": [
+    "L089"
+   ],
+   "origin": "crl_letter",
+   "outcome": "CRL",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Private sponsor; goal from its own PR Newswire release (dateline CHICAGO, Nov. 11, 2024). Match to NDA 217382: the FDA letter is addressed to ResQ Pharma c/o its authorized representative Mukesh Kumar (whom coverage names as ResQ's regulatory director) and concerns a 20% soybean oil emulsion for IV infusion, the LipidRescue Kit's lipid emulsion. CRL letter dated 2025-06-02 = ON the goal date (Monday). No extension found."
+  },
+  {
+   "cid": "C201",
+   "drug": "UPLIZNA (inebilizumab-cdon) - IgG4-related disease",
+   "application": "BLA 761142 S-003",
+   "sponsor": "Amgen",
+   "tickers": [
+    "AMGN"
+   ],
+   "goal_date_original": "2025-04-03",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000005/amgn-20241231earningsrelea.htm",
+   "goal_original_doc_date": "2025-02-04",
+   "goal_original_quote": "The FDA accepted the regulatory submission for the Phase 3 MITIGATE study under priority review ... with a Prescription Drug User Fee Act (PDUFA) action date of April 3, 2025.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-04-03",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-04-03",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761142",
+   "action_quote": "Drugs@FDA BLA 761142: 04/03/2025 SUPPL-3, Efficacy-New Indication",
+   "announcement_date": "2025-04-03",
+   "announcement_url": "https://www.amgen.com/newsroom/press-releases/2025/04/uplizna-inebilizumabcdon-is-now-the-first-and-only-fdaapproved-treatment-for-igg4related-disease",
+   "members": [
+    "C201"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Goal source: Amgen Q4/FY2024 earnings release, 8-K filed 2025-02-04 (fetched; the fetch tool split the sentence, joined with ...). SEC EDGAR full-text search UPLIZNA + PDUFA Jun 2024 to Apr 3, 2025 shows no extension. Goal 2025-04-03 is a Thursday; FDA approved on the goal date (Drugs@FDA, fetched). Amgen announced the same day (release says 'announced today')."
+  },
+  {
+   "cid": "C225",
+   "drug": "TRYPTYR (acoltremon ophthalmic solution) 0.003% (formerly AR-15512)",
+   "application": "NDA 217370",
+   "sponsor": "Alcon",
+   "tickers": [
+    "ALC"
+   ],
+   "goal_date_original": "2025-05-30",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/1167379/000116737924000021/q22024pressrelease.htm",
+   "goal_original_doc_date": "2024-08-20",
+   "goal_original_quote": "Received U.S. FDA clearance of Unity VCS/CS and PDUFA date for AR-15512 of May 30th, 2025",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-05-30",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-05-28",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217370",
+   "action_quote": "Drugs@FDA: NDA 217370 ORIG-1 Approval 05/28/2025 (Type 1 - New Molecular Entity)",
+   "announcement_date": "2025-05-28",
+   "announcement_url": "https://www.sec.gov/Archives/edgar/data/1167379/000116737925000023/tryptyrapprovalpressrelease.htm",
+   "members": [
+    "C225"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Goal source: Alcon Q2 2024 results press release furnished on Form 6-K, filed 2024-08-20 (AR-15512 = acoltremon, TRYPTYR). SEC EDGAR full-text search AR-15512 + PDUFA Jan 2024 to May 28, 2025 returned only this filing (no extension disclosed). Goal 2025-05-30 is a Friday; FDA approved 2025-05-28 per Drugs@FDA (two days early). Announcement: Alcon approval release furnished on 6-K filed 2025-05-28 (EDGAR file date from full-text search; release itself not fetched). Pass-1 statement that Alcon gave no goal date is superseded."
+  },
+  {
+   "cid": "L006",
+   "drug": "scopolamine nasal gel",
+   "application": "NDA 214315",
+   "sponsor": "Defender Pharmaceuticals, Inc",
+   "tickers": null,
+   "goal_date_original": "2024-01-26",
+   "goal_original_url": "https://defenderpharma.com/resource/fda-accepts-defender-pharmaceuticals-new-drug-application-for-intranasal-scopolamine-gel/",
+   "goal_original_doc_date": "2023-09-26",
+   "goal_original_quote": "... with a PDUFA date ... is set for January 26th, 2024.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-01-26",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-01-25",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/CRL_NDA214315_20240125.pdf",
+   "action_quote": "FDA-published CRL letter dated 2024-01-25 (openFDA CRL corpus).",
+   "announcement_date": null,
+   "announcement_url": null,
+   "members": [
+    "L006"
+   ],
+   "origin": "crl_letter",
+   "outcome": "CRL",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Private sponsor; goal from its own release (Business Wire copy on company site; dateline printed 'ST. LOUIS, MO-(BUSINESS WIRE)-September Sep. 26, 23'; the company news index reportedly lists it as Oct 24, 2023; either way before the action). Fetch tool returned only the date clause verbatim; search snippet of the same page reads 'the FDA has granted priority review status for the NDA, at the request of the U.S. Navy, with a PDUFA date of January 26th, 2024'. Goal 2024-01-26 is a Friday; FDA CRL letter dated 2024-01-25 (one day early). Defender announced the CRL on 2024-01-30 (company news page title, not fetched)."
+  },
+  {
+   "cid": "L047",
+   "drug": "losartan potassium oral suspension",
+   "application": "NDA 218772",
+   "sponsor": "Scienture Inc. (wholly owned subsidiary of TRxADE HEALTH, Inc., later Scienture Holdings)",
+   "tickers": [
+    "MEDS (later SCNX)"
+   ],
+   "goal_date_original": "2024-08-19",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/1382574/000149315224032729/formpre14c.htm",
+   "goal_original_doc_date": "2024-08-16",
+   "goal_original_quote": "In December 2023, the FDA accepted the NDA for review and assigned a Prescription Drug User Fee Act ... target action date of August 19, 2024.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-08-19",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-08-19",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/218772_2025_Orig1s000OtherActionLtrs.pdf",
+   "action_quote": "NDA 218772 COMPLETE RESPONSE (openFDA letter_date 2024-08-19)",
+   "announcement_date": null,
+   "announcement_url": null,
+   "members": [
+    "L047"
+   ],
+   "origin": "crl_letter",
+   "outcome": "CRL",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Goal source is a PRE 14C information statement filed on EDGAR 2024-08-16 by the public parent TRxADE HEALTH, INC (CIK 1382574), which had merged with Scienture; the fetch tool elided a middle fragment of the sentence (marked ...). FDA CRL letter dated 2024-08-19 = ON the goal date (Monday). Earlier note: FDA review documents gave the goal inconsistently; the sponsor-side filing is unambiguous. Later cycle (resubmission, approved as Arbli in March 2025) is not this row."
+  },
+  {
+   "cid": "C072",
+   "drug": "CAPVAXIVE (Pneumococcal 21-valent Conjugate Vaccine)",
+   "application": "BLA STN 125814 (original, CBER)",
+   "sponsor": "Merck",
+   "tickers": [
+    "LGND",
+    "MRK"
+   ],
+   "goal_date_original": "2024-06-17",
+   "goal_original_url": "https://www.businesswire.com/news/home/20231219406441/en",
+   "goal_original_doc_date": "2023-12-19",
+   "goal_original_quote": "The FDA has set a Prescription Drug User Fee Act (PDUFA), or target action date, of June 17, 2024.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-06-17",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-06-17",
+   "action_basis": "fda_record",
+   "action_url": "https://www.fda.gov/vaccines-blood-biologics/capvaxive",
+   "action_quote": "June 17, 2024 Approval Letter (STN 125814)",
+   "announcement_date": "2024-06-18",
+   "announcement_url": "https://investor.ligand.com/news-and-events/press-releases/news-details/2024/Ligand-Collaborator-Merck-Receives-FDA-Approval-for-CAPVAXIVE-Pneumococcal-21-valent-Conjugate-Vaccine-for-Adults/default.aspx",
+   "members": [
+    "C072"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Merck priority-review acceptance release on Business Wire (URL id 20231219; dateline RAHWAY, N.J.; Dec 19, 2023 per coverage) states the June 17, 2024 PDUFA date. FDA CBER product page lists June 17, 2024 Approval Letter. Ligand partner release dated 2024-06-18. Approved on goal date. Later approval letters (July 31, 2025; June 17, 2026) are separate actions."
+  },
+  {
+   "cid": "C314",
+   "drug": "UPLIZNA (inebilizumab-cdon), generalized myasthenia gravis (MINT)",
+   "application": "BLA 761142 S-004",
+   "sponsor": "Amgen",
+   "tickers": [
+    "AMGN"
+   ],
+   "goal_date_original": "2025-12-14",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000070/amgn-20250930earningsrelea.htm",
+   "goal_original_doc_date": "2025-11-04",
+   "goal_original_quote": "U.S. Food and Drug Administration (FDA) review of the MINT Phase 3 data in patients with generalized myasthenia gravis is ongoing, with a PDUFA date of December 14, 2025.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-12-14",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-12-11",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761142",
+   "action_quote": "12/11/2025 SUPPL-4 Efficacy-New Indication",
+   "announcement_date": null,
+   "announcement_url": "https://investors.amgen.com/node/36826/pdf",
+   "members": [
+    "C314"
+   ],
+   "origin": "tracked",
+   "outcome": "Approved",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Goal from Amgen Q3 2025 earnings release filed as 8-K exhibit (Nov 4, 2025), under the UPLIZNA heading. Action date verified on Drugs@FDA (fetched). FDA acted 3 days before a Sunday goal date (EARLY). No extension found (statement made 5 weeks before action)."
+  },
+  {
+   "cid": "L078",
+   "drug": "rivoceranib tablets (with camrelizumab), unresectable HCC, resubmission",
+   "application": "NDA 216586",
+   "sponsor": "Elevar Therapeutics (majority-owned subsidiary of HLB Co., Ltd.)",
+   "tickers": [
+    "028300 (KOSDAQ",
+    "HLB)"
+   ],
+   "goal_date_original": "2025-03-20",
+   "goal_original_url": "https://elevartx.com/2024/10/21/elevar-therapeutics-fda-acceptance-of-new-drug-resubmission-2/",
+   "goal_original_doc_date": "2024-10-21",
+   "goal_original_quote": "The FDA assigned a Prescription Drug User Fee Act (PDUFA) target action date of March 20, 2025.",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-03-20",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-03-20",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/CRL_NDA216586_20250320.pdf",
+   "action_quote": "FDA-published Complete Response letter for NDA 216586, letter date 2025-03-20",
+   "announcement_date": null,
+   "announcement_url": null,
+   "members": [
+    "L078"
+   ],
+   "origin": "crl_letter",
+   "outcome": "CRL",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": null,
+   "notes": "Pass 3 (2026-11-26): Goal is for the class 2 resubmission (resubmitted Sept 2024 per Elevar GlobeNewswire release dated Sept 23, 2024, fetched) after a May 2024 CRL. Same release also on GlobeNewswire 2024-10-21 (URL too long to fetch). FDA CRL letter dated 2025-03-20 = goal date (on goal). Later cycles are separate actions: resubmission accepted Jan 30, 2026 with PDUFA July 23, 2026 (Elevar), July 2026 CRL, Oct 2026 resubmission with PDUFA April 9, 2027 (coverage only)."
   }
  ],
  "excluded_rows": [
@@ -6393,7 +7038,7 @@
    "sponsor": "Takeda (Halozyme ENHANZE partner)",
    "tickers": "HALO",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date verified: EDGAR full-text search shows Halozyme filings (e.g. 10-Q filed 2023-11-06) and Takeda 6-Ks containing HyQvia, CIDP and PDUFA, but the fetched 10-Q text did not show the sentence, so no day-precision goal was read"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text search HyQvia+PDUFA Mar 2023-Jan 12, 2024; Halozyme 8-K exhibit of 2023-05-09 fetched: PDUFA sentences concern SC atezolizumab and efgartigimod only; Takeda 6-K of 2023-10-30 fetched: no HyQvia CIDP US timing)"
   },
   {
    "cid": "C008",
@@ -6401,8 +7046,8 @@
    "drug": "GAMMAGARD LIQUID [Immune Globulin Infusion (Human) 10%] - CIDP",
    "sponsor": "Takeda",
    "tickers": "TAK",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text search Gammagard+CIDP 2023-01 to 2024-01-26 hits only Takeda 6-Ks and Halozyme filings; Takeda 6-K of 2023-10-30 fetched: its only PDUFA sentence concerns fruquintinib, nothing on GAMMAGARD CIDP timing)"
   },
   {
    "cid": "C009",
@@ -6419,8 +7064,8 @@
    "drug": "XOLAIR (omalizumab) - IgE-mediated food allergy (OUtMATCH)",
    "sponsor": "Genentech/Roche (with Novartis)",
    "tickers": "RHHBY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget); pass 1 read the Roche approval release (no PDUFA/target date stated); Roche is not an SEC filer"
+   "category": "goal_month_or_quarter",
+   "reason": "pass 3: goal stated only as month/quarter"
   },
   {
    "cid": "C013",
@@ -6428,8 +7073,8 @@
    "drug": "TAGRISSO (osimertinib) with chemotherapy (FLAURA2) - EGFRm NSCLC",
    "sponsor": "AstraZeneca",
    "tickers": "AZN",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: goal date not verified: the shared WebSearch budget (200/turn) and WebFetch budget ran out mid-batch before a pre-action sponsor document stating the goal day could be located; only the tracked source_ref was read. Needs re-mine. Also no primary action-date source was read (source_ref is a"
+   "category": "goal_month_or_quarter",
+   "reason": "pass 3: goal stated only as month/quarter"
   },
   {
    "cid": "C014",
@@ -6438,7 +7083,7 @@
    "sponsor": "Janssen (Johnson & Johnson)",
    "tickers": "JNJ",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: J&J releases/news show only the Feb 2024 approval; no PDUFA day stated)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C015",
@@ -6455,8 +7100,8 @@
    "drug": "Biktarvy (bictegravir/emtricitabine/tenofovir alafenamide) - expanded indication (M184V/I resistance)",
    "sponsor": "Gilead Sciences",
    "tickers": "GILD",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (Gilead approval release of 2024-02-26 mentions none; pass 3: one web search for an sNDA goal date and SEC EDGAR full-text search Biktarvy + PDUFA Mar 2023 to Feb 2024 found no Gilead statement)"
   },
   {
    "cid": "C018",
@@ -6464,8 +7109,8 @@
    "drug": "RYBREVANT (amivantamab-vmjw) + carboplatin-pemetrexed (PAPILLON) - 1L EGFR exon 20 NSCLC",
    "sponsor": "Janssen (Johnson & Johnson)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget); pass-1 approval release (J&J, Mar 1, 2024) states priority review but no PDUFA day"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (J&J approval release states priority review only; pass 3 web search of J&J/Genmab statements and Genmab 20-F listing found no PDUFA day; FDA's own page says only 'four weeks ahead of the FDA goal date', which is not a sponsor-stated day)"
   },
   {
    "cid": "C019",
@@ -6474,7 +7119,7 @@
    "sponsor": "Lantheus",
    "tickers": "LNTH",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: Lantheus releases/news show only the March 4, 2024 approval; no PDUFA day stated)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C022",
@@ -6482,8 +7127,8 @@
    "drug": "Wegovy (semaglutide) - MACE risk reduction (SELECT)",
    "sponsor": "Novo Nordisk",
    "tickers": "NVO",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: goal date not verified: the shared WebSearch budget (200/turn) and WebFetch budget ran out mid-batch before a pre-action sponsor document stating the goal day could be located; only the tracked source_ref was read. Needs re-mine."
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: one web search of Novo Nordisk SELECT sNDA approval coverage found no PDUFA/goal day; Novo does not typically disclose one)"
   },
   {
    "cid": "C027",
@@ -6500,8 +7145,8 @@
    "drug": "EDURANT PED (rilpivirine) tablets for oral suspension - pediatric HIV-1 (age 2+, 14 to <25 kg)",
    "sponsor": "Janssen (Johnson & Johnson)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C029",
@@ -6510,7 +7155,7 @@
    "sponsor": "Takeda Pharmaceuticals U.S.A.",
    "tickers": "TAK",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (Takeda's 2024-03-19 approval release mentions Priority Review and RTOR but no target date; web search found no Takeda statement of a PDUFA day)"
+   "reason": "pass 3: no sponsor-stated goal date found (Takeda's 2024-03-19 approval release gives no target date; pass 3: SEC EDGAR full-text search of Takeda filings for PDUFA, Jun 2023 to Apr 2024: the only PDUFA day found is for fruquintinib, none for ICLUSIG)"
   },
   {
    "cid": "C032",
@@ -6519,7 +7164,7 @@
    "sponsor": "Alexion (AstraZeneca)",
    "tickers": "AZN",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (AstraZeneca/Alexion do not disclose PDUFA days; search found none for this resubmission, which followed a Sept 2023 CRL)"
+   "reason": "pass 3: no sponsor-stated goal date found (AstraZeneca/Alexion do not disclose PDUFA days; pass 3: EDGAR full-text 'Ultomiris'+'PDUFA' Sep 2023-Mar 2024 hit AZ FY2023 results 6-K (2024-02-08), fetched in full: lists the CHAMPION-NMOSD US regulatory submission with no date; other hits were other companies)"
   },
   {
    "cid": "C036",
@@ -6528,7 +7173,7 @@
    "sponsor": "Alexion (AstraZeneca)",
    "tickers": "AZN",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (searched AstraZeneca/Alexion releases and news; AZ does not disclose PDUFA days)"
+   "reason": "pass 3: no sponsor-stated goal date found (searched AstraZeneca/Alexion releases and news; AZ does not disclose PDUFA days); not searched further in pass 3"
   },
   {
    "cid": "C040",
@@ -6546,7 +7191,7 @@
    "sponsor": "AstraZeneca",
    "tickers": "AZN",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (pass-1 finding, not re-searched in pass 2): no sponsor-stated goal date found (AstraZeneca does not disclose PDUFA days for supplements; web search budget ran out before further checks)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C042",
@@ -6563,8 +7208,8 @@
    "drug": "ALECENSA (alectinib), adjuvant ALK+ early-stage NSCLC",
    "sponsor": "Genentech (Roche)",
    "tickers": "RHHBY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C044",
@@ -6572,8 +7217,8 @@
    "drug": "ENTYVIO (vedolizumab) subcutaneous, maintenance in Crohn's disease",
    "sponsor": "Takeda",
    "tickers": "TAK",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: web search for Takeda's Entyvio SC Crohn's BLA acceptance/PDUFA statement found only coverage without a day; SEC EDGAR full-text search of Takeda filings (CIK 1395064) for PDUFA, Jun 2023 to Apr 2024, hits only two 6-Ks, one checked: its PDUFA sentence is for fruquintinib)"
   },
   {
    "cid": "C048",
@@ -6581,8 +7226,8 @@
    "drug": "LUTATHERA (lutetium Lu 177 dotatate), pediatric GEP-NETs age 12+",
    "sponsor": "Novartis (Advanced Accelerator Applications)",
    "tickers": "NVS",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget); no Novartis goal-day statement located in pass 1"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text 'Lutathera'+'PDUFA' Jun 2023-Apr 2024 hit only other companies' filings (Crinetics, Fusion, HUTCHMED), no Novartis filing; Novartis does not usually state PDUFA days for supplements)"
   },
   {
    "cid": "C049",
@@ -6590,8 +7235,8 @@
    "drug": "Biktarvy label update (pregnant adults with HIV)",
    "sponsor": "Gilead Sciences",
    "tickers": "GILD",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget); pass 1: labeling supplement, Gilead approval release gives no goal day"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (labeling supplement; Gilead approval release gives no goal day; not searched further in pass 3)"
   },
   {
    "cid": "C050",
@@ -6599,8 +7244,8 @@
    "drug": "BEQVEZ (fidanacogene elaparvovec-dzkt), hemophilia B gene therapy",
    "sponsor": "Pfizer",
    "tickers": "PFE",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (pass-1 finding, not re-searched in pass 2): no sponsor-stated goal date found (Pfizer approval release fetched, no goal date; Pfizer generally does not disclose PDUFA days; search budget ran out before further checks)"
+   "category": "goal_month_or_quarter",
+   "reason": "pass 3: goal stated only as month/quarter"
   },
   {
    "cid": "C051",
@@ -6618,7 +7263,7 @@
    "sponsor": "Aurinia Pharmaceuticals",
    "tickers": "AUPH",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search for an Aurinia sNDA/PDUFA statement; Aurinia FY2023 10-K, filed Feb 2024, read to 100k of 123k chars: no sNDA or PDUFA date for the label update)"
+   "reason": "pass 3: no sponsor-stated goal date found (Aurinia FY2023 10-K, filed 2024-02-15, now read in full (0-123k chars over passes 2-3): no PDUFA/target action day for the LUPKYNIS labeling sNDA; SEC EDGAR full-text search LUPKYNIS + PDUFA Jun 2023 to Apr 2024 finds no other Aurinia filing)"
   },
   {
    "cid": "C056",
@@ -6636,7 +7281,7 @@
    "sponsor": "Teva",
    "tickers": "TEVA",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (Teva release on approval and search results show no PDUFA date; this was a CMC new-strength supplement)"
+   "reason": "pass 3: no sponsor-stated goal date found (Teva release on approval and search results show no PDUFA date; this was a CMC new-strength supplement); not re-searched in pass 3 (low yield)"
   },
   {
    "cid": "C066",
@@ -6644,8 +7289,8 @@
    "drug": "Kevzara (sarilumab), polyarticular juvenile idiopathic arthritis",
    "sponsor": "Sanofi / Regeneron",
    "tickers": "REGN/SNY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C067",
@@ -6653,8 +7298,8 @@
    "drug": "Farxiga (dapagliflozin), pediatric type 2 diabetes",
    "sponsor": "AstraZeneca",
    "tickers": "AZN",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C070",
@@ -6662,8 +7307,8 @@
    "drug": "IMFINZI (durvalumab) + carboplatin/paclitaxel, endometrial cancer",
    "sponsor": "AstraZeneca",
    "tickers": "AZN",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: no sponsor-stated goal date found; not fully searched (shared web-search and web-fetch budgets were exhausted before a sponsor goal-date search could be completed). AstraZeneca generally gives only a period for anticipated decisions (not verified for this one)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3 web search for an AstraZeneca DUO-E acceptance / PDUFA statement found none; AstraZeneca discloses anticipated regulatory decisions only by period)"
   },
   {
    "cid": "C071",
@@ -6672,16 +7317,7 @@
    "sponsor": "AbbVie",
    "tickers": "ABBV",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: AbbVie Aug 2023 submission and June 18, 2024 approval coverage show no PDUFA day)"
-  },
-  {
-   "cid": "C072",
-   "origin": "tracked",
-   "drug": "CAPVAXIVE (Pneumococcal 21-valent Conjugate Vaccine)",
-   "sponsor": "Merck",
-   "tickers": "LGND/MRK",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "reason": "pass 3: no sponsor-stated goal date found (one search: AbbVie Aug 2023 submission and June 18, 2024 approval coverage show no PDUFA day); not searched further in pass 3"
   },
   {
    "cid": "C077",
@@ -6690,16 +7326,7 @@
    "sponsor": "AbbVie",
    "tickers": "ABBV",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search): AbbVie releases on the 2023 CRL and June 2024 CRL give no PDUFA/target action day for the resubmission"
-  },
-  {
-   "cid": "C079",
-   "origin": "tracked",
-   "drug": "EPKINLY (epcoritamab-bysp), relapsed/refractory follicular lymphoma",
-   "sponsor": "AbbVie / Genmab",
-   "tickers": "ABBV/GMAB",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: no sponsor-stated goal date verified (shared web-search and web-fetch budgets were exhausted before a sponsor goal-date search could be completed)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C082",
@@ -6707,8 +7334,8 @@
    "drug": "Kisunla (donanemab-azbt), early symptomatic Alzheimer's disease",
    "sponsor": "Eli Lilly",
    "tickers": "LLY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C083",
@@ -6716,8 +7343,8 @@
    "drug": "Vabysmo (faricimab) prefilled syringe",
    "sponsor": "Roche / Genentech",
    "tickers": "RHHBY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "not_pdufa",
+   "reason": "pass 3: not a PDUFA efficacy action (CMC packaging supplement for a new presentation)"
   },
   {
    "cid": "C084",
@@ -6725,8 +7352,8 @@
    "drug": "Susvimo (ranibizumab injection) ocular implant, reintroduction",
    "sponsor": "Roche / Genentech",
    "tickers": "RHHBY",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found; the July 8, 2024 Genentech release concerns reintroducing Susvimo after device/manufacturing changes (likely a manufacturing/device supplement, not a new-indication PDUFA review); not separately searched in pass 2"
+   "category": "not_pdufa",
+   "reason": "pass 3: not a PDUFA action (product reintroduction; no 2024 Drugs@FDA supplement approval)"
   },
   {
    "cid": "C086",
@@ -6735,7 +7362,7 @@
    "sponsor": "Novo Nordisk",
    "tickers": "NVO",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (searched Novo releases/news for PDUFA date; Novo disclosed only submission timing, no day-precision goal)"
+   "reason": "pass 3: no sponsor-stated goal date found (Novo disclosed only submission timing; pass 3: SEC EDGAR full-text search for icodec Apr 2023 to Jul 2024 hits only Novo 6-K/20-F company reports, and a parallel search pairing PDUFA with it found none of them stating a goal day)"
   },
   {
    "cid": "C088",
@@ -6744,7 +7371,7 @@
    "sponsor": "BioMarin Pharmaceutical",
    "tickers": "BMRN",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (two searches of BioMarin releases and sec.gov 10-Q text returned no PDUFA date for this sBLA)"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text 'Brineura'+'PDUFA' Oct 2023-Jul 2024 hit BioMarin Q1 2024 10-Q, fetched in full: no Brineura PDUFA/target date; one web search found only approval coverage)"
   },
   {
    "cid": "C089",
@@ -6753,7 +7380,7 @@
    "sponsor": "Mirum Pharmaceuticals",
    "tickers": "MIRM",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found for the July 2024 age-expansion supplements (S-009/S-010): one pass-2 search of Mirum releases (Business Wire) found day-precision PDUFA dates only for the earlier PFIC sNDA (S-005, Mar 13, 2024), not for this action."
+   "reason": "pass 3: no sponsor-stated goal date found for the July 2024 age-expansion supplements (pass 3: EDGAR full-text search maralixibat+PDUFA Jan-Jul 24, 2024 hits only Mirum filings; Mirum 8-K exhibit of 2024-02-28 fetched: PDUFA sentences concern only the PFIC sNDA, March 13, 2024)"
   },
   {
    "cid": "C090",
@@ -6762,7 +7389,7 @@
    "sponsor": "Amneal",
    "tickers": "AMRX",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (EDGAR full-text search 'potassium phosphates'+'PDUFA' Jun 2023-Jul 2024: zero hits; pass 1 checked Drugs@FDA and Amneal approval release)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C091",
@@ -6770,8 +7397,8 @@
    "drug": "DARZALEX FASPRO (daratumumab and hyaluronidase-fihj) D-VRd, transplant-eligible NDMM",
    "sponsor": "Janssen Biotech (Johnson & Johnson)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget); pass 1 read J&J approval release of 2024-07-30: no PDUFA date"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 1: J&J approval release, no PDUFA day; pass 3: SEC EDGAR full-text search daratumumab + PDUFA Jan to Jul 2024; partner Halozyme Q1 2024 results 8-K EX-99.1 (2024-05-07, fetched) notes only the January 2024 sBLA submission with no goal date; Genmab Q1 2024 6-K read 0-100k chars: no goal date)"
   },
   {
    "cid": "C092",
@@ -6780,7 +7407,7 @@
    "sponsor": "GSK",
    "tickers": "GSK",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: GSK's 2024-08-01 release (fetched) says the sBLA 'was approved ahead of the Prescription Drug User Fee Act action date' but gives no date"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C094",
@@ -6798,7 +7425,7 @@
    "sponsor": "Novartis",
    "tickers": "NVS",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (pass-1 finding, not re-searched in pass 2): no sponsor-stated goal date found (Novartis approval release of 2024-08-08 fetched: no PDUFA date; Novartis does not normally disclose goal days; further search not possible - search budget exhausted)"
+   "reason": "pass 3: no sponsor-stated goal date found (Novartis approval release gives none; pass 3: SEC EDGAR full-text search of Novartis filings (CIK 1114448) for PDUFA, Sep 2023 to Sep 2024: no hits)"
   },
   {
    "cid": "C101",
@@ -6807,7 +7434,7 @@
    "sponsor": "MediWound (US partner Vericel)",
    "tickers": "MDWD/VCEL",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: MediWound's sBLA acceptance release (GlobeNewswire Jan 9, 2024, read via BioSpace republication) and approval release (Aug 15, 2024) state no PDUFA/target date; one search for a pediatric sBLA PDUFA date found none"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text 'NexoBrid'+'PDUFA' Oct 2023-Aug 2024 hit only MediWound 20-F of 2024-03-21, fetched in full: no PDUFA/target date for the pediatric sBLA; earlier passes read the acceptance and approval releases: no date)"
   },
   {
    "cid": "C102",
@@ -6815,8 +7442,8 @@
    "drug": "IMFINZI (durvalumab) perioperative resectable NSCLC (AEGEAN)",
    "sponsor": "AstraZeneca",
    "tickers": "AZN",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (AstraZeneca 6-K approval release of 2024-08-16 states none; pass 3: EDGAR full-text 'Imfinzi'+'PDUFA' Oct 2023-Aug 2024 hit AZ FY2023 results 6-K (2024-02-08), fetched in full: no PDUFA sentence or goal day for AEGEAN; other hits were other companies)"
   },
   {
    "cid": "C103",
@@ -6824,8 +7451,8 @@
    "drug": "LAZCLUZE (lazertinib) with RYBREVANT (amivantamab-vmjw), 1L EGFR-mutant NSCLC (MARIPOSA)",
    "sponsor": "Janssen Biotech (Johnson & Johnson)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text search lazertinib+PDUFA Dec 2023-Aug 19, 2024 hits only Halozyme/other-company filings, none from J&J or a stated Lazcluze goal day; J&J does not typically disclose one; licensor Yuhan is not an SEC filer)"
   },
   {
    "cid": "C105",
@@ -6852,7 +7479,7 @@
    "sponsor": "Vericel",
    "tickers": "VCEL",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one web search of Vericel releases found only the 2016 original-BLA PDUFA date; EDGAR full-text search attempt errored)"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text searches 'MACI Arthro'+PDUFA and MACI+arthroscopic+'action date', Jun 2023-Aug 23, 2024: zero hits)"
   },
   {
    "cid": "C108",
@@ -6861,7 +7488,7 @@
    "sponsor": "Scilex Holding",
    "tickers": "SCLX",
    "category": "no_sourced_goal_day",
-   "reason": "not a goal-dated new approval: labeling-change supplement to a 2019-approved product; no sponsor-stated PDUFA goal date (Scilex release fetched: none)"
+   "reason": "pass 3: not a goal-dated new approval: labeling-change supplement to a 2019-approved product; no sponsor-stated PDUFA goal date (Scilex release fetched: none)"
   },
   {
    "cid": "C109",
@@ -6878,8 +7505,8 @@
    "drug": "TREMFYA (guselkumab) - ulcerative colitis",
    "sponsor": "Janssen Biotech (Johnson & Johnson)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget); pass 1 read J&J approval release of 2024-09-11: no PDUFA date"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C112",
@@ -6887,8 +7514,8 @@
    "drug": "TECENTRIQ HYBREZA (atezolizumab and hyaluronidase-tqjs)",
    "sponsor": "Genentech (Roche); ENHANZE from Halozyme",
    "tickers": "HALO/RHHBY",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (pass-1 finding, not re-searched in pass 2): no sponsor-stated goal date found (Roche/Genentech do not normally disclose goal days; further search not possible - search budget exhausted)"
+   "category": "goal_month_or_quarter",
+   "reason": "pass 3: goal stated only as month/quarter"
   },
   {
    "cid": "C114",
@@ -6906,7 +7533,7 @@
    "sponsor": "Novartis",
    "tickers": "NVS",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: Novartis releases/coverage show only the Sept 17, 2024 approval; no PDUFA day)"
+   "reason": "pass 3: no sponsor-stated goal date found (one web search in earlier passes; pass 3: SEC EDGAR full-text search of Novartis filings (CIK 1114448) for PDUFA, Sep 2023 to Sep 2024: no hits)"
   },
   {
    "cid": "C117",
@@ -6914,8 +7541,8 @@
    "drug": "FASENRA (benralizumab) - MANDARA, EGPA",
    "sponsor": "AstraZeneca",
    "tickers": "AZN",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C118",
@@ -6923,8 +7550,8 @@
    "drug": "RYBREVANT (amivantamab-vmjw) + carboplatin/pemetrexed - MARIPOSA-2, second-line EGFRm NSCLC",
    "sponsor": "Janssen Biotech (Johnson & Johnson)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: SEC EDGAR full-text search amivantamab + PDUFA Nov 2023 to Sep 2024: hits are Halozyme/Genmab/third-party filings; Genmab Q1 2024 6-K read 0-100k chars gave no goal day for any amivantamab sBLA; J&J itself does not disclose supplement goal days in what was read)"
   },
   {
    "cid": "C120",
@@ -6932,8 +7559,8 @@
    "drug": "FLUMIST (Influenza Vaccine Live, Intranasal) - self- or caregiver-administration",
    "sponsor": "MedImmune (AstraZeneca)",
    "tickers": "AZN",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget); FDA action date 2024-09-20 verified in pass 1"
+   "category": "goal_month_or_quarter",
+   "reason": "pass 3: goal stated only as month/quarter: AstraZeneca's Oct 2023 sBLA acceptance release says the PDUFA date was expected in the first quarter of 2024 (snippet); action came Sept 20, 2024, and no sponsor statement of a day-precision original or extended goal was found"
   },
   {
    "cid": "C123",
@@ -6941,8 +7568,8 @@
    "drug": "TAGRISSO (osimertinib) - LAURA, unresectable stage III EGFRm NSCLC",
    "sponsor": "AstraZeneca",
    "tickers": "AZN",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: goal date not verified: the shared web-search budget for this run ran out before this item could be searched for a sponsor-stated PDUFA day; needs re-mining (FDA action date below is verified)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text search Tagrisso+PDUFA Mar-Sep 2024; AstraZeneca Q1 2024 6-K of 2024-04-25 fetched in full: no PDUFA sentence, LAURA listed only as Phase III readout)"
   },
   {
    "cid": "C125",
@@ -6951,16 +7578,7 @@
    "sponsor": "GE HealthCare",
    "tickers": "GEHC/LNTH",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one pass-2 search for a GE HealthCare acceptance/PDUFA statement returned only approval coverage; no day-precision goal located)"
-  },
-  {
-   "cid": "C127",
-   "origin": "tracked",
-   "drug": "Opdivo (nivolumab) - CheckMate-77T perioperative resectable NSCLC",
-   "sponsor": "Bristol-Myers Squibb",
-   "tickers": "BMY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text 'flurpiridaz'+'PDUFA' Jun 2023-Sep 2024: no hits; 'flurpiridaz' alone hit only Lantheus filings; Lantheus Q2 2024 10-Q fetched: no goal date; earlier pass searched GE HealthCare releases)"
   },
   {
    "cid": "C131",
@@ -6977,17 +7595,8 @@
    "drug": "VYALEV (foscarbidopa and foslevodopa)",
    "sponsor": "AbbVie",
    "tickers": "ABBV",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: goal date not verified: the shared web-search budget for this run ran out before this item could be searched for a sponsor-stated PDUFA day; needs re-mining (FDA action date below is verified)"
-  },
-  {
-   "cid": "C134",
-   "origin": "tracked",
-   "drug": "VYLOY (zolbetuximab-clzb)",
-   "sponsor": "Astellas",
-   "tickers": "ALPMY",
    "category": "no_sourced_goal_day",
-   "reason": "goal day (Nov 9, 2024, resubmission) seen only in trade-press/aggregator text via one search (medpath, cancernetwork, cancerletter summaries attributing it to an Astellas May 30, 2024 announcement); Astellas's own release not read within pass-2 budget"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C135",
@@ -6995,8 +7604,8 @@
    "drug": "BOTOX Cosmetic (onabotulinumtoxinA) - platysma prominence",
    "sponsor": "Allergan (AbbVie)",
    "tickers": "ABBV",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: web search found no AbbVie submission/PDUFA statement for the platysma sBLA; SEC EDGAR full-text search of AbbVie filings (CIK 1551152) for PDUFA, Oct 2023 to Apr 2025: no hits)"
   },
   {
    "cid": "C136",
@@ -7005,7 +7614,7 @@
    "sponsor": "Amneal Pharmaceuticals",
    "tickers": "AMRX",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (pass-2 search of Amneal releases and coverage: no PDUFA/target date disclosed); FDA action day also not verified (Amneal release gives no NDA number or action day)."
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C137",
@@ -7022,8 +7631,8 @@
    "drug": "ABRYSVO (RSV vaccine) - adults 18-59 at increased risk (MONeT)",
    "sponsor": "Pfizer",
    "tickers": "PFE",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: one web search for Pfizer's sBLA acceptance/PDUFA statement for the 18-59 at-risk indication returned only approval coverage; pass-1 Pfizer approval release gives none)"
   },
   {
    "cid": "C140",
@@ -7032,7 +7641,7 @@
    "sponsor": "Novartis",
    "tickers": "NVS",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search): Novartis priority-review release of July 29, 2024 (https://www.novartis.com/news/media-releases/novartis-scemblix-granted-fda-priority-review-treatment-adults-newly-diagnosed-cml) gives no target action day (RTOR review)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C148",
@@ -7050,7 +7659,7 @@
    "sponsor": "Cumberland Pharmaceuticals",
    "tickers": "CPIX",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search; Cumberland 8-K of 2024-12-09 and approval release give no PDUFA/goal day). FDA action day also not established (release says only that FDA 'has approved')."
+   "reason": "pass 3: no sponsor-stated goal date found (pass 1: Cumberland 8-K/approval release of 2024-12-09 give no goal day; pass 3: SEC EDGAR full-text search for Acetadote + PDUFA and Acetadote + 'action date', Jun 2023 to Dec 2024: only hit is the FY2023 10-K, whose Acetadote section (read 0-100k chars) gives no goal day). FDA action day also not established."
   },
   {
    "cid": "C155",
@@ -7058,8 +7667,8 @@
    "drug": "Zepbound (tirzepatide), obstructive sleep apnea",
    "sponsor": "Eli Lilly and Company",
    "tickers": "LLY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: UNVERIFIED (not a finding of absence): web search budget for this run was exhausted before a sponsor goal-date document could be located; needs follow-up search. Approval release mentions no goal date; Lilly typically does not disclose a goal day."
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: one web search on Lilly OSA submission/priority review/PDUFA found only approval coverage; Lilly typically does not disclose a goal day)"
   },
   {
    "cid": "C157",
@@ -7068,7 +7677,7 @@
    "sponsor": "Pfizer",
    "tickers": "PFE",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: Pfizer releases/coverage of the Dec 2024 accelerated approval show no PDUFA day)"
+   "reason": "pass 3: no sponsor-stated goal date found (one search: Pfizer releases/coverage of the Dec 2024 accelerated approval show no PDUFA day)"
   },
   {
    "cid": "C161",
@@ -7094,8 +7703,8 @@
    "drug": "Omvoh (mirikizumab-mrkz), Crohn's disease",
    "sponsor": "Eli Lilly and Company",
    "tickers": "LLY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C167",
@@ -7103,8 +7712,8 @@
    "drug": "SPRAVATO (esketamine) monotherapy, TRD",
    "sponsor": "Johnson & Johnson (Janssen)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget); no goal-date document sourced; action date is the Drugs@FDA hint 2025-01-17 (not re-fetched)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C168",
@@ -7131,7 +7740,7 @@
    "sponsor": "Novo Nordisk",
    "tickers": "NVO",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search of Novo Nordisk FLOW sNDA coverage/releases found no PDUFA day; Novo does not typically disclose one)"
+   "reason": "pass 3: no sponsor-stated goal date found (one search of Novo Nordisk FLOW sNDA coverage/releases found no PDUFA day; Novo does not typically disclose one); not searched further in pass 3"
   },
   {
    "cid": "C174",
@@ -7140,7 +7749,7 @@
    "sponsor": "Genentech (Roche)",
    "tickers": "RHHBY",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (Roche July 18, 2024 sBLA acceptance release and coverage give no PDUFA date; two searches)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C176",
@@ -7149,7 +7758,7 @@
    "sponsor": "AbbVie (co-developed with Pfizer)",
    "tickers": "ABBV",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (searched AbbVie releases and coverage for PDUFA date; none disclosed)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C178",
@@ -7167,7 +7776,7 @@
    "sponsor": "Genentech (Roche)",
    "tickers": "RHHBY",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search of Genentech/Roche tablet NDA releases and coverage; none disclosed)"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 1 search of Genentech/Roche releases; pass 3 SEC EDGAR full-text search for risdiplam/Evrysdi + PDUFA and Evrysdi + tablet, Mar 2024 to Feb 2025: partner PTC Therapeutics' filings give no tablet goal day)"
   },
   {
    "cid": "C183",
@@ -7184,8 +7793,8 @@
    "drug": "TNKase (tenecteplase) - acute ischemic stroke",
    "sponsor": "Genentech (Roche)",
    "tickers": "RHHBY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: NOT RESEARCHED: the shared WebSearch budget for this run (200 calls across all agents) was used up before this item; needs a rerun. Not a finding about the drug."
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3 web search for a Genentech TNKase stroke sBLA PDUFA statement: only approval coverage of March 3, 2025; Genentech/Roche gave no goal day in anything found)"
   },
   {
    "cid": "C186",
@@ -7194,7 +7803,7 @@
    "sponsor": "ANI Pharmaceuticals",
    "tickers": "ANIP",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (EDGAR full-text search 'ILUVIEN' + 'PDUFA' Jun 2024-Mar 2025 returned no ANI filing; one web search found only the Mar 14, 2025 approval release)"
+   "reason": "pass 3: no sponsor-stated goal date found (EDGAR full-text 'ILUVIEN'+'PDUFA' Jun 2024-Mar 2025 and, in pass 3, 'ILUVIEN'+'action date' Jan 2024-Mar 2025: no ANI or Alimera filing; one web search found only the Mar 14, 2025 approval release)"
   },
   {
    "cid": "C187",
@@ -7203,7 +7812,7 @@
    "sponsor": "Xeris Biopharma",
    "tickers": "XERS",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one pass-2 search; Xeris approval release of Mar 17, 2025 and search results show no PDUFA date for the VialDx sNDA)"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text search 'VialDx' Jan 2024-Mar 14, 2025 zero hits; Gvoke+PDUFA hits are Xeris 10-Ks; Xeris 10-K filed 2025-03-06 read (first 100k chars): PDUFA sentences are generic, nothing on VialDx)"
   },
   {
    "cid": "C189",
@@ -7212,7 +7821,7 @@
    "sponsor": "Johnson & Johnson",
    "tickers": "JNJ",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: J&J release on the Mar 20, 2025 approval and coverage show no PDUFA day)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C190",
@@ -7220,17 +7829,8 @@
    "drug": "FABHALTA (iptacopan) - C3G",
    "sponsor": "Novartis",
    "tickers": "NVS",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
-  },
-  {
-   "cid": "C195",
-   "origin": "tracked",
-   "drug": "QFITLIA (fitusiran), hemophilia A or B with or without inhibitors",
-   "sponsor": "Sanofi (Alnylam royalty)",
-   "tickers": "ALNY/INTE/SNY",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search): only secondary sources (HCPLive commentary, Clarivate listing) give a March 28 PDUFA date; no Sanofi or Alnylam primary document surfaced"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text 'iptacopan'+'PDUFA' Jun 2024-Mar 2025 hit only competitor/other filers (Apellis, Ionis, Travere, Vera etc.), none Novartis; Novartis does not usually state PDUFA days; no further search for budget)"
   },
   {
    "cid": "C197",
@@ -7260,22 +7860,13 @@
    "reason": "no sponsor-stated goal date found (one search: only approval coverage and the Novartis approval release surfaced; no Novartis statement of a PDUFA day). Also duplicate of C202 (NVS), one FDA action."
   },
   {
-   "cid": "C201",
-   "origin": "tracked",
-   "drug": "UPLIZNA (inebilizumab-cdon) - IgG4-related disease",
-   "sponsor": "Amgen",
-   "tickers": "AMGN",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (pass-1 finding, not re-searched in pass 2): no sponsor-stated goal date found (Amgen approval release of 2025-04-03 does not mention a PDUFA or target action date; one search turned up no day-precision goal date; further searching could not be run because the shared web-search budget ran out)"
-  },
-  {
    "cid": "C202",
    "origin": "tracked",
    "drug": "Vanrafia (atrasentan)",
    "sponsor": "Novartis",
    "tickers": "NVS",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: Novartis Apr 3, 2025 accelerated-approval release and coverage show no PDUFA day)"
+   "reason": "pass 3: no sponsor-stated goal date found (one search: Novartis Apr 3, 2025 accelerated-approval release and coverage show no PDUFA day)"
   },
   {
    "cid": "C206",
@@ -7284,7 +7875,7 @@
    "sponsor": null,
    "tickers": "MIRM",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (EDGAR full-text search for LIVMARLI + tablet + PDUFA, Jun 2024-Apr 2025: zero hits)"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 2 EDGAR zero hits; pass 3 one web search found only the Apr 14, 2025 approval and the older PFIC PDUFA date)"
   },
   {
    "cid": "C208",
@@ -7292,8 +7883,8 @@
    "drug": "EYLEA HD (24-week dosing)",
    "sponsor": null,
    "tickers": "REGN",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: secondary coverage of an April 2025 CRL for extended EYLEA HD dosing intervals; no sponsor day-precision goal date located for that sBLA; action date not verified)"
+   "category": "action_day_not_established",
+   "reason": "goal date Apr 20, 2025 sourced (Regeneron 8-K, Feb 4, 2025), but the CRL day is known only from Regeneron's Apr 18 announcement ('today'); no FDA record of the action day was found"
   },
   {
    "cid": "C209",
@@ -7302,7 +7893,7 @@
    "sponsor": "Akeso (private-to-US; HKEX-listed)",
    "tickers": "ANTE",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: only Akeso's May 2021 BLA submission news and the April 2025 approval coverage surfaced; no day-precision PDUFA date for the review cycle that ended in approval)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C211",
@@ -7311,7 +7902,7 @@
    "sponsor": "AbbVie",
    "tickers": "ABBV",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search): AbbVie submission release (July 12, 2024) and approval coverage give no PDUFA day"
+   "reason": "pass 3: no sponsor-stated goal date found (AbbVie submission release of July 12, 2024 gives no day; pass 3: SEC EDGAR full-text search upadacitinib + PDUFA Jul 2024 to Apr 2025 hits only third-party filings, and AbbVie filings (CIK 1551152) contain no PDUFA mention Oct 2023 to Apr 2025)"
   },
   {
    "cid": "C213",
@@ -7320,7 +7911,7 @@
    "sponsor": "Johnson & Johnson (Janssen)",
    "tickers": "JNJ",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: J&J BLA-submission release (Aug 2024) and priority-review coverage (Jan 2025) give no PDUFA day)"
+   "reason": "pass 3: no sponsor-stated goal date found (J&J submission/priority-review releases give no day; pass 3: EDGAR full-text 'nipocalimab'+'PDUFA' Jun 2024-Apr 2025 hit only competitor filings (Viridian, Immunovant, Roivant etc.), no J&J filing)"
   },
   {
    "cid": "C214",
@@ -7338,7 +7929,7 @@
    "sponsor": null,
    "tickers": "ABBV",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: AbbVie Sept 27, 2024 BLA submission release and May 14, 2025 approval coverage show no PDUFA day)"
+   "reason": "pass 3: no sponsor-stated goal date found (one search: AbbVie Sept 27, 2024 BLA submission release and May 14, 2025 approval coverage show no PDUFA day); not searched further in pass 3"
   },
   {
    "cid": "C218",
@@ -7356,7 +7947,7 @@
    "sponsor": null,
    "tickers": "INCY",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one web search and EDGAR full-text search: only Incyte 10-Q/10-K hits, not read; search surfaced only the 2021 original-BLA PDUFA date)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C220",
@@ -7374,7 +7965,7 @@
    "sponsor": "Genentech (Roche)",
    "tickers": "RHHBY",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search of gene.com/roche.com/businesswire: July 2024 DME/DR sBLA acceptance and May 22, 2025 approval releases give no decision day)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C224",
@@ -7386,22 +7977,13 @@
    "reason": "goal day not verified from a primary document, and the action was gated by exclusivity: a search snippet (source document not identified) says 'The FDA set a PDUFA goal date for the YUTREPIA NDA of May 24, 2025', but Liquidia's FY2024 results release (Mar 19, 2025) and the 8-Ks read state no PDUFA date; they say final approval could come only after Tyvaso DPI NCI exclusivity expired May 23, 2025. "
   },
   {
-   "cid": "C225",
-   "origin": "tracked",
-   "drug": "TRYPTYR (acoltremon ophthalmic solution) 0.003% (formerly AR-15512)",
-   "sponsor": "Alcon",
-   "tickers": "ALC",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (three web searches for Alcon AR-15512/acoltremon NDA acceptance and PDUFA date; Alcon only stated it planned to file the NDA in mid-2024)"
-  },
-  {
    "cid": "C227",
    "origin": "tracked",
    "drug": "MAVYRET (glecaprevir/pibrentasvir) - acute HCV label expansion",
    "sponsor": "AbbVie (Enanta royalty partner)",
    "tickers": "ABBV/ENTA",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (AbbVie 2025-06-11 approval release mentions no PDUFA date; searches of AbbVie/Enanta for an acute-HCV sNDA PDUFA date found none)"
+   "reason": "pass 3: no sponsor-stated goal date found (AbbVie approval release has none; pass 3: EDGAR full-text 'MAVYRET'+'PDUFA' Jun 2024-Jun 2025 hit Enanta 10-K (Nov 2024), fetched: no PDUFA sentence about the acute-HCV submission)"
   },
   {
    "cid": "C231",
@@ -7419,7 +8001,7 @@
    "sponsor": "CSL Behring",
    "tickers": "CSLLY",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (CSL 2023-12-14 FDA filing-acceptance release gives no PDUFA or action date; searches found no later CSL statement of a goal day)"
+   "reason": "pass 3: no sponsor-stated goal date found (CSL 2023-12-14 FDA filing-acceptance release gives no PDUFA or action date; searches found no later CSL statement of a goal day); not searched further in pass 3"
   },
   {
    "cid": "C234",
@@ -7446,7 +8028,7 @@
    "sponsor": "GSK",
    "tickers": "GSK",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (GSK 2025-06-24 approval release mentions no PDUFA/target date; no GSK goal-date statement found)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C238",
@@ -7455,7 +8037,7 @@
    "sponsor": "Takeda",
    "tickers": "TAK",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: Takeda's approval release and coverage give no target action date; no BLA-acceptance release with a goal day surfaced)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C240",
@@ -7463,8 +8045,8 @@
    "drug": "ZEGFROVY (sunvozertinib)",
    "sponsor": "Dizal (per Drugs@FDA)",
    "tickers": "EXEL",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found: Dizal's Jan 7, 2025 priority-review release (PR Newswire copy on BioSpace, fetched) gives no PDUFA/target date; a July 7, 2025 PDUFA date appears only in BioWorld news coverage (not a primary source)"
   },
   {
    "cid": "C245",
@@ -7482,7 +8064,7 @@
    "sponsor": "Teva Pharmaceuticals",
    "tickers": "TEVA",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (Teva sBLA filing-acceptance release of April 7, 2025 gives no PDUFA/target action date; searched Teva newsroom and news)"
+   "reason": "pass 3: no sponsor-stated goal date found (Teva sBLA filing-acceptance release of April 7, 2025 gives no PDUFA/target action date; pass 3: SEC EDGAR full-text search AJOVY + PDUFA Oct 2024 to Aug 2025: no hits)"
   },
   {
    "cid": "C254",
@@ -7509,7 +8091,7 @@
    "sponsor": "Novo Nordisk",
    "tickers": "NVO",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (Novo Nordisk releases/6-Ks found give no day-precision PDUFA date for the MASH sNDA)"
+   "reason": "pass 3: no sponsor-stated goal date found (Novo Nordisk releases/6-Ks give no day-precision PDUFA date for the MASH sNDA; pass 3 web search found only priority-review and approval coverage)"
   },
   {
    "cid": "C262",
@@ -7517,8 +8099,8 @@
    "drug": "COMIRNATY 2025-2026 formula (LP.8.1)",
    "sponsor": "Pfizer / BioNTech",
    "tickers": "BNTX",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "not_pdufa",
+   "reason": "pass 3: not a PDUFA goal-dated action (annual COVID-19 strain-composition supplement); no sponsor-stated goal date"
   },
   {
    "cid": "C264",
@@ -7526,8 +8108,8 @@
    "drug": "Nuvaxovid 2025-2026 formula",
    "sponsor": "Novavax / Sanofi",
    "tickers": "NVAX",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: annual COVID-19 strain-composition supplement (2025-2026 formula); Novavax SEC filings mentioning PDUFA (EDGAR full-text Jun 2024-May 2025) concern only the original BLA; no separate web search spent"
+   "category": "not_pdufa",
+   "reason": "pass 3: no sponsor-stated goal date found: annual COVID-19 strain-composition supplement (2025-2026 formula); not searched further in pass 3"
   },
   {
    "cid": "C268",
@@ -7544,8 +8126,8 @@
    "drug": "INLEXZO (gemcitabine intravesical system, TAR-200)",
    "sponsor": "Johnson & Johnson (Janssen Biotech)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget); action 2025-09-09 per Drugs@FDA (pass 1)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C270",
@@ -7557,22 +8139,13 @@
    "reason": "not a PDUFA action: ANDA (generic, GDUFA) approval"
   },
   {
-   "cid": "C271",
-   "origin": "tracked",
-   "drug": "Opzelura (ruxolitinib) cream, pediatric AD (2 to <12 y)",
-   "sponsor": "Incyte",
-   "tickers": "INCY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): no search left for an Incyte statement of a goal day for the pediatric AD sNDA (S-007). FDA action date 2025-09-18 verified in pass 1 (Drugs@FDA)."
-  },
-  {
    "cid": "C272",
    "origin": "tracked",
    "drug": "TREMFYA (guselkumab), SC induction in UC (ASTRO) / Crohn's",
    "sponsor": "Johnson & Johnson (Janssen Biotech)",
    "tickers": "JNJ",
    "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: goal date not verified (search budget exhausted); also which supplement this row maps to is not verified"
+   "reason": "pass 3: no sponsor-stated goal date found (not reached by a goal-date search in pass 3 for budget; J&J does not usually state PDUFA days for supplements)"
   },
   {
    "cid": "C274",
@@ -7590,7 +8163,7 @@
    "sponsor": "Eli Lilly",
    "tickers": "LLY",
    "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "reason": "pass 3: no sponsor-stated goal date found (Eli Lilly does not typically disclose PDUFA days; not searched further in pass 3 for budget)"
   },
   {
    "cid": "C279",
@@ -7598,8 +8171,8 @@
    "drug": "TREMFYA (guselkumab), plaque psoriasis (row says 'severe plaque psoriasis')",
    "sponsor": "Johnson & Johnson (Janssen Biotech)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget); also the supplement/indication mapping for the tracked row is unverified (see tracked_row_problem)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C280",
@@ -7608,7 +8181,7 @@
    "sponsor": "Novartis",
    "tickers": "NVS",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: approval coverage only, no Novartis statement of a PDUFA day surfaced)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C284",
@@ -7616,8 +8189,8 @@
    "drug": "Libtayo (cemiplimab-rwlc)",
    "sponsor": "Regeneron",
    "tickers": "REGN",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one pass-2 search: Regeneron's approval release and coverage mention Priority Review but no target action day; no pre-action release with a day surfaced)."
+   "category": "goal_month_or_quarter",
+   "reason": "pass 3: goal stated only as month/quarter"
   },
   {
    "cid": "C285",
@@ -7626,7 +8199,7 @@
    "sponsor": null,
    "tickers": "TEVA",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: Teva/Medincell Feb 2025 sNDA acceptance coverage states no PDUFA day; approval announced Oct 10, 2025 per Teva FY2025 10-K snippet)"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 1 search; pass 3: SEC EDGAR full-text search UZEDY + PDUFA Oct 2024 to Oct 2025 finds no Teva filing; partner Medincell's Feb 25, 2025 acceptance release, https://www.medincell.com/wp-content/uploads/2025/02/Medincell_CP_Extension-UZEDY_FR_2502202_vf-1.pdf, fetched, gives no PDUFA date)"
   },
   {
    "cid": "C286",
@@ -7634,8 +8207,8 @@
    "drug": "RINVOQ (upadacitinib)",
    "sponsor": null,
    "tickers": "ABBV",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C287",
@@ -7643,8 +8216,8 @@
    "drug": "Rybelsus (oral semaglutide)",
    "sponsor": null,
    "tickers": "NVO",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3 web search: only approval coverage; Novo Nordisk disclosed no day-precision goal for the SOUL-based Rybelsus sNDA in anything found)"
   },
   {
    "cid": "C291",
@@ -7652,8 +8225,8 @@
    "drug": "Lynkuet (elinzanetant)",
    "sponsor": null,
    "tickers": "BAYRY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: NOT RESEARCHED: the session's shared web-search budget ran out before this item, so no sponsor goal-date search was possible; needs a rerun (not evidence that no goal date exists)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated day-precision goal date found: Bayer's July 25, 2025 regulatory update (fetched) says only that the PDUFA review period was extended by 'up to 90 days', with no original or new goal day; Bayer has no SEC filings to search"
   },
   {
    "cid": "C293",
@@ -7662,16 +8235,7 @@
    "sponsor": null,
    "tickers": "LLY",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: Lilly 2025 Omvoh approvals - Crohn's Jan 15, 2025 and single-injection UC maintenance Oct 27, 2025 - coverage shows no PDUFA day); tracked row label '(LUCENT 1)' is ambiguous as to which 2025 action is meant"
-  },
-  {
-   "cid": "C294",
-   "origin": "tracked",
-   "drug": "WINREVAIR (sotatercept-csrk) - (ZENITH)",
-   "sponsor": null,
-   "tickers": "MRK",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "reason": "pass 3: no sponsor-stated goal date found, and the tracked row does not map to an identifiable PDUFA efficacy action: Drugs@FDA (fetched in pass 3) shows 2025 Omvoh actions on 2025-01-15 (SUPPL-2 Efficacy-New Indication; SUPPL-3) and 2025-10-23 (SUPPL-5, category Labeling: Medication Guide, Container/Carton Labels, Package Insert); nothing on 2025-10-27"
   },
   {
    "cid": "C295",
@@ -7698,7 +8262,7 @@
    "sponsor": null,
    "tickers": "JNJ",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: Intra-Cellular stated only submission in Dec 2024 and expected approval in 2H 2025)"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text search lumateperone+PDUFA Dec 2024-Nov 5, 2025 returned only 3 hits from other companies (Minerva, MindMed), none from Intra-Cellular or J&J)"
   },
   {
    "cid": "C298",
@@ -7707,7 +8271,7 @@
    "sponsor": "Johnson & Johnson (Janssen Biotech)",
    "tickers": "JNJ",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search): J&J submission (Nov 2024) and approval coverage give no PDUFA day"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C299",
@@ -7728,15 +8292,6 @@
    "reason": "not a PDUFA action (BsUFA): POHERDY (pertuzumab-dpzb) is a 351(k) biosimilar to PERJETA; not searched in pass 2"
   },
   {
-   "cid": "C304",
-   "origin": "tracked",
-   "drug": "Tarlatamab (AMG 757) - (DeLLphi-304)",
-   "sponsor": null,
-   "tickers": "AMGN",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: NOT RESEARCHED: the session's shared web-search budget ran out before this item, so no sponsor goal-date search was possible; needs a rerun (not evidence that no goal date exists)"
-  },
-  {
    "cid": "C305",
    "origin": "tracked",
    "drug": "EYLEA HD (aflibercept) 8 mg - macular edema following RVO (QUASAR) and monthly dosing",
@@ -7751,8 +8306,8 @@
    "drug": "Koselugo (selumetinib)",
    "sponsor": null,
    "tickers": "AZN",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C307",
@@ -7760,8 +8315,8 @@
    "drug": "HYRNUO (sevabertinib)",
    "sponsor": null,
    "tickers": "BAYRY",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: Bayer's May 28, 2025 priority-review acceptance release on Business Wire, fetched, states no PDUFA or target action date; web search of Bayer US news pages found none; Bayer does not file with the SEC)"
   },
   {
    "cid": "C308",
@@ -7779,7 +8334,7 @@
    "sponsor": "Novartis",
    "tickers": "NVS",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (searched Novartis releases and web for OAV101 IT filing acceptance / PDUFA date; Novartis did not disclose a day)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C310",
@@ -7806,16 +8361,7 @@
    "sponsor": "Eli Lilly",
    "tickers": "LLY",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (Lilly does not disclose PDUFA days for supplements; searched approval coverage and Lilly releases)"
-  },
-  {
-   "cid": "C314",
-   "origin": "tracked",
-   "drug": "UPLIZNA (inebilizumab-cdon), generalized myasthenia gravis (MINT)",
-   "sponsor": "Amgen",
-   "tickers": "AMGN",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (searched Amgen releases/approval coverage; only the earlier IgG4-RD sBLA had a disclosed target date)"
+   "reason": "pass 3: no sponsor-stated goal date found (Lilly does not disclose PDUFA days for supplements; pass 3: SEC EDGAR full-text search Jaypirca + PDUFA Jan to Dec 2025: no hits)"
   },
   {
    "cid": "C316",
@@ -7842,7 +8388,7 @@
    "sponsor": "Janssen (J&J)",
    "tickers": "JNJ",
    "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: UNRESOLVED: not researched; this run's web search and web fetch budgets were exhausted before a sponsor goal-date document could be located. Re-mine."
+   "reason": "pass 3: no sponsor-stated goal date found (not reached by a goal-date search in pass 3 for budget; J&J does not usually state PDUFA days for supplements)"
   },
   {
    "cid": "C324",
@@ -7850,8 +8396,8 @@
    "drug": "RYBREVANT FASPRO (amivantamab and hyaluronidase-lpuj), subcutaneous",
    "sponsor": "Janssen (J&J)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found for the 2025 resubmission (pass 3: EDGAR full-text search amivantamab+PDUFA Jun 2024-Dec 17, 2025: Halozyme hits are 2024 filings on the original BLA, Genmab Q3 2025 report's only PDUFA sentence is for epcoritamab (Nov 30, 2025); one web search found only the original BLA and its Dec 16, 2024 CRL)"
   },
   {
    "cid": "C326",
@@ -7868,8 +8414,8 @@
    "drug": "Wegovy pill (oral semaglutide 25 mg)",
    "sponsor": "Novo Nordisk",
    "tickers": "NVO",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C328",
@@ -7878,7 +8424,7 @@
    "sponsor": "Genentech (Roche)",
    "tickers": "RHHBY",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search of gene.com/roche.com/businesswire: approval releases of Dec 21-22, 2025 found; no acceptance release with a decision day for the subcutaneous FL sBLA)"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: one web search of gene.com/roche.com/businesswire found the Dec 21, 2025 approval release and an unrelated later LBCL acceptance, but no acceptance release with a decision day for the subcutaneous FL sBLA)"
   },
   {
    "cid": "C333",
@@ -7896,7 +8442,7 @@
    "sponsor": "SQ Innovation, Inc.",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: SQ Innovation, a private company, has releases on the Oct 2025 Lasix ONYU approval but none found stating a PDUFA day for the 2023-24 cycle)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L003",
@@ -7904,8 +8450,8 @@
    "drug": "bendamustine injection",
    "sponsor": "BendaRx USA Corporation",
    "tickers": null,
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L004",
@@ -7923,16 +8469,7 @@
    "sponsor": "Hikma Pharmaceuticals USA, Inc.",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: Hikma 505(b)(2) phenobarbital sodium injection; no search run in pass 2 (tier C rule)"
-  },
-  {
-   "cid": "L006",
-   "origin": "crl_letter",
-   "drug": "scopolamine nasal gel",
-   "sponsor": "Defender Pharmaceuticals, Inc",
-   "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: private sponsor (Defender Pharmaceuticals), no public release identified; no web search spent in pass 2 (budget prioritization)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L007",
@@ -7941,7 +8478,7 @@
    "sponsor": "AFT Pharmaceuticals Ltd",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search of AFT NZX announcements/Timber SEC filings: no NDA 218528 PDUFA statement; AFT's US licensee Timber terminated its Pascomer license in July 2022 per Timber 10-Q)"
+   "reason": "pass 3: no sponsor-stated goal date found: product name redacted in FDA letter (pass 3 fetched: deficiencies are labeling, Medication Guide, proprietary name, safety update; no product named); two searches of AFT NZX announcements found no PDUFA statement matching a Jan 2024 action (AFT's Maxigesic IV had an Oct 17, 2023 goal, a different cycle; Pascomer license ended 2022), so the product cannot be tied to any sponsor goal statement"
   },
   {
    "cid": "L008",
@@ -7949,8 +8486,8 @@
    "drug": "epinephrine injection",
    "sponsor": "Accord Healthcare Inc.",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (private sponsor Accord Healthcare, an Intas subsidiary; tier C, no public release searched in pass 2)"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found (private sponsor Accord Healthcare, an Intas subsidiary; tier C, no public release searched in pass 2); not searched in pass 3 (private sponsor, low yield)"
   },
   {
    "cid": "L009",
@@ -7958,8 +8495,8 @@
    "drug": "Gvoke (glucagon) injection, new diagnostic-aid indication",
    "sponsor": "Xeris Pharmaceuticals, Inc.",
    "tickers": "XERS",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): Xeris filings/releases not searched for a goal day for the Gvoke diagnostic-aid sNDA (S-012)."
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found (SEC EDGAR full-text search, Apr 2023 to Feb 2024: no Xeris filing pairs Gvoke with PDUFA or with 'diagnostic aid'; Xeris appears not to have disclosed this supplement's goal day)"
   },
   {
    "cid": "L012",
@@ -7968,7 +8505,7 @@
    "sponsor": "Accord Healthcare Inc.",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: private sponsor (Accord Healthcare, Intas subsidiary); 505(b)(2) resubmission; no public release identified; no web search spent (tier C)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L013",
@@ -7986,7 +8523,7 @@
    "sponsor": "Cipla USA, Inc.",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (tier C, no search run: product name redacted in the FDA letter; Cipla USA acting as US agent for Cipla Limited, resubmission of a 505(b) NDA; no public Cipla PDUFA statement located)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L017",
@@ -7994,8 +8531,8 @@
    "drug": "insulin lispro (Gan & Lee)",
    "sponsor": "Gan & Lee Pharmaceuticals",
    "tickers": null,
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "category": "not_pdufa",
+   "reason": "pass 3: not a PDUFA action (BsUFA): FDA letter refers to 'the proposed biosimilar product and the U.S.-licensed reference product' and to BsUFA goals (351(k) biosimilar application)"
   },
   {
    "cid": "L018",
@@ -8004,7 +8541,7 @@
    "sponsor": "Baxter Healthcare Corporation",
    "tickers": null,
    "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "reason": "pass 3: no sponsor-stated goal date found (product name redacted in the letter; Baxter does not typically disclose goal days; not searched in pass 3, low yield)"
   },
   {
    "cid": "L019",
@@ -8012,8 +8549,8 @@
    "drug": "product redacted ('... for injection')",
    "sponsor": "Baxter Healthcare Corporation",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: product name redacted in the FDA letter, so no matching Baxter release can be identified; no web search spent in pass 2 (budget prioritization)"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found: product name redacted in the FDA letter ('... for injection'), so no matching Baxter release can be identified; not searched in pass 3 (no identifiable product)"
   },
   {
    "cid": "L020",
@@ -8021,8 +8558,8 @@
    "drug": "Ontralfy (tizanidine) oral solution, 2 mg/5 mL",
    "sponsor": "Fidelity BioPharma Co.",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (no search run in pass 2 for budget: Fidelity BioPharma Co. is privately held; no public release with a goal day expected)"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found (no search run in pass 2 for budget: Fidelity BioPharma Co. is privately held; no public release with a goal day expected); not re-searched in pass 3 (private/agent sponsor, low yield)"
   },
   {
    "cid": "L021",
@@ -8048,8 +8585,8 @@
    "drug": "paclitaxel protein-bound particles for injectable suspension",
    "sponsor": "Accord Healthcare Inc.",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (private sponsor Accord Healthcare/Intas; 505(b)(2) paclitaxel protein-bound NDA; not searched per pass-2 tier C rule)"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found (private sponsor Accord Healthcare/Intas; 505(b)(2) paclitaxel protein-bound NDA; not searched per pass-2 tier C rule); not searched in pass 3 (private sponsor, low yield)"
   },
   {
    "cid": "L025",
@@ -8076,16 +8613,7 @@
    "sponsor": "Accord Healthcare Inc.",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: private sponsor (Accord Healthcare, Intas subsidiary); 505(b)(2) resubmission; no public release identified; no web search spent (tier C)"
-  },
-  {
-   "cid": "L028",
-   "origin": "crl_letter",
-   "drug": "rivoceranib tablet",
-   "sponsor": "Elevar Therapeutics, Inc.",
-   "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "goal day (May 16, 2024) found only in trade press (BioWorld, BioSpace, Dailypharm via search); Elevar's own 2023 acceptance release not located (Elevar is a private subsidiary of KOSDAQ-listed HLB; no SEC filings) within pass-2 budget"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L029",
@@ -8093,8 +8621,8 @@
    "drug": "camrelizumab (SHR-1210)",
    "sponsor": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no primary sponsor document found: a May 16, 2024 PDUFA target date for the companion rivoceranib NDA (Elevar, partner of BLA holder Hengrui) appears only in news coverage (OncLive/TargetedOnc/CancerNetwork/BioWorld, from the July 2023 acceptance); Elevar/Hengrui primary release not located within 2 searches, and the camrelizumab BLA's own goal day was not separately stated in what was read"
+   "category": "goal_month_or_quarter",
+   "reason": "pass 3: goal stated only as month/quarter: for the camrelizumab BLA itself, partner Elevar stated only 'PDUFA target action dates in May 2024' (Elevar/Hengrui licensing release, Oct 17, 2023, https://elevartx.com/2023/10/17/elevar-therapeutics-and-jiangsu-hengrui-pharma-announce-global-commercialization-licensing-agreement-for-pd-1-inhibitor-camrelizumab-in-combination-with-rivoceranib-for-uhcc/, fetched); the day May 16, 2024 is stated only for the companion rivoceranib NDA (Elevar release July 17, 2023, fetched)"
   },
   {
    "cid": "L030",
@@ -8111,8 +8639,8 @@
    "drug": "metoprolol tablets (strength redacted)",
    "sponsor": "XTM Consulting LLC",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: applicant of record is a US regulatory agent (XTM Consulting LLC); underlying sponsor not identifiable from the letter; no web search spent in pass 2"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found: applicant of record is a US regulatory agent (XTM Consulting LLC); underlying sponsor not identifiable from the letter; no web search spent in pass 2; not re-searched in pass 3 (private/agent sponsor, low yield)"
   },
   {
    "cid": "L032",
@@ -8120,8 +8648,8 @@
    "drug": "naproxen sodium capsule",
    "sponsor": "Bayer HealthCare LLC",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (no search run in pass 2 for budget: Bayer consumer-health 505(b)(2) naproxen sodium capsule; Bayer does not publicly disclose goal days for such OTC applications and is not an SEC filer)"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found (no search run in pass 2 for budget: Bayer consumer-health 505(b)(2) naproxen sodium capsule; Bayer does not publicly disclose goal days for such OTC applications and is not an SEC filer); not searched in pass 3"
   },
   {
    "cid": "L033",
@@ -8129,8 +8657,8 @@
    "drug": "nilotinib orally disintegrating tablets",
    "sponsor": "Nanocopoeia, LLC",
    "tickers": null,
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): private sponsor (Nanocopoeia, LLC); no public release searched."
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L035",
@@ -8138,8 +8666,8 @@
    "drug": "Vyalev (foscarbidopa/foslevodopa) subcutaneous infusion, resubmission after Mar 17, 2023 CRL",
    "sponsor": "AbbVie Inc.",
    "tickers": "ABBV",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): big-pharma/supplement item not reached before the 30-search cap. Pass-1 note: Not researched to a conclusion in this run: the shared web-search budget (and then the web-fetch budget) for the session ran out before this item could be searched; no sponsor-stated day-precision goal date was found or verified"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L037",
@@ -8156,8 +8684,8 @@
    "drug": "product name redacted in FDA letter",
    "sponsor": "Amneal EU, Ltd. (c/o Amneal Pharmaceuticals of New York)",
    "tickers": "AMRX",
-   "category": "not_researched",
-   "reason": "product not identified (name redacted in the FDA letter) and no search budget left in pass 2; no sponsor-stated goal date can be sought without the product. NOT RESEARCHED (pass 2 budget)."
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: product not identified (name redacted in the FDA letter) and no sponsor-stated goal date found: pass 3 SEC EDGAR full-text search of Amneal filings (CIK 1723128) for 'complete response letter' + PDUFA, Jan to Nov 2024, hits only the FY2023 10-K and Q1 2024 10-Q; the Q1 2024 10-Q as fetched (text cut at ~103k chars, before MD&A) shows no goal day"
   },
   {
    "cid": "L039",
@@ -8178,15 +8706,6 @@
    "reason": "no sponsor-stated goal date found (one search: Novo Nordisk's July 10, 2024 CRL announcement and coverage state no PDUFA day; FDA letter says a major amendment extended the goal by three months, dates redacted)"
   },
   {
-   "cid": "L041",
-   "origin": "crl_letter",
-   "drug": "lidocaine topical system (resubmission)",
-   "sponsor": "MEDRx USA, Inc. (MEDRx Co., Ltd.)",
-   "tickers": "4586.T",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: MEDRx releases found only for the later MRX-5LBT cycle, PDUFA Sept 24, 2025; nothing for the 2024 resubmission)"
-  },
-  {
    "cid": "L042",
    "origin": "crl_letter",
    "drug": "OX124 naloxone hydrochloride nasal powder (high-dose)",
@@ -8202,7 +8721,7 @@
    "sponsor": "RB Health (US) LLC (Reckitt)",
    "tickers": "RKT.L",
    "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
+   "reason": "pass 3: no sponsor-stated goal date found; not searched in pass 3 (deprioritized as low yield: RB Health/Reckitt, UK-listed with no SEC filings, product redacted); not proof that no date was ever stated"
   },
   {
    "cid": "L046",
@@ -8211,16 +8730,7 @@
    "sponsor": "Antares Pharma, Inc. (Halozyme Therapeutics subsidiary)",
    "tickers": "HALO",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one web search of Halozyme/Antares disclosures; only 2022 Fast Track news for ATRS-1902 found)"
-  },
-  {
-   "cid": "L047",
-   "origin": "crl_letter",
-   "drug": "losartan potassium oral suspension",
-   "sponsor": "Scienture Inc.",
-   "tickers": "SCNX",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search): Scienture was private at the time of the Aug 2024 CRL; only FDA review documents (fda.gov/media/186335, 186339; snippets) list the goal date, and they give it inconsistently ('8/19/23' vs '8/19/2024'); FDA documents are not sponsor statements"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L049",
@@ -8238,7 +8748,7 @@
    "sponsor": "CSL Behring LLC (CSL Limited)",
    "tickers": "CSL.AX",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (one search: CSL's Dec 14, 2023 FDA filing-acceptance release and trade coverage show acceptance but no PDUFA day; CSL is ASX-listed, no SEC filings to search)"
+   "reason": "pass 3: no sponsor-stated goal date found (two searches across passes: CSL's Dec 14, 2023 BLA-acceptance announcement and coverage show acceptance but no PDUFA day; CSL is ASX-listed, no SEC filings to search)"
   },
   {
    "cid": "L052",
@@ -8246,8 +8756,8 @@
    "drug": "irinotecan liposome injection",
    "sponsor": "Conjupro Biotherapeutics, Inc. (private)",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: private sponsor (Conjupro Biotherapeutics); no search run in pass 2 (tier C rule)"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found: private sponsor (Conjupro Biotherapeutics); no search run in pass 2 (tier C rule); not searched in pass 3"
   },
   {
    "cid": "L054",
@@ -8256,7 +8766,7 @@
    "sponsor": "Hikma Pharmaceuticals USA Inc.",
    "tickers": "HIK.L",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (tier C; Hikma nonprescription naloxone NDA; not searched in pass 2 budget)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L055",
@@ -8265,7 +8775,7 @@
    "sponsor": "Sun Pharmaceutical Industries Limited",
    "tickers": "SUNPHARMA.NS",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: Sun Pharma 505(b)(2) nilotinib resubmission; Sun does not file with the SEC and no goal-day release identified; no web search spent (tier C)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L056",
@@ -8273,8 +8783,8 @@
    "drug": "INTPS (resubmission)",
    "sponsor": "Accord BioPharma Inc. (Intas; private)",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (tier C, no search run: Accord BioPharma is a US unit of privately held Intas; no public release with a goal day expected; letter treats the submission as a complete response to an earlier action letter)"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found (Accord BioPharma is a US unit of privately held Intas; no public release with a goal day expected; letter treats the submission as a complete response to an earlier action letter; not searched in pass 3). Whether BLA 761147 is a 351(k) biosimilar (BsUFA) was not determined."
   },
   {
    "cid": "L057",
@@ -8282,8 +8792,8 @@
    "drug": "sitagliptin oral solution",
    "sponsor": "Azurity Pharmaceuticals, Inc. (private)",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (private sponsor Azurity; not searched in pass 2 because budget was prioritized to public sponsors; Azurity does not typically publish PDUFA dates)"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found (private sponsor Azurity; not searched in pass 2 because budget was prioritized to public sponsors; Azurity does not typically publish PDUFA dates); not re-searched in pass 3 (private/agent sponsor, low yield)"
   },
   {
    "cid": "L058",
@@ -8291,17 +8801,8 @@
    "drug": "LUBT004 (resubmission)",
    "sponsor": "Lupin Limited (Biotech Division)",
    "tickers": "LUPIN.NS",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
-  },
-  {
-   "cid": "L059",
-   "origin": "crl_letter",
-   "drug": "Izervay (avacincaptad pegol) expanded dosing beyond 12 months (prior-approval supplement)",
-   "sponsor": "Astellas Pharma US, Inc.",
-   "tickers": "4503.T",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found for this first-cycle sNDA (one web search; Astellas/press coverage give a Feb 26, 2025 target date only for the later resubmission, approved Feb 2025)"
+   "category": "not_pdufa",
+   "reason": "pass 3: not a PDUFA action (BsUFA): LUBT004 is Lupin's proposed pegfilgrastim biosimilar filed under the 351(k) pathway (later approved as Armlupeg, pegfilgrastim-unne)"
   },
   {
    "cid": "L061",
@@ -8319,7 +8820,7 @@
    "sponsor": "Accord Healthcare Inc. (Intas; private)",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (private sponsor Accord Healthcare/Intas; 505(b)(2) paclitaxel protein-bound NDA; not searched per pass-2 tier C rule)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L063",
@@ -8328,7 +8829,7 @@
    "sponsor": "Meitheal Pharmaceuticals Inc. (private)",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: private sponsor (Meitheal Pharmaceuticals), no public release identified; no web search spent in pass 2"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L064",
@@ -8345,8 +8846,8 @@
    "drug": "amivantamab and hyaluronidase injection (subcutaneous amivantamab)",
    "sponsor": "Janssen Biotech, Inc. (Johnson & Johnson)",
    "tickers": "JNJ",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): the 60-fetch limit was reached before this item; pass-1 facts kept as found"
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L066",
@@ -8364,7 +8865,7 @@
    "sponsor": "Hikma Pharmaceuticals USA Inc.",
    "tickers": "HIK (LSE)",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (product name redacted in FDA letter; tier C, not searched)"
+   "reason": "pass 3: no sponsor-stated goal date found: product name redacted in the FDA letter and the application is still unapproved, so no matching Hikma release can be identified; Hikma does not file with the SEC; not searched in pass 3"
   },
   {
    "cid": "L070",
@@ -8372,8 +8873,8 @@
    "drug": "lamotrigine oral suspension",
    "sponsor": "OWP Pharmaceuticals, Inc. (private)",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: private sponsor (OWP Pharmaceuticals), no public release identified; no web search spent (tier C)"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found: private sponsor (OWP Pharmaceuticals), no public release identified; no web search spent (tier C); not re-searched in pass 3 (private/agent sponsor, low yield)"
   },
   {
    "cid": "L071",
@@ -8381,8 +8882,8 @@
    "drug": "TX05 (trastuzumab biosimilar candidate), resubmission",
    "sponsor": "Tanvex BioPharma (Taiwan-listed parent)",
    "tickers": "6541 (TPEx)",
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (searched Tanvex resubmission/goal date coverage; only CRL reports found, no day-precision goal date)"
+   "category": "not_pdufa",
+   "reason": "pass 3: not a PDUFA action (BsUFA): TX05 is Tanvex's proposed trastuzumab biosimilar (351(k)); also no sponsor-stated goal date found"
   },
   {
    "cid": "L073",
@@ -8391,7 +8892,7 @@
    "sponsor": "Hospira, Inc. (Pfizer)",
    "tickers": "PFE",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (tier C, no search run: Hospira/Pfizer 505(b)(2) diazepam injection; Pfizer does not publicly disclose goal days for such applications)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L074",
@@ -8400,7 +8901,7 @@
    "sponsor": "SFJ Pharmaceuticals, Inc. (private)",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "product redacted in FDA letter; one search (SFJ BLA CRL January 2025) returned nothing on SFJ; no sponsor-stated goal date found"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L075",
@@ -8408,8 +8909,8 @@
    "drug": "darunavir and ritonavir tablets (tentative-approval NDA)",
    "sponsor": "Laurus Generics, Inc. (Laurus Labs)",
    "tickers": "LAURUSLABS (NSE)",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): generic manufacturer's tentative-approval NDA (darunavir/ritonavir); letter refuses tentative approval. Sponsor (Laurus Labs, India-listed) unlikely to publish a PDUFA day, but not searched."
+   "category": "no_sourced_goal_day",
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L076",
@@ -8418,7 +8919,7 @@
    "sponsor": "Seikagaku Corporation (partner Ferring)",
    "tickers": "4548 (TSE)",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (two searches over passes 1-2: Seikagaku's May 14, 2024 BLA-acceptance announcement, as excerpted, and its March 2025 CRL announcement coverage give no PDUFA day; Seikagaku is TSE-listed, no SEC filings)"
+   "reason": "pass 3: no sponsor-stated goal date found (passes 1-3: Seikagaku May 14, 2024 BLA-acceptance announcement as excerpted and its March 2025 CRL statement give no PDUFA day; pass 3 web search for Seikagaku SI-6603 PDUFA date found only coverage, no day; licensee Ferring is private)"
   },
   {
    "cid": "L077",
@@ -8430,22 +8931,13 @@
    "reason": "not a PDUFA action (BsUFA): INTP23.1 is a 351(k) biosimilar candidate"
   },
   {
-   "cid": "L078",
-   "origin": "crl_letter",
-   "drug": "rivoceranib tablets (with camrelizumab), unresectable HCC, resubmission",
-   "sponsor": "Elevar Therapeutics (majority-owned subsidiary of HLB Co., Ltd.)",
-   "tickers": "028300 (KOSDAQ, HLB)",
-   "category": "no_sourced_goal_day",
-   "reason": "goal day not verified from a primary document: secondary coverage (search snippets, e.g. cancernetwork.com, targetedonc.com Oct 21, 2024) reports that Elevar's Oct 2024 acceptance release set a PDUFA date of March 20, 2025, but the Elevar/GlobeNewswire release itself was not located within the pass-2 budget (two searches; the newswire copy found was Elevar's later Jan 30, 2026 release). Candidate "
-  },
-  {
    "cid": "L079",
    "origin": "crl_letter",
    "drug": "camrelizumab (with rivoceranib), unresectable HCC, resubmission",
    "sponsor": "Jiangsu Hengrui Pharmaceuticals (US partner Elevar/HLB)",
    "tickers": "600276 (SSE)",
    "category": "no_sourced_goal_day",
-   "reason": "goal day (March 20, 2025) found only in trade press/aggregator text via search (medpath, targetedonc); Elevar's own acceptance release not fetched (URL too long for fetch proxy); no SEC filings"
+   "reason": "pass 3: partner-stated goal day found only for the companion application: Elevar (Hengrui's licensee) release of Oct 21, 2024 gives a PDUFA target action date of March 20, 2025 for its resubmitted rivoceranib NDA; it does not state a goal day for Hengrui's camrelizumab BLA 761308, so not applied to this row"
   },
   {
    "cid": "L080",
@@ -8463,7 +8955,7 @@
    "sponsor": "Amneal EU, Limited (Amneal Pharmaceuticals)",
    "tickers": "AMRX",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (tier C; Amneal 505(b)(2) injectable resubmission; not searched in pass 2 budget)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L084",
@@ -8472,7 +8964,7 @@
    "sponsor": "University of California San Francisco (academic)",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: academic sponsor (UCSF), no public PDUFA statement identified; no web search spent in pass 2"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L086",
@@ -8481,7 +8973,7 @@
    "sponsor": "Fresenius Kabi USA, LLC",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: product name redacted in FDA letter; Fresenius Kabi (subsidiary of Fresenius SE) release not identifiable; no web search spent (tier C)"
+   "reason": "pass 3: no sponsor-stated goal date found: product name redacted in the FDA letter and the application is still unapproved, so no matching Fresenius Kabi release can be identified; not searched in pass 3"
   },
   {
    "cid": "L088",
@@ -8489,17 +8981,8 @@
    "drug": "dienogest and ethinyl estradiol tablets (LPRI-424)",
    "sponsor": "Chemo Research, S.L. (Exeltis / Insud Pharma, private)",
    "tickers": null,
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (tier C, no search run: Chemo Research S.L. / Exeltis / Insud Pharma are privately held; no public PDUFA statement expected)"
-  },
-  {
-   "cid": "L089",
-   "origin": "crl_letter",
-   "drug": "20% soybean oil emulsion for IV infusion",
-   "sponsor": "ResQ Pharma (private)",
-   "tickers": null,
    "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): private sponsor (ResQ Pharma); no public release searched."
+   "reason": "pass 3: no sponsor-stated goal date found (tier C, no search run: Chemo Research S.L. / Exeltis / Insud Pharma are privately held; no public PDUFA statement expected); not re-searched in pass 3 (private/agent sponsor, low yield)"
   },
   {
    "cid": "L090",
@@ -8508,7 +8991,7 @@
    "sponsor": "Cipla Limited (US agent Cipla USA)",
    "tickers": "CIPLA (NSE)",
    "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget): product name redacted in FDA letter; Cipla (listed in India, no SEC filings) rarely states US PDUFA days"
+   "reason": "pass 3: no sponsor-stated goal date found; not searched in pass 3 (deprioritized as low yield: Cipla, India-listed with no SEC filings, product redacted); not proof that no date was ever stated"
   },
   {
    "cid": "L091",
@@ -8517,7 +9000,7 @@
    "sponsor": "Sun Pharmaceutical Industries Limited",
    "tickers": "SUNPHARMA (NSE)",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: Sun Pharma 505(b)(2) nilotinib capsules resubmission; no search run in pass 2 (tier C rule)"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 3: one web search; only aggregator CRL summaries found, no Sun Pharma statement of a goal day)"
   },
   {
    "cid": "L092",
@@ -8544,7 +9027,7 @@
    "sponsor": "Heritage Pharmaceuticals d/b/a Avet Pharmaceuticals (Emcure)",
    "tickers": null,
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: Heritage/Avet (Emcure subsidiary) NDA after prior tentative approval; no public release identified; no web search spent (tier C)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L098",
@@ -8553,7 +9036,7 @@
    "sponsor": "Conjupro Biotherapeutics (CSPC subsidiary)",
    "tickers": "1093 (HKEX, CSPC)",
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (tier C, no search run: Conjupro Biotherapeutics is a CSPC subsidiary; HKEX announcements not searched in pass 2)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L099",
@@ -8580,7 +9063,7 @@
    "sponsor": "Immedica Pharma AB",
    "tickers": [],
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (Immedica's Nov 5, 2024 priority-review acceptance release gives no target date; no 2025 Immedica release on the goal date or its extension found on news.cision.com/immedica-pharma-ab or web)"
+   "reason": "pass 3: no sponsor-stated goal date found (Immedica's Nov 5, 2024 priority-review acceptance release gives no target date; pass 3: SEC EDGAR full-text search of filings by former licensor Spyre Therapeutics (ex-Aeglea) for pegzilarginase + PDUFA and + 'action date', Oct 2024 to Aug 2025: no hits)"
   },
   {
    "cid": "L106",
@@ -8589,7 +9072,7 @@
    "sponsor": "Vyluma, Inc. (private)",
    "tickers": [],
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (no search run in pass 2 for budget: Vyluma, Inc. is privately held; the FDA letter's own goal dates are redacted)"
+   "reason": "pass 3: no sponsor-stated goal date found for the resubmission cycle: one pass-3 search found only Vyluma's June 2023 acceptance release with the first-cycle goal date (January 31, 2024), a separate earlier action; the letter says a major amendment extended the resubmission goal by three months (dates redacted) and no sponsor statement of either resubmission date was found"
   },
   {
    "cid": "L111",
@@ -8600,7 +9083,7 @@
     "AZN"
    ],
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (pass 2: SEC EDGAR full-text search for anifrolumab + subcutaneous + PDUFA, Jun 2024-Oct 2025, returned 11 hits, none from AstraZeneca; no web search run, budget)"
+   "reason": "pass 3: no sponsor-stated goal date found (pass 2: SEC EDGAR full-text search for anifrolumab + subcutaneous + PDUFA, Jun 2024-Oct 2025, returned 11 hits, none from AstraZeneca; no web search run, budget); not searched further in pass 3"
   },
   {
    "cid": "L112",
@@ -8629,7 +9112,7 @@
    "sponsor": "Shanghai Auzone Biological Technology Co., Ltd. (private)",
    "tickers": [],
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found: private Chinese sponsor (US agent WuXi AppTec), no public release identified; no web search spent in pass 2"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L117",
@@ -8658,7 +9141,7 @@
    "sponsor": "Accord Healthcare Inc. (Intas subsidiary, private)",
    "tickers": [],
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (private sponsor Accord Healthcare/Intas; tier C, not searched)"
+   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "L120",
@@ -8700,7 +9183,7 @@
    "sponsor": "InfoRLife SA (private)",
    "tickers": [],
    "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (private sponsor InfoRLife SA; not searched in pass 2 because budget was prioritized to public sponsors)"
+   "reason": "pass 3: no sponsor-stated goal date found (private sponsor InfoRLife SA; pass 3 web search for an InfoRLife phenylephrine NDA PDUFA statement returned no sponsor release)"
   },
   {
    "cid": "L126",
@@ -8708,8 +9191,8 @@
    "drug": "unidentified drug-device product in a cartridge/dispensing device (name redacted)",
    "sponsor": "MedicaSafe, Inc. (private)",
    "tickers": [],
-   "category": "no_sourced_goal_day",
-   "reason": "no sponsor-stated goal date found (private sponsor MedicaSafe, Inc.; product unidentified; not searched per pass-2 tier C rule)"
+   "category": "not_researched",
+   "reason": "pass 3: no sponsor-stated goal date found (private sponsor MedicaSafe, Inc.; product unidentified; not searched per pass-2 tier C rule); not re-searched in pass 3 (private/agent sponsor, low yield)"
   },
   {
    "cid": "L129",

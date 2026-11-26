@@ -89,7 +89,9 @@ def main():
         if 'class="ban ap"' not in doc:
             continue
         ent = cache.get(slug) or {}
-        if ent.get("date") and not a.force:
+        # 2026-11-26: an entry with a "basis" was read from the FDA record by hand (a red team, or the decision-timing
+        # census, apply_1126_census_fda_days.py); a Drugs@FDA re-query never replaces it, even with --force.
+        if ent.get("date") and (ent.get("basis") or not a.force):
             found += 1
             continue
         if ent.get("checked") and not a.force and (today - dt.date.fromisoformat(ent["checked"])).days < 7:

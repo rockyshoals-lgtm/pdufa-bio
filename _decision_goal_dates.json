@@ -1,0 +1,842 @@
+{
+ "ABBV-2025-11-18": {
+  "cid": "C302",
+  "goal": "2025-11-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1434265/000143426525000092/genmabinterimreportq32025.htm",
+  "doc_date": "2025-11-06",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-11-18",
+  "outcome": "Approved"
+ },
+ "ABEO-2025-04-29": {
+  "cid": "C212",
+  "goal": "2025-04-29",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/318306/000149315225010981/ex99-1.htm",
+  "doc_date": "2025-03-20",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-04-28",
+  "outcome": "Approved"
+ },
+ "AGIO-2025-12-23": {
+  "cid": "C329",
+  "goal": "2025-12-07",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1439222/000143922225000114/agio-103125xfyxex991earnin.htm",
+  "doc_date": "2025-10-30",
+  "extended": true,
+  "goal_original": "2025-09-07",
+  "action": "2025-12-23",
+  "outcome": "Approved"
+ },
+ "ALC-2025-05-28": {
+  "cid": "C225",
+  "goal": "2025-05-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1167379/000116737924000021/q22024pressrelease.htm",
+  "doc_date": "2024-08-20",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-05-28",
+  "outcome": "Approved"
+ },
+ "ALDX-2025-04-03": {
+  "cid": "C200",
+  "goal": "2025-04-02",
+  "source_url": "https://www.businesswire.com/news/home/20241118246408/en",
+  "doc_date": "2024-11-18",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-04-02",
+  "outcome": "CRL"
+ },
+ "ALNY-2025-03-20": {
+  "cid": "C188",
+  "goal": "2025-03-23",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1178670/000117867025000020/alny2024q4earningsrelease.htm",
+  "doc_date": "2025-02-13",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-03-20",
+  "outcome": "Approved"
+ },
+ "ALNY-2025-03-28": {
+  "cid": "C195",
+  "goal": "2025-03-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312524174204/d627610dex992.htm",
+  "doc_date": "2024-06-21",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-03-28",
+  "outcome": "Approved"
+ },
+ "ALPMY-2025-02-13": {
+  "cid": "C180",
+  "goal": "2025-02-26",
+  "source_url": "https://newsroom.astellas.com/2025-01-09-U-S-FDA-Confirms-Class-1-Resubmission-of-the-Supplemental-New-Drug-Application-for-IZERVAY-TM-avacincaptad-pegol-intravitreal-solution-for-Geographic-Atrophy",
+  "doc_date": "2025-01-09",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-02-12",
+  "outcome": "Approved"
+ },
+ "AMGN-2025-01-17": {
+  "cid": "C165",
+  "goal": "2025-01-17",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815424000042/amgn-20240930earningsrelea.htm",
+  "doc_date": "2024-10-30",
+  "extended": true,
+  "goal_original": "2024-10-17",
+  "action": "2025-01-16",
+  "outcome": "Approved"
+ },
+ "AMGN-2025-04-03": {
+  "cid": "C201",
+  "goal": "2025-04-03",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000005/amgn-20241231earningsrelea.htm",
+  "doc_date": "2025-02-04",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-04-03",
+  "outcome": "Approved"
+ },
+ "AMGN-2025-10-17": {
+  "cid": "C288",
+  "goal": "2025-10-19",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000054/amgn-20250630earningsrelea.htm",
+  "doc_date": "2025-08-05",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-10-17",
+  "outcome": "Approved"
+ },
+ "AMGN-2025-11-19": {
+  "cid": "C304",
+  "goal": "2025-12-18",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000070/amgn-20250930earningsrelea.htm",
+  "doc_date": "2025-11-04",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-11-19",
+  "outcome": "Approved"
+ },
+ "AMGN-2025-12-11": {
+  "cid": "C314",
+  "goal": "2025-12-14",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000070/amgn-20250930earningsrelea.htm",
+  "doc_date": "2025-11-04",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-12-11",
+  "outcome": "Approved"
+ },
+ "APLS-2025-07-28": {
+  "cid": "C247",
+  "goal": "2025-07-28",
+  "source_url": "https://www.biospace.com/press-releases/apellis-announces-fda-acceptance-and-priority-review-of-the-supplemental-new-drug-application-for-empaveli-pegcetacoplan-for-c3g-and-primary-ic-mpgn",
+  "doc_date": "2025-04-01",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-07-28",
+  "outcome": "Approved"
+ },
+ "ARGX-2025-04-10": {
+  "cid": "C204",
+  "goal": "2025-04-10",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1697862/000169786224000012/a02earningspressreleaseq32.htm",
+  "doc_date": "2024-10-31",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-04-10",
+  "outcome": "Approved"
+ },
+ "ARQT-2025-05-22": {
+  "cid": "C221",
+  "goal": "2025-05-22",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1787306/000178730624000151/pressreleaseex991q32024.htm",
+  "doc_date": "2024-11-06",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-05-22",
+  "outcome": "Approved"
+ },
+ "ARQT-2025-10-06": {
+  "cid": "C283",
+  "goal": "2025-10-13",
+  "source_url": "https://investors.arcutis.com/news-releases/news-release-details/us-fda-accepts-supplemental-new-drug-application-arcutis-zoryver",
+  "doc_date": "2025-02-26",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-10-04",
+  "outcome": "Approved"
+ },
+ "ARWR-2025-11-18": {
+  "cid": "C303",
+  "goal": "2025-11-18",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/879407/000162828025038867/arwr-202508078kex991.htm",
+  "doc_date": "2025-08-07",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-11-18",
+  "outcome": "Approved"
+ },
+ "ASND-2025-07-28": {
+  "cid": "C248",
+  "goal": "2025-07-27",
+  "source_url": "https://ascendispharma.gcs-web.com/news-releases/news-release-details/fda-accepts-ascendis-pharmas-supplemental-biologics-license",
+  "doc_date": "2024-12-12",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-07-25",
+  "outcome": "Approved"
+ },
+ "ATRA-2025-01-16": {
+  "cid": "C164",
+  "goal": "2025-01-15",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1604464/000095017024125334/atra-ex99_1.htm",
+  "doc_date": "2024-11-12",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-01-15",
+  "outcome": "CRL"
+ },
+ "AXGN-2025-12-04": {
+  "cid": "C313",
+  "goal": "2025-12-05",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/805928/000080592825000112/ex991axgnpressreleasedated.htm",
+  "doc_date": "2025-08-25",
+  "extended": true,
+  "goal_original": "2025-09-05",
+  "action": "2025-12-03",
+  "outcome": "Approved"
+ },
+ "AXSM-2025-01-30": {
+  "cid": "C172",
+  "goal": "2025-01-31",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000095017024103098/axsm-ex99_1.htm",
+  "doc_date": "2024-09-04",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-01-30",
+  "outcome": "Approved"
+ },
+ "AZN-2025-01-17": {
+  "cid": "C166",
+  "goal": "2025-01-29",
+  "source_url": "https://daiichisankyo.us/press-releases/-/article/datopotamab-deruxtecan-biologics-license-application-accepted-in-the-u-s-for-patients-with-previously-treated-metastatic-hr-positive-her2-negative-bre",
+  "doc_date": "2024-04-02",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-01-17",
+  "outcome": "Approved"
+ },
+ "AZN-2025-12-15": {
+  "cid": "C319",
+  "goal": "2026-01-23",
+  "source_url": "https://www.daiichisankyo.com/files/news/pressrelease/pdf/202509/20250924_E.pdf",
+  "doc_date": "2025-09-24",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-12-15",
+  "outcome": "Approved"
+ },
+ "BCRX-2025-12-12": {
+  "cid": "C317",
+  "goal": "2025-12-12",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/0000882796/000117184325004091/f8k_062525.htm",
+  "doc_date": "2025-06-25",
+  "extended": true,
+  "goal_original": "2025-09-12",
+  "action": "2025-12-11",
+  "outcome": "Approved"
+ },
+ "BIIB-2025-01-26": {
+  "cid": "C169",
+  "goal": "2025-01-25",
+  "source_url": "https://investors.biogen.com/node/28091",
+  "doc_date": "2024-06-09",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-01-24",
+  "outcome": "Approved"
+ },
+ "BIIB-2025-08-29": {
+  "cid": "C266",
+  "goal": "2025-08-31",
+  "source_url": "https://www.acnnewswire.com/press-release/english/95256/fda-accepts-leqembi-(lecanemab-irmb)-biologics-license-application-for-subcutaneous-maintenance-dosing-for-the-treatment-of-early-alzheimer's-disease",
+  "doc_date": "2025-01-15",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-29",
+  "outcome": "Approved"
+ },
+ "BIIB-2025-09-23": {
+  "cid": "L107",
+  "goal": "2025-09-22",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/875045/000087504525000004/exhibit991-q42024pressrele.htm",
+  "doc_date": "2025-02-12",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-09-22",
+  "outcome": "CRL"
+ },
+ "CAPR-2025-07-11": {
+  "cid": "C243",
+  "goal": "2025-08-31",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1133869/000155837025007574/capr-20250513xex99d1.htm",
+  "doc_date": "2025-05-13",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-07-09",
+  "outcome": "CRL"
+ },
+ "CRNX-2025-09-25": {
+  "cid": "C277",
+  "goal": "2025-09-25",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1658247/000095017024134342/crnx-ex99_1.htm",
+  "doc_date": "2024-12-09",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-09-25",
+  "outcome": "Approved"
+ },
+ "CYTK-2025-12-19": {
+  "cid": "C325",
+  "goal": "2025-12-26",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1061983/000095017025061847/cytk-20250429.htm",
+  "doc_date": "2025-04-29 (8-K report date; filed 2025-05-01)",
+  "extended": true,
+  "goal_original": "2025-09-26",
+  "action": "2025-12-19",
+  "outcome": "Approved"
+ },
+ "ETON-2025-05-29": {
+  "cid": "C226",
+  "goal": "2025-05-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1710340/000143774925002935/ex_775326.htm",
+  "doc_date": "2025-02-06",
+  "extended": true,
+  "goal_original": "2025-02-28",
+  "action": "2025-05-28",
+  "outcome": "Approved"
+ },
+ "EXEL-2025-03-26": {
+  "cid": "C193",
+  "goal": "2025-04-03",
+  "source_url": "https://www.businesswire.com/news/home/20250109096110/en",
+  "doc_date": "2025-01-09",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-03-26",
+  "outcome": "Approved"
+ },
+ "FBIO-2025-10-01": {
+  "cid": "C281",
+  "goal": "2025-09-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1429260/000155837025000247/fbio-20250116x8k.htm",
+  "doc_date": "2025-01-16",
+  "extended": true,
+  "goal_original": "2025-06-30",
+  "action": "2025-09-30",
+  "outcome": "CRL"
+ },
+ "GILD-2025-06-18": {
+  "cid": "C233",
+  "goal": "2025-06-19",
+  "source_url": "https://gilead.com/news/news-details/2025/us-fda-accepts-gileads-new-drug-applications-for-twice-yearly-lenacapavir-for-hiv-prevention-under-priority-review",
+  "doc_date": "2025-02-18",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-06-18",
+  "outcome": "Approved"
+ },
+ "GKOS-2025-10-20": {
+  "cid": "C289",
+  "goal": "2025-10-20",
+  "source_url": "https://s206.q4cdn.com/223634169/files/doc_news/Glaukos-Announces-FDA-Acceptance-of-NDA-Submission-for-Epioxa-2025.pdf",
+  "doc_date": "2025-02-24",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-10-17",
+  "outcome": "Approved"
+ },
+ "GSK-2025-03-25": {
+  "cid": "C192",
+  "goal": "2025-03-26",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495424013012/a2961i.htm",
+  "doc_date": "2024-10-16",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-03-25",
+  "outcome": "Approved"
+ },
+ "GSK-2025-05-22": {
+  "cid": "C222",
+  "goal": "2025-05-07",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495424015262/a2715p.htm",
+  "doc_date": "2024-12-09",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-05-22",
+  "outcome": "Approved"
+ },
+ "GSK-2025-10-23": {
+  "cid": "C290",
+  "goal": "2025-10-23",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495425008347/a2945s.htm",
+  "doc_date": "2025-07-23",
+  "extended": true,
+  "goal_original": null,
+  "action": "2025-10-23",
+  "outcome": "Split"
+ },
+ "GSK-2025-12-11": {
+  "cid": "C315",
+  "goal": "2025-12-11",
+  "source_url": "https://www.gsk.com/media/flmllaky/gepo-gc-us-filing-acceptance_sea_final.pdf",
+  "doc_date": "2025-08-11",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-12-11",
+  "outcome": "Approved"
+ },
+ "INCY-2025-09-19": {
+  "cid": "C271",
+  "goal": "2025-09-19",
+  "source_url": "https://www.businesswire.com/news/home/20250620553806/en",
+  "doc_date": "2025-06-20",
+  "extended": true,
+  "goal_original": null,
+  "action": "2025-09-18",
+  "outcome": "Approved"
+ },
+ "INDV-2025-02-24": {
+  "cid": "C182",
+  "goal": "2025-02-07",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1625297/000165495425001381/a7798w-58126621.htm",
+  "doc_date": "2025-02-12",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-02-21",
+  "outcome": "Approved"
+ },
+ "INSM-2025-08-12": {
+  "cid": "C256",
+  "goal": "2025-08-12",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1104506/000114036125003266/ef20043003_ex99-1.htm",
+  "doc_date": "2025-02-06",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-12",
+  "outcome": "Approved"
+ },
+ "INVA-2025-12-15": {
+  "cid": "C320",
+  "goal": "2025-12-15",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1080014/000110465925074730/tm2522376d1_ex99-1.htm",
+  "doc_date": "2025-08-06",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-12-12",
+  "outcome": "Approved"
+ },
+ "IONS-2025-08-21": {
+  "cid": "C261",
+  "goal": "2025-08-21",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036125016562/ef20048172_ex99-1.htm",
+  "doc_date": "2025-04-30",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-21",
+  "outcome": "Approved"
+ },
+ "JAZZ-2025-08-06": {
+  "cid": "C252",
+  "goal": "2025-08-18",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1117480/000110465925019497/tm258043d1_8k.htm",
+  "doc_date": "2025-03-03",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-06",
+  "outcome": "Approved"
+ },
+ "JAZZ-2025-10-02": {
+  "cid": "C282",
+  "goal": "2025-10-07",
+  "source_url": "https://investor.jazzpharma.com/news-releases/news-release-details/zepzelcar-lurbinectedin-and-atezolizumab-tecentriqr-combination",
+  "doc_date": "2025-06-10",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-10-02",
+  "outcome": "Approved"
+ },
+ "KALV-2025-07-07": {
+  "cid": "C242",
+  "goal": "2025-06-17",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1348911/000095017025038015/kalv-ex99_1.htm",
+  "doc_date": "2025-03-12",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-07-03",
+  "outcome": "Approved"
+ },
+ "KURA-2025-11-13": {
+  "cid": "C300",
+  "goal": "2025-11-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1422143/000119312525263491/kura-ex99_1.htm",
+  "doc_date": "2025-11-04",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-11-13",
+  "outcome": "Approved"
+ },
+ "LENZ-2025-07-31": {
+  "cid": "C251",
+  "goal": "2025-08-08",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1815776/000181577625000032/lenz-20250331.htm",
+  "doc_date": "2025-05 (10-Q for quarter ended 2025-03-31; exact filing day not recorded)",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-07-31",
+  "outcome": "Approved"
+ },
+ "LGND-2025-08-27": {
+  "cid": "C263",
+  "goal": "2025-08-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1438533/000143853325000045/a2025q2_8-kxex991.htm",
+  "doc_date": "2025-08-06",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-27",
+  "outcome": "Approved"
+ },
+ "MIST-2025-03-28": {
+  "cid": "C196",
+  "goal": "2025-03-27",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1408443/000110465925023218/tm259067d1_ex99-1.htm",
+  "doc_date": "2025-03-13",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-03-27",
+  "outcome": "CRL"
+ },
+ "MIST-2025-12-15": {
+  "cid": "C322",
+  "goal": "2025-12-13",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1408443/000110465925109744/tm2530945d1_ex99-1.htm",
+  "doc_date": "2025-11-12",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-12-12",
+  "outcome": "Approved"
+ },
+ "MRK-2025-05-14": {
+  "cid": "C217",
+  "goal": "2025-05-26",
+  "source_url": "https://www.merck.com/news/fda-grants-priority-review-to-mercks-application-for-welireg-belzutifan-for-the-treatment-of-patients-with-advanced-pheochromocytoma-and-paraganglioma-ppgl/",
+  "doc_date": "2025-01-27",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-05-14",
+  "outcome": "Approved"
+ },
+ "MRK-2025-09-19": {
+  "cid": "C273",
+  "goal": "2025-09-23",
+  "source_url": "https://www.merck.com/news/mercks-investigational-subcutaneous-pembrolizumab-with-berahyaluronidase-alfa-demonstrates-noninferior-pharmacokinetics-compared-to-intravenous-iv-keytruda-pembrolizumab-in-pivotal/",
+  "doc_date": "2025-03-27",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-09-19",
+  "outcome": "Approved"
+ },
+ "MRK-2025-10-27": {
+  "cid": "C294",
+  "goal": "2025-10-25",
+  "source_url": "https://www.merck.com/news/fda-grants-priority-review-for-winrevair-sotatercept-csrk-to-update-label-based-on-results-from-zenith-trial/",
+  "doc_date": "2025-07-02",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-10-24",
+  "outcome": "Approved"
+ },
+ "NUVB-2025-06-11": {
+  "cid": "C228",
+  "goal": "2025-06-23",
+  "source_url": "https://businesswire.com/news/home/20241223905597/en",
+  "doc_date": "2024-12-23",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-06-11",
+  "outcome": "Approved"
+ },
+ "OMER-2025-12-24": {
+  "cid": "C330",
+  "goal": "2025-12-26",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1285819/000143774925034824/ex_856792.htm",
+  "doc_date": "2025-11-13",
+  "extended": true,
+  "goal_original": "2025-09-25",
+  "action": "2025-12-23",
+  "outcome": "Approved"
+ },
+ "OTLK-2025-08-28": {
+  "cid": "C265",
+  "goal": "2025-08-27",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1649989/000155837025011588/otlk-20250630x10q.htm",
+  "doc_date": "2025-08-14",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-27",
+  "outcome": "CRL"
+ },
+ "OTLK-2025-12-31": {
+  "cid": "C334",
+  "goal": "2025-12-31",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/0001649989/000110465925111316/tm2531109d1_8k.htm",
+  "doc_date": "2025-11-13",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-12-30",
+  "outcome": "CRL"
+ },
+ "PGEN-2025-08-15": {
+  "cid": "C258",
+  "goal": "2025-08-27",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1356090/000135609025000007/pgen-20241231.htm",
+  "doc_date": "2025-03 (Form 10-K for FY2024; filed March 2025, before action)",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-14",
+  "outcome": "Approved"
+ },
+ "PTCT-2025-07-28": {
+  "cid": "C249",
+  "goal": "2025-07-29",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1070081/000107008125000018/tmb-20250506xex99d1.htm",
+  "doc_date": "2025-05-06",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-07-28",
+  "outcome": "Approved"
+ },
+ "PTCT-2025-08-19": {
+  "cid": "C260",
+  "goal": "2025-08-19",
+  "source_url": "https://ptcbio.com/wp-content/uploads/sites/2/2025/02/PTC-February-2025_FA-Community-Update.pdf",
+  "doc_date": "2025-02-20",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-18",
+  "outcome": "CRL"
+ },
+ "RARE-2025-07-11": {
+  "cid": "C244",
+  "goal": "2025-08-18",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1515673/000095017025023312/rare-20241231.htm",
+  "doc_date": "2025-02-19",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-07-07",
+  "outcome": "CRL"
+ },
+ "REGN-2025-06-20": {
+  "cid": "C235",
+  "goal": "2025-06-20",
+  "source_url": "https://investor.regeneron.com/news-releases/news-release-details/dupixentr-dupilumab-sbla-accepted-fda-priority-review-targeted",
+  "doc_date": "2025-02-18",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-06-18",
+  "outcome": "Approved"
+ },
+ "REGN-2025-07-02": {
+  "cid": "C241",
+  "goal": "2025-07-10",
+  "source_url": "https://investor.regeneron.com/news-releases/news-release-details/linvoseltamab-bla-accepted-fda-review-treatment",
+  "doc_date": "2025-02-11",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-07-02",
+  "outcome": "Approved"
+ },
+ "REGN-2025-07-30": {
+  "cid": "C250",
+  "goal": "2025-07-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000180422025000020/exhibit991q12025.htm",
+  "doc_date": "2025-04-29",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-07-30",
+  "outcome": "CRL"
+ },
+ "REPL-2025-07-22": {
+  "cid": "C246",
+  "goal": "2025-07-22",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1737953/000110465925005291/tm254066d1_ex99-1.htm",
+  "doc_date": "2025-01-21",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-07-21",
+  "outcome": "CRL"
+ },
+ "SLNO-2025-03-26": {
+  "cid": "C194",
+  "goal": "2025-03-27",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1484565/000119312524265687/d802129dex991.htm",
+  "doc_date": "2024-11-26",
+  "extended": true,
+  "goal_original": null,
+  "action": "2025-03-26",
+  "outcome": "Approved"
+ },
+ "SNDX-2025-10-24": {
+  "cid": "C292",
+  "goal": "2025-10-25",
+  "source_url": "https://natlawreview.com/press-releases/syndax-announces-fda-priority-review-snda-revuforjr-revumenib-relapsed-or",
+  "doc_date": "2025-06-24",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-10-24",
+  "outcome": "Approved"
+ },
+ "SNY-2025-08-29": {
+  "cid": "C267",
+  "goal": "2025-08-29",
+  "source_url": "https://www.sanofi.com/en/media-room/press-releases/2024/2024-12-07-16-30-00-2993342",
+  "doc_date": "2024-12-07",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-29",
+  "outcome": "Approved"
+ },
+ "SNY-2025-12-24": {
+  "cid": "C331",
+  "goal": "2025-12-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312525211134/d36300dex992.htm",
+  "doc_date": "2025-09-22",
+  "extended": true,
+  "goal_original": "2025-09-28",
+  "action": "2025-12-23",
+  "outcome": "CRL"
+ },
+ "SPRY-2025-03-05": {
+  "cid": "C185",
+  "goal": "2025-03-06",
+  "source_url": "https://silverbacktx.gcs-web.com/news-releases/news-release-details/ars-pharmaceuticals-reports-third-quarter-2024-financial-results",
+  "doc_date": "2024-11-13",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-03-05",
+  "outcome": "Approved"
+ },
+ "SRRK-2025-09-23": {
+  "cid": "C276",
+  "goal": "2025-09-22",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1727196/000155837025010399/srrk-20250806xex99d1.htm",
+  "doc_date": "2025-08-06",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-09-22",
+  "outcome": "CRL"
+ },
+ "SUPN-2025-02-04": {
+  "cid": "C175",
+  "goal": "2025-02-01",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1356576/000135657624000053/ex99108-19x2024.htm",
+  "doc_date": "2024-08-19",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-02-03",
+  "outcome": "Approved"
+ },
+ "SWTX-2025-02-11": {
+  "cid": "C177",
+  "goal": "2025-02-28",
+  "source_url": "https://www.globenewswire.com/news-release/2024/08/28/2936845/0/en/FDA-Grants-Priority-Review-to-SpringWorks-Therapeutics-New-Drug-Application-for-Mirdametinib-for-the-Treatment-of-Adults-and-Children-with-NF1-PN.html",
+  "doc_date": "2024-08-28",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-02-11",
+  "outcome": "Approved"
+ },
+ "TLX-2025-03-21": {
+  "cid": "C191",
+  "goal": "2025-03-24",
+  "source_url": "https://www.aap.com.au/aapreleases/cision20240723ae68291/",
+  "doc_date": "2024-07-24",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-03-20",
+  "outcome": "Approved"
+ },
+ "TLX-2025-04-28": {
+  "cid": "C210",
+  "goal": "2025-04-26",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/0002007191/000114036125005562/ef20038762_20f.htm",
+  "doc_date": "2025-02-24",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-04-25",
+  "outcome": "CRL"
+ },
+ "TNXP-2025-08-15": {
+  "cid": "C259",
+  "goal": "2025-08-15",
+  "source_url": "https://d1io3yog0oux5.cloudfront.net/_184dc781ebb034bc4e7f720293fe4421/tonixpharma/news/2024-12-23_Tonix_Pharmaceuticals_Announces_PDUFA_Goal_Date_1542.pdf",
+  "doc_date": "2024-12-23",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-15",
+  "outcome": "Approved"
+ },
+ "UNCY-2025-06-30": {
+  "cid": "C239",
+  "goal": "2025-06-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1766140/000121390024096104/ea022062101ex99-1_unicycive.htm",
+  "doc_date": "2024-11-11",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-06-27",
+  "outcome": "CRL"
+ },
+ "URGN-2025-06-12": {
+  "cid": "C229",
+  "goal": "2025-06-13",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1668243/000143774925015955/ex_815371.htm",
+  "doc_date": "2025-05-12",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-06-12",
+  "outcome": "Approved"
+ },
+ "VNDA-2025-12-30": {
+  "cid": "C332",
+  "goal": "2025-12-30",
+  "source_url": "https://vandapharmaceuticalsinc.gcs-web.com/node/16656/pdf",
+  "doc_date": "2025-12-04",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-12-30",
+  "outcome": "Approved"
+ },
+ "VRTX-2025-01-30": {
+  "cid": "C173",
+  "goal": "2025-01-30",
+  "source_url": "https://investors.vrtx.com/news-releases/news-release-details/vertex-announces-fda-acceptance-new-drug-application-suzetrigine",
+  "doc_date": "2024-07-30",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-01-30",
+  "outcome": "Approved"
+ },
+ "VSTM-2025-05-08": {
+  "cid": "C215",
+  "goal": "2025-06-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1526119/000110465925026130/tm259913d1_ex99-1.htm",
+  "doc_date": "2025-03-20",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-05-08",
+  "outcome": "Approved"
+ }
+}
