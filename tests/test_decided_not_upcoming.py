@@ -30,7 +30,7 @@ def test_no_upcoming_row_has_a_published_decision():
                   errors="replace").read().replace("\x00", "")
     rows = json.loads(src[src.index("["):src.rindex("]") + 1])
     decs = sap.published_decisions()
-    assert len(decs) > 400, f"decisions archive parse broken ({len(decs)} rows)"
+    assert len(decs) > 350, f"decisions archive parse broken ({len(decs)} rows)"
 
     # ONE DECISION, ONE ROW (2026-09-26, same rule as sync_api_from_pages): a decision belongs to
     # the same-ticker PDUFA whose goal is nearest it, so Pharming's 2026-09-11 approval (goal

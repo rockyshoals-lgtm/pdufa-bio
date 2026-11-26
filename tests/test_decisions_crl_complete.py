@@ -21,7 +21,7 @@ def crl_rows(rel):
 
 def main():
     arch, sub = crl_rows("decisions"), crl_rows("decisions/crl")
-    if len(arch) < 50:
+    if len(arch) < 30:   # 44 after the 2026-11-26 retirement of 55 price-guessed CRL rows
         print(f"FAIL: read only {len(arch)} CRL rows on /decisions; the row pattern no longer matches")
         return 1
     missing = sorted(arch - sub)
