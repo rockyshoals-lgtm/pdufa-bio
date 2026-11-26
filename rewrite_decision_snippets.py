@@ -26,6 +26,7 @@ import io
 import json
 import os
 import re
+from announced_day import announced_iso
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -309,14 +310,15 @@ def main():
         if (tk, dcd) in fda_dates:
             fd = fda_dates[(tk, dcd)]
             fdelta = (dt.date.fromisoformat(fd) - dt.date.fromisoformat(goal)).days if goal else None
-            when = (f"{pretty(fd)} (announced {pretty(dcd)})"
+            # the page's Announced day, not the slug (GSK-2025-02-18 said "announced February 18"; GSK announced Feb 15)
+            when = (f"{pretty(fd)} (announced {pretty(announced_iso(doc, dcd))})"
                     + (", its PDUFA goal date" if fdelta == 0 else
                        f", {-fdelta} {_dw(fdelta)} before its {pretty(goal)} PDUFA goal date" if fdelta is not None and fdelta < 0 else
                        f", {fdelta} {_dw(fdelta)} after its {pretty(goal)} PDUFA goal date" if fdelta is not None else ""))
         elif (tk, dcd) in announced:
             # fits fix_meta_lengths' 158-char budget with a 40-char drug name; over budget that
             # step regenerates the whole snippet in its own shape and the caveat is lost
-            when = f"{pretty(dcd)}; the FDA action day is not stated, so no goal-date margin is published"
+            when = f"{pretty(announced_iso(doc, dcd))}; the FDA action day is not stated, so no goal-date margin is published"
         elif delta is None or delta == 0:
             when = f"{pretty(dcd)}" + (" (its PDUFA goal date)" if delta == 0 else "")
         elif delta < 0:

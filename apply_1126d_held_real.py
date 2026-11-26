@@ -159,7 +159,7 @@ FIX = {
 }
 
 NEW = "GSK-2025-02-18"
-NEW_ANN = "2025-02-15 (a Saturday, London); February 17 was a US market holiday"
+NEW_ANN = "2025-02-15, a Saturday, London; February 17 was a US market holiday"
 PENMENVY_LETTER = ("https://www.fda.gov/files/vaccines%2C%20blood%20%26%20biologics/published/"
                    "february_14_2025_approval_letter_-_penmenvy.pdf")
 
