@@ -118,6 +118,8 @@ def main():
             for href in CHIP.findall(doc):
                 if href != want:
                     bad.append(f"{slug}: month chip links {href} but the page's target is {day or ym}")
+        if re.search(r'(<a class="cta" href="/calendar/[^"]+"><b>[^<]+</b></a>)\1', doc):
+            bad.append(f"{slug}: the same month chip printed twice in a row")
 
         for d, why in re.findall(r'<span class="t">[^<]*? \. (\d{4}-\d{2}-\d{2})</span><span class="d">'
                                  r'(Same (?:area|month)[^<]*)</span>', doc):
