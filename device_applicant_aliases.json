@@ -1,0 +1,4 @@
+{
+ "_about": "Curated FDA device applicant -> ticker map for fetch_fda_devices.py. Add an entry only for an applicant name exactly as the FDA prints it, with a source showing that applicant is the listed company (its 10-K subsidiary list, or the company's own release naming the approval). Entries without a source are ignored.",
+ "aliases": {}
+}
