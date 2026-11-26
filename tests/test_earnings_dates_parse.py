@@ -22,6 +22,23 @@ if os.environ.get("PLANT") == "1":
     E.mentions = lambda *a, **k: True
 
 CASES = [
+    # real, 2026-11-26 red team of the built pages: three results headlines the parser missed, so the announced day
+    # showed as passed with no results release
+    ("BMY", "Bristol-Myers Squibb Company",
+     {"publishedDate": "2026-10-29 06:59:00", "title": "Bristol Myers Squibb Reports Third Quarter Financial Results "
+      "for 2026", "text": "PRINCETON, N.J.--(BUSINESS WIRE)--Bristol Myers Squibb Reports Third Quarter Financial "
+      "Results for 2026.", "url": "u-bmy"},
+     {"kind": "results", "period_key": "2026Q3", "published_et": "2026-10-29 06:59"}),
+    ("AMPH", "Amphastar Pharmaceuticals, Inc.",
+     {"publishedDate": "2026-11-05 16:10:00", "title": "Amphastar Pharmaceuticals Reports Financial Results for the "
+      "Three Months Ended September 30, 2026", "text": "Net revenues of $207.6 million for the three months ended "
+      "September 30, 2026 GAAP net income of $37.8 million, or $0.87 per share, for the third quarter ... RANCHO "
+      "CUCAMONGA, Calif.", "url": "u-amph"},
+     {"kind": "results", "period_key": "2026Q3", "published_et": "2026-11-05 16:10"}),
+    ("AXGN", "Axogen, Inc.",
+     {"publishedDate": "2026-07-29 07:05:00", "title": "Axogen, Inc. Reports Second Quarter 2026 Financial Results",
+      "text": "ALACHUA, Fla. and TAMPA, Fla.", "url": "u-axgn"},
+     {"kind": "results", "period_key": "2026Q2", "published_et": "2026-07-29 07:05"}),
     # (ticker, name, item, expected subset or None)
     ("VKTX", "Viking Therapeutics, Inc.",
      {"publishedDate": "2026-10-21 16:05:00", "title": "Viking Therapeutics to Report Financial Results for Third "
@@ -37,6 +54,20 @@ CASES = [
       "Therapeutics, Inc. (Viking) (Nasdaq: VKTX), ... today announced its financial results for the third quarter",
       "url": "u2"},
      {"kind": "results", "period_key": "2026Q3", "published_et": "2026-10-28 16:05"}),
+    # real, 2026-11-26 page red team: "Year-End" was not read as the full year, so the release had no period
+    ("VKTX", "Viking Therapeutics, Inc.",
+     {"publishedDate": "2026-02-11 16:16:00", "title": "Viking Therapeutics Reports Fourth Quarter and Year-End 2025 "
+      "Financial Results and Provides Corporate Update", "text": "SAN DIEGO, Feb. 11, 2026 /PRNewswire/ -- Viking "
+      "Therapeutics, Inc. (Viking) (Nasdaq: VKTX), ... today announced its financial results for the fourth quarter "
+      "and year ended December 31, 2025", "url": "u2b"},
+     {"kind": "results", "period_key": "2025Q4+FY", "published_et": "2026-02-11 16:16"}),
+    ("VKTX", "Viking Therapeutics, Inc.",
+     {"publishedDate": "2026-02-04 16:05:00", "title": "Viking Therapeutics to Report Financial Results for Fourth "
+      "Quarter and Year-End 2025 on February 11, 2026", "text": "Conference Call Scheduled for Wednesday, February 11 at "
+      "4:30 p.m. Eastern Time  SAN DIEGO, Feb. 4, 2026 /PRNewswire/ -- Viking Therapeutics, Inc. (\"Viking\") (NASDAQ: "
+      "VKTX), ... today announced that the company will release financial results for the fourth quarter and year-end "
+      "2025 after the market close on Wednesday, February 11, 2026.", "url": "u2c"},
+     {"kind": "schedule", "period_key": "2025Q4+FY", "report_date": "2026-02-11", "timing": "after_close"}),
     ("SRPT", "Sarepta Therapeutics, Inc.",
      {"publishedDate": "2026-10-22 08:30:00", "title": "Sarepta Therapeutics to Announce Third Quarter 2026 Financial "
       "Results", "text": "CAMBRIDGE, Mass.--(BUSINESS WIRE)--Sarepta Therapeutics, Inc. (NASDAQ:SRPT), the leader in "
@@ -107,6 +138,28 @@ CASES = [
 # Companies are tracked tickers; the texts are not claims about real events.
 V, VN = "VKTX", "Viking Therapeutics, Inc."
 CONSTRUCTED = [
+    # red team round 2: year-to-date headlines read as the quarter that ends on the day, never as the half or year
+    ("AMPH", "Amphastar Pharmaceuticals, Inc.", {"publishedDate": "2026-08-06 16:10:00", "title": "Amphastar Pharmaceuticals Reports Financial Results for the Three and Six Months Ended June 30, 2026", "text": "Amphastar Pharmaceuticals, Inc. (NASDAQ: AMPH) reported results.", "url": "m1"},
+     {"kind": "results", "period_key": "2026Q2"}),
+    ("AMPH", "Amphastar Pharmaceuticals, Inc.", {"publishedDate": "2026-02-26 16:10:00", "title": "Amphastar Pharmaceuticals Reports Financial Results for the Three and Twelve Months Ended December 31, 2025", "text": "Amphastar Pharmaceuticals, Inc. (NASDAQ: AMPH) reported results.", "url": "m2"},
+     {"kind": "results", "period_key": "2025Q4+FY"}),
+    ("AMPH", "Amphastar Pharmaceuticals, Inc.", {"publishedDate": "2026-11-05 16:10:00", "title": "Amphastar Pharmaceuticals Reports Financial Results for the Nine Months Ended September 30, 2026", "text": "Amphastar Pharmaceuticals, Inc. (NASDAQ: AMPH) reported results.", "url": "m3"},
+     None),
+    ("AMPH", "Amphastar Pharmaceuticals, Inc.", {"publishedDate": "2026-08-20 16:10:00", "title": "Amphastar Pharmaceuticals Reports Financial Results for the Twelve Months Ended June 30, 2026", "text": "Amphastar Pharmaceuticals, Inc. (NASDAQ: AMPH) reported results.", "url": "m4"},
+     {"kind": "results", "period_key": "FY2026"}),
+    ("AMPH", "Amphastar Pharmaceuticals, Inc.", {"publishedDate": "2026-08-20 16:10:00", "title": "Amphastar Pharmaceuticals Reports Financial Results for the Three and Twelve Months Ended June 30, 2026", "text": "Amphastar Pharmaceuticals, Inc. (NASDAQ: AMPH) reported results.", "url": "m5"},
+     {"kind": "results", "period_key": "FY2026Q4"}),
+    # a name stored without its legal form still matches a headline that gives the whole name with one
+    ("ALVO", "Alvotech", {"publishedDate": "2026-08-20 07:00:00", "title": "Alvotech SA Reports First Half 2026 Results",
+     "text": "REYKJAVIK, Iceland.", "url": "a1"}, {"kind": "results", "period_key": "2026H1"}),
+    # "Fourth Quarter and Fiscal Year 2025" stays fiscal in the parser (the page builder reads it as calendar only for a
+    # company whose other releases print calendar quarters)
+    (V, VN, {"publishedDate": "2025-09-05 16:05:00", "title": "Viking Therapeutics Reports Fourth Quarter and Fiscal "
+     "Year 2025 Financial Results", "text": "Viking Therapeutics, Inc. (NASDAQ: VKTX) reported.", "url": "f2"},
+     {"kind": "results", "period_key": "FY2025Q4"}),
+    # a legal form that is not the company's own does not make another company's headline its own
+    ("AGIO", "Agios Pharmaceuticals, Inc.", {"publishedDate": "2026-08-01 07:00:00", "title": "Agios Ltd. Reports "
+     "Second Quarter 2026 Financial Results", "text": "LONDON.", "url": "g1"}, None),
     # dateline is the first date in the text; the report day comes later with its weekday
     (V, VN, {"publishedDate": "2026-10-21 16:05:00", "title": "Viking Therapeutics to Report Third Quarter 2026 Financial "
      "Results", "text": "SAN DIEGO, Oct. 21, 2026 /PRNewswire/ -- Viking Therapeutics, Inc. (NASDAQ: VKTX) will release "
@@ -199,6 +252,8 @@ CONSTRUCTED = [
     (V, VN, {"publishedDate": "2026-08-10 16:05:00", "title": 'Viking Therapeutics Reports First Quarter Fiscal 2027 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e12"}, {"kind": "results", "period_key": "FY2027Q1"}),
     (V, VN, {"publishedDate": "2026-08-10 16:05:00", "title": 'Viking Therapeutics Reports Q1 Fiscal 2027 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e13"}, {"kind": "results", "period_key": "FY2027Q1"}),
     (V, VN, {"publishedDate": "2026-02-25 16:05:00", "title": 'Viking Therapeutics Reports Fourth Quarter and Full Year 2025 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e14"}, {"kind": "results", "period_key": "2025Q4+FY"}),
+    (V, VN, {"publishedDate": "2026-02-25 16:05:00", "title": 'Viking Therapeutics Reports Q4 and Full Year 2025 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e14b"}, {"kind": "results", "period_key": "2025Q4+FY"}),
+    (V, VN, {"publishedDate": "2026-02-25 16:05:00", "title": 'Viking Therapeutics Reports Fourth-Quarter and Year-Ended 2025 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e14c"}, {"kind": "results", "period_key": "2025Q4+FY"}),
     (V, VN, {"publishedDate": "2026-10-28 16:05:00", "title": 'Viking Therapeutics Reports Third Quarter 2027 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e15"}, None),
 ]
 
