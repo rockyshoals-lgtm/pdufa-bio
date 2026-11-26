@@ -2428,6 +2428,36 @@
    "permanent": true
   },
   {
+   "source": "/fda-decision/GILD-2025-12-16",
+   "destination": "/fda-decision/GSK-2025-12-16",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ABBV-2025-04-02",
+   "destination": "/fda-decision/NVS-2025-04-03",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/HOTH-2025-06-16",
+   "destination": "/fda-decision/CSLLY-2025-06-17",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/TURN-2025-02-14",
+   "destination": "/fda-approvals/2025/february",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/EXEL-2025-07-02",
+   "destination": "/fda-approvals/2025/july",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ANTE-2025-04-23",
+   "destination": "/fda-approvals/2025/april",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -2825,11 +2855,6 @@
   {
    "source": "/drug/gadoquatrane",
    "destination": "/drug/ambelvist",
-   "permanent": true
-  },
-  {
-   "source": "/drug/garadacimab-gxii",
-   "destination": "/drug/garadacimab",
    "permanent": true
   },
   {
@@ -3363,11 +3388,6 @@
    "permanent": true
   },
   {
-   "source": "/drug/sunvozertinib",
-   "destination": "/fda-approvals/2025/july",
-   "permanent": true
-  },
-  {
    "source": "/drug/tabelecleucel",
    "destination": "/drug/ebvallo",
    "permanent": true
@@ -3460,11 +3480,6 @@
   {
    "source": "/drug/vepdegestrant",
    "destination": "/drug/veppanu",
-   "permanent": true
-  },
-  {
-   "source": "/drug/vimseltinib",
-   "destination": "/fda-approvals/2025/february",
    "permanent": true
   },
   {
@@ -3690,56 +3705,6 @@
   {
    "source": "/drug/xrx",
    "destination": "/ticker/XRTX",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/GILD-2025-12-16",
-   "destination": "/fda-decision/GSK-2025-12-16",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/ABBV-2025-04-02",
-   "destination": "/fda-decision/NVS-2025-04-03",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/HOTH-2025-06-16",
-   "destination": "/fda-decision/CSLLY-2025-06-17",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/TURN-2025-02-14",
-   "destination": "/fda-approvals/2025/february",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/EXEL-2025-07-02",
-   "destination": "/fda-approvals/2025/july",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/ANTE-2025-04-23",
-   "destination": "/fda-approvals/2025/april",
-   "permanent": true
-  },
-  {
-   "source": "/drug/andembry",
-   "destination": "/drug/garadacimab",
-   "permanent": true
-  },
-  {
-   "source": "/drug/romvimza",
-   "destination": "/fda-approvals/2025/february",
-   "permanent": true
-  },
-  {
-   "source": "/drug/zegfrovy",
-   "destination": "/fda-approvals/2025/july",
-   "permanent": true
-  },
-  {
-   "source": "/drug/penpulimab",
-   "destination": "/fda-approvals/2025/april",
    "permanent": true
   }
  ],
