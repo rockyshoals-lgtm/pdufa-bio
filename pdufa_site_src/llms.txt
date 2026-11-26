@@ -43,6 +43,11 @@ the price move. /decisions publishes how many of each there are.
   /research/fda-decision-timing/fda-decision-timing-2026.csv; earlier versions stay at their own addresses).
   Cite as "pdufa.bio, FDA decision timing 2026 (v44)". The counts grow as decisions are added;
   an older page copy quoting a smaller census (for example v32) is superseded by the figures above.
+- FDA decision timing since January 2024: of **217** FDA decisions dated January 1, 2024
+  through Nov 24, 2026 with a goal date and an action date each tied to a document, **131** came
+  before the PDUFA goal date in effect, **74** on it and **12** after it. Among the 208 decisions
+  from candidate sets not chosen by outcome, 0 of the 11 late decisions ended in a
+  complete response letter. Counts, not a causal claim. (/research/fda-decision-timing/since-2024, CSV under CC BY 4.0)
 - Released FDA Complete Response Letters (openFDA): **467** letters, of which
   **312** went to applications the FDA has since approved. That ratio reflects
   which letters the FDA chose to release, not an approval rate. (/crl)
@@ -108,6 +113,7 @@ Full archive: https://www.pdufa.bio/decisions
 - /readouts - clinical trial readouts, by month
 - /conferences - medical conference presentations by US-listed sponsors
 - /research/fda-decision-timing - does the FDA decide early? Sourced cases only
+- /research/fda-decision-timing/since-2024 - every sourced FDA decision since January 2024: early, on the goal date or late, by year, with CRL counts by timing, extended goal dates shown against both dates, weekend and holiday goal dates, every excluded candidate counted by reason (CSV)
 - /research/fda-approval-weekdays - the weekday of every FDA original and efficacy supplement approval action date in Drugs@FDA since January 2025, with the Orange Book's NDA approval dates since 1982, US federal holidays, and the 2026 decisions whose goal date fell on a weekend or holiday (two CSVs)
 - /fda-approvals/companies - every FDA original NDA/BLA and efficacy supplement approval in Drugs@FDA since January 2025, grouped by sponsor company, each with its FDA letter (CSV)
 - /fda-approvals/drugs - the same Drugs@FDA approvals grouped by NDA or BLA number: how many original and efficacy-supplement approvals each application has had since January 2025, with FDA letters where Drugs@FDA lists one, and the released Complete Response Letters on the same application number (CSV)

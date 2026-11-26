@@ -781,6 +781,10 @@ jobs:
           # audit 2026-10-03 item 3.4: one fact-first sentence (dates + city) under every /conference h1
           python inject_conference_lede.py
           python build_early_decisions.py
+          # 2026-11-26: /research/fda-decision-timing/since-2024 (2024-2025 census in decision_timing_2024_2025.json plus
+          # the 2026 rows build_early_decisions counts), its /research card and its line on the 2026 page. After
+          # build_early_decisions, which redraws the 2026 page. tests/test_decision_timing_since_2024.py.
+          python build_decision_timing_since_2024.py
           # 2026-11-23 (audit move 8): weekday of every dated NDA first approval in the Orange Book, and the 2026
           # decisions with a weekend or holiday goal date. Reads build_early_decisions' rows, so it runs after it.
           # 2026-11-23: refresh the Drugs@FDA month cache FIRST. Run 45131808182 built the weekdays page here and
