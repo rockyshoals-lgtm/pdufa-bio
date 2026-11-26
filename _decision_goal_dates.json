@@ -399,6 +399,16 @@
   "action": "2025-12-11",
   "outcome": "Approved"
  },
+ "GSK-2025-12-16": {
+  "cid": "C323",
+  "goal": "2025-12-16",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495425002180/a0169z.htm",
+  "doc_date": "2025-03-03",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-12-16",
+  "outcome": "Split"
+ },
  "INCY-2025-09-19": {
   "cid": "C271",
   "goal": "2025-09-19",
