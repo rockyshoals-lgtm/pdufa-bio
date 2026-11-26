@@ -3741,6 +3741,401 @@
    "source": "/drug/penpulimab",
    "destination": "/fda-approvals/2025/april",
    "permanent": true
+  },
+  {
+   "source": "/fda-decision/AAPG-2025-12-09",
+   "destination": "/ticker/AAPG",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/AURA-2025-03-24",
+   "destination": "/ticker/AURA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CHRS-2025-01-22",
+   "destination": "/ticker/CHRS",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CNTA-2025-03-24",
+   "destination": "/ticker/CNTA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/GMAB-2025-06-15",
+   "destination": "/ticker/GMAB",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/INBX-2025-01-21",
+   "destination": "/ticker/INBX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/MRK-2025-12-17",
+   "destination": "/ticker/MRK",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/PFE-2025-12-17",
+   "destination": "/ticker/PFE",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/TARA-2025-11-19",
+   "destination": "/ticker/TARA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ALXO-2025-04-25",
+   "destination": "/ticker/ALXO",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/BMY-2025-05-23",
+   "destination": "/ticker/BMY",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CING-2025-05-14",
+   "destination": "/ticker/CING",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/COCP-2025-12-18",
+   "destination": "/ticker/COCP",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/GLSI-2025-03-17",
+   "destination": "/ticker/GLSI",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IBRX-2025-11-05",
+   "destination": "/ticker/IBRX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/JSPR-2025-06-16",
+   "destination": "/ticker/JSPR",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/MRKR-2025-08-26",
+   "destination": "/ticker/MRKR",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ONCY-2025-10-28",
+   "destination": "/ticker/ONCY",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/PRTC-2025-12-05",
+   "destination": "/ticker/PRTC",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ALXO-2025-12-08",
+   "destination": "/ticker/ALXO",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/AVBP-2025-06-23",
+   "destination": "/ticker/AVBP",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CGEM-2025-10-13",
+   "destination": "/ticker/CGEM",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CMND-2025-07-03",
+   "destination": "/ticker/CMND",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/GLSI-2026-01-22",
+   "destination": "/ticker/GLSI",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/INCY-2025-06-15",
+   "destination": "/ticker/INCY",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/LYEL-2025-12-08",
+   "destination": "/ticker/LYEL",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/PBM-2025-12-19",
+   "destination": "/ticker/PBM",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/REGN-2025-05-23",
+   "destination": "/ticker/REGN",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/APTO-2025-02-20",
+   "destination": "/ticker/APTO",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CLDX-2025-11-06",
+   "destination": "/ticker/CLDX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CUE-2025-07-16",
+   "destination": "/ticker/CUE",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/GMAB-2025-06-02",
+   "destination": "/ticker/GMAB",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/INTS-2025-06-30",
+   "destination": "/ticker/INTS",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/KZIA-2025-11-18",
+   "destination": "/ticker/KZIA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/PLRX-2025-12-04",
+   "destination": "/ticker/PLRX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/TARA-2025-04-26",
+   "destination": "/ticker/TARA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ALPMY-2025-12-17",
+   "destination": "/ticker/ALPMY",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/BCTX-2025-05-23",
+   "destination": "/ticker/BCTX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CLLS-2025-02-14",
+   "destination": "/ticker/CLLS",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/GLPG-2025-12-07",
+   "destination": "/ticker/GLPG",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IBRX-2025-08-13",
+   "destination": "/ticker/IBRX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/LTRN-2025-06-16",
+   "destination": "/ticker/LTRN",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ONC-2025-12-08",
+   "destination": "/ticker/ONC",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/PRTA-2025-08-27",
+   "destination": "/ticker/PRTA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ABBV-2025-06-30",
+   "destination": "/ticker/ABBV",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/AUTL-2025-12-08",
+   "destination": "/ticker/AUTL",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CASI-2025-12-07",
+   "destination": "/ticker/CASI",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CLLS-2025-12-07",
+   "destination": "/ticker/CLLS",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/EQ-2025-04-24",
+   "destination": "/ticker/EQ",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/JANX-2025-12-01",
+   "destination": "/ticker/JANX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/LYEL-2025-06-17",
+   "destination": "/ticker/LYEL",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/NRIX-2025-06-12",
+   "destination": "/ticker/NRIX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/PHIO-2025-03-10",
+   "destination": "/ticker/PHIO",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ANIK-2025-07-30",
+   "destination": "/ticker/ANIK",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/BMY-2025-06-12",
+   "destination": "/ticker/BMY",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CLDI-2025-04-28",
+   "destination": "/ticker/CLDI",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CRSP-2025-12-22",
+   "destination": "/ticker/CRSP",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IMMX-2025-06-03",
+   "destination": "/ticker/IMMX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/JNJ-2025-04-24",
+   "destination": "/ticker/JNJ",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/NRIX-2025-12-08",
+   "destination": "/ticker/NRIX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/PHIO-2025-05-07",
+   "destination": "/ticker/PHIO",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ADCT-2025-06-12",
+   "destination": "/ticker/ADCT",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CGON-2025-03-24",
+   "destination": "/ticker/CGON",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/CMPX-2025-04-01",
+   "destination": "/ticker/CMPX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/GLPG-2025-06-19",
+   "destination": "/ticker/GLPG",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IMMX-2025-12-07",
+   "destination": "/ticker/IMMX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/JNJ-2025-06-13",
+   "destination": "/ticker/JNJ",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/OGEN-2025-05-13",
+   "destination": "/ticker/OGEN",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/RPRX-2025-11-07",
+   "destination": "/ticker/RPRX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IONI-2025-08-21",
+   "destination": "/fda-decision/IONS-2025-08-21",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/INTE-2025-03-28",
+   "destination": "/fda-decision/SNY-2025-03-28",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/AMRN-2025-12-02",
+   "destination": "/ticker/AMRX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ZLAB-2025-07-30",
+   "destination": "/fda-decision/REGN-2025-07-30",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ABEO-2025-07-11",
+   "destination": "/fda-decision/RARE-2025-07-11",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IONS-2025-09-23",
+   "destination": "/fda-decision/BIIB-2025-09-23",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/RHHBY-2025-11-25",
+   "destination": "/ticker/SRPT",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/CGEM",
+   "destination": "/pdufa/CGEM-zipalertinib",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/INBX",
+   "destination": "/pdufa/INBX-ozekibart",
+   "permanent": true
+  },
+  {
+   "source": "/drug/albuterol-sulfate",
+   "destination": "/ticker/AMRX",
+   "permanent": true
   }
  ],
  "headers": [
