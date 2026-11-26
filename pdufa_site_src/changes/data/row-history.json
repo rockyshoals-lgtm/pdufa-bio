@@ -3,9 +3,9 @@
  "repository": "https://github.com/rockyshoals-lgtm/pdufa-bio",
  "first_commit": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
  "first_time_et": "2026-07-26 00:07 ET",
- "last_commit": "ce5b5d0d205fdb94de799a1579c12622552b49b1",
- "last_time_et": "2026-11-25 21:02 ET",
- "versions": 469,
+ "last_commit": "e18cbecd593f234abba3e18e3f41e53226221d00",
+ "last_time_et": "2026-11-26 00:03 ET",
+ "versions": 471,
  "rebuilds": [],
  "fields": {
   "t": "ticker",
@@ -29818,6 +29818,54 @@
    "name": "azenosertib DENALI Phase 2 topline readout",
    "st_was": "",
    "st_now": "Guided"
+  },
+  {
+   "sha": "e18cbecd593f234abba3e18e3f41e53226221d00",
+   "ts": "2026-11-26 00:03 ET",
+   "id": "pdufa_blte_2027-02-12",
+   "field": "d",
+   "old": "2027-02-12",
+   "new": "2027-05-12",
+   "t": "BLTE",
+   "name": "Tinlarebant - Stargardt disease type 1",
+   "st_was": "Upcoming",
+   "st_now": "Upcoming"
+  },
+  {
+   "sha": "e18cbecd593f234abba3e18e3f41e53226221d00",
+   "ts": "2026-11-26 00:03 ET",
+   "id": "pdufa_blte_2027-02-12",
+   "field": "source_url",
+   "old": "https://www.sec.gov/Archives/edgar/data/1889109/000110465926094040/tm2622827d1_ex99-1.htm",
+   "new": "https://www.globenewswire.com/news-release/2026/11/20/3407395/0/en/belite-bio-announces-extension-of-fda-review-timeline-for-tinlarebant-nda.html",
+   "t": "BLTE",
+   "name": "Tinlarebant - Stargardt disease type 1",
+   "st_was": "Upcoming",
+   "st_now": "Upcoming"
+  },
+  {
+   "sha": "e18cbecd593f234abba3e18e3f41e53226221d00",
+   "ts": "2026-11-26 00:03 ET",
+   "id": "pdufa_vrtx_2026-11-30",
+   "field": "d",
+   "old": "2026-11-30",
+   "new": "2027-02-28",
+   "t": "VRTX",
+   "name": "Povetacicept (ALPN-303)",
+   "st_was": "Upcoming",
+   "st_now": "Upcoming"
+  },
+  {
+   "sha": "e18cbecd593f234abba3e18e3f41e53226221d00",
+   "ts": "2026-11-26 00:03 ET",
+   "id": "pdufa_vrtx_2026-11-30",
+   "field": "source_url",
+   "old": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm",
+   "new": "https://investors.vrtx.com/news-releases/news-release-details/vertex-announces-extension-pdufa-target-action-date-three-months",
+   "t": "VRTX",
+   "name": "Povetacicept (ALPN-303)",
+   "st_was": "Upcoming",
+   "st_now": "Upcoming"
   }
  ]
 }
