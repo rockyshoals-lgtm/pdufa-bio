@@ -34,7 +34,8 @@ h1{font-size:36px;line-height:1.1;font-weight:800;letter-spacing:-.9px;margin:6p
 .tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#cfe2ff;background:#16365e;border-radius:6px;padding:1px 6px;margin-left:4px;vertical-align:1px}
 .key{font-size:12.5px;color:var(--mut2);margin:14px 0 0}.key i{font-style:normal;font-weight:800}
 .cmp{margin-top:40px}.cmp h2{font-size:18px;margin:0 0 10px}
-.cmp table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:520px}
+.cmp table{width:100%;border-collapse:collapse;font-size:13.5px}
+@media(max-width:560px){.cmp table{font-size:12.5px}.cmp th,.cmp td{padding:8px 6px}.cmp th{font-size:11px;letter-spacing:.2px}}
 .cmp th,.cmp td{padding:9px 10px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
 .cmp th{color:var(--mut2);font-size:12px;letter-spacing:.4px;text-transform:uppercase;border-top:0}
 .cmp td:first-child{color:var(--ink);font-weight:600}.cmp td{color:var(--mut)}.cmp .y{color:var(--green);font-weight:800}
@@ -86,7 +87,7 @@ var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.ne
       <li><i>&#10003;</i> Decision archive (approvals &amp; CRLs) with 120-day charts</li>
       <li><i>&#10003;</i> Run-up-by-year study (2020-present)</li>
       <li><i>&#10003;</i> Cohort base rates &amp; primary sources</li>
-      <li><i>&#10003;</i> <a href="/screener" style="text-decoration:underline">Catalyst screener</a> and a public calendar feed</li>
+      <li><i>&#10003;</i> <span><a href="/screener" style="text-decoration:underline">Catalyst screener</a> and a public calendar feed</span></li>
       <li><i>&#10003;</i> The API, keyless: 1,000 requests a day</li>
     </ul>
     <a class="btn s" href="/calendar">Open the calendar</a>
