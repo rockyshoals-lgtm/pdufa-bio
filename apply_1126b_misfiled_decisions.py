@@ -115,7 +115,7 @@ def new_page_ledgers(dry):
     if NEW not in pub:
         pub[NEW] = TODAY
         if not dry:
-            jsave("_decision_published.json", pub)
+            jsave("_decision_published.json", pub, indent=0)
         print(f"_decision_published.json: {NEW} added")
 
 
