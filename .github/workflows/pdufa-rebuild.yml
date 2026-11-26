@@ -209,6 +209,7 @@ jobs:
           python sync_calendar_row_ta.py   # 2026-11-17: a row's area tag follows the dataset (CORT GRACE read "Infectious")
           python build_calendar_year_hub.py
           python fix_calendar_row_labels.py   # 2026-11-21: hand-verified labels for pending rows (Copilot cited a wrong GIST label)
+          python build_calendar_density.py   # 2026-11-26: the weekly density chart was frozen (VRTX still in Nov 30 after its extension)
 
       # 2026-09-23: the listing must exist BEFORE marking. mark_calendar_decided reads its
       # decisions from /decisions; a decision page built since the last run had no listing row
