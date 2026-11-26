@@ -66,6 +66,9 @@ SITE_LINKS = [
     ("FDA approvals by company", "/fda-approvals/companies"), ("FDA approvals by drug", "/fda-approvals/drugs"), ("FDA approvals by NDA type", "/fda-approvals/types"), ("Approval weekdays", "/research/fda-approval-weekdays"),
     ("CRL review clock", "/crl/review-clock"), ("Dataset changes", "/changes"),
     ("FDA approval letters", "/fda-approval-letters"), ("Decision timing study", "/research/fda-decision-timing"),
+    # 2026-11-26: Google URL Inspection: /research/fda-decision-timing/since-2024 "Discovered - currently not indexed",
+    # referring page "None detected"; it had 2 inbound links site-wide (the study hub and /sitemap)
+    ("Early or late since 2024", "/research/fda-decision-timing/since-2024"),
     ("Run-up study", "/runup-by-year"), ("FDA approval rate", "/fda-approval-rate"), ("Oncology readouts", "/readouts/oncology"),
     ("Readouts", "/readouts"), ("Conferences", "/conferences"), ("Corrections", "/corrections"), ("All pages", "/sitemap"),
 ]
@@ -84,7 +87,7 @@ SITE_GROUPS = [
                    "/research/fda-approval-weekdays"]),
     ("CRLs", ["/crl", "/crl/facts", "/crl/companies", "/crl/review-clock", "/learn/what-is-a-crl"]),
     ("Trials", ["/readouts", "/readouts/oncology", "/conferences", "/clinical-trial-success-rates"]),
-    ("Studies and data", ["/research/fda-decision-timing", "/runup-by-year", "/coverage", "/changes", "/corrections"]),
+    ("Studies and data", ["/research/fda-decision-timing", "/research/fda-decision-timing/since-2024", "/runup-by-year", "/coverage", "/changes", "/corrections"]),
 ]
 SITE_LAST = "/sitemap"   # "All pages" closes the block on a line of its own
 
