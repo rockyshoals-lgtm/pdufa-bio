@@ -138,11 +138,6 @@ def period_of(text, published=None):
     period's year."""
     t = clean(text)
     pub_y = published.year if published else 9999
-
-    def cal_fy(y):
-        """'Fourth Quarter and Fiscal Year 2025' put out January to April 2026 is the calendar year: a company whose
-        fiscal year ends mid-year reports its fourth quarter within the same year, or from May on."""
-        return bool(published) and published.year == int(y) + 1 and published.month <= 4
     m = P_FISCAL_Q.search(t)
     if m:
         return m.group(0), f"FY{m.group(1)}Q{ORD[m.group(2).lower()]}"
@@ -157,7 +152,7 @@ def period_of(text, published=None):
     m = re.search(r"\b(?:Q4|4Q)\s+(?:and|&)\s+(full[\s-]+year|fiscal[\s-]+year|year[\s-]+end(?:ed)?)\s+(20\d\d)\b", t, re.I)
     if m and int(m.group(2)) <= pub_y:
         # "fiscal year" may not be the calendar year, so it gets a fiscal key (no calendar day count)
-        fy = m.group(1).lower().startswith("fiscal") and not cal_fy(m.group(2))
+        fy = m.group(1).lower().startswith("fiscal")
         return m.group(0), (f"FY{m.group(2)}Q4" if fy else f"{m.group(2)}Q4+FY")
     # "Financial Results for the Three Months Ended September 30, 2026" (no quarter named): the period that ends on the
     # printed day, only when that day ends a calendar quarter
@@ -172,6 +167,8 @@ def period_of(text, published=None):
                 want = {"six": 2, "nine": 3, "twelve": 4}[n.split()[-1]]
                 if q == want and not yr_and:
                     return m.group(0), f"{y}Q{q}" + ("+FY" if q == 4 else "")
+                if want == 4 and not yr_and:
+                    return m.group(0), f"FY{y}Q4"   # a twelve-month year ending mid-year: the company's fiscal year
                 return m.group(0), None
             if q == 4 and (n in ("twelve", "year") or (n == "three" and yr_and)):
                 return m.group(0), f"{y}Q4+FY" if n == "three" else f"{y}FY"
@@ -192,8 +189,6 @@ def period_of(text, published=None):
         # year, so it makes the key fiscal
         fiscal = bool(re.search(r"\bfiscal\b", m.group(0), re.I))
         full = q == 4 and bool(re.search(r"(and|&)[\s,]+(full[\s-]+year|year[\s-]+end)", m.group(0), re.I))
-        if yr and fiscal and q == 4 and cal_fy(yr) and re.search(r"(and|&)[\s,]+fiscal[\s-]+year", m.group(0), re.I):
-            fiscal, full = False, True
         if yr:
             return m.group(0), (f"FY{yr}Q{q}" if fiscal else f"{yr}Q{q}") + ("+FY" if full else "")
         # year printed after "full year" or "fiscal": "Fourth Quarter and Full Year 2025", "First Quarter Fiscal 2027"
@@ -228,7 +223,7 @@ def period_of(text, published=None):
     if m:
         y = m.group(2) or m.group(3)
         # a year printed as "fiscal" may not end on December 31: a fiscal key, with no calendar day count
-        return m.group(0), (f"FY{y}" if (m.group(1) or "").lower().startswith("fiscal") and not cal_fy(y) else f"{y}FY")
+        return m.group(0), (f"FY{y}" if (m.group(1) or "").lower().startswith("fiscal") else f"{y}FY")
     return None, None
 
 
@@ -463,6 +458,8 @@ def mentions(tk, name, title, text):
     # the company's own legal form after its name ('Axogen, Inc. Reports' for 'Axogen, Inc.') is still the same name;
     # another form ('Agios Ltd.' for 'Agios Pharmaceuticals, Inc.') is not
     own_forms = {w.strip(".,").lower() for w in name.split()} & LEGAL_FORMS
+    if not own_forms and i >= len(own):
+        own_forms = LEGAL_FORMS          # name stored without its legal form, and the headline gave the whole name
     while i < len(words) and (words[i] == "," or words[i].strip(".") in own_forms):
         i += 1
     nxt = words[i] if i < len(words) else ""

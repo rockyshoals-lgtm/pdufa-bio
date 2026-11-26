@@ -113,9 +113,18 @@ def periods(rel):
     published after the latest announcement of a period and no later than its report day."""
     out = collections.defaultdict(lambda: {"schedules": [], "results": None, "postponed": [], "keys": set()})
     loose = []
+    ks = {r.get("period_key") or "" for r in rel}
+    # a company that prints its quarters as calendar quarters ('Third Quarter 2026') and never as fiscal ones uses
+    # 'fiscal year' for the calendar year ('Fourth Quarter and Fiscal Year 2025'): read those keys as calendar
+    calendar_co = any(re.fullmatch(r"20\d\dQ[1-3]", k) for k in ks) and \
+        not any(re.fullmatch(r"FY20\d\dQ[1-3]", k) for k in ks)
     for r in sorted(rel, key=lambda r: r.get("published_et") or ""):
         if not d_of(r.get("published_et")):
             continue
+        if calendar_co:
+            m = re.fullmatch(r"FY(20\d\d)(Q4)?", r.get("period_key") or "")
+            if m:
+                r = dict(r, period_key=f"{m.group(1)}Q4+FY" if m.group(2) else f"{m.group(1)}FY")
         kind, k0 = r.get("kind"), r.get("period_key")
         if kind == "postponed" and not k0:
             loose.append(r)

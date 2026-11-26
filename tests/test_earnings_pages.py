@@ -83,6 +83,17 @@ def rule_checks():
     if B.fmt_et("2026-10-28 16:05") != "October 28, 2026, 4:05 p.m. ET" or B.fmt_et("2026-10-28 00:30") != \
             "October 28, 2026, 12:30 a.m. ET":
         f.append("fmt_et misformats Eastern times")
+    # red team round 3: a calendar-quarter company's 'Fourth Quarter and Fiscal Year 2025' announcement and results
+    # are one calendar period with a day count; a company that prints fiscal quarters keeps its fiscal keys
+    P = B.periods([R("results", "2025-11-05 16:05", "2025Q3"),
+                   R("schedule", "2026-02-20 08:00", "FY2025Q4", report_date="2026-03-05"),
+                   R("results", "2026-03-05 16:05", "FY2025Q4")])
+    if "2025Q4" not in P or B.status_of(P["2025Q4"], today)[1] != "reported" or \
+            B.days_after_end("2025Q4", P["2025Q4"]["results"]) != 64:
+        f.append("a calendar company's 'fiscal year' Q4 is not one calendar period with a day count")
+    P = B.periods([R("results", "2025-11-05 16:05", "FY2026Q1"), R("results", "2026-03-05 16:05", "FY2025Q4")])
+    if "FY2025Q4" not in P:
+        f.append("a fiscal-quarter company's fiscal Q4 was turned into a calendar quarter")
     # red team round 2: a period whose releases name only the year is labelled as the year, not as a fourth quarter
     P = B.periods([R("results", "2026-04-23 08:00", "2025FY")])
     if B.label("2025Q4", P["2025Q4"]) != "Full year 2025":
@@ -119,8 +130,13 @@ def page_checks(plant=False):
         return [f"/earnings: no 'as of' day in the lede"], ""
     asof = dt.date(int(m.group(3)), MON[m.group(1)], int(m.group(2)))
     # in the site build, a page left over from an earlier run (its build step failed) would show passed days as ahead
-    if os.environ.get("GITHUB_ACTIONS") and (B.eastern_today() - asof).days > 1:
-        f.append(f"/earnings is stale: built as of {asof}, today is {B.eastern_today()} (Eastern)")
+    # (yesterday is allowed only before 6 a.m. Eastern, for a run that crossed midnight between build and guards)
+    if os.environ.get("GITHUB_ACTIONS"):
+        from zoneinfo import ZoneInfo
+        now = dt.datetime.now(ZoneInfo("America/New_York"))
+        lag = (now.date() - asof).days
+        if lag > 1 or (lag == 1 and now.hour >= 6):
+            f.append(f"/earnings is stale: built as of {asof}, today is {now.date()} (Eastern)")
     for tk, k, cells in re.findall(r'<tr[^>]*data-earn-ahead="([^"|]+)\|([^"]+)"[^>]*>(.*?)</tr>', doc, re.S):
         p = (T.get(tk) or {}).get("P", {}).get(k)
         if not p:

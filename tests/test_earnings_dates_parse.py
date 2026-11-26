@@ -147,10 +147,13 @@ CONSTRUCTED = [
      None),
     ("AMPH", "Amphastar Pharmaceuticals, Inc.", {"publishedDate": "2026-08-20 16:10:00", "title": "Amphastar Pharmaceuticals Reports Financial Results for the Twelve Months Ended June 30, 2026", "text": "Amphastar Pharmaceuticals, Inc. (NASDAQ: AMPH) reported results.", "url": "m4"},
      {"kind": "results", "period_key": "FY2026"}),
-    # "Fourth Quarter and Fiscal Year 2025" put out in March 2026 is the calendar year; in September 2025 it is not
-    (V, VN, {"publishedDate": "2026-03-05 16:05:00", "title": "Viking Therapeutics Reports Fourth Quarter and Fiscal "
-     "Year 2025 Financial Results", "text": "Viking Therapeutics, Inc. (NASDAQ: VKTX) reported.", "url": "f1"},
-     {"kind": "results", "period_key": "2025Q4+FY"}),
+    ("AMPH", "Amphastar Pharmaceuticals, Inc.", {"publishedDate": "2026-08-20 16:10:00", "title": "Amphastar Pharmaceuticals Reports Financial Results for the Three and Twelve Months Ended June 30, 2026", "text": "Amphastar Pharmaceuticals, Inc. (NASDAQ: AMPH) reported results.", "url": "m5"},
+     {"kind": "results", "period_key": "FY2026Q4"}),
+    # a name stored without its legal form still matches a headline that gives the whole name with one
+    ("ALVO", "Alvotech", {"publishedDate": "2026-08-20 07:00:00", "title": "Alvotech SA Reports First Half 2026 Results",
+     "text": "REYKJAVIK, Iceland.", "url": "a1"}, {"kind": "results", "period_key": "2026H1"}),
+    # "Fourth Quarter and Fiscal Year 2025" stays fiscal in the parser (the page builder reads it as calendar only for a
+    # company whose other releases print calendar quarters)
     (V, VN, {"publishedDate": "2025-09-05 16:05:00", "title": "Viking Therapeutics Reports Fourth Quarter and Fiscal "
      "Year 2025 Financial Results", "text": "Viking Therapeutics, Inc. (NASDAQ: VKTX) reported.", "url": "f2"},
      {"kind": "results", "period_key": "FY2025Q4"}),
