@@ -499,11 +499,14 @@ jobs:
       - name: "Watchers (Drugs@FDA, drug pages, FDA drugs feed, sponsor feeds): leads are held, not blocking"
         env:
           WATCH_LEADS_JSONL: ${{ github.workspace }}/_watch_leads.jsonl
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}   # watch_fmp_press.py (2026-11-26)
         run: |
           set +e
           rm -f "$WATCH_LEADS_JSONL"
           # audit 10-03 item 2.4: watch_edgar_8k.py polls each armed SEC-registrant sponsor's own 8-K/6-K
-          for w in "watch_fda_approvals.py" "watch_drug_approvals.py" "watch_fda_drugs_feed.py" "watch_sponsor_newswire.py --discover" "watch_edgar_8k.py"; do
+          # audit 11-26 (news speed): watch_fmp_press.py reads every armed sponsor's releases; news-watch.yml runs
+          # the fast ones every 15 minutes as well
+          for w in "watch_fda_approvals.py" "watch_drug_approvals.py" "watch_fda_drugs_feed.py" "watch_sponsor_newswire.py --discover" "watch_edgar_8k.py" "watch_fmp_press.py"; do
             echo "== $w"
             before=$(cat "$WATCH_LEADS_JSONL" 2>/dev/null | wc -l)
             python $w
