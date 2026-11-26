@@ -62,7 +62,7 @@ def main():
     lede = (f'{LB}<p style="max-width:74ch">The FDA does not run these meetings, and the study '
             f'behind this site finds no reliable pre-conference run-up: across {f["n"]:,} '
             f'presentations the median presenter moved {crf._fmt(o["runup_30d"]["median"])} in '
-            f'the 30 trading days before the meeting and {crf._fmt(o["post_5d"]["median"])} in '
+            f'the 30 trading days before the date we anchor each one on and {crf._fmt(o["post_5d"]["median"])} in '
             f'the 5 days after. Every date below comes from the organiser; every presenter '
             f'below links the filing or release that named the meeting. '
             f'<a class="lit" href="/research/conference-runup">The study</a>.</p>{LE}')
