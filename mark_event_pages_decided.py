@@ -73,6 +73,7 @@ def toks(s):
 # archive for any slug page the dataset cannot resolve. Archive decisions carry no goal date,
 # so pages resolved this way drop their estimated target date instead of comparing against it.
 ARCHIVE_EARLY_WINDOW = 180      # same bound as mark_calendar_decided.EARLY_WINDOW, same reason
+_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
 def load_archive():
@@ -140,13 +141,24 @@ def archive_candidates(archive, tk, drug_part, doc0):
     gm = re.search(r'<div class="kv"><span>FDA PDUFA target date</span><b>(\d{4}-\d{2}-\d{2})</b>',
                    doc0)
     goal = dt.date.fromisoformat(gm.group(1)) if gm else None
+    goal_lo = goal
+    # A MONTH-ONLY TARGET IS STILL A TARGET (2026-11-26). /pdufa/RHHBY-gazyva states "Dec 2026" for the pending
+    # lupus (SLE) application. With no day to parse, the window below was skipped, and once /decisions named the
+    # Oct 20, 2025 Gazyva lupus nephritis approval (it read "price-only" before), that 14-month-old approval was
+    # stamped on the page and the rebuild's guards failed. A "Mon YYYY" target bounds the window by its month.
+    mm = None if gm else re.search(r'<div class="kv"><span>FDA PDUFA target date</span><b>([A-Z][a-z]{2}) (\d{4})</b>',
+                                   doc0)
+    if mm and mm.group(1) in _MONTHS:
+        y, mo = int(mm.group(2)), _MONTHS.index(mm.group(1)) + 1
+        goal_lo = dt.date(y, mo, 1)
+        goal = (dt.date(y + (mo == 12), mo % 12 + 1, 1) - dt.timedelta(days=1))
     today = dt.date.today()
     out = []
     for date, outcome, drug in archive.get(tk, []):
         dd = dt.date.fromisoformat(date)
         if dd > today or outcome == "crl":
             continue
-        if goal is not None and not (-ARCHIVE_EARLY_WINDOW <= (dd - goal).days <= 14):
+        if goal is not None and not ((dd - goal_lo).days >= -ARCHIVE_EARLY_WINDOW and (dd - goal).days <= 14):
             continue
         if goal is not None and _owned_elsewhere(tk, date, goal):
             continue
