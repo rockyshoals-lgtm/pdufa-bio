@@ -9808,46 +9808,6 @@ export default [
   "dm": "2026-11"
  },
  {
-  "id": "readout_arvn_2027-11-15",
-  "t": "ARVN",
-  "company": "Arvinas, Inc.",
-  "d": "2026-11-15",
-  "dp": "month",
-  "name": "ARV-471",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT07023731",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT07023731",
-    "status": "active_not_recruiting",
-    "pcd": "2026-11-30",
-    "pcd_type": "estimated",
-    "updated": "2026-08-18",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "date_history": [
-    {
-     "date": "2027-11-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-11-15",
-     "changed": "2026-07-11",
-     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "source_url": "https://clinicaltrials.gov/study/NCT07023731"
-  },
-  "dm": "2026-11"
- },
- {
   "id": "readout_atos_2026-11-15",
   "t": "ATOS",
   "company": "Atossa Therapeutics, Inc.",
@@ -9908,35 +9868,6 @@ export default [
   "_sponsor_note": "Trial lead sponsor is Memorial Sloan Kettering Cancer Center"
  },
  {
-  "id": "readout_cgem_2026-11-15",
-  "t": "CGEM",
-  "company": "Cullinan Therapeutics, Inc.",
-  "d": "2026-11-15",
-  "dp": "month",
-  "name": "CLN-081",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05879744",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05879744",
-    "status": "active_not_recruiting",
-    "pcd": "2026-11",
-    "pcd_type": "estimated",
-    "updated": "2024-04-30",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05879744"
-  },
-  "dm": "2026-11"
- },
- {
   "id": "readout_crdf_2026-11-15",
   "t": "CRDF",
   "company": "Cardiff Oncology, Inc.",
@@ -9975,56 +9906,6 @@ export default [
    ]
   },
   "dm": "2027-04"
- },
- {
-  "id": "readout_eras_2026-11-15",
-  "t": "ERAS",
-  "company": "Erasca, Inc.",
-  "d": "2026-11-15",
-  "dp": "month",
-  "name": "Naporafenib",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04866134",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04866134",
-    "status": "active_not_recruiting",
-    "pcd": "2026-11-01",
-    "pcd_type": "estimated",
-    "updated": "2026-06-17",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04866134"
-  },
-  "dm": "2026-11"
- },
- {
-  "id": "readout_gild_2026-11-15",
-  "t": "GILD",
-  "company": "Gilead Sciences, Inc.",
-  "d": "2026-11-15",
-  "dp": "month",
-  "name": "Sacituzumab Govitecan",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "/pdufa/GILD",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
-  },
-  "dm": "2026-11"
  },
  {
   "id": "readout_imux_2026-11-15",
@@ -10092,96 +9973,6 @@ export default [
   "dcd": "2026-11-09"
  },
  {
-  "id": "readout_onc_2026-11-15",
-  "t": "ONC",
-  "company": "BeOne Medicines Ltd.",
-  "d": "2026-11-15",
-  "dp": "month",
-  "name": "BGB-11417",
-  "type": "Readout",
-  "ta": "Hematology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "/ticker/ONC",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
-  },
-  "dm": "2026-11"
- },
- {
-  "id": "readout_phar_2026-11-15",
-  "t": "PHAR",
-  "company": "Pharming Group N.V.",
-  "d": "2026-11-15",
-  "dp": "month",
-  "name": "Leniolisib",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "/pdufa/PHAR",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
-  },
-  "dm": "2026-11"
- },
- {
-  "id": "readout_sldb_2026-10-15",
-  "t": "SLDB",
-  "company": "Solid Biosciences Inc.",
-  "d": "2026-11-15",
-  "dp": "month",
-  "name": "SGT-003",
-  "type": "Readout",
-  "ta": "Rare disease",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT03368742",
-  "ua": "2026-10-16T01:18:09Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT03368742",
-    "status": "completed",
-    "pcd": "2026-11-03",
-    "pcd_type": "actual",
-    "updated": "2026-11-16",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT03368742",
-   "date_history": [
-    {
-     "date": "2026-10-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-11-15",
-     "changed": "2026-10-15",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT03368742 is now 2026-11-30 (estimated; registry status active_not_recruiting, record updated 2026-10-13); the row's window moved from 2026-10 to 2026-11 on 2026-10-15. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "COMPLETED",
-    "primary_completion": "2026-11-03",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-25",
-    "source_url": "https://clinicaltrials.gov/study/NCT03368742"
-   }
-  },
-  "dm": "2026-11"
- },
- {
   "id": "readout_sny_2026-11-15",
   "t": "SNY",
   "company": "Sanofi",
@@ -10208,27 +9999,6 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "source_url": "https://clinicaltrials.gov/study/NCT07216079",
    "ta_basis": "ClinicalTrials.gov conditions: Immune Thrombocytopenia"
-  },
-  "dm": "2026-11"
- },
- {
-  "id": "readout_tlx_2026-11-15",
-  "t": "TLX",
-  "company": "Telix Pharmaceuticals Limited",
-  "d": "2026-11-15",
-  "dp": "month",
-  "name": "177Lu-TLX591",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "/ticker/TLX",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
   },
   "dm": "2026-11"
  },
@@ -11109,7 +10879,7 @@ export default [
   "company": "BioCardia, Inc.",
   "d": "2026-12-15",
   "dp": "month",
-  "name": "Autologous cell therapy",
+  "name": "CardiALLO (allogeneic mesenchymal stem cells)",
   "type": "Readout",
   "ta": "Cardiovascular",
   "cap": "",
@@ -11566,7 +11336,7 @@ export default [
   "company": "Cartesian Therapeutics, Inc.",
   "d": "2026-12-15",
   "dp": "month",
-  "name": "Decartes-08",
+  "name": "Descartes-08",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -12411,7 +12181,7 @@ export default [
  {
   "id": "readout_help_2026-12-31",
   "t": "HELP",
-  "company": "Cybin Inc.",
+  "company": "Helus Pharma Inc.",
   "d": "2026-11-16",
   "dp": "day",
   "name": "HLP003 readout",
@@ -31267,6 +31037,272 @@ export default [
     }
    ],
    "ta_basis": "Company release: indication stated as Systemic sclerosis"
+  }
+ },
+ {
+  "id": "readout_zntl_2027-06-30",
+  "t": "ZNTL",
+  "company": "Zentalis Pharmaceuticals, Inc.",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "azenosertib DENALI Phase 2 topline readout",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.globenewswire.com/news-release/2026/11/09/3398958/0/en/zentalis-pharmaceuticals-reports-third-quarter-2026-financial-results-and-business-updates.html",
+  "ua": "2026-11-26T00:58:21Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Cyclin E1-positive platinum-resistant ovarian cancer",
+   "market_cap_usd": null,
+   "program": "azenosertib",
+   "trial": "DENALI Phase 2",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "first half of 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-09",
+   "guidance_text": "Zentalis expects to provide a topline readout in the first half of 2027",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/09/3398958/0/en/zentalis-pharmaceuticals-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "source": "company guidance (company release)",
+   "readout_described": "topline readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Zentalis GNW 2026-11-09 Q3 release; quote verbatim; 1H 2027 -> half.",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-09)"
+    }
+   ],
+   "ta_basis": "Company release: indication stated as Cyclin E1-positive platinum-resistant ovarian cancer"
+  }
+ },
+ {
+  "id": "readout_sabs_2027-12-31",
+  "t": "SABS",
+  "company": "SAB Biotherapeutics, Inc.",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "SAB-142 Phase 2b SAFEGUARD topline data",
+  "type": "Readout",
+  "ta": "Endocrinology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.globenewswire.com/news-release/2026/11/05/3396298/0/en/sab-bio-reports-q3-2026-financial-results-and-provides-business-highlights.html",
+  "ua": "2026-11-26T00:58:21Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "New onset Stage 3 type 1 diabetes",
+   "market_cap_usd": null,
+   "program": "SAB-142",
+   "trial": "Phase 2b SAFEGUARD",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "2H 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-05",
+   "guidance_text": "SAFEGUARD is on track for full enrollment in Q4 2026 with topline data expected in 2H 2027.",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/05/3396298/0/en/sab-bio-reports-q3-2026-financial-results-and-provides-business-highlights.html",
+   "source": "company guidance (company release)",
+   "readout_described": "topline data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. SAB BIO GNW 2026-11-05 Q3 release; quote verbatim; 2H 2027 -> half.",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-05)"
+    }
+   ],
+   "ta_basis": "Company release: indication stated as New onset Stage 3 type 1 diabetes"
+  }
+ },
+ {
+  "id": "readout_anro_2027-06-30",
+  "t": "ANRO",
+  "company": "Alto Neuroscience, Inc.",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "ALTO-300 Phase 2b topline data",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.businesswire.com/news/home/20261110590023/en/Alto-Neuroscience-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/",
+  "ua": "2026-11-26T00:58:21Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Major depressive disorder",
+   "market_cap_usd": null,
+   "program": "ALTO-300",
+   "trial": "Phase 2b",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "1H 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-10",
+   "guidance_text": "Topline data are expected in 1H 2027 for ALTO-300 and mid-2027 for ALTO-100.",
+   "source_url": "https://www.businesswire.com/news/home/20261110590023/en/Alto-Neuroscience-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/",
+   "source": "company guidance (company release)",
+   "readout_described": "topline data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Alto BW Q3 release (no printed date; wire slug 2026-11-10); quote verbatim; 1H 2027 -> half.",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-10)"
+    }
+   ],
+   "ta_basis": "Company release: indication stated as Major depressive disorder"
+  }
+ },
+ {
+  "id": "readout_anro_2027-12-31",
+  "t": "ANRO",
+  "company": "Alto Neuroscience, Inc.",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "ALTO-100 Phase 2b topline data",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.businesswire.com/news/home/20261110590023/en/Alto-Neuroscience-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/",
+  "ua": "2026-11-26T00:58:21Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Bipolar depression",
+   "market_cap_usd": null,
+   "program": "ALTO-100",
+   "trial": "Phase 2b",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "mid-2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-10",
+   "guidance_text": "Topline data are expected in 1H 2027 for ALTO-300 and mid-2027 for ALTO-100.",
+   "source_url": "https://www.businesswire.com/news/home/20261110590023/en/Alto-Neuroscience-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/",
+   "source": "company guidance (company release)",
+   "readout_described": "topline data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Alto BW Q3 release (no printed date; wire slug 2026-11-10); quote verbatim; mid-2027 kept at year precision, as for every other mid-year row.",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-10)"
+    }
+   ],
+   "ta_basis": "Company release: indication stated as Bipolar depression"
+  }
+ },
+ {
+  "id": "readout_anro_2027-12-31-alto207",
+  "t": "ANRO",
+  "company": "Alto Neuroscience, Inc.",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "ALTO-207 Phase 2b PACE-1 topline data",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.businesswire.com/news/home/20261110590023/en/Alto-Neuroscience-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/",
+  "ua": "2026-11-26T00:58:21Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Treatment-resistant depression (adjunctive)",
+   "market_cap_usd": null,
+   "program": "ALTO-207",
+   "trial": "Phase 2b PACE-1",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "2H 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-10",
+   "guidance_text": "Topline data are expected in 2H 2027.",
+   "source_url": "https://www.businesswire.com/news/home/20261110590023/en/Alto-Neuroscience-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/",
+   "source": "company guidance (company release)",
+   "readout_described": "topline data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Alto BW Q3 release (no printed date; wire slug 2026-11-10); quote verbatim under the PACE-1 heading; 2H 2027 -> half.",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-10)"
+    }
+   ],
+   "ta_basis": "Company release: indication stated as Treatment-resistant depression (adjunctive)"
+  }
+ },
+ {
+  "id": "readout_ngne_2027-12-31",
+  "t": "NGNE",
+  "company": "Neurogene Inc.",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "NGN-401 Embolden registrational trial topline data",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.businesswire.com/news/home/20261109901272/en/Neurogene-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Updates/",
+  "ua": "2026-11-26T00:58:21Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Rett syndrome",
+   "market_cap_usd": null,
+   "program": "NGN-401",
+   "trial": "Embolden registrational trial",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "second half of 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-09",
+   "guidance_text": "Anticipate reporting topline data from the Embolden™ registrational trial in the second half of 2027",
+   "source_url": "https://www.businesswire.com/news/home/20261109901272/en/Neurogene-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Updates/",
+   "source": "company guidance (company release)",
+   "readout_described": "topline data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Neurogene BW Q3 release (no printed date; wire slug 2026-11-09); quote verbatim; 2H 2027 -> half.",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-09)"
+    }
+   ],
+   "ta_basis": "Company release: indication stated as Rett syndrome"
+  }
+ },
+ {
+  "id": "readout_help_2027-12-31",
+  "t": "HELP",
+  "company": "Helus Pharma Inc.",
+  "d": "2027-12-31",
+  "dp": "quarter",
+  "name": "HLP003 (deuterated psilocin) Phase 3 EMBRACE topline results",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.globenewswire.com/news-release/2026/11/16/3403358/0/en/helus-pharma-announces-positive-topline-results-from-phase-3-approach-study-evaluating-hlp003-as-adjunctive-treatment-in-major-depressive-disorder.html",
+  "ua": "2026-11-26T00:58:21Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Major depressive disorder",
+   "market_cap_usd": null,
+   "program": "HLP003 (deuterated psilocin)",
+   "trial": "Phase 3 EMBRACE",
+   "guided_precision": "quarter",
+   "guided_window": "2027-Q4",
+   "guided_label": "4Q 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-16",
+   "guidance_text": "The Company expects to report topline results from the EMBRACE trial in 4Q 2027.",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/16/3403358/0/en/helus-pharma-announces-positive-topline-results-from-phase-3-approach-study-evaluating-hlp003-as-adjunctive-treatment-in-major-depressive-disorder.html",
+   "source": "company guidance (company release)",
+   "readout_described": "topline results",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Helus GNW 2026-11-16 APPROACH topline release; EMBRACE is the second pivotal study of the PARADIGM Phase 3 program; quote verbatim; 4Q 2027 -> quarter.",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-16)"
+    }
+   ],
+   "ta_basis": "Company release: indication stated as Major depressive disorder"
   }
  }
 ];
