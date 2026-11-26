@@ -223,6 +223,11 @@ def page_line(doc, day=None, slug=None):
         # 2026-11-22 (CRL red team): a page verified against the FDA's own CRL already shows the FDA's day from the
         # letter card; the same letter is not the company's announcement, so it is not listed again as one.
         m = re.match(r"Verified \d{4}-\d{2}-\d{2}: (.+)$", val)
+        # 2026-11-26 (held-page red team): an FDA document (a letter, a press announcement, Drugs@FDA, an FDA list of
+        # approvals) is the FDA's record, not the company's announcement; TEVA-2025-08-28 read "Announcement August 28,
+        # 2025 (FDA list of 2025 first generic approvals)" when Teva made the announcement.
+        if m and re.match(r"(?:Drugs@)?FDA\b", re.sub(r"<[^>]+>", "", m.group(1))):
+            m = None
         if m:
             src = esc(_named(m.group(1), None))
     if ann and re.match(r"\d{4}-\d{2}-\d{2}", ann):
@@ -251,14 +256,18 @@ def census_goal(slug):
         p = os.path.join(HERE, "_decision_goal_dates.json")
         _GOALS = json.load(io.open(p, encoding="utf-8")) if os.path.exists(p) else {}
     g = _GOALS.get(slug or "")
-    if not (g and g.get("goal") and g.get("source_url") and g.get("doc_date")):
+    st = (g or {}).get("source_type") or "sponsor"
+    fda_doc = st in ("fda_review", "fda_letter")
+    if not (g and g.get("goal") and g.get("source_url") and (g.get("doc_date") or fda_doc)):
         return "Goal date: none on record"
     u = g["source_url"]
-    who = "SEC filing" if "sec.gov/" in u else "sponsor document"
+    # 2026-11-26: a goal read off the FDA's own review or letter is labelled as the FDA's, never as the sponsor's
+    who = ("FDA review" if st == "fda_review" else "FDA letter") if fda_doc else (
+        "SEC filing" if "sec.gov/" in u else "sponsor document")
     s = f"Goal date {pretty(g['goal'])}"
     if g.get("extended") and g.get("goal_original"):
         s += f", extended from {pretty(g['goal_original'])}"
-    label = who + ", " + pretty(g["doc_date"])
+    label = who + (", " + pretty(g["doc_date"]) if g.get("doc_date") else "")
     return s + f" ({link(label, u)})"
 
 

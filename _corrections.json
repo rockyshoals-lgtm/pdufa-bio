@@ -420,6 +420,601 @@
    "was": "A decision page for ANTE dated 2025-04-23 recording Akeso's penpulimab approval under ANTE.",
    "now": "The FDA approved penpulimab-kcqx on April 23, 2025 under BLA 761258, whose applicant is Akeso Biopharma, not ANTE. ANTE had no FDA action that day. Akeso has no ticker on pdufa.bio. The page is retired and redirects to /decisions/approvals.",
    "source": "Drugs@FDA, BLA 761258 (applicant Akeso Biopharma, approved 2025-04-23) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761258"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/AAPG-2025-12-09",
+   "was": "A held decision page for AAPG dated 2025-12-09 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Olverembatinib within 14 days of December 9, 2025. That week the company presented ASH 2025 data and said the drug is not approved in the US. The page is retired and redirects to /ticker/AAPG.",
+   "source": "https://www.sec.gov/Archives/edgar/data/2023311/000121390025119453/ea026888801ex99-1_ascentage.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/AURA-2025-03-24",
+   "was": "A held decision page for AURA dated 2025-03-24 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on belzupacap sarotalocan (AU-011) within 14 days of March 24, 2025. That day the company reported fourth-quarter 2024 results. The page is retired and redirects to /ticker/AURA.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1501796/000095017025043809/aura-ex99_1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CHRS-2025-01-22",
+   "was": "A held decision page for CHRS dated 2025-01-22 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on casdozokitug within 14 days of January 22, 2025. No company news for that day was found; trial data were presented at a medical meeting two days later. The page is retired and redirects to /ticker/CHRS.",
+   "source": "https://investors.coherus.com/node/13316/pdf"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CNTA-2025-03-24",
+   "was": "A held decision page for CNTA dated 2025-03-24 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on SerpinPC within 14 days of March 24, 2025. That day the company reported fourth-quarter 2024 results, which said SerpinPC development had ended. The page is retired and redirects to /ticker/CNTA.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1847903/000184790325000049/cntapr-q42024.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/GMAB-2025-06-15",
+   "was": "A held decision page for GMAB dated 2025-06-15 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on epcoritamab within 14 days of June 15, 2025. That weekend the company presented early trial data at the EHA 2025 congress. The page is retired and redirects to /ticker/GMAB.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1434265/000143426525000063/gmab-20250630.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/INBX-2025-01-21",
+   "was": "A held decision page for INBX dated 2025-01-21 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on ozekibart (INBRX-109) within 14 days of January 21, 2025. That day the company reported early trial data from a medical meeting. The page is retired and redirects to /ticker/INBX.",
+   "source": "https://www.sec.gov/Archives/edgar/data/2007919/000200791925000007/exhibit991-pressreleasecol.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/MRK-2025-12-17",
+   "was": "A held decision page for MRK dated 2025-12-17 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Padcev plus Keytruda within 14 days of December 17, 2025. That day Astellas and Pfizer reported topline Phase 3 trial results. The page is retired and redirects to /ticker/MRK.",
+   "source": "https://newsroom.astellas.com/2025-12-17-PADCEVTM-Plus-KeytrudaTM-Significantly-Improves-Survival-for-Patients-with-Muscle-Invasive-Bladder-Cancer-Regardless-of-Cisplatin-Eligibility"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/PFE-2025-12-17",
+   "was": "A held decision page for PFE dated 2025-12-17 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Padcev plus Keytruda within 14 days of December 17, 2025. That day Astellas and Pfizer reported topline Phase 3 trial results. The page is retired and redirects to /ticker/PFE.",
+   "source": "https://newsroom.astellas.com/2025-12-17-PADCEVTM-Plus-KeytrudaTM-Significantly-Improves-Survival-for-Patients-with-Muscle-Invasive-Bladder-Cancer-Regardless-of-Cisplatin-Eligibility"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/TARA-2025-11-19",
+   "was": "A held decision page for TARA dated 2025-11-19 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on TARA-002 within 14 days of November 19, 2025. That day the company reported interim Phase 2 trial results. The page is retired and redirects to /ticker/TARA.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1359931/000121390025112383/ea026638401ex99-2_protara.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ALXO-2025-04-25",
+   "was": "A held decision page for ALXO dated 2025-04-25 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on evorpacept (ALX148) within 14 days of April 25, 2025. That week final Phase 1 results were presented at a medical meeting. The page is retired and redirects to /ticker/ALXO.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1810182/000095017025066440/alxo-ex99_1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/BMY-2025-05-23",
+   "was": "A held decision page for BMY dated 2025-05-23 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on iberdomide within 14 days of May 23, 2025. Iberdomide was still in trials, and no company news for that day was found. The page is retired and redirects to /ticker/BMY.",
+   "source": "https://www.sec.gov/Archives/edgar/data/14272/000001427225000129/q22025earningspresentati.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CING-2025-05-14",
+   "was": "A held decision page for CING dated 2025-05-14 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on CTx-1301 within 14 days of May 14, 2025. No company news about CTx-1301 for that day was found. The page is retired and redirects to /ticker/CING.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1862150/000164117225009989/form8-k.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/COCP-2025-12-18",
+   "was": "A held decision page for COCP dated 2025-12-18 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on CDI-988 within 14 days of December 18, 2025. That day the company reported a university ethics board approval for an early trial. The page is retired and redirects to /ticker/COCP.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1412486/000149315225028296/ex99-1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/GLSI-2025-03-17",
+   "was": "A held decision page for GLSI dated 2025-03-17 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on GP2 (GLSI-100) within 14 days of March 17, 2025. That day the company reported early safety data from its Phase 3 trial. The page is retired and redirects to /ticker/GLSI.",
+   "source": "https://d1io3yog0oux5.cloudfront.net/_421fb86698860e07db375b02ab5464e7/greenwichlifesciences/news/2025-03-17_Greenwich_LifeSciences_Provides_Update_on_Open_94.pdf"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/IBRX-2025-11-05",
+   "was": "A held decision page for IBRX dated 2025-11-05 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on t-haNK with ANKTIVA and rituximab within 14 days of November 5, 2025. That day the company filed third-quarter results. The page is retired and redirects to /ticker/IBRX.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000138/ibrx-2025114x8kexhibit991.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/JSPR-2025-06-16",
+   "was": "A held decision page for JSPR dated 2025-06-16 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Subcutaneous briquilimab within 14 days of June 16, 2025. That day the company filed early trial data presented at a medical meeting. The page is retired and redirects to /ticker/JSPR.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1788028/000121390025054465/ea024579301ex99-1_jasper.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/MRKR-2025-08-26",
+   "was": "A held decision page for MRKR dated 2025-08-26 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Neldaleucel (MT-601) within 14 days of August 26, 2025. That day the company reported Phase 1 trial data. The page is retired and redirects to /ticker/MRKR.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1094038/000110465925082783/tm2524197d1_ex99-1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ONCY-2025-10-28",
+   "was": "A held decision page for ONCY dated 2025-10-28 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on pelareorep within 14 days of October 28, 2025. That day the company reported trial data in a different cancer. The page is retired and redirects to /ticker/ONCY.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1129928/000112992825000084/oncyscac.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/PRTC-2025-12-05",
+   "was": "A held decision page for PRTC dated 2025-12-05 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on LYT-200 within 14 days of December 5, 2025. That day a PureTech company reported early Phase 1b trial data. The page is retired and redirects to /ticker/PRTC.",
+   "source": "https://www.businesswire.com/news/home/20251205523069/en"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ALXO-2025-12-08",
+   "was": "A held decision page for ALXO dated 2025-12-08 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on evorpacept (ALX148) within 14 days of December 8, 2025. That week data from an investigator-led trial were presented at ASH 2025. The page is retired and redirects to /ticker/ALXO.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1810182/000119312526098454/alxo-20251231.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/AVBP-2025-06-23",
+   "was": "A held decision page for AVBP dated 2025-06-23 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on firmonertinib within 14 days of June 23, 2025. That day the company reported interim Phase 1b trial data. The page is retired and redirects to /ticker/AVBP.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1868279/000110465925061375/tm2518615d1_ex99-1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CGEM-2025-10-13",
+   "was": "A held decision page for CGEM dated 2025-10-13 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Zipalertinib within 14 days of October 13, 2025. The day before, the companies released early trial data ahead of a medical meeting. The page is retired and redirects to /ticker/CGEM.",
+   "source": "https://investors.cullinantherapeutics.com/news-releases/news-release-details/taiho-oncology-and-cullinan-therapeutics-present-data-0"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CMND-2025-07-03",
+   "was": "A held decision page for CMND dated 2025-07-03 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on CMND-100 within 14 days of July 3, 2025. That day the company reported a hospital ethics board approval to enroll patients in its trial. The page is retired and redirects to /ticker/CMND.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1892500/000121390025061359/ea024814202ex99-1_clearmind.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/GLSI-2026-01-22",
+   "was": "A held decision page for GLSI dated 2026-01-22 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on GP2 (GLSI-100) within 14 days of January 22, 2026. That day the company said the FDA cleared a manufacturing lot for use in its ongoing trial, which is not a decision on an application. The page is retired and redirects to /ticker/GLSI.",
+   "source": "https://d1io3yog0oux5.cloudfront.net/_a340503ceacf425c9f3b87a7929307ac/greenwichlifesciences/news/2026-01-22_Greenwich_LifeSciences_Announces_FDA_Approves_Use__112.pdf"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/INCY-2025-06-15",
+   "was": "A held decision page for INCY dated 2025-06-15 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on INCA033989 within 14 days of June 15, 2025. That day the company presented first clinical data at the EHA 2025 congress. The page is retired and redirects to /ticker/INCY.",
+   "source": "https://www.businesswire.com/news/home/20250615293968/en"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/LYEL-2025-12-08",
+   "was": "A held decision page for LYEL dated 2025-12-08 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on LYL314 (IMPT-314) within 14 days of December 8, 2025. That week the company presented trial data at ASH 2025. The page is retired and redirects to /ticker/LYEL.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1806952/000119312525310469/d35459d8k.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/PBM-2025-12-19",
+   "was": "A held decision page for PBM dated 2025-12-19 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Psilocybin (NPX5) within 14 days of December 19, 2025. That day the company reported an ethics committee approval for a Phase 2b trial. The page is retired and redirects to /ticker/PBM.",
+   "source": "https://www.globenewswire.com/news-release/2025/12/19/3208411/0/en/Psyence-BioMed-Announces-Approval-for-Use-of-PsyLabs-Psilocybin-Product-in-Phase-IIb-Clinical-Trial.html"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/REGN-2025-05-23",
+   "was": "A held decision page for REGN dated 2025-05-23 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on linvoseltamab within 14 days of May 23, 2025. That week the company released early combination-trial data. The page is retired and redirects to /ticker/REGN.",
+   "source": "https://investor.regeneron.com/news-releases/news-release-details/linvoseltamab-combination-carfilzomib-or-bortezomib-shows"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/APTO-2025-02-20",
+   "was": "A held decision page for APTO dated 2025-02-20 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on tuspetinib within 14 days of February 20, 2025. That day the company reported a trial safety committee's approval to raise the dose. The page is retired and redirects to /ticker/APTO.",
+   "source": "https://d1io3yog0oux5.cloudfront.net/_7e08345907e354ee1fdc923f9471f37f/aptose/news/2025-02-20_Aptose_Announces_Positive_Clinical_Safety_Review_311.pdf"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CLDX-2025-11-06",
+   "was": "A held decision page for CLDX dated 2025-11-06 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Barzolvolimab within 14 days of November 6, 2025. No company news for that day was found; four days later its quarterly results reported Phase 2 trial data. The page is retired and redirects to /ticker/CLDX.",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000744218/000117184325005181/exh_991.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CUE-2025-07-16",
+   "was": "A held decision page for CUE dated 2025-07-16 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on CUE-101 within 14 days of July 16, 2025. That day the company reported one patient's response in an early trial. The page is retired and redirects to /ticker/CUE.",
+   "source": "https://cuebiopharma.gcs-web.com/node/10111"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/GMAB-2025-06-02",
+   "was": "A held decision page for GMAB dated 2025-06-02 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Rinatabart sesutecan (Rina-S) within 14 days of June 2, 2025. That day the company reported early trial data from a medical meeting. The page is retired and redirects to /ticker/GMAB.",
+   "source": "https://www.businesswire.com/news/home/20250602832626/en"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/INTS-2025-06-30",
+   "was": "A held decision page for INTS dated 2025-06-30 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on INT230-6 within 14 days of June 30, 2025. That day the company reported animal study data. The page is retired and redirects to /ticker/INTS.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1567264/000156726425000078/ints20250807ex99120250630p.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/KZIA-2025-11-18",
+   "was": "A held decision page for KZIA dated 2025-11-18 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Paxalisib within 14 days of November 18, 2025. That day the company reported one patient's case and a business update. The page is retired and redirects to /ticker/KZIA.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1075880/000119312525305250/d15328dex991.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/PLRX-2025-12-04",
+   "was": "A held decision page for PLRX dated 2025-12-04 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on PLN-101095 within 14 days of December 4, 2025. The drug was in a Phase 1 trial, and no company news for that day was found. The page is retired and redirects to /ticker/PLRX.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1746473/000174647325000179/plrx-20251202.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/TARA-2025-04-26",
+   "was": "A held decision page for TARA dated 2025-04-26 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on TARA-002 within 14 days of April 26, 2025. That day the company reported interim Phase 2 trial results at a medical meeting. The page is retired and redirects to /ticker/TARA.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1359931/000121390025035785/ea023968901ex99-1_protara.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ALPMY-2025-12-17",
+   "was": "A held decision page for ALPMY dated 2025-12-17 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Padcev plus Keytruda within 14 days of December 17, 2025. That day Astellas and Pfizer reported topline Phase 3 trial results. The page is retired and redirects to /ticker/ALPMY.",
+   "source": "https://newsroom.astellas.com/2025-12-17-PADCEVTM-Plus-KeytrudaTM-Significantly-Improves-Survival-for-Patients-with-Muscle-Invasive-Bladder-Cancer-Regardless-of-Cisplatin-Eligibility"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/BCTX-2025-05-23",
+   "was": "A held decision page for BCTX dated 2025-05-23 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Bria-IMT within 14 days of May 23, 2025. That day the company announced its abstracts for a medical meeting. The page is retired and redirects to /ticker/BCTX.",
+   "source": "https://briacell.com/briacell-abstracts-showcase-positive-survival-and-clinical-benefit-data-at-asco-2025/"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CLLS-2025-02-14",
+   "was": "A held decision page for CLLS dated 2025-02-14 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on ALLO-501A within 14 days of February 14, 2025. The program was in a Phase 1 trial, and no company news for that day was found. The page is retired and redirects to /ticker/CLLS.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1737287/000119312525035162/d926019d8k.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/GLPG-2025-12-07",
+   "was": "A held decision page for GLPG dated 2025-12-07 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on GLPG5101 within 14 days of December 7, 2025. That week the company presented Phase 2 trial data at ASH 2025. The page is retired and redirects to /ticker/GLPG.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1421876/000117184325007786/exh_991.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/IBRX-2025-08-13",
+   "was": "A held decision page for IBRX dated 2025-08-13 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on CD19 CAR-NK cell therapy within 14 days of August 13, 2025. That day the company reported early responses in a Phase 1 trial. The page is retired and redirects to /ticker/IBRX.",
+   "source": "https://www.businesswire.com/news/home/20250813610481/en"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/LTRN-2025-06-16",
+   "was": "A held decision page for LTRN dated 2025-06-16 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on LP-300 within 14 days of June 16, 2025. That day the company reported one patient's case from a Phase 2 trial. The page is retired and redirects to /ticker/LTRN.",
+   "source": "https://ir.lanternpharma.com/news-1/news/news-details/2025/Lung-Cancer-Patient-in-Lantern-Pharmas-Harmonic-Trial-Shows-Durable-Complete-Response-in-Target-Cancer-Lesions-with-Survival-Continuing-for-Nearly-Two-Years/default.aspx"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ONC-2025-12-08",
+   "was": "A held decision page for ONC dated 2025-12-08 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Sonrotoclax within 14 days of December 8, 2025. That week the company presented trial data at ASH 2025. The page is retired and redirects to /ticker/ONC.",
+   "source": "https://ir.beonemedicines.com/news/sonrotoclax-data-at-ash-2025-confirm-foundational-potential-across-b-cell-malignancies/4c69168c-15f1-4af8-98f3-38d14b8d32cd"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/PRTA-2025-08-27",
+   "was": "A held decision page for PRTA dated 2025-08-27 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on PRX012 within 14 days of August 27, 2025. That day the company reported Phase 1 results. The page is retired and redirects to /ticker/PRTA.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1559053/000119312525189765/d38911dex991.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ABBV-2025-06-30",
+   "was": "A held decision page for ABBV dated 2025-06-30 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on SKINVIVE by JUVÉDERM within 14 days of June 30, 2025. That day the FDA accepted a device application for review, which is not a decision on it. The page is retired and redirects to /ticker/ABBV.",
+   "source": "https://news.abbvie.com/2025-06-30-U-S-Food-and-Drug-Administration-Accepts-for-Review-Allergan-Aesthetics-Premarket-Approval-Application-for-SKINVIVE-by-JUVEDERM-R-for-the-Improvement-of-Neck-Appearance"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/AUTL-2025-12-08",
+   "was": "A held decision page for AUTL dated 2025-12-08 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Obe-cel within 14 days of December 8, 2025. That week the company presented early trial data at ASH 2025. The page is retired and redirects to /ticker/AUTL.",
+   "source": "https://autolus.gcs-web.com/news-releases/news-release-details/autolus-therapeutics-present-clinical-data-updates-american-2"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CASI-2025-12-07",
+   "was": "A held decision page for CASI dated 2025-12-07 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on CID-103 within 14 days of December 7, 2025. That day the company presented Phase 1 trial data at ASH 2025. The page is retired and redirects to /ticker/CASI.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1962738/000110465925112605/tm2530997d1_ex99-1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CLLS-2025-12-07",
+   "was": "A held decision page for CLLS dated 2025-12-07 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on UCART20x22 within 14 days of December 7, 2025. That day an ASH 2025 poster described a Phase 1 trial still under way. The page is retired and redirects to /ticker/CLLS.",
+   "source": "https://www.cellectis.com/en/agenda/content/american-society-of-hematology-ash-2025/"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/EQ-2025-04-24",
+   "was": "A held decision page for EQ dated 2025-04-24 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Itolizumab within 14 days of April 24, 2025. That day the company reported FDA meeting feedback that declined a Breakthrough Therapy designation, which is not a decision on an application. The page is retired and redirects to /ticker/EQ.",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001746466/000119312525092435/d787196dex991.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/JANX-2025-12-01",
+   "was": "A held decision page for JANX dated 2025-12-01 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on PSMA-TRACTr (JANX007) within 14 days of December 1, 2025. That day the company reported Phase 1 trial data. The page is retired and redirects to /ticker/JANX.",
+   "source": "https://investors.januxrx.com/investor-media/news/news-details/2025/Janux-Announces-Encouraging-Efficacy-and-Safety-Profile-from-Ongoing-Phase-1-Clinical-Trial-for-JANX007-in-mCRPC/default.aspx"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/LYEL-2025-06-17",
+   "was": "A held decision page for LYEL dated 2025-06-17 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on LYL314 (IMPT-314) within 14 days of June 17, 2025. That day the company announced trial data for a medical meeting. The page is retired and redirects to /ticker/LYEL.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1806952/000119312525141795/d15114d8k.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/NRIX-2025-06-12",
+   "was": "A held decision page for NRIX dated 2025-06-12 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Bexobrutideg (NX-5948) within 14 days of June 12, 2025. That day the company reported trial data at the EHA 2025 congress. The page is retired and redirects to /ticker/NRIX.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1549595/000154959525000086/a250612_ehaxdataprxvfinal-.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/PHIO-2025-03-10",
+   "was": "A held decision page for PHIO dated 2025-03-10 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on PH-762 within 14 days of March 10, 2025. The drug was in a Phase 1b trial, and no company news for that day was found. The page is retired and redirects to /ticker/PHIO.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1533040/000168316825003715/phio_ex9901.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ANIK-2025-07-30",
+   "was": "A held decision page for ANIK dated 2025-07-30 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on HYALOFAST within 14 days of July 30, 2025. That day the company reported that its pivotal trial missed its main goals. The page is retired and redirects to /ticker/ANIK.",
+   "source": "https://www.sec.gov/Archives/edgar/data/898437/000117184325004809/exh_991.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/BMY-2025-06-12",
+   "was": "A held decision page for BMY dated 2025-06-12 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on iberdomide within 14 days of June 12, 2025. That day the company reported trial data at the EHA 2025 congress. The page is retired and redirects to /ticker/BMY.",
+   "source": "https://www.businesswire.com/news/home/20250612347504/en"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CLDI-2025-04-28",
+   "was": "A held decision page for CLDI dated 2025-04-28 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on CLD-400 within 14 days of April 28, 2025. That day the company reported animal study data from a medical meeting. The page is retired and redirects to /ticker/CLDI.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1855485/000164117225005777/ex99-1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CRSP-2025-12-22",
+   "was": "A held decision page for CRSP dated 2025-12-22 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on zugocabtagene geleucel (zugo-cel) within 14 days of December 22, 2025. That day the company gave a clinical data update. The page is retired and redirects to /ticker/CRSP.",
+   "source": "https://ir.crisprtx.com/node/14571/pdf"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/IMMX-2025-06-03",
+   "was": "A held decision page for IMMX dated 2025-06-03 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on NXC-201 within 14 days of June 3, 2025. That day the company filed a prospectus to sell shares. The page is retired and redirects to /ticker/IMMX.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1873835/000164117225013418/form424b5.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/JNJ-2025-04-24",
+   "was": "A held decision page for JNJ dated 2025-04-24 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on INLEXZO (TAR-200) within 14 days of April 24, 2025. That week the company presented trial data at a urology meeting. The page is retired and redirects to /ticker/JNJ.",
+   "source": "https://www.jnj.com/media-center/press-releases/johnson-johnson-unveils-highly-anticipated-and-potential-practice-changing-data-in-bladder-cancer-treatment-at-aua"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/NRIX-2025-12-08",
+   "was": "A held decision page for NRIX dated 2025-12-08 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on bexobrutideg (NX-5948) within 14 days of December 8, 2025. That day the company reported trial data at ASH 2025. The page is retired and redirects to /ticker/NRIX.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1549595/000154959525000121/ex992_251208bexdegwmclinic.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/PHIO-2025-05-07",
+   "was": "A held decision page for PHIO dated 2025-05-07 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on PH-762 within 14 days of May 7, 2025. That day the company reported Phase 1b trial results. The page is retired and redirects to /ticker/PHIO.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1533040/000168316825003237/phio_ex9901.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ADCT-2025-06-12",
+   "was": "A held decision page for ADCT dated 2025-06-12 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on ZYNLONTA within 14 days of June 12, 2025. That day the company reported Phase 1b combination trial data. The page is retired and redirects to /ticker/ADCT.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1771910/000162828025051095/adc-20250930.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CGON-2025-03-24",
+   "was": "A held decision page for CGON dated 2025-03-24 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on Cretostimogene within 14 days of March 24, 2025. That day updated trial data were presented at a European urology congress. The page is retired and redirects to /ticker/CGON.",
+   "source": "https://cgoncology.com/?p=234158"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/CMPX-2025-04-01",
+   "was": "A held decision page for CMPX dated 2025-04-01 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on tovecimig (CTX-009) within 14 days of April 1, 2025. That day the company reported topline results from a randomized trial. The page is retired and redirects to /ticker/CMPX.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1738021/000117184325001900/exh_991.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/GLPG-2025-06-19",
+   "was": "A held decision page for GLPG dated 2025-06-19 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on GLPG5101 within 14 days of June 19, 2025. That week the company reported new trial data. The page is retired and redirects to /ticker/GLPG.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1421876/000117184325004000/exh_991.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/IMMX-2025-12-07",
+   "was": "A held decision page for IMMX dated 2025-12-07 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on NXC-201 within 14 days of December 7, 2025. That day the company reported Phase 2 trial data at ASH 2025. The page is retired and redirects to /ticker/IMMX.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1873835/000149315225026500/ex99-1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/JNJ-2025-06-13",
+   "was": "A held decision page for JNJ dated 2025-06-13 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on JNJ-4496 within 14 days of June 13, 2025. That day the company reported first Phase 1b trial data. The page is retired and redirects to /ticker/JNJ.",
+   "source": "https://www.jnj.com/media-center/press-releases/johnson-johnsons-dual-targeting-car-t-cell-therapy-shows-encouraging-first-results-in-large-b-cell-lymphoma"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/OGEN-2025-05-13",
+   "was": "A held decision page for OGEN dated 2025-05-13 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on ONP-002 within 14 days of May 13, 2025. That day the company reported an Australian ethics committee approval to start a trial. The page is retired and redirects to /ticker/OGEN.",
+   "source": "https://d1io3yog0oux5.cloudfront.net/_b52dd373d073200564a352826815e8f8/oragenics/news/2025-05-13_Oragenics_Inc_Announces_Approval_to_Initiate_212.pdf"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/RPRX-2025-11-07",
+   "was": "A held decision page for RPRX dated 2025-11-07 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on aficamten within 14 days of November 7, 2025. Cytokinetics' release of November 5, 2025 said the application was still under FDA review. The page is retired and redirects to /ticker/RPRX.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1061983/000119312525266842/cytk-ex99_1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/IONI-2025-08-21",
+   "was": "A decision page for IONI dated 2025-08-21 recording Ionis's Dawnzera approval under the ticker of I-ON Digital.",
+   "now": "The FDA's approval of Dawnzera (donidalorsen) on August 21, 2025 went to Ionis Pharmaceuticals (IONS), the applicant under NDA 219407, not I-ON Digital (IONI). The decision already has its page under IONS. The page is retired and redirects to /fda-decision/IONS-2025-08-21.",
+   "source": "Drugs@FDA, NDA 219407 (applicant Ionis Pharms Inc, approved 2025-08-21) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219407"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/INTE-2025-03-28",
+   "was": "A decision page for INTE dated 2025-03-28 recording Sanofi's Qfitlia approval under INTE.",
+   "now": "The FDA's approval of Qfitlia (fitusiran) on March 28, 2025 went to Genzyme, a Sanofi company, the applicant under NDA 219019, not INTE. The decision already has its page under Sanofi. The page is retired and redirects to /fda-decision/SNY-2025-03-28.",
+   "source": "Drugs@FDA, NDA 219019 (applicant Genzyme Corp, approved 2025-03-28) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219019"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/AMRN-2025-12-02",
+   "was": "A decision page for AMRN dated 2025-12-02 recording Amneal's generic albuterol approval as an Amarin approval.",
+   "now": "The FDA's approval of a generic albuterol sulfate inhaler on December 1, 2025 went to Amneal Ireland, the applicant under ANDA 211600, not Amarin. Amarin is not a party to that application. The page is retired and redirects to /ticker/AMRX.",
+   "source": "Drugs@FDA, ANDA 211600 (applicant Amneal Ireland Ltd, approved 2025-12-01) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211600"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ZLAB-2025-07-30",
+   "was": "A held decision page for ZLAB dated 2025-07-30 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "The FDA's Complete Response Letter for odronextamab on July 30, 2025 went to Regeneron, the applicant, not Zai Lab. The decision already has its page under Regeneron. The page is retired and redirects to /fda-decision/REGN-2025-07-30.",
+   "source": "Regeneron 8-K exhibit 99.1, second-quarter 2025 results https://www.sec.gov/Archives/edgar/data/872589/000087258925000017/exhibit991q22025.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ABEO-2025-07-11",
+   "was": "A held decision page for ABEO dated 2025-07-11 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "The FDA's Complete Response Letter for UX111 (formerly ABO-102), announced July 11, 2025, went to Ultragenyx, the applicant, not Abeona. The decision already has its page under Ultragenyx. The page is retired and redirects to /fda-decision/RARE-2025-07-11.",
+   "source": "Ultragenyx 8-K of July 11, 2025 https://www.sec.gov/Archives/edgar/data/1515673/000095017025095334/rare-20250711.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/IONS-2025-09-23",
+   "was": "A held decision page for IONS dated 2025-09-23 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "The FDA's Complete Response Letter for a high-dose regimen of SPINRAZA (nusinersen), announced September 23, 2025, went to Biogen, the applicant, not Ionis. The decision already has its page under Biogen. The page is retired and redirects to /fda-decision/BIIB-2025-09-23.",
+   "source": "Biogen release, regulatory update on high-dose nusinersen https://investors.biogen.com/news-releases/news-release-details/biogen-provides-regulatory-update-high-dose-regimen-nusinersen"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/RHHBY-2025-11-25",
+   "was": "A held decision page for RHHBY dated 2025-11-25 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA approval for Roche's ELEVIDYS program within 14 days of November 25, 2025. The FDA action nearest that date was a label change for ELEVIDYS approved on November 14, 2025, whose US license holder is Sarepta, not Roche. The page is retired and redirects to /ticker/SRPT.",
+   "source": "FDA, ELEVIDYS supplement approval of November 14, 2025 https://www.fda.gov/media/189632/download"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/GSK-2025-02-17",
+   "was": "A decision page for GSK dated February 17, 2025, a day the US market was closed, that guessed an approval from the share price (marked outcome unverified).",
+   "now": "The FDA approved Penmenvy on February 14, 2025 and GSK announced it on February 15; February 17 was a US market holiday. The decision now has its page on February 18, the first day GSK's US shares traded on the news. The page is retired and redirects to /fda-decision/GSK-2025-02-18.",
+   "source": "https://www.fda.gov/files/vaccines%2C%20blood%20%26%20biologics/published/february_14_2025_approval_letter_-_penmenvy.pdf"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/SRPT-2025-11-25",
+   "was": "A held decision page for SRPT dated 2025-11-25 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA approval for Elevidys on or near November 25, 2025. On November 14 the FDA approved a boxed warning and narrowed the indication to ambulatory patients, a safety labeling change, not an approval. The page is retired and redirects to /ticker/SRPT.",
+   "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-new-safety-warning-and-revised-indication-limits-use-elevidys-following-reports-fatal"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/AMRX-2025-10-29",
+   "was": "A held decision page for AMRX dated 2025-10-29 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "The FDA's letter of October 28, 2025 tentatively approved Amneal's beclomethasone dipropionate HFA inhaler (ANDA 213811) and said it could not grant final approval yet; a tentative approval is not an approval. The page is retired and redirects to /ticker/AMRX.",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213811Orig1s000TAltr.pdf"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/GMAB-2025-09-12",
+   "was": "A held decision page for GMAB dated 2025-09-12 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on epcoritamab within 14 days of September 12, 2025. Genmab's report for the nine months to September 30, 2025 lists no Complete Response Letter; the pending application then had a target date of November 30, 2025. The page is retired and redirects to /ticker/GMAB.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1434265/000143426525000092/genmabinterimreportq32025.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/VALN-2025-08-25",
+   "was": "A held decision page for VALN dated 2025-08-25 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "The FDA did not approve IXCHIQ in August 2025. On August 22, 2025 it suspended the vaccine's biologics license; Valneva announced it on August 25. The page is retired and redirects to /ticker/VALN.",
+   "source": "https://www.fda.gov/safety/medical-product-safety-information/fda-update-safety-ixchiq-chikungunya-vaccine-live-fda-suspends-biologics-license-fda-safety"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/BMY-2025-06-27",
+   "was": "A held decision page for BMY dated 2025-06-27 that guessed an FDA approval from the share price (marked outcome unverified).",
+   "now": "There was no FDA approval for Breyanzi on or near June 27, 2025. That day the FDA removed the REMS for six CAR-T therapies, Breyanzi among them, with label updates; no new indication was approved. The page is retired and redirects to /ticker/BMY.",
+   "source": "https://www.fda.gov/news-events/press-announcements/fda-eliminates-risk-evaluation-and-mitigation-strategies-rems-autologous-chimeric-antigen-receptor"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/GHRS-2025-06-20",
+   "was": "A held decision page for GHRS dated 2025-06-20 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "There was no FDA decision on GH001 in June 2025. No marketing application had been filed; on June 20 GH Research said it had sent the FDA its response to a clinical hold on its IND. The page is retired and redirects to /ticker/GHRS.",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001855129/000114036125023162/ef20050847_ex99-1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/AXSM-2025-06-09",
+   "was": "A held decision page for AXSM dated 2025-06-09 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "The FDA did not issue a Complete Response Letter for AXS-14 (esreboxetine). On June 9, 2025 Axsome said it had received a Refusal to File letter: the FDA found the application not complete enough to review. The page is retired and redirects to /ticker/AXSM.",
+   "source": "https://www.sec.gov/Archives/edgar/data/1579428/000095017025083441/axsm-ex99_1.htm"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/HRMY-2025-02-19",
+   "was": "A held decision page for HRMY dated 2025-02-19 that guessed an FDA Complete Response Letter from the share price (marked outcome unverified).",
+   "now": "The FDA did not issue a Complete Response Letter for pitolisant in idiopathic hypersomnia. On February 19, 2025 Harmony said it had received a Refusal to File letter for the supplemental application. The page is retired and redirects to /ticker/HRMY.",
+   "source": "https://ir.harmonybiosciences.com/news-releases/news-release-details/harmony-biosciences-provides-update-status-supplemental-new-drug"
   }
  ],
  "legacy": [

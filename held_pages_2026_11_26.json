@@ -1,0 +1,347 @@
+{
+ "AAPG-2025-12-09": {
+  "drug": "Olverembatinib",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/2023311/000121390025119453/ea026888801ex99-1_ascentage.htm"
+ },
+ "AURA-2025-03-24": {
+  "drug": "Belzupacap sarotalocan (AU-011)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1501796/000095017025043809/aura-ex99_1.htm"
+ },
+ "CHRS-2025-01-22": {
+  "drug": "Casdozokitug/toripalimab/bevacizumab",
+  "claimed": "crl",
+  "src": "https://investors.coherus.com/node/13316/pdf"
+ },
+ "CNTA-2025-03-24": {
+  "drug": "SerpinPC",
+  "claimed": "approval",
+  "src": "https://www.sec.gov/Archives/edgar/data/1847903/000184790325000049/cntapr-q42024.htm"
+ },
+ "GMAB-2025-06-15": {
+  "drug": "EPCORE (Epcoritamab)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1434265/000143426525000063/gmab-20250630.htm"
+ },
+ "INBX-2025-01-21": {
+  "drug": "ozekibart (INBRX-109) in combination with FOLFIRI",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/2007919/000200791925000007/exhibit991-pressreleasecol.htm"
+ },
+ "MRK-2025-12-17": {
+  "drug": "KEYTRUDA (pembrolizumab) plus Padcev (enfortumab vedotin-ejfv)",
+  "claimed": "crl",
+  "src": "https://newsroom.astellas.com/2025-12-17-PADCEVTM-Plus-KeytrudaTM-Significantly-Improves-Survival-for-Patients-with-Muscle-Invasive-Bladder-Cancer-Regardless-of-Cisplatin-Eligibility"
+ },
+ "PFE-2025-12-17": {
+  "drug": "KEYTRUDA (pembrolizumab) plus Padcev (enfortumab vedotin-ejfv)",
+  "claimed": "crl",
+  "src": "https://newsroom.astellas.com/2025-12-17-PADCEVTM-Plus-KeytrudaTM-Significantly-Improves-Survival-for-Patients-with-Muscle-Invasive-Bladder-Cancer-Regardless-of-Cisplatin-Eligibility"
+ },
+ "TARA-2025-11-19": {
+  "drug": "TARA-002",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1359931/000121390025112383/ea026638401ex99-2_protara.htm"
+ },
+ "ALXO-2025-04-25": {
+  "drug": "ALX148 (evorpacept) + rituximab and lenalidomide",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1810182/000095017025066440/alxo-ex99_1.htm"
+ },
+ "BMY-2025-05-23": {
+  "drug": "Iberdomide in Combination with Dexamethasone",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/14272/000001427225000129/q22025earningspresentati.htm"
+ },
+ "CING-2025-05-14": {
+  "drug": "CTx-1301 (fixed dose, pediatric study)",
+  "claimed": "approval",
+  "src": "https://www.sec.gov/Archives/edgar/data/1862150/000164117225009989/form8-k.htm"
+ },
+ "COCP-2025-12-18": {
+  "drug": "CDI-988",
+  "claimed": "approval",
+  "src": "https://www.sec.gov/Archives/edgar/data/1412486/000149315225028296/ex99-1.htm"
+ },
+ "GLSI-2025-03-17": {
+  "drug": "GP2 (GLSI-100)",
+  "claimed": "approval",
+  "src": "https://d1io3yog0oux5.cloudfront.net/_421fb86698860e07db375b02ab5464e7/greenwichlifesciences/news/2025-03-17_Greenwich_LifeSciences_Provides_Update_on_Open_94.pdf"
+ },
+ "IBRX-2025-11-05": {
+  "drug": "t-haNK (N-803 ANKTIVA) in combination with rituximab",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000138/ibrx-2025114x8kexhibit991.htm"
+ },
+ "JSPR-2025-06-16": {
+  "drug": "Subcutaneous briquilimab",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1788028/000121390025054465/ea024579301ex99-1_jasper.htm"
+ },
+ "MRKR-2025-08-26": {
+  "drug": "Neldaleucel (MT-601)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1094038/000110465925082783/tm2524197d1_ex99-1.htm"
+ },
+ "ONCY-2025-10-28": {
+  "drug": "Pelareorep and mFOLFIRINOX with and without atezolizumab",
+  "claimed": "approval",
+  "src": "https://www.sec.gov/Archives/edgar/data/1129928/000112992825000084/oncyscac.htm"
+ },
+ "PRTC-2025-12-05": {
+  "drug": "LYT-200",
+  "claimed": "crl",
+  "src": "https://www.businesswire.com/news/home/20251205523069/en"
+ },
+ "ALXO-2025-12-08": {
+  "drug": "ALX148 (evorpacept) + rituximab and lenalidomide",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1810182/000119312526098454/alxo-20251231.htm"
+ },
+ "AVBP-2025-06-23": {
+  "drug": "Firmonertinib monotherapy",
+  "claimed": "approval",
+  "src": "https://www.sec.gov/Archives/edgar/data/1868279/000110465925061375/tm2518615d1_ex99-1.htm"
+ },
+ "CGEM-2025-10-13": {
+  "drug": "Zipalertinib",
+  "claimed": "crl",
+  "src": "https://investors.cullinantherapeutics.com/news-releases/news-release-details/taiho-oncology-and-cullinan-therapeutics-present-data-0"
+ },
+ "CMND-2025-07-03": {
+  "drug": "CMND-100",
+  "claimed": "approval",
+  "src": "https://www.sec.gov/Archives/edgar/data/1892500/000121390025061359/ea024814202ex99-1_clearmind.htm"
+ },
+ "GLSI-2026-01-22": {
+  "drug": "GP2 (GLSI-100)",
+  "claimed": "approval",
+  "src": "https://d1io3yog0oux5.cloudfront.net/_a340503ceacf425c9f3b87a7929307ac/greenwichlifesciences/news/2026-01-22_Greenwich_LifeSciences_Announces_FDA_Approves_Use__112.pdf"
+ },
+ "INCY-2025-06-15": {
+  "drug": "INCA033989",
+  "claimed": "crl",
+  "src": "https://www.businesswire.com/news/home/20250615293968/en"
+ },
+ "LYEL-2025-12-08": {
+  "drug": "LYL314 (IMPT-314)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1806952/000119312525310469/d35459d8k.htm"
+ },
+ "PBM-2025-12-19": {
+  "drug": "Psilocybin (NPX5)",
+  "claimed": "approval",
+  "src": "https://www.globenewswire.com/news-release/2025/12/19/3208411/0/en/Psyence-BioMed-Announces-Approval-for-Use-of-PsyLabs-Psilocybin-Product-in-Phase-IIb-Clinical-Trial.html"
+ },
+ "REGN-2025-05-23": {
+  "drug": "Linvoseltamab + carfilzomib",
+  "claimed": "crl",
+  "src": "https://investor.regeneron.com/news-releases/news-release-details/linvoseltamab-combination-carfilzomib-or-bortezomib-shows"
+ },
+ "APTO-2025-02-20": {
+  "drug": "Tuspetinib (TUS) in combination therapy with azacitidine (AZA) and venetoclax (VEN)",
+  "claimed": "approval",
+  "src": "https://d1io3yog0oux5.cloudfront.net/_7e08345907e354ee1fdc923f9471f37f/aptose/news/2025-02-20_Aptose_Announces_Positive_Clinical_Safety_Review_311.pdf"
+ },
+ "CLDX-2025-11-06": {
+  "drug": "Barzolvolimab",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/0000744218/000117184325005181/exh_991.htm"
+ },
+ "CUE-2025-07-16": {
+  "drug": "CUE-101",
+  "claimed": "crl",
+  "src": "https://cuebiopharma.gcs-web.com/node/10111"
+ },
+ "GMAB-2025-06-02": {
+  "drug": "Rinatabart sesutecan (Rina-S)",
+  "claimed": "crl",
+  "src": "https://www.businesswire.com/news/home/20250602832626/en"
+ },
+ "INTS-2025-06-30": {
+  "drug": "INT230-6",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1567264/000156726425000078/ints20250807ex99120250630p.htm"
+ },
+ "KZIA-2025-11-18": {
+  "drug": "Paxalisib",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1075880/000119312525305250/d15328dex991.htm"
+ },
+ "PLRX-2025-12-04": {
+  "drug": "PLN-101095",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1746473/000174647325000179/plrx-20251202.htm"
+ },
+ "TARA-2025-04-26": {
+  "drug": "TARA-002",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1359931/000121390025035785/ea023968901ex99-1_protara.htm"
+ },
+ "ALPMY-2025-12-17": {
+  "drug": "KEYTRUDA (pembrolizumab) plus Padcev (enfortumab vedotin-ejfv)",
+  "claimed": "crl",
+  "src": "https://newsroom.astellas.com/2025-12-17-PADCEVTM-Plus-KeytrudaTM-Significantly-Improves-Survival-for-Patients-with-Muscle-Invasive-Bladder-Cancer-Regardless-of-Cisplatin-Eligibility"
+ },
+ "BCTX-2025-05-23": {
+  "drug": "Bria-IMT",
+  "claimed": "approval",
+  "src": "https://briacell.com/briacell-abstracts-showcase-positive-survival-and-clinical-benefit-data-at-asco-2025/"
+ },
+ "CLLS-2025-02-14": {
+  "drug": "ALLO-501/501A + ALLO-647",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1737287/000119312525035162/d926019d8k.htm"
+ },
+ "GLPG-2025-12-07": {
+  "drug": "GLPG5101",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1421876/000117184325007786/exh_991.htm"
+ },
+ "IBRX-2025-08-13": {
+  "drug": "CD19 CAR-NK cell therapy with rituximab",
+  "claimed": "crl",
+  "src": "https://www.businesswire.com/news/home/20250813610481/en"
+ },
+ "LTRN-2025-06-16": {
+  "drug": "LP-300",
+  "claimed": "crl",
+  "src": "https://ir.lanternpharma.com/news-1/news/news-details/2025/Lung-Cancer-Patient-in-Lantern-Pharmas-Harmonic-Trial-Shows-Durable-Complete-Response-in-Target-Cancer-Lesions-with-Survival-Continuing-for-Nearly-Two-Years/default.aspx"
+ },
+ "ONC-2025-12-08": {
+  "drug": "Sonrotoclax",
+  "claimed": "crl",
+  "src": "https://ir.beonemedicines.com/news/sonrotoclax-data-at-ash-2025-confirm-foundational-potential-across-b-cell-malignancies/4c69168c-15f1-4af8-98f3-38d14b8d32cd"
+ },
+ "PRTA-2025-08-27": {
+  "drug": "PRX012",
+  "claimed": "approval",
+  "src": "https://www.sec.gov/Archives/edgar/data/1559053/000119312525189765/d38911dex991.htm"
+ },
+ "ABBV-2025-06-30": {
+  "drug": "JUV\u00c9DERM",
+  "claimed": "approval",
+  "src": "https://news.abbvie.com/2025-06-30-U-S-Food-and-Drug-Administration-Accepts-for-Review-Allergan-Aesthetics-Premarket-Approval-Application-for-SKINVIVE-by-JUVEDERM-R-for-the-Improvement-of-Neck-Appearance"
+ },
+ "AUTL-2025-12-08": {
+  "drug": "Obe-cel",
+  "claimed": "crl",
+  "src": "https://autolus.gcs-web.com/news-releases/news-release-details/autolus-therapeutics-present-clinical-data-updates-american-2"
+ },
+ "CASI-2025-12-07": {
+  "drug": "CID-103",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1962738/000110465925112605/tm2530997d1_ex99-1.htm"
+ },
+ "CLLS-2025-12-07": {
+  "drug": "UCART20x22",
+  "claimed": "crl",
+  "src": "https://www.cellectis.com/en/agenda/content/american-society-of-hematology-ash-2025/"
+ },
+ "EQ-2025-04-24": {
+  "drug": "Itolizumab",
+  "claimed": "approval",
+  "src": "https://www.sec.gov/Archives/edgar/data/0001746466/000119312525092435/d787196dex991.htm"
+ },
+ "JANX-2025-12-01": {
+  "drug": "PSMA-TRACTr (JANX007)",
+  "claimed": "approval",
+  "src": "https://investors.januxrx.com/investor-media/news/news-details/2025/Janux-Announces-Encouraging-Efficacy-and-Safety-Profile-from-Ongoing-Phase-1-Clinical-Trial-for-JANX007-in-mCRPC/default.aspx"
+ },
+ "LYEL-2025-06-17": {
+  "drug": "LYL314 (IMPT-314)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1806952/000119312525141795/d15114d8k.htm"
+ },
+ "NRIX-2025-06-12": {
+  "drug": "Bexobrutideg (NX-5948)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1549595/000154959525000086/a250612_ehaxdataprxvfinal-.htm"
+ },
+ "PHIO-2025-03-10": {
+  "drug": "PH-762",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1533040/000168316825003715/phio_ex9901.htm"
+ },
+ "ANIK-2025-07-30": {
+  "drug": "HYALOFAST",
+  "claimed": "approval",
+  "src": "https://www.sec.gov/Archives/edgar/data/898437/000117184325004809/exh_991.htm"
+ },
+ "BMY-2025-06-12": {
+  "drug": "Iberdomide in Combination with Dexamethasone",
+  "claimed": "crl",
+  "src": "https://www.businesswire.com/news/home/20250612347504/en"
+ },
+ "CLDI-2025-04-28": {
+  "drug": "CLD-400",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1855485/000164117225005777/ex99-1.htm"
+ },
+ "CRSP-2025-12-22": {
+  "drug": "Zugocabtagene geleucel (zugo-cel; formerly CTX112)",
+  "claimed": "crl",
+  "src": "https://ir.crisprtx.com/node/14571/pdf"
+ },
+ "IMMX-2025-06-03": {
+  "drug": "NXC-201 (HBI10101)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1873835/000164117225013418/form424b5.htm"
+ },
+ "JNJ-2025-04-24": {
+  "drug": "INLEXZO (gemcitabine intravesical system) (TAR-200)",
+  "claimed": "crl",
+  "src": "https://www.jnj.com/media-center/press-releases/johnson-johnson-unveils-highly-anticipated-and-potential-practice-changing-data-in-bladder-cancer-treatment-at-aua"
+ },
+ "NRIX-2025-12-08": {
+  "drug": "NX-5948-301",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1549595/000154959525000121/ex992_251208bexdegwmclinic.htm"
+ },
+ "PHIO-2025-05-07": {
+  "drug": "PH-762",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1533040/000168316825003237/phio_ex9901.htm"
+ },
+ "ADCT-2025-06-12": {
+  "drug": "ZYNLONTA (Loncastuximab Tesirine-Ipyl)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1771910/000162828025051095/adc-20250930.htm"
+ },
+ "CGON-2025-03-24": {
+  "drug": "Cretostimogene",
+  "claimed": "crl",
+  "src": "https://cgoncology.com/?p=234158"
+ },
+ "CMPX-2025-04-01": {
+  "drug": "CTX-009 (DLL4 X VEGF-A bispecific)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1738021/000117184325001900/exh_991.htm"
+ },
+ "GLPG-2025-06-19": {
+  "drug": "GLPG5101",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1421876/000117184325004000/exh_991.htm"
+ },
+ "IMMX-2025-12-07": {
+  "drug": "NXC-201 (HBI10101)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1873835/000149315225026500/ex99-1.htm"
+ },
+ "JNJ-2025-06-13": {
+  "drug": "JNJ-4496",
+  "claimed": "crl",
+  "src": "https://www.jnj.com/media-center/press-releases/johnson-johnsons-dual-targeting-car-t-cell-therapy-shows-encouraging-first-results-in-large-b-cell-lymphoma"
+ },
+ "OGEN-2025-05-13": {
+  "drug": "ONP-002",
+  "claimed": "approval",
+  "src": "https://d1io3yog0oux5.cloudfront.net/_b52dd373d073200564a352826815e8f8/oragenics/news/2025-05-13_Oragenics_Inc_Announces_Approval_to_Initiate_212.pdf"
+ },
+ "RPRX-2025-11-07": {
+  "drug": "Aficamten (CK-274)",
+  "claimed": "crl",
+  "src": "https://www.sec.gov/Archives/edgar/data/1061983/000119312525266842/cytk-ex99_1.htm"
+ }
+}

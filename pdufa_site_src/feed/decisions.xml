@@ -5,9 +5,19 @@
 <id>https://www.pdufa.bio/feed/decisions.xml</id>
 <link rel="self" type="application/atom+xml" href="https://www.pdufa.bio/feed/decisions.xml"/>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/feed"/>
-<updated>2026-11-26T06:09:14Z</updated>
+<updated>2026-11-26T09:45:21Z</updated>
 <author><name>pdufa.bio</name><uri>https://www.pdufa.bio</uri></author>
 <rights>Facts from FDA and sponsor documents, each linked. Not investment advice.</rights>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/GSK-2025-02-18</id>
+<title>Penmenvy Approved Feb 14, 2025 | GSK FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/GSK-2025-02-18"/>
+<published>2025-02-14T17:00:00Z</published>
+<updated>2026-11-26T09:45:21Z</updated>
+<category term="Approved"/>
+<summary>Penmenvy (Meningococcal Groups A, B, C, W, and Y Vaccine), GSK plc: Approved. FDA action date: February 14, 2025.</summary>
+<content type="html">&lt;p&gt;Penmenvy (Meningococcal Groups A, B, C, W, and Y Vaccine), GSK plc: Approved. FDA action date: February 14, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/files/vaccines%2C%20blood%20%26%20biologics/published/february_14_2025_approval_letter_-_penmenvy.pdf"&gt;BLA STN 125819/0&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 26, 2026, 4:45 AM ET.&lt;/p&gt;</content>
+</entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/GSK-2025-12-16</id>
 <title>Exdensur (depemokimab) Approved Dec 16, 2025 | GSK FDA Decision</title>
@@ -80,13 +90,13 @@
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/BBIO-2026-11-23</id>
-<title>Welgemda (ribitol) Approval Announced Nov 23, 2026 | BBIO FDA Decision</title>
+<title>Welgemda (ribitol) Approved Nov 23, 2026, 4 Days Early | BBIO FDA Decision</title>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/BBIO-2026-11-23"/>
 <published>2026-11-23T17:00:00Z</published>
 <updated>2026-11-24T01:24:57Z</updated>
 <category term="Approved"/>
-<summary>Welgemda (BBP-418, ribitol), BridgeBio Pharma: Approved. FDA action date: not on record. Announced: November 23, 2026.</summary>
-<content type="html">&lt;p&gt;Welgemda (BBP-418, ribitol), BridgeBio Pharma: Approved. FDA action date: not on record. Announced: November 23, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm"&gt;BridgeBio 8-K Exhibit 99.1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1743881/000174388126000026/bbio-20260630xex991.htm"&gt;BridgeBio Pharma, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 23, 2026, 8:24 PM ET.&lt;/p&gt;</content>
+<summary>Welgemda (BBP-418, ribitol), BridgeBio Pharma: Approved. FDA action date: November 23, 2026.</summary>
+<content type="html">&lt;p&gt;Welgemda (BBP-418, ribitol), BridgeBio Pharma: Approved. FDA action date: November 23, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026"&gt;FDA, Novel Drug Approvals for 2026 table&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm"&gt;BridgeBio 8-K Exhibit 99.1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1743881/000174388126000026/bbio-20260630xex991.htm"&gt;BridgeBio Pharma, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 23, 2026, 8:24 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/CAPR-2026-11-20</id>
@@ -617,16 +627,6 @@
 <category term="Approved"/>
 <summary>FAYUVI (rebisufligene etisparvovec-hopf; UX111), Ultragenyx Pharmaceutical Inc.: Approved. FDA action date: September 17, 2026.</summary>
 <content type="html">&lt;p&gt;FAYUVI (rebisufligene etisparvovec-hopf; UX111), Ultragenyx Pharmaceutical Inc.: Approved. FDA action date: September 17, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/media/194921/download"&gt;CBER approval letter&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1515673/000151567326000006/rare-20260917.htm"&gt;Ultragenyx 8-K&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526139084/rare-20260402.htm"&gt;Ultragenyx 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 19, 2026, 5:14 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/TLX-2026-09-14</id>
-<title>Pixclara Approved Sep 11, 2026, On Goal Date | TLX FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/TLX-2026-09-14"/>
-<published>2026-09-14T16:00:00Z</published>
-<updated>2026-09-19T21:14:07Z</updated>
-<category term="Approved"/>
-<summary>Pixclara (floretyrosine F 18; TLX101-Px), Telix Pharmaceuticals Limited: Approved. FDA action date: September 11, 2026. Announced: September 14, 2026.</summary>
-<content type="html">&lt;p&gt;Pixclara (floretyrosine F 18; TLX101-Px), Telix Pharmaceuticals Limited: Approved. FDA action date: September 11, 2026. Announced: September 14, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218592Orig1s000ltr.pdf"&gt;NDA 218592 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/2007191/000162828026061892/pixclaraapprovalvfinal.htm"&gt;Telix 6-K&lt;/a&gt; &amp;middot; &lt;a href="https://telixpharma.com/news-views/fda-accepts-nda-for-tlx101-px-pixclara/"&gt;Telix release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 19, 2026, 5:14 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>tag:pdufa.bio,2026:pdufa-date-change/CAPR/2026-08-22/2026-11-22</id>

@@ -32,9 +32,9 @@ def _rows():
         if a.get("excluded"):
             continue
         g, ad = dt.date.fromisoformat(a["goal_in_effect"]), dt.date.fromisoformat(a["action_date"])
-        out.append(((ad - g).days, a["outcome"], a["origin"], ad.year))
+        out.append(((ad - g).days, a["outcome"], a["origin"], ad.year, a.get("goal_source_type") or "sponsor"))
     for r in collect(2026):
-        out.append((r["delta"], r["outcome"], "calendar_2026", 2026))
+        out.append((r["delta"], r["outcome"], "calendar_2026", 2026, "sponsor"))
     return doc, out
 
 
@@ -91,7 +91,8 @@ def test_headline_and_years_match_recount():
 def test_late_crl_sentence_uses_outcome_blind_rows_only():
     _, rows = _rows()
     t = _text()
-    blind = [r for r in rows if r[2] in ("tracked", "calendar_2026")]
+    # a goal read only from an FDA review is available only for approvals, so those rows stay out of the CRL table
+    blind = [r for r in rows if r[2] in ("tracked", "calendar_2026") and r[4] not in ("fda_review", "fda_letter")]
     late = [r for r in blind if r[0] > 0]
     late_crl = sum(1 for r in late if r[1] == "CRL")
     assert f"({len(blind)} decisions), {late_crl} of the {len(late)} late decisions ended in a complete response" in t
@@ -110,8 +111,8 @@ def test_goal_source_published_before_action():
     """A goal date is only a goal date if a document stated it before the FDA acted."""
     doc = json.load(io.open(DATA, encoding="utf-8"))
     for a in doc["actions"]:
-        if a.get("excluded"):
-            continue
+        if a.get("excluded") or a.get("goal_source_type") in ("fda_review", "fda_letter"):
+            continue                                   # the FDA's own record of the goal is not a forecast
         for k in ("goal_original_doc_date", "goal_extended_doc_date"):
             v = a.get(k) or ""
             if re.match(r"^\d{4}-\d{2}-\d{2}$", v):
@@ -155,6 +156,20 @@ def main():
         return 1
     print(f"PASS test_decision_timing_since_2024: {len(tests)} checks, page recounted from its sources")
     return 0
+
+
+def test_fda_goal_sources_are_fda_documents():
+    """Pass 4: a goal taken from the FDA's review or letter must link the FDA's own document."""
+    doc = json.load(io.open(DATA, encoding="utf-8"))
+    n = 0
+    for a in doc["actions"]:
+        if a.get("excluded") or a.get("goal_source_type") not in ("fda_review", "fda_letter"):
+            continue
+        n += 1
+        gu = (a.get("goal_extended_url") if a.get("extended") else a.get("goal_original_url")) or ""
+        assert re.match(r"^https://(www\.|download\.open\.)?(accessdata\.)?fda\.gov/", gu), f"{a['cid']}: {gu}"
+        assert a.get("red_team"), f"{a['cid']}: an FDA-review goal must be re-read at source before it counts"
+    assert n >= 30
 
 
 if __name__ == "__main__":

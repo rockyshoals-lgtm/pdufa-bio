@@ -76,8 +76,10 @@ def main():
         rec = d.get("fda_action_record") or "FDA record"
         kind = ("FDA letter" if re.search(r"ltr\.pdf$|/media/\d+/download|download\.open\.fda\.gov/crl/", url)
                 else "Drugs@FDA" if "accessdata.fda.gov" in url else "FDA notice")
-        ann = (f" The sponsor announced it on {pretty(dcd)}." if fd != dcd else
-               " The sponsor announced it the same day.")
+        from announced_day import announced_iso, after_close   # the page's own Announced day, not the slug
+        ad = announced_iso(doc, dcd)
+        ann = (f" The sponsor announced it on {pretty(ad)}{', after the close' if after_close(doc) else ''}."
+               if fd != ad else " The sponsor announced it the same day.")
         block = (f'{B}<p class="sub" style="font-size:13px;margin:8px 0">'
                  f'<b>FDA record of the action:</b> the FDA {verb} on <b>{pretty(fd)}</b>, per '
                  f'<a href="{html.escape(url, quote=True)}" rel="noopener" style="color:#e3ba5e">'
