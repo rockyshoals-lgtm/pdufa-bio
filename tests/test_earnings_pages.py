@@ -9,7 +9,8 @@
     recent results row and every ticker-page row is a cache row; a ticker page exists only for a ticker in the cache;
     the CSV holds exactly the cache's schedule, results and postponement rows, each with an https link
 
-PLANT=1 adds a report day for a ticker the cache does not have to the hub as read, and the guard must fail.
+PLANT=1 adds, to the pages as read, a report day for a ticker the cache does not have, a made-up results time on a
+ticker page and a row the regex could miss, and the guard must fail.
 """
 import csv
 import datetime as dt
@@ -66,6 +67,18 @@ def rule_checks():
         f.append("a report day of today is not 'ahead'")
     if B.status_of(P["2026Q3"], dt.date(2026, 11, 27))[1] != "passed":
         f.append("a report day before today is not 'passed'")
+    # red team 2026-11-26: "Fourth Quarter 2025" announced, "Fourth Quarter and Year-End 2025" reported -> one period
+    P = B.periods([R("schedule", "2026-01-20 08:00", "2025Q4", report_date="2026-02-03"),
+                   R("results", "2026-02-03 06:45", "2025Q4+FY")])
+    if list(P) != ["2025Q4"] or B.status_of(P["2025Q4"], today)[1] != "reported":
+        f.append("a Q4 announcement and a Q4-and-full-year results release are not one reported period")
+    if B.label("2025Q4", P["2025Q4"]) != "Q4 and full year 2025":
+        f.append("the Q4 and full-year period is not labelled as such")
+    # a postponement that names no period voids the pending announcement before it
+    P = B.periods([R("schedule", "2026-11-10 08:00", "2026Q3", report_date="2026-12-10"),
+                   R("postponed", "2026-11-20 08:00", None)])
+    if B.status_of(P["2026Q3"], today)[1] != "postponed":
+        f.append("a postponement naming no period does not void the pending announcement")
     if B.fmt_et("2026-10-28 16:05") != "October 28, 2026, 4:05 p.m. ET" or B.fmt_et("2026-10-28 00:30") != \
             "October 28, 2026, 12:30 a.m. ET":
         f.append("fmt_et misformats Eastern times")
@@ -85,16 +98,20 @@ def page_checks(plant=False):
     if not m:
         return [f"/earnings: no 'as of' day in the lede"], ""
     asof = dt.date(int(m.group(3)), MON[m.group(1)], int(m.group(2)))
-    for tk, k in re.findall(r'data-earn-ahead="([^"|]+)\|([^"]+)"', doc):
+    for tk, k, cells in re.findall(r'<tr[^>]*data-earn-ahead="([^"|]+)\|([^"]+)"[^>]*>(.*?)</tr>', doc, re.S):
         p = (T.get(tk) or {}).get("P", {}).get(k)
         if not p:
             f.append(f"/earnings ahead row {tk} {k}: no such ticker and period in the cache")
             continue
-        s = p["schedules"][-1] if p["schedules"] else None
-        if not s or B.d_of(s["report_date"]) < asof:
-            f.append(f"/earnings ahead row {tk} {k}: no announced day on or after {asof}")
-        if p["results"]:
-            f.append(f"/earnings ahead row {tk} {k}: the cache has its results release")
+        s, st = B.status_of(p, asof)
+        if st != "ahead":
+            f.append(f"/earnings ahead row {tk} {k}: the cache says {st or 'nothing'} as of {asof}")
+        elif ">" + B.esc(B.pretty(B.d_of(s["report_date"]))) not in cells:
+            f.append(f"/earnings ahead row {tk} {k}: shown day is not the announced {s['report_date']}")
+    for tk, k in re.findall(r'data-earn-passed="([^"|]+)\|([^"]+)"', doc):
+        p = (T.get(tk) or {}).get("P", {}).get(k)
+        if not p or B.status_of(p, asof)[1] != "passed":
+            f.append(f"/earnings passed row {tk} {k}: the cache does not have a passed announced day")
     for tk, k in re.findall(r'data-earn-recent="([^"|]+)\|([^"]+)"', doc):
         p = (T.get(tk) or {}).get("P", {}).get(k)
         if not p or not p["results"]:
@@ -108,11 +125,25 @@ def page_checks(plant=False):
             continue
         P = T[d]["P"]
         tdoc = io.open(pg, encoding="utf-8").read()
-        for k, cells in re.findall(r'<tr data-earn-row="([^"]+)">(.*?)</tr>', tdoc):
+        if plant and d == sorted(x for x in os.listdir(SITE) if B.TICKER_OK.match(x))[0]:
+            tdoc = re.sub(r'(<tr data-earn-row="[^"]+">(?:<td>.*?</td>){2})<td>[^<]*</td>',
+                          r'\1<td>January 1, 2026, 4:05 p.m. ET</td>', tdoc, count=1)
+            tdoc = tdoc.replace('<tr data-earn-row=', '<tr class="x" data-earn-row=', 1)
+        rows = re.findall(r'<tr[^>]*data-earn-row="([^"]+)"[^>]*>(.*?)</tr>', tdoc, re.S)
+        if len(rows) != len(P):
+            f.append(f"/earnings/{d}: {len(rows)} period rows, the cache has {len(P)} periods")
+        for k, cells in rows:
             if k not in P:
                 f.append(f"/earnings/{d} row {k}: period not in the cache")
-            elif P[k]["results"] and B.esc(B.fmt_et(P[k]["results"]["published_et"])) not in cells:
-                f.append(f"/earnings/{d} row {k}: results time differs from the cache")
+                continue
+            res = re.findall(r"<td>(.*?)</td>", cells, re.S)
+            res = res[2] if len(res) > 2 else ""
+            st = B.status_of(P[k], asof)[1]
+            want = (B.esc(B.fmt_et(P[k]["results"]["published_et"])) if P[k]["results"] else
+                    {"postponed": "postponed by the company", "ahead": "ahead"}.get(
+                        st, "no results release read for this period"))
+            if res != want:
+                f.append(f"/earnings/{d} row {k}: results cell {res!r}, the cache says {want!r}")
     path = os.path.join(SITE, "data", "earnings-dates.csv")
     if not os.path.isfile(path):
         f.append("/earnings/data/earnings-dates.csv missing")
@@ -121,7 +152,7 @@ def page_checks(plant=False):
         want = sum(1 for t in T.values() for r in t["rel"] if r.get("kind") in ("schedule", "results", "postponed"))
         if len(rows) != want:
             f.append(f"CSV has {len(rows)} rows, the cache {want}")
-        keys = {(tk, r.get("published_et"), r.get("url")) for tk, t in T.items() for r in t["rel"]}
+        keys = {(tk, r.get("published_et") or "", r.get("url")) for tk, t in T.items() for r in t["rel"]}
         for x in rows:
             if not x["release_url"].startswith("https://"):
                 f.append(f"CSV {x['ticker']} {x['published_et']}: link is not https")

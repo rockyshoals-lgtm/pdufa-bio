@@ -54,8 +54,8 @@ CACHE = os.path.join(HERE, "_earnings_dates.json")
 FMP_PR = "https://financialmodelingprep.com/stable/news/press-releases"
 UA = {"User-Agent": "pdufa.bio-research-script/1.0"}
 FROM = "2024-01-01"
-# Bump when the parse rules change: every ticker is then re-read from FROM (90 a run), so no row parsed by older
-# rules stays in the cache.
+# Bump when the parse rules change: every ticker is then re-read from FROM (90 a run); its old rows stay until its
+# full read replaces them.
 PARSER_VERSION = 4
 
 MONTHS = {m: i + 1 for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july", "august",
@@ -145,15 +145,19 @@ def period_of(text, published=None):
         y = y if len(y) == 4 else "20" + y
         return m.group(0), f"FY{y}Q{q}"
     # "Q4 and Full Year 2025", "4Q and Year-End 2025": the fourth quarter and the year together
-    m = re.search(r"\b(?:Q4|4Q)\s+(?:and|&)\s+(?:full[\s-]+year|fiscal[\s-]+year|year[\s-]+end(?:ed)?)\s+(20\d\d)\b", t, re.I)
-    if m and int(m.group(1)) <= pub_y:
-        return m.group(0), f"{m.group(1)}Q4+FY"
+    m = re.search(r"\b(?:Q4|4Q)\s+(?:and|&)\s+(full[\s-]+year|fiscal[\s-]+year|year[\s-]+end(?:ed)?)\s+(20\d\d)\b", t, re.I)
+    if m and int(m.group(2)) <= pub_y:
+        # "fiscal year" may not be the calendar year, so it gets a fiscal key (no calendar day count)
+        fy = m.group(1).lower().startswith("fiscal")
+        return m.group(0), (f"FY{m.group(2)}Q4" if fy else f"{m.group(2)}Q4+FY")
     m = P_QUARTER.search(t)
     if m:
         q = ORD[m.group(1).lower()]
         yr = m.group(2)
-        full = bool(re.search(r"(and|&)[\s,]+((full|fiscal)[\s-]+year|year[\s-]+end)", m.group(0), re.I))
-        fiscal = bool(re.search(r"\bfiscal\b", m.group(0), re.I)) and not full
+        # "and full year" / "and year-end" belongs to the fourth quarter only; "and fiscal year" may not be the calendar
+        # year, so it makes the key fiscal
+        fiscal = bool(re.search(r"\bfiscal\b", m.group(0), re.I))
+        full = q == 4 and bool(re.search(r"(and|&)[\s,]+(full[\s-]+year|year[\s-]+end)", m.group(0), re.I))
         if yr:
             return m.group(0), (f"FY{yr}Q{q}" if fiscal else f"{yr}Q{q}") + ("+FY" if full else "")
         # year printed after "full year" or "fiscal": "Fourth Quarter and Full Year 2025", "First Quarter Fiscal 2027"
@@ -162,7 +166,7 @@ def period_of(text, published=None):
                       r"(20\d\d)\b(?!\s*/)", tail, re.I)
         if y2 and int(y2.group(2)) <= pub_y:
             fy = bool(y2.group(1))
-            full = full or bool(re.match(r"\s*(and|&)\s+(full|year[\s-]+end)", tail, re.I))
+            full = full or (q == 4 and bool(re.match(r"\s*(and|&)\s+(full|year[\s-]+end)", tail, re.I)))
             return m.group(0) + tail[:y2.end()], (f"FY{y2.group(2)}Q{q}" if fy else f"{y2.group(2)}Q{q}") + \
                 ("+FY" if full else "")
         return m.group(0), None
@@ -180,7 +184,9 @@ def period_of(text, published=None):
         return m.group(0), (f"{m.group(2)}{h}" if m.group(2) else None)
     m = re.search(r"\b(full[\s-]+year|fiscal(?:\s+year)?)\s+(20\d\d)\b|\b(20\d\d)\s+(full[\s-]+year|annual)\b", t, re.I)
     if m:
-        return m.group(0), f"{m.group(2) or m.group(3)}FY"
+        y = m.group(2) or m.group(3)
+        # a year printed as "fiscal" may not end on December 31: a fiscal key, with no calendar day count
+        return m.group(0), (f"FY{y}" if (m.group(1) or "").lower().startswith("fiscal") else f"{y}FY")
     return None, None
 
 

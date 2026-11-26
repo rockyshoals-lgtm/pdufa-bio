@@ -67,29 +67,75 @@ def fmt_et(s):
     try:
         t = dt.datetime.strptime(str(s)[:16], "%Y-%m-%d %H:%M")
     except ValueError:
-        return str(s or "")
+        d = d_of(s)
+        return pretty(d) if d else str(s or "")
     h = t.hour % 12 or 12
     return f"{pretty(t.date())}, {h}:{t.minute:02d} {'a.m.' if t.hour < 12 else 'p.m.'} ET"
+
+
+def fetched_et(s):
+    """The cache's UTC 'fetched' stamp as an Eastern calendar date ('November 26, 2026'), or ''."""
+    try:
+        t = dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))
+    except ValueError:
+        return ""
+    if t.tzinfo is None:
+        t = t.replace(tzinfo=dt.timezone.utc)
+    try:
+        from zoneinfo import ZoneInfo
+        t = t.astimezone(ZoneInfo("America/New_York"))
+    except Exception:  # noqa: BLE001
+        t = t - dt.timedelta(hours=5)
+    return pretty(t.date())
 
 
 def ok_url(u):
     return isinstance(u, str) and u.startswith("https://")
 
 
+def norm_key(k):
+    """One key per reporting period, however the releases print it: a calendar company's 'Fourth Quarter 2025',
+    'Fourth Quarter and Year-End 2025' and 'Full Year 2025' releases are all about the period ending December 31, 2025
+    (2025Q4); a fiscal year's results release is its fourth fiscal quarter's."""
+    k = k or ""
+    m = re.fullmatch(r"(20\d\d)(?:Q4\+FY|FY)", k)
+    if m:
+        return f"{m.group(1)}Q4"
+    m = re.fullmatch(r"FY(20\d\d)", k)
+    if m:
+        return f"FY{m.group(1)}Q4"
+    return k
+
+
 def periods(rel):
-    """period_key -> {"schedules": [...] oldest first, "results": earliest results row, "postponed": [...]}."""
-    out = collections.defaultdict(lambda: {"schedules": [], "results": None, "postponed": []})
+    """period -> {"schedules": [...] oldest first, "results": earliest results row, "postponed": [...], "keys": set of
+    the period keys as parsed}. A postponement that names no period voids the pending announcement it follows: one
+    published after the latest announcement of a period and no later than its report day."""
+    out = collections.defaultdict(lambda: {"schedules": [], "results": None, "postponed": [], "keys": set()})
+    loose = []
     for r in sorted(rel, key=lambda r: r.get("published_et") or ""):
-        k = r.get("period_key")
-        if not k or not d_of(r.get("published_et")):
+        if not d_of(r.get("published_et")):
             continue
-        kind = r.get("kind")
+        kind, k0 = r.get("kind"), r.get("period_key")
+        if kind == "postponed" and not k0:
+            loose.append(r)
+            continue
+        if not k0:
+            continue
+        k = norm_key(k0)
         if kind == "schedule" and d_of(r.get("report_date")):
             out[k]["schedules"].append(r)
+            out[k]["keys"].add(k0)
         elif kind == "results" and out[k]["results"] is None:
             out[k]["results"] = r
+            out[k]["keys"].add(k0)
         elif kind == "postponed":
             out[k]["postponed"].append(r)
+    for p in out.values():
+        if p["schedules"] and not p["results"]:
+            s = p["schedules"][-1]
+            p["postponed"] += [x for x in loose if x["published_et"] > s["published_et"]
+                               and d_of(x["published_et"]) <= d_of(s["report_date"])]
     return out
 
 
@@ -106,7 +152,8 @@ def status_of(p, today):
 
 
 def days_after_end(k, r):
-    end = period_end(k)
+    """Calendar days from the end of the period the results release names to the release; None for fiscal periods."""
+    end = period_end((r or {}).get("period_key") or k)
     d = d_of(r.get("published_et")) if r else None
     return (d - end).days if end and d else None
 
@@ -123,8 +170,25 @@ def load(path):
     return c, T
 
 
-def label(k, r):
-    return (r or {}).get("period") or k
+ORDN = {"1": "first", "2": "second", "3": "third", "4": "fourth"}
+
+
+def label(k, p=None):
+    """The period in one wording, from its key: 'Q3 2026', 'Q4 and full year 2025', 'Fiscal 2027 Q1', 'First half
+    2026'."""
+    keys = (p or {}).get("keys") or set()
+    m = re.fullmatch(r"(20\d\d)Q([1-4])", k)
+    if m:
+        full = m.group(2) == "4" and any(re.fullmatch(r"20\d\d(Q4\+FY|FY)", x) for x in keys)
+        return f"Q{m.group(2)} {'and full year ' if full else ''}{m.group(1)}"
+    m = re.fullmatch(r"FY(20\d\d)Q([1-4])", k)
+    if m:
+        full = m.group(2) == "4" and f"FY{m.group(1)}" in keys
+        return f"Fiscal {m.group(1)} Q{m.group(2)}" + (" and fiscal year" if full else "")
+    m = re.fullmatch(r"(20\d\d)H([12])", k)
+    if m:
+        return f"{'First' if m.group(2) == '1' else 'Second'} half {m.group(1)}"
+    return k
 
 
 def rel_link(r, text=None):
@@ -213,8 +277,9 @@ def hub(T, pages, today, fetched, n_csv):
     B = ['<h1>Earnings dates, <span class="g">as the companies announce them</span></h1>',
          f'<p class="sub" data-earn="lede">Companies\' own press releases name {len(ahead)} report '
          f'day{"s" if len(ahead) != 1 else ""} still ahead as of {esc(pretty(today))}, and {len(recent)} results '
-         f'release{"s" if len(recent) != 1 else ""} went out in the last {RECENT_DAYS} days, across the {n_tk} tracked '
-         f'companies whose releases have been read so far (through {esc(str(fetched)[:10])}).</p>',
+         f'release{"s" if len(recent) != 1 else ""} went out in the last {RECENT_DAYS} days, across the {n_tk} '
+         f'companies with at least one earnings release read so far'
+         + (f' (releases read through {esc(fetched_et(fetched))})' if fetched_et(fetched) else '') + '.</p>',
          f'<p class="sub">{SOURCE}</p>',
          f'<h2>Announced report days still ahead ({len(ahead)})</h2>']
     if ahead:
@@ -223,8 +288,9 @@ def hub(T, pages, today, fetched, n_csv):
         for d, tk, k, s, p in ahead:
             moved = [x for x in p["schedules"][:-1] if x.get("report_date") != s.get("report_date")]
             note = (f' (earlier announced for {esc(pretty(d_of(moved[-1]["report_date"])))})' if moved else "")
+            note += " (today)" if d == today else ""
             B.append(f'<tr data-earn-ahead="{esc(tk)}|{esc(k)}"><td>{esc(pretty(d))}{note}</td><td>{co(tk, T, pages)}</td>'
-                     f'<td>{esc(label(k, s))}</td><td>{when(s)}</td>'
+                     f'<td>{esc(label(k, p))}</td><td>{when(s)}</td>'
                      f'<td>{rel_link(s, pretty(d_of(s["published_et"])))}</td></tr>')
         B.append('</table>')
     else:
@@ -237,7 +303,7 @@ def hub(T, pages, today, fetched, n_csv):
         for pub, tk, k, r in recent:
             n = days_after_end(k, r)
             B.append(f'<tr data-earn-recent="{esc(tk)}|{esc(k)}"><td>{esc(fmt_et(pub))}</td><td>{co(tk, T, pages)}</td>'
-                     f'<td>{esc(label(k, r))}</td><td>{"" if n is None else n}</td><td>{rel_link(r)}</td></tr>')
+                     f'<td>{esc(label(k, T[tk]["P"][k]))}</td><td>{"" if n is None else n}</td><td>{rel_link(r)}</td></tr>')
         B.append('</table>')
     else:
         B.append(f'<p class="sub">No results release in the last {RECENT_DAYS} days among the releases read.</p>')
@@ -246,8 +312,9 @@ def hub(T, pages, today, fetched, n_csv):
         B += ['<h2>Days from quarter end to results, across companies</h2>',
               '<p class="sub">For each calendar quarter, the calendar days from the quarter\'s last day to the date of '
               'each company\'s results release for it (fourth-quarter releases that also report the full year '
-              'included). Companies with a fiscal year that does not follow the calendar are left out. Quarters with '
-              'fewer than five companies are not shown.</p>',
+              'and full-year releases counted once). Periods a company prints as fiscal (a fiscal quarter or a fiscal '
+              'year) are left out, since a fiscal period need not end with the calendar quarter. Quarters with fewer '
+              'than five companies are not shown.</p>',
               '<table><tr><th>Quarter</th><th>Companies</th><th>Median days</th><th>Middle half (25th to 75th '
               'percentile)</th><th>Shortest</th><th>Longest</th></tr>']
         for y, q in qs:
@@ -257,9 +324,18 @@ def hub(T, pages, today, fetched, n_csv):
                      f'<td>{qq[0]:g} to {qq[2]:g}</td><td>{xs[0]}</td><td>{xs[-1]}</td></tr>')
         B.append('</table>')
     if passed:
-        B.append(f'<p class="sub" data-earn="passed">{len(passed)} announced report day'
-                 f'{"s have" if len(passed) != 1 else " has"} passed with no results release for that period among '
-                 'the releases read; the company pages list them.</p>')
+        passed.sort(key=lambda x: (x[0], x[1]), reverse=True)
+        B += [f'<h2>Announced days that passed with no results release read ({len(passed)})</h2>',
+              '<p class="sub">The company announced a report day, the day has passed, and no results release for that '
+              'period is among the releases read. That can mean the release was not carried under the company\'s '
+              'ticker, or its headline names the period in words this page does not read; it does not show that the '
+              'company did not report.</p>',
+              '<table><tr><th>Announced day</th><th>Company</th><th>Period</th><th>Announcement</th></tr>']
+        for d, tk, k, s in passed[:60]:
+            B.append(f'<tr data-earn-passed="{esc(tk)}|{esc(k)}"><td>{esc(pretty(d))}</td><td>{co(tk, T, pages)}</td>'
+                     f'<td>{esc(label(k, T[tk]["P"][k]))}</td><td>{rel_link(s, pretty(d_of(s["published_et"])))}</td></tr>')
+        B.append('</table>' + (f'<p class="sub">The {len(passed) - 60} older ones are in the CSV.</p>'
+                                if len(passed) > 60 else ''))
     lst = sorted(pages)
     B += [f'<h2>Every company with an earnings page ({len(lst)})</h2>',
           '<p class="sub">A company has a page here once its releases show at least two results releases, or a report '
@@ -298,17 +374,23 @@ def ticker_page(tk, T, pages, today, fetched, site):
     nxt.sort(key=lambda x: x[3]["report_date"])
     if nxt:
         _, k, p, s, _, _ = nxt[0]
-        lede = (f'{esc(nm)} has announced that it will report {esc(label(k, s))} results on '
+        lede = (f'{esc(nm)} has announced that it will report {esc(label(k, p))} results on '
                 f'{esc(pretty(d_of(s["report_date"])))}'
                 + (f', {esc(s["timing_words"])}' if s.get("timing_words") else "")
                 + f' (its release of {esc(pretty(d_of(s["published_et"])))}).')
+    elif any(x[4] == "postponed" and x[3] and (today - d_of(x[3]["report_date"])).days <= 90 for x in rows):
+        _, k, p, s, _, _ = max((x for x in rows if x[4] == "postponed" and x[3]), key=lambda x: x[3]["published_et"])
+        pp = max(p["postponed"], key=lambda x: x["published_et"])
+        lede = (f'{esc(nm)} announced {esc(pretty(d_of(s["report_date"])))} for its {esc(label(k, p))} results, then '
+                f'put out a postponement on {esc(pretty(d_of(pp["published_et"])))}; no new report day has been read '
+                f'since.')
     else:
         lede = (f'{esc(nm)} has not announced its next report day in a release read through '
-                f'{esc(pretty(d_of(fetched) or today))}.')
+                f'{esc(fetched_et(fetched) or pretty(today))}.')
     done = [x for x in rows if x[5]]
     if done:
         _, k, _, _, _, r = done[0]
-        lede += f' Its latest results release, for {esc(label(k, r))}, went out on {esc(fmt_et(r["published_et"]))}.'
+        lede += f' Its latest results release, for {esc(label(k, t["P"][k]))}, went out on {esc(fmt_et(r["published_et"]))}.'
     title = f"{nm} ({tk}) Earnings Dates | pdufa.bio"
     desc = (f"When {nm} ({tk}) reports quarterly results: the report days it announced and when each results release "
             f"went out, from the company's own press releases.")
@@ -338,12 +420,13 @@ def ticker_page(tk, T, pages, today, fetched, site):
         links = [rel_link(x, "announcement") for x in ([s] if s else [])]
         links += [rel_link(x, "postponement") for x in p["postponed"]]
         links += [rel_link(r, "results")] if r else []
-        B.append(f'<tr data-earn-row="{esc(k)}"><td>{esc(label(k, r or s or (p["postponed"] or [{}])[-1]))}</td>'
+        B.append(f'<tr data-earn-row="{esc(k)}"><td>{esc(label(k, p))}</td>'
                  f'<td>{ann}</td><td>{res}</td><td>{"" if n is None else n}</td><td>{" &middot; ".join(links)}</td></tr>')
     B.append('</table>')
     B.append('<p class="sub">Days after the period ended are calendar days from the last day of the calendar quarter, '
-             'half or year to the date of the results release; they are left blank for a fiscal period that does not '
-             'follow the calendar. Releases read through ' + esc(str(fetched)[:10]) + '.</p>')
+             'half or year to the date of the results release; they are left blank for a period the company prints as '
+             'fiscal, since a fiscal period need not end with the calendar quarter.'
+             + (f' Releases read through {esc(fetched_et(fetched))}.' if fetched_et(fetched) else '') + '</p>')
     B.append(f'<p class="sub">{SOURCE}</p>')
     more = []
     if os.path.isfile(os.path.join(site, "ticker", tk, "index.html")):
