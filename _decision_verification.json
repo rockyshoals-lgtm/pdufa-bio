@@ -3316,8 +3316,10 @@
     "source_label": "Novavax 8-K, May 2025 (approval announced May 16, 2025)",
     "quote": "On May 16, 2025, Novavax, Inc. (\"Novavax\" or the \"Company\") announced that the U.S. Food and Drug Administration (\"FDA\") has approved the Company's Biologics License Application (\"BLA\") for Nuvaxovid",
     "quote_checked": "2026-11-18",
-    "fda_action_date": null,
-    "announced": "2025-05-16 per the Novavax 8-K; press release 2025-05-19"
+    "fda_action_date": "2025-05-16",
+    "announced": "2025-05-16 per the Novavax 8-K; press release 2025-05-19",
+    "fda_action_record": "CBER, NUVAXOVID page and SBRA Addendum, BLA STN 125817/0, approved May 16, 2025",
+    "fda_action_source_url": "https://www.fda.gov/vaccines-blood-biologics/vaccines/nuvaxovid"
    },
    "evidence_before_recheck": {
     "kind": "filing",
@@ -4460,8 +4462,10 @@
     "source_label": "Takeda release, June 30, 2025",
     "quote": "today announced that the U.S. Food and Drug Administration (FDA) has approved GAMMAGARD LIQUID ERC",
     "quote_checked": "2026-11-18",
-    "fda_action_date": null,
-    "announced": "2025-06-30"
+    "fda_action_date": "2025-06-27",
+    "announced": "2025-06-30",
+    "fda_action_record": "CBER approval letter, BLA STN 125105/2184, June 27, 2025",
+    "fda_action_source_url": "https://www.fda.gov/media/187352/download"
    },
    "evidence_before_recheck": {
     "kind": "filing",
