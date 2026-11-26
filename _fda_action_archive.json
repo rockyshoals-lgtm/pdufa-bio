@@ -1935,6 +1935,24 @@
    "marnetegragene"
   ]
  },
+ "RDY-2025-10-16": {
+  "basis": "red team 2026-11-26: openFDA's text of the FDA's Complete Response Letter, dated 2025-10-16",
+  "checked": "2026-11-26",
+  "date": "2025-10-16",
+  "name": "DRL_RI (proposed rituximab biosimilar)",
+  "oc": "CRL",
+  "record": "BLA 761376 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761376_20251016.pdf"
+ },
+ "RDY-2025-12-31": {
+  "basis": "red team 2026-11-26: openFDA's text of the FDA's Complete Response Letter, dated 2025-12-30; Dr. Reddy's disclosed it 2025-12-31",
+  "checked": "2026-11-26",
+  "date": "2025-12-30",
+  "name": "AVT03 (proposed denosumab biosimilar)",
+  "oc": "CRL",
+  "record": "BLA 761471 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761471_20251230.pdf"
+ },
  "REGN-2025-06-20": {
   "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
