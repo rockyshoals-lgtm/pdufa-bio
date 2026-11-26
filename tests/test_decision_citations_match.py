@@ -65,6 +65,9 @@ PARTNERS = {
     "ABBV": {1434265: "Genmab: EPKINLY's US applicant (co-developed with AbbVie), the goal date's source"},
     "ALNY": {1121404: "Sanofi: QFITLIA's applicant (Alnylam royalty), the goal date's source"},
     "TEVA": {1720893: "BioXcel: the goal date's source"},
+    # 2026-11-26 (CRL task): Dr. Reddy's disclosure names the AVT03 maker's Reykjavik facility; Alvotech's 20-F states
+    # the FDA's CRLs on AVT03, AVT05 and AVT06
+    "RDY": {1898416: "Alvotech: AVT03's maker (Reykjavik facility named in Dr. Reddy's CRL disclosure)"},
 }
 # openFDA CRL files whose file date is not the action date (a corrected letter keeps the original action date)
 CORRECTED = {"CRL_NDA219398_20260128.pdf": "2025-12-30",
