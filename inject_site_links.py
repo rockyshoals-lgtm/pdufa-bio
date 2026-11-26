@@ -64,6 +64,24 @@ SITE_LINKS = [
     ("Readouts", "/readouts"), ("Conferences", "/conferences"), ("Corrections", "/corrections"), ("All pages", "/sitemap"),
 ]
 
+# 2026-11-26 (David: the "Browse pdufa.bio" row at the bottom "is not even"): the 30 links ran together as one
+# dot-separated line that wrapped raggedly, and on the homepage its header-nav rules (nav{display:flex},
+# nav a{padding:7px 11px}) turned every dot into a stray flex item. The links now sit in six labelled columns; the
+# layout lives in inject_mobile_polish.py's stylesheet (.pd-browse). Every SITE_LINKS href belongs to one group;
+# tests/test_browse_footer.py fails if one does not.
+SITE_GROUPS = [
+    ("Calendar", ["/calendar", "/calendar/2027", "/fda-decisions-today", "/fda-approval-decisions-this-week",
+                  "/fda-this-month"]),
+    ("Decisions", ["/decisions/2026", "/decisions/2025", "/pdufa-date-changes", "/fda-approval-letters",
+                   "/fda-approval-rate"]),
+    ("Approvals", ["/fda-approvals", "/fda-approvals/companies", "/fda-approvals/drugs", "/fda-approvals/types",
+                   "/research/fda-approval-weekdays"]),
+    ("CRLs", ["/crl", "/crl/facts", "/crl/companies", "/crl/review-clock", "/learn/what-is-a-crl"]),
+    ("Trials", ["/readouts", "/readouts/oncology", "/conferences", "/clinical-trial-success-rates"]),
+    ("Studies and data", ["/research/fda-decision-timing", "/runup-by-year", "/coverage", "/changes", "/corrections"]),
+]
+SITE_LAST = "/sitemap"   # "All pages" closes the block on a line of its own
+
 
 def shown_date(r):
     """The date as its source gave it: a day, or the period for month/quarter rows ("Nov 2026", "Q4 2026")."""
@@ -100,6 +118,23 @@ def put(doc, b, e, block, before=("<footer", '<div class="legal"', "</body>")):
         if k >= 0:
             return doc[:k] + block + doc[k:]
     return doc
+
+
+def browse_block(items, b, e):
+    """The site-wide "Browse pdufa.bio" block: SITE_LINKS in their SITE_GROUPS columns, "All pages" last. A link
+    in no group (one added to SITE_LINKS alone) joins the last column rather than vanish."""
+    title = dict((h, t) for t, h in items)
+    grouped = {h for _, hs in SITE_GROUPS for h in hs} | {SITE_LAST}
+    stray = [h for _, h in items if h not in grouped]
+    cols = []
+    for i, (g, hs) in enumerate(SITE_GROUPS):
+        hs = [h for h in hs if h in title] + (stray if i == len(SITE_GROUPS) - 1 else [])
+        if hs:
+            cols.append(f'<div><div class="pd-bgt">{esc(g)}</div>'
+                        + "".join(f'<a href="{h}">{esc(title[h])}</a>' for h in hs) + "</div>")
+    last = (f'<a class="pd-ball" href="{SITE_LAST}">{esc(title[SITE_LAST])} &rarr;</a>' if SITE_LAST in title else "")
+    return (f'{b}<nav aria-label="Browse pdufa.bio" class="pd-browse"><div class="pd-bh">Browse pdufa.bio</div>'
+            f'<div class="pd-bg">{"".join(cols)}</div>{last}</nav>{e}')
 
 
 def nav_block(title, items, b, e):
@@ -167,8 +202,14 @@ def main():
         parts = u.strip("/").split("/")
         if len(parts) == 2 and parts[0] in ("drug", "ticker", "conference", "condition") and live(u):
             fam[parts[0]].append(u)
+    browse = lambda u: browse_block([(t, h) for t, h in SITE_LINKS if page_exists(h) and h != u],
+                                    "<!--SITELINKS:BEGIN-->", "<!--SITELINKS:END-->")
     for u, doc in docs.items():
         if u in noindex:
+            # 2026-11-26: a noindex page gets no new links, but one that already carries the Browse block (14 retired
+            # ticker and event pages) keeps it in the current layout rather than the old dotted row.
+            if "<!--SITELINKS:BEGIN-->" in doc:
+                out[u] = put(doc, "<!--SITELINKS:BEGIN-->", "<!--SITELINKS:END-->", browse(u))
             continue
         items = []
         if u in up_idx:
@@ -209,9 +250,7 @@ def main():
             new = put(new, "<!--RELATED:BEGIN-->", "<!--RELATED:END-->",
                       nav_block(title, items, "<!--RELATED:BEGIN-->", "<!--RELATED:END-->"))
             n_rel += 1
-        new = put(new, "<!--SITELINKS:BEGIN-->", "<!--SITELINKS:END-->",
-                  nav_block("Browse pdufa.bio", [(t, h) for t, h in SITE_LINKS if page_exists(h) and h != u],
-                            "<!--SITELINKS:BEGIN-->", "<!--SITELINKS:END-->"))
+        new = put(new, "<!--SITELINKS:BEGIN-->", "<!--SITELINKS:END-->", browse(u))
         out[u] = new
 
     # ---- LINKHUB: removed from the homepage (change 8); take out a block an older build left
