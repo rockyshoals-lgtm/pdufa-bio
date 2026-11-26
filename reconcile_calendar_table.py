@@ -147,6 +147,16 @@ def reconcile(path, events, dry):
     orig = doc
     moved, flagged, renamed = [], [], []
     month_scoped = bool(re.search(r"calendar[\\/]\d{4}[\\/]", path))
+    # The main page shows a stated run of month headings (June to December 2026 today). A row whose date
+    # moves to a month the page has no heading for leaves this page, as a cross-month move leaves a month
+    # page (2026-11-26: Vertex's povetacicept moved from November 30, 2026 to February 28, 2027; rewriting
+    # the row's date in place stretched the page's window to February, the insert pass below then dumped
+    # twelve January and February 2027 events into the 2026 grids, and rehome_rows kept them there
+    # because no 2027 heading exists). The month page and the dataset still carry the event.
+    heads = {g.group(2) for g in GRID.finditer(doc)} if not month_scoped else set()
+
+    def in_window(d):
+        return not heads or f"{MONTH_NAMES[int(d[5:7]) - 1]} {d[:4]}" in heads
 
     def fix(m):
         href, tk, date, dtext = m.groups()
@@ -179,6 +189,9 @@ def reconcile(path, events, dry):
             if month_scoped and ev["d"][:7] != date[:7]:
                 moved.append(f"{tk} {date} -> {ev['d']} (moved to its new month page)")
                 return ""
+            if not month_scoped and not in_window(ev["d"]):
+                moved.append(f"{tk} {date} -> {ev['d']} (removed: no {ev['d'][:7]} heading on this page)")
+                return ""
             moved.append(f"{tk} {date} -> {ev['d']}")
             return re.sub(rf"((?:&middot;|·) ){date}", rf"\g<1>{ev['d']}", m.group(0))
         return m.group(0)
@@ -201,7 +214,7 @@ def reconcile(path, events, dry):
         row_dates = re.findall(r"\b(20\d{2}-\d{2}-\d{2})\b", body)
         max_d = max(row_dates) if row_dates else "9999"
         for ev in sorted(events, key=lambda e: e["d"]):
-            if ev["d"] > max_d:
+            if ev["d"] > max_d or not in_window(ev["d"]):
                 continue                     # outside the page's stated window
             if re.search(rf"\b{ev['t']}\b[^<>]{{0,60}}{ev['d']}"
                          rf"|{ev['d']}[^<>]{{0,60}}\b{ev['t']}\b", body):

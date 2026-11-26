@@ -165,8 +165,10 @@ def decision_entries():
                     "summary": summ, "content": "".join(lines), "cat": word})
     for c in build_date_changes.collect_changes():
         prior, now = fdate(c["prior"]), fdate(c["now"])
-        # the day the archive recorded the new date (date_history "changed"); else the row's last update. Never the
-        # goal date itself, which is in the future.
+        # the change's own date (date_history "changed": the day the sponsor or the FDA announced it, or the day
+        # pdufa.bio corrected the record); else the row's last update. Never the goal date itself, which is in the
+        # future. Red team 2026-11-26: the summary said "pdufa.bio recorded the new date on" that day, which is not
+        # what the field holds (Vertex's entry would have said Nov 24, the day the FDA told Vertex).
         today = dt.datetime.now(ET).date()
         when = fdate(c.get("changed") or "") or fdate(c.get("ua") or "")
         when = min(when, today) if when else None
@@ -177,7 +179,7 @@ def decision_entries():
         summ = (f"The PDUFA goal date for {nm} ({c['company'] or c['t']}) moved {abs(days)} "
                 f"day{'' if abs(days) == 1 else 's'} "
                 f"{'later' if days > 0 else 'earlier'}, from {pretty(prior)} to {pretty(now)}"
-                + (f"; pdufa.bio recorded the new date on {pretty(when)}" if when else "") + ".")
+                + (f"; the change is dated {pretty(when)} in the goal-date history" if when else "") + ".")
         lines = [f"<p>{xesc(summ)}</p>"]
         if c["url"]:
             lines.append(f'<p>Source: <a href="{xesc(c["url"], {chr(34): "&quot;"})}">the announcement</a></p>')
@@ -425,7 +427,8 @@ def page(dec, n_dec, n_ch, crl, n_crl, last_updated, n_resc, started):
          'announcement is on record). It is updated at the time the page first entered pdufa.bio\'s public '
          'repository, the time its "first committed" line states; pages that came in with the repository\'s first '
          'import (July 2026) have no such time and are dated by the announcement alone. A goal-date change is dated by '
-         'the day pdufa.bio recorded the new date. A CRL entry is published on the letter\'s date; a letter that '
+         'the date of the change in the row\'s goal-date history: the day the sponsor or the FDA announced it, or the '
+         'day pdufa.bio corrected the record. A CRL entry is published on the letter\'s date; a letter that '
          f'first appears in the FDA\'s release after {span("started", c["started"])} is updated on the day pdufa.bio '
          'first read it there, so a reader that sorts by updated time sees a newly released old letter as new. '
          'Dates with no time of day are written as noon Eastern. Feed times are UTC; dates on this page are '

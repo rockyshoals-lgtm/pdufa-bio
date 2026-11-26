@@ -1,0 +1,69 @@
+name: pdufa.bio news watch (every 15 minutes)
+
+# Audit 2026-11-26 (news speed). On the last ten decisions the site published 3 to 35 hours after the sponsor's own
+# release, and Capricor's Nov 20 CRL (7:55 PM ET) raised no lead at all: the watchers ran only inside the daily
+# rebuild, whose crons GitHub starts 1.5 to 5 h late, so an after-close release waited for the next morning.
+#
+# This job runs the fast watchers on their own, every 15 minutes (GitHub may start it later under load), and opens
+# ONE "HELD: <row> (<source>) lead to verify" issue per new lead through quarantine_leads.py, the same issue the
+# rebuild opens (deduplicated against every issue ever opened for that lead). It builds nothing, commits nothing and
+# publishes nothing: a lead is verified against the release and the FDA before any page changes (house rule).
+# The escalation email stays with the rebuild (--no-escalate); _held_state.json is read from a throwaway copy.
+#
+#   watch_fmp_press.py         every armed sponsor's releases (GlobeNewswire, Business Wire, PR Newswire) via FMP
+#   watch_sponsor_newswire.py  the sponsor newsroom feeds it knows (no --discover: discovery stays in the rebuild)
+#   watch_edgar_8k.py          armed SEC registrants' newest 8-K / 6-K
+#   watch_fda_drugs_feed.py    the FDA's own press-release feed
+# Cost: about 8 FMP requests a run (5 symbols per request), ~770 a day on the paid plan the rebuild already uses.
+
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: news-watch
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  issues: write                 # open the HELD issue for a new lead; close ones whose leads are acked
+
+jobs:
+  watch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: "Fast watchers: leads only, never published"
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+          WATCH_LEADS_JSONL: ${{ runner.temp }}/news_leads.jsonl
+        run: |
+          set +e
+          rm -f "$WATCH_LEADS_JSONL"
+          for w in "watch_fmp_press.py" "watch_sponsor_newswire.py" "watch_edgar_8k.py" "watch_fda_drugs_feed.py"; do
+            echo "== $w"
+            before=$(cat "$WATCH_LEADS_JSONL" 2>/dev/null | wc -l)
+            timeout 240 python $w
+            rc=$?
+            after=$(cat "$WATCH_LEADS_JSONL" 2>/dev/null | wc -l)
+            if [ "$rc" != "0" ] && [ "$after" = "$before" ]; then
+              echo "::warning::$w exited $rc without writing a lead: it is BLIND this run, not a lead"
+            fi
+          done
+          exit 0
+      - name: "One HELD issue per new lead (the rebuild escalates, not this job)"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WATCH_LEADS_JSONL: ${{ runner.temp }}/news_leads.jsonl
+        run: |
+          cp _held_state.json "$RUNNER_TEMP/held_state.json" 2>/dev/null || true   # missing file: a fresh state
+          if [ -s "$WATCH_LEADS_JSONL" ]; then
+            python quarantine_leads.py collect --leads "$WATCH_LEADS_JSONL" --state "$RUNNER_TEMP/held_state.json" --no-escalate
+          else
+            echo "news watch: no leads this run"
+          fi

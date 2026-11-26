@@ -10651,7 +10651,7 @@ export default [
   "id": "pdufa_vrtx_2026-11-30",
   "t": "VRTX",
   "company": "Vertex",
-  "d": "2026-11-30",
+  "d": "2027-02-28",
   "dp": "day",
   "name": "Povetacicept (ALPN-303)",
   "type": "PDUFA",
@@ -10659,7 +10659,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VRTX-povetacicept",
-  "ua": "2026-11-26T03:19:19Z",
+  "ua": "2026-11-26T04:40:46Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
@@ -10679,10 +10679,28 @@ export default [
     "t7": 4.9,
     "source": "FMP split-adjusted daily closes"
    },
-   "source": "Vertex 8-K 2026-08-03 (EX-99.1)",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm",
-   "review": "The FDA accepted the BLA for accelerated approval of povetacicept in IgA nephropathy and assigned a PDUFA target action date of November 30, 2026, per Vertex's own quarterly release; the submission is supported by a pre-specified Week 36 interim analysis of the Phase 3 RAINIER trial.",
-   "source_quote": "FDA accepted the BLA submission for accelerated approval of povetacicept for adults with IgAN and assigned a PDUFA target action date of November 30, 2026."
+   "source": "Vertex release, Business Wire, November 25, 2026 (Vertex investor site)",
+   "source_url": "https://investors.vrtx.com/news-releases/news-release-details/vertex-announces-extension-pdufa-target-action-date-three-months",
+   "review": "BLA for accelerated approval in IgA nephropathy. The FDA extended the review by up to three months after a major amendment; the revised target action date is no later than February 28, 2027 (Vertex, November 25, 2026). The original date was November 30, 2026.",
+   "source_quote": "the revised target action date for the FDA decision is no later than February 28, 2027",
+   "prior_pdufa_date": "2026-11-30",
+   "date_provenance": "https://investors.vrtx.com/news-releases/news-release-details/vertex-announces-extension-pdufa-target-action-date-three-months",
+   "date_history": [
+    {
+     "date": "2026-11-30",
+     "changed": "2026-08-03",
+     "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm",
+     "note": "original PDUFA target action date"
+    },
+    {
+     "date": "2027-02-28",
+     "changed": "2026-11-24",
+     "url": "https://investors.vrtx.com/news-releases/news-release-details/vertex-announces-extension-pdufa-target-action-date-three-months",
+     "why": "The FDA classified Vertex's response to a late information request as a major amendment and extended the review by up to three months; Vertex's release of November 25, 2026 states the revised target action date is no later than February 28, 2027."
+    }
+   ],
+   "source_wire_url": "https://www.businesswire.com/news/home/20261125185870/en/",
+   "source_note": "Extension found 2026-11-26 by the press-release watch; the date is the sponsor's own statement and is a latest date (\"no later than\"), so a decision can come earlier."
   }
  },
  {
@@ -13669,22 +13687,22 @@ export default [
   "id": "pdufa_blte_2027-02-12",
   "t": "BLTE",
   "company": "Belite Bio, Inc",
-  "d": "2027-02-12",
+  "d": "2027-05-12",
   "dp": "day",
   "name": "Tinlarebant - Stargardt disease type 1",
   "type": "PDUFA",
   "ta": "Ophthalmology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-26T03:19:19Z",
+  "ua": "2026-11-26T04:36:35Z",
   "url": "/pdufa/BLTE-tinlarebant",
   "_d": {
    "indication": "Stargardt disease type 1 (STGD1)",
    "event_slug": "BLTE-tinlarebant",
-   "source": "Belite Bio 6-K 2026-08-11 (EX-99.1, NDA accepted, priority review)",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1889109/000110465926094040/tm2622827d1_ex99-1.htm",
-   "source_quote": "The FDA has set a Prescription Drug User Fee Act (PDUFA) date of February 12, 2027.",
-   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
+   "source": "Belite Bio release, GlobeNewswire, November 20, 2026 (6-K accepted 2026-11-20)",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/20/3407395/0/en/belite-bio-announces-extension-of-fda-review-timeline-for-tinlarebant-nda.html",
+   "source_quote": "with the extended Prescription Drug User Fee Act (PDUFA) action date being May 12, 2027",
+   "source_note": "Extension found 2026-11-26 by the press-release watch; the date is the sponsor's own statement.",
    "market_cap_usd": 5254452153.0,
    "runup_summary": {
     "basis": "so far",
@@ -13694,7 +13712,25 @@ export default [
     "t30": -9.42,
     "t7": -14.9,
     "source": "FMP split-adjusted daily closes"
-   }
+   },
+   "prior_pdufa_date": "2027-02-12",
+   "date_provenance": "https://www.globenewswire.com/news-release/2026/11/20/3407395/0/en/belite-bio-announces-extension-of-fda-review-timeline-for-tinlarebant-nda.html",
+   "date_history": [
+    {
+     "date": "2027-02-12",
+     "changed": "2026-08-11",
+     "url": "https://www.sec.gov/Archives/edgar/data/1889109/000110465926094040/tm2622827d1_ex99-1.htm",
+     "note": "original PDUFA target action date"
+    },
+    {
+     "date": "2027-05-12",
+     "changed": "2026-11-20",
+     "url": "https://www.globenewswire.com/news-release/2026/11/20/3407395/0/en/belite-bio-announces-extension-of-fda-review-timeline-for-tinlarebant-nda.html",
+     "why": "The FDA extended the review period by three months; Belite Bio's release of November 20, 2026 (6-K the same day) states the extended PDUFA action date of May 12, 2027."
+    }
+   ],
+   "source_sec_url": "https://www.sec.gov/Archives/edgar/data/1889109/000110465926130425/0001104659-26-130425-index.htm",
+   "review": "NDA for Stargardt disease type 1, priority review. Review extended by three months to May 12, 2027 (Belite Bio, November 20, 2026)."
   }
  },
  {

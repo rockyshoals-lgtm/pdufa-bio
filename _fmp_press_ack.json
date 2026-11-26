@@ -1,0 +1,11 @@
+{
+ "note": "Reviewed FMP press-release leads (watch_fmp_press.py). Key row_id|release url. Each with its reason.",
+ "acked": [
+  "pdufa_blte_2027-02-12|https://www.globenewswire.com/news-release/2026/11/20/3407395/0/en/belite-bio-announces-extension-of-fda-review-timeline-for-tinlarebant-nda.html",
+  "pdufa_vrtx_2026-11-30|https://www.businesswire.com/news/home/20261125185870/en/Vertex-Announces-Extension-of-PDUFA-Target-Action-Date-by-up-to-Three-Months-as-FDA-Completes-Review-of-the-Biologics-License-Application-for-Povetacicept-in-IgA-Nephropathy/"
+ ],
+ "reasons": {
+  "pdufa_blte_2027-02-12|https://www.globenewswire.com/news-release/2026/11/20/3407395/0/en/belite-bio-announces-extension-of-fda-review-timeline-for-tinlarebant-nda.html": "Applied: goal date moved to 2027-05-12 by apply_1126_blte_extension.py (2026-11-26).",
+  "pdufa_vrtx_2026-11-30|https://www.businesswire.com/news/home/20261125185870/en/Vertex-Announces-Extension-of-PDUFA-Target-Action-Date-by-up-to-Three-Months-as-FDA-Completes-Review-of-the-Biologics-License-Application-for-Povetacicept-in-IgA-Nephropathy/": "Reviewed 2026-11-26: Vertex's extension to no later than Feb 28, 2027; row moved by apply_1126_vrtx_extension.py."
+ }
+}
