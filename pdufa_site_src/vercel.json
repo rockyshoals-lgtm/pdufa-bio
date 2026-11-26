@@ -3691,6 +3691,36 @@
    "source": "/drug/xrx",
    "destination": "/ticker/XRTX",
    "permanent": true
+  },
+  {
+   "source": "/fda-decision/GILD-2025-12-16",
+   "destination": "/fda-decision/GSK-2025-12-16",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ABBV-2025-04-02",
+   "destination": "/fda-decision/NVS-2025-04-03",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/HOTH-2025-06-16",
+   "destination": "/fda-decision/CSLLY-2025-06-17",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/TURN-2025-02-14",
+   "destination": "/decisions/approvals",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/EXEL-2025-07-02",
+   "destination": "/decisions/approvals",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ANTE-2025-04-23",
+   "destination": "/decisions/approvals",
+   "permanent": true
   }
  ],
  "headers": [

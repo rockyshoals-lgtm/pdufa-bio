@@ -378,6 +378,48 @@
    "was": "A decision page for URGN dated 2025-04-27, titled and listed as a Complete Response Letter.",
    "now": "UroGen had no CRL in April 2025; the FDA approved ZUSDURI (UGN-102) on June 12, 2025, which has its own page. The page is retired and redirects to /fda-decision/URGN-2025-06-12.",
    "source": "the retired page's own CRL-reason line; the ZUSDURI decision page"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/GILD-2025-12-16",
+   "was": "A decision page for GILD dated 2025-12-16 recording GSK's Exdensur approval as a Gilead approval.",
+   "now": "The FDA approved Exdensur (depemokimab) on December 16, 2025 under BLA 761458, whose applicant is GlaxoSmithKline, not Gilead. Gilead had no FDA action that day. The decision now has its page under GSK. The page is retired and redirects to /fda-decision/GSK-2025-12-16.",
+   "source": "Drugs@FDA, BLA 761458 (applicant GlaxoSmithKline LLC, approved 2025-12-16) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761458"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ABBV-2025-04-02",
+   "was": "A decision page for ABBV dated 2025-04-02 recording Novartis's Vanrafia approval as an AbbVie approval.",
+   "now": "The FDA approved Vanrafia (atrasentan) on April 2, 2025 under NDA 219208, whose applicant is Novartis, not AbbVie. AbbVie had no FDA action that day. The decision already has its page under Novartis. The page is retired and redirects to /fda-decision/NVS-2025-04-03.",
+   "source": "Drugs@FDA, NDA 219208 (applicant Novartis, approved 2025-04-02) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219208"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/HOTH-2025-06-16",
+   "was": "A decision page for HOTH dated 2025-06-16 recording CSL's Andembry approval as a Hoth approval.",
+   "now": "The FDA approved Andembry (garadacimab) on June 16, 2025 under BLA 761367, whose applicant is CSL Behring, not Hoth Therapeutics. Hoth Therapeutics had no FDA action that day. The decision already has its page under CSL. The page is retired and redirects to /fda-decision/CSLLY-2025-06-17.",
+   "source": "Drugs@FDA, BLA 761367 (applicant CSL Behring LLC, approved 2025-06-16) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761367"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/TURN-2025-02-14",
+   "was": "A decision page for TURN dated 2025-02-14 recording Deciphera's Romvimza approval under TURN.",
+   "now": "The FDA approved Romvimza (vimseltinib) on February 14, 2025 under NDA 219304, whose applicant is Deciphera Pharmaceuticals (Ono Pharmaceutical group), not TURN. TURN had no FDA action that day. Deciphera has no ticker on pdufa.bio. The page is retired and redirects to /decisions/approvals.",
+   "source": "Drugs@FDA, NDA 219304 (applicant Deciphera, approved 2025-02-14) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219304"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/EXEL-2025-07-02",
+   "was": "A decision page for EXEL dated 2025-07-02 recording Dizal's Zegfrovy approval as an Exelixis approval.",
+   "now": "The FDA approved Zegfrovy (sunvozertinib) on July 2, 2025 under NDA 219839, whose applicant is Dizal, not Exelixis. Exelixis had no FDA action that day. Dizal has no ticker on pdufa.bio. The page is retired and redirects to /decisions/approvals.",
+   "source": "Drugs@FDA, NDA 219839 (applicant Dizal, approved 2025-07-02) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219839"
+  },
+  {
+   "date": "2026-11-26",
+   "page": "/fda-decision/ANTE-2025-04-23",
+   "was": "A decision page for ANTE dated 2025-04-23 recording Akeso's penpulimab approval under ANTE.",
+   "now": "The FDA approved penpulimab-kcqx on April 23, 2025 under BLA 761258, whose applicant is Akeso Biopharma, not ANTE. ANTE had no FDA action that day. Akeso has no ticker on pdufa.bio. The page is retired and redirects to /decisions/approvals.",
+   "source": "Drugs@FDA, BLA 761258 (applicant Akeso Biopharma, approved 2025-04-23) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761258"
   }
  ],
  "legacy": [
