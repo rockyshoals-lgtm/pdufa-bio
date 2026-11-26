@@ -24799,7 +24799,7 @@ export default [
    "guided_label": "second half of 2027",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
-   "guidance_text": "Two Phase 2 readouts anticipated in 2027: ACP-211 in major depressive disorder (MDD) in the second half",
+   "guidance_text": "Two Phase 2 readouts anticipated in 2027: ACP-211 in major depressive disorder (MDD) in the second half and, for the first time, guidance for remlifanserin in Lewy body dementia Psychosis (LBDP) in the fourth quarter.",
    "source_url": "https://www.businesswire.com/news/home/20261104772757/en/Acadia-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results/",
    "source": "company guidance (company release)",
    "readout_described": "Phase 2 readout",
@@ -24837,7 +24837,7 @@ export default [
    "guided_label": "fourth quarter of 2027",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
-   "guidance_text": "Two Phase 2 readouts anticipated in 2027: ... guidance for remlifanserin in Lewy body dementia Psychosis (LBDP) in the fourth quarter",
+   "guidance_text": "Two Phase 2 readouts anticipated in 2027: ACP-211 in major depressive disorder (MDD) in the second half and, for the first time, guidance for remlifanserin in Lewy body dementia Psychosis (LBDP) in the fourth quarter.",
    "source_url": "https://www.businesswire.com/news/home/20261104772757/en/Acadia-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results/",
    "source": "company guidance (company release)",
    "readout_described": "Phase 2 readout",
@@ -31767,7 +31767,8 @@ export default [
      "date": "2026-12-31",
      "note": "created 2026-11-26 from the company's own statement (press release 2026-11-05)"
     }
-   ]
+   ],
+   "date_quote": "Annual Meeting & Exposition in December 2026"
   },
   "dm": "2026-12"
  },
@@ -31992,7 +31993,8 @@ export default [
      "date": "2026-12-31",
      "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
     }
-   ]
+   ],
+   "date_quote": "the Company's expectations for topline data from the RUBENS trial around year-end 2026"
   }
  },
  {
@@ -32549,7 +32551,8 @@ export default [
      "date": "2027-12-31",
      "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
     }
-   ]
+   ],
+   "date_quote": "are expected in the second half of 2027."
   }
  },
  {
