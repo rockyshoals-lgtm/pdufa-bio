@@ -3495,6 +3495,108 @@
    "basis": "Company release: indication stated as first-line microsatellite-stable colorectal cancer",
    "source": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/",
    "tagged": "2026-11-26 readout mine; hand decision from the company's stated indication"
+  },
+  "readout_ser_2027-06-30": {
+   "ta": "CNS",
+   "basis": "Sponsor SEC filing: indication stated as Parkinson's disease with motor fluctuations",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001708599/000170859926000069/ser-20261112xex991_earning.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_ikt_2027-06-30": {
+   "ta": "Respiratory",
+   "basis": "Sponsor SEC filing: indication stated as Pulmonary Arterial Hypertension (PAH)",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001750149/000119312526455560/d95716dex991.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_pbls_2027-03-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as familial adenomatous polyposis (FAP)",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_pbls_2027-03-31-zolucateti": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as familial adenomatous polyposis (FAP)",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_pbls_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as adamantinomatous craniopharyngioma (ACP)",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_pbls_2027-03-31-zolucateti-2": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as hepatocellular carcinoma (HCC)",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_pbls_2029-12-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as desmoid tumors",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_pyxs_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as 1L R/M HNSCC",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_pyxs_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as 2L+ R/M HNSCC",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_pyxs_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as first-line (1L) R/M HNSCC",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_clrb_2026-12-12": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as relapsed/refractory Waldenström macroglobulinemia",
+   "source": "https://www.cellectar.com/investors/news-events/press-releases/detail/401",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_ptix_2027-12-31": {
+   "ta": "CNS",
+   "basis": "Sponsor SEC filing: indication stated as GAD (generalized anxiety disorder)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1022899/000149315226052871/ex99-1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_ptix_2028-06-30": {
+   "ta": "CNS",
+   "basis": "Sponsor SEC filing: indication stated as GAD (generalized anxiety disorder)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1022899/000149315226052871/ex99-1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_rnxt_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as locally advanced pancreatic cancer (LAPC)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1574094/000119312526449890/rnxt-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_dtil_2026-12-31": {
+   "ta": "Rare disease",
+   "basis": "Sponsor SEC filing: indication stated as Duchenne muscular dystrophy (DMD)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_dtil_2027-06-30": {
+   "ta": "Rare disease",
+   "basis": "Sponsor SEC filing: indication stated as Duchenne muscular dystrophy (DMD)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_dtil_2027-12-31": {
+   "ta": "Rare disease",
+   "basis": "Sponsor SEC filing: indication stated as Duchenne muscular dystrophy (DMD)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+   "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
   }
  },
  "nct_mismatch": [

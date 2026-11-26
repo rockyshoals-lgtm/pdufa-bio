@@ -11065,15 +11065,15 @@ export default [
   "id": "readout_lxeo_2026-12-15",
   "t": "LXEO",
   "company": "Lexeo Therapeutics, Inc.",
-  "d": "2026-12-15",
-  "dp": "month",
+  "d": "2026-11-16",
+  "dp": "day",
   "name": "LX2020",
   "type": "Readout",
   "ta": "Cardiovascular",
   "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06109181",
-  "ua": "2026-07-11T15:23:27Z",
+  "st": "Reported",
+  "url": "https://www.globenewswire.com/news-release/2026/11/16/3403343/0/en/lexeo-therapeutics-announces-positive-interim-phase-i-ii-data-and-regulatory-update-for-lx2020-in-pkp2-arrhythmogenic-cardiomyopathy-and-reports-third-quarter-2026-financial-result.html",
+  "ua": "2026-11-26T23:43:23Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06109181",
@@ -11091,9 +11091,22 @@ export default [
     "checked": "2026-11-17",
     "was": "LX1001",
     "why": "the linked ClinicalTrials.gov record tests LX2020, not LX1001"
-   }
-  },
-  "dm": "2026-12"
+   },
+   "date_history": [
+    {
+     "date": "2026-12-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-11-16",
+     "changed": "2026-11-26",
+     "why": "The company's release of 2026-11-16 reports this readout; a reported row carries the day it was reported. Was 2026-12-15 (month)."
+    }
+   ],
+   "review": "Lexeo Therapeutics reported this readout on 2026-11-16: “Lexeo Therapeutics Announces Positive Interim Phase I/II Data and Regulatory Update for LX2020 in PKP2 Arrhythmogenic Cardiomyopathy and Reports Third Quarter 2026 Financial Results” (SEC 8-K EX-99.1).",
+   "reported_source_url": "https://www.globenewswire.com/news-release/2026/11/16/3403343/0/en/lexeo-therapeutics-announces-positive-interim-phase-i-ii-data-and-regulatory-update-for-lx2020-in-pkp2-arrhythmogenic-cardiomyopathy-and-reports-third-quarter-2026-financial-result.html",
+   "program": "LX2020"
+  }
  },
  {
   "id": "readout_mnov_2026-12-15",
@@ -25865,40 +25878,44 @@ export default [
   "id": "readout_beam_2026-12-15-ristogloge",
   "t": "BEAM",
   "company": "Beam Therapeutics Inc.",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "Ristoglogene autogetemcel (risto-cel, BEAM-101) BEACON Phase 1/2 Updated clinical data,…",
+  "d": "2026-12-12",
+  "dp": "day",
+  "name": "risto-cel (ristoglogene autogetemcel; formerly BEAM-101) BEACON Phase 1/2 Oral…",
   "type": "Readout",
   "ta": "Hematology",
   "cap": "",
   "st": "Guided",
-  "url": "https://www.globenewswire.com/news-release/2026/11/10/3399328/0/en/beam-therapeutics-announces-positive-topline-pivotal-data-from-beacon-phase-1-2-trial-of-risto-cel-in-patients-with-sickle-cell-disease.html",
-  "ua": "2026-11-25T20:40:23Z",
+  "url": "https://investors.beamtx.com/news-releases/news-release-details/beam-therapeutics-present-updated-clinical-data-beacon-phase-12",
+  "ua": "2026-11-26T23:43:23Z",
   "_d": {
    "nct_id": null,
-   "indication": "Sickle cell disease",
+   "indication": "sickle cell disease",
    "market_cap_usd": null,
-   "program": "Ristoglogene autogetemcel (risto-cel, BEAM-101)",
+   "program": "risto-cel (ristoglogene autogetemcel; formerly BEAM-101)",
    "trial": "BEACON Phase 1/2",
-   "guided_precision": "window",
-   "guided_window": "2026-12-12..2026-12-15",
-   "guided_label": "68th ASH Annual Meeting, December 12-15, 2026",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-10",
-   "guidance_text": "taking place December 12–15, 2026, in New Orleans",
-   "source_url": "https://www.globenewswire.com/news-release/2026/11/10/3399328/0/en/beam-therapeutics-announces-positive-topline-pivotal-data-from-beacon-phase-1-2-trial-of-risto-cel-in-patients-with-sickle-cell-disease.html",
+   "guided_precision": "day",
+   "guided_window": "2026-12-12",
+   "guided_label": "Saturday, December 12, 2026, 5:00-5:15 p.m. CT",
+   "guided_form": "company IR (GlobeNewswire release)",
+   "guided_filed": "2026-11-04",
+   "guidance_text": "Saturday, December 12, 2026, 5:00–5:15 p.m. CT",
+   "source_url": "https://investors.beamtx.com/news-releases/news-release-details/beam-therapeutics-present-updated-clinical-data-beacon-phase-12",
    "source": "company guidance (company release)",
-   "readout_described": "Updated clinical data, oral presentation at ASH 2026 (earlier data cutoff)",
-   "red_team": "2026-11-25: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened GNW release (Nov 10 2026): 'oral presentation at the 68th ... (ASH) Annual Meeting ... taking place December 12–15, 2026, in New Orleans', earlier data cutoff than topline; Nov 4 release confirms ASH oral. Window is meeting span; session date not stated.",
+   "readout_described": "Oral presentation (Abstract 335): Efficacy, Safety, and Patient-Reported Outcomes of Risto-cel in Adolescents and…",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read the Beam IR page (release 2026-11-04, 'Beam Therapeutics to Present Updated Clinical Data from BEACON Phase 1/2 Trial of Risto-cel...'). Abstract 335, oral session 114. Title matches. The line reads verbatim 'Saturday, December 12, 2026, 5:00–5:15 p.m. CT'; the time zone is stated (CT =…",
    "date_history": [
     {
      "date": "2026-12-15",
      "note": "created 2026-11-25 from the company's own statement (press release 2026-11-10)"
+    },
+    {
+     "date": "2026-12-12",
+     "changed": "2026-11-26",
+     "why": "Re-sourced to the company's newest statement (company IR (GlobeNewswire release) 2026-11-04): “Saturday, December 12, 2026, 5:00-5:15 p.m. CT”. Was 2026-12-15 (month)."
     }
    ],
    "ta_basis": "Company release: indication stated as Sickle cell disease"
-  },
-  "dm": "2026-12"
+  }
  },
  {
   "id": "readout_beam_2027-12-31",
@@ -26455,40 +26472,44 @@ export default [
   "id": "readout_clrb_2026-12-15",
   "t": "CLRB",
   "company": "Cellectar Biosciences, Inc.",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "Iopofosine I 131 Phase 2b CLOVER WaM Updated 12-month follow-up data, posters at ASH 2026",
+  "d": "2026-12-14",
+  "dp": "day",
+  "name": "iopofosine I 131 Phase 2b CLOVER-WaM ASH 2026 poster (Publication 5325): Iopofosine I…",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
   "st": "Guided",
-  "url": "https://www.globenewswire.com/news-release/2026/11/04/3395373/29076/en/cellectar-biosciences-to-present-three-posters-highlighting-durable-clinical-activity-of-iopofosine-i-131-in-waldenstr%c3%b6m-macroglobulinemia-at-the-american-society-of-hematology-ann.html",
-  "ua": "2026-11-25T20:40:23Z",
+  "url": "https://www.cellectar.com/investors/news-events/press-releases/detail/401",
+  "ua": "2026-11-26T23:43:23Z",
   "_d": {
    "nct_id": null,
-   "indication": "Relapsed/refractory Waldenstrom macroglobulinemia",
+   "indication": "Waldenström macroglobulinemia",
    "market_cap_usd": null,
-   "program": "Iopofosine I 131",
+   "program": "iopofosine I 131",
    "trial": "Phase 2b CLOVER WaM",
-   "guided_precision": "window",
-   "guided_window": "2026-12-12..2026-12-15",
-   "guided_label": "ASH Annual Meeting and Exposition taking place December 12…",
-   "guided_form": "press release",
+   "guided_precision": "day",
+   "guided_window": "2026-12-14",
+   "guided_label": "December 14, 2026, 6:00:00 PM - 8:00:00 PM",
+   "guided_form": "company IR (GlobeNewswire release)",
    "guided_filed": "2026-11-04",
-   "guidance_text": "will be presented at the upcoming American Society of Hematology (ASH) Annual Meeting and Exposition taking place December 12 – 15 in New Orleans, Louisiana.",
-   "source_url": "https://www.globenewswire.com/news-release/2026/11/04/3395373/29076/en/cellectar-biosciences-to-present-three-posters-highlighting-durable-clinical-activity-of-iopofosine-i-131-in-waldenstr%c3%b6m-macroglobulinemia-at-the-american-society-of-hematology-ann.html",
+   "guidance_text": "December 14, 2026, 6:00:00 PM - 8:00:00 PM",
+   "source_url": "https://www.cellectar.com/investors/news-events/press-releases/detail/401",
    "source": "company guidance (company release)",
-   "readout_described": "Updated 12-month follow-up data, posters at ASH 2026",
-   "red_team": "2026-11-25: source re-opened by an independent red-team pass; quote, program, timing and date checked. Q3 release (Nov 10) names only 'ASH 2026' with no dates, so the month window came from other companies. Cellectar's own Nov 4 release (read via FMP feed copy; URL too long to fetch) states ASH Dec 12-15; poster session dates not read. Its subheadline already summarizes updated CLOVER WaM analyses.",
+   "readout_described": "ASH 2026 poster (Publication 5325): Iopofosine I 131 in Waldenström macroglobulinemia: 12-month follow up data from…",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read cellectar.com detail/401 (release 2026-11-04). Publication 5325, 'Iopofosine I 131 in Waldenström macroglobulinemia: 12-month follow up data from the CLOVER-WaM trial'. Date line verbatim: 'December 14, 2026, 6:00:00 PM - 8:00:00 PM'. Location 'MCCNO - Hall F'. NO time zone is stated: do not…",
    "date_history": [
     {
      "date": "2026-12-15",
      "note": "created 2026-11-25 from the company's own statement (press release 2026-11-04)"
+    },
+    {
+     "date": "2026-12-14",
+     "changed": "2026-11-26",
+     "why": "Re-sourced to the company's newest statement (company IR (GlobeNewswire release) 2026-11-04): “December 14, 2026, 6:00:00 PM - 8:00:00 PM”. Was 2026-12-15 (month)."
     }
    ],
    "ta_basis": "Company release: indication stated as Relapsed/refractory Waldenstrom macroglobulinemia"
-  },
-  "dm": "2026-12"
+  }
  },
  {
   "id": "readout_cocp_2026-12-31",
@@ -31975,41 +31996,45 @@ export default [
   "id": "readout_crvs_2026-12-31",
   "t": "CRVS",
   "company": "Corvus Pharmaceuticals, Inc.",
-  "d": "2026-12-31",
-  "dp": "month",
-  "name": "soquelitinib ALPS Phase 2 (NIAID collaboration) poster presentation (ASH 2026)",
+  "d": "2026-12-14",
+  "dp": "day",
+  "name": "soquelitinib Phase 2 (NIAID collaboration) ASH 2026 poster: Clinical assessment of…",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
   "st": "Guided",
-  "url": "https://www.globenewswire.com/news-release/2026/11/05/3396993/0/en/corvus-pharmaceuticals-provides-business-update-and-reports-third-quarter-2026-financial-results.html",
-  "ua": "2026-11-26T21:03:06Z",
+  "url": "https://investor.corvuspharma.com/news-releases/news-release-details/corvus-pharmaceuticals-announces-initial-data-soquelitinib",
+  "ua": "2026-11-26T23:43:23Z",
   "_d": {
    "nct_id": null,
-   "indication": "autoimmune lymphoproliferative syndrome",
+   "indication": "autoimmune lymphoproliferative syndrome (ALPS)-FAS",
    "market_cap_usd": null,
    "program": "soquelitinib",
    "trial": "ALPS Phase 2 (NIAID collaboration)",
-   "guided_precision": "month",
-   "guided_window": "2026-12",
-   "guided_label": "December 2026 (ASH poster)",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-05",
-   "guidance_text": "will be presented in greater detail in a poster presentation at the 68th American Society of Hematology",
-   "source_url": "https://www.globenewswire.com/news-release/2026/11/05/3396993/0/en/corvus-pharmaceuticals-provides-business-update-and-reports-third-quarter-2026-financial-results.html",
+   "guided_precision": "day",
+   "guided_window": "2026-12-14",
+   "guided_label": "Session Date: December 14, 2026; Session & Presentation…",
+   "guided_form": "company IR (GlobeNewswire release)",
+   "guided_filed": "2026-11-04",
+   "guidance_text": "Session Date: December 14, 2026",
+   "source_url": "https://investor.corvuspharma.com/news-releases/news-release-details/corvus-pharmaceuticals-announces-initial-data-soquelitinib",
    "source": "company guidance (company release)",
-   "readout_described": "poster presentation (ASH 2026)",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same Corvus release: ALPS Phase 2 data 'will be presented in greater detail in a poster presentation at the 68th American Society of Hematology (ASH) Annual Meeting & Exposition in December 2026.' Corvus 11/4 release gives ASH as Dec 12-15, 2026; no poster day stated, month precision correct.",
+   "readout_described": "ASH 2026 poster: Clinical assessment of soquelitinib, an interleukin-2-inducible T cell kinase (ITK) inhibitor, for…",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read the Corvus IR page (2026-11-04). Poster: 'Clinical assessment of soquelitinib, an interleukin-2-inducible T cell kinase (ITK) inhibitor, for treatment of autoimmune lymphoproliferative syndrome (ALPS)-FAS'. Session 203, Poster III, publication 4743. 'Session Date: December 14, 2026' (the…",
    "date_history": [
     {
      "date": "2026-12-31",
      "note": "created 2026-11-26 from the company's own statement (press release 2026-11-05)"
+    },
+    {
+     "date": "2026-12-14",
+     "changed": "2026-11-26",
+     "why": "Re-sourced to the company's newest statement (company IR (GlobeNewswire release) 2026-11-04): “Session Date: December 14, 2026; Session & Presentation…”. Was 2026-12-31 (month)."
     }
    ],
    "date_quote": "Annual Meeting & Exposition in December 2026",
    "ta_basis": "Company release: indication stated as autoimmune lymphoproliferative syndrome"
-  },
-  "dm": "2026-12"
+  }
  },
  {
   "id": "readout_ctmx_2027-01-31",
@@ -37322,6 +37347,698 @@ export default [
     }
    ],
    "ta_basis": "Company release: indication stated as first-line microsatellite-stable colorectal cancer"
+  }
+ },
+ {
+  "id": "readout_ser_2027-06-30",
+  "t": "SER",
+  "company": "Serina Therapeutics, Inc.",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "SER-252 (POZ-apomorphine) SER-252 registrational trial (single-ascending-dose portion)…",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001708599/000170859926000069/ser-20261112xex991_earning.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Parkinson's disease with motor fluctuations",
+   "market_cap_usd": null,
+   "program": "SER-252 (POZ-apomorphine)",
+   "trial": "SER-252 registrational trial (single-ascending-dose portion)",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "in the first half of 2027",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-12",
+   "guidance_text": "The trial continues to assess safety, tolerability, pharmacokinetics and exploratory clinical measures of motor function, with topline data from the single-ascending-dose portion expected in the first half of 2027.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001708599/000170859926000069/ser-20261112xex991_earning.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Topline single-ascending-dose data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read SEC EX-99.1 (Serina Q3 2026 results, 2026-11-12, 'NYSE American: SER'). Quote verbatim: 'The trial continues to assess safety, tolerability, pharmacokinetics and exploratory clinical measures of motor function, with topline data from the single-ascending-dose portion expected in the first…",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (8-K 2026-11-12)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as Parkinson's disease with motor fluctuations"
+  }
+ },
+ {
+  "id": "readout_ikt_2027-06-30",
+  "t": "IKT",
+  "company": "Inhibikase Therapeutics, Inc.",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "IKT-001 Phase 3 IMPROVE-PAH, Part A (n=50) Interim safety readout, Part A",
+  "type": "Readout",
+  "ta": "Respiratory",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001750149/000119312526455560/d95716dex991.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Pulmonary Arterial Hypertension (PAH)",
+   "market_cap_usd": null,
+   "program": "IKT-001",
+   "trial": "Phase 3 IMPROVE-PAH, Part A (n=50)",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "planned for the first half of 2027",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-10",
+   "guidance_text": "An interim safety readout for Part A of the Phase 3 IMPROVE-PAH study (n=50) is planned for the first half of 2027.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001750149/000119312526455560/d95716dex991.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Interim safety readout, Part A",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read SEC EX-99.1 (Inhibikase Q3 2026, 2026-11-10). Verbatim: 'An interim safety readout for Part A of the Phase 3 IMPROVE-PAH study (n=50) is planned for the first half of 2027.' Drug IKT-001, PAH match. Safety-only interim, labelled as such. Part A is ~140 patients in total; the interim covers…",
+   "nct_stated": "NCT07365332",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (8-K 2026-11-10)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as Pulmonary Arterial Hypertension (PAH)"
+  }
+ },
+ {
+  "id": "readout_ibio_2027-03-31",
+  "t": "IBIO",
+  "company": "iBio, Inc.",
+  "d": "2027-03-31",
+  "dp": "quarter",
+  "name": "IBIO-600 (long-acting anti-myostatin antibody) First-in-human Phase 1 trial, single…",
+  "type": "Readout",
+  "ta": "",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://ir.ibioinc.com/news-events/press-releases/detail/268/ibio-reports-q1-fiscal-year-2027-financial-results-and-provides-corporate-update",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "preserve muscle and improve body composition (no disease indication stated in release)",
+   "market_cap_usd": null,
+   "program": "IBIO-600 (long-acting anti-myostatin antibody)",
+   "trial": "First-in-human Phase 1 trial, single ascending dose (SAD) portion",
+   "guided_precision": "quarter",
+   "guided_window": "2027-Q1",
+   "guided_label": "in the first quarter of 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-10",
+   "guidance_text": "iBio anticipates interim Phase 1 data of the SAD study in the first quarter of 2027.",
+   "source_url": "https://ir.ibioinc.com/news-events/press-releases/detail/268/ibio-reports-q1-fiscal-year-2027-financial-results-and-provides-corporate-update",
+   "source": "company guidance (company release)",
+   "readout_described": "Interim Phase 1 SAD data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read the iBio IR page (Q1 FY2027 results, 2026-11-10). Verbatim: 'iBio anticipates interim Phase 1 data of the SAD study in the first quarter of 2027.' SAD dosing completed. The release describes IBIO-600 as 'iBio's long-acting anti-myostatin antibody being developed to preserve muscle and improve…",
+   "date_history": [
+    {
+     "date": "2027-03-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-10)"
+    }
+   ]
+  },
+  "dm": "2027-03"
+ },
+ {
+  "id": "readout_pbls_2027-03-31",
+  "t": "PBLS",
+  "company": "Parabilis Medicines, Inc.",
+  "d": "2027-03-31",
+  "dp": "quarter",
+  "name": "zolucatetide Phase 1/2 trial (unnamed) Translational data demonstrating on-target…",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "familial adenomatous polyposis (FAP)",
+   "market_cap_usd": null,
+   "program": "zolucatetide",
+   "trial": "Phase 1/2 trial (unnamed)",
+   "guided_precision": "quarter",
+   "guided_window": "2027-Q1",
+   "guided_label": "at a medical meeting in the first quarter of 2027",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-12",
+   "guidance_text": "Anticipate disclosing translational data demonstrating on-target activity at a medical meeting in the first quarter of 2027",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Translational data demonstrating on-target activity, at a medical meeting",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read SEC EX-99.1 (Parabilis Medicines, Nasdaq: PBLS, Q3 2026, 2026-11-12). Verbatim bullet under the FAP heading: 'Anticipate disclosing translational data demonstrating on-target activity at a medical meeting in the first quarter of 2027.' The preceding bullet is the FAP dose-ranging cohort in…",
+   "date_history": [
+    {
+     "date": "2027-03-31",
+     "note": "created 2026-11-26 from the company's own statement (8-K 2026-11-12)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as familial adenomatous polyposis (FAP)"
+  },
+  "dm": "2027-03"
+ },
+ {
+  "id": "readout_pbls_2027-03-31-zolucateti",
+  "t": "PBLS",
+  "company": "Parabilis Medicines, Inc.",
+  "d": "2027-03-31",
+  "dp": "quarter",
+  "name": "zolucatetide Phase 1/2 trial (unnamed) Clinical data from additional FAP patients",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "familial adenomatous polyposis (FAP)",
+   "market_cap_usd": null,
+   "program": "zolucatetide",
+   "trial": "Phase 1/2 trial (unnamed)",
+   "guided_precision": "quarter",
+   "guided_window": "2027-Q1",
+   "guided_label": "in the first quarter of 2027",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-12",
+   "guidance_text": "Anticipate disclosing clinical data from additional patients with FAP in the first quarter of 2027, building on compelling early observations of duodenal polyp reductions in two patients",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Clinical data from additional FAP patients",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same release. Verbatim, FAP section: 'Anticipate disclosing clinical data from additional patients with FAP in the first quarter of 2027, building on compelling early observations of duodenal polyp reductions in two patients'. Q1 2027 correct.",
+   "date_history": [
+    {
+     "date": "2027-03-31",
+     "note": "created 2026-11-26 from the company's own statement (8-K 2026-11-12)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as familial adenomatous polyposis (FAP)"
+  },
+  "dm": "2027-03"
+ },
+ {
+  "id": "readout_pbls_2027-06-30",
+  "t": "PBLS",
+  "company": "Parabilis Medicines, Inc.",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "zolucatetide Phase 1/2 trial (unnamed) Updated clinical data from additional ACP patients",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "adamantinomatous craniopharyngioma (ACP)",
+   "market_cap_usd": null,
+   "program": "zolucatetide",
+   "trial": "Phase 1/2 trial (unnamed)",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "in the first half of 2027",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-12",
+   "guidance_text": "Anticipate disclosing updated clinical data from additional patients with ACP in the first half of 2027, building on encouraging early antitumor activity in three patients",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Updated clinical data from additional ACP patients",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same release. Verbatim, ACP section: 'Anticipate disclosing updated clinical data from additional patients with ACP in the first half of 2027, building on encouraging early antitumor activity in three patients'. H1 2027 correct. The trial is not named in the ACP section.",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (8-K 2026-11-12)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as adamantinomatous craniopharyngioma (ACP)"
+  }
+ },
+ {
+  "id": "readout_pbls_2027-03-31-zolucateti-2",
+  "t": "PBLS",
+  "company": "Parabilis Medicines, Inc.",
+  "d": "2027-03-31",
+  "dp": "quarter",
+  "name": "zolucatetide Phase 1/2 trial (unnamed) Additional clinical data in HCC, at a medical…",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "hepatocellular carcinoma (HCC)",
+   "market_cap_usd": null,
+   "program": "zolucatetide",
+   "trial": "Phase 1/2 trial (unnamed)",
+   "guided_precision": "quarter",
+   "guided_window": "2027-Q1",
+   "guided_label": "at a medical meeting in the first quarter of 2027",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-12",
+   "guidance_text": "Anticipate disclosing additional clinical data in HCC at a medical meeting in the first quarter of 2027, building on evidence of early activity in a heavily pretreated patient",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Additional clinical data in HCC, at a medical meeting",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same release. Verbatim, under the heading 'Hepatocellular carcinoma and additional Wnt/β-catenin-driven tumors': 'Anticipate disclosing additional clinical data in HCC at a medical meeting in the first quarter of 2027, building on evidence of early activity in a heavily pretreated patient'. The…",
+   "date_history": [
+    {
+     "date": "2027-03-31",
+     "note": "created 2026-11-26 from the company's own statement (8-K 2026-11-12)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as hepatocellular carcinoma (HCC)"
+  },
+  "dm": "2027-03"
+ },
+ {
+  "id": "readout_pbls_2029-12-31",
+  "t": "PBLS",
+  "company": "Parabilis Medicines, Inc.",
+  "d": "2029-12-31",
+  "dp": "year",
+  "name": "zolucatetide PEDESTAL Phase 3 registrational trial Topline results",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "desmoid tumors",
+   "market_cap_usd": null,
+   "program": "zolucatetide",
+   "trial": "PEDESTAL Phase 3 registrational trial",
+   "guided_precision": "year",
+   "guided_window": "2029",
+   "guided_label": "topline results anticipated in 2029",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-12",
+   "guidance_text": "Reached alignment with the U.S. Food and Drug Administration (FDA) on a global Phase 3 trial design; plan to initiate the randomized, double-blind PEDESTAL Phase 3 registrational trial in the first half of 2027 with topline results anticipated in 2029",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Topline results",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same release, Desmoid tumors heading. Verbatim: 'Reached alignment with the U.S. Food and Drug Administration (FDA) on a global Phase 3 trial design; plan to initiate the randomized, double-blind PEDESTAL Phase 3 registrational trial in the first half of 2027 with topline results anticipated in…",
+   "date_history": [
+    {
+     "date": "2029-12-31",
+     "note": "created 2026-11-26 from the company's own statement (8-K 2026-11-12)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as desmoid tumors"
+  }
+ },
+ {
+  "id": "readout_pyxs_2026-12-31",
+  "t": "PYXS",
+  "company": "Pyxis Oncology, Inc.",
+  "d": "2026-12-31",
+  "dp": "month",
+  "name": "micvotabart pelidotin (MICVO) + KEYTRUDA (pembrolizumab) Phase 1/2 combination…",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "1L R/M HNSCC",
+   "market_cap_usd": null,
+   "program": "micvotabart pelidotin (MICVO) + KEYTRUDA (pembrolizumab)",
+   "trial": "Phase 1/2 combination dose-escalation study",
+   "guided_precision": "month",
+   "guided_window": "2026-12",
+   "guided_label": "in December 2026",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-05",
+   "guidance_text": "Pyxis Oncology plans to provide a corporate update in December 2026, including: Updated efficacy and safety data from the ongoing Phase 1/2 combination dose-escalation study evaluating MICVO with KEYTRUDA® (pembrolizumab) across multiple doses in 1L R/M HNSCC.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Corporate update including updated efficacy and safety data (at least 20 patients at 3.6 and 4.4 mg/kg)",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read SEC EX-99.1 (Pyxis Q3 2026, 2026-11-05). Intro line verbatim: 'Pyxis Oncology plans to provide a corporate update in December 2026, including:' and the bullet verbatim: 'Updated efficacy and safety data from the ongoing Phase 1/2 combination dose-escalation study evaluating MICVO with…",
+   "date_history": [
+    {
+     "date": "2026-12-31",
+     "note": "created 2026-11-26 from the company's own statement (8-K 2026-11-05)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as 1L R/M HNSCC"
+  },
+  "dm": "2026-12"
+ },
+ {
+  "id": "readout_pyxs_2027-06-30",
+  "t": "PYXS",
+  "company": "Pyxis Oncology, Inc.",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "micvotabart pelidotin (MICVO) MICVO Phase 1 monotherapy study Updated overall survival…",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "2L+ R/M HNSCC",
+   "market_cap_usd": null,
+   "program": "micvotabart pelidotin (MICVO)",
+   "trial": "MICVO Phase 1 monotherapy study",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "in the first half of 2027",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-05",
+   "guidance_text": "Updated overall survival data from the ongoing MICVO monotherapy study are expected in the first half of 2027.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Updated overall survival data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same release, Pipeline Updates. Verbatim: 'Updated overall survival data from the ongoing MICVO monotherapy study are expected in the first half of 2027.' The headline bullet calls it the 'MICVO Phase 1 monotherapy study'. The monotherapy data are in 2L+ R/M HNSCC.",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (8-K 2026-11-05)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as 2L+ R/M HNSCC"
+  }
+ },
+ {
+  "id": "readout_pyxs_2027-12-31",
+  "t": "PYXS",
+  "company": "Pyxis Oncology, Inc.",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "micvotabart pelidotin (MICVO) + KEYTRUDA (pembrolizumab) Phase 1/2 combination study…",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "first-line (1L) R/M HNSCC",
+   "market_cap_usd": null,
+   "program": "micvotabart pelidotin (MICVO) + KEYTRUDA (pembrolizumab)",
+   "trial": "Phase 1/2 combination study",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "in the second half of 2027",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-05",
+   "guidance_text": "Additional data from the Phase 1/2 combination study of MICVO and Merck's anti-PD-1 therapy KEYTRUDA® (pembrolizumab) in first-line (1L) R/M HNSCC, including initial durability data to inform selection of the recommended Phase 3 dose, are expected in the second half of 2027.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Additional data including initial durability data to inform recommended Phase 3 dose",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same release. Verbatim: 'Additional data from the Phase 1/2 combination study of MICVO and Merck's anti-PD-1 therapy KEYTRUDA® (pembrolizumab) in first-line (1L) R/M HNSCC, including initial durability data to inform selection of the recommended Phase 3 dose, are expected in the second half of…",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (8-K 2026-11-05)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as first-line (1L) R/M HNSCC"
+  }
+ },
+ {
+  "id": "readout_clrb_2026-12-12",
+  "t": "CLRB",
+  "company": "Cellectar Biosciences, Inc.",
+  "d": "2026-12-12",
+  "dp": "day",
+  "name": "iopofosine I 131 Pivotal Phase 2b CLOVER WaM ASH 2026 poster (Publication 1790):…",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.cellectar.com/investors/news-events/press-releases/detail/401",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "relapsed/refractory Waldenström macroglobulinemia",
+   "market_cap_usd": null,
+   "program": "iopofosine I 131",
+   "trial": "Pivotal Phase 2b CLOVER WaM",
+   "guided_precision": "day",
+   "guided_window": "2026-12-12",
+   "guided_label": "December 12, 2026, 5:30:00 PM - 7:30:00 PM",
+   "guided_form": "company IR (GlobeNewswire release)",
+   "guided_filed": "2026-11-04",
+   "guidance_text": "December 12, 2026, 5:30:00 PM - 7:30:00 PM",
+   "source_url": "https://www.cellectar.com/investors/news-events/press-releases/detail/401",
+   "source": "company guidance (company release)",
+   "readout_described": "ASH 2026 poster (Publication 1790): Duration of Response to Iopofosine I 131 in Patients with Relapsed/Refractory…",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same page. Publication 1790, 'Duration of Response to Iopofosine I 131 in Patients with Relapsed/Refractory Waldenström Macroglobulinemia by Prior Lines of Therapy: Results from the Pivotal Phase 2b CLOVER WaM Study'. Verbatim 'December 12, 2026, 5:30:00 PM - 7:30:00 PM', Hall F. No time zone…",
+   "date_history": [
+    {
+     "date": "2026-12-12",
+     "note": "created 2026-11-26 from the company's own statement (company IR (GlobeNewswire release) 2026-11-04)"
+    }
+   ],
+   "ta_basis": "Company release: indication stated as relapsed/refractory Waldenström macroglobulinemia"
+  }
+ },
+ {
+  "id": "readout_ptix_2027-12-31",
+  "t": "PTIX",
+  "company": "Protagenic Therapeutics",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "PT00114 Phase 1/2a study in GAD (first U.S. clinical trial) Topline safety data",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/1022899/000149315226052871/ex99-1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "GAD (generalized anxiety disorder)",
+   "market_cap_usd": null,
+   "program": "PT00114",
+   "trial": "Phase 1/2a study in GAD (first U.S. clinical trial)",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "second half of 2027",
+   "guided_form": "SEC 8-K EX-99.1",
+   "guided_filed": "2026-11-11",
+   "guidance_text": "The Company expects topline safety data in the second half of 2027 and exploratory efficacy data in the first half of 2028.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1022899/000149315226052871/ex99-1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Topline safety data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read SEC EX-99.1 (Protagenic private placement, 2026-11-11). Verbatim: 'The Company expects topline safety data in the second half of 2027 and exploratory efficacy data in the first half of 2028.' Caution: the trial has not started. The IND is targeted for late Q1 2027, and 'First patient dosing…",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (SEC 8-K EX-99.1 2026-11-11)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as GAD (generalized anxiety disorder)"
+  }
+ },
+ {
+  "id": "readout_ptix_2028-06-30",
+  "t": "PTIX",
+  "company": "Protagenic Therapeutics",
+  "d": "2028-06-30",
+  "dp": "year",
+  "name": "PT00114 Phase 1/2a study in GAD (first U.S. clinical trial) Exploratory efficacy data",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/1022899/000149315226052871/ex99-1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "GAD (generalized anxiety disorder)",
+   "market_cap_usd": null,
+   "program": "PT00114",
+   "trial": "Phase 1/2a study in GAD (first U.S. clinical trial)",
+   "guided_precision": "half",
+   "guided_window": "2028-H1",
+   "guided_label": "first half of 2028",
+   "guided_form": "SEC 8-K EX-99.1",
+   "guided_filed": "2026-11-11",
+   "guidance_text": "The Company expects topline safety data in the second half of 2027 and exploratory efficacy data in the first half of 2028.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1022899/000149315226052871/ex99-1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Exploratory efficacy data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same sentence and release as f18. H1 2028 window correct. The same caution applies: the IND is not yet filed.",
+   "date_history": [
+    {
+     "date": "2028-06-30",
+     "note": "created 2026-11-26 from the company's own statement (SEC 8-K EX-99.1 2026-11-11)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as GAD (generalized anxiety disorder)"
+  }
+ },
+ {
+  "id": "readout_rnxt_2027-12-31",
+  "t": "RNXT",
+  "company": "RenovoRx",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "intra-arterial gemcitabine (IAG) via the RenovoCath device Phase III TIGeR-PaC Initial…",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/1574094/000119312526449890/rnxt-ex99_1.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "locally advanced pancreatic cancer (LAPC)",
+   "market_cap_usd": null,
+   "program": "intra-arterial gemcitabine (IAG) via the RenovoCath device",
+   "trial": "Phase III TIGeR-PaC",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "second half of 2027",
+   "guided_form": "SEC 8-K EX-99.1 (Q3 2026 results)",
+   "guided_filed": "2026-11-05",
+   "guidance_text": "RenovoRx completed enrollment in the Phase III TIGeR-PaC clinical trial in August 2026, and anticipates the initial topline data in the second half of 2027.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1574094/000119312526449890/rnxt-ex99_1.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Initial topline data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read SEC EX-99.1 (RenovoRx Q3 2026, 2026-11-05, Nasdaq: RNXT). Verbatim: 'RenovoRx completed enrollment in the Phase III TIGeR-PaC clinical trial in August 2026, and anticipates the initial topline data in the second half of 2027.' Indication LAPC matches. The release names the tested therapy as…",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (SEC 8-K EX-99.1 (Q3 2026 results) 2026-11-05)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as locally advanced pancreatic cancer (LAPC)"
+  }
+ },
+ {
+  "id": "readout_dtil_2026-12-31",
+  "t": "DTIL",
+  "company": "Precision BioSciences",
+  "d": "2026-12-31",
+  "dp": "year",
+  "name": "PBGENE-DMD Phase 1/2 FUNCTION-DMD Initial safety data",
+  "type": "Readout",
+  "ta": "Rare disease",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Duchenne muscular dystrophy (DMD)",
+   "market_cap_usd": null,
+   "program": "PBGENE-DMD",
+   "trial": "Phase 1/2 FUNCTION-DMD",
+   "guided_precision": "half",
+   "guided_window": "2026-H2",
+   "guided_label": "year-end 2026",
+   "guided_form": "SEC 8-K EX-99.1 (Q3 2026 results)",
+   "guided_filed": "2026-11-03",
+   "guidance_text": "Initial safety data are targeted for year-end 2026, with efficacy data at distinct timepoints expected to follow in H1 and H2 2027.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Initial safety data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Read SEC EX-99.1 (Precision BioSciences Q3 2026, 2026-11-03). Sentence confirmed verbatim: 'Initial safety data are targeted for year-end 2026, with efficacy data at distinct timepoints expected to follow in H1 and H2 2027.' First patient dosed August 2026 in FUNCTION-DMD, NCT07429240. Mapping…",
+   "nct_stated": "NCT07429240",
+   "date_history": [
+    {
+     "date": "2026-12-31",
+     "note": "created 2026-11-26 from the company's own statement (SEC 8-K EX-99.1 (Q3 2026 results) 2026-11-03)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as Duchenne muscular dystrophy (DMD)"
+  }
+ },
+ {
+  "id": "readout_dtil_2027-06-30",
+  "t": "DTIL",
+  "company": "Precision BioSciences",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "PBGENE-DMD Phase 1/2 FUNCTION-DMD Efficacy data (first timepoint)",
+  "type": "Readout",
+  "ta": "Rare disease",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Duchenne muscular dystrophy (DMD)",
+   "market_cap_usd": null,
+   "program": "PBGENE-DMD",
+   "trial": "Phase 1/2 FUNCTION-DMD",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "H1 2027",
+   "guided_form": "SEC 8-K EX-99.1 (Q3 2026 results)",
+   "guided_filed": "2026-11-03",
+   "guidance_text": "Initial safety data are targeted for year-end 2026, with efficacy data at distinct timepoints expected to follow in H1 and H2 2027.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Efficacy data (first timepoint)",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same sentence. 'efficacy data at distinct timepoints expected to follow in H1 and H2 2027' supports an H1 2027 efficacy readout. The label 'first timepoint' is an interpretation; the release does not number the timepoints.",
+   "nct_stated": "NCT07429240",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (SEC 8-K EX-99.1 (Q3 2026 results) 2026-11-03)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as Duchenne muscular dystrophy (DMD)"
+  }
+ },
+ {
+  "id": "readout_dtil_2027-12-31",
+  "t": "DTIL",
+  "company": "Precision BioSciences",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "PBGENE-DMD Phase 1/2 FUNCTION-DMD Efficacy data (later timepoint)",
+  "type": "Readout",
+  "ta": "Rare disease",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+  "ua": "2026-11-26T23:43:23Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Duchenne muscular dystrophy (DMD)",
+   "market_cap_usd": null,
+   "program": "PBGENE-DMD",
+   "trial": "Phase 1/2 FUNCTION-DMD",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "H2 2027",
+   "guided_form": "SEC 8-K EX-99.1 (Q3 2026 results)",
+   "guided_filed": "2026-11-03",
+   "guidance_text": "Initial safety data are targeted for year-end 2026, with efficacy data at distinct timepoints expected to follow in H1 and H2 2027.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+   "source": "company guidance (SEC filing)",
+   "readout_described": "Efficacy data (later timepoint)",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same sentence; supports an H2 2027 efficacy readout. Same note as f22.",
+   "nct_stated": "NCT07429240",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (SEC 8-K EX-99.1 (Q3 2026 results) 2026-11-03)"
+    }
+   ],
+   "ta_basis": "Sponsor SEC filing: indication stated as Duchenne muscular dystrophy (DMD)"
   }
  }
 ];

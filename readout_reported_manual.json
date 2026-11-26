@@ -476,6 +476,17 @@
    "source_url": "https://www.globenewswire.com/news-release/2026/11/23/3408198/0/en/kymera-therapeutics-announces-positive-results-from-broaden2-phase-2b-clinical-trial-of-kt-621-a-first-in-class-oral-stat6-degrader-in-patients-with-moderate-to-severe-atopic-derma.html",
    "guided_window": "2026",
    "note": "readout mine 2026-11-25, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_lxeo_2026-12-15",
+   "t": "LXEO",
+   "drug": "LX2020",
+   "reported_date": "2026-11-16",
+   "outcome": "reported",
+   "summary": "Lexeo Therapeutics reported this readout on 2026-11-16: “Lexeo Therapeutics Announces Positive Interim Phase I/II Data and Regulatory Update for LX2020 in PKP2 Arrhythmogenic Cardiomyopathy and Reports Third Quarter 2026 Financial Results” (SEC 8-K EX-99.1).",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/16/3403343/0/en/lexeo-therapeutics-announces-positive-interim-phase-i-ii-data-and-regulatory-update-for-lx2020-in-pkp2-arrhythmogenic-cardiomyopathy-and-reports-third-quarter-2026-financial-result.html",
+   "guided_window": "",
+   "note": "readout mine 2026-11-26, red-teamed against the company's release"
   }
  ]
 }
