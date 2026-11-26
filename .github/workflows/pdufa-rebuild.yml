@@ -583,6 +583,13 @@ jobs:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_readout_results.py
 
+      # 2026-11-26 red team: the month-by-month estimate table below the company-guided list had no builder and
+      # drifted (52 of 159 rows wrong, footer "728 upcoming"). It is rebuilt here from the dataset's forward
+      # Estimated rows, each linking its ClinicalTrials.gov record, with the registry's own condition and status.
+      # Guard: tests/test_readout_forward_matches_dataset.py.
+      - name: "Readouts: rebuild the estimated table from the dataset"
+        run: python build_readout_forward.py
+
       # /sls asserts that the 80th REGAL event has not been announced. That is a claim of absence,
       # so its date is advanced by EDGAR evidence, never by the clock. If SELLAS files anything
       # material this step exits non-zero, the date stays frozen, and the page keeps saying what it
@@ -1007,7 +1014,9 @@ jobs:
         run: python noindex_empty_months.py
 
       - name: "Answer-first lede above every hub table"
-        run: python fix_not_announced_pages.py && python build_decision_subhubs.py && python build_crl_months.py && python build_hub_lede.py && python sync_home_event_schema.py
+        # build_readout_forward.py --offline first: any step since the first build that changed a readout row is
+        # reflected in the estimated table before the lede counts it (no registry re-read the second time).
+        run: python build_readout_forward.py --offline && python fix_not_announced_pages.py && python build_decision_subhubs.py && python build_crl_months.py && python build_hub_lede.py && python sync_home_event_schema.py
 
       # Audit 2026-09-06 (0840) NEW-1: the /calendar ItemList was pre-rendered and owned by no
       # step -- 54 Events vs 48 ahead rows, 16 decided drugs still EventScheduled to Google/Bing.
@@ -1323,7 +1332,7 @@ jobs:
           # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot
           # reach openFDA reads the newest release, not the August 2026 file (red team of /crl/data, Nov 22)
           git add CRL_corpus_openFDA_*.json 2>/dev/null || true
-          git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json _crl_capture_series.json _google_request_indexing.txt _fda_approvals_months.json 2>/dev/null || true
+          git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json _readout_registry_cache.json _crl_capture_series.json _google_request_indexing.txt _fda_approvals_months.json 2>/dev/null || true
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
           git add _date_checks.json 2>/dev/null || true   # recheck_upcoming_dates.py's CONFIRMED re-reads

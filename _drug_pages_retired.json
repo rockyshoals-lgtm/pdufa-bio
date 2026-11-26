@@ -1,6 +1,10 @@
 {
  "_about": "Drug pages that left the site because no sourced event names the drug any more (2026-11-18 red team: Estimated readouts with no registry record were removed, and decision pages with no FDA action were retired). build_drug_pages.py keeps a 301 from each to its company's ticker page so inbound links and search results do not 404; a slug that gets a page again drops out of the redirects on its own.",
  "pages": {
+  "sgt-003": "/ticker/SLDB",
+  "naporafenib": "/ticker/ERAS",
+  "decartes-08": "/drug/descartes-08",
+  "bgb-11417": "/ticker/ONC",
   "aglatimagene-besadenovec": "/ticker/CADL",
   "apraglutide": "/ticker/IRWD",
   "atumelnant": "/ticker/CRNX",

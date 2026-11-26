@@ -267,13 +267,19 @@ def main():
          "letters and what happened next.", "")], a.dry_run)
 
     # /readouts
-    n_ro = sum(1 for r in rows if r.get("type") == "Readout"
-               and str(r.get("d", "")) >= today.isoformat()
-               and str(r.get("st", "")).lower() not in ("decided", "withdrawn"))
+    # 2026-11-26: the answer said "477 expected readouts ... each with its company-guided window" while the page's
+    # lede said 195 and its footer 728, and about a quarter of the rows are registry estimates, not company windows.
+    # It now counts the two tables the page actually shows, the same rows the lede counts.
+    _ro_doc = open(os.path.join(SITE, "readouts", "index.html"), encoding="utf-8", errors="replace").read()
+    n_guided = sum(len(re.findall(r'<tr><td class="dt">', b_))
+                   for b_ in re.findall(r"<!--GUIDED:BEGIN-->(.*?)<!--GUIDED:END-->", _ro_doc, re.S))
+    _fe = re.search(r"<!--FWDEST:BEGIN-->(.*?)<!--FWDEST:END-->", _ro_doc, re.S)
+    n_est = len(re.findall(r'<a class="row"', _fe.group(1))) if _fe else 0
     ok &= inject("readouts", [
         ("How many clinical trial readouts are tracked?",
-         f"{n_ro} expected readouts are on the calendar as of {tstr}, each with its "
-         f"company-guided window and source.", ""),
+         f"{n_guided + n_est} expected readouts are on this page as of {tstr}: {n_guided} with a window the "
+         f"company stated itself, each linking that release, and {n_est} estimated from the primary-completion "
+         f"month ClinicalTrials.gov gives, each linking its trial record.", ""),
         ("Does pdufa.bio predict readout outcomes?",
          "No. We publish dates, trial designs and measured stock reactions, each linked to its "
          "source; we do not publish outcome predictions or approval probabilities.", ""),
