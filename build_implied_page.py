@@ -45,6 +45,30 @@ def _study_n():
         return ""
 
 
+def _curated_overlap(events):
+    """2026-11-26: implied_moves.json was computed over the study's old, uncurated universe (1,835 events on
+    2026-10-23). The study has since been curated, so "the N events in our run-up study" stopped being true.
+    Returns (study_total, how many of these events are still in the curated study), or None."""
+    try:
+        import csv
+        rows = list(csv.DictReader(io.open(os.path.join(HERE, "pdufa_runup_bifrost_v2.csv"),
+                                           encoding="utf-8-sig", errors="replace")))
+    except Exception:  # noqa: BLE001
+        return None
+    keys = {(str(r.get("ticker", "")).strip().upper(), str(r.get("pdufa_date", ""))[:10]) for r in rows}
+    kept = sum(1 for e in events if (str(e.get("t", "")).upper(), str(e.get("pdufa", ""))[:10]) in keys)
+    return len(rows), kept
+
+
+def _universe_note(agg, events):
+    ov = _curated_overlap(events)
+    if not ov:
+        return ""
+    total, kept = ov
+    return (f" {kept:,} of the {len(events):,} computable events are among the {total:,} decisions the curated "
+            f"study holds today; those {kept:,} are the options feed in the ULTRA API.")
+
+
 def main():
     data = json.load(io.open(SRC, encoding="utf-8"))
     agg, events = data["aggregate"], data["events"]
@@ -96,7 +120,7 @@ def main():
            f"realized move arrives after the first close. These are historical "
            f"measurements of this sample, not a property of future decisions."),
           ("Which events are covered?",
-           f"{n} of the {agg['universe_events']:,} run-up-study events that have a next-day close "
+           f"{n} of the {agg['universe_events']:,} events with a next-day close that the study held when this set was computed "
            f"({agg['coverage_pct']}%{_study_n()}) had a usable options chain snapshot in the 30 "
            f"days before the decision. Coverage requires listed options with real "
            f"quotes, so the computable set skews toward larger, optionable "
@@ -124,7 +148,7 @@ def main():
 <table><caption>Ten largest five-day moves in the sample. "Priced" is the ATM straddle at the snapshot; both actual horizons shown because reactions can build over days.</caption><tr><th>Ticker</th><th>Decision</th><th>Priced (T-14)</th><th>Next close</th><th>5 trading days</th><th>ATM IV</th></tr>{rows}</table>
 
 <h2>Method and coverage</h2>
-<p>Universe: the {agg['universe_events']} PDUFA events in <a class="lit" href="/runup-by-year">our run-up study</a>. For each event we take the options chain snapshot closest to 14 days before the decision (accepted anywhere in the prior 30 days; the snapshot date is recorded per event), the nearest listed expiry after the decision date, and the at-the-money straddle mid divided by the stock price. The actual move is the study's own close-to-close move across the decision (the eve close to the first close after, and to the fifth trading day after), so this page and the run-up study cannot disagree about what happened. {n} events ({agg['coverage_pct']}%) were computable; coverage requires listed options with real two-sided quotes, so small and nano-cap names are underrepresented, and the aggregate figures describe the computable set, not every FDA decision.</p>
+<p>Universe: the PDUFA events in <a class="lit" href="/runup-by-year">our run-up study</a> as it stood on {esc(pretty(agg['as_of']))}, when this set was computed, before the study was curated. For each event we take the options chain snapshot closest to 14 days before the decision (accepted anywhere in the prior 30 days; the snapshot date is recorded per event), the nearest listed expiry after the decision date, and the at-the-money straddle mid divided by the stock price. The actual move is the study's own close-to-close move across the decision (the eve close to the first close after, and to the fifth trading day after), so this page and the study cannot disagree about what happened. Of the {agg['universe_events']:,} events then held, {n} ({agg['coverage_pct']}%) were computable; coverage requires listed options with real two-sided quotes, so small and nano-cap names are underrepresented, and the aggregate figures describe the computable set, not every FDA decision.{esc(_universe_note(agg, events))}</p>
 
 <h2>Questions</h2>{faq}
 <p class="note">Historical measurements of specific decisions from recorded options quotes. Nothing here predicts any pending application or recommends any position. Not investment advice.</p><footer><b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is an independent publication with no affiliation with, endorsement by, sponsorship by, or connection to the U.S. Food and Drug Administration. <b>Informational and educational purposes only. Not investment advice.</b> Options involve substantial risk including total loss of premium. Verify every figure against primary sources.<br><br>&copy; 2026 pdufa.bio. All rights reserved.</footer></div><script src="/cmdk.js" defer></script></body></html>"""
