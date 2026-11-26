@@ -5,9 +5,39 @@
 <id>https://www.pdufa.bio/feed/decisions.xml</id>
 <link rel="self" type="application/atom+xml" href="https://www.pdufa.bio/feed/decisions.xml"/>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/feed"/>
-<updated>2026-11-26T09:45:21Z</updated>
+<updated>2026-11-26T20:48:35Z</updated>
 <author><name>pdufa.bio</name><uri>https://www.pdufa.bio</uri></author>
 <rights>Facts from FDA and sponsor documents, each linked. Not investment advice.</rights>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/AMPH-2026-02-26</id>
+<title>Insulin aspart biosimilar (AMP-004) CRL Feb 26, 2026 | AMPH FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/AMPH-2026-02-26"/>
+<published>2026-02-26T17:00:00Z</published>
+<updated>2026-11-26T20:48:35Z</updated>
+<category term="Complete Response Letter"/>
+<summary>Insulin aspart biosimilar (AMP-004), Amphastar Pharmaceuticals: Complete Response Letter. FDA action date: February 26, 2026.</summary>
+<content type="html">&lt;p&gt;Insulin aspart biosimilar (AMP-004), Amphastar Pharmaceuticals: Complete Response Letter. FDA action date: February 26, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761403_20260226.pdf"&gt;FDA Complete Response Letter&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 26, 2026, 3:48 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/ALVO-2025-11-26</id>
+<title>AVT05 (proposed golimumab biosimilar), BLA 761461 CRL Nov 26, 2025 | ALVO FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/ALVO-2025-11-26"/>
+<published>2025-11-26T17:00:00Z</published>
+<updated>2026-11-26T20:48:35Z</updated>
+<category term="Complete Response Letter"/>
+<summary>AVT05 (proposed golimumab biosimilar), BLA 761461, Alvotech: Complete Response Letter. FDA action date: November 26, 2025.</summary>
+<content type="html">&lt;p&gt;AVT05 (proposed golimumab biosimilar), BLA 761461, Alvotech: Complete Response Letter. FDA action date: November 26, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761461_20251126.pdf"&gt;FDA Complete Response Letter, BLA 761461&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 26, 2026, 3:48 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/ALVO-2025-11-24</id>
+<title>AVT06 (proposed aflibercept biosimilar) CRL Nov 24, 2025 | ALVO FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/ALVO-2025-11-24"/>
+<published>2025-11-24T17:00:00Z</published>
+<updated>2026-11-26T20:48:35Z</updated>
+<category term="Complete Response Letter"/>
+<summary>AVT06 (proposed aflibercept biosimilar), Alvotech: Complete Response Letter. FDA action date: November 24, 2025.</summary>
+<content type="html">&lt;p&gt;AVT06 (proposed aflibercept biosimilar), Alvotech: Complete Response Letter. FDA action date: November 24, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761435_20251124.pdf"&gt;FDA Complete Response Letter&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 26, 2026, 3:48 PM ET.&lt;/p&gt;</content>
+</entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/GSK-2025-02-18</id>
 <title>Penmenvy Approved Feb 14, 2025 | GSK FDA Decision</title>
@@ -597,36 +627,6 @@
 <category term="Approved"/>
 <summary>KERENDIA (finerenone), T1D-CKD, Bayer AG: Approved. FDA action date: September 16, 2026.</summary>
 <content type="html">&lt;p&gt;KERENDIA (finerenone), T1D-CKD, Bayer AG: Approved. FDA action date: September 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215341Orig1s011ltr.pdf"&gt;NDA 215341 S-011&lt;/a&gt; &amp;middot; &lt;a href="https://www.bayer.com/media/en-us/us-fda-approves-finerenone-for-new-indication-in-patients-with-chronic-kidney-disease-associated-with-type-1-diabetes/"&gt;FDA approval letter NDA 215341/S-011 dated&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 23, 2026, 9:25 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/NUVB-2026-09-16</id>
-<title>IBTROZI (taletrectinib) sNDA Approved Sep 16, 2026, 110 Days Early | NUVB FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/NUVB-2026-09-16"/>
-<published>2026-09-16T16:00:00Z</published>
-<updated>2026-09-24T01:10:48Z</updated>
-<category term="Approved"/>
-<summary>IBTROZI (taletrectinib) - sNDA S-004 label update, Nuvation Bio Inc.: Approved. FDA action date: September 16, 2026.</summary>
-<content type="html">&lt;p&gt;IBTROZI (taletrectinib) - sNDA S-004 label update, Nuvation Bio Inc.: Approved. FDA action date: September 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219713Orig1s004ltr.pdf"&gt;NDA 219713 S-004&lt;/a&gt; &amp;middot; &lt;a href="https://www.prnewswire.com/news-releases/nuvation-bio-announces-fda-approval-of-supplemental-new-drug-application-for-ibtrozi-taletrectinib-with-updated-duration-of-response-in-tki-naive-advanced-ros1-positive-non-small-cell-lung-cancer-302881232.html"&gt;FDA approval letter NDA 219713/S-004 dated&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1811063/000119312526336751/d261840dex991.htm"&gt;Nuvation Bio Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 23, 2026, 9:10 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/MRK-2026-09-22</id>
-<title>WINREVAIR (sotatercept-csrk) Approved Sep 21, 2026, On Goal Date | MRK FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/MRK-2026-09-22"/>
-<published>2026-09-22T16:00:00Z</published>
-<updated>2026-09-24T01:01:10Z</updated>
-<category term="Approved"/>
-<summary>WINREVAIR (sotatercept-csrk) - HYPERION label update, Merck &amp; Co., Inc.: Approved. FDA action date: September 21, 2026. Announced: September 22, 2026.</summary>
-<content type="html">&lt;p&gt;WINREVAIR (sotatercept-csrk) - HYPERION label update, Merck &amp;amp; Co., Inc.: Approved. FDA action date: September 21, 2026. Announced: September 22, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761363Orig1s012,s016,s017ltr.pdf"&gt;BLA 761363 S-017&lt;/a&gt; &amp;middot; &lt;a href="https://www.merck.com/news/u-s-fda-approves-update-to-the-label-for-winrevair-sotatercept-csrk-to-include-data-from-the-phase-3-hyperion-trial-evaluating-adults-recently-diagnosed-with-pulmonary-arterial-hypertensio/"&gt;Merck news release&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/310158/000031015826000212/mrk-20260630.htm"&gt;Merck 10-Q and 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 23, 2026, 9:01 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/RARE-2026-09-17</id>
-<title>FAYUVI Approved Sep 17, 2026, 2 Days Early | RARE FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RARE-2026-09-17"/>
-<published>2026-09-17T16:00:00Z</published>
-<updated>2026-09-19T21:14:07Z</updated>
-<category term="Approved"/>
-<summary>FAYUVI (rebisufligene etisparvovec-hopf; UX111), Ultragenyx Pharmaceutical Inc.: Approved. FDA action date: September 17, 2026.</summary>
-<content type="html">&lt;p&gt;FAYUVI (rebisufligene etisparvovec-hopf; UX111), Ultragenyx Pharmaceutical Inc.: Approved. FDA action date: September 17, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/media/194921/download"&gt;CBER approval letter&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1515673/000151567326000006/rare-20260917.htm"&gt;Ultragenyx 8-K&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526139084/rare-20260402.htm"&gt;Ultragenyx 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 19, 2026, 5:14 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>tag:pdufa.bio,2026:pdufa-date-change/CAPR/2026-08-22/2026-11-22</id>

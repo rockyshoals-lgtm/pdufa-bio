@@ -674,7 +674,7 @@
    "signing_office_as_printed": "",
    "signing_center": "CDER",
    "signer_name_shown_as_b4": true,
-   "pdufa_bio_page": ""
+   "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/AMPH-2026-02-26"
   },
   {
    "letter_date": "2026-02-13",
@@ -944,7 +944,7 @@
    "signing_office_as_printed": "",
    "signing_center": "CDER",
    "signer_name_shown_as_b4": false,
-   "pdufa_bio_page": ""
+   "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/ALVO-2025-11-24"
   },
   {
    "letter_date": "2025-11-06",

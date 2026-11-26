@@ -4853,6 +4853,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/drug/breyanzi": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/drug/breztri-aerosphere": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -5075,6 +5081,18 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/drug/columvi": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/comirnaty": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/drug/comirnaty-lp-8-1": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -5131,6 +5149,12 @@
 },
 "/drug/ctx611": {
 "checked": "2026-11-25",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/cyclosporine-ophthalmic": {
+"checked": "2026-11-26",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -6389,6 +6413,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/drug/liraglutide-injection": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/drug/litifilimab": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -6623,6 +6653,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/drug/mnexspike": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/drug/mnkd-201": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -6675,6 +6711,12 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/mresvia": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/drug/mrm-3379-bloom": {
@@ -7091,6 +7133,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/drug/penmenvy": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/drug/phentolamine-ophthalmic": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -7195,6 +7243,12 @@
 },
 "/drug/prax-215": {
 "checked": "2026-11-25",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/prednisolone-acetate": {
+"checked": "2026-11-26",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -7707,6 +7761,12 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/spikevax": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/drug/spinraza": {
@@ -8315,6 +8375,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/drug/vonvendi": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/drug/vopimetostat": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -8375,6 +8441,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/drug/vyjuvek": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/drug/vykat-xr": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -8413,6 +8485,12 @@
 },
 "/drug/wegovy-hd": {
 "checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/welgemda": {
+"checked": "2026-11-26",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -9161,6 +9239,18 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/ALVO-2025-11-24": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/ALVO-2025-11-26": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/AMGN-2025-01-17": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9211,6 +9301,12 @@
 },
 "/fda-decision/AMPH-2026-02-24": {
 "checked": "2026-11-20",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/AMPH-2026-02-26": {
+"checked": "2026-11-26",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -13055,12 +13151,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/ticker/AMRN": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/ticker/AMRX": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -13793,12 +13883,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/ticker/INTE": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/ticker/INTS": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -13809,12 +13893,6 @@
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/ticker/IONI": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/ticker/IONS": {
