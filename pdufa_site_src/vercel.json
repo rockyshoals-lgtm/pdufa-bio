@@ -318,11 +318,6 @@
    "permanent": true
   },
   {
-   "source": "/pdufa/UNCY",
-   "destination": "/fda-decision/UNCY-2026-06-30",
-   "permanent": true
-  },
-  {
    "source": "/pdufa/NVO-sogroya",
    "destination": "/fda-decision/NVO-2026-03-03",
    "permanent": true
@@ -3518,6 +3513,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/atumelnant",
+   "destination": "/ticker/CRNX",
+   "permanent": true
+  },
+  {
    "source": "/drug/beam-302",
    "destination": "/ticker/BEAM",
    "permanent": true
@@ -3545,6 +3545,11 @@
   {
    "source": "/drug/chs-1420",
    "destination": "/ticker/CHRS",
+   "permanent": true
+  },
+  {
+   "source": "/drug/cleminorexton",
+   "destination": "/ticker/CNTA",
    "permanent": true
   },
   {

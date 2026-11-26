@@ -2,9 +2,9 @@
 "first_sha": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
 "first_ts": "2026-07-26 00:07 ET",
 "first_rows": 388,
-"versions": 463,
-"last_sha": "ad0dbadd4660d43949cddcb52e45a07d7372075c",
-"last_ts": "2026-11-25 17:18 ET",
+"versions": 466,
+"last_sha": "1c1a59ac07d3cc7b2ac8609f0751373ce5b06f73",
+"last_ts": "2026-11-25 18:59 ET",
 "rebuilds": [],
 "changes": [
 {
@@ -29526,6 +29526,66 @@
 "name": "KT-621",
 "st_was": "Estimated",
 "st_now": ""
+},
+{
+"sha": "b42a2f3864ce1fe5073e254e575d841a13f7daea",
+"ts": "2026-11-25 18:57 ET",
+"id": "readout_cnta_2026-12-15",
+"field": "row",
+"old": "",
+"new": "left",
+"t": "CNTA",
+"name": "cleminorexton",
+"st_was": "Estimated",
+"st_now": ""
+},
+{
+"sha": "b42a2f3864ce1fe5073e254e575d841a13f7daea",
+"ts": "2026-11-25 18:57 ET",
+"id": "readout_cnta_2027-09-15",
+"field": "row",
+"old": "",
+"new": "left",
+"t": "CNTA",
+"name": "cleminorexton",
+"st_was": "Estimated",
+"st_now": ""
+},
+{
+"sha": "b42a2f3864ce1fe5073e254e575d841a13f7daea",
+"ts": "2026-11-25 18:57 ET",
+"id": "readout_crnx_2027-11-15",
+"field": "row",
+"old": "",
+"new": "left",
+"t": "CRNX",
+"name": "Atumelnant",
+"st_was": "Estimated",
+"st_now": ""
+},
+{
+"sha": "b42a2f3864ce1fe5073e254e575d841a13f7daea",
+"ts": "2026-11-25 18:57 ET",
+"id": "readout_nuvl_2027-12-15",
+"field": "row",
+"old": "",
+"new": "left",
+"t": "NUVL",
+"name": "Neladalkib",
+"st_was": "Estimated",
+"st_now": ""
+},
+{
+"sha": "1c1a59ac07d3cc7b2ac8609f0751373ce5b06f73",
+"ts": "2026-11-25 18:59 ET",
+"id": "pdufa_uncy_2027-03-25",
+"field": "row",
+"old": "",
+"new": "entered",
+"t": "UNCY",
+"name": "Oxylanthanum Carbonate (OLC)",
+"st_was": "",
+"st_now": "Upcoming"
 }
 ]
 }

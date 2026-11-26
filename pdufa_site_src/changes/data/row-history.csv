@@ -2459,3 +2459,8 @@ time_et,commit,row_id,ticker,name,field,old,new,status_was,status_now
 2026-11-25 17:10 ET,122f4aa8128d6307c2774269441ebee35dd485e4,readout_vnda_2026-12-15,VNDA,VQW-765,d,2026-12-15,2026-08-15,Estimated,Estimated
 2026-11-25 17:18 ET,ad0dbadd4660d43949cddcb52e45a07d7372075c,readout_dwtx_2026-07-15,DWTX,Halneuron,row,,left,Estimated,
 2026-11-25 17:18 ET,ad0dbadd4660d43949cddcb52e45a07d7372075c,readout_kymr_2027-06-15,KYMR,KT-621,row,,left,Estimated,
+2026-11-25 18:57 ET,b42a2f3864ce1fe5073e254e575d841a13f7daea,readout_cnta_2026-12-15,CNTA,cleminorexton,row,,left,Estimated,
+2026-11-25 18:57 ET,b42a2f3864ce1fe5073e254e575d841a13f7daea,readout_cnta_2027-09-15,CNTA,cleminorexton,row,,left,Estimated,
+2026-11-25 18:57 ET,b42a2f3864ce1fe5073e254e575d841a13f7daea,readout_crnx_2027-11-15,CRNX,Atumelnant,row,,left,Estimated,
+2026-11-25 18:57 ET,b42a2f3864ce1fe5073e254e575d841a13f7daea,readout_nuvl_2027-12-15,NUVL,Neladalkib,row,,left,Estimated,
+2026-11-25 18:59 ET,1c1a59ac07d3cc7b2ac8609f0751373ce5b06f73,pdufa_uncy_2027-03-25,UNCY,Oxylanthanum Carbonate (OLC),row,,entered,,Upcoming

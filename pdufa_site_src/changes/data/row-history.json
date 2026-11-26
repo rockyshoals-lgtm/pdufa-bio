@@ -3,9 +3,9 @@
  "repository": "https://github.com/rockyshoals-lgtm/pdufa-bio",
  "first_commit": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
  "first_time_et": "2026-07-26 00:07 ET",
- "last_commit": "ad0dbadd4660d43949cddcb52e45a07d7372075c",
- "last_time_et": "2026-11-25 17:18 ET",
- "versions": 463,
+ "last_commit": "1c1a59ac07d3cc7b2ac8609f0751373ce5b06f73",
+ "last_time_et": "2026-11-25 18:59 ET",
+ "versions": 466,
  "rebuilds": [],
  "fields": {
   "t": "ticker",
@@ -29542,6 +29542,66 @@
    "name": "KT-621",
    "st_was": "Estimated",
    "st_now": ""
+  },
+  {
+   "sha": "b42a2f3864ce1fe5073e254e575d841a13f7daea",
+   "ts": "2026-11-25 18:57 ET",
+   "id": "readout_cnta_2026-12-15",
+   "field": "row",
+   "old": "",
+   "new": "left",
+   "t": "CNTA",
+   "name": "cleminorexton",
+   "st_was": "Estimated",
+   "st_now": ""
+  },
+  {
+   "sha": "b42a2f3864ce1fe5073e254e575d841a13f7daea",
+   "ts": "2026-11-25 18:57 ET",
+   "id": "readout_cnta_2027-09-15",
+   "field": "row",
+   "old": "",
+   "new": "left",
+   "t": "CNTA",
+   "name": "cleminorexton",
+   "st_was": "Estimated",
+   "st_now": ""
+  },
+  {
+   "sha": "b42a2f3864ce1fe5073e254e575d841a13f7daea",
+   "ts": "2026-11-25 18:57 ET",
+   "id": "readout_crnx_2027-11-15",
+   "field": "row",
+   "old": "",
+   "new": "left",
+   "t": "CRNX",
+   "name": "Atumelnant",
+   "st_was": "Estimated",
+   "st_now": ""
+  },
+  {
+   "sha": "b42a2f3864ce1fe5073e254e575d841a13f7daea",
+   "ts": "2026-11-25 18:57 ET",
+   "id": "readout_nuvl_2027-12-15",
+   "field": "row",
+   "old": "",
+   "new": "left",
+   "t": "NUVL",
+   "name": "Neladalkib",
+   "st_was": "Estimated",
+   "st_now": ""
+  },
+  {
+   "sha": "1c1a59ac07d3cc7b2ac8609f0751373ce5b06f73",
+   "ts": "2026-11-25 18:59 ET",
+   "id": "pdufa_uncy_2027-03-25",
+   "field": "row",
+   "old": "",
+   "new": "entered",
+   "t": "UNCY",
+   "name": "Oxylanthanum Carbonate (OLC)",
+   "st_was": "",
+   "st_now": "Upcoming"
   }
  ]
 }
