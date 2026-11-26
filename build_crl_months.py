@@ -149,7 +149,18 @@ def drug_cell(drug, href):
     label such as 'price-only', which is what the table showed before 2026-11-24)."""
     raw = str(drug or "").strip()
     d = page_drug(href) or ("" if _PROV.match(raw) else raw)
-    return (d or raw)[:60]          # no named drug: the row's own text, as the table showed before
+    return _short(d or raw)         # no named drug: the row's own text, as the table showed before
+
+
+def _short(s, n=60):
+    """Cut a long drug name at a word, never mid-parenthesis. 2026-11-26: a hard [:60] cut left
+    'Columvi (glofitamab-gxbm) with gemcitabine and oxaliplatin (' on /crl/2025."""
+    if len(s) <= n:
+        return s
+    t = s[:n].rsplit(" ", 1)[0]
+    if t.count("(") > t.count(")"):
+        t = t[:t.rfind("(")]
+    return t.rstrip(" ,;:-") + "\u2026"
 
 
 def names_line(y_m_name, letters, ours, room):

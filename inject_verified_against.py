@@ -223,6 +223,11 @@ def page_line(doc, day=None, slug=None):
         # 2026-11-22 (CRL red team): a page verified against the FDA's own CRL already shows the FDA's day from the
         # letter card; the same letter is not the company's announcement, so it is not listed again as one.
         m = re.match(r"Verified \d{4}-\d{2}-\d{2}: (.+)$", val)
+        # 2026-11-26 (held-page red team): an FDA document (a letter, a press announcement, Drugs@FDA, an FDA list of
+        # approvals) is the FDA's record, not the company's announcement; TEVA-2025-08-28 read "Announcement August 28,
+        # 2025 (FDA list of 2025 first generic approvals)" when Teva made the announcement.
+        if m and re.match(r"(?:Drugs@)?FDA\b", re.sub(r"<[^>]+>", "", m.group(1))):
+            m = None
         if m:
             src = esc(_named(m.group(1), None))
     if ann and re.match(r"\d{4}-\d{2}-\d{2}", ann):

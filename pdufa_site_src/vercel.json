@@ -4101,6 +4101,51 @@
    "source": "/drug/albuterol-sulfate",
    "destination": "/ticker/AMRX",
    "permanent": true
+  },
+  {
+   "source": "/fda-decision/GSK-2025-02-17",
+   "destination": "/fda-decision/GSK-2025-02-18",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/SRPT-2025-11-25",
+   "destination": "/ticker/SRPT",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/AMRX-2025-10-29",
+   "destination": "/ticker/AMRX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/GMAB-2025-09-12",
+   "destination": "/ticker/GMAB",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/VALN-2025-08-25",
+   "destination": "/ticker/VALN",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/BMY-2025-06-27",
+   "destination": "/ticker/BMY",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/GHRS-2025-06-20",
+   "destination": "/ticker/GHRS",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/AXSM-2025-06-09",
+   "destination": "/ticker/AXSM",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/HRMY-2025-02-19",
+   "destination": "/ticker/HRMY",
+   "permanent": true
   }
  ],
  "headers": [
