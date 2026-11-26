@@ -120,6 +120,9 @@ def page_checks(plant=False):
     f = []
     hub = os.path.join(SITE, "index.html")
     if not os.path.isfile(B.CACHE) or not os.path.isfile(hub):
+        # in the site build the step before the guards writes the pages: missing pages there are a failed build
+        if os.environ.get("GITHUB_ACTIONS") and os.path.isfile(B.CACHE) and B.load(B.CACHE)[1]:
+            return ["/earnings was not built though the cache has releases"], ""
         return f, "no cache or no built /earnings (skipped page checks)"
     c, T = B.load(B.CACHE)
     doc = io.open(hub, encoding="utf-8").read()

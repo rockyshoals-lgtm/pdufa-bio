@@ -77,6 +77,9 @@ def norm(name):
     return " ".join(words)
 
 
+TICKER_REAL = re.compile(r"^(?!NONE$)[A-Z]{1,5}(?:[.-][A-Z])?$")
+
+
 def sec_index(path=SEC):
     """normalized SEC name -> ticker, keeping only names that map to ONE company (CIK)."""
     by = {}
@@ -87,7 +90,8 @@ def sec_index(path=SEC):
     rows = d.values() if isinstance(d, dict) else d
     for r in rows:
         n = norm(r.get("title"))
-        if not n:
+        # the SEC list carries placeholders for companies with no US listing ('NONE.' for EBR Systems): not a ticker
+        if not n or not TICKER_REAL.match(str(r.get("ticker") or "")):
             continue
         by.setdefault(n, {})
         by[n].setdefault(r.get("cik_str"), r.get("ticker"))
