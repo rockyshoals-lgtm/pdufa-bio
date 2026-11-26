@@ -245,6 +245,42 @@
    "document": "the retired page's own CRL-reason line; the ZUSDURI decision page",
    "finding": "the page's CRL mark came from the old archive; its own CRL-reason line said it was not one",
    "checked": "2026-11-24"
+  },
+  "GILD-2025-12-16": {
+   "reason": "wrong company: The FDA approved Exdensur (depemokimab) on December 16, 2025 under BLA 761458, whose applicant is GlaxoSmithKline, not Gilead. Gilead had no FDA action that day. The decision now has its page under GSK.",
+   "document": "Drugs@FDA, BLA 761458 (applicant GlaxoSmithKline LLC, approved 2025-12-16) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761458",
+   "finding": "the tracked list filed the approval under a ticker that is not the applicant's",
+   "checked": "2026-11-26"
+  },
+  "ABBV-2025-04-02": {
+   "reason": "wrong company: The FDA approved Vanrafia (atrasentan) on April 2, 2025 under NDA 219208, whose applicant is Novartis, not AbbVie. AbbVie had no FDA action that day. The decision already has its page under Novartis.",
+   "document": "Drugs@FDA, NDA 219208 (applicant Novartis, approved 2025-04-02) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219208",
+   "finding": "the tracked list filed the approval under a ticker that is not the applicant's",
+   "checked": "2026-11-26"
+  },
+  "HOTH-2025-06-16": {
+   "reason": "wrong company: The FDA approved Andembry (garadacimab) on June 16, 2025 under BLA 761367, whose applicant is CSL Behring, not Hoth Therapeutics. Hoth Therapeutics had no FDA action that day. The decision already has its page under CSL.",
+   "document": "Drugs@FDA, BLA 761367 (applicant CSL Behring LLC, approved 2025-06-16) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761367",
+   "finding": "the tracked list filed the approval under a ticker that is not the applicant's",
+   "checked": "2026-11-26"
+  },
+  "TURN-2025-02-14": {
+   "reason": "wrong company: The FDA approved Romvimza (vimseltinib) on February 14, 2025 under NDA 219304, whose applicant is Deciphera Pharmaceuticals (Ono Pharmaceutical group), not TURN. TURN had no FDA action that day. Deciphera has no ticker on pdufa.bio.",
+   "document": "Drugs@FDA, NDA 219304 (applicant Deciphera, approved 2025-02-14) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219304",
+   "finding": "the tracked list filed the approval under a ticker that is not the applicant's",
+   "checked": "2026-11-26"
+  },
+  "EXEL-2025-07-02": {
+   "reason": "wrong company: The FDA approved Zegfrovy (sunvozertinib) on July 2, 2025 under NDA 219839, whose applicant is Dizal, not Exelixis. Exelixis had no FDA action that day. Dizal has no ticker on pdufa.bio.",
+   "document": "Drugs@FDA, NDA 219839 (applicant Dizal, approved 2025-07-02) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219839",
+   "finding": "the tracked list filed the approval under a ticker that is not the applicant's",
+   "checked": "2026-11-26"
+  },
+  "ANTE-2025-04-23": {
+   "reason": "wrong company: The FDA approved penpulimab-kcqx on April 23, 2025 under BLA 761258, whose applicant is Akeso Biopharma, not ANTE. ANTE had no FDA action that day. Akeso has no ticker on pdufa.bio.",
+   "document": "Drugs@FDA, BLA 761258 (applicant Akeso Biopharma, approved 2025-04-23) https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761258",
+   "finding": "the tracked list filed the approval under a ticker that is not the applicant's",
+   "checked": "2026-11-26"
   }
  }
 }
