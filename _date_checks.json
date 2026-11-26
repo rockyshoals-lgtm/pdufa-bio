@@ -226,18 +226,18 @@
    "note": "Q3 2026 release (8-K EX-99.1, Nov 5 2026) contains 'AdvSM PDUFA target action date June 29, 2027' and 'Potential FDA approval of bezuclastinib in AdvSM - PDUFA date of June 29, 2027'. NDA acceptance r"
   },
   "pdufa_bmy_2027-03-11": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-26",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/0000014272/000001427226000022/a2026q3ex991-filing.htm",
-   "by": "red team 2026-11-17",
-   "note": "Q2 2026 release (Jul 30 2026) contains 'The FDA granted a Prescription Drug User Fee Act (PDUFA) date of March 11, 2027.' Q3 2026 release does not mention Reblozyl-MF (no change reported). The 2026 FD"
+   "source": "https://www.businesswire.com/news/home/20261118967070/en/Bristol-Myers-Squibb-Demonstrates-Breadth-and-Clinical-Momentum-Across-Blood-Cancers-and-Rare-Hematologic-Disorders-at-ASH-2026/",
+   "by": "manual",
+   "note": "Re-read BMS's 2026-11-18 ASH 2026 release: it gives no FDA action date or regulatory timing for this application, so the row's goal date stands."
   },
   "pdufa_bmy_2027-05-13": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-26",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/0000014272/000001427226000022/a2026q3ex991-filing.htm",
-   "by": "red team 2026-11-17",
-   "note": "Q2 2026 release (Jul 30 2026) contains '...granting a PDUFA date of May 13, 2027.' for MeziKd in RRMM (NDA acceptance announced Jul 13 2026 on BusinessWire). Q3 2026 release mentions no mezigdomide ch"
+   "source": "https://www.businesswire.com/news/home/20261118967070/en/Bristol-Myers-Squibb-Demonstrates-Breadth-and-Clinical-Momentum-Across-Blood-Cancers-and-Rare-Hematologic-Disorders-at-ASH-2026/",
+   "by": "manual",
+   "note": "Re-read BMS's 2026-11-18 ASH 2026 release: it gives no FDA action date or regulatory timing for this application, so the row's goal date stands."
   },
   "pdufa_agio_2026-11-01": {
    "checked": "2026-11-17",
