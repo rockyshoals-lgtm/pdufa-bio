@@ -1,0 +1,32 @@
+[
+ {
+  "ticker": "AMRX",
+  "date": "2025-04-02",
+  "fda_action_date": "2025-04-02",
+  "outcome": "CRL",
+  "drug": "Phenylephrine hydrochloride in sodium chloride injection",
+  "indication": "Ready-to-use phenylephrine injection (NDA 218345)",
+  "company": "Amneal Pharmaceuticals Inc.",
+  "cap": "Micro",
+  "headline": "The FDA issued a Complete Response Letter on April 2, 2025 for Amneal's phenylephrine hydrochloride in sodium chloride injection, citing deficiencies from a facility inspection. Amneal did not announce the letter on its date.",
+  "pdufa_note": "The FDA's Complete Response Letter for NDA 218345 is dated April 2, 2025 (<a href=\"https://download.open.fda.gov/crl/CRL_NDA218345_20250402.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA CRL file</a>). It is addressed to Amneal EU, Limited, in care of Amneal Pharmaceuticals of New York, and names phenylephrine hydrochloride in sodium chloride injection. The letter says the application was a complete response to an earlier action letter, and that after a CGMP inspection of a facility listed in the application the FDA conveyed deficiencies on a Form 483; it says a pre-approval inspection may also be needed before approval. openFDA also holds an earlier Complete Response Letter on the same NDA dated July 1, 2024, which cites product quality and regulatory deficiencies (<a href=\"https://download.open.fda.gov/crl/CRL_NDA218345_20240701.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA CRL file, July 1, 2024</a>). None of Amneal's press releases from April 2 through May 15, 2025 announces the letter. Because the letter was not announced on its date, this page is left out of the run-up study. No PDUFA goal date is stated, so no early or late margin is given. A Complete Response Letter means the FDA will not approve the application in its present form; the sponsor can resubmit.",
+  "source": "https://download.open.fda.gov/crl/CRL_NDA218345_20250402.pdf",
+  "source_label": "FDA Complete Response Letter, NDA 218345, April 2, 2025",
+  "h1": "Phenylephrine in sodium chloride injection (AMRX) <span class=\"g\">FDA Complete Response Letter</span>: Apr 2, 2025"
+ },
+ {
+  "ticker": "PFE",
+  "date": "2025-01-17",
+  "fda_action_date": "2025-01-17",
+  "outcome": "CRL",
+  "drug": "Diazepam injection (Hospira)",
+  "indication": "Diazepam injection (NDA 219112)",
+  "company": "Pfizer Inc.",
+  "cap": "Large",
+  "headline": "The FDA issued a Complete Response Letter on January 17, 2025 to Hospira, a Pfizer company, for a diazepam injection, citing product quality and nonclinical deficiencies. Pfizer did not announce the letter on its date.",
+  "pdufa_note": "The FDA's Complete Response Letter for NDA 219112 is dated January 17, 2025 (<a href=\"https://download.open.fda.gov/crl/CRL_NDA219112_20250117.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA CRL file</a>). It is addressed to Hospira, Inc. in Lake Forest, Illinois and names Diazepam Injection. It is the first action on the application, and its deficiencies fall under product quality and nonclinical headings, with the details redacted; it also asks for revised carton and container labeling. Hospira has been part of Pfizer since Pfizer completed its acquisition on September 3, 2015 (<a href=\"https://www.pfizer.com/news/press-release/press-release-detail/pfizer-completes-acquisition-hospira\" rel=\"noopener\" style=\"color:#e3ba5e\">Pfizer release</a>). None of Pfizer's press releases from January 17 through February 10, 2025 announces the letter. Because the letter was not announced on its date, this page is left out of the run-up study. No PDUFA goal date is stated, so no early or late margin is given. A Complete Response Letter means the FDA will not approve the application in its present form; the sponsor can resubmit.",
+  "source": "https://download.open.fda.gov/crl/CRL_NDA219112_20250117.pdf",
+  "source_label": "FDA Complete Response Letter, NDA 219112, January 17, 2025",
+  "h1": "Diazepam injection, Hospira (PFE) <span class=\"g\">FDA Complete Response Letter</span>: Jan 17, 2025"
+ }
+]

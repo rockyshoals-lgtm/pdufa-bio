@@ -200,7 +200,9 @@ def main():
                        + (f"The company announced the FDA decision on {pretty(ad)}; "
                           if (tk, date) in announced or not fd else
                           f"The FDA decision came on {pretty(fd)}; ")
-                       + ("the company's own announcement is linked on this page."
+                       + ("the company did not announce it that day; the FDA's own letter is linked on this page."
+                          if re.search(r"did not announce (?:the|this) letter on its date", doc)
+                          else "the company's own announcement is linked on this page."
                           if re.search(r'href="https?://(?!www\.pdufa\.bio|[a-z.]*fda\.gov|www\.sec\.gov|clinicaltrials\.gov)[^"]+"[^>]*>[^<]*(?:announce|release|Lilly|AbbVie|Roche|Mirum|Incyte)', doc, re.I)
                           else "the FDA's own record of the decision is linked on this page."
                           if re.search(r'href="https?://[a-z.]*fda\.gov/', doc)

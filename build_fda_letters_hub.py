@@ -96,10 +96,17 @@ def main():
         cm = re.search(r"<span>Company</span><b>(.*?)</b>", pdoc)
         key = (e.get("record") or e["source_url"], e["date"])
         ent = by_action.setdefault(key, {"date": e["date"], "url": e["source_url"], "record": e.get("record") or "",
-                                         "kind": "Approval letter" if e.get("letter") else "Drugs@FDA record",
+                                         # 2026-11-26: archive CRLs (openFDA letter files) were listed as "Drugs@FDA
+                                         # record" with oc "Approved", which would also have put them under "What the
+                                         # FDA approved" once inside the 60-day window. They are CRLs.
+                                         "kind": ("Complete Response Letter" if "download.open.fda.gov/crl/" in e["source_url"]
+                                                  else "Approval letter" if e.get("letter") else "Drugs@FDA record"),
                                          "drug": clean_drug_name(e.get("name") or ""),
                                          "company": html.unescape(cm.group(1)) if cm else "", "tickers": [], "pages": [],
-                                         "announced": dcd if dcd != e["date"] else "", "oc": "Approved"})
+                                         "announced": dcd if dcd != e["date"] else "",
+                                         # a letter the sponsor never announced must not read "same day"
+                                         "unannounced": bool(re.search(r"did not announce (?:the|this) letter on its date", pdoc)),
+                                         "oc": "CRL" if e.get("oc") == "CRL" else "Approved"})
         if tk not in ent["tickers"]:
             ent["tickers"].append(tk)
             ent["pages"].append((tk, f"/fda-decision/{slug}"))
@@ -205,7 +212,7 @@ def main():
                         f'<td>{sponsor_cell(e)}</td>'
                         f'<td><a href="{esc(e["url"])}" rel="noopener">{esc(e["kind"])}</a>'
                         f'{"<br><span style=font-size:12px>" + esc(e["record"]) + "</span>" if e["record"] and not e["record"].startswith("CRL letter") else ""}</td>'
-                        f'<td>{pretty(e["announced"], short=True) if e["announced"] else "same day"}</td><td>{pages}</td></tr>')
+                        f'<td>{pretty(e["announced"], short=True) if e["announced"] else "not announced" if e.get("unannounced") else "same day"}</td><td>{pages}</td></tr>')
         body.append("</table>")
     body.append('<h2>Questions</h2>')
     for q, a in qa:

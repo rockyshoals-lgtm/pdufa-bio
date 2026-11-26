@@ -373,11 +373,11 @@
    }
   },
   "pdufa_hrmy_2027-04-01": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-26",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
-   "by": "red team 2026-11-17",
-   "note": "Cited 2026-08-04 release contains 'Pitolisant GR NDA Accepted in July; Target PDUFA Date April 1, 2027'. Newer Harmony Q3 deck (8-K EX-99.2, 2026-11-04) slide 14: 'PITOLISANT GR – NDA UNDER FDA REVIEW"
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409238/0/en/harmony-biosciences-to-present-new-18-month-open-label-extension-data-from-the-epx-100-phase-3-dravet-syndrome-trial-at-the-2026-american-epilepsy-society-annual-meeting.html",
+   "by": "manual",
+   "note": "Re-read the HRMY 2026-11-24 release (AES OLE poster): it gives no timing for this item, so the row's 2026-11-04 source stands."
   },
   "pdufa_jazz_2027-04-16": {
    "checked": "2026-11-17",
@@ -1591,25 +1591,25 @@
    "note": "Axsome Q3 release 2026-11-02, SUSTAIN (solriamfetol shift work disorder): 'The Company anticipates topline results from SUSTAIN in the second half of 2027.' verbatim. dp 'year' vs precision 'half' (d"
   },
   "readout_hrmy_2027-03-31": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-26",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
-   "by": "red team 2026-11-17",
-   "note": "Harmony 8-K EX-99.2 deck dated 2026-11-04, slide 4: 'Phase 1b sleep-deprived healthy volunteer data expected Q1 2027' verbatim (BP-205). Harmony IR news list shows nothing after 2026-11-04 (Q3 release"
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409238/0/en/harmony-biosciences-to-present-new-18-month-open-label-extension-data-from-the-epx-100-phase-3-dravet-syndrome-trial-at-the-2026-american-epilepsy-society-annual-meeting.html",
+   "by": "manual",
+   "note": "Re-read the HRMY 2026-11-24 release (AES OLE poster): it gives no timing for this item, so the row's 2026-11-04 source stands."
   },
   "readout_hrmy_2027-12-31": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-26",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
-   "by": "red team 2026-11-17",
-   "note": "Harmony deck 2026-11-04 slide 14 (pitolisant HD Phase 3): 'TLD expected in 2027' verbatim. No newer Harmony release."
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409238/0/en/harmony-biosciences-to-present-new-18-month-open-label-extension-data-from-the-epx-100-phase-3-dravet-syndrome-trial-at-the-2026-american-epilepsy-society-annual-meeting.html",
+   "by": "manual",
+   "note": "Re-read the HRMY 2026-11-24 release (AES OLE poster): it gives no timing for this item, so the row's 2026-11-04 source stands."
   },
   "readout_hrmy_2027-12-31-epx100": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-26",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
-   "by": "red team 2026-11-17",
-   "note": "Harmony deck 2026-11-04 slide 15: 'Phase 3 Topline Data Expected Mid-2027' verbatim. No newer Harmony release. Caveat: 'Mid-2027' is published as d=2027-12-31 dp=year with label 'Mid-2027'; this is a"
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409238/0/en/harmony-biosciences-to-present-new-18-month-open-label-extension-data-from-the-epx-100-phase-3-dravet-syndrome-trial-at-the-2026-american-epilepsy-society-annual-meeting.html",
+   "by": "manual",
+   "note": "Re-read the HRMY 2026-11-24 release (AES OLE poster): it gives no timing for this item, so the row's 2026-11-04 source stands."
   },
   "readout_hrmy_2026-12-31": {
    "checked": "2026-11-17",
@@ -2205,6 +2205,48 @@
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395377/0/en/syndax-highlights-acceptance-of-19-revuforj-revumenib-and-niktimvo-axatilimab-csfr-abstracts-including-7-for-oral-presentation-at-ash-2026.html",
    "by": "auto re-check (recheck_upcoming_dates.py)",
    "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
+  },
+  "readout_olma_2026-12-09": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.olema.com/news-releases/news-release-details/olema-oncology-present-combination-data-palazestrant-and-op-3136",
+   "by": "manual",
+   "note": "Independent red-team pass re-opened this company release on 2026-11-26 and confirmed the presentation day."
+  },
+  "readout_olma_2026-12-10": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.olema.com/news-releases/news-release-details/olema-oncology-present-combination-data-palazestrant-and-op-3136",
+   "by": "manual",
+   "note": "Independent red-team pass re-opened this company release on 2026-11-26 and confirmed the presentation day."
+  },
+  "readout_rigl_2026-12-10": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/rigel-to-present-new-data-for-veppanu-vepdegestrant-in-patients-with-erher2--esr1-mutated-advanced-or-metastatic-breast-cancer-at-sabcs-2026-302948831.html",
+   "by": "manual",
+   "note": "Independent red-team pass re-opened this company release on 2026-11-26 and confirmed the presentation day."
+  },
+  "readout_stok_2026-12-07": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.stoketherapeutics.com/news-releases/news-release-details/stoke-therapeutics-and-biogen-announce-presentations-long-term",
+   "by": "manual",
+   "note": "Independent red-team pass re-opened this company release on 2026-11-26 and confirmed the presentation day."
+  },
+  "readout_nvs_2026-12-09": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/18/3405374/0/en/novartis-showcases-hematology-momentum-and-continued-breast-cancer-leadership-at-ash-and-sabcs.html",
+   "by": "manual",
+   "note": "Independent red-team pass re-opened this company release on 2026-11-26 and confirmed the presentation day."
+  },
+  "readout_cgon_2026-12-02": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/25/3410154/0/en/cg-oncology-to-present-new-data-on-cretostimogene-grenadenorepvec-at-the-society-of-urologic-oncology-27th-annual-meeting.html",
+   "by": "manual",
+   "note": "Independent red-team pass re-opened this company release on 2026-11-26 and confirmed the presentation day."
   }
  }
 }

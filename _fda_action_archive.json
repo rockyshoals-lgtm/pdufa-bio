@@ -262,6 +262,15 @@
   "record": "BLA 761403 CRL",
   "source_url": "https://download.open.fda.gov/crl/CRL_BLA761403_20260226.pdf"
  },
+ "AMRX-2025-04-02": {
+  "basis": "red team 2026-11-26: openFDA's text of the FDA's Complete Response Letter, dated 2025-04-02",
+  "checked": "2026-11-26",
+  "date": "2025-04-02",
+  "name": "Phenylephrine hydrochloride in sodium chloride injection",
+  "oc": "CRL",
+  "record": "NDA 218345 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA218345_20250402.pdf"
+ },
  "AMRX-2025-06-12": {
   "basis": "held-page audit 2026-11-26: FDA record read directly",
   "checked": "2026-11-26",
@@ -1759,6 +1768,15 @@
   "oc": "CRL",
   "record": "BLA 761320",
   "source_url": "https://download.open.fda.gov/crl/CRL_BLA761320_20251230.pdf"
+ },
+ "PFE-2025-01-17": {
+  "basis": "red team 2026-11-26: openFDA's text of the FDA's Complete Response Letter, dated 2025-01-17",
+  "checked": "2026-11-26",
+  "date": "2025-01-17",
+  "name": "Diazepam injection (Hospira)",
+  "oc": "CRL",
+  "record": "NDA 219112 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA219112_20250117.pdf"
  },
  "PFE-2025-08-27": {
   "basis": "held-page audit 2026-11-26: FDA record read directly",
