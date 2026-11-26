@@ -133,7 +133,7 @@ CONSTRUCTED = [
     ("ALNY", "Alnylam Pharmaceuticals, Inc.", {"publishedDate": "2026-10-30 09:00:00", "title": "Alnylam Shareholders: "
      "Pomerantz Announces Investigation After Q3 2026 Earnings", "text": "(NASDAQ: ALNY)", "url": "c7"}, None),
     (V, VN, {"publishedDate": "2026-10-27 08:00:00", "title": "Viking Therapeutics Postpones Third Quarter 2026 Financial "
-     "Results Release", "text": "(NASDAQ: VKTX)", "url": "c8"}, None),
+     "Results Release", "text": "(NASDAQ: VKTX)", "url": "c8"}, {"kind": "postponed", "period_key": "2026Q3"}),
     (V, VN, {"publishedDate": "2026-10-27 08:00:00", "title": "Viking Therapeutics Reschedules Third Quarter 2026 "
      "Financial Results Release to November 4", "text": "(NASDAQ: VKTX)", "url": "c9"},
      {"kind": "schedule", "report_date": "2026-11-04"}),
@@ -144,6 +144,46 @@ CONSTRUCTED = [
     # 'ANI' must not match 'Anika'
     ("ANIP", "ANI Pharmaceuticals, Inc.", {"publishedDate": "2026-11-05 07:00:00", "title": "Anika Reports Third Quarter "
      "2026 Financial Results", "text": "Anika Therapeutics, Inc. (NASDAQ: ANIK)", "url": "c12"}, None),
+
+    # round 2: 'announces ... results <call|date|release>' is a schedule, never a results row
+    (V, VN, {"publishedDate": "2026-10-20 08:00:00", "title": "Viking Therapeutics Announces Third Quarter 2026 Financial "
+     "Results Conference Call and Webcast", "text": "(NASDAQ: VKTX) will report results after the market close on "
+     "Wednesday, October 28, 2026.", "url": "d1"}, {"kind": "schedule", "report_date": "2026-10-28"}),
+    (V, VN, {"publishedDate": "2026-10-20 08:00:00", "title": "Viking Therapeutics Announces Date of Third Quarter 2026 "
+     "Financial Results Release", "text": "(NASDAQ: VKTX) on October 28, 2026", "url": "d2"},
+     {"kind": "schedule", "report_date": "2026-10-28"}),
+    (V, VN, {"publishedDate": "2026-10-20 08:00:00", "title": "Viking Therapeutics Announces Third Quarter 2026 Earnings "
+     "Release Date", "text": "(NASDAQ: VKTX)", "url": "d3"}, None),
+    (V, VN, {"publishedDate": "2026-10-20 08:00:00", "title": "Viking Therapeutics Announces Upcoming Third Quarter 2026 "
+     "Financial Results Release", "text": "(NASDAQ: VKTX)", "url": "d4"}, None),
+    # round 2: the call's day is not the report day
+    (V, VN, {"publishedDate": "2026-10-28 16:05:00", "title": "Viking Therapeutics to Report Third Quarter 2026 Financial "
+     "Results", "text": "Conference Call Scheduled for Thursday, November 5, at 8:30 a.m. Eastern Time SAN DIEGO, Oct. 28, "
+     "2026 /PRNewswire/ -- Viking Therapeutics, Inc. (NASDAQ: VKTX) will release results after the market close on "
+     "Wednesday, November 4, 2026.", "url": "d5"}, {"kind": "schedule", "report_date": "2026-11-04",
+     "call_time": "8:30 a.m. ET"}),
+    (V, VN, {"publishedDate": "2026-10-28 16:05:00", "title": "Viking Therapeutics to Host Conference Call on November 5 "
+     "to Discuss Third Quarter 2026 Financial Results", "text": "(NASDAQ: VKTX)", "url": "d6"}, None),
+    # round 2: other companies' releases
+    ("MRK", "Merck & Co., Inc.", {"publishedDate": "2026-11-12 07:00:00", "title": "Merck Reports Strong Third Quarter "
+     "2026 Results", "text": "DARMSTADT, Germany--(BUSINESS WIRE)--Merck, a leading science and technology company ...",
+     "url": "d7"}, None),
+    ("VRTX", "Vertex Pharmaceuticals Incorporated", {"publishedDate": "2026-11-05 16:05:00", "title": "Vertex Reports "
+     "Third Quarter 2026 Financial Results", "text": "Vertex, Inc. (NASDAQ: VERX), a global provider of tax technology",
+     "url": "d8"}, None),
+    # round 2: real-results shapes that the noise filter must not drop; brand headline names
+    (V, VN, {"publishedDate": "2026-10-28 16:05:00", "title": "Viking Therapeutics Reports Third Quarter 2026 Financial "
+     "Results and Highlights Progress Across Investigational Pipeline", "text": "(NASDAQ: VKTX)", "url": "d9"},
+     {"kind": "results", "period_key": "2026Q3"}),
+    ("LLY", "Eli Lilly and Company", {"publishedDate": "2026-10-30 06:45:00", "title": "Lilly reports third-quarter 2026 "
+     "financial results", "text": "Eli Lilly and Company (NYSE: LLY) today announced", "url": "d10"},
+     {"kind": "results", "period_key": "2026Q3"}),
+    ("NVAX", "Novavax INC", {"publishedDate": "2026-11-06 07:00:00", "title": "Novavax Reports Third Quarter 2026 "
+     "Financial Results", "text": "Novavax, Inc. (Nasdaq: NVAX)", "url": "d11"}, {"kind": "results"}),
+    # round 2: a past day with a weekday does not void the release
+    (V, VN, {"publishedDate": "2026-11-18 08:00:00", "title": "Viking Therapeutics to Report Third Quarter 2026 Financial "
+     "Results on November 24", "text": "Viking (NASDAQ: VKTX), which last reported on Wednesday, October 28, will release "
+     "results on Tuesday, November 24, 2026.", "url": "d12"}, {"kind": "schedule", "report_date": "2026-11-24"}),
 ]
 
 
@@ -172,24 +212,24 @@ def main():
 
 def cache_checks():
     """The committed _earnings_dates.json, when present: schedule days on/after the release day and within 75 days,
-    no noise words in any title, every row's title opening with the company's short name, no duplicate urls."""
+    no noise words in any title, known kinds only, no duplicate urls. (No check against today's company name: a rename
+must not block a deploy; each row stores the stem it was matched with.)"""
     import json
     p = os.path.join(HERE, "_earnings_dates.json")
     if not os.path.exists(p):
         return 0
     bad = []
     for tk, ent in (json.load(open(p, encoding="utf-8")).get("tickers") or {}).items():
-        stem = E.short_name(ent.get("name") or tk).lower()
         seen = set()
         for r in ent.get("releases") or []:
             t = r.get("title", "")
             if r.get("url") in seen:
                 bad.append(f"{tk}: duplicate {r.get('url')}")
             seen.add(r.get("url"))
-            if E.NOISE.search(t) and not re.search(r"reschedul", t, re.I):
+            if E.NOISE.search(t):
                 bad.append(f"{tk}: noise title {t[:60]!r}")
-            if not t.lower().startswith(stem):
-                bad.append(f"{tk}: title does not open with {stem!r}: {t[:60]!r}")
+            if r.get("kind") not in ("results", "schedule", "postponed"):
+                bad.append(f"{tk}: unknown kind {r.get('kind')!r}")
             if r.get("kind") == "schedule":
                 pub, rd = r.get("published_et", "")[:10], r.get("report_date", "")
                 if not (pub <= rd) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", rd):

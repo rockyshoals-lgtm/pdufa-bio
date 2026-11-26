@@ -13,8 +13,9 @@ Two kinds of release are kept, both written by the company itself:
 
 Nothing is estimated. A vendor's projected next earnings date is NOT read: when a company has not announced its next
 date, the cache simply has no SCHEDULE row for it. A release is attributed to a ticker only when its own text carries
-that ticker's exchange tag ("Nasdaq: VKTX") or its headline starts with the company's name, because FMP files some
-releases under the wrong symbol (Merck KGaA, Darmstadt, under MRK).
+that ticker's exchange tag ("Nasdaq: VKTX") or its headline starts with the company's name -- see mentions() for the
+full rule -- because FMP files some releases under the wrong symbol (Merck KGaA, Darmstadt, under MRK).
+A third kind, POSTPONED ("... Postpones Third Quarter 2026 Financial Results Release"), marks an announced day void.
 
 Writes _earnings_dates.json:
   {"fetched": "...Z", "from": "2024-01-01",
@@ -27,7 +28,7 @@ Only parsing happens offline; the network is used only with FMP_API_KEY set (CI)
 tests/test_earnings_dates_parse.py on real headlines.
 
     python fetch_earnings_dates.py [--days 21] [--full] [--tickers VKTX,ALNY]
-Exit 0 always unless --strict and FMP could not be read at all (2).
+Exit 0, or 3 (with a ::warning::, cache untouched) when no ticker could be read. No key: exit 0, nothing read.
 """
 import argparse
 import datetime as dt
@@ -53,6 +54,9 @@ CACHE = os.path.join(HERE, "_earnings_dates.json")
 FMP_PR = "https://financialmodelingprep.com/stable/news/press-releases"
 UA = {"User-Agent": "pdufa.bio-research-script/1.0"}
 FROM = "2024-01-01"
+# Bump when the parse rules change: every ticker is then re-read from FROM (90 a run), so no row parsed by older
+# rules stays in the cache.
+PARSER_VERSION = 2
 
 MONTHS = {m: i + 1 for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july", "august",
                                           "september", "october", "november", "december"])}
@@ -77,15 +81,23 @@ REPORTS = re.compile(r"\b(reports?|announces?|provides?|posts?|delivers?|highlig
 STRONG_RESULTS = re.compile(r"\b(reports?|announces?|posts?|delivers?)\s+(?:its\s+|the\s+)?(?:unaudited\s+)?"
                             r"(?:[\w'-]+\s+){0,6}?(?:quarter|full[\s-]+year|fiscal|half|Q[1-4]|[1-4]Q)\b[^.;:]{0,45}?"
                             r"\b(?:financial\s+)?(?:results|earnings)\b", re.I)
-# law-firm, shareholder-alert, postponement and meeting releases are never earnings rows
-NOISE = re.compile(r"\b(investigat\w*|investor alert|shareholders?|stockholders?|class action|law firm|lawsuit|securities "
-                   r"fraud|rosen|pomerantz|postpone\w*|delay\w*|annual (general )?meeting|special meeting|voting|vote)\b", re.I)
+# "... Third Quarter 2026 Financial Results Conference Call", "... Earnings Release Date", "Announces Date of ...":
+# a release ABOUT the results release, i.e. a schedule, even though it 'announces ... results'
+ABOUT_RESULTS = re.compile(r"^\s*(conference call|call|webcast|release|date|announcement|timing)\b", re.I)
+SCHEDULE_LEAD = re.compile(r"\b(date|dates|timing|upcoming|schedule[sd]?)\b", re.I)
+# law-firm and shareholder-alert releases are never earnings rows (word forms chosen so 'Investigational' and
+# 'Letter to Shareholders' do not match)
+NOISE = re.compile(r"\b(investigation|investigations|investigating|investigates|investor alert|shareholder alert|"
+                   r"class action|law firm|lawsuit|securities fraud|rosen law|pomerantz|levi & korsinsky|lost money|"
+                   r"annual (general )?meeting|special meeting|voting results)\b", re.I)
+POSTPONED = re.compile(r"\b(postpone\w*|delays?|delayed)\b", re.I)
 FUTURE = re.compile(r"\b(to|will|plans? to|set to|schedules?|scheduled)\s+(report|announce|release|host|present|"
                     r"hold|discuss|issue)\b|\b(conference call|webcast)\s+(to|will|on)\b|\b(date|dates|timing)\s+(for|of)\b"
-                    r"|\bto (report|announce|release)\b|\bupcoming\b|\breschedul\w*\b", re.I)
+                    r"|\bto (report|announce|release)\b|\bupcoming\b|\breschedul\w*\b|\b(results|earnings)\s+(conference "
+                    r"call|call|webcast|release date|release)\b|\brelease date\b", re.I)
 NOT_RESULTS = re.compile(r"\b(trial|study|phase|topline|top-line|clinical|data|readout|interim|survey|inducement|"
                          r"preliminary|unaudited preliminary|pre-announce\w*|guidance only)\b", re.I)
-SCHEDULE_HINT = re.compile(r"\b(financial results|quarter|earnings|full[\s-]+year|fiscal)\b", re.I)
+SCHEDULE_HINT = re.compile(r"\b(financial results|results|quarter|earnings|full[\s-]+year|fiscal)\b", re.I)
 
 # timing words as the release prints them
 T_AFTER = re.compile(r"\b(after|following)\s+(the\s+)?((u\.?s\.?|us|nasdaq|nyse|stock|financial|global|nasdaq global "
@@ -152,10 +164,12 @@ def _future_verb(t, m):
 def is_results(title):
     """A headline that says the company reports its periodic results (not a schedule, not trial results)."""
     t = clean(title)
-    if NOISE.search(t):
+    if NOISE.search(t) or POSTPONED.search(t):
         return False
     m = STRONG_RESULTS.search(t)
     if m and not _future_verb(t, m) and period_of(m.group(0))[0]:
+        if ABOUT_RESULTS.match(t[m.end():]) or SCHEDULE_LEAD.search(m.group(0)):
+            return False            # 'Announces Third Quarter 2026 Financial Results Conference Call'
         return True
     if not RESULTS_WORD.search(t) or not REPORTS.search(t):
         return False
@@ -167,7 +181,7 @@ def is_results(title):
 
 def is_schedule(title, text):
     t = clean(title)
-    if NOISE.search(t) and not re.search(r"\breschedul", t, re.I):
+    if NOISE.search(t) or POSTPONED.search(t):
         return False
     if not FUTURE.search(t) or not SCHEDULE_HINT.search(t):
         return False
@@ -179,22 +193,33 @@ def is_schedule(title, text):
     return True
 
 
+def is_postponed(title):
+    """'Viking Therapeutics Postpones Third Quarter 2026 Financial Results Release': the earlier announced day no longer
+    holds. Kept as its own row so a page never shows the old day as current."""
+    t = clean(title)
+    return bool(POSTPONED.search(t) and re.search(r"\b(results|earnings)\b", t, re.I) and not NOISE.search(t)
+                and not NOT_RESULTS.search(t))
+
+
 WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 WIRE = re.compile(r"\s*(?:/PRNewswire[^/]{0,20}/|\(\s*GLOBE NEWSWIRE\s*\)|-*\s*\(\s*BUSINESS WIRE\s*\)|/CNW/|\(?ACCESSWIRE\)?|"
                   r"/EINPresswire/|\(\s*Newsfile Corp\.?\s*\)|/?\(?\s*Globe Newswire\s*\)?)", re.I)
+CALL_WORD = re.compile(r"\b(conference call|call|webcast|teleconference|fireside)\b", re.I)
+REL_WORD = re.compile(r"\b(report|reports|release|released|releases|announce|announced|results|earnings)\b", re.I)
 
 
-def find_date(text, published, strict_weekday=True):
+def find_date(text, published):
     """The reporting day a schedule release announces, resolving a missing year to the next occurrence on or after the
-    release day. Skips the newswire dateline (a date followed by /PRNewswire/, (GLOBE NEWSWIRE), (BUSINESS WIRE) ...),
-    a period end ('quarter ended September 30, 2026') and the release day itself unless 'today' is printed next to it.
-    Prefers a day printed after 'on' or a weekday. A printed weekday that does not match its date voids the release
-    (returns False). None when no day is printed."""
+    release day. Skips: the newswire dateline (a date followed by /PRNewswire/, (GLOBE NEWSWIRE), (BUSINESS WIRE) ...);
+    a period end ('quarter ended September 30, 2026'); the release day itself unless 'today' is printed next to it; a
+    conference-call or webcast day (a call word nearer before it than any report/release word); a day whose printed
+    weekday does not match it. Prefers a day printed after 'on'/'for' or a weekday. None when no day qualifies."""
     t = clean(text)
     cands = []
     for rx, table in ((DAY_FULL, MONTHS), (DAY_ABBR, MON_ABBR)):
         for m in rx.finditer(t):
             mon = table[m.group(1).lower().rstrip(".")]
+            rolled = False
             try:
                 day = int(m.group(2))
                 if m.group(3):
@@ -203,20 +228,28 @@ def find_date(text, published, strict_weekday=True):
                     d = dt.date(published.year, mon, day)
                     if d < published - dt.timedelta(days=1):
                         d = dt.date(published.year + 1, mon, day)
+                        rolled = True
             except ValueError:
                 continue
-            before, after = t[max(0, m.start() - 40):m.start()].lower(), t[m.end():m.end() + 30]
+            before, after = t[max(0, m.start() - 60):m.start()], t[m.end():m.end() + 30]
+            bl = before.lower()
             if WIRE.match(after):
                 continue                                   # the dateline
-            if re.search(r"\b(ended|ending|end of|as of|through)\s*$", before):
+            if re.search(r"\b(ended|ending|end of|as of|through)\s*$", bl):
                 continue                                   # a period end
             if d == published and not re.search(r"\b(today|tonight|this (morning|afternoon|evening))\b",
-                                                before + " " + after.lower()):
+                                                bl + " " + after.lower()):
                 continue
-            wd = re.search(r"\b(" + "|".join(WEEKDAYS) + r")\s*,?\s*$", before)
-            if wd and strict_weekday and WEEKDAYS.index(wd.group(1)) != d.weekday():
-                return False
-            score = 0 if (wd or re.search(r"\b(on|for)\s*$", before)) else 1
+            calls = [c.end() for c in CALL_WORD.finditer(before)]
+            rels = [r.end() for r in REL_WORD.finditer(before)]
+            if calls and (not rels or max(calls) > max(rels)):
+                continue                                   # the call's day, not the report day
+            wd = re.search(r"\b(" + "|".join(WEEKDAYS) + r")\s*,?\s*$", bl)
+            if wd and not rolled and WEEKDAYS.index(wd.group(1)) != d.weekday():
+                continue                                   # weekday and date disagree: not trusted
+            if wd and rolled:
+                continue                                   # a past day with a weekday ('reported on Wednesday, Oct 28')
+            score = 0 if (wd or re.search(r"\b(on|for)\s*$", bl)) else 1
             cands.append((score, m.start(), d))
     if not cands:
         return None
@@ -248,58 +281,110 @@ def call_time(text):
 
 def long_name(name):
     """The company name without its legal suffix: 'Merck & Co., Inc.' -> 'Merck & Co'."""
-    n = re.sub(r",?\s+(Inc|Incorporated|Corp|Corporation|Ltd|Limited|plc|PLC|N\.V|NV|S\.A|SA|AG|SE|A/S|AB|ASA|LLC)\.?\s*$",
-               "", clean(name))
+    n = re.sub(r",?\s+(Inc|Incorporated|Corp|Corporation|Ltd|Limited|plc|N\.V|NV|S\.A|SA|AG|SE|A/S|AB|ASA|LLC)\.?\s*$",
+               "", clean(name), flags=re.I)
     return n.strip(" ,.")
 
 
+# Headline brand names companies use for themselves that differ from the legal name (each seen on the company's own
+# results headlines). Used only as extra headline stems; the other attribution checks still apply.
+HEADLINE_NAMES = {
+    "LLY": ["Lilly"], "BMY": ["Bristol Myers Squibb"], "TEVA": ["Teva"], "GSK": ["GSK"], "SNY": ["Sanofi"],
+    "NVS": ["Novartis"], "AZN": ["AstraZeneca"], "NVO": ["Novo Nordisk"], "JNJ": ["Johnson & Johnson"],
+}
+# A short name another company also uses on the wires. Merck KGaA, Darmstadt, Germany headlines itself 'Merck' and
+# FMP files its releases under MRK (tests/test_earnings_dates_parse.py fixture n1). Such a stem never attributes a
+# release on the headline alone.
+HOMONYM_STEMS = {"MERCK"}
+TAG = re.compile(r"\b(?:NASDAQ|NYSE(?:\s+American)?|OTCQX|OTCQB|OTC|TSX|ASX|LSE|AIM|Euronext)[A-Za-z :]{0,22}:\s*([A-Z][A-Z0-9.]{0,6})\b",
+                 re.I)
+_SEC_FIRST = None
+
+
+def _sec_stem_count(stem):
+    """How many SEC registrants (distinct CIKs) have a name starting with `stem` as whole words."""
+    global _SEC_FIRST
+    if _SEC_FIRST is None:
+        _SEC_FIRST = {}
+        try:
+            d = json.load(io.open(os.path.join(HERE, "sec_company_tickers.json"), encoding="utf-8"))
+            for r in (d.values() if isinstance(d, dict) else d):
+                words = re.sub(r"[^A-Z0-9& ]+", " ", str(r.get("title", "")).upper()).split()
+                for i in range(1, min(4, len(words)) + 1):
+                    _SEC_FIRST.setdefault(" ".join(words[:i]), set()).add(r.get("cik_str"))
+        except Exception:  # noqa: BLE001
+            pass
+    key = " ".join(re.sub(r"[^A-Z0-9& ]+", " ", stem.upper()).split())
+    return len(_SEC_FIRST.get(key, ()))
+
+
+def _norm_words(s):
+    return re.sub(r"[-‐‑]", " ", s).lower()
+
+
 def mentions(tk, name, title, text):
-    """True when the release is the ticker's own: the headline opens with the company's short name (word boundary),
-    AND the release carries the ticker's exchange tag or the company's full name. Both, so 'Merck KGaA, Darmstadt'
-    (no 'NYSE: MRK', no 'Merck & Co') is not Merck & Co.'s, and a law firm's or a peer's release that only quotes
-    the tag in its body is not the ticker's either."""
+    """True when the release is the ticker's own.
+    1. The headline must open with one of the company's names (short name, full name or a listed headline brand),
+       on a word boundary.
+    2. Then: the ticker's own exchange tag in the release, or the company's full name in it, settles it.
+    3. A release that carries exchange tags, none of them the ticker's, is someone else's ('Vertex, Inc. (NASDAQ: VERX)').
+    4. Otherwise (FMP's excerpt often stops before the tag) the headline alone may attribute it only when the name is
+       not shared: not a listed homonym, not the start of another SEC registrant's name, and the headline's name ends
+       where the company's does ('Arcutis to Report' yes; 'Merck KGaA ... Reports' no)."""
     t = clean(title)
-    stem = short_name(name)
-    if not stem or not re.match(re.escape(stem) + r"(?![A-Za-z0-9])", t, re.I):
+    tn = _norm_words(t)
+    stems = [s for s in [short_name(name), long_name(name)] + HEADLINE_NAMES.get(tk, []) if s]
+    hit = None
+    for s in sorted(set(stems), key=len, reverse=True):
+        if re.match(re.escape(_norm_words(s)) + r"(?![a-z0-9])", tn):
+            hit = s
+            break
+    if not hit:
         return False
     body = t + " " + clean(text)
-    tag = re.compile(r"(NASDAQ|Nasdaq|NYSE|NYSE American|OTCQX|OTCQB|OTC|TSX|ASX|LSE|AIM|Euronext)[A-Za-z :]{0,22}:\s*"
-                     + re.escape(tk) + r"\b")
-    if tag.search(body):
+    tags = {m.group(1).upper().rstrip(".") for m in TAG.finditer(body)}
+    if tk.upper() in tags:
         return True
     ln = long_name(name)
-    if len(ln) > len(stem) and ln.lower() in body.lower():
+    if len(ln) > len(short_name(name)) and _norm_words(ln) in _norm_words(body):
         return True
-    # neither printed (FMP's excerpt is often cut before them): the headline's own name must end where the company's
-    # does. 'Arcutis to Report' and 'Viking Therapeutics Reports' pass; 'Merck KGaA, Darmstadt ... Reports' does not.
-    words = re.findall(r"[A-Za-z0-9&'.-]+|,", t)
-    own = [w.lower().strip(".,") for w in re.findall(r"[A-Za-z0-9&'.-]+", ln)]
+    if tags:
+        return False
+    if hit.upper() in HOMONYM_STEMS or short_name(name).upper() in HOMONYM_STEMS:
+        return False
+    if _sec_stem_count(hit) > 1:
+        return False
+    words = re.findall(r"[A-Za-z0-9&'.]+|,", _norm_words(t))
+    own = [w.strip(".,") for w in re.findall(r"[A-Za-z0-9&'.]+", _norm_words(ln))]
     i = 0
-    while i < len(words) and i < len(own) and words[i].lower().strip(".") == own[i]:
+    while i < len(words) and i < len(own) and words[i].strip(".") == own[i]:
         i += 1
     if i == 0:
-        return False
+        i = len(re.findall(r"[A-Za-z0-9&'.]+", _norm_words(hit)))
     nxt = words[i] if i < len(words) else ""
-    return bool(nxt) and (nxt[0].islower() or nxt.lower() in HEADLINE_VERBS)
+    return bool(nxt) and (nxt in HEADLINE_VERBS)
 
 
 HEADLINE_VERBS = {"to", "will", "reports", "report", "announces", "announce", "provides", "posts", "delivers", "sets",
                   "schedules", "reschedules", "highlights", "issues", "releases", "declares", "confirms", "plans", "and",
-                  "q1", "q2", "q3", "q4", "first", "second", "third", "fourth", "full", "fiscal", "hosts", "host"}
+                  "q1", "q2", "q3", "q4", "first", "second", "third", "fourth", "full", "fiscal", "hosts", "host",
+                  "postpones", "delays"}
 
 
 def short_name(name):
     n = clean(name)
     n = re.sub(r"\s+&\s+Co\b.*$", "", n)                 # 'Merck & Co., Inc.' -> 'Merck'
-    n = re.sub(r",?\s+(Inc|Incorporated|Corp|Corporation|Co|Company|Ltd|Limited|plc|PLC|N\.V|NV|S\.A|SA|AG|SE|A/S|AB|ASA|"
-               r"Holdings?|Group|International|Therapeutics|Pharmaceuticals|Pharma|Biosciences|Bio|Biotherapeutics|"
-               r"Biopharma|Biotech|Technologies|Medical|Sciences|Oncology|Ltd\.)\.?\b.*$", "", n)
-    n = n.strip(" ,.")
-    return n if len(n) >= 3 else clean(name)
+    n = re.sub(r",?\s+(Inc|Incorporated|Corp|Corporation|Co|Company|Ltd|Limited|plc|N\.V|NV|S\.A|SA|AG|SE|A/S|AB|ASA|"
+               r"Holdings?|Group|International|Therapeutics|Pharmaceuticals?|Pharma|Biosciences|Bio|Biotherapeutics|"
+               r"Biopharma|Biotech|Technologies|Medical|Sciences|Oncology|Industries|Genetics|LLC)\.?(?![A-Za-z]).*$",
+               "", n, flags=re.I)
+    n = re.sub(r"\s+(and|&)$", "", n.strip(" ,."), flags=re.I)
+    return n if len(n) >= 2 else clean(name)
 
 
 def parse_item(tk, name, it):
-    """One FMP press release -> a cache row, or None when it is neither a schedule nor a results release of `tk`."""
+    """One FMP press release -> a cache row, or None when it is neither a schedule, a postponement nor a results
+    release of `tk`."""
     title, text = clean(it.get("title")), clean(it.get("text"))
     pub_raw = str(it.get("publishedDate") or "")
     try:
@@ -309,16 +394,27 @@ def parse_item(tk, name, it):
     if not mentions(tk, name, title, text):
         return None
     row = {"published_et": pub.strftime("%Y-%m-%d %H:%M"), "title": title, "url": it.get("url") or "",
-           "site": it.get("site") or it.get("publisher") or ""}
-    if is_results(title):
+           "site": it.get("site") or it.get("publisher") or "", "stem": short_name(name)}
+
+    def period():
         p, k = period_of(title)
+        if not k:
+            p2, k2 = period_of(text[:500])
+            if k2:
+                return p2, k2
+        return p, k
+
+    if is_results(title):
+        p, k = period()
         row.update(kind="results", period=p, period_key=k)
         return row
+    if is_postponed(title):
+        p, k = period()
+        row.update(kind="postponed", period=p, period_key=k)
+        return row
     if is_schedule(title, text):
-        p, k = period_of(title)
-        if not p:
-            p, k = period_of(text[:500])
-        # the reporting day: the headline's own day first, else the first day in the release text after the headline
+        p, k = period()
+        # the reporting day: the headline's own day first, else the release text
         d = find_date(title, pub.date())
         if d is None:
             d = find_date(text, pub.date())
@@ -331,15 +427,28 @@ def parse_item(tk, name, it):
     return None
 
 
+def sec_names():
+    """ticker -> SEC registrant name (fallback when a ticker page title is unreadable)."""
+    try:
+        d = json.load(io.open(os.path.join(HERE, "sec_company_tickers.json"), encoding="utf-8"))
+        return {str(r.get("ticker", "")).upper(): str(r.get("title", "")) for r in (d.values() if isinstance(d, dict) else d)}
+    except Exception:  # noqa: BLE001
+        return {}
+
+
 def universe():
-    out = {}
+    out, sec = {}, None
     tdir = os.path.join(SITE, "ticker")
     for tk in sorted(os.listdir(tdir)):
         f = os.path.join(tdir, tk, "index.html")
         if not os.path.isfile(f):
             continue
-        m = re.search(r"<title>(.*?)\s*\(" + re.escape(tk) + r"\)", io.open(f, encoding="utf-8").read(3000), re.S)
-        out[tk] = clean(m.group(1)) if m else tk
+        m = re.search(r"<title>([^<]*?)\s*\(" + re.escape(tk) + r"\)", io.open(f, encoding="utf-8").read(4000))
+        nm = clean(m.group(1)) if m else ""
+        if not nm or tk in nm.split() or len(nm) > 80:
+            sec = sec if sec is not None else sec_names()
+            nm = sec.get(tk, tk)
+        out[tk] = nm
     return out
 
 
@@ -376,7 +485,24 @@ def fetch(tk, frm, to, key):
         if oldest <= frm:
             break
         page += 1
+    else:
+        print(f"  {tk}: more than 40 pages; not marked read")
+        return None
     return items
+
+
+def profile_name(tk, key):
+    """The company name from FMP's profile, for the few tickers whose page title carries no name."""
+    q = urllib.parse.urlencode({"symbol": tk, "apikey": key})
+    try:
+        with urllib.request.urlopen(urllib.request.Request(
+                f"https://financialmodelingprep.com/stable/profile?{q}", headers=UA), timeout=20) as r:
+            d = json.loads(r.read().decode("utf-8", "replace"))
+        if isinstance(d, list) and d and d[0].get("companyName"):
+            return clean(d[0]["companyName"])
+    except Exception:  # noqa: BLE001
+        pass
+    return None
 
 
 def main():
@@ -395,6 +521,10 @@ def main():
     cache = json.load(io.open(CACHE, encoding="utf-8")) if os.path.exists(CACHE) else {}
     cache.setdefault("from", FROM)
     tks = cache.setdefault("tickers", {})
+    if cache.get("parser_version") != PARSER_VERSION:
+        for ent in tks.values():
+            ent.pop("backfilled", None)          # re-read and re-parse everything under the new rules
+        cache["parser_version"] = PARSER_VERSION
     uni = universe()
     tracked = set(uni)
     if a.tickers:
@@ -409,7 +539,9 @@ def main():
         io.open(tmp, "w", encoding="utf-8").write(json.dumps(cache, ensure_ascii=False, indent=0, sort_keys=True))
         os.replace(tmp, CACHE)
 
-    for tk, name in uni.items():
+    # least recently read first, so a run that hits its time budget never starves the same tickers every day
+    order = sorted(uni.items(), key=lambda kv: ((tks.get(kv[0]) or {}).get("read") or "", kv[0]))
+    for tk, name in order:
         if time.time() - t0 > a.budget_min * 60:
             print(f"earnings: time budget reached after {read} tickers; the rest are read next run")
             break
@@ -420,7 +552,13 @@ def main():
         if full and backfills >= a.max_backfill:
             continue
         ent = tks.setdefault(tk, {"releases": []})
+        if name == tk:                     # no name on the ticker page or in the SEC file
+            name = ent.get("name") if ent.get("name") and ent.get("name") != tk else (profile_name(tk, key) or tk)
         ent["name"] = name
+        if name == tk:
+            ent["read"] = today.isoformat()
+            ent["skipped"] = "no company name to match headlines against"
+            continue
         backfills += full
         frm = FROM if full else (today - dt.timedelta(days=a.days)).isoformat()
         items = fetch(tk, frm, to, key)

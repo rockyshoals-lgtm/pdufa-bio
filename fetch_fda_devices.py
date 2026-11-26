@@ -6,9 +6,10 @@ Writes _fda_devices.json. No page reads it until the device-decisions pages land
 What it collects, every row from an FDA record:
   * PMA originals   -- /device/pma.json, records with no supplement number (a new device's premarket approval).
   * Panel-track PMA supplements -- /device/pma.json, supplement_type "Panel Track" (a significant change
-    to an approved device that needs clinical data; these are the supplements that move device stocks).
-  * De Novo grants  -- /device/510k.json, k_number DEN* (openFDA files De Novo requests with the 510(k)s;
-    there is no separate De Novo endpoint).
+    to an approved device that needs clinical data).
+  * HDE (H-numbers in the PMA file) -- labeled HDE, linked to the FDA's HDE database.
+  * De Novo requests -- /device/510k.json records numbered DEN (openFDA files De Novo with the 510(k)s; there is
+    no separate De Novo endpoint). Every decision code is kept as the FDA printed it; pages show only grants.
 
 Every row keeps the FDA's own fields as published (decision code, dates, applicant, names, product code,
 advisory committee) and the link to the FDA database record. Nothing is inferred or scored.
@@ -16,7 +17,8 @@ advisory committee) and the link to the FDA database record. Nothing is inferred
 Ticker: an applicant gets a ticker ONLY when
   (a) its normalized name equals exactly one SEC company name in sec_company_tickers.json, or
   (b) device_applicant_aliases.json (curated, each entry with a source note) maps that exact applicant.
-Anything else stays without a ticker. A subsidiary name is never guessed onto a parent.
+Anything else stays without a ticker. Legal suffixes are dropped before matching, so 'Medtronic, Inc.' (an operating
+subsidiary) carries MDT; a differently named subsidiary is never matched to a parent.
 
 Usage: python fetch_fda_devices.py [--since 2010]
 On any failed slice, an empty pull or a pull smaller than the committed cache it keeps the cache, prints a
@@ -42,6 +44,18 @@ API = "https://api.fda.gov/device"
 
 PMA_URL = "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id={id}"
 DEN_URL = "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/denovo.cfm?id={id}"
+HDE_URL = "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfhde/hde.cfm?id={id}"   # the FDA's own HDE database
+# The whole pull since 2010 is refused when a pathway comes back below these (FDA records are not deleted, so a thin
+# pathway means a query silently matched nothing). Far below the FDA's real counts for 2010 onward.
+FLOORS = {"PMA": 150, "De Novo": 150, "PMA panel-track supplement": 40}
+
+
+def record_url(rid):
+    if rid.startswith("DEN"):
+        return DEN_URL.format(id=rid)
+    if rid.startswith("H"):
+        return HDE_URL.format(id=rid)
+    return PMA_URL.format(id=rid)
 
 SUFFIXES = {
     "INC", "INCORPORATED", "CORP", "CORPORATION", "CO", "COMPANY", "LLC", "L L C", "LTD", "LIMITED", "PLC",
@@ -145,7 +159,7 @@ def pma_row(r, sec, aliases):
         "decision_date": iso(r.get("decision_date")),
         "expedited_review": (r.get("expedited_review_flag") or "").strip() == "Y",
         "ao_statement": (r.get("ao_statement") or "").strip() or None,
-        "fda_url": PMA_URL.format(id=rid),
+        "fda_url": record_url(rid),
         "ticker": tk,
         "ticker_match": how,
     }
@@ -180,8 +194,14 @@ def get(url):
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40) as r:
                 return json.loads(r.read().decode("utf-8", "replace"))
         except urllib.error.HTTPError as e:
-            if e.code == 404:          # openFDA's "No matches found"
-                return {"results": [], "meta": {"results": {"total": 0}}}
+            if e.code == 404:          # openFDA's "No matches found" only; any other 404 is a failure
+                try:
+                    body = e.read().decode("utf-8", "replace")
+                except Exception:  # noqa: BLE001
+                    body = ""
+                if "NOT_FOUND" in body or "No matches found" in body:
+                    return {"results": [], "meta": {"results": {"total": 0}}}
+                return None
             if e.code != 429 and 400 <= e.code < 500:
                 return None
             time.sleep(2 + 3 * i)
@@ -237,8 +257,19 @@ def shrinkage(new_rows, path=OUT, tol=0.03):
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--since", type=int, default=2010)
+    ap.add_argument("--force", action="store_true", help="pull even if the cache is under 20 hours old")
     a = ap.parse_args(argv)
 
+    # openFDA allows a keyless IP 1,000 calls a day and the rebuild runs three times a day: pull once a day
+    try:
+        last = json.load(open(OUT)).get("fetched", "")
+        age_h = (datetime.now(timezone.utc) - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(
+            tzinfo=timezone.utc)).total_seconds() / 3600
+        if age_h < 20 and not a.force:
+            print(f"fetch_fda_devices: cache is {age_h:.1f} h old; next pull after 20 h")
+            return 0
+    except Exception:  # noqa: BLE001
+        pass
     sec, aliases = sec_index(), load_aliases()
     rows, failed = {}, []
     for y, rng in year_slices(a.since):
@@ -267,6 +298,13 @@ def main(argv=None):
         return 1
     if not rows:
         print("::warning::fetch_fda_devices: openFDA returned nothing; cache NOT replaced")
+        return 1
+    have = {}
+    for r in rows.values():
+        have[r["pathway"]] = have.get(r["pathway"], 0) + 1
+    thin = [f"{k} {have.get(k, 0)} < {v}" for k, v in FLOORS.items() if a.since <= 2012 and have.get(k, 0) < v]
+    if thin:
+        print(f"::warning::fetch_fda_devices: a pathway came back thin ({'; '.join(thin)}); cache NOT replaced")
         return 1
     short = shrinkage(rows.values())
     if short:

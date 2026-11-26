@@ -74,6 +74,7 @@ check(r and r["fda_url"].endswith("denovo.cfm?id=DEN990002"), f"De Novo link wro
 check(D.den_row(k510, sec, aliases) is None, "a plain 510(k) was kept as De Novo")
 r = D.pma_row(dict(pma_orig, pma_number="H990006"), sec, aliases)
 check(r and r["pathway"] == "HDE", f"an H-number was not labeled HDE: {r and r['pathway']}")
+check(r and "cfhde/hde.cfm?id=H990006" in r["fda_url"], f"an HDE is not linked to the HDE database: {r and r['fda_url']}")
 tmp_cache = os.path.join(HERE, "tests", "_tmp_devices_cache.json")
 json.dump({"rows": [{"pathway": "De Novo"}] * 100 + [{"pathway": "PMA"}] * 50}, open(tmp_cache, "w"))
 try:
@@ -93,6 +94,10 @@ if os.path.exists(cache):
     d = json.load(open(cache))
     rows = d.get("rows") or []
     check(len(rows) == d.get("count"), "cache count does not match its rows")
+    if d.get("since", 9999) <= 2012:
+        for k, v in D.FLOORS.items():
+            n = sum(1 for x in rows if x.get("pathway") == k)
+            check(n >= v, f"cache holds only {n} {k} rows (floor {v})")
     ids = set()
     for row in rows:
         rid = row.get("id", "")
@@ -100,7 +105,7 @@ if os.path.exists(cache):
         ids.add(rid)
         check(re.fullmatch(r"[PHN]\d{5,6}(S\d+)?|DEN\d{6}", rid or ""), f"bad FDA id {rid!r}")
         check(re.fullmatch(r"\d{4}-\d{2}-\d{2}", row.get("decision_date") or ""), f"{rid}: bad decision date")
-        want = (D.DEN_URL if rid.startswith("DEN") else D.PMA_URL).format(id=rid)
+        want = D.record_url(rid)
         check(row.get("fda_url") == want, f"{rid}: link is not the FDA record for its id")
         if row.get("ticker"):
             check(row.get("ticker_match") in ("sec_name", "alias"), f"{rid}: ticker without a match method")
