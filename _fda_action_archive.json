@@ -724,13 +724,13 @@
   ]
  },
  "EBS-2026-01-14": {
-  "checked": "2026-11-19",
+  "checked": "2026-11-26",
   "name": "OTC NARCAN Nasal Spray - carrying case",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": []
  },
  "EBS-2026-02-12": {
-  "checked": "2026-11-19",
+  "checked": "2026-11-26",
   "name": "OTC NARCAN Nasal Spray - 6-count and 24-count multipacks",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": []
@@ -1351,7 +1351,7 @@
   "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219713"
  },
  "NVCR-2026-02-11": {
-  "checked": "2026-11-19",
+  "checked": "2026-11-26",
   "name": "Optune Pax (Tumor Treating Fields) - locally advanced pancreatic cancer",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [

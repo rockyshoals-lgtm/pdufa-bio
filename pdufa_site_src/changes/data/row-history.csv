@@ -2482,3 +2482,7 @@ time_et,commit,row_id,ticker,name,field,old,new,status_was,status_now
 2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_sldb_2026-10-15,SLDB,SGT-003,row,,left,Estimated,
 2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_tlx_2026-11-15,TLX,177Lu-TLX591,row,,left,Estimated,
 2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_zntl_2027-06-30,ZNTL,azenosertib DENALI Phase 2 topline readout,row,,entered,,Guided
+2026-11-26 00:03 ET,e18cbecd593f234abba3e18e3f41e53226221d00,pdufa_blte_2027-02-12,BLTE,Tinlarebant - Stargardt disease type 1,d,2027-02-12,2027-05-12,Upcoming,Upcoming
+2026-11-26 00:03 ET,e18cbecd593f234abba3e18e3f41e53226221d00,pdufa_blte_2027-02-12,BLTE,Tinlarebant - Stargardt disease type 1,source_url,https://www.sec.gov/Archives/edgar/data/1889109/000110465926094040/tm2622827d1_ex99-1.htm,https://www.globenewswire.com/news-release/2026/11/20/3407395/0/en/belite-bio-announces-extension-of-fda-review-timeline-for-tinlarebant-nda.html,Upcoming,Upcoming
+2026-11-26 00:03 ET,e18cbecd593f234abba3e18e3f41e53226221d00,pdufa_vrtx_2026-11-30,VRTX,Povetacicept (ALPN-303),d,2026-11-30,2027-02-28,Upcoming,Upcoming
+2026-11-26 00:03 ET,e18cbecd593f234abba3e18e3f41e53226221d00,pdufa_vrtx_2026-11-30,VRTX,Povetacicept (ALPN-303),source_url,https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm,https://investors.vrtx.com/news-releases/news-release-details/vertex-announces-extension-pdufa-target-action-date-three-months,Upcoming,Upcoming
