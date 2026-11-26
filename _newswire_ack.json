@@ -10,7 +10,8 @@
   "pdufa_rhhby_2026-12-18|https://www.gene.com/media/press-releases/15144/2026-11-16/fda-approves-genentechs-wilserdly-girede",
   "pdufa_rhhby_2026-12-31_sle|https://www.gene.com/media/press-releases/15143/2026-11-15/genentechs-gazyva-becomes-the-first-fda-",
   "pdufa_regn_2026-11-30|https://investor.regeneron.com/news-releases/news-release-details/livsayistm-cemdisiran-approved-fda-first-and-only-sirna-therapy",
-  "pdufa_rhhby_2026-11-30|https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede"
+  "pdufa_rhhby_2026-11-30|https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede",
+  "pdufa_vrtx_2026-11-30|https://investors.vrtx.com/news-releases/news-release-details/vertex-announces-extension-pdufa-target-action-date-three-months"
  ],
  "reasons": {
   "pdufa_abbv_2026-12-31|https://news.abbvie.com/2026-09-28-U-S-FDA-Approves-AbbVies-JUVMO-TM-tavapadon-for-Parkinsons-Disease": "REAL: published 2026-10-03 as /fda-decision/ABBV-2026-09-28 (FDA letter NDA 220415, 2026-09-25).",
@@ -18,6 +19,7 @@
   "pdufa_rhhby_2027-01-10|https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first": "Not this row: the release is the TED approval (pdufa_rhhby_2026-10-15); MOGAD goal 2027-01-10 still pending.",
   "pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia": "REAL: published 2026-10-17 as /fda-decision/IRD-2026-10-16 and /fda-decision/VTRS-2026-10-16 (announced 2026-10-16; FDA action day not yet on Drugs@FDA).",
   "pdufa_regn_2026-11-30|https://investor.regeneron.com/news-releases/news-release-details/livsayistm-cemdisiran-approved-fda-first-and-only-sirna-therapy": "REAL: published 2026-11-19 as /fda-decision/REGN-2026-11-18 (Livsayis approval announced by Regeneron 2026-11-18, GlobeNewswire copy of the same release; FDA action day not yet in a public FDA record).",
-  "pdufa_rhhby_2026-11-30|https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede": "REAL: published 2026-11-25 as /fda-decision/RHHBY-2026-11-23 (adjuvant Wilserdly approval, FDA notification of Nov 23, 2026 read; Genentech release the same day)."
+  "pdufa_rhhby_2026-11-30|https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede": "REAL: published 2026-11-25 as /fda-decision/RHHBY-2026-11-23 (adjuvant Wilserdly approval, FDA notification of Nov 23, 2026 read; Genentech release the same day).",
+  "pdufa_vrtx_2026-11-30|https://investors.vrtx.com/news-releases/news-release-details/vertex-announces-extension-pdufa-target-action-date-three-months": "REAL, applied: goal-date extension (Vertex, 2026-11-25 4:02 PM ET), not a decision. Row moved to 'no later than 2027-02-28' in PR 228 (_date_checks.json, apply_1126_vrtx_extension.py)."
  }
 }
