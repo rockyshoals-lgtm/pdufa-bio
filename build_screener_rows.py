@@ -33,6 +33,7 @@ try:
 except Exception:  # noqa: BLE001
     TODAY = dt.date.today()
 from site_windows import is_day, window_label, window_span  # noqa: E402
+from readout_links import drug_page  # noqa: E402
 
 
 def date_text(r):
@@ -99,11 +100,22 @@ def main():
         # The row's own page when it has one (design red team 2026-11-18, change 4: the screener linked every
         # row, readouts included, to /pdufa/<T>, while the calendar linked the event's own page); otherwise a
         # PDUFA row links /pdufa/<T> when that page really exists, and anything else is plain text.
+        #
+        # 2026-11-26 (GSC): /screener drew 383 impressions at position 6.6 with no click, and the queries it ranked
+        # for were drug names ("donidalorsen", "abcl635", "eyp-1901", "vadadustat"). Each of those has a /drug page,
+        # but the readout rows here printed the name as plain text, so Google offered the 120-row table to a reader
+        # who wanted one drug. A row with no page of its own now links its drug page when that page exists, resolved
+        # exactly as /readouts resolves it (readout_links.drug_page: same slug as build_drug_pages, same-company
+        # check, None when the page is not on disk). The workflow runs this again after build_drug_pages, so a link
+        # written here is never to a page that build removed.
         own = own_page(r)
+        dpage = None if own or (r.get("type") == "PDUFA" and has_pdufa_page(t)) else drug_page(r)
         if nm and own:
             drug_cell = f'<a href="{esc(own)}">{nm}</a>'
         elif nm and r.get("type") == "PDUFA" and has_pdufa_page(t):
             drug_cell = f'<a href="/pdufa/{t}">{nm}</a>'
+        elif nm and dpage:
+            drug_cell = f'<a href="{esc(dpage)}">{nm}</a>'
         else:
             drug_cell = nm or "n/a"
         trs.append(
@@ -132,7 +144,7 @@ def main():
         anchor = "</main>" if "</main>" in html else "</body>"
         new = html.replace(anchor, block + anchor, 1)
 
-    links = new.count('href="/ticker/') + new.count('href="/pdufa/')
+    links = new.count('href="/ticker/') + new.count('href="/pdufa/') + new.count('href="/drug/')
     print(f"screener: {len(trs)} server-rendered rows, {links} internal anchors on the page "
           f"(was 0 rows / 0 event links); dropped {dropped} non-company entries "
           f"(conference codes etc. with no /ticker hub)")
