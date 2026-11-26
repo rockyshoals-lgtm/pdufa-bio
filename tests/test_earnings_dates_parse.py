@@ -11,6 +11,7 @@
     python tests/test_earnings_dates_parse.py          (PLANT=1 breaks the attribution rule; the guard must fail)
 """
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -102,9 +103,53 @@ CASES = [
 ]
 
 
+# CONSTRUCTED variants (red team, 2026-11-26): real release shapes with the wording changed to probe one rule each.
+# Companies are tracked tickers; the texts are not claims about real events.
+V, VN = "VKTX", "Viking Therapeutics, Inc."
+CONSTRUCTED = [
+    # dateline is the first date in the text; the report day comes later with its weekday
+    (V, VN, {"publishedDate": "2026-10-21 16:05:00", "title": "Viking Therapeutics to Report Third Quarter 2026 Financial "
+     "Results", "text": "SAN DIEGO, Oct. 21, 2026 /PRNewswire/ -- Viking Therapeutics, Inc. (NASDAQ: VKTX) will release "
+     "results for the quarter ended September 30, 2026 after the market close on Wednesday, October 28, 2026.",
+     "url": "c1"}, {"kind": "schedule", "report_date": "2026-10-28", "timing": "after_close"}),
+    ("CAPR", "Capricor Therapeutics, Inc.", {"publishedDate": "2026-11-03 09:00:00", "title": "Capricor Therapeutics to "
+     "Report Third Quarter 2026 Financial Results", "text": "SAN DIEGO, Nov. 03, 2026 (GLOBE NEWSWIRE) -- Capricor "
+     "Therapeutics (NASDAQ: CAPR) will release its results on Tuesday, November 10, 2026.", "url": "c2"},
+     {"kind": "schedule", "report_date": "2026-11-10"}),
+    # a weekday that does not match its date voids the row
+    (V, VN, {"publishedDate": "2026-10-21 16:05:00", "title": "Viking Therapeutics to Report Third Quarter 2026 Financial "
+     "Results", "text": "Viking Therapeutics, Inc. (NASDAQ: VKTX) will report on Tuesday, October 28, 2026.", "url": "c3"},
+     None),
+    # results headlines with more after them
+    (V, VN, {"publishedDate": "2026-10-28 16:05:00", "title": "Viking Therapeutics Reports Third Quarter 2026 Financial "
+     "Results and Provides Clinical Update", "text": "(NASDAQ: VKTX)", "url": "c4"}, {"kind": "results",
+     "period_key": "2026Q3"}),
+    (V, VN, {"publishedDate": "2026-10-28 16:05:00", "title": "Viking Therapeutics Reports Third Quarter 2026 Financial "
+     "Results and Upcoming Milestones", "text": "(NASDAQ: VKTX)", "url": "c5"}, {"kind": "results"}),
+    # law firms, postponements, meetings, peers
+    ("ALNY", "Alnylam Pharmaceuticals, Inc.", {"publishedDate": "2026-10-30 09:00:00", "title": "ALNY Investor Alert: "
+     "Rosen Law Firm Announces Investigation Following Alnylam Third Quarter 2026 Results", "text": "(NASDAQ: ALNY)",
+     "url": "c6"}, None),
+    ("ALNY", "Alnylam Pharmaceuticals, Inc.", {"publishedDate": "2026-10-30 09:00:00", "title": "Alnylam Shareholders: "
+     "Pomerantz Announces Investigation After Q3 2026 Earnings", "text": "(NASDAQ: ALNY)", "url": "c7"}, None),
+    (V, VN, {"publishedDate": "2026-10-27 08:00:00", "title": "Viking Therapeutics Postpones Third Quarter 2026 Financial "
+     "Results Release", "text": "(NASDAQ: VKTX)", "url": "c8"}, None),
+    (V, VN, {"publishedDate": "2026-10-27 08:00:00", "title": "Viking Therapeutics Reschedules Third Quarter 2026 "
+     "Financial Results Release to November 4", "text": "(NASDAQ: VKTX)", "url": "c9"},
+     {"kind": "schedule", "report_date": "2026-11-04"}),
+    (V, VN, {"publishedDate": "2026-06-10 16:05:00", "title": "Viking Therapeutics Announces Voting Results of 2026 Annual "
+     "Meeting", "text": "(NASDAQ: VKTX)", "url": "c10"}, None),
+    (V, VN, {"publishedDate": "2026-11-05 16:05:00", "title": "Ligand Reports Third Quarter 2026 Financial Results",
+     "text": "... royalties from partners including Viking Therapeutics (NASDAQ: VKTX) ...", "url": "c11"}, None),
+    # 'ANI' must not match 'Anika'
+    ("ANIP", "ANI Pharmaceuticals, Inc.", {"publishedDate": "2026-11-05 07:00:00", "title": "Anika Reports Third Quarter "
+     "2026 Financial Results", "text": "Anika Therapeutics, Inc. (NASDAQ: ANIK)", "url": "c12"}, None),
+]
+
+
 def main():
     fails = []
-    for tk, name, item, want in CASES:
+    for tk, name, item, want in CASES + CONSTRUCTED:
         got = E.parse_item(tk, name, item)
         if want is None:
             if got is not None:
@@ -119,7 +164,39 @@ def main():
     if fails:
         print("FAIL test_earnings_dates_parse:\n  " + "\n  ".join(fails))
         return 1
-    print(f"ok test_earnings_dates_parse: {len(CASES)} real releases parsed as expected")
+    print(f"ok test_earnings_dates_parse: {len(CASES)} real releases and {len(CONSTRUCTED)} constructed variants parsed as expected")
+    return cache_checks()
+    return 0
+
+
+
+def cache_checks():
+    """The committed _earnings_dates.json, when present: schedule days on/after the release day and within 75 days,
+    no noise words in any title, every row's title opening with the company's short name, no duplicate urls."""
+    import json
+    p = os.path.join(HERE, "_earnings_dates.json")
+    if not os.path.exists(p):
+        return 0
+    bad = []
+    for tk, ent in (json.load(open(p, encoding="utf-8")).get("tickers") or {}).items():
+        stem = E.short_name(ent.get("name") or tk).lower()
+        seen = set()
+        for r in ent.get("releases") or []:
+            t = r.get("title", "")
+            if r.get("url") in seen:
+                bad.append(f"{tk}: duplicate {r.get('url')}")
+            seen.add(r.get("url"))
+            if E.NOISE.search(t) and not re.search(r"reschedul", t, re.I):
+                bad.append(f"{tk}: noise title {t[:60]!r}")
+            if not t.lower().startswith(stem):
+                bad.append(f"{tk}: title does not open with {stem!r}: {t[:60]!r}")
+            if r.get("kind") == "schedule":
+                pub, rd = r.get("published_et", "")[:10], r.get("report_date", "")
+                if not (pub <= rd) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", rd):
+                    bad.append(f"{tk}: schedule day {rd} before release day {pub}")
+    if bad:
+        print("FAIL test_earnings_dates_parse (cache):\n  " + "\n  ".join(bad[:40]))
+        return 1
     return 0
 
 

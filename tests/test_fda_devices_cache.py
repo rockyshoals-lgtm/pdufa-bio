@@ -72,6 +72,16 @@ check(r and r["id"] == "DEN990002" and r["decision_date"] == "2025-02-10", f"De 
 check(r and r["ticker"] == "ZZQD" and r["ticker_match"] == "alias", f"sourced alias not used: {r}")
 check(r and r["fda_url"].endswith("denovo.cfm?id=DEN990002"), f"De Novo link wrong: {r and r['fda_url']}")
 check(D.den_row(k510, sec, aliases) is None, "a plain 510(k) was kept as De Novo")
+r = D.pma_row(dict(pma_orig, pma_number="H990006"), sec, aliases)
+check(r and r["pathway"] == "HDE", f"an H-number was not labeled HDE: {r and r['pathway']}")
+tmp_cache = os.path.join(HERE, "tests", "_tmp_devices_cache.json")
+json.dump({"rows": [{"pathway": "De Novo"}] * 100 + [{"pathway": "PMA"}] * 50}, open(tmp_cache, "w"))
+try:
+    check(D.shrinkage([{"pathway": "PMA"}] * 50, tmp_cache) != "", "a pull that lost every De Novo row would replace the cache")
+    check(D.shrinkage([{"pathway": "De Novo"}] * 100 + [{"pathway": "PMA"}] * 51, tmp_cache) == "",
+          "a pull that grew was refused")
+finally:
+    os.remove(tmp_cache)
 r = D.pma_row(unknown, sec, aliases)
 check(r and r["ticker"] is None, f"a subsidiary-like name got a ticker: {r and r['ticker']}")
 r = D.pma_row(twin, sec, aliases)
@@ -88,7 +98,7 @@ if os.path.exists(cache):
         rid = row.get("id", "")
         check(rid not in ids, f"duplicate id {rid}")
         ids.add(rid)
-        check(re.fullmatch(r"[PHN]\d{6}(S\d+)?|DEN\d{6}", rid or ""), f"bad FDA id {rid!r}")
+        check(re.fullmatch(r"[PHN]\d{5,6}(S\d+)?|DEN\d{6}", rid or ""), f"bad FDA id {rid!r}")
         check(re.fullmatch(r"\d{4}-\d{2}-\d{2}", row.get("decision_date") or ""), f"{rid}: bad decision date")
         want = (D.DEN_URL if rid.startswith("DEN") else D.PMA_URL).format(id=rid)
         check(row.get("fda_url") == want, f"{rid}: link is not the FDA record for its id")

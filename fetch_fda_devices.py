@@ -18,8 +18,9 @@ Ticker: an applicant gets a ticker ONLY when
   (b) device_applicant_aliases.json (curated, each entry with a source note) maps that exact applicant.
 Anything else stays without a ticker. A subsidiary name is never guessed onto a parent.
 
-Usage: python fetch_fda_devices.py [--since 2010] [--strict]
-Without network it keeps the existing cache and exits 0 (unless --strict).
+Usage: python fetch_fda_devices.py [--since 2010]
+On any failed slice, an empty pull or a pull smaller than the committed cache it keeps the cache, prints a
+::warning:: and exits 1 (the workflow step turns that into a warning, not a failed build).
 """
 import argparse
 import json
@@ -45,7 +46,7 @@ DEN_URL = "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/denovo.cfm?i
 SUFFIXES = {
     "INC", "INCORPORATED", "CORP", "CORPORATION", "CO", "COMPANY", "LLC", "L L C", "LTD", "LIMITED", "PLC",
     "LP", "L P", "SA", "S A", "AG", "NV", "N V", "BV", "B V", "GMBH", "SAS", "SPA", "AB", "AS", "OY", "KK",
-    "HOLDINGS", "HOLDING", "THE", "DE", "DEL", "CORP/DE", "/DE/", "/DE",
+    "THE", "DE", "DEL",
 }
 
 
@@ -120,7 +121,7 @@ def is_panel_track(t):
 def pma_row(r, sec, aliases):
     num = (r.get("pma_number") or "").strip().upper()
     sup = (r.get("supplement_number") or "").strip().upper()
-    if not re.fullmatch(r"[PHN]\d{6}", num):
+    if not re.fullmatch(r"[PHN]\d{5,6}", num):
         return None
     if sup and not is_panel_track(r.get("supplement_type")):
         return None   # 180-day, real-time, 30-day notices etc. are not collected
@@ -128,7 +129,8 @@ def pma_row(r, sec, aliases):
     tk, how = ticker_for(r.get("applicant"), sec, aliases)
     return {
         "id": rid,
-        "pathway": "PMA" if not sup else "PMA panel-track supplement",
+        # H-numbers are Humanitarian Device Exemptions, not PMAs
+        "pathway": ("HDE" if num.startswith("H") else "PMA") + ("" if not sup else " panel-track supplement"),
         "pma_number": num,
         "supplement_number": sup or None,
         "supplement_type": r.get("supplement_type") or None,
@@ -178,8 +180,10 @@ def get(url):
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40) as r:
                 return json.loads(r.read().decode("utf-8", "replace"))
         except urllib.error.HTTPError as e:
-            if e.code == 404:
+            if e.code == 404:          # openFDA's "No matches found"
                 return {"results": [], "meta": {"results": {"total": 0}}}
+            if e.code != 429 and 400 <= e.code < 500:
+                return None
             time.sleep(2 + 3 * i)
         except Exception:  # noqa: BLE001
             time.sleep(2 + 3 * i)
@@ -211,43 +215,71 @@ def year_slices(since):
         yield y, f"[{y}-01-01+TO+{y}-12-31]"
 
 
+def shrinkage(new_rows, path=OUT, tol=0.03):
+    """A reason string when the new pull has fewer rows than the committed cache for any pathway (beyond `tol`),
+    else ''. FDA records are not deleted, so a smaller pull means a dropped page or year."""
+    try:
+        old = json.load(open(path)).get("rows") or []
+    except Exception:  # noqa: BLE001
+        return ""
+    def count(rs):
+        c = {}
+        for r in rs:
+            c[r["pathway"]] = c.get(r["pathway"], 0) + 1
+        return c
+    o, n = count(old), count(new_rows)
+    for k, v in o.items():
+        if v >= 20 and n.get(k, 0) < v * (1 - tol):
+            return f"{k}: {n.get(k, 0)} now vs {v} committed"
+    return ""
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--since", type=int, default=2010)
-    ap.add_argument("--strict", action="store_true")
     a = ap.parse_args(argv)
 
     sec, aliases = sec_index(), load_aliases()
     rows, failed = {}, []
     for y, rng in year_slices(a.since):
+        if failed:
+            break                  # the cache will not be replaced, so later slices are wasted calls
         # PMA: every record decided that year, filtered here (originals = no supplement number; panel-track
         # by the FDA's supplement_type). Filtering client-side avoids depending on _missing_ semantics.
         for label, ep, search, fn in (
             ("PMA", "pma", f"decision_date:{rng}", pma_row),
-            ("De Novo", "510k", f"decision_date:{rng}+AND+k_number:DEN*", den_row),
+            # De Novo: the year's 510(k) file, DEN numbers kept here (a wildcard on k_number can match nothing
+            # without an error, which would silently drop every De Novo)
+            ("510(k)/De Novo", "510k", f"decision_date:{rng}", den_row),
         ):
             # urlencode would escape the '+' that openFDA reads as a space/AND, so pass it as spaces
             res = fetch_all(ep, search.replace("+", " "))
             if res is None:
                 failed.append(f"{label} {y}")
-                continue
+                break
             for r in res:
                 row = fn(r, sec, aliases)
                 if row and row["decision_date"]:
                     rows[row["id"]] = row
 
     if failed:
-        print(f"fetch_fda_devices: {len(failed)} slices failed ({', '.join(failed[:6])}...); cache NOT replaced")
-        return 1 if a.strict else 0
+        print(f"::warning::fetch_fda_devices: openFDA slice failed ({failed[0]}); cache NOT replaced")
+        return 1
     if not rows:
-        print("fetch_fda_devices: openFDA returned nothing; cache NOT replaced")
-        return 1 if a.strict else 0
+        print("::warning::fetch_fda_devices: openFDA returned nothing; cache NOT replaced")
+        return 1
+    short = shrinkage(rows.values())
+    if short:
+        print(f"::warning::fetch_fda_devices: pull is smaller than the committed cache ({short}); cache NOT replaced")
+        return 1
 
     items = sorted(rows.values(), key=lambda r: (r["decision_date"], r["id"]), reverse=True)
     out = {
         "fetched": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "source": "openFDA device endpoints (pma.json, 510k.json), FDA CDRH databases",
         "since": a.since,
+        "ticker_basis": "exact one-company match to the SEC's current company list, or a sourced alias; a ticker is "
+                        "today's listing, not necessarily the listing on the decision date",
         "count": len(items),
         "rows": items,
     }

@@ -525,6 +525,8 @@ jobs:
       # never used. Writes the committed cache _earnings_dates.json only; no page reads it yet.
       # Guard: tests/test_earnings_dates_parse.py.
       - name: "Earnings dates: company-announced report dates from company releases (cache only)"
+        timeout-minutes: 12   # first run backfills ~370 tickers from 2024; daily runs read 21 days (~4 min)
+        continue-on-error: true
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python fetch_earnings_dates.py || echo "::warning::_earnings_dates.json not refreshed this run"
@@ -534,6 +536,8 @@ jobs:
       # Ticker only from an exact one-company SEC name or device_applicant_aliases.json. A partial pull never
       # replaces the cache. Writes _fda_devices.json only. Guard: tests/test_fda_devices_cache.py.
       - name: "Device decisions: FDA PMA, panel-track and De Novo records (cache only)"
+        timeout-minutes: 8
+        continue-on-error: true
         run: python fetch_fda_devices.py || echo "::warning::_fda_devices.json not refreshed this run"
 
       - name: "Quarantine: record held leads, one issue per new lead, escalate after 2 held runs"
