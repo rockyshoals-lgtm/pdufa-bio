@@ -1,0 +1,76 @@
+{
+ "_note": "Past 2026 meeting editions that ended after the published conference run-up study (which stops 2026-06-04) and are no longer in conferences.json. Each date is from the organiser's own page, quoted. Used only by extend_conference_runup.py.",
+ "_verified_on": "2026-11-26",
+ "meetings": [
+  {
+   "code": "EULAR",
+   "name": "EULAR European Congress of Rheumatology",
+   "start": "2026-06-03",
+   "end": "2026-06-06",
+   "city": "London, GB",
+   "focus": "Rheumatology",
+   "source": "https://congress2026.eular.org/about",
+   "source_quote": "EULAR 2026 Congress, taking place in London from 3-6 June 2026"
+  },
+  {
+   "code": "ADA",
+   "name": "American Diabetes Association Scientific Sessions",
+   "start": "2026-06-05",
+   "end": "2026-06-08",
+   "city": "New Orleans, US",
+   "focus": "Diabetes",
+   "source": "https://professional.diabetes.org/scientific-sessions/previous-scientific-sessions-abstracts-posters-webcasts",
+   "source_quote": "June 5–8, 2026—New Orleans, Louisiana"
+  },
+  {
+   "code": "EHA",
+   "name": "European Hematology Association Congress",
+   "start": "2026-06-11",
+   "end": "2026-06-14",
+   "city": "Stockholm, SE",
+   "focus": "Hematology",
+   "source": "https://ehaweb.org/congress/future-congresses/",
+   "source_quote": "June 11–14, 2026 | Stockholm, Sweden"
+  },
+  {
+   "code": "ENDO",
+   "name": "ENDO (Endocrine Society Annual Meeting)",
+   "start": "2026-06-13",
+   "end": "2026-06-16",
+   "city": "Chicago, US",
+   "focus": "Endocrinology",
+   "source": "https://www.endocrine.org/news-and-advocacy/news-room/2026/endo-2026-opens-media-registration",
+   "source_quote": "The meeting will take place June 13-16, in Chicago, Ill."
+  },
+  {
+   "code": "EAN",
+   "name": "European Academy of Neurology Congress",
+   "start": "2026-06-27",
+   "end": "2026-06-30",
+   "city": "Geneva, CH",
+   "focus": "Neurology",
+   "source": "https://www.ean.org/congress2026",
+   "source_quote": "The 12th European Academy of Neurology congress will be on 27-30 June 2026, in Geneva, Switzerland."
+  },
+  {
+   "code": "ISTH",
+   "name": "International Society on Thrombosis and Haemostasis Congress",
+   "start": "2026-07-11",
+   "end": "2026-07-15",
+   "city": "Paris, FR",
+   "focus": "Thrombosis and hemostasis",
+   "source": "https://www.isth.org/page/FutureMeetings",
+   "source_quote": "July 11-15, 2026 ... Paris, France"
+  },
+  {
+   "code": "AAIC",
+   "name": "Alzheimer's Association International Conference",
+   "start": "2026-07-12",
+   "end": "2026-07-15",
+   "city": "London, GB",
+   "focus": "Alzheimer's disease",
+   "source": "https://istaart.alz.org/events/item/23/516",
+   "source_quote": "Start: Sunday July 12th, 2026 ... End: Wednesday July 15th, 2026"
+  }
+ ]
+}
