@@ -119,12 +119,13 @@ def main():
             qa.append((
                 f"How do biotech stocks typically trade around {code}?",
                 f"In our study of {r10['n']} {code} presentations (2017-2026), the median stock "
-                f"moved {r10['median']:+.2f}% over the 10 trading days before the presentation "
+                f"moved {r10['median']:+.2f}% over the 10 trading days before the anchor day "
                 f"({r10['pct_up']:.0f}% of them rose)"
-                + (f", {ed:+.2f}% on the day itself" if ed is not None else "")
-                + f", and {p5['median']:+.2f}% over the 5 trading days after. The pattern across "
-                  f"the whole study is a drift up into these meetings and down out of them, "
-                  f"strongest in the smallest companies. That is a historical distribution for a "
+                + (f", {ed:+.2f}% over the anchor day and the next" if ed is not None else "")
+                + f", and {p5['median']:+.2f}% over the 5 trading days after. The anchor day is the "
+                  f"date our catalyst history records for each presentation, the abstract release "
+                  f"for some, the presentation day for others, and for some rows a date outside the "
+                  f"named meeting. That is a historical distribution for a "
                   f"cohort, not a prediction for any one company, and not investment advice."))
         qa.append((
             "Why do medical conference dates matter for biotech stocks?",

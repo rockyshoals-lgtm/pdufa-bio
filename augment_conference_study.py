@@ -30,7 +30,7 @@ sys.path.insert(0, HERE)
 import conference_runup_facts as crf  # noqa: E402
 
 B, E = "<!--CSTUDYX:BEGIN-->", "<!--CSTUDYX:END-->"
-PUBLIC_COLS = ["ticker", "company", "conf", "year", "cap_tier_pit", "runup_30d",
+PUBLIC_COLS = ["ticker", "company", "conf", "year", "anchor", "cap_tier_pit", "runup_30d",
                "runup_20d", "runup_10d", "runup_5d", "event_day", "post_5d", "post_10d"]
 
 
@@ -39,7 +39,9 @@ def write_csv():
     with io.open(CSV_OUT, "w", encoding="utf-8", newline="") as fh:
         fh.write("# pdufa.bio conference run-up study, 1,425 presentations 2017-2026. "
                  "License: CC BY 4.0. Tier column is point-in-time market cap. Returns in "
-                 "percent, anchored on the meeting start date. Not investment advice.\n")
+                 "percent, anchored on the date our catalyst history records for each row (abstract "
+                 "release for some, presentation day for others, a date outside the named meeting "
+                 "for some rows). Columns: anchor is that date. Not investment advice.\n")
         w = csv.DictWriter(fh, fieldnames=PUBLIC_COLS, extrasaction="ignore")
         w.writeheader()
         for r in rows:
@@ -64,14 +66,14 @@ def main():
 
     dist = "".join([row("30 trading days before", "runup_30d"),
                     row("10 trading days before", "runup_10d"),
-                    row("Presentation day", "event_day"),
+                    row("Anchor day and the next", "event_day"),
                     row("5 trading days after", "post_5d"),
                     row("10 trading days after", "post_10d")])
     tail_sent = ""
     if tails:
         tail_sent = (f"<p>Among nano, micro and small-cap presenters (n={tails['n']}, "
                      f"point-in-time tiers), {tails['pct_up_25']}% rose 25% or more in the 30 "
-                     f"trading days before the meeting and {tails['pct_down_25']}% fell 25% or "
+                     f"trading days before the anchor day and {tails['pct_down_25']}% fell 25% or "
                      f"more. That is the distribution; it carries no verb.</p>")
 
     block = (
@@ -79,13 +81,13 @@ def main():
         f'<div style="background:#0c1d38;border:1px solid #f0c86a;border-radius:12px;'
         f'padding:13px 15px;margin:14px 0"><b style="color:#f0c86a">Read this first</b>'
         f'<div style="color:#9db3d4;font-size:13.5px;margin-top:6px;line-height:1.65">'
-        f"Every figure on this page is {crf.ANCHOR_CAVEAT}. Until a second computation "
-        f"anchored on abstract release exists, no sentence here implies that presenting "
+        f"Every figure on this page is {crf.ANCHOR_CAVEAT}. {crf.audit_sentence()} Until "
+        f"every row is recomputed on one anchor, no sentence here implies that presenting "
         f"caused the move. {crf.NOT_FORECAST} {crf.SELECTION_CAVEAT}</div></div>"
         f"<h2>Distribution: before, on the day, and after</h2>"
         f"<table><caption>Share-price move around a presentation across all {f['n']:,} "
         f"presentations, 2017 to 2026: quartiles, median and share rising, by window. "
-        f"Anchored on the meeting start date.</caption>"
+        f"Anchored on the date our catalyst history records for each row.</caption>"
         f"<tr><th>Window</th><th>n</th><th>25th pct</th><th>Median</th><th>75th pct</th>"
         f"<th>Rose</th></tr>{dist}</table>"
         f"{tail_sent}"
