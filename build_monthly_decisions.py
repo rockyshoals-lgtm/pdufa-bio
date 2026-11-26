@@ -347,8 +347,16 @@ def main():
                     + "".join(lines))
 
     title = f"What the FDA Decides in {mon}: PDUFA Dates in Plain Language | pdufa.bio"
-    desc = (f"{remain} remain{'s' if n_dates == 1 else ''} in {mon}, with {len(dec)} already "
-            f"decided. Each date as a sentence, sourced and linked. Updated daily.")
+    # 2026-11-26 (Google Search Console, 28 days to Nov 24): this page drew 353 impressions at position 6.1 and one
+    # click, and late in the month its snippet opened "0 FDA decision dates remain in November 2026". The description
+    # now leads with the month's decisions when none remain, and names next month's dated decisions either way.
+    nxt_s = (f"{len(up2)} more decision{'s are' if len(up2) != 1 else ' is'} dated for {nmon}" if up2 else "")
+    if n_dates:
+        desc = (f"{remain} remain{'s' if n_dates == 1 else ''} in {mon}, with {len(dec)} already decided"
+                + (f"; {nxt_s}" if nxt_s else "") + ". Updated daily.")
+    else:
+        desc = (f"{len(dec)} FDA decision{'s' if len(dec) != 1 else ''} so far in {mon}, each dated and sourced. "
+                + (f"None remain this month; {nxt_s}." if nxt_s else "None remain this month.") + " Updated daily.")
     if len(desc) > 158:
         desc = desc[:158].rsplit(" ", 1)[0].rstrip(",;:") + "."
 
