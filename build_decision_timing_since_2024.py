@@ -47,8 +47,8 @@ DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sun
 EXCL_LABEL = {
     "no_sourced_goal_day": "no sponsor or partner document found that states the goal date to the day",
     "goal_month_or_quarter": "the sponsor stated the goal only as a month, quarter or half-year",
-    "not_pdufa": "not a PDUFA action (biosimilar under BsUFA, generic under GDUFA, or not a complete response)",
-    "not_researched": "not yet researched (left for a later pass; mostly large-company supplements)",
+    "not_pdufa": "not a PDUFA efficacy decision (biosimilar under BsUFA, generic under GDUFA, a strain update or manufacturing-only supplement, or not a complete response)",
+    "not_researched": "not researched (mostly private or foreign sponsors that publish no goal dates, or a product the FDA letter redacts)",
     "action_day_not_established": "the day the FDA acted is not established by a document",
     "duplicate": "the same FDA action as another candidate",
 }
@@ -170,8 +170,29 @@ def load_2024_2025():
             "action_url": a.get("action_url") or "", "action_basis": a.get("action_basis") or "",
             "extension_reason": a.get("extension_reason") or "", "scope_note": a.get("scope_note") or "",
             "red_team": a.get("red_team") or "", "page": match_page(pidx, a.get("tickers") or [], ad),
+            "cid": a.get("cid") or "",
         })
     return doc, rows, dropped
+
+
+GOAL_LEDGER = os.path.join(HERE, "_decision_goal_dates.json")
+
+
+def write_goal_ledger(rows):
+    """2026-11-26: the goal date this census sourced, keyed by the 2024-2025 decision page it matched, so that
+    page's Verified line (inject_verified_against.py) names the goal date and its source instead of "Goal date: none
+    on record". Only the goal in effect, the dated document that states it, and the original goal when it was
+    extended. Sorted, so a rebuild with no change rewrites nothing."""
+    led = {}
+    for x in rows:
+        if not (x.get("page") and x.get("goal_url") and x.get("goal_doc_date")):
+            continue
+        led[x["page"].rsplit("/", 1)[-1]] = {
+            "cid": x.get("cid") or "", "goal": x["goal"], "source_url": x["goal_url"], "doc_date": x["goal_doc_date"],
+            "extended": x["extended"], "goal_original": x.get("goal_original") or None,
+            "action": x["action"], "outcome": x["outcome"]}
+    io.open(GOAL_LEDGER, "w", encoding="utf-8", newline="\n").write(
+        json.dumps(dict(sorted(led.items())), indent=1, ensure_ascii=False) + "\n")
 
 
 def load_2026():
@@ -311,6 +332,8 @@ def main():
                        + f')</td><td>{n_dropped}</td></tr>')
     n45 = len(r45)
     n_rt = sum(1 for x in json.load(io.open(DATA, encoding="utf-8"))["actions"] if x.get("red_team"))
+    n_p3 = sum(1 for x in json.load(io.open(DATA, encoding="utf-8"))["actions"]
+               if str(x.get("notes") or "").startswith("Pass 3") and not x.get("excluded"))
 
     # ---- full list -----------------------------------------------------------------------------------------
     def row_html(x):
@@ -443,7 +466,7 @@ def main():
 <h2>CRLs by timing in this census</h2><div class="sub" style="font-size:14.5px">{ans_crl}</div>{out_table}<p class="note">This table counts only the candidates that were not picked by outcome: decisions on the pdufa.bio tracked list (2024 and 2025) and the 2026 calendar. The {len(letters)} decisions that entered the census because the FDA released their complete response letter are left out of it, because adding letters adds only CRLs or split actions and would inflate the share. Across every CRL or split action in the census, including those letters ({len(all_crl)}), {ce} came early, {co} on the goal date and {cl} late. Of the {L} late decisions, {len(late_crl)} ended in a CRL or split action. These are counts of what happened; the late group is small, and the page does not claim that timing causes an outcome.</p>
 <h2>Extended goal dates</h2><p class="note">{len(ext)} decisions had a goal date the FDA extended before it acted. Against the extended date in effect, {ee} came early, {eo} on it and {el} late. Where the original date is sourced ({len(ext_known)} of {len(ext)}), {oe} came before the original date, {oo} on it and {ol} after it. Each case is shown against both dates where the original date is sourced.</p><div class=tw><table><tr><th>Decision</th><th>Original goal</th><th>Extended goal</th><th>FDA action</th><th>Days vs extended</th><th>Outcome</th></tr>{ext_list}</table></div>
 <h2>Goal dates on a weekend or holiday</h2><p class="note">{wk_line} Holidays here are the annual US federal holidays in statute; one-off closures by executive order are not treated as holidays. The FDA&rsquo;s goal date can fall on a non-business day; an action on the business day before it counts here as early and an action on the business day after it counts as late, and each such row is flagged in the list below.</p>
-<h2>What is counted, and what is left out</h2><div class="note"><p>For 2024 and 2025 the candidates were {doc["candidates"]["tracked"]} PDUFA decisions on the pdufa.bio tracked list and {doc["candidates"]["crl_letter"]} complete response letters the FDA has released that are dated in those years ({cand} in all). The tracked list is not every FDA action: it leans toward companies that publish their goal dates, mostly listed biotech and pharmaceutical companies. A decision is counted only when a sponsor or partner document dated before the action (a press release or an SEC filing) states its goal date to the day, and an FDA record (Drugs@FDA, a CBER approval letter or summary, or the released CRL) or a sponsor document states the day the FDA acted. 2026 rows are the sourced decisions on <a href="/research/fda-decision-timing">the 2026 decision-timing page</a> and follow its rules. Counted: {n45} actions in 2024 and 2025 and {len(r26)} in 2026.</p><p>A separate review on November 26, 2026 re-checked {n_rt} of the 2024 and 2025 actions against their documents (every one that was late, ended in a CRL, had an extension or rested on a search result, plus a random sample of the others) and the 2026 late and CRL rows. That review changed no goal or action date; it replaced some sources with the original filing, and the rows it left out are named below. Two further actions were changed to split decisions after the review, from the FDA&rsquo;s own records.</p></div><table><tr><th>Candidates for 2024 and 2025 not counted</th><th>Rows</th></tr>{excl_items}</table>
+<h2>What is counted, and what is left out</h2><div class="note"><p>For 2024 and 2025 the candidates were {doc["candidates"]["tracked"]} PDUFA decisions on the pdufa.bio tracked list and {doc["candidates"]["crl_letter"]} complete response letters the FDA has released that are dated in those years ({cand} in all). The tracked list is not every FDA action: it leans toward companies that publish their goal dates, mostly listed biotech and pharmaceutical companies. A decision is counted only when a sponsor or partner document dated before the action (a press release or an SEC filing) states its goal date to the day, and an FDA record (Drugs@FDA, a CBER approval letter or summary, or the released CRL) or a sponsor document states the day the FDA acted. 2026 rows are the sourced decisions on <a href="/research/fda-decision-timing">the 2026 decision-timing page</a> and follow its rules. Counted: {n45} actions in 2024 and 2025 and {len(r26)} in 2026.</p><p>A separate review on November 26, 2026 re-checked {n_rt} of the 2024 and 2025 actions against their documents (every one that was late, ended in a CRL, had an extension or rested on a search result, plus a random sample of the others) and the 2026 late and CRL rows. That review changed no goal or action date; it replaced some sources with the original filing, and the rows it left out are named below. Two further actions were changed to split decisions after the review, from the FDA&rsquo;s own records. A third search pass later that day, through SEC full-text search, added {n_p3} actions; a separate check read each one&rsquo;s goal document and the FDA&rsquo;s record of the action before it was counted.</p></div><table><tr><th>Candidates for 2024 and 2025 not counted</th><th>Rows</th></tr>{excl_items}</table>
 <h2>Every counted decision</h2><p class="note">Sorted by FDA action date. Days are the FDA action date minus the goal date in effect; negative is early. &ldquo;Sponsor states the day&rdquo; marks an action date taken from a company document that names the day, not from an FDA record. Where this site&rsquo;s decision page for the same action is filed under a different day, the row names that day; the count uses the FDA action date shown here.</p>{full}
 <div class="box note"><b style="color:#e3ba5e">Download ({ver}, CSV, CC BY 4.0):</b> <a href="/{REL}/{csv_rel}">{csv_rel}</a>, or the always-current <a href="/{REL}/{alias_rel}">{alias_rel}</a>. One row per decision: goal date in effect, original goal date, FDA action date, days, timing, outcome, weekend or holiday flag, and the source URL behind each date. Cite as &ldquo;pdufa.bio, PDUFA decision timing 2024 to present ({ver}), {URL}&rdquo;. The version is the row count; earlier versions stay at their own addresses{": " + ", ".join(f'<a href="/{REL}/{v}">{re.search(r"-(v[0-9]+)[.]csv$", v).group(1)}</a>' for v in older) if older else ""}.</div>
 <h2>Related</h2><p class="note"><a href="/research/fda-decision-timing">2026 decisions, goal date vs actual</a> &middot; <a href="/crl/review-clock">CRL review clock</a> &middot; <a href="/crl">FDA complete response letters</a> &middot; <a href="/pdufa-date-changes">PDUFA date changes</a> &middot; <a href="/research/fda-approval-weekdays">Approval weekdays</a> &middot; <a href="/changes">Dataset changes</a></p>
@@ -456,6 +479,7 @@ def main():
     if a.dry_run:
         return 0
     io.open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(page)
+    write_goal_ledger(r45)
     # the /research card and the line on the 2026 page carry this page's own numbers, rewritten every build
     card = (f"{CARD_BEGIN}<a class='row' href='/{REL}'><div class='t'>Early, on the goal date, or late: FDA decisions "
             f"since 2024</div><div class='d'>{n} sourced FDA decisions since January 2024: {E} came before the PDUFA "

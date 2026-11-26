@@ -142,7 +142,7 @@ def _named(label, url):
 NO_FDA = "No FDA record of the action day on this page"
 
 
-def page_line(doc, day=None):
+def page_line(doc, day=None, slug=None):
     """2026-11-18 (design red team, change 10): the same line for a decision page no dataset row points at (417 of
     483), built only from the sources the page itself holds, and saying plainly when it holds none. day is the page's
     own day (its URL's); a Drugs@FDA validation date is called the FDA's day only when it is that day."""
@@ -234,9 +234,32 @@ def page_line(doc, day=None):
     if parts == [NO_FDA]:
         return (f'{B}<p class="note" style="margin:6px 0 10px;font-size:12.5px;color:#a7bcd9"><b style="color:#cfe0f5">'
                 f"Verified against:</b> no source for this decision is cited on this page yet.</p>{E}")
-    parts.append("Goal date: none on record")
+    parts.append(census_goal(slug))
     return (f'{B}<p class="note" style="margin:6px 0 10px;font-size:12.5px;color:#a7bcd9">'
             f'<b style="color:#cfe0f5">Verified against:</b> ' + " &middot; ".join(parts) + f'.</p>{E}')
+
+
+_GOALS = None
+
+
+def census_goal(slug):
+    """2026-11-26: a 2024-2025 page the decision-timing census matched (_decision_goal_dates.json, written by
+    build_decision_timing_since_2024.py) names the goal date that census sourced, with the dated document that states
+    it. Every other archive page still says it holds none."""
+    global _GOALS
+    if _GOALS is None:
+        p = os.path.join(HERE, "_decision_goal_dates.json")
+        _GOALS = json.load(io.open(p, encoding="utf-8")) if os.path.exists(p) else {}
+    g = _GOALS.get(slug or "")
+    if not (g and g.get("goal") and g.get("source_url") and g.get("doc_date")):
+        return "Goal date: none on record"
+    u = g["source_url"]
+    who = "SEC filing" if "sec.gov/" in u else "sponsor document"
+    s = f"Goal date {pretty(g['goal'])}"
+    if g.get("extended") and g.get("goal_original"):
+        s += f", extended from {pretty(g['goal_original'])}"
+    label = who + ", " + pretty(g["doc_date"])
+    return s + f" ({link(label, u)})"
 
 
 def place(doc, block):
@@ -288,7 +311,7 @@ def main():
         if slug in owned and B in io.open(p, encoding="utf-8", errors="replace").read():
             continue
         doc = io.open(p, encoding="utf-8", errors="replace").read()
-        new = place(doc, page_line(doc, slug[-10:]))
+        new = place(doc, page_line(doc, slug[-10:], slug))
         if new is None:
             continue
         m2 += 1
