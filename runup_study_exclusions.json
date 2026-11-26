@@ -809,6 +809,18 @@
    "document": "https://download.open.fda.gov/crl/CRL_BLA761403_20260226.pdf",
    "finding": "the FDA letter is real, but the company did not announce it on its date, so the share price had no news to react to on that day",
    "checked": "2026-11-26"
+  },
+  "AMRX-2025-04-02": {
+   "reason": "not announced on its date: Complete Response Letter for Phenylephrine hydrochloride in sodium chloride injection (NDA 218345) dated 2025-04-02; Amneal's press releases in the weeks after do not announce it.",
+   "document": "https://download.open.fda.gov/crl/CRL_NDA218345_20250402.pdf",
+   "finding": "the FDA letter is real, but the company did not announce it on its date, so the share price had no news to react to on that day",
+   "checked": "2026-11-26"
+  },
+  "PFE-2025-01-17": {
+   "reason": "not announced on its date: Complete Response Letter for Diazepam injection (Hospira) (NDA 219112) dated 2025-01-17; Pfizer's press releases in the weeks after do not announce it.",
+   "document": "https://download.open.fda.gov/crl/CRL_NDA219112_20250117.pdf",
+   "finding": "the FDA letter is real, but the company did not announce it on its date, so the share price had no news to react to on that day",
+   "checked": "2026-11-26"
   }
  }
 }

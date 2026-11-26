@@ -120,12 +120,37 @@ def own_record(doc):
     return None, None
 
 
+RE_OVERVIEW = re.compile(r'href="https://www\.accessdata\.fda\.gov/scripts/cder/daf/index\.cfm\?event=overview\.process'
+                         r'&(?:amp;)?ApplNo=(\d{6})"')
+
+
+def overview_record(doc, slug, appr):
+    """2026-11-26: a page whose Verified line cites only the Drugs@FDA overview for its application (GSK-2025-10-23,
+    Blenrep, BLA 761440) named no record, so the FDA's same-day Complete Response Letter on BLA 761440/Original 2 never
+    showed on it. Fall back to that application number, but only when exactly one approval Drugs@FDA lists on it falls
+    0 to 4 days before the page's date: that approval's letter is then the page's own record ("this page"). Anything
+    less certain gets no block, because a wrong "this page" is worse than none."""
+    m = re.search(r"<!--VERIFIED:BEGIN-->(.*?)<!--VERIFIED:END-->", doc, re.S)
+    o = RE_OVERVIEW.search(m.group(1)) if m else None
+    d = re.search(r"-(\d{4}-\d{2}-\d{2})$", slug)
+    if not (o and d):
+        return None, None
+    day = dt.date.fromisoformat(d.group(1))
+    hits = [a for a in appr if a["num"] == o.group(1) and a["letter"] and 0 <= (day - a["date"]).days <= 4]
+    if len(hits) != 1:
+        return None, None
+    return o.group(1), hits[0]["letter"]
+
+
 def pages():
     out = {}
+    appr = approvals()
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
         slug = os.path.basename(os.path.dirname(p))
         doc = io.open(p, encoding="utf-8", errors="replace").read()
         num, rec = own_record(doc)
+        if not num:
+            num, rec = overview_record(doc, slug, appr)
         out[slug] = {"path": p, "doc": doc, "num": num, "rec": rec}
     return out
 
@@ -188,7 +213,14 @@ def main():
         new = re.sub(re.escape(B) + r".*?" + re.escape(E), "", doc, flags=re.S)
         g = by_num.get(pg["num"]) if pg["num"] else None
         if g:
-            crls = sorted({(c["pdf"], c["label"], c["date"]): c for c in g["crl"]}.values(), key=lambda c: c["action"])
+            # one row per letter file: the FDA's release lists a split letter under both "BLA 761440/Original 2" and
+            # "BLA 761440"; keep the more specific label (2026-11-26, GSK-2025-10-23 showed the same letter twice)
+            one = {}
+            for c in g["crl"]:
+                k = (c["pdf"], c["date"])
+                if k not in one or len(c["label"]) > len(one[k]["label"]):
+                    one[k] = c
+            crls = sorted(one.values(), key=lambda c: c["action"])
             apprs = sorted(g["appr"], key=lambda a: a["date"])
             others = [c for c in crls if c["pdf"] != pg["rec"]] + [a for a in apprs if a["letter"] != pg["rec"]]
             if others:
