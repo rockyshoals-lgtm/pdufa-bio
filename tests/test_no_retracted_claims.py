@@ -60,6 +60,12 @@ try:
     RETRACTED.update({s: why for s, (_, why, _) in _R1125.items()})
 except Exception:  # noqa: BLE001
     pass
+# 2026-11-26: six pages filed under a company that is not the applicant (apply_1126b_misfiled_decisions.py).
+try:
+    from apply_1126b_misfiled_decisions import RETIRE as _R1126B
+    RETRACTED.update({s: v[1] for s, v in _R1126B.items()})
+except Exception:  # noqa: BLE001
+    pass
 # Pages allowed to mention a retracted slug, because their job is to document the retraction.
 ALLOWED = {"corrections/index.html", "changelog/index.html"}
 DEC_LINK = re.compile(r"/fda-decision/([A-Z]+-\d{4}-\d{2}-\d{2})")

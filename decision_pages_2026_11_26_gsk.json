@@ -1,0 +1,17 @@
+[
+ {
+  "ticker": "GSK",
+  "date": "2025-12-16",
+  "fda_action_date": "2025-12-16",
+  "outcome": "Approved",
+  "drug": "Exdensur (depemokimab)",
+  "indication": "Add-on maintenance treatment of severe asthma with an eosinophilic phenotype, ages 12 and older",
+  "company": "GSK plc",
+  "cap": "Large",
+  "headline": "The FDA approved Exdensur (depemokimab) on December 16, 2025 as add-on maintenance treatment of severe asthma with an eosinophilic phenotype in patients aged 12 and older, on its PDUFA goal date. The same day it issued a Complete Response Letter for the nasal polyps indication in the same application.",
+  "pdufa_note": "Drugs@FDA lists the approval of BLA 761458 (Original 1) with an action date of December 16, 2025 (<a href=\"https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;ApplNo=761458\" rel=\"noopener\" style=\"color:#e3ba5e\">Drugs@FDA</a>); the posted approval letter covers add-on maintenance treatment of severe asthma characterized by an eosinophilic phenotype in adult and pediatric patients aged 12 years and older, and its electronic signature is dated December 17, 2025 (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761458Orig1s000ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA letter</a>). The FDA's Complete Response Letter for BLA 761458 Original 2, chronic rhinosinusitis with nasal polyps, is dated December 16, 2025 (<a href=\"/crl/letter/bla-761458-2025-12-16\" style=\"color:#e3ba5e\">CRL letter</a>). GSK announced the asthma approval on December 16, 2025 (<a href=\"https://www.gsk.com/en-gb/media/press-releases/exdensur-depemokimab-approved-by-us-fda-for-the-treatment-of-severe-asthma/\" rel=\"noopener\" style=\"color:#e3ba5e\">GSK's announcement</a>), reporting 58% and 48% reductions in the rate of annualised asthma exacerbations in the SWIFT-1 and SWIFT-2 trials. GSK had stated a PDUFA date of December 16, 2025 when the applications were accepted (<a href=\"https://www.sec.gov/Archives/edgar/data/1131399/000165495425002180/a0169z.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">GSK 6-K, March 3, 2025</a>). This page replaces one that filed the decision under Gilead (GILD) by mistake (see /corrections).",
+  "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761458",
+  "source_label": "Drugs@FDA, BLA 761458, approval action date December 16, 2025",
+  "h1": "Exdensur (depemokimab) <span class=\"g\">FDA approval for severe eosinophilic asthma</span>: Dec 16, 2025"
+ }
+]

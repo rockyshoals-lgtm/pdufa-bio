@@ -2091,5 +2091,34 @@
    "RYZUMVI",
    "phentolamine"
   ]
+ },
+ "GSK-2025-12-16": {
+  "basis": "decision-timing census 2026-11-26: FDA record read",
+  "checked": "2026-11-26",
+  "cid": "C323",
+  "date": "2025-12-16",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761458Orig1s000ltr.pdf",
+  "name": "Exdensur (depemokimab)",
+  "oc": "Approved",
+  "record": "BLA 761458 Original 1",
+  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761458"
+ },
+ "NVS-2025-04-03": {
+  "basis": "misfiled-page fix 2026-11-26: FDA record read",
+  "checked": "2026-11-26",
+  "date": "2025-04-02",
+  "name": "Vanrafia (atrasentan)",
+  "oc": "Approved",
+  "record": "NDA 219208",
+  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219208"
+ },
+ "CSLLY-2025-06-17": {
+  "basis": "misfiled-page fix 2026-11-26: FDA record read",
+  "checked": "2026-11-26",
+  "date": "2025-06-16",
+  "name": "Andembry (garadacimab)",
+  "oc": "Approved",
+  "record": "BLA 761367",
+  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761367"
  }
 }
