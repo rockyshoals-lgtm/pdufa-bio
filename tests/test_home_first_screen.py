@@ -18,7 +18,8 @@ print "-0%". This fails if:
   4. a decided card prints "-0%";
   5. the "upcoming PDUFAs" tile differs from the sum of this year's month chips;
   6. cmdk.js does not step aside for a page's own search box;
-  7. inject_site_links.py (SITELINKS, RELATED, /sitemap) does not run.
+  7. inject_site_links.py (SITELINKS, RELATED, /sitemap) does not run;
+  8. the H1 does not say PDUFA.
 A second stamp is allowed only when the eyebrow says the rows are stale ("Data through ...").
 
 PLANT=stamp adds a second stamp, PLANT=card drops a card, PLANT=chips adds 1 to the tile; each must FAIL.
@@ -152,6 +153,12 @@ def main():
                        text=True, cwd=HERE)
     if r.returncode != 0:
         bad.append("inject_site_links.py --dry-run fails: " + (r.stderr.strip().splitlines() or ["?"])[-1])
+
+    # 8. the H1 names what most searchers type (2026-11-26: Bing "pdufa" sits at position 6-7 on ~3,000 impressions
+    #    and the home H1 said only "Every FDA decision"). Title, description and H1 all say PDUFA.
+    h1 = re.search(r"<h1>(.*?)</h1>", doc, re.S)
+    if not h1 or "PDUFA" not in visible(h1.group(1)):
+        bad.append(f"home: the H1 does not say PDUFA: {visible(h1.group(1)) if h1 else 'missing'}")
 
     print(f"home: {len(cards)} next-decision card(s), tile {tile.group(1) if tile else '?'}, chips {chips}")
     if bad:

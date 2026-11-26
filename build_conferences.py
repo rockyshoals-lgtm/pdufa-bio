@@ -202,9 +202,63 @@ def presenters_for(conf, by_code):
     return sorted(keep, key=lambda r: (r.get("ticker") or r.get("company") or "").upper())
 
 
-def render(data, by_code, today):
+# 2026-11-26 (Bing: "asco 2027" at position 7, 437 impressions, 0 clicks): the hub's title, H1, og:title and
+# breadcrumb still said "2026 Biotech Conference Calendar" while the list ran to June 2027, and a hand-built
+# 14-meeting ItemList (11 of them already over) sat beside the generated one. The heading now carries the span
+# of the meetings actually listed, and names the next edition of the flagship meetings with its year.
+FLAGSHIPS = ("ASCO", "ASH", "AACR", "ESMO", "JPM")
+
+
+def calendar_span(confs):
+    """'2026-2027' (or '2027') from the first and last listed meeting's start year."""
+    y0, y1 = confs[0]["start"][:4], confs[-1]["start"][:4]
+    return y0 if y0 == y1 else f"{y0}-{y1}"
+
+
+def upcoming(data, today):
     confs = [c for c in data["conferences"] if c["end"] >= today]
     confs.sort(key=lambda c: c["start"])
+    return confs
+
+
+def hub_title(confs):
+    named, seen = [], set()
+    for code in FLAGSHIPS:
+        for c in confs:
+            if c["code"] == code and code not in seen:
+                seen.add(code)
+                named.append(f'{code} {c["start"][:4]}')
+                break
+        if len(named) == 3:
+            break
+    lead = f"Biotech Conference Calendar {calendar_span(confs)}"
+    return (f'{lead}: {", ".join(named)} &amp; more | pdufa.bio' if named else f"{lead} | pdufa.bio")
+
+
+LEGACY_LD = re.compile(r'<script type="application/ld\+json">\{"@context":"https://schema.org","@type":"ItemList"'
+                       r'.*?</script>', re.S)
+
+
+def set_heading(doc, confs):
+    """Title, og/twitter title, H1 and breadcrumb name from the listed meetings; drop any ItemList outside the
+    generated block (the generated block carries the only current one)."""
+    span, title = calendar_span(confs), hub_title(confs)
+    doc = re.sub(r"<title>[^<]*</title>", lambda m: f"<title>{title}</title>", doc, count=1)
+    for prop in ('property="og:title"', 'name="twitter:title"'):
+        doc = re.sub(r'(<meta ' + prop + r' content=")[^"]*(")', lambda m: m.group(1) + title + m.group(2),
+                     doc, count=1)
+    doc = re.sub(r"<h1>.*?</h1>",
+                 lambda m: f'<h1>{span} biotech <span class="g">conference calendar</span></h1>', doc, count=1)
+    doc = re.sub(r'("position":2,"name":")[^"]*(","item":"https://www\.pdufa\.bio/conferences")',
+                 lambda m: m.group(1) + f"{span} biotech conference calendar" + m.group(2), doc, count=1)
+    if BEGIN in doc:
+        pre, rest = doc.split(BEGIN, 1)
+        doc = LEGACY_LD.sub("", pre) + BEGIN + rest
+    return doc
+
+
+def render(data, by_code, today):
+    confs = upcoming(data, today)
 
     n_pres = 0
     cards = []
@@ -346,6 +400,8 @@ def main():
             'not absence of presentations.</p>')
     if "PRESDISC" not in doc:
         doc = doc.replace(BEGIN, DISC + BEGIN, 1)
+
+    doc = set_heading(doc, upcoming(data, today))
 
     if not a.dry_run:
         open(OUT, "w", encoding="utf-8").write(doc)
