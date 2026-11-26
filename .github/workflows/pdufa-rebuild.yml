@@ -1350,6 +1350,10 @@ jobs:
             echo "no data changes this run — nothing to deploy"
           else
             git commit -m "chore: daily data refresh $(date -u +%F)"
+            # The commit this build's stamp names (commit_at_build). A push race below rebases the CI commit onto
+            # newer work, after which HEAD~1 is that work and not this build (run 45766231171, 2026-11-26: the
+            # verifier called the fresh deploy stale and the search-engine ping was skipped).
+            echo "BUILT_FROM=$(git rev-parse --short=9 HEAD~1)" >> "$GITHUB_ENV"
             # PUSH RACE (twice on 2026-09-05/06): a builder commit landing while this run
             # was working made the final push non-fast-forward, and a run whose guards had
             # ALL PASSED was recorded as a failed build. The work was fine; only the push
@@ -1394,7 +1398,7 @@ jobs:
           VERCEL_ORG_ID: team_HLoQLqGljk4BGwM2Recpsid5
           VERCEL_PROJECT_ID: prj_WCjOKqJUA7h44mL3MRtudIB22Frz
         run: |
-          want=$(git rev-parse --short=9 HEAD~1)   # the stamp names the tree it built
+          want=${BUILT_FROM:-$(git rev-parse --short=9 HEAD~1)}   # the stamp names the tree it built (BUILT_FROM survives a push-race rebase)
           for i in $(seq 1 24); do
             got=$(curl -s -H 'Cache-Control: no-cache' https://www.pdufa.bio/build-info.json | python -c 'import json,sys; print(json.load(sys.stdin).get("commit",""))' 2>/dev/null || true)
             [ "$got" = "$want" ] && { echo "live build-info commit $got after $((i*10)) s"; break; }
@@ -1431,8 +1435,9 @@ jobs:
         # file on disk is the edge serving a body we did not deploy -- the 09-07 finding, caught
         # automatically. It is off by default everywhere else (see the note in the script).
         # --expect-commit (audit 09-15 s.5): the live stamp must name this build. The stamp is
-        # taken before the CI commit, so its commit_at_build is the pushed commit's parent.
-        run: python verify_live_deploy.py --passes 3 --gap 30 --compare-repo --min-built "$(date -u -d '-30 min' +%Y-%m-%dT%H:%M:%S+00:00)" --expect-commit "$(git rev-parse --short=9 HEAD),$(git rev-parse --short=9 HEAD~1)"
+        # taken before the CI commit, so its commit_at_build is the pushed commit's parent, or BUILT_FROM when the
+        # push had to rebase onto a newer commit (the parent is then that commit, not the tree this run built).
+        run: python verify_live_deploy.py --passes 3 --gap 30 --compare-repo --min-built "$(date -u -d '-30 min' +%Y-%m-%dT%H:%M:%S+00:00)" --expect-commit "$(git rev-parse --short=9 HEAD),$(git rev-parse --short=9 HEAD~1),${BUILT_FROM}"
 
       # Tell the search engines, AFTER Vercel has had a moment to build the pushed commit.
       # Note: the classic sitemap ping is gone. google.com/ping returns 404 "deprecated" and
