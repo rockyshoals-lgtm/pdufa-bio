@@ -791,6 +791,24 @@
    "document": "https://ir.harmonybiosciences.com/news-releases/news-release-details/harmony-biosciences-provides-update-status-supplemental-new-drug",
    "finding": "the page's outcome was guessed from the share price; the FDA action that date was something else, or there was none",
    "checked": "2026-11-26"
+  },
+  "ALVO-2025-11-24": {
+   "reason": "not announced on its date: Complete Response Letter for AVT06 (BLA 761435) dated November 24, 2025; Alvotech announced none of it in its 6-K releases through January 2, 2026 and first named CRLs on AVT03, AVT05 and AVT06 in its 2025 Form 20-F, filed March 31, 2026.",
+   "document": "https://download.open.fda.gov/crl/CRL_BLA761435_20251124.pdf",
+   "finding": "the FDA letter is real, but the company did not announce it on its date, so the share price had no news to react to on that day",
+   "checked": "2026-11-26"
+  },
+  "ALVO-2025-11-26": {
+   "reason": "not announced on its date: Complete Response Letter for AVT05 (BLA 761461) dated November 26, 2025; Alvotech announced none of it in its 6-K releases through January 2, 2026 and first named CRLs on AVT03, AVT05 and AVT06 in its 2025 Form 20-F, filed March 31, 2026.",
+   "document": "https://download.open.fda.gov/crl/CRL_BLA761461_20251126.pdf",
+   "finding": "the FDA letter is real, but the company did not announce it on its date, so the share price had no news to react to on that day",
+   "checked": "2026-11-26"
+  },
+  "AMPH-2026-02-26": {
+   "reason": "not announced on its date: Complete Response Letter for the insulin aspart biosimilar (BLA 761403) dated February 26, 2026; Amphastar's results releases of February 26 and May 7, 2026 do not announce it.",
+   "document": "https://download.open.fda.gov/crl/CRL_BLA761403_20260226.pdf",
+   "finding": "the FDA letter is real, but the company did not announce it on its date, so the share price had no news to react to on that day",
+   "checked": "2026-11-26"
   }
  }
 }

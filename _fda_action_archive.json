@@ -164,6 +164,24 @@
   "record": "BLA 761462 CRL",
   "source_url": "https://download.open.fda.gov/crl/CRL_BLA761462_20251031.pdf"
  },
+ "ALVO-2025-11-24": {
+  "basis": "red team 2026-11-26: openFDA's text of the FDA's Complete Response Letter, dated 2025-11-24",
+  "checked": "2026-11-26",
+  "date": "2025-11-24",
+  "name": "AVT06 (proposed aflibercept biosimilar)",
+  "oc": "CRL",
+  "record": "BLA 761435 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761435_20251124.pdf"
+ },
+ "ALVO-2025-11-26": {
+  "basis": "red team 2026-11-26: openFDA's text of the FDA's Complete Response Letter, dated 2025-11-26",
+  "checked": "2026-11-26",
+  "date": "2025-11-26",
+  "name": "AVT05 (proposed golimumab biosimilar), BLA 761461",
+  "oc": "CRL",
+  "record": "BLA 761461 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761461_20251126.pdf"
+ },
  "AMGN-2025-01-17": {
   "basis": "decision-timing census 2026-11-26: FDA record read",
   "checked": "2026-11-26",
@@ -234,6 +252,15 @@
   "terms": [
    "Ipratropium"
   ]
+ },
+ "AMPH-2026-02-26": {
+  "basis": "red team 2026-11-26: openFDA's text of the FDA's Complete Response Letter, dated 2026-02-26",
+  "checked": "2026-11-26",
+  "date": "2026-02-26",
+  "name": "Insulin aspart biosimilar (AMP-004)",
+  "oc": "CRL",
+  "record": "BLA 761403 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761403_20260226.pdf"
  },
  "AMRX-2025-06-12": {
   "basis": "held-page audit 2026-11-26: FDA record read directly",
