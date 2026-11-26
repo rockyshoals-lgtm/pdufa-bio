@@ -9708,10 +9708,10 @@
 "verdict": "NEUTRAL"
 },
 "/fda-decision/COGT-2026-11-24": {
-"checked": "2026-11-25",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
+"checked": "2026-11-26",
+"crawled": "2026-11-26",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/fda-decision/CORT-2026-03-25": {
 "checked": "2026-11-20",
@@ -10770,10 +10770,10 @@
 "verdict": "NEUTRAL"
 },
 "/fda-decision/PYPD-2026-11-24": {
-"checked": "2026-11-25",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
+"checked": "2026-11-26",
+"crawled": "2026-11-26",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/fda-decision/RARE-2025-07-11": {
 "checked": "2026-11-21",
@@ -10968,10 +10968,10 @@
 "verdict": "PASS"
 },
 "/fda-decision/RHHBY-2026-11-23": {
-"checked": "2026-11-25",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
+"checked": "2026-11-26",
+"crawled": "2026-11-26",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/fda-decision/ROIV-2026-08-27": {
 "checked": "2026-11-21",
@@ -12772,6 +12772,12 @@
 "crawled": "2026-11-11",
 "state": "Submitted and indexed",
 "verdict": "PASS"
+},
+"/research/fda-decision-timing/since-2024": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
 },
 "/research/implied-vs-actual": {
 "checked": "2026-11-20",
