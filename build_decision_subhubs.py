@@ -47,6 +47,34 @@ def is_crl(r):
             or '<span class="bad">CRL</span>' in r.split('class="d"', 1)[-1][:60])
 
 
+def is_inferred(r):
+    # 2026-11-26: the outcome was read from the share price, not from a filing (badge_decision_provenance's badge).
+    return "pv-inferred" in r
+
+
+def slug(r):
+    m = re.search(r'href="/fda-decision/([^"]+)"', r)
+    return m.group(1) if m else ""
+
+
+PROV = re.compile(r'<div class="note"[^>]*><b>Not inferred from price\.</b>.*?</div>', re.S)
+
+
+def provenance_note(doc, kept, dropped):
+    """2026-11-26: the banner on /decisions/approvals and /decisions/crl was written once by fix_decision_listings.py
+    and never refreshed. It said "47 decision(s)" over 44 CRL rows and "89" over 355 approvals, and "a further 0" while
+    5 and 22 price-inferred rows were listed under it. It is now cut from the rows this build actually lists."""
+    from fix_decision_listings import NOTE
+    from refresh_provenance_counts import page_kind
+    sourced = 0
+    for r in kept:
+        p = os.path.join(SITE, "fda-decision", slug(r), "index.html")
+        if os.path.exists(p) and page_kind(io.open(p, encoding="utf-8", errors="replace").read()) == "sourced":
+            sourced += 1
+    note = NOTE.format(kept=len(kept), sourced=sourced, dropped=dropped)
+    return PROV.sub(lambda _: note, doc, count=1) if PROV.search(doc) else doc
+
+
 def grid(secs):
     return "".join(f'<div class="mhead">{y} &middot; {len(rs)}</div><div class="grid">{"".join(rs)}</div>'
                    for y, rs in secs if rs)
@@ -122,9 +150,14 @@ def main():
     out = {}
     for rel, keep in (("decisions/approvals", is_ok), ("decisions/crl", is_crl)):
         doc = read(rel)
-        sub = [(y, [r for r in rs if keep(r)]) for y, rs in secs]
+        # Only outcomes read from a document are listed under a heading that asserts what the FDA did; the
+        # price-inferred rows stay on /decisions, labelled Inferred (fix_decision_listings.py's rule, which this
+        # builder had stopped applying when it started cutting these pages from /decisions' rows).
+        sub = [(y, [r for r in rs if keep(r) and not is_inferred(r)]) for y, rs in secs]
+        dropped = sum(1 for _, rs in secs for r in rs if keep(r) and is_inferred(r))
+        doc = provenance_note(doc, [r for _, rs in sub for r in rs], dropped)
         out[rel] = browse_line(swap_grid(doc, sub), years)
-        print(f"  /{rel:22s} {sum(len(rs) for _, rs in sub):4d} rows  " +
+        print(f"  /{rel:22s} {sum(len(rs) for _, rs in sub):4d} rows ({dropped} inferred left on /decisions)  " +
               ", ".join(f"{y}: {len(rs)}" for y, rs in sub))
     out["decisions"] = browse_line(arch, years)
     for y, rs in secs:

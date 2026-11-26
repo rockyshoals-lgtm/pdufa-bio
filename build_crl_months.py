@@ -81,7 +81,26 @@ def tracked():
     alld = collections.Counter(re.findall(r'<a class="row" href="/fda-decision/[^"]+"><div class="t">[A-Z0-9.]+ '
                                           r'(?:&middot;|·) (\d{4}-\d{2})-\d{2}',
                                           io.open(os.path.join(SITE, "decisions", "index.html"), encoding="utf-8").read()))
+    # 2026-11-26: /decisions/crl lists only CRLs read from a document. The price-inferred CRL rows still on /decisions
+    # are counted here so a month page does not read "1 of 23 was a CRL" when two more are listed there as inferred.
+    INFERRED.clear()
+    INFERRED.update(re.findall(r'<a class="row" href="/fda-decision/[^"]+"><div class="t">[A-Z0-9.]+ (?:&middot;|·) '
+                               r'(\d{4}-\d{2})-\d{2}[^<]*</div><div class="d"><span class="[a-z]+">CRL</span>[^<]*'
+                               r'<!--PV:B--> <span class="pv pv-inferred"',
+                               io.open(os.path.join(SITE, "decisions", "index.html"), encoding="utf-8").read()))
     return crl, alld
+
+
+INFERRED = collections.Counter()
+
+
+def inferred_note(k, where):
+    """One sentence for k price-inferred CRL rows, or nothing."""
+    if not k:
+        return ""
+    return (f" A further {k} decision{'s' if k != 1 else ''} {where} {'is' if k == 1 else 'are'} listed on "
+            f"/decisions as a CRL inferred from the share price rather than read from a filing, and "
+            f"{'is' if k == 1 else 'are'} not counted here.")
 
 
 _SUFFIX = re.compile(r"[,.]?\s+(?:Inc|LLC|Ltd|Limited|Corp|Corporation|Co|L\.?P|AB|GmbH|S\.L|plc|SA|AG|N\.V)\.?$", re.I)
@@ -177,7 +196,8 @@ def page(y, m, letters, ours, n_dec, upd, prev_, next_):
         first += ("The FDA publishes these letters in batches after they are issued, so a month with none released "
                   "may still have letters the FDA has not yet published. ")
     first += (f"Of the {n_dec} FDA decision{'s' if n_dec != 1 else ''} on PDUFA goal dates pdufa.bio tracked in {name}, "
-              f"{len(ours)} {'was a Complete Response Letter' if len(ours) == 1 else 'were Complete Response Letters'}.")
+              f"{len(ours)} {'was a Complete Response Letter' if len(ours) == 1 else 'were Complete Response Letters'}."
+              + inferred_note(INFERRED.get(f"{y}-{m:02d}", 0), f"in {name}"))
     desc = (f"FDA complete response letters {name}: {n} released by the FDA (openFDA), {len(ours)} among the PDUFA "
             f"decisions pdufa.bio tracked. Counts and sources only.")[:158]
     which = []
@@ -270,7 +290,8 @@ def year_page(y, months_here, by, ours, alld, upd, years):
     first = (f"The FDA's public release of complete response letters holds {len(letters)} letter"
              f"{'s' if len(letters) != 1 else ''} dated {span}" + (f" (openFDA, last updated {upd})" if upd else "")
              + f". Of the {ndec} FDA decisions on PDUFA goal dates pdufa.bio tracked in {span}, {len(trk)} "
-             + ("was a Complete Response Letter." if len(trk) == 1 else "were Complete Response Letters."))
+             + ("was a Complete Response Letter." if len(trk) == 1 else "were Complete Response Letters.")
+             + inferred_note(sum(INFERRED.get(k, 0) for k in keys), f"in {span}"))
     title = f"FDA Complete Response Letters {y}: {len(trk)} Tracked CRLs, {len(letters)} Released Letters | pdufa.bio"
     desc = (f"FDA complete response letters of {y} by month: {len(letters)} in the FDA's release (openFDA) and "
             f"{len(trk)} among PDUFA decisions pdufa.bio tracked. Sources linked.")
