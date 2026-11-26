@@ -1,0 +1,47 @@
+[
+ {
+  "ticker": "ALVO",
+  "date": "2025-11-24",
+  "fda_action_date": "2025-11-24",
+  "outcome": "CRL",
+  "drug": "AVT06 (proposed aflibercept biosimilar)",
+  "indication": "Proposed biosimilar to Eylea (aflibercept)",
+  "company": "Alvotech",
+  "cap": "Micro",
+  "headline": "The FDA issued a Complete Response Letter on November 24, 2025 for AVT06, Alvotech's proposed biosimilar to Eylea (aflibercept), citing facility deficiencies. Alvotech did not announce the letter on its date.",
+  "pdufa_note": "The FDA's Complete Response Letter for BLA 761435 is dated November 24, 2025 (<a href=\"https://download.open.fda.gov/crl/CRL_BLA761435_20251124.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA CRL file</a>). It cites deficiencies the FDA conveyed on a Form 483 after a pre-license inspection of a facility listed in the application, and deficiencies from a Remote Regulatory Assessment of a facility, which the FDA says may need an on-site inspection before approval. None of the five releases Alvotech filed with the SEC on Form 6-K from November 24, 2025 through January 2, 2026 announces this letter. Alvotech's annual report on Form 20-F for 2025, filed March 31, 2026, states that it received Complete Response Letters from the FDA on its BLAs for AVT03, AVT05 and AVT06 (<a href=\"https://www.sec.gov/Archives/edgar/data/1898416/000189841626000004/alvo-20251231.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">Alvotech 20-F</a>). On June 4, 2026 Alvotech announced that it had resubmitted the AVT06 application (<a href=\"https://www.biospace.com/press-releases/alvotech-announces-resubmission-of-u-s-biologics-license-applications-for-avt05-a-proposed-biosimilar-to-simponi-and-simponi-aria-and-avt06-a-proposed-biosimilar-to-eylea\" rel=\"noopener\" style=\"color:#e3ba5e\">Alvotech release</a>). Because the letter was not announced on its date, this page is left out of the run-up study. No PDUFA goal date is stated, so no early or late margin is given. A Complete Response Letter means the FDA will not approve the application in its present form; the sponsor can resubmit.",
+  "source": "https://download.open.fda.gov/crl/CRL_BLA761435_20251124.pdf",
+  "source_label": "FDA Complete Response Letter, BLA 761435, November 24, 2025",
+  "h1": "AVT06 aflibercept biosimilar (ALVO) <span class=\"g\">FDA Complete Response Letter</span>: Nov 24, 2025"
+ },
+ {
+  "ticker": "ALVO",
+  "date": "2025-11-26",
+  "fda_action_date": "2025-11-26",
+  "outcome": "CRL",
+  "drug": "AVT05 (proposed golimumab biosimilar), BLA 761461",
+  "indication": "Proposed biosimilar to Simponi (golimumab)",
+  "company": "Alvotech",
+  "cap": "Micro",
+  "headline": "The FDA issued a Complete Response Letter on November 26, 2025 for BLA 761461, a second Alvotech application for AVT05, its proposed biosimilar to Simponi (golimumab), citing facility inspection deficiencies. Alvotech did not announce the letter on its date.",
+  "pdufa_note": "The FDA's Complete Response Letter for BLA 761461 is dated November 26, 2025 and names the product as AVT05 (<a href=\"https://download.open.fda.gov/crl/CRL_BLA761461_20251126.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA CRL file</a>). It cites deficiencies the FDA conveyed on a Form 483 after a pre-license inspection of a facility listed in the application, and asks for a Medication Guide statement on the carton and container labeling. The FDA's letter on Alvotech's other AVT05 application, BLA 761462, is dated October 31, 2025 and has its own page (<a href=\"/fda-decision/ALVO-2025-11-02\" style=\"color:#e3ba5e\">ALVO, Oct 31, 2025 letter</a>). None of the five releases Alvotech filed with the SEC on Form 6-K from November 24, 2025 through January 2, 2026 announces this letter. Alvotech's annual report on Form 20-F for 2025, filed March 31, 2026, states that it received Complete Response Letters from the FDA on its BLAs for AVT03, AVT05 and AVT06 (<a href=\"https://www.sec.gov/Archives/edgar/data/1898416/000189841626000004/alvo-20251231.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">Alvotech 20-F</a>). On June 4, 2026 Alvotech announced that it had resubmitted its AVT05 applications for Simponi and Simponi Aria (<a href=\"https://www.biospace.com/press-releases/alvotech-announces-resubmission-of-u-s-biologics-license-applications-for-avt05-a-proposed-biosimilar-to-simponi-and-simponi-aria-and-avt06-a-proposed-biosimilar-to-eylea\" rel=\"noopener\" style=\"color:#e3ba5e\">Alvotech release</a>). Because the letter was not announced on its date, this page is left out of the run-up study. No PDUFA goal date is stated, so no early or late margin is given. A Complete Response Letter means the FDA will not approve the application in its present form; the sponsor can resubmit.",
+  "source": "https://download.open.fda.gov/crl/CRL_BLA761461_20251126.pdf",
+  "source_label": "FDA Complete Response Letter, BLA 761461, November 26, 2025",
+  "h1": "AVT05 golimumab biosimilar (ALVO) <span class=\"g\">FDA Complete Response Letter</span>: Nov 26, 2025"
+ },
+ {
+  "ticker": "AMPH",
+  "date": "2026-02-26",
+  "fda_action_date": "2026-02-26",
+  "outcome": "CRL",
+  "drug": "Insulin aspart biosimilar (AMP-004)",
+  "indication": "Proposed biosimilar to NovoLog (insulin aspart)",
+  "company": "Amphastar Pharmaceuticals",
+  "cap": "Small",
+  "headline": "The FDA issued a Complete Response Letter on February 26, 2026 for AMP-004, Amphastar's proposed biosimilar to NovoLog (insulin aspart), finding its pharmacokinetic data unreliable. Amphastar did not announce the letter on its date.",
+  "pdufa_note": "The FDA's Complete Response Letter for BLA 761403 is dated February 26, 2026 (<a href=\"https://download.open.fda.gov/crl/CRL_BLA761403_20260226.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA CRL file</a>). The letter refers to the product as I004. The FDA writes that, because of deficiencies in bioanalytical method validation and bioanalysis for insulin aspart noted on a Form 483, the pharmacokinetic data from Study API-I004-CL-B are unreliable and cannot support a finding of no clinically meaningful differences from US-licensed NovoLog, and it recommends a new pharmacokinetic study with a validated method. The letter also cites deficiencies from a pre-license inspection of a facility listed in the application. Amphastar's fourth-quarter results release the same day says it has one biosimilar insulin candidate filed with the FDA (<a href=\"https://www.sec.gov/Archives/edgar/data/1297184/000129718426000007/amph-20260226xex99d1.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">Amphastar release, Feb 26, 2026</a>), and its first-quarter release of May 7, 2026 says the same and does not mention a Complete Response Letter (<a href=\"https://www.sec.gov/Archives/edgar/data/1297184/000129718426000031/amph-20260507xex99d1.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">Amphastar release, May 7, 2026</a>). On its earnings calls on February 26 and May 7, 2026, per the call transcripts, Amphastar described the insulin aspart application (AMP-004) as still in progress, with a commercial launch planned for 2027. Because the letter was not announced on its date, this page is left out of the run-up study. No PDUFA goal date is stated, so no early or late margin is given. A Complete Response Letter means the FDA will not approve the application in its present form; the sponsor can resubmit.",
+  "source": "https://download.open.fda.gov/crl/CRL_BLA761403_20260226.pdf",
+  "source_label": "FDA Complete Response Letter, BLA 761403, February 26, 2026",
+  "h1": "AMP-004 insulin aspart biosimilar (AMPH) <span class=\"g\">FDA Complete Response Letter</span>: Feb 26, 2026"
+ }
+]
