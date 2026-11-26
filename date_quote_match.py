@@ -84,6 +84,9 @@ def states_quarter(q, d):
     pats = [
         rf"\b{ORD_Q[n]}[- ]quarter(?: of)?(?: (?:calendar|fiscal) year)?(?: of)?(?: the year)?,? (?:of )?{y}\b",
         rf"\b{ORD_Q[n]}[- ]quarter\b[^.;]{{0,40}}\b{y}\b",
+        # 2026-11-26: "Two Phase 2 readouts anticipated in 2027: ACP-211 ... in the second half and ... in the fourth
+        # quarter" (Acadia) states the year once, before a colon that introduces the list. Same sentence only.
+        rf"\bin {y}:[^.;]{{0,240}}\b{ORD_Q[n]}[- ]quarter\b",
         rf"\bq{n}[ -]?(?:of )?(?:{y}|'?{yy})\b",
         rf"\b{n}q[ -]?(?:{y}|'?{yy})\b",
         rf"\b{y}[ -]q{n}\b",
@@ -97,6 +100,7 @@ def states_half(q, d):
     pats = [
         rf"\b{ORD_H[n]}[- ]half(?: of)?(?: (?:calendar|fiscal) year)?(?: of)?,? (?:of )?{y}\b",
         rf"\b{ORD_H[n]}[- ]half\b[^.;]{{0,40}}\b{y}\b",
+        rf"\bin {y}:[^.;]{{0,240}}\b{ORD_H[n]}[- ]half\b",
         rf"\bh{n}[ -]?(?:of )?(?:{y}|'?{yy})\b",
         rf"\b{n}h[ -]?(?:{y}|'?{yy})\b",
     ]

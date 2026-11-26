@@ -403,7 +403,28 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--dry-run', action='store_true')
     a = ap.parse_args()
     fwd, past, name, slugs, readouts, confs = load_data()
-    tickers = sorted(set(fwd) | set(past) | set(readouts))
+    tickers = set(fwd) | set(past) | set(readouts)
+    # 2026-11-26 (red team): a hub whose last readout row left the dataset (company acquired, readout reported
+    # and retired, estimate replaced under another ticker) fell out of this set and was never rebuilt, so it kept
+    # listing the removed rows and linking drug pages that no longer exist (12 hubs, CSTL still showed FCX-007,
+    # which is Castle Creek's, not Castle Biosciences'). Rebuild any hub on disk that this builder wrote with a
+    # readouts section, so the stale rows leave it; keep the company name the page already carried.
+    hub_dir = os.path.join(SITE, 'ticker')
+    for tk in sorted(os.listdir(hub_dir)):
+        hp = os.path.join(hub_dir, tk, 'index.html')
+        if tk in tickers or not os.path.exists(hp):
+            continue
+        old = open(hp, encoding='utf-8', errors='replace').read()
+        if 'Clinical readouts (' not in old:
+            continue
+        tm = re.search(r'<title>(.+?) \(' + re.escape(tk) + r'\)', old)
+        if tm and tk not in name:
+            nm = html.unescape(tm.group(1)).strip()
+            if nm and nm != tk:
+                name[tk] = nm
+        tickers.add(tk)
+        print(f'  rebuilt with no rows on file: {tk}')
+    tickers = sorted(tickers)
     print(f'{len(tickers)} ticker hubs to build '
           f'({sum(1 for t in tickers if slugs.get(t) and past.get(t))} with both, '
           f'{sum(1 for t in tickers if slugs.get(t) and not past.get(t))} upcoming-only, '
