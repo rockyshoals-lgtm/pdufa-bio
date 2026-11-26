@@ -377,6 +377,105 @@
    "source_url": "https://www.globenewswire.com/news-release/2026/09/23/3367346/0/en/immunovant-announces-topline-results-from-proof-of-concept-study-of-imvt-1402-in-cutaneous-lupus-erythematosus.html",
    "guided_window": "Oct 2026 (registry estimate)",
    "note": "Reported about a month before the registry's estimated completion. Period 1 topline only; Immunovant said it plans to stop development in CLE. Roivant issued a parallel release the same day."
+  },
+  {
+   "id": "readout_alzn_2026-11-18",
+   "t": "ALZN",
+   "drug": "AL001",
+   "reported_date": "2026-11-18",
+   "outcome": "reported",
+   "summary": "Alzamend Neuro, Inc. reported this readout on 2026-11-18: “Society for Neuroscience Presentation” (press release).",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1677077/000121465926014554/o11182628k.htm",
+   "guided_window": "2026-11-18",
+   "note": "readout mine 2026-11-25, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_bhvn_2026-11-19",
+   "t": "BHVN",
+   "drug": "BHV-1530 (FGFR3-directed ADC)",
+   "reported_date": "2026-11-19",
+   "outcome": "reported",
+   "summary": "Biohaven Ltd. reported this readout on 2026-11-19: “Biohaven's Novel FGFR3-Directed ADC with Proprietary TopoIx Payload, BHV-1530, Shows Clinical Activity and Confirmed Responses in FGFR3-Altered Urothelial and Head and Neck Cancers, Oral Presentation at ENA 2026” (press release).",
+   "source_url": "https://www.prnewswire.com/news-releases/biohavens-novel-fgfr3-directed-adc-with-proprietary-topoix-payload-bhv-1530-shows-clinical-activity-and-confirmed-responses-in-fgfr3-altered-urothelial-and-head-and-neck-cancers-oral-presentation-at-ena-2026-302944663.html",
+   "guided_window": "2026-11-19",
+   "note": "readout mine 2026-11-25, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_cldx_2026-12-31",
+   "t": "CLDX",
+   "drug": "barzolvolimab",
+   "reported_date": "2026-11-19",
+   "outcome": "reported",
+   "summary": "Celldex Therapeutics, Inc. reported this readout on 2026-11-19: “Celldex Reports Results from Phase 2 Study of Barzolvolimab in Atopic Dermatitis” (8-K).",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/19/3407103/24180/en/celldex-reports-results-from-phase-2-study-of-barzolvolimab-in-atopic-dermatitis.html",
+   "guided_window": "2026",
+   "note": "readout mine 2026-11-25, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_dwtx_2026-11-30",
+   "t": "DWTX",
+   "drug": "Halneuron (tetrodotoxin)",
+   "reported_date": "2026-11-23",
+   "outcome": "reported",
+   "summary": "Dogwood Therapeutics, Inc. reported this readout on 2026-11-23: “Dogwood Therapeutics Announces Halneuron® Meets Primary Endpoint with Statistically Significant Pain Reduction vs. Placebo in Phase 2b Study of Chemotherapy-Induced Neuropathic Pain” (press release).",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/23/3408242/0/en/dogwood-therapeutics-announces-halneuron-meets-primary-endpoint-with-statistically-significant-pain-reduction-vs-placebo-in-phase-2b-study-of-chemotherapy-induced-neuropathic-pain.html",
+   "guided_window": "2026-11",
+   "note": "readout mine 2026-11-25, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_eras_2026-11-20",
+   "t": "ERAS",
+   "drug": "ERAS-0015 (pan-RAS molecular glue)",
+   "reported_date": "2026-11-20",
+   "outcome": "reported",
+   "summary": "Erasca, Inc. reported this readout on 2026-11-20: “Erasca Reports Broad and Robust Phase 1 Clinical Efficacy and Favorable Safety Data for Pan-RAS Molecular Glue ERAS-0015” (press release).",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/20/3407349/0/en/erasca-reports-broad-and-robust-phase-1-clinical-efficacy-and-favorable-safety-data-for-pan-ras-molecular-glue-eras-0015.html",
+   "guided_window": "2026-11-20",
+   "note": "readout mine 2026-11-25, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_eras_2026-12-31",
+   "t": "ERAS",
+   "drug": "ERAS-4001 (pan-KRAS inhibitor)",
+   "reported_date": "2026-11-20",
+   "outcome": "reported",
+   "summary": "Erasca, Inc. reported this readout on 2026-11-20: “Erasca Reports Broad and Robust Phase 1 Clinical Efficacy and Favorable Safety Data for Pan-RAS Molecular Glue ERAS-0015” (press release).",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/20/3407349/0/en/erasca-reports-broad-and-robust-phase-1-clinical-efficacy-and-favorable-safety-data-for-pan-ras-molecular-glue-eras-0015.html",
+   "guided_window": "2026-H2",
+   "note": "readout mine 2026-11-25, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_immp_2026-11-19",
+   "t": "IMMP",
+   "drug": "eftilagimod alfa (efti) + pembrolizumab + radiotherapy",
+   "reported_date": "2026-11-18",
+   "outcome": "reported",
+   "summary": "Immutep Limited reported this readout on 2026-11-18: “Immutep Reports Encouraging Disease-Free Survival from EFTISARC-NEO Phase II Trial in Soft Tissue Sarcoma” (press release).",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/19/3406250/0/en/immutep-reports-encouraging-disease-free-survival-from-eftisarc-neo-phase-ii-trial-in-soft-tissue-sarcoma.html",
+   "guided_window": "2026-11-19",
+   "note": "readout mine 2026-11-25, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_ipha_2026-11-18",
+   "t": "IPHA",
+   "drug": "IPH4502 (Nectin-4 exatecan ADC)",
+   "reported_date": "2026-11-18",
+   "outcome": "reported",
+   "summary": "Innate Pharma SA reported this readout on 2026-11-18: “Innate Pharma Presents Initial Phase 1 Clinical Data for IPH4502 at ENA 2026” (press release).",
+   "source_url": "https://www.businesswire.com/news/home/20261117479493/en/Innate-Pharma-Presents-Initial-Phase-1-Clinical-Data-for-IPH4502-at-ENA-2026/",
+   "guided_window": "2026-11-18",
+   "note": "readout mine 2026-11-25, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_kymr_2026-12-31",
+   "t": "KYMR",
+   "drug": "KT-621 (STAT6 degrader)",
+   "reported_date": "2026-11-23",
+   "outcome": "reported",
+   "summary": "Kymera Therapeutics, Inc. reported this readout on 2026-11-23: “Kymera Therapeutics Announces Positive Results from BROADEN2 Phase 2b Clinical Trial of KT-621, a First-in-Class, Oral STAT6 Degrader, in Patients with Moderate to Severe Atopic Dermatitis” (press release).",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/23/3408198/0/en/kymera-therapeutics-announces-positive-results-from-broaden2-phase-2b-clinical-trial-of-kt-621-a-first-in-class-oral-stat6-degrader-in-patients-with-moderate-to-severe-atopic-derma.html",
+   "guided_window": "2026",
+   "note": "readout mine 2026-11-25, red-teamed against the company's release"
   }
  ]
 }

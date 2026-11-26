@@ -232,8 +232,17 @@ def load_slate():
                    and r.get("st") in ("Upcoming", "Awaiting") and (not gtok or gtok & _drug_tokens(r.get("name")))
                    for r in ds)
 
+    # 2026-11-25 (David: "add a past due box on the home page"): a goal whose date has passed with no decision on record
+    # is listed in the home page's "Past their goal date" box (build_home_past_due.py), for as long as it stays open,
+    # not here as "0 due" for ten days. Same rule as the box, so a goal shows in exactly one of the two.
+    try:
+        from build_home_past_due import keys as _past_due_keys
+        overdue = _past_due_keys(TODAY)
+    except Exception:  # noqa: BLE001
+        overdue = set()
     cats = [c for c in slate["catalysts"] if c.get("ticker") and c.get("date")
             and str(c["date"])[:10] >= grace
+            and (str(c["ticker"]).upper(), str(c["date"])[:10]) not in overdue
             and (open_in_dataset(c["ticker"].upper(), str(c["date"])[:10], c.get("drug") or c.get("drug_name") or "")
                  or not resolved(c["ticker"].upper(), str(c["date"])[:10],
                                  c.get("drug") or c.get("drug_name") or ""))]
@@ -485,10 +494,12 @@ def render_decided(decs, key):
         pub, after_close = disclosure(tk, date)
         spk, move, rday = sparkline_reaction(poly_daily(key, tk), pub, after_close)   # gold dot: reaction day
         mv = ""
-        why = (f"FDA action {_md(act)}" + (f", made public {_md(pub)}" if pub != act else "") if known else
-               f"Announced {_md(pub)}; no public FDA record of the action day")
-        if after_close:
-            why += " after the close"
+        # 2026-11-25: "after the close" belongs to the announcement. It used to be appended after the whole phrase, so
+        # CAPR's card read "FDA action Nov 20 after the close" (the FDA's letter is dated Nov 20; Capricor's release
+        # went out at 7:55 PM ET).
+        late = " after the close" if after_close else ""
+        why = ((f"FDA action {_md(act)}" + (f", made public {_md(pub)}{late}" if pub != act or late else ""))
+               if known else f"Announced {_md(pub)}{late}; no public FDA record of the action day")
         if move is not None and move == move:   # NaN: no move to print
             r = round(move)
             mc = "#46d17f" if r > 0 else ("#ff7a72" if r < 0 else "#94a9c9")
@@ -608,8 +619,28 @@ def main():
     ap.add_argument("--upcoming", type=int, default=8)
     ap.add_argument("--decided", type=int, default=10)
     ap.add_argument("--dry-run", action="store_true")
+    # 2026-11-25 (BLOCKED run 45687661301): the board runs early; a CRL letter the FDA releases that same run gives its
+    # decision page the FDA's own day only later (link_crl_letters.py), so the card still said "announced". This
+    # re-renders the Recently decided cards alone, after the letter steps, leaving the rest of index.html as it is.
+    ap.add_argument("--decided-only", action="store_true")
     a = ap.parse_args()
     key = load_key() or "price_source"   # 2026-11-10: prices come from price_source (FMP); no Polygon key needed
+    if a.decided_only:
+        decs = load_decisions()[:a.decided]
+        html = open(HOME, encoding="utf-8").read()
+        lab = re.compile(r'href="/fda-decision/([A-Z.]+-\d{4}-\d{2}-\d{2})"[^>]*>.*?<span class="dd">([^<·]*)', re.S)
+        i = html.find('<div class="decs">')
+        cur = lab.findall(html[i:html.find("</div>", i)]) if i >= 0 else []
+        want = [(f"{tk}-{d}", (fda_day(tk, d)[0] if fda_day(tk, d)[1] else f"{d} announced") + " ")
+                for tk, d, _o, _r in sorted(decs, key=lambda r: (fda_day(r[0], r[1])[0], r[1]), reverse=True)]
+        if cur == want:                      # every card already shows its day: leave the board (and its prices) alone
+            print(f"decided cards: {len(decs)} already show the FDA's day; unchanged")
+            return
+        new = replace_block(html, '<div class="decs">', render_decided(decs, key))
+        print(f"decided cards: {len(decs)} re-rendered (a card's day or label changed)")
+        if not a.dry_run:
+            open(HOME, "w", encoding="utf-8").write(new)
+        return
 
     cats = load_slate()[:a.upcoming]
     decs = load_decisions()[:a.decided]

@@ -233,7 +233,10 @@ def fix_chip(doc, ym):
         if m.group("b"):
             text = f"<b>{text}</b>"
         return f'<a {m.group("pre")}href="/calendar/{y}/{mon}"{m.group("st")}>{text}</a>'
-    return CHIP.sub(sub, doc)
+    doc = CHIP.sub(sub, doc)
+    # 2026-11-26: a page carrying two chips (its old month and a later year's) ends with the same chip twice once
+    # its date moves into that later month (VRTX Nov 30 -> Feb 28, 2027; AGIO and EXEL already showed it).
+    return re.sub(r"(" + CHIP.pattern + r")(?:\1)+", r"\1", doc)
 
 
 def fix_rows(doc, today, memo, ym):

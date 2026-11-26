@@ -20,7 +20,7 @@ What it found, and what this pass does about each:
 5. iPhones in landscape: about half the pages declare viewport-fit=cover, which lets content run under the notch.
    The page now pads by the safe-area insets (zero everywhere else).
 6. In-page links (#anchors) land below the sticky header instead of under it.
-7. The site-wide "Browse pdufa.bio" link rows get a taller line so neighbouring links are not mis-tapped.
+7. The site-wide "Browse pdufa.bio" links get taller rows so neighbouring links are not mis-tapped.
 8. Linked list rows on ticker, drug and PDUFA pages (a date span, then a description span, both inline) ran
    together: /ticker/SRPT read "2026-09Eteplirsen". The description now starts its own line, as on the
    calendar and decision pages, which already used block elements for it.
@@ -83,6 +83,20 @@ CSS = (
     'body{overflow-wrap:break-word}'
     'img{max-width:100%;height:auto}svg,video,canvas,iframe{max-width:100%}'
     'pre{max-width:100%;overflow-x:auto}'
+    # 14. the "Browse pdufa.bio" block at the foot of every page: six labelled columns of links, sized by the width of
+    # the column it sits in (6 across a wide page, 3 on a narrow one, 2 on a phone). It outranks the homepage's
+    # header rules nav{display:flex} and nav a{padding:7px 11px}, which used to scatter its separators.
+    '.pd-browse{display:block!important;container:pdb/inline-size;margin:30px 0 8px;padding-top:18px;'
+    'border-top:1px solid #1a3358;font-size:13px;line-height:1.4;color:#94a9c9}'
+    '.pd-bh{margin:0 0 14px;color:#cfe0f5;font-size:14px;font-weight:700}'
+    '.pd-bg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 18px}'
+    '@container pdb (min-width:560px){.pd-bg{grid-template-columns:repeat(3,minmax(0,1fr))}}'
+    '@container pdb (min-width:1000px){.pd-bg{grid-template-columns:repeat(6,minmax(0,1fr))}}'
+    '.pd-bgt{margin:0 0 6px;color:#94a9c9;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}'
+    '.pd-browse a{display:block;margin:0;padding:4px 0;border-radius:0;background:none;color:#9ec5ff;font-size:13px;'
+    'line-height:1.4;text-decoration:none}'
+    '.pd-browse a:hover{background:none;color:#eef4fc;text-decoration:underline}'
+    '.pd-browse a.pd-ball{display:inline-block;margin-top:16px}'
     # 2. tables scroll inside themselves
     '.pd-tw{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}'
     '.pd-tw>table{margin-left:0;margin-right:0}'
@@ -110,8 +124,8 @@ CSS = (
     'body.pd-navopen .pd-burger~nav,body.pd-navopen .pd-burger~.nav{visibility:visible;transition:max-height .25s ease}'
     # 4. no zoom-on-focus in iOS Safari
     'input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea{font-size:16px!important}'
-    # 7. link rows: room between lines for a fingertip
-    'nav[aria-label="Browse pdufa.bio"]{line-height:2.4!important}'
+    # 7. link rows: room between links for a fingertip (each Browse link a 32px row)
+    '.pd-browse a{padding:7px 0}'
     '}'
     '@media(max-width:640px){'
     # 11. grid cards may shrink below their longest unbreakable line

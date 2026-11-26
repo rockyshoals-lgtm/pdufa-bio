@@ -200,10 +200,12 @@ def raise_issue(lead):
     # which is committed only when a run passes, so every FAILING run forgot it had already opened the issue
     # (the same shape as the 10-15 ESCALATION duplicates). GitHub is the record that survives a failed run.
     try:
-        out = subprocess.run(["gh", "issue", "list", "--state", "open", "--search", f"in:title \"{title}\"",
+        # 2026-11-26: --state all. The 15-minute news watch (news-watch.yml) reports a lead every run while its
+        # release is in the window; an issue a reviewer closed must not reopen 15 minutes later.
+        out = subprocess.run(["gh", "issue", "list", "--state", "all", "--search", f"in:title \"{title}\"",
                               "--json", "title,body"], capture_output=True, text=True, timeout=60).stdout
         if any(i.get("title") == title and lead["key"] in (i.get("body") or "") for i in json.loads(out or "[]")):
-            print(f"   issue for this lead already open; not opening another ({title})")
+            print(f"   issue for this lead already opened; not opening another ({title})")
             return
     except Exception:  # noqa: BLE001
         pass
@@ -214,7 +216,8 @@ def raise_issue(lead):
         print(f"   (issue create skipped: {e})")
 
 
-ACK_FILES = ("_drug_watch_ack.json", "_fda_drugs_feed_ack.json", "_newswire_ack.json", "_fda_watch_ack.json")
+ACK_FILES = ("_drug_watch_ack.json", "_fda_drugs_feed_ack.json", "_newswire_ack.json", "_fda_watch_ack.json",
+             "_edgar_8k_ack.json", "_fmp_press_ack.json")   # 2026-11-26: 8-K and press-release leads close too
 
 
 def acked_keys(here=HERE):
@@ -303,6 +306,8 @@ def cmd_collect(a):
         if act.startswith("issue:") and not a.no_issue:
             ik = act[6:]
             raise_issue(next(l for l in state["leads"] if f"{l['source']}|{l['key']}" == ik))
+        elif act == "email" and getattr(a, "no_escalate", False):
+            print("   (escalation is the rebuild's; this run only opens issues)")
         elif act == "email":
             how = send_email(state, a.outbox)
             state["email_status"] = how
@@ -429,6 +434,13 @@ def cmd_apply(a):
                 import inject_site_type
                 if inject_site_type.public(p, old):
                     old = inject_site_type.apply(old)[0]
+            if p.endswith(".html") and url:
+                # 2026-11-26: the committed copy can predate the Browse pdufa.bio footer's current layout (run 540
+                # put the old dotted row back on two Vertex pages and tests/test_browse_footer.py blocked the
+                # deploy). The block is marker-bounded and site-wide, not the held row's, so it is placed again;
+                # build_sitemap strips it from the content hash, so the held page's lastmod is unchanged.
+                import inject_site_links
+                old = inject_site_links.refresh_browse(old, url)
             if p.endswith(".html"):  # after the badges and the site type, as in the build
                 # a page committed before the accessibility pass gets it too (named charts first, then the phone
                 # copies that carry their names), or the page it restores would fail tests/test_accessibility.py
@@ -509,6 +521,8 @@ def main():
     c.add_argument("--now")
     c.add_argument("--outbox")
     c.add_argument("--no-issue", action="store_true")
+    c.add_argument("--no-escalate", action="store_true",
+                   help="open HELD issues but never send the escalation email (news-watch.yml; the rebuild escalates)")
     p = sub.add_parser("apply")
     p.add_argument("--state", default=STATE)
     p.add_argument("--dry-run", action="store_true")

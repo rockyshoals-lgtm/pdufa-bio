@@ -78,9 +78,19 @@ def main():
         # the one line a searcher reads on the results page still sold a conference list while
         # the page underneath said the run-up is not reliable. Same numbers, same owner, same
         # build. Kept under 158 to stay inside test_meta_lengths.
-        desc = (f"Every major 2026 medical conference where biotech companies present clinical "
-                f"data. Across {f['n']:,} presentations we find no reliable pre-conference "
-                f"run-up.")
+        # 2026-11-26: the year is the span of the meetings the page lists (2026-2027 once the list runs into
+        # 2027), from the same helper that sets the title and H1, so snippet and page cannot disagree.
+        import datetime as _dt
+        import json as _json
+        import build_conferences as bc
+        confs = bc.upcoming(_json.load(io.open(bc.DATA, encoding="utf-8")), _dt.date.today().isoformat())
+        span = bc.calendar_span(confs) if confs else ""
+        desc = ""
+        for lead in (f"Every major {span} medical conference", f"Every {span} medical conference"):
+            desc = (f"{lead} where biotech companies present clinical data. Across {f['n']:,} presentations "
+                    f"we find no reliable pre-conference run-up.").replace("  ", " ")
+            if len(desc) <= 158:
+                break
         if len(desc) <= 158:
             new = re.sub(r'(<meta name="description" content=")[^"]*(")',
                          lambda m: m.group(1) + html.escape(desc, quote=True) + m.group(2),

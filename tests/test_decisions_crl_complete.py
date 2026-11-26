@@ -14,14 +14,17 @@ ROW = re.compile(r'<a class="row" href="(/fda-decision/[^"]+)">(.*?)</a>', re.S)
 OUTCOME = re.compile(r'class="d"><span class="[a-z]+">([^<]*)</span>')
 
 
-def crl_rows(rel):
+def crl_rows(rel, inferred=None):
+    """CRL rows on a page; inferred=False keeps only those not marked price-inferred, True only those that are."""
     doc = io.open(os.path.join(SITE, rel, "index.html"), encoding="utf-8").read()
-    return {h for h, body in ROW.findall(doc) if (OUTCOME.search(body) or [None, ""])[1].strip() == "CRL"}
+    return {h for h, body in ROW.findall(doc) if (OUTCOME.search(body) or [None, ""])[1].strip() == "CRL"
+            and (inferred is None or ("pv-inferred" in body) == inferred)}
 
 
 def main():
-    arch, sub = crl_rows("decisions"), crl_rows("decisions/crl")
-    if len(arch) < 50:
+    # 2026-11-26: /decisions/crl lists only CRLs read from a document; price-inferred ones stay on /decisions, labelled.
+    arch, sub = crl_rows("decisions", inferred=False), crl_rows("decisions/crl")
+    if len(arch) < 30:   # 39 after the 2026-11-26 retirement of 55 price-guessed CRL rows (and 5 inferred kept off)
         print(f"FAIL: read only {len(arch)} CRL rows on /decisions; the row pattern no longer matches")
         return 1
     missing = sorted(arch - sub)
@@ -29,7 +32,11 @@ def main():
         print(f"FAIL: {len(missing)} CRL row(s) on /decisions are missing from /decisions/crl "
               f"(run build_decision_subhubs.py): " + ", ".join(missing[:10]))
         return 1
-    print(f"  PASS: all {len(arch)} CRL rows on /decisions are on /decisions/crl")
+    leaked = sorted(sub & crl_rows("decisions", inferred=True))
+    if leaked:
+        print(f"FAIL: {len(leaked)} price-inferred CRL row(s) are listed on /decisions/crl: " + ", ".join(leaked[:10]))
+        return 1
+    print(f"  PASS: all {len(arch)} document-read CRL rows on /decisions are on /decisions/crl")
     return 0
 
 

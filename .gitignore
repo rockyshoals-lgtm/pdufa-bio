@@ -126,3 +126,5 @@ _blocked.json
 
 # 2026-10-18: the decision-timing census CSV (the 4th *.csv incident: built, linked, 404 live)
 !pdufa_site_src/research/fda-decision-timing/*.csv
+# 2026-11-26: the since-2024 census CSV (same 404 risk as above: built and linked, but *.csv kept it out of git)
+!pdufa_site_src/research/fda-decision-timing/since-2024/*.csv

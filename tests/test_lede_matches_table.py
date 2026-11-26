@@ -39,6 +39,14 @@ def _row_month(t):
     return None
 
 
+def _guided_whens(doc):
+    """The date cells of /readouts' company-guided table (2026-11-26: the lede counts these rows too)."""
+    out = []
+    for blk in re.findall(r"<!--GUIDED:BEGIN-->(.*?)<!--GUIDED:END-->", doc, re.S):
+        out += re.findall(r'<tr><td class="dt">(.*?)</td>', blk, re.S)
+    return out
+
+
 def _readouts_ahead(frags):
     """Rows whose window has not passed: dated at or after the current Eastern month, or undated."""
     sys.path.insert(0, HERE)
@@ -50,6 +58,8 @@ def _readouts_ahead(frags):
         t = html.unescape(re.sub(r"<[^>]+>", " ", fr))
         t = re.sub(r"(?:as of|Sponsor release|Stopped per company|ClinicalTrials\.gov)\s+\d{4}-\d{2}-\d{2}", "", t, flags=re.I)
         d = _row_month(t)
+        if re.search(r"\u00b7 \d{4}-\d{2}-\d{2} reported\b", re.sub(r"\s+", " ", t)):
+            continue  # 2026-11-26: a readout already reported this month is a result, not an expected one
         if not d or d >= cur:
             n += 1
     return n
@@ -73,7 +83,7 @@ def main():
 
         lede = html.unescape(re.sub(r"<[^>]+>", "", doc.split(B, 1)[1].split(E, 1)[0]))
         body = re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)
-        rows = len(re.findall(r'<a class="row"[^>]*>', body))
+        rows = len(re.findall(r'<a class="row"[^>]*>', body)) + len(_guided_whens(body))
 
         # The homepage is a summary, not a table, so its figures come from the sibling pages.
         # Check them against those pages rather than against its own 7 board tiles: the failure
@@ -94,6 +104,8 @@ def main():
                 sib = open(f, encoding="utf-8", errors="replace").read()
                 sib = re.sub(re.escape(B) + ".*?" + re.escape(E), "", sib, flags=re.S)
                 frags = re.findall(r'<a class="row"[^>]*>(.*?)</a>', sib, re.S)
+                if src == "readouts":
+                    frags += _guided_whens(sib)
                 if pred == "ahead":
                     # 2026-10-16 01:49 UTC (21:49 ET Oct 15): the runner's UTC date had rolled to Oct 16, so
                     # this count dropped the Enspryng TED row (goal Oct 15, still today in Eastern) and failed a
@@ -143,9 +155,9 @@ def main():
             bad.append((rel, "lede claims 0 -- the row parse is broken")); continue
         if rel == "/readouts":
             # two-part lede: "{A} expected ... A further {B} readouts whose window has already passed"
-            m2 = re.search(r"A further ([\d,]+) readouts whose window has already passed", lede)
+            m2 = re.search(r"A further ([\d,]+) readouts (?:that have already reported or )?whose window has already passed", lede)
             past_claim = int(m2.group(1).replace(",", "")) if m2 else 0
-            frags = re.findall(r'<a class="row"[^>]*>(.*?)</a>', body, re.S)
+            frags = re.findall(r'<a class="row"[^>]*>(.*?)</a>', body, re.S) + _guided_whens(body)
             n_ahead = _readouts_ahead(frags)
             if claimed != n_ahead or claimed + past_claim != rows:
                 bad.append((rel, f"lede says {claimed} expected + {past_claim} passed, page has "

@@ -1,0 +1,100 @@
+name: pdufa.bio news watch (every 15 minutes)
+
+# Audit 2026-11-26 (news speed). On the last ten decisions the site published 3 to 35 hours after the sponsor's own
+# release, and Capricor's Nov 20 CRL (7:55 PM ET) raised no lead at all: the watchers ran only inside the daily
+# rebuild, whose crons GitHub starts 1.5 to 5 h late, so an after-close release waited for the next morning.
+#
+# This job runs the fast watchers on their own, every 15 minutes (GitHub may start it later under load), and opens
+# ONE "HELD: <row> (<source>) lead to verify" issue per new lead through quarantine_leads.py, the same issue the
+# rebuild opens (deduplicated against every issue ever opened for that lead). It builds nothing, commits nothing and
+# publishes nothing: a lead is verified against the release and the FDA before any page changes (house rule).
+# The escalation email stays with the rebuild (--no-escalate); _held_state.json is read from a throwaway copy.
+#
+#   watch_fmp_press.py         every armed sponsor's releases (GlobeNewswire, Business Wire, PR Newswire) via FMP
+#   watch_sponsor_newswire.py  the sponsor newsroom feeds it knows (no --discover: discovery stays in the rebuild)
+#   watch_edgar_8k.py          armed SEC registrants' newest 8-K / 6-K
+#   watch_fda_drugs_feed.py    the FDA's own press-release feed
+# Cost: about 8 FMP requests a run (5 symbols per request), ~770 a day on the paid plan the rebuild already uses.
+#
+# 2026-11-26 second pass: GitHub ran the "every 15 minutes" cron ONCE in this job's first 12 hours, the hourly
+# watchdog cron about every 8 hours, and the rebuild's 10:00Z and 12:00Z crons 7 to 10 hours late (on Nov 26 not by
+# 16:43Z). So the job no longer waits for cron. One run loops: a watch pass, news_watch_keeper.py (dispatches a
+# rebuild whose daily slot GitHub skipped, and runs the hourly watchdog), then a sleep to the next 15-minute mark,
+# for about 5.5 hours; then it dispatches its own successor and exits. Concurrency keeps exactly one loop alive
+# (cancel-in-progress false: a cron start or a dispatch queues behind the running loop, and GitHub keeps only the
+# newest queued one). The cron stays as a restart if the chain breaks. On a PRIVATE repo, where Actions minutes are
+# billed, it makes one pass per start and never chains. tests/test_news_watch_keeper.py.
+
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: news-watch
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write                 # open the HELD issue for a new lead; close ones whose leads are acked
+  actions: write                # dispatch the successor loop and a rebuild whose cron GitHub skipped
+
+jobs:
+  watch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350          # GitHub's hard cap is 360; the loop stops starting passes at 330
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: "Watch loop: a pass every 15 minutes for ~5.5 h (leads only, never published), then chain"
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          WATCH_LEADS_JSONL: ${{ runner.temp }}/news_leads.jsonl
+          REPO_PRIVATE: ${{ github.event.repository.private }}
+          LOOP_SECONDS: "19800"     # 330 minutes
+          PASS_EVERY: "900"         # 15 minutes
+        run: |
+          set +e
+          start=$(date +%s)
+          cp _held_state.json "$RUNNER_TEMP/held_state.json" 2>/dev/null || true   # missing file: a fresh state
+          pass=0
+          while :; do
+            pass=$((pass + 1)); t0=$(date +%s)
+            echo "::group::pass $pass at $(date -u +%H:%M)Z"
+            # pick up rows the rebuild armed since the loop started (a watcher only hears armed sponsors)
+            git fetch -q --depth=1 origin main && git reset -q --hard FETCH_HEAD
+            rm -f "$WATCH_LEADS_JSONL"
+            for w in "watch_fmp_press.py" "watch_sponsor_newswire.py" "watch_edgar_8k.py" "watch_fda_drugs_feed.py"; do
+              echo "== $w"
+              before=$(cat "$WATCH_LEADS_JSONL" 2>/dev/null | wc -l)
+              timeout 240 python $w
+              rc=$?
+              after=$(cat "$WATCH_LEADS_JSONL" 2>/dev/null | wc -l)
+              if [ "$rc" != "0" ] && [ "$after" = "$before" ]; then
+                echo "::warning::$w exited $rc without writing a lead: it is BLIND this run, not a lead"
+              fi
+            done
+            # one HELD issue per new lead (the rebuild escalates, not this job)
+            if [ -s "$WATCH_LEADS_JSONL" ]; then
+              python quarantine_leads.py collect --leads "$WATCH_LEADS_JSONL" --state "$RUNNER_TEMP/held_state.json" --no-escalate
+            else
+              echo "news watch: no leads this pass"
+            fi
+            python news_watch_keeper.py
+            echo "::endgroup::"
+            now=$(date +%s)
+            if [ "$REPO_PRIVATE" = "true" ]; then echo "private repo: one pass, no loop"; break; fi
+            if [ $((now - start + PASS_EVERY)) -gt "$LOOP_SECONDS" ]; then break; fi
+            wait=$((PASS_EVERY - (now - t0))); [ "$wait" -lt 60 ] && wait=60
+            sleep "$wait"
+          done
+          if [ "$REPO_PRIVATE" != "true" ]; then
+            # the successor queues behind this run (same concurrency group) and starts when this one ends
+            gh workflow run news-watch.yml --ref main -R "$GITHUB_REPOSITORY" \
+              && echo "news watch: successor dispatched after $pass passes" \
+              || echo "::warning::news watch: could not dispatch the successor; the cron will restart the loop"
+          fi
+          exit 0

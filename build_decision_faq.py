@@ -148,23 +148,30 @@ def main():
         if not drug:
             skipped += 1
             continue                       # no honest name to ask the question with
-        drug = re.sub(r"\s+", " ", drug)[:70]
+        drug = re.sub(r"\s+", " ", drug)
+        if len(drug) > 70 and "), " in drug:
+            # 2026-11-26: a [:70] cut asked "Was RYBREVANT FASPRO (amivantamab and hyaluronidase-lpuj),
+            # once-monthly do approved"; over the limit, drop the INN in parentheses, never the qualifier or half a word.
+            drug = re.sub(r"\s*\([^)]*\)", "", drug, count=1)
+        drug = drug[:70]
         sys.path.insert(0, HERE)
         from drug_names import clean_drug_name
         drug = clean_drug_name(drug) or drug     # 4.7: never a cut name ("RP1 ... and OPDIVO (")
 
         q = f"Was {drug} approved by the FDA?"
         fd = fda_day.get((tk, date))
-        ann = (f" The company announced it on {pretty(date)}." if fd and fd != date else "")
+        from announced_day import announced_iso   # the page's own Announced day, not the slug (GSK-2025-02-18)
+        ad = announced_iso(doc, date)
+        ann = (f" The company announced it on {pretty(ad)}." if fd and fd != ad else "")
         if outcome == "Approved" and (tk, date) in announced:
-            ans = (f"Yes. The sponsor announced on {pretty(date)} that the FDA had approved the "
+            ans = (f"Yes. The sponsor announced on {pretty(ad)} that the FDA had approved the "
                    f"application for {drug}; the announcement does not state the day the FDA "
                    f"acted. The primary source is linked on this page.")
         elif outcome == "Approved" and fd:
             ans = (f"Yes. The FDA approved the application for {drug} on {pretty(fd)}, per the FDA's "
                    f"own record.{ann} The primary source is linked on this page.")
         elif outcome == "Approved":
-            ans = (f"Yes. The approval of the application for {drug} was announced on {pretty(date)}; "
+            ans = (f"Yes. The approval of the application for {drug} was announced on {pretty(ad)}; "
                    f"pdufa.bio holds no FDA record stating the exact day the FDA acted. The primary "
                    f"source is linked on this page.")
         elif fd:
@@ -173,7 +180,7 @@ def main():
                    f"current form.{ann} A CRL is not final; the primary source is linked on this page.")
         else:
             ans = (f"Not in this review cycle. A Complete Response Letter, declining to approve the "
-                   f"application for {drug} in its current form, was announced on {pretty(date)}. A CRL "
+                   f"application for {drug} in its current form, was announced on {pretty(ad)}. A CRL "
                    f"is not final; the primary source is linked on this page.")
 
         # Console read 2026-08-18c item 8: 1 -> 3 questions per sourced page, each answered ONLY
@@ -190,7 +197,7 @@ def main():
             comp = clean_company(html.unescape(cm.group(1)).strip())
             qa.append((f"Which company is behind {drug}?",
                        f"{drug} is {art(comp)} {comp} ({tk}) program. "
-                       + (f"The company announced the FDA decision on {pretty(date)}; "
+                       + (f"The company announced the FDA decision on {pretty(ad)}; "
                           if (tk, date) in announced or not fd else
                           f"The FDA decision came on {pretty(fd)}; ")
                        + ("the company's own announcement is linked on this page."
@@ -206,7 +213,7 @@ def main():
             # announcement (NVAX: announced May 16, page May 19). The FDA's day only when its record holds it.
             qa.append((f"What was {drug} under FDA review for?",
                        f"The application covered {ind}. The FDA {oc_txt} on {pretty(fd)}." if fd and (tk, date) not in announced
-                       else f"The application covered {ind}. The decision was announced on {pretty(date)}."))
+                       else f"The application covered {ind}. The decision was announced on {pretty(ad)}."))
         mm = re.search(r"<span>Decision-day move</span><b>([^<]+)</b>", doc)
         rm = re.search(r"<span>120-day run-up[^<]*</span><b>([^<]+)</b>", doc)
         # 2026-11-18 (design red team, change 10): the answer names what the move is measured on (the key facts'

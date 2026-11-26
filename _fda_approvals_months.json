@@ -7660,7 +7660,7 @@
 "complete": true
 },
 "2026-10": {
-"fetched": "2026-11-25",
+"fetched": "2026-11-26",
 "items": [
 {
 "app": "NDA219617",
@@ -8118,7 +8118,7 @@
 "complete": true
 },
 "2026-11": {
-"fetched": "2026-11-25",
+"fetched": "2026-11-26",
 "items": [
 {
 "app": "BLA761433",
@@ -8374,17 +8374,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220936Orig1s000ltr.pdf"
 },
 {
-"app": "NDA221313",
-"brand": "",
-"generic": "",
-"sponsor": "Lupin Ltd",
-"kind": "new application",
-"sub": "ORIG-1",
-"class": "Type 3 - New Dosage Form",
-"date": "2026-11-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221313Orig1s000ltr.pdf"
-},
-{
 "app": "NDA217062",
 "brand": "",
 "generic": "",
@@ -8394,6 +8383,17 @@
 "class": "Type 3 - New Dosage Form",
 "date": "2026-11-18",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217062Orig1s000ltr.pdf"
+},
+{
+"app": "NDA221313",
+"brand": "",
+"generic": "",
+"sponsor": "Lupin Ltd",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 3 - New Dosage Form",
+"date": "2026-11-18",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221313Orig1s000ltr.pdf"
 },
 {
 "app": "NDA221144",
@@ -8415,7 +8415,7 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-11-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221251Orig1s001ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221251Orig1s000ltr.pdf"
 },
 {
 "app": "BLA761156",
@@ -8438,9 +8438,20 @@
 "class": "Efficacy",
 "date": "2026-11-20",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761156Orig1s016,s017ltr.pdf"
+},
+{
+"app": "NDA211675",
+"brand": "Rinvoq",
+"generic": "upadacitinib",
+"sponsor": "Abbvie",
+"kind": "efficacy supplement",
+"sub": "SUPPL-32",
+"class": "Efficacy",
+"date": "2026-11-23",
+"letter": ""
 }
 ],
-"openfda_total": 200,
+"openfda_total": 216,
 "complete": true
 }
 }

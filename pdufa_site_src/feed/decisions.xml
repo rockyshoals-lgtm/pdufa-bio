@@ -5,9 +5,49 @@
 <id>https://www.pdufa.bio/feed/decisions.xml</id>
 <link rel="self" type="application/atom+xml" href="https://www.pdufa.bio/feed/decisions.xml"/>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/feed"/>
-<updated>2026-11-25T04:14:14Z</updated>
+<updated>2026-11-26T09:45:21Z</updated>
 <author><name>pdufa.bio</name><uri>https://www.pdufa.bio</uri></author>
 <rights>Facts from FDA and sponsor documents, each linked. Not investment advice.</rights>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/GSK-2025-02-18</id>
+<title>Penmenvy Approved Feb 14, 2025 | GSK FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/GSK-2025-02-18"/>
+<published>2025-02-14T17:00:00Z</published>
+<updated>2026-11-26T09:45:21Z</updated>
+<category term="Approved"/>
+<summary>Penmenvy (Meningococcal Groups A, B, C, W, and Y Vaccine), GSK plc: Approved. FDA action date: February 14, 2025.</summary>
+<content type="html">&lt;p&gt;Penmenvy (Meningococcal Groups A, B, C, W, and Y Vaccine), GSK plc: Approved. FDA action date: February 14, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/files/vaccines%2C%20blood%20%26%20biologics/published/february_14_2025_approval_letter_-_penmenvy.pdf"&gt;BLA STN 125819/0&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 26, 2026, 4:45 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/GSK-2025-12-16</id>
+<title>Exdensur (depemokimab) Approved Dec 16, 2025 | GSK FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/GSK-2025-12-16"/>
+<published>2025-12-16T17:00:00Z</published>
+<updated>2026-11-26T06:09:14Z</updated>
+<category term="Approved"/>
+<summary>Exdensur (depemokimab), GSK plc: Approved. FDA action date: December 16, 2025.</summary>
+<content type="html">&lt;p&gt;Exdensur (depemokimab), GSK plc: Approved. FDA action date: December 16, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=761458"&gt;BLA 761458 Original 1 (Drugs@FDA)&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1131399/000165495425002180/a0169z.htm"&gt;SEC filing, March 3, 2025&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 26, 2026, 1:09 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/AZN-2026-02-03</id>
+<title>Saphnelo (anifrolumab) for subcutaneous use CRL Oct 10, 2025 | AZN FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/AZN-2026-02-03"/>
+<published>2026-02-03T17:00:00Z</published>
+<updated>2026-11-25T20:28:13Z</updated>
+<category term="Complete Response Letter"/>
+<summary>Saphnelo (anifrolumab) for subcutaneous use, AstraZeneca PLC: Complete Response Letter. FDA action date: October 10, 2025. Announced: February 3, 2026.</summary>
+<content type="html">&lt;p&gt;Saphnelo (anifrolumab) for subcutaneous use, AstraZeneca PLC: Complete Response Letter. FDA action date: October 10, 2025. Announced: February 3, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761451_20251010.pdf"&gt;FDA Complete Response Letter&lt;/a&gt; &amp;middot; &lt;a href="https://www.astrazeneca.com/media-centre/press-releases/2026/update-on-saphnelo-subcutaneous-administration.html"&gt;AstraZeneca press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 25, 2026, 3:28 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/TLX-2025-08-28</id>
+<title>Zircaix (TLX250-CDx, 89Zr-DFO-girentuximab) CRL Aug 27, 2025 | TLX FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/TLX-2025-08-28"/>
+<published>2025-08-28T16:00:00Z</published>
+<updated>2026-11-25T20:28:13Z</updated>
+<category term="Complete Response Letter"/>
+<summary>Zircaix (TLX250-CDx, 89Zr-DFO-girentuximab), Telix Pharmaceuticals Limited: Complete Response Letter. FDA action date: August 27, 2025. Announced: August 28, 2025.</summary>
+<content type="html">&lt;p&gt;Zircaix (TLX250-CDx, 89Zr-DFO-girentuximab), Telix Pharmaceuticals Limited: Complete Response Letter. FDA action date: August 27, 2025. Announced: August 28, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761401_20260410.pdf"&gt;FDA Complete Response Letter&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/2007191/000200719125000065/zircprcrl.htm"&gt;Telix Pharmaceuticals release, 28 August 2025 (SEC Exhibit 99.1)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 25, 2026, 3:28 PM ET.&lt;/p&gt;</content>
+</entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/PYPD-2026-11-24</id>
 <title>Bacfenssi (doxycycline hyclate) Approval Announced Nov 24, 2026 | PYPD FDA Decision</title>
@@ -39,14 +79,34 @@
 <content type="html">&lt;p&gt;Wilserdly (giredestrant), Roche (Genentech): Approved. FDA action date: November 23, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/cancer-approvals/fda-approves-giredestrant-adjuvant-treatment-er-positive-her2-negative-stage-i-ii-and-iii-breast"&gt;FDA oncology approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15145/2026-11-23/fda-approves-genentechs-wilserdly-girede"&gt;Genentech press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15115/2026-06-01/fda-accepts-new-drug-application-for-gen"&gt;Genentech press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 24, 2026, 11:14 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
+<id>tag:pdufa.bio,2026:pdufa-date-change/VRTX/2026-11-30/2027-02-28</id>
+<title>VRTX Povetacicept (ALPN-303): PDUFA goal date moved from November 30, 2026 to February 28, 2027</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/pdufa-date-changes"/>
+<published>2026-11-24T17:00:00Z</published>
+<updated>2026-11-24T17:00:00Z</updated>
+<category term="PDUFA goal date change"/>
+<summary>The PDUFA goal date for Povetacicept (ALPN-303) (Vertex) moved 90 days later, from November 30, 2026 to February 28, 2027; the change is dated November 24, 2026 in the goal-date history.</summary>
+<content type="html">&lt;p&gt;The PDUFA goal date for Povetacicept (ALPN-303) (Vertex) moved 90 days later, from November 30, 2026 to February 28, 2027; the change is dated November 24, 2026 in the goal-date history.&lt;/p&gt;&lt;p&gt;Source: &lt;a href="https://investors.vrtx.com/news-releases/news-release-details/vertex-announces-extension-pdufa-target-action-date-three-months"&gt;the announcement&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
 <id>https://www.pdufa.bio/fda-decision/BBIO-2026-11-23</id>
-<title>Welgemda (ribitol) Approval Announced Nov 23, 2026 | BBIO FDA Decision</title>
+<title>Welgemda (ribitol) Approved Nov 23, 2026, 4 Days Early | BBIO FDA Decision</title>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/BBIO-2026-11-23"/>
 <published>2026-11-23T17:00:00Z</published>
 <updated>2026-11-24T01:24:57Z</updated>
 <category term="Approved"/>
-<summary>Welgemda (BBP-418, ribitol), BridgeBio Pharma: Approved. FDA action date: not on record. Announced: November 23, 2026.</summary>
-<content type="html">&lt;p&gt;Welgemda (BBP-418, ribitol), BridgeBio Pharma: Approved. FDA action date: not on record. Announced: November 23, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm"&gt;BridgeBio 8-K Exhibit 99.1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1743881/000174388126000026/bbio-20260630xex991.htm"&gt;BridgeBio Pharma, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 23, 2026, 8:24 PM ET.&lt;/p&gt;</content>
+<summary>Welgemda (BBP-418, ribitol), BridgeBio Pharma: Approved. FDA action date: November 23, 2026.</summary>
+<content type="html">&lt;p&gt;Welgemda (BBP-418, ribitol), BridgeBio Pharma: Approved. FDA action date: November 23, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026"&gt;FDA, Novel Drug Approvals for 2026 table&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm"&gt;BridgeBio 8-K Exhibit 99.1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1743881/000174388126000026/bbio-20260630xex991.htm"&gt;BridgeBio Pharma, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 23, 2026, 8:24 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/CAPR-2026-11-20</id>
+<title>Deramiocel (CAP-1002) CRL Nov 20, 2026 | CAPR FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/CAPR-2026-11-20"/>
+<published>2026-11-20T17:00:00Z</published>
+<updated>2026-11-21T14:14:12Z</updated>
+<category term="Complete Response Letter"/>
+<summary>Deramiocel (CAP-1002), Capricor Therapeutics Inc.: Complete Response Letter. FDA action date: November 20, 2026.</summary>
+<content type="html">&lt;p&gt;Deramiocel (CAP-1002), Capricor Therapeutics Inc.: Complete Response Letter. FDA action date: November 20, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA125842_20261120.pdf"&gt;CRL letter CRL_BLA125842_20261120&lt;/a&gt; &amp;middot; &lt;a href="https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html"&gt;Capricor Therapeutics press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.globenewswire.com/news-release/2026/11/09/3398455/0/en/capricor-s-hope-3-phase-3-cardiac-results-for-deramiocel-win-american-heart-association-outstanding-research-award-in-pediatric-cardiology.html"&gt;Capricor press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 21, 2026, 9:14 AM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/AZN-2026-11-16</id>
@@ -57,6 +117,16 @@
 <category term="Approved"/>
 <summary>Klygefa (gefurulimab-gaks), AstraZeneca PLC (Alexion): Approved. FDA action date: November 13, 2026. Announced: November 16, 2026.</summary>
 <content type="html">&lt;p&gt;Klygefa (gefurulimab-gaks), AstraZeneca PLC (Alexion): Approved. FDA action date: November 13, 2026. Announced: November 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761488Orig1s000ltr.pdf"&gt;BLA 761488 ORIG-1 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 21, 2026, 9:14 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:pdufa-date-change/BLTE/2027-02-12/2027-05-12</id>
+<title>BLTE Tinlarebant - Stargardt disease type 1: PDUFA goal date moved from February 12, 2027 to May 12, 2027</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/pdufa-date-changes"/>
+<published>2026-11-20T17:00:00Z</published>
+<updated>2026-11-20T17:00:00Z</updated>
+<category term="PDUFA goal date change"/>
+<summary>The PDUFA goal date for Tinlarebant - Stargardt disease type 1 (Belite Bio, Inc) moved 89 days later, from February 12, 2027 to May 12, 2027; the change is dated November 20, 2026 in the goal-date history.</summary>
+<content type="html">&lt;p&gt;The PDUFA goal date for Tinlarebant - Stargardt disease type 1 (Belite Bio, Inc) moved 89 days later, from February 12, 2027 to May 12, 2027; the change is dated November 20, 2026 in the goal-date history.&lt;/p&gt;&lt;p&gt;Source: &lt;a href="https://www.globenewswire.com/news-release/2026/11/20/3407395/0/en/belite-bio-announces-extension-of-fda-review-timeline-for-tinlarebant-nda.html"&gt;the announcement&lt;/a&gt;&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/PFE-2026-10-26</id>
@@ -126,7 +196,7 @@
 <updated>2026-11-18T03:25:35Z</updated>
 <category term="Complete Response Letter"/>
 <summary>tolebrutinib, Sanofi: Complete Response Letter. FDA action date: December 23, 2025. Announced: December 24, 2025.</summary>
-<content type="html">&lt;p&gt;tolebrutinib, Sanofi: Complete Response Letter. FDA action date: December 23, 2025. Announced: December 24, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf"&gt;FDA Complete Response Letter&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
+<content type="html">&lt;p&gt;tolebrutinib, Sanofi: Complete Response Letter. FDA action date: December 23, 2025. Announced: December 24, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf"&gt;FDA Complete Response Letter&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1121404/000119312525211134/d36300dex992.htm"&gt;SEC filing, September 22, 2025&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/SNY-2025-06-20</id>
@@ -146,7 +216,7 @@
 <updated>2026-11-18T03:25:35Z</updated>
 <category term="Approved"/>
 <summary>DUPIXENT (dupilumab), Regeneron Pharmaceuticals Inc.: Approved. FDA action date: June 18, 2025. Announced: June 20, 2025.</summary>
-<content type="html">&lt;p&gt;DUPIXENT (dupilumab), Regeneron Pharmaceuticals Inc.: Approved. FDA action date: June 18, 2025. Announced: June 20, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf"&gt;BLA 761055 S-070 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
+<content type="html">&lt;p&gt;DUPIXENT (dupilumab), Regeneron Pharmaceuticals Inc.: Approved. FDA action date: June 18, 2025. Announced: June 20, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf"&gt;BLA 761055 S-070 (FDA letter)&lt;/a&gt; &amp;middot; &lt;a href="https://investor.regeneron.com/news-releases/news-release-details/dupixentr-dupilumab-sbla-accepted-fda-priority-review-targeted"&gt;sponsor document, February 18, 2025&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/GSK-2026-11-17</id>
@@ -559,64 +629,14 @@
 <content type="html">&lt;p&gt;FAYUVI (rebisufligene etisparvovec-hopf; UX111), Ultragenyx Pharmaceutical Inc.: Approved. FDA action date: September 17, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/media/194921/download"&gt;CBER approval letter&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1515673/000151567326000006/rare-20260917.htm"&gt;Ultragenyx 8-K&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526139084/rare-20260402.htm"&gt;Ultragenyx 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 19, 2026, 5:14 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
-<id>https://www.pdufa.bio/fda-decision/TLX-2026-09-14</id>
-<title>Pixclara Approved Sep 11, 2026, On Goal Date | TLX FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/TLX-2026-09-14"/>
-<published>2026-09-14T16:00:00Z</published>
-<updated>2026-09-19T21:14:07Z</updated>
-<category term="Approved"/>
-<summary>Pixclara (floretyrosine F 18; TLX101-Px), Telix Pharmaceuticals Limited: Approved. FDA action date: September 11, 2026. Announced: September 14, 2026.</summary>
-<content type="html">&lt;p&gt;Pixclara (floretyrosine F 18; TLX101-Px), Telix Pharmaceuticals Limited: Approved. FDA action date: September 11, 2026. Announced: September 14, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218592Orig1s000ltr.pdf"&gt;NDA 218592 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/2007191/000162828026061892/pixclaraapprovalvfinal.htm"&gt;Telix 6-K&lt;/a&gt; &amp;middot; &lt;a href="https://telixpharma.com/news-views/fda-accepts-nda-for-tlx101-px-pixclara/"&gt;Telix release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 19, 2026, 5:14 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/LLY-2026-09-18</id>
-<title>Inluriyo (imlunestrant) + Verzenio Approved Sep 18, 2026 | LLY FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/LLY-2026-09-18"/>
-<published>2026-09-18T16:00:00Z</published>
-<updated>2026-09-19T01:33:50Z</updated>
-<category term="Approved"/>
-<summary>Inluriyo (imlunestrant) with Verzenio (abemaciclib), Eli Lilly and Company: Approved. FDA action date: September 18, 2026.</summary>
-<content type="html">&lt;p&gt;Inluriyo (imlunestrant) with Verzenio (abemaciclib), Eli Lilly and Company: Approved. FDA action date: September 18, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218881Orig1s001ltr.pdf"&gt;NDA 218881 S-001&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 18, 2026, 9:33 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/SRRK-2026-09-11</id>
-<title>ISEMBYLD (apitegromab-mstn) Approved Sep 11, 2026, 19 Days Early | SRRK FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/SRRK-2026-09-11"/>
-<published>2026-09-11T16:00:00Z</published>
-<updated>2026-09-14T15:54:05Z</updated>
-<category term="Approved"/>
-<summary>ISEMBYLD (apitegromab-mstn), Scholar Rock Holding Corporation: Approved. FDA action date: September 11, 2026.</summary>
-<content type="html">&lt;p&gt;ISEMBYLD (apitegromab-mstn), Scholar Rock Holding Corporation: Approved. FDA action date: September 11, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761463Orig1s000ltr.pdf"&gt;BLA 761463 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1727196/000110465926107273/tm2625362d1_ex99-1.htm"&gt;Scholar Rock 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 14, 2026, 11:54 AM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/PHAR-2026-09-11</id>
-<title>Joenja (leniolisib) Approved Sep 11, 2026, 43 Days Early | PHAR FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/PHAR-2026-09-11"/>
-<published>2026-09-11T16:00:00Z</published>
-<updated>2026-09-14T15:54:05Z</updated>
-<category term="Approved"/>
-<summary>Joenja (leniolisib), Pharming Group N.V.: Approved. FDA action date: September 11, 2026.</summary>
-<content type="html">&lt;p&gt;Joenja (leniolisib), Pharming Group N.V.: Approved. FDA action date: September 11, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217759Orig1s006ltr.pdf"&gt;NDA 217759 S-006&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1828316/000182831626000037/fdaapprovespharmingsjoenja.htm"&gt;Pharming 6-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 14, 2026, 11:54 AM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/BFRI-2026-09-09</id>
-<title>Ameluz Approved Sep 9, 2026, 19 Days Early | BFRI FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/BFRI-2026-09-09"/>
-<published>2026-09-09T16:00:00Z</published>
-<updated>2026-09-14T15:54:05Z</updated>
-<category term="Approved"/>
-<summary>Ameluz (aminolevulinic acid hydrochloride) with RhodoLED red light, Biofrontera Inc.: Approved. FDA action date: September 9, 2026.</summary>
-<content type="html">&lt;p&gt;Ameluz (aminolevulinic acid hydrochloride) with RhodoLED red light, Biofrontera Inc.: Approved. FDA action date: September 9, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/208081Orig1s040ltr.pdf"&gt;NDA 208081 S-040&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1858685/000149315226042508/ex99-1.htm"&gt;Biofrontera 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 14, 2026, 11:54 AM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
 <id>tag:pdufa.bio,2026:pdufa-date-change/CAPR/2026-08-22/2026-11-22</id>
 <title>CAPR Deramiocel (CAP-1002): PDUFA goal date moved from August 22, 2026 to November 22, 2026</title>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/pdufa-date-changes"/>
 <published>2026-08-24T16:00:00Z</published>
 <updated>2026-08-24T16:00:00Z</updated>
 <category term="PDUFA goal date change"/>
-<summary>The PDUFA goal date for Deramiocel (CAP-1002) (Capricor Therapeutics Inc.) moved 92 days later, from August 22, 2026 to November 22, 2026; pdufa.bio recorded the new date on August 24, 2026.</summary>
-<content type="html">&lt;p&gt;The PDUFA goal date for Deramiocel (CAP-1002) (Capricor Therapeutics Inc.) moved 92 days later, from August 22, 2026 to November 22, 2026; pdufa.bio recorded the new date on August 24, 2026.&lt;/p&gt;&lt;p&gt;Source: &lt;a href="https://www.globenewswire.com/news-release/2026/08/24/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"&gt;the announcement&lt;/a&gt;&lt;/p&gt;</content>
+<summary>The PDUFA goal date for Deramiocel (CAP-1002) (Capricor Therapeutics Inc.) moved 92 days later, from August 22, 2026 to November 22, 2026; the change is dated August 24, 2026 in the goal-date history.</summary>
+<content type="html">&lt;p&gt;The PDUFA goal date for Deramiocel (CAP-1002) (Capricor Therapeutics Inc.) moved 92 days later, from August 22, 2026 to November 22, 2026; the change is dated August 24, 2026 in the goal-date history.&lt;/p&gt;&lt;p&gt;Source: &lt;a href="https://www.globenewswire.com/news-release/2026/08/24/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"&gt;the announcement&lt;/a&gt;&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>tag:pdufa.bio,2026:pdufa-date-change/PRAX/2026-09-27/2026-12-27</id>
@@ -625,7 +645,7 @@
 <published>2026-06-29T16:00:00Z</published>
 <updated>2026-06-29T16:00:00Z</updated>
 <category term="PDUFA goal date change"/>
-<summary>The PDUFA goal date for Relutrigine (PRAX-562) (Praxis Precision Medicines Inc.) moved 91 days later, from September 27, 2026 to December 27, 2026; pdufa.bio recorded the new date on June 29, 2026.</summary>
-<content type="html">&lt;p&gt;The PDUFA goal date for Relutrigine (PRAX-562) (Praxis Precision Medicines Inc.) moved 91 days later, from September 27, 2026 to December 27, 2026; pdufa.bio recorded the new date on June 29, 2026.&lt;/p&gt;&lt;p&gt;Source: &lt;a href="https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm"&gt;the announcement&lt;/a&gt;&lt;/p&gt;</content>
+<summary>The PDUFA goal date for Relutrigine (PRAX-562) (Praxis Precision Medicines Inc.) moved 91 days later, from September 27, 2026 to December 27, 2026; the change is dated June 29, 2026 in the goal-date history.</summary>
+<content type="html">&lt;p&gt;The PDUFA goal date for Relutrigine (PRAX-562) (Praxis Precision Medicines Inc.) moved 91 days later, from September 27, 2026 to December 27, 2026; the change is dated June 29, 2026 in the goal-date history.&lt;/p&gt;&lt;p&gt;Source: &lt;a href="https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm"&gt;the announcement&lt;/a&gt;&lt;/p&gt;</content>
 </entry>
 </feed>

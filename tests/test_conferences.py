@@ -111,6 +111,48 @@ def main():
         else:
             print("  PASS: no bare '0 presenters' on the page")
 
+    # 2026-11-26: the heading said "2026 Biotech Conference Calendar" while the list ran to June 2027, and a
+    # hand-built 14-meeting ItemList (11 already over) sat beside the generated one. The title, H1, og:title and
+    # breadcrumb must carry the span of the meetings actually listed, every flagship the title names must carry
+    # the year of its next listed edition, and the only ItemList is the generated one.
+    if os.path.exists(PAGE):
+        doc = open(PAGE, encoding="utf-8", errors="replace").read()
+        sys.path.insert(0, HERE)
+        import build_conferences as bc
+        listed = bc.upcoming(data, dt.date.today().isoformat())
+        hb, span = [], ""
+        if listed:
+            span = bc.calendar_span(listed)
+            t = re.search(r"<title>([^<]*)</title>", doc)
+            og = re.search(r'<meta property="og:title" content="([^"]*)"', doc)
+            h1 = re.search(r"<h1>(.*?)</h1>", doc, re.S)
+            bcn = re.search(r'"position":2,"name":"([^"]*)","item":"https://www\.pdufa\.bio/conferences"', doc)
+            for what, m in (("title", t), ("og:title", og), ("H1", h1), ("breadcrumb", bcn)):
+                if not m or span not in m.group(1):
+                    hb.append(f"{what} does not carry {span}: {m.group(1) if m else 'missing'}")
+            nxt = {}
+            for c in listed:
+                nxt.setdefault(c["code"], c["start"][:4])
+            for code, yr in re.findall(r"\b([A-Z]{3,5}) (20\d\d)\b", t.group(1) if t else ""):
+                if nxt.get(code) != yr:
+                    hb.append(f"title names {code} {yr}; next listed {code} is {nxt.get(code, 'not listed')}")
+            sub = re.search(r"present clinical data ([^,<]*),", doc)
+            last = dt.date.fromisoformat(listed[-1]["start"])
+            want_sub = f"through {last.strftime('%B')} {last.year}"
+            if not sub or sub.group(1) != want_sub:
+                hb.append(f"subtitle says '{sub.group(1) if sub else 'missing'}', list runs {want_sub}")
+            if bc.BEGIN in doc:
+                pre = doc.split(bc.BEGIN, 1)[0]
+                if '"@type":"ItemList"' in pre:
+                    hb.append("a hand-built ItemList sits outside the generated block")
+        if hb:
+            ok = False
+            print(f"\nFAIL: the /conferences heading is out of date (run build_conferences.py):")
+            for b in hb:
+                print("   " + b)
+        else:
+            print(f"  PASS: title, H1, og:title and breadcrumb carry {span}; one ItemList")
+
     print("\n  PASS: conference calendar is current and sourced" if ok else "\n  see failures above")
     sys.exit(0 if ok else 1)
 

@@ -58,6 +58,18 @@ def facts():
     ti = text(os.path.join(SITE, "research", "fda-decision-timing", "index.html"))
     m = re.search(r"(\d+) of (\d+) came before the PDUFA goal date, (\d+) on it and (\d+) after", ti)
     f["t_early"], f["t_n"], f["t_on"], f["t_late"] = m.groups()
+    # 2026-11-26: the multi-year census (build_decision_timing_since_2024.py), read from its own page
+    t4 = text(os.path.join(SITE, "research", "fda-decision-timing", "since-2024", "index.html"))
+    m4 = re.search(r"Of (\d+) FDA decisions dated January 1, 2024 through ([A-Z][a-z]{2} \d+, \d{4}) whose goal date and "
+                   r"action date we could each tie to a document, (\d+) came before the PDUFA goal date, (\d+) on it and "
+                   r"(\d+) after it", t4)
+    m5 = re.search(r"\((\d+) decisions\), (\d+) of the (\d+) late decisions ended in a complete response letter "
+                   r"\(\d+%\), against (\d+) of (\d+) early \(\d+%\) and (\d+) of (\d+) on the goal date", t4)
+    if not (m4 and m5):
+        raise SystemExit("build_llms_txt: /research/fda-decision-timing/since-2024 wording changed; update the regexes")
+    f["s_n"], f["s_last"], f["s_early"], f["s_on"], f["s_late"] = m4.groups()
+    (f["s_blind"], f["s_late_crl"], f["s_late_n"], f["s_early_crl"], f["s_early_n"], f["s_on_crl"],
+     f["s_on_n"]) = m5.groups()
     crl = json.load(io.open(os.path.join(HERE, "_crl_capture_series.json"), encoding="utf-8"))
     last = crl["rows"][-1]
     f["crl_total"], f["crl_approved"] = last["total"], last["approved"]
@@ -152,6 +164,11 @@ the price move. /decisions publishes how many of each there are.
   /research/fda-decision-timing/fda-decision-timing-2026.csv; earlier versions stay at their own addresses).
   Cite as "pdufa.bio, FDA decision timing 2026 (v{f['t_n']})". The counts grow as decisions are added;
   an older page copy quoting a smaller census (for example v32) is superseded by the figures above.
+- FDA decision timing since January 2024: of **{f['s_n']}** FDA decisions dated January 1, 2024
+  through {f['s_last']} with a goal date and an action date each tied to a document, **{f['s_early']}** came
+  before the PDUFA goal date in effect, **{f['s_on']}** on it and **{f['s_late']}** after it. Among the {f['s_blind']} decisions
+  from candidate sets not chosen by outcome, {f['s_late_crl']} of the {f['s_late_n']} late decisions ended in a
+  complete response letter, against {f['s_early_crl']} of {f['s_early_n']} early and {f['s_on_crl']} of {f['s_on_n']} on the goal date. Counts, not a causal claim. (/research/fda-decision-timing/since-2024, CSV under CC BY 4.0)
 - Released FDA Complete Response Letters (openFDA): **{f['crl_total']}** letters, of which
   **{f['crl_approved']}** went to applications the FDA has since approved. That ratio reflects
   which letters the FDA chose to release, not an approval rate. (/crl)
@@ -201,6 +218,7 @@ Full archive: https://www.pdufa.bio/decisions
 - /readouts - clinical trial readouts, by month
 - /conferences - medical conference presentations by US-listed sponsors
 - /research/fda-decision-timing - does the FDA decide early? Sourced cases only
+- /research/fda-decision-timing/since-2024 - every sourced FDA decision since January 2024: early, on the goal date or late, by year, with CRL counts by timing, extended goal dates shown against both dates, weekend and holiday goal dates, every excluded candidate counted by reason (CSV)
 - /research/fda-approval-weekdays - the weekday of every FDA original and efficacy supplement approval action date in Drugs@FDA since January 2025, with the Orange Book's NDA approval dates since 1982, US federal holidays, and the 2026 decisions whose goal date fell on a weekend or holiday (two CSVs)
 - /fda-approvals/companies - every FDA original NDA/BLA and efficacy supplement approval in Drugs@FDA since January 2025, grouped by sponsor company, each with its FDA letter (CSV)
 - /fda-approvals/drugs - the same Drugs@FDA approvals grouped by NDA or BLA number: how many original and efficacy-supplement approvals each application has had since January 2025, with FDA letters where Drugs@FDA lists one, and the released Complete Response Letters on the same application number (CSV)

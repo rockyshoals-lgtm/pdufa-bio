@@ -45,6 +45,13 @@ MONTHS = ["January", "February", "March", "April", "May", "June", "July",
 ABBR = {m[:3].lower(): i + 1 for i, m in enumerate(MONTHS)}
 
 ROW = re.compile(r'<a class="row"[^>]*>(.*?)</a>', re.S)
+# 2026-11-26: /readouts carries two tables, the company-guided one (a <table> between the GUIDED markers, from
+# build_guided_readouts.py) and the registry estimates (<a class="row"> cards). The lede counted only the cards and
+# said "195 expected readouts" above a page of about 480, so the guided rows count too. Each one's date is read
+# from its own date cell only: the source cell carries the release date, which is not the readout's window.
+REPORTED_ROW = re.compile(r"\u00b7 \d{4}-\d{2}-\d{2} reported\b")
+GUIDED_BLOCK = re.compile(r"<!--GUIDED:BEGIN-->(.*?)<!--GUIDED:END-->", re.S)
+GUIDED_ROW = re.compile(r'<tr><td class="dt">(.*?)</td>(.*?)</tr>', re.S)
 
 
 def text_of(frag):
@@ -93,7 +100,14 @@ def parse(doc):
             # (_calendar_unbacked_q4_rows.json; its event page says "Date not sourced"), not a goal date anyone stated. It is not counted among the goal dates still ahead, which
             # the lede says each link the filing they came from; it is named separately.
             "est": row_is_estimate(t),
+            # a /readouts results row for a readout the company already reported: "TK · 2026-11-08 reported ..."
+            "reported": bool(REPORTED_ROW.search(t)),
         })
+    for blk in GUIDED_BLOCK.findall(doc):
+        for when, rest in GUIDED_ROW.findall(blk):
+            w = text_of(when)
+            out.append({"text": w + " " + text_of(rest), "iso": None, "date": row_date(w),
+                        "approved": False, "crl": False, "est": False})
     return out
 
 
@@ -226,13 +240,15 @@ def sentence(path, rows):
         td = _eastern_today()
         cur = (td.year, td.month)
         # an undated window ("Q4 2026 (est.)", "H1 2027 (est.)") is forward by construction
-        ahead = [r for r in rows if not r["date"] or r["date"] >= cur]
-        past = [r for r in rows if r["date"] and r["date"] < cur]
+        # 2026-11-26: a readout the company has already reported this month ("ALNY · 2026-11-08 reported") is a
+        # result, not an expected readout; it sits in the results block below and is counted with the passed rows.
+        ahead = [r for r in rows if not r.get("reported") and (not r["date"] or r["date"] >= cur)]
+        past = [r for r in rows if r.get("reported") or (r["date"] and r["date"] < cur)]
         when_ahead = span([r["date"] for r in ahead if r["date"]])
         s = (f"This page lists {len(ahead)} expected clinical trial readouts"
              + (f" covering {when_ahead}" if when_ahead else "") + ". ")
         if past:
-            s += (f"A further {len(past)} readouts whose window has already passed are listed below "
+            s += (f"A further {len(past)} readouts that have already reported or whose window has already passed are listed below "
                   f"with what we found: the sponsor's release where one exists, otherwise the date we "
                   f"last checked. ")
         return s + ("These dates come from company guidance and ClinicalTrials.gov, so most are known "
@@ -308,7 +324,7 @@ def homepage_sentence():
     if rd:
         # the same "expected" set /readouts' own lede counts: windows not yet passed (audit 2026-10-11)
         cur_ = (_eastern_today().year, _eastern_today().month)
-        rd_ahead = [r for r in rd if not r["date"] or r["date"] >= cur_]
+        rd_ahead = [r for r in rd if not r.get("reported") and (not r["date"] or r["date"] >= cur_)]
         s += f" and {len(rd_ahead)} expected clinical trial readouts"
     s += (f", alongside {len(dec)} decisions already made: {ap} approvals and {crl} Complete "
           f"Response Letters.")
