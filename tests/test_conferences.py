@@ -136,6 +136,11 @@ def main():
             for code, yr in re.findall(r"\b([A-Z]{3,5}) (20\d\d)\b", t.group(1) if t else ""):
                 if nxt.get(code) != yr:
                     hb.append(f"title names {code} {yr}; next listed {code} is {nxt.get(code, 'not listed')}")
+            sub = re.search(r"present clinical data ([^,<]*),", doc)
+            last = dt.date.fromisoformat(listed[-1]["start"])
+            want_sub = f"through {last.strftime('%B')} {last.year}"
+            if not sub or sub.group(1) != want_sub:
+                hb.append(f"subtitle says '{sub.group(1) if sub else 'missing'}', list runs {want_sub}")
             if bc.BEGIN in doc:
                 pre = doc.split(bc.BEGIN, 1)[0]
                 if '"@type":"ItemList"' in pre:

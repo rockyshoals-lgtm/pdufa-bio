@@ -251,6 +251,10 @@ def set_heading(doc, confs):
                  lambda m: f'<h1>{span} biotech <span class="g">conference calendar</span></h1>', doc, count=1)
     doc = re.sub(r'("position":2,"name":")[^"]*(","item":"https://www\.pdufa\.bio/conferences")',
                  lambda m: m.group(1) + f"{span} biotech conference calendar" + m.group(2), doc, count=1)
+    # the subtitle said "present clinical data in H2 2026" over a list running to June 2027
+    last = dt.date.fromisoformat(confs[-1]["start"])
+    doc = re.sub(r"(present clinical data )(?:in H[12] \d{4}|through [A-Z][a-z]+ \d{4})(,)",
+                 lambda m: m.group(1) + f"through {last.strftime('%B')} {last.year}" + m.group(2), doc, count=1)
     if BEGIN in doc:
         pre, rest = doc.split(BEGIN, 1)
         doc = LEGACY_LD.sub("", pre) + BEGIN + rest
