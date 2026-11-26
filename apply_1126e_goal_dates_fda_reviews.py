@@ -108,7 +108,8 @@ def main():
             "extended": True if r.get("extended") else (False if r.get("extended") is False else None),
             "goal_verified_by": r.get("goal_verified_by") or "fetched",
         })
-        row["notes"] = ("Pass 4. " + (r.get("notes") or "")).strip()
+        nt = (r.get("notes") or "").strip()
+        row["notes"] = nt if nt.startswith("Pass 4") else ("Pass 4. " + nt).strip()
         doc["actions"].append(row)
         doc["excluded_rows"] = [x for x in doc["excluded_rows"] if x["cid"] != cid]
         added += 1
@@ -136,7 +137,7 @@ def main():
         d.pop("decision_date_unsourced", None)
         d.update({
             "fda_action_date": "2026-11-23", "fda_action_source_url": fda,
-            "fda_action_record": "FDA, Novel Drug Approvals for 2026 (content current as of 11/24/2026): Welgemda, ribitol, approval date 11/23/2026",
+            "fda_action_record": "FDA, Novel Drug Approvals for 2026 table",
             "decision_note": ("The FDA's Novel Drug Approvals 2026 table lists Welgemda (ribitol) as approved on November 23, "
                               "2026, the day BridgeBio announced it, four days before the November 27, 2026 goal date "
                               "BridgeBio disclosed on August 10, 2026."),

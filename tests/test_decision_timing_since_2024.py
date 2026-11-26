@@ -158,10 +158,6 @@ def main():
     return 0
 
 
-if __name__ == "__main__":
-    sys.exit(main())
-
-
 def test_fda_goal_sources_are_fda_documents():
     """Pass 4: a goal taken from the FDA's review or letter must link the FDA's own document."""
     doc = json.load(io.open(DATA, encoding="utf-8"))
@@ -174,3 +170,7 @@ def test_fda_goal_sources_are_fda_documents():
         assert re.match(r"^https://(www\.|download\.open\.)?(accessdata\.)?fda\.gov/", gu), f"{a['cid']}: {gu}"
         assert a.get("red_team"), f"{a['cid']}: an FDA-review goal must be re-read at source before it counts"
     assert n >= 30
+
+
+if __name__ == "__main__":
+    sys.exit(main())

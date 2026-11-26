@@ -178,6 +178,9 @@ def load_2024_2025():
 GOAL_LEDGER = os.path.join(HERE, "_decision_goal_dates.json")
 
 
+FDA_GOAL = ("fda_review", "fda_letter")  # goal dates read off the FDA's own documents
+
+
 def write_goal_ledger(rows):
     """2026-11-26: the goal date this census sourced, keyed by the 2024-2025 decision page it matched, so that
     page's Verified line (inject_verified_against.py) names the goal date and its source instead of "Goal date: none
@@ -185,10 +188,13 @@ def write_goal_ledger(rows):
     extended. Sorted, so a rebuild with no change rewrites nothing."""
     led = {}
     for x in rows:
-        if not (x.get("page") and x.get("goal_url") and x.get("goal_doc_date")):
+        fda_doc = x.get("goal_source") in FDA_GOAL
+        # an FDA review or letter is itself the source; it needs no separate dated sponsor document
+        if not (x.get("page") and x.get("goal_url") and (x.get("goal_doc_date") or fda_doc)):
             continue
         led[x["page"].rsplit("/", 1)[-1]] = {
-            "cid": x.get("cid") or "", "goal": x["goal"], "source_url": x["goal_url"], "doc_date": x["goal_doc_date"],
+            "cid": x.get("cid") or "", "goal": x["goal"], "source_url": x["goal_url"], "doc_date": x["goal_doc_date"] or "",
+            "source_type": x.get("goal_source") or "sponsor",
             "extended": x["extended"], "goal_original": x.get("goal_original") or None,
             "action": x["action"], "outcome": x["outcome"]}
     io.open(GOAL_LEDGER, "w", encoding="utf-8", newline="\n").write(
@@ -276,7 +282,6 @@ def main():
     # ---- outcome by bucket (outcome-blind candidates only) -------------------------------------------------
     # 2026-11-26 (pass 4): a goal read from the FDA's own review is available only where the FDA posted a review, which
     # it does with an approval, so those rows would add approvals chosen by outcome; they stay out of the CRL table.
-    FDA_GOAL = ("fda_review", "fda_letter")
     blind = [x for x in rows if x["origin"] in ("tracked", "calendar_2026") and x["goal_source"] not in FDA_GOAL]
     n_fdagoal_tracked = sum(1 for x in rows if x["origin"] == "tracked" and x["goal_source"] in FDA_GOAL)
     letters = [x for x in rows if x["origin"] == "crl_letter"]

@@ -10209,7 +10209,7 @@ export default [
    "review": "NDA accepted with Priority Review, PDUFA goal date November 27, 2026 (BridgeBio 8-K, August 10, 2026). BridgeBio states the FDA granted traditional (full) approval. Per BridgeBio, in the Phase 3 FORTIFY trial the 100-meter timed test showed a 0.27 m/s velocity benefit relative to placebo at 12 months (p<0.0001), and forced vital capacity (percent predicted) a 4.89% benefit at 12 months (p=0.0071).",
    "fda_action_date": "2026-11-23",
    "fda_action_source_url": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
-   "fda_action_record": "FDA, Novel Drug Approvals for 2026 (content current as of 11/24/2026): Welgemda, ribitol, approval date 11/23/2026"
+   "fda_action_record": "FDA, Novel Drug Approvals for 2026 table"
   },
   "oc": "Approved",
   "dcd": "2026-11-23"

@@ -7168,8 +7168,8 @@
    "action_basis": "fda_record",
    "action_url": "https://www.fda.gov/vaccines-blood-biologics/vaccines/nuvaxovid",
    "action_quote": "May 16, 2025 Approval Letter - NUVAXOVID",
-   "announcement_date": "2025-05-19",
-   "announcement_url": null,
+   "announcement_date": "2025-05-16",
+   "announcement_url": "https://www.sec.gov/Archives/edgar/data/1000694/000110465925050226/tm2515521d1_8k.htm",
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "Summary Basis for Regulatory Action (April 1, 2025) and SBRA Addendum Memo (May 16, 2025)",
@@ -7743,7 +7743,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "NDA/BLA Multi-Disciplinary Review and Evaluation, sBLA 103976/S5245 (cover sheet)",
-   "notes": "Pass 4. Pass 4: FDA multidisciplinary review cover sheet: 'Received Date(s) August 25, 2023'; 'PDUFA Goal Date February 25, 2024'; 'Review Completion Date February 15, 2024'. No extension or major amendment stated in the review; extended left null (unknown). Approved 9 days before goal (goal fell on a Sunday). Earlier sponsor statement was month/quarter only; no day-level conflict.",
+   "notes": "Pass 4: FDA multidisciplinary review cover sheet: 'Received Date(s) August 25, 2023'; 'PDUFA Goal Date February 25, 2024'; 'Review Completion Date February 15, 2024'. No extension or major amendment stated in the review; extended left null (unknown). Approved 9 days before goal (goal fell on a Sunday). Earlier sponsor statement was month/quarter only; no day-level conflict.",
    "members": [
     "C012"
    ],
@@ -7781,7 +7781,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "Clinical Review, BLA 761248 resubmission (cover sheet)",
-   "notes": "Pass 4. Pass 4: Clinical Review cover sheet: 'Application Type BLA (resubmission)', 'Received Date(s) 05/18/2022, 06/12/2023', 'PDUFA Goal Date 12/12/2023 (extended to 03/12/2024 with major amendment)', 'Review Completion Date 06/27/2024', 'Class 2 resubmission'. Regulatory history: original accelerated-approval application received a CR letter on January 18, 2023; resubmitted June 12, 2023. Action 2024-07-02 is 112 days AFTER the extended goal (reason for acting after the goal is not stated in the review read). LATE row.",
+   "notes": "Pass 4: Clinical Review cover sheet: 'Application Type BLA (resubmission)', 'Received Date(s) 05/18/2022, 06/12/2023', 'PDUFA Goal Date 12/12/2023 (extended to 03/12/2024 with major amendment)', 'Review Completion Date 06/27/2024', 'Class 2 resubmission'. Regulatory history: original accelerated-approval application received a CR letter on January 18, 2023; resubmitted June 12, 2023. Action 2024-07-02 is 112 days AFTER the extended goal (reason for acting after the goal is not stated in the review read). LATE row.",
    "members": [
     "C082"
    ],
@@ -7819,7 +7819,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "Clinical Review, NDA 217186 Class 2 Resubmission (cover sheet)",
-   "notes": "Pass 4. Pass 4: Clinical Review (2024 cycle) cover sheet: 'Application Type NDA Class 2 Resubmission', 'Submit Date(s) February 7, 2024', 'PDUFA Goal Date August 7, 2024', 'Review Completion Date August 6, 2024'. Summary Review (217186Orig1s000SumR.pdf) confirms the resubmission followed 'a Complete Response (CR) action issued on June 30, 2023' (first-cycle goal 06/30/2023 per the first-cycle clinical review cover sheet). No extension stated; extended left null. Agrees with the Amneal 10-Q goal (Aug 7, 2024) seen earlier only in a search summary; no conflict. Action on goal date.",
+   "notes": "Pass 4: Clinical Review (2024 cycle) cover sheet: 'Application Type NDA Class 2 Resubmission', 'Submit Date(s) February 7, 2024', 'PDUFA Goal Date August 7, 2024', 'Review Completion Date August 6, 2024'. Summary Review (217186Orig1s000SumR.pdf) confirms the resubmission followed 'a Complete Response (CR) action issued on June 30, 2023' (first-cycle goal 06/30/2023 per the first-cycle clinical review cover sheet). No extension stated; extended left null. Agrees with the Amneal 10-Q goal (Aug 7, 2024) seen earlier only in a search summary; no conflict. Action on goal date.",
    "members": [
     "C094"
    ],
@@ -7857,7 +7857,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "NDA/BLA Multi-disciplinary Review and Evaluation, BLA 761384 (cover sheet)",
-   "notes": "Pass 4. Pass 4: Multidisciplinary review cover sheet: 'Received Date(s) September 27, 2024', 'PDUFA Goal Date May 27, 2025', 'Review Completion Date May 13, 2025'. No extension stated; extended null. Action 13 days early (accelerated approval). Drugs@FDA hint and CDER 2025 novel approvals report also give 5/14/2025; a search summary mentioned May 15, 2025 on the approval package cover, but the letter signature is 05/14/2025.",
+   "notes": "Pass 4: Multidisciplinary review cover sheet: 'Received Date(s) September 27, 2024', 'PDUFA Goal Date May 27, 2025', 'Review Completion Date May 13, 2025'. No extension stated; extended null. Action 13 days early (accelerated approval). Drugs@FDA hint and CDER 2025 novel approvals report also give 5/14/2025; a search summary mentioned May 15, 2025 on the approval package cover, but the letter signature is 05/14/2025.",
    "members": [
     "C216"
    ],
@@ -7893,7 +7893,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "NDA Multi-disciplinary Review and Evaluation, NDA 219839 (cover sheet)",
-   "notes": "Pass 4. Pass 4: Multidisciplinary review cover sheet: 'Applicant Dizal (Jiangsu) Pharmaceutical Co Ltd.', 'Received Dates November 7, 2024', 'PDUFA Goal Date July 7, 2025', 'Review Completion Date July 2, 2025'. No extension stated; extended null. Action 5 days early. Ticker EXEL appears wrong (applicant is Dizal) - see tracked_row_problem; the row itself is a valid FDA action.",
+   "notes": "Pass 4: Multidisciplinary review cover sheet: 'Applicant Dizal (Jiangsu) Pharmaceutical Co Ltd.', 'Received Dates November 7, 2024', 'PDUFA Goal Date July 7, 2025', 'Review Completion Date July 2, 2025'. No extension stated; extended null. Action 5 days early. Ticker EXEL appears wrong (applicant is Dizal) - see tracked_row_problem; the row itself is a valid FDA action.",
    "members": [
     "C240"
    ],
@@ -7931,7 +7931,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "NDA/BLA Multi-disciplinary Review and Evaluation, NDA 218881 (cover sheet)",
-   "notes": "Pass 4. Pass 4: Multidisciplinary review cover sheet: 'Applicant Eli Lilly and Company', 'Received Date(s) October 31, 2024', 'PDUFA Goal Date October 31, 2025', 'Priority or Standard Standard'; review completion shown only as 'Electronic Stamp Date' (no value), so goal_original_doc_date null. No extension stated; extended null. Action 2025-09-25 is 36 days early.",
+   "notes": "Pass 4: Multidisciplinary review cover sheet: 'Applicant Eli Lilly and Company', 'Received Date(s) October 31, 2024', 'PDUFA Goal Date October 31, 2025', 'Priority or Standard Standard'; review completion shown only as 'Electronic Stamp Date' (no value), so goal_original_doc_date null. No extension stated; extended null. Action 2025-09-25 is 36 days early.",
    "members": [
     "C278"
    ],
@@ -7969,7 +7969,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "Multidiscipline Review (cover sheet)",
-   "notes": "Pass 4. Pass 4: FDA Multidiscipline Review cover sheet: 'PDUFA Goal Date May 22, 2024', 'Review Completion Date April 18, 2024', sNDA, Priority, applicant Hoffman LaRoche Inc.; submissions SDN 752 (Sep 29, 2023) through SDN 768 (Nov 22, 2023) (RTOR). No extension or major amendment mentioned; extended left null (unknown). FDA acted 2024-04-18, 34 days before the goal. Consistent with FDA's own approval notice (search snippet) saying approval came about one month ahead of the goal date. Last 131 characters of the review text not read.",
+   "notes": "Pass 4: FDA Multidiscipline Review cover sheet: 'PDUFA Goal Date May 22, 2024', 'Review Completion Date April 18, 2024', sNDA, Priority, applicant Hoffman LaRoche Inc.; submissions SDN 752 (Sep 29, 2023) through SDN 768 (Nov 22, 2023) (RTOR). No extension or major amendment mentioned; extended left null (unknown). FDA acted 2024-04-18, 34 days before the goal. Consistent with FDA's own approval notice (search snippet) saying approval came about one month ahead of the goal date. Last 131 characters of the review text not read.",
    "members": [
     "C043"
    ],
@@ -8007,7 +8007,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "Multidiscipline Review (cover sheet)",
-   "notes": "Pass 4. Pass 4: FDA Multidiscipline Review cover sheet: 'PDUFA Goal Date January 1, 2025', 'Review Completion Date See DAARTS stamp' (no date shown), 'Submit Date July 1, 2024', Priority, applicant Array BioPharma, Inc., a wholly owned subsidiary of Pfizer. No goal-date extension or major amendment mentioned; extended left null (unknown). Accelerated approval (per tracked row). FDA acted 2024-12-20, 12 days before the goal, which fell on New Year's Day.",
+   "notes": "Pass 4: FDA Multidiscipline Review cover sheet: 'PDUFA Goal Date January 1, 2025', 'Review Completion Date See DAARTS stamp' (no date shown), 'Submit Date July 1, 2024', Priority, applicant Array BioPharma, Inc., a wholly owned subsidiary of Pfizer. No goal-date extension or major amendment mentioned; extended left null (unknown). Accelerated approval (per tracked row). FDA acted 2024-12-20, 12 days before the goal, which fell on New Year's Day.",
    "members": [
     "C157"
    ],
@@ -8045,7 +8045,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "Integrated Review (Table 1, Application Information)",
-   "notes": "Pass 4. Pass 4: FDA Integrated Review Table 1 states 'PDUFA goal date 4/2/2025', 'Review completion date 4/2/2025', 'Submit date(s) 4/2/2024', standard review, applicant Novartis. Review excerpt read shows no extension or major amendment; extended left null (unknown) per brief. Action on the goal date (Wednesday). announcement_date 2025-04-03 taken from tracked row (not re-verified). Same FDA action as C199: count once.",
+   "notes": "Pass 4: FDA Integrated Review Table 1 states 'PDUFA goal date 4/2/2025', 'Review completion date 4/2/2025', 'Submit date(s) 4/2/2024', standard review, applicant Novartis. Review excerpt read shows no extension or major amendment; extended left null (unknown) per brief. Action on the goal date (Wednesday). announcement_date 2025-04-03 taken from tracked row (not re-verified). Same FDA action as C199: count once.",
    "members": [
     "C202"
    ],
@@ -8083,7 +8083,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "Integrated Review (Table 1, Application Information)",
-   "notes": "Pass 4. Pass 4: FDA Integrated Review Table 1: 'PDUFA goal date 10/26/2025', 'Review completion date 10/22/2025', 'Submit date(s) 7/26/2024', standard, applicant Bayer Healthcare Pharmaceuticals Inc. The review pages read show no original/extended pair; pass 3 read Bayer's July 25, 2025 update saying the review period was extended by up to 90 days (no day given), so 10/26/2025 is treated as the extended goal in effect; the original goal day is NOT stated to the day in any document read, so goal_date_original is null (not inferred). Bayer update URL was not carried in the prior record. Goal fell on a Sunday; FDA acted Friday 2025-10-24, 2 days before.",
+   "notes": "Pass 4: FDA Integrated Review Table 1: 'PDUFA goal date 10/26/2025', 'Review completion date 10/22/2025', 'Submit date(s) 7/26/2024', standard, applicant Bayer Healthcare Pharmaceuticals Inc. The review pages read show no original/extended pair; pass 3 read Bayer's July 25, 2025 update saying the review period was extended by up to 90 days (no day given), so 10/26/2025 is treated as the extended goal in effect; the original goal day is NOT stated to the day in any document read, so goal_date_original is null (not inferred). Bayer update URL was not carried in the prior record. Goal fell on a Sunday; FDA acted Friday 2025-10-24, 2 days before.",
    "members": [
     "C291"
    ],
@@ -8121,7 +8121,7 @@
    "outcome": "Approved",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "Multidiscipline Review (cover sheet)",
-   "notes": "Pass 4. Pass 4: FDA Multidiscipline Review cover sheet: 'PDUFA Goal Date 11/28/2025', 'Submit Date(s) 03/28/2025', 'Review Completion Date Refer to electronic stamp date', applicant Bayer HealthCare Pharmaceuticals Inc. No extension mentioned; extended left null (unknown). Goal 11/28/2025 is the Friday after Thanksgiving (not a federal holiday). FDA acted 9 days early. announcement_date taken from tracked row (not re-verified).",
+   "notes": "Pass 4: FDA Multidiscipline Review cover sheet: 'PDUFA Goal Date 11/28/2025', 'Submit Date(s) 03/28/2025', 'Review Completion Date Refer to electronic stamp date', applicant Bayer HealthCare Pharmaceuticals Inc. No extension mentioned; extended left null (unknown). Goal 11/28/2025 is the Friday after Thanksgiving (not a federal holiday). FDA acted 9 days early. announcement_date taken from tracked row (not re-verified).",
    "members": [
     "C307"
    ],
@@ -8389,7 +8389,7 @@
    "outcome": "CRL",
    "goal_source_type": "sponsor",
    "goal_fda_doc_title": null,
-   "notes": "Pass 4. Pass 4: action day established from an FDA record. NDA number 214056 found via openFDA drugsfda API (brand ONAPGO, ORIG-1 approved 2025-02-03). The FDA approval letter (signed 02/03/2025) cites 'our April 5, 2024, action letter' as the CRL that the Aug 1, 2024 resubmission answered. Goal (April 5, 2024) is the sponsor-stated resubmission goal read in an earlier pass (Supernus 8-K Ex 99.1, URL as given; document date not recorded by that pass). No extension found in earlier passes; FDA acted ON the goal date. Goal date was a Friday.",
+   "notes": "Pass 4: action day established from an FDA record. NDA number 214056 found via openFDA drugsfda API (brand ONAPGO, ORIG-1 approved 2025-02-03). The FDA approval letter (signed 02/03/2025) cites 'our April 5, 2024, action letter' as the CRL that the Aug 1, 2024 resubmission answered. Goal (April 5, 2024) is the sponsor-stated resubmission goal read in an earlier pass (Supernus 8-K Ex 99.1, URL as given; document date not recorded by that pass). No extension found in earlier passes; FDA acted ON the goal date. Goal date was a Friday.",
    "members": [
     "C040"
    ],
@@ -8425,7 +8425,7 @@
    "outcome": "CRL",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "Cross Discipline Team Leader Review 1 (cover sheet), first cycle, in the Summary Review file of the NDA 216190 approval package",
-   "notes": "Pass 4. Pass 4: FDA review route. Drugs@FDA overview for NDA 216190 (ONTRALFY, Fidelity BioPharma) shows ORIG-1 approved 12/12/2024 with a review package. The first-cycle CDTL Review 1 cover sheet reads 'Date March 29, 2024 / Date of Submission May 31, 2023 / PDUFA Goal Date March 31, 2024 / Recommendation on Regulatory Action Complete Response'. The document contains no 'major amendment', 'extended' or 'extension' wording; extended set null (not stated either way) per brief. Goal fell on a Sunday; the FDA CRL letter is dated Friday March 29, 2024 (2 days before goal).",
+   "notes": "Pass 4: FDA review route. Drugs@FDA overview for NDA 216190 (ONTRALFY, Fidelity BioPharma) shows ORIG-1 approved 12/12/2024 with a review package. The first-cycle CDTL Review 1 cover sheet reads 'Date March 29, 2024 / Date of Submission May 31, 2023 / PDUFA Goal Date March 31, 2024 / Recommendation on Regulatory Action Complete Response'. The document contains no 'major amendment', 'extended' or 'extension' wording; extended set null (not stated either way) per brief. Goal fell on a Sunday; the FDA CRL letter is dated Friday March 29, 2024 (2 days before goal).",
    "members": [
     "L020"
    ],
@@ -8535,7 +8535,7 @@
    "outcome": "CRL",
    "goal_source_type": "fda_review",
    "goal_fda_doc_title": "Integrated Review, first cycle (Table 1 Application Information), included in the BLA 761211 Orig1s000 approval package",
-   "notes": "Pass 4. Pass 4: BLA 761211 later approved as LOARGYS on 02/23/2026 (Drugs@FDA). Its approval package Integrated Review contains the first-cycle Integrated Review (Reference ID 5637517) whose Table 1 reads 'Submit date(s) 9/6/2024', 'Received date(s) 9/6/2024', 'PDUFA goal date 5/6/2025 (clock extension to 8/6/2025)', 'Review completion date 8/6/2025', 'Regulatory action Complete response'. Resubmission review cover: 'PDUFA Goal Date February 23, 2026' and states 'a complete response letter had been issued ... on August 6, 2025.' Action 2025-08-06 = extended goal date (ON goal). Original goal Tuesday, extended goal Wednesday. No sponsor-stated date in prior passes, so no conflict. Extension: FDA review says 'clock extension'; FDA CRL letter cites a major amendment extending the goal by three months (amendment date redacted).",
+   "notes": "Pass 4: BLA 761211 later approved as LOARGYS on 02/23/2026 (Drugs@FDA). Its approval package Integrated Review contains the first-cycle Integrated Review (Reference ID 5637517) whose Table 1 reads 'Submit date(s) 9/6/2024', 'Received date(s) 9/6/2024', 'PDUFA goal date 5/6/2025 (clock extension to 8/6/2025)', 'Review completion date 8/6/2025', 'Regulatory action Complete response'. Resubmission review cover: 'PDUFA Goal Date February 23, 2026' and states 'a complete response letter had been issued ... on August 6, 2025.' Action 2025-08-06 = extended goal date (ON goal). Original goal Tuesday, extended goal Wednesday. No sponsor-stated date in prior passes, so no conflict. Extension: FDA review says 'clock extension'; FDA CRL letter cites a major amendment extending the goal by three months (amendment date redacted).",
    "members": [
     "L102"
    ],
@@ -8571,7 +8571,7 @@
    "outcome": "CRL",
    "goal_source_type": "fda_letter",
    "goal_fda_doc_title": "FDA complete response letter (states the extended goal)",
-   "notes": "Pass 4. Pass 4: Drugs@FDA overview for BLA 761258 (penpulimab-kcqx) shows ORIG-1 approved 04/23/2025. The approval Multidiscipline Review cover sheet gives only the resubmission cycle's goal ('PDUFA Goal Date April 2, 2025', submitted Oct 2, 2024, review completion April 23, 2025) and its regulatory history says 'FDA issued a Complete Response on January 19, 2024' but states no first-cycle goal date. The CRL letter itself (e-signed 01/19/2024 03:47:29 PM) cites a general advice letter of October 14, 2022 saying the extended PDUFA date of October 16, 2022 (a Sunday) would be missed (inspection could not be done because of travel restrictions). If the team accepts an FDA action letter as a goal source, this row is LATE by ~15 months; left excluded for a human decision.",
+   "notes": "Pass 4: Drugs@FDA overview for BLA 761258 (penpulimab-kcqx) shows ORIG-1 approved 04/23/2025. The approval Multidiscipline Review cover sheet gives only the resubmission cycle's goal ('PDUFA Goal Date April 2, 2025', submitted Oct 2, 2024, review completion April 23, 2025) and its regulatory history says 'FDA issued a Complete Response on January 19, 2024' but states no first-cycle goal date. The CRL letter itself (e-signed 01/19/2024 03:47:29 PM) cites a general advice letter of October 14, 2022 saying the extended PDUFA date of October 16, 2022 (a Sunday) would be missed (inspection could not be done because of travel restrictions). If the team accepts an FDA action letter as a goal source, this row is LATE by ~15 months; left excluded for a human decision.",
    "members": [
     "L004"
    ],
