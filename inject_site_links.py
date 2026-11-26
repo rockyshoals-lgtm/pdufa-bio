@@ -32,7 +32,13 @@ import os
 import re
 import sys
 
-sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+# 2026-11-26: guarded. quarantine_leads.cmd_apply now imports this module (#231), and
+# tests/test_quarantine_not_blockade.py captures stdout in a StringIO, which has no reconfigure; the bare
+# call raised AttributeError and blocked rebuild run 45769337687 at the guards.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 sys.path.insert(0, HERE)
