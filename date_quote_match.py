@@ -106,6 +106,8 @@ def states_half(q, d):
     ]
     if n == 1:
         pats.append(rf"\bmid[- ]?(?:year[- ])?{y}\b|\bmid[- ]?year,? {y}\b")
+        # 2026-11-26: "efficacy data ... expected to follow in H1 and H2 2027" (Precision BioSciences) names both halves
+        pats.append(rf"\b(?:h1|1h) (?:and|&) (?:h2|2h)[ -]?(?:{y}|'?{yy})\b")
     if n == 2:
         pats.append(rf"\b(?:end|close) of {y}\b|\byear[- ]end {y}\b|\bby the end of (?:the year|{y})\b")
     return any(re.search(p, q) for p in pats)

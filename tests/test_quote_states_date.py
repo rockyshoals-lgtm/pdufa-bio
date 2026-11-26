@@ -207,6 +207,9 @@ def self_test():
         {"id": "r4", "t": "Y", "type": "Readout", "st": "Guided", "d": "2027-12-31", "dp": "quarter",
          "_d": {"source_url": "https://x", "guidance_text": "Two readouts anticipated in 2027: A in the first half "
                 "and B in the third quarter.", "guided_precision": "quarter", "guided_window": "2027-Q4"}},
+        {"id": "r5", "t": "Y", "type": "Readout", "st": "Guided", "d": "2027-06-30", "dp": "half",
+         "_d": {"source_url": "https://x", "guidance_text": "efficacy data expected to follow in H2 2027.",
+                "guided_precision": "half", "guided_window": "2027-H1"}},
     ]
     good = [
         {"id": "g1", "t": "X", "type": "PDUFA", "st": "Upcoming", "d": "2026-12-30", "dp": "day",
@@ -226,6 +229,9 @@ def self_test():
          "_d": {"source_url": "https://x", "guidance_text": "Two Phase 2 readouts anticipated in 2027: A in the second "
                 "half and, for the first time, guidance for B in the fourth quarter.",
                 "guided_precision": "quarter", "guided_window": "2027-Q4"}},
+        {"id": "g7", "t": "Y", "type": "Readout", "st": "Guided", "d": "2027-06-30", "dp": "half",
+         "_d": {"source_url": "https://x", "guidance_text": "efficacy data expected to follow in H1 and H2 2027.",
+                "guided_precision": "half", "guided_window": "2027-H1"}},
     ]
     f_bad = check(base + bad, t, {})
     f_good = check(base + good, t, {})
