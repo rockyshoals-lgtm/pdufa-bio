@@ -4295,6 +4295,24 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/drug/alto-100": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/alto-207": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/alto-300": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/drug/alx2004": {
 "checked": "2026-11-25",
 "crawled": null,
@@ -4601,6 +4619,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/drug/azenosertib-denali": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/drug/azetukalner-integrated": {
 "checked": "2026-11-25",
 "crawled": null,
@@ -4725,12 +4749,6 @@
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/drug/bgb-11417": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/drug/bge-102": {
@@ -4951,6 +4969,12 @@
 },
 "/drug/cardamyst": {
 "checked": "2026-11-20",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/cardiallo": {
+"checked": "2026-11-25",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -5190,12 +5214,6 @@
 "verdict": "NEUTRAL"
 },
 "/drug/daybue-stix": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/drug/decartes-08": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -6713,12 +6731,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/drug/naporafenib": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/navenibart-alpha-orbit": {
 "checked": "2026-11-25",
 "crawled": null,
@@ -6783,6 +6795,12 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/ngn-401-embolden": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/drug/nivisnebart": {
@@ -7481,6 +7499,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/drug/sab-142": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/drug/sabirnetug": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -7572,12 +7596,6 @@
 "verdict": "NEUTRAL"
 },
 "/drug/setrusumab": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/drug/sgt-003": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
