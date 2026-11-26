@@ -63,9 +63,13 @@ def facts():
     m4 = re.search(r"Of (\d+) FDA decisions dated January 1, 2024 through ([A-Z][a-z]{2} \d+, \d{4}) whose goal date and "
                    r"action date we could each tie to a document, (\d+) came before the PDUFA goal date, (\d+) on it and "
                    r"(\d+) after it", t4)
+    m5 = re.search(r"\((\d+) decisions\), (\d+) of the (\d+) late decisions ended in a complete response letter "
+                   r"\(\d+%\), against (\d+) of (\d+) early \(\d+%\) and (\d+) of (\d+) on the goal date", t4)
+    if not (m4 and m5):
+        raise SystemExit("build_llms_txt: /research/fda-decision-timing/since-2024 wording changed; update the regexes")
     f["s_n"], f["s_last"], f["s_early"], f["s_on"], f["s_late"] = m4.groups()
-    m5 = re.search(r"\((\d+) decisions\), (\d+) of the (\d+) late decisions ended in a complete response letter", t4)
-    f["s_blind"], f["s_late_crl"], f["s_late_n"] = m5.groups()
+    (f["s_blind"], f["s_late_crl"], f["s_late_n"], f["s_early_crl"], f["s_early_n"], f["s_on_crl"],
+     f["s_on_n"]) = m5.groups()
     crl = json.load(io.open(os.path.join(HERE, "_crl_capture_series.json"), encoding="utf-8"))
     last = crl["rows"][-1]
     f["crl_total"], f["crl_approved"] = last["total"], last["approved"]
@@ -164,7 +168,7 @@ the price move. /decisions publishes how many of each there are.
   through {f['s_last']} with a goal date and an action date each tied to a document, **{f['s_early']}** came
   before the PDUFA goal date in effect, **{f['s_on']}** on it and **{f['s_late']}** after it. Among the {f['s_blind']} decisions
   from candidate sets not chosen by outcome, {f['s_late_crl']} of the {f['s_late_n']} late decisions ended in a
-  complete response letter. Counts, not a causal claim. (/research/fda-decision-timing/since-2024, CSV under CC BY 4.0)
+  complete response letter, against {f['s_early_crl']} of {f['s_early_n']} early and {f['s_on_crl']} of {f['s_on_n']} on the goal date. Counts, not a causal claim. (/research/fda-decision-timing/since-2024, CSV under CC BY 4.0)
 - Released FDA Complete Response Letters (openFDA): **{f['crl_total']}** letters, of which
   **{f['crl_approved']}** went to applications the FDA has since approved. That ratio reflects
   which letters the FDA chose to release, not an approval rate. (/crl)

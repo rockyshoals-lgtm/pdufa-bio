@@ -63,6 +63,11 @@ def pretty(iso):
     return f"{MON[d.month - 1]} {d.day}, {d.year}"
 
 
+def short(s, k):
+    s = str(s or "")
+    return s if len(s) <= k else s[:k].rsplit(" ", 1)[0].rstrip(",;:-(") + "\u2026"
+
+
 def bucket(n):
     return "early" if n < 0 else ("on" if n == 0 else "late")
 
@@ -280,7 +285,7 @@ def main():
     ol = sum(1 for d in vs_orig if d > 0)
     ee, eo, el = counts(ext)
     ext_list = "".join(
-        f'<tr><td>{esc(x["drug"][:60])}</td><td>{esc(pretty(x["goal_original"])) if x["goal_original"] else "not sourced"}</td>'
+        f'<tr><td>{esc(short(x["drug"], 60))}</td><td>{esc(pretty(x["goal_original"])) if x["goal_original"] else "not sourced"}</td>'
         f'<td>{esc(pretty(x["goal"]))}</td><td>{esc(pretty(x["action"]))}</td>'
         f'<td>{x["delta"]:+d}</td><td>{esc(x["outcome"])}</td></tr>' for x in sorted(ext, key=lambda x: x["action"]))
 
@@ -301,10 +306,11 @@ def main():
     excl_items += (f'<tr><td>merged into another candidate: the same FDA action listed twice (for example a tracked '
                    f'row and the FDA&rsquo;s own letter)</td><td>{doc["merged_duplicate_rows"]}</td></tr>')
     if n_dropped:
-        excl_items += (f'<tr><td>dropped at red team: action day or goal source not established ('
+        excl_items += (f'<tr><td>left out at review ('
                        + "; ".join(esc(d["drug"].split(" (")[0].split(" - ")[0]) + ": " + esc(d["excluded"]) for d in dropped)
                        + f')</td><td>{n_dropped}</td></tr>')
     n45 = len(r45)
+    n_rt = sum(1 for x in json.load(io.open(DATA, encoding="utf-8"))["actions"] if x.get("red_team"))
 
     # ---- full list -----------------------------------------------------------------------------------------
     def row_html(x):
@@ -320,7 +326,7 @@ def main():
               if x["page"] else "")
         basis = "" if x["action_basis"] == "fda_record" else ' <span class=p>(sponsor states the day)</span>'
         col = "#46d17f" if x["delta"] < 0 else ("#f0c86a" if x["delta"] > 0 else "#9db3d4")
-        name = esc(x["drug"][:70]) + (f' <span class=p>{esc(x["tickers"])}</span>' if x["tickers"] else "") + (
+        name = esc(short(x["drug"], 70)) + (f' <span class=p>{esc(x["tickers"])}</span>' if x["tickers"] else "") + (
             f'<br><span class=p>{esc(x["scope_note"])}</span>' if x["scope_note"] else "")
         return (f'<tr><td>{name}<br><span class=p>{esc(ORIGIN[x["origin"]])}</span></td>'
                 f'<td>{esc(pretty(x["goal"]))}{flag}{ext_}</td><td>{esc(pretty(x["action"]))}{basis}</td>'
@@ -338,15 +344,16 @@ def main():
         os.makedirs(OUT, exist_ok=True)
         with io.open(os.path.join(OUT, csv_rel), "w", encoding="utf-8", newline="") as fh:
             w = csv.writer(fh)
-            w.writerow(["fda_action_year", "drug", "sponsor", "tickers", "application", "outcome", "goal_date_in_effect",
+            w.writerow(["fda_action_year", "drug", "sponsor", "tickers", "application_or_fda_record", "outcome", "goal_date_in_effect",
                         "fda_action_date", "days_from_goal", "timing", "extended", "original_goal_date",
-                        "goal_weekend_or_holiday", "goal_source_url", "action_source_url", "action_date_basis",
+                        "goal_weekend_or_holiday", "goal_source_url", "goal_source_date", "original_goal_source_url",
+                        "action_source_url", "action_date_basis",
                         "candidate_set", "decision_page", "license"])
             for x in rows:
                 w.writerow([x["year"], x["drug"], x["sponsor"], x["tickers"], x["application"], x["outcome"], x["goal"],
                             x["action"], x["delta"], {"early": "early", "on": "on goal date", "late": "late"}[x["bucket"]],
                             "yes" if x["extended"] else "", x["goal_original"] or "", x["goal_flag"], x["goal_url"],
-                            x["action_url"], x["action_basis"] or "sponsor_states_day", ORIGIN[x["origin"]],
+                            x["goal_doc_date"], x["goal_original_url"] if x["goal_original"] else "", x["action_url"], x["action_basis"] or "sponsor_states_day", ORIGIN[x["origin"]],
                             ("https://www.pdufa.bio" + x["page"]) if x["page"] else "", "CC BY 4.0 https://pdufa.bio"])
         shutil.copyfile(os.path.join(OUT, csv_rel), os.path.join(OUT, alias_rel))
     vintages = sorted((os.path.basename(p) for p in glob.glob(os.path.join(OUT, "pdufa-decision-timing-2024-present-v*.csv"))),
@@ -361,7 +368,7 @@ def main():
                f"decisions ended in a complete response letter ({pct(ob[2][3], ob[2][1])}), against {ob[0][3]} of "
                f"{ob[0][1]} early ({pct(ob[0][3], ob[0][1])}) and {ob[1][3]} of {ob[1][1]} on the goal date "
                f"({pct(ob[1][3], ob[1][1])}).")
-    title = "Are FDA decisions early, on time or late? Every sourced PDUFA decision since 2024 | pdufa.bio"
+    title = f"Are FDA decisions early, on time or late? {n} sourced PDUFA decisions since 2024 | pdufa.bio"
     desc = (f"{n} FDA decisions since Jan 2024, each with a sourced goal date and action date: {E} early, {O} on the "
             f"goal date, {L} late. CRL counts by timing, extensions, CSV.")
     if len(desc) > 158:
@@ -369,19 +376,22 @@ def main():
     qa = [("How many FDA decisions since 2024 came early, on the goal date, or late?",
            f"In this census of {n} sourced decisions dated January 1, 2024 through {pretty(last)}, {E} came before "
            f"the PDUFA goal date in effect, {O} on it and {L} after it. Each decision's goal date comes from a "
-           f"sponsor or partner document dated before the action and its action date from an FDA record or a "
-           f"sponsor document that states the day."),
+           f"sponsor or partner document published before the action and its action date from an FDA record or a "
+           f"sponsor document that states the day. Some candidates were not yet researched, so this is not every "
+           f"FDA decision in the period."),
           ("Do late FDA decisions end in more complete response letters?",
-           ans_crl + f" The late group is small, so these are counts, not a measured effect. Across every CRL in the "
-           f"census, including FDA-released letters, {ce} came early, {co} on the goal date and {cl} late."),
-          ("What happens when the FDA extends a PDUFA date?",
+           ans_crl + f" The late group is small, so these are counts, not a measured effect. Across every CRL or "
+           f"split action in the census ({len(all_crl)}), including FDA-released letters, {ce} came early, {co} on the "
+           f"goal date and {cl} late."),
+          ("How did the extended goal dates in this census turn out?",
            f"{len(ext)} decisions in the census had a goal date the FDA extended before acting. Measured against the "
            f"extended date, {ee} came early, {eo} on it and {el} late. Where the original date is sourced "
            f"({len(ext_known)}), {oe} came before the original date, {oo} on it and {ol} after it."),
           ("Which decisions are left out?",
-           f"Of {cand} candidates for 2024 and 2025, {n45} FDA actions are counted. The rest are listed by reason on "
-           f"this page: no document stating the goal date to the day, a goal given only as a month or quarter, not a "
-           f"PDUFA action, not yet researched, or the same action listed twice. Nothing is estimated.")]
+           f"Of {cand} candidate rows for 2024 and 2025, {n45} FDA actions are counted. Every other row is listed by "
+           f"reason on this page: no document stating the goal date to the day, a goal given only as a month or "
+           f"quarter, not a PDUFA action, not yet researched, the day the FDA acted not established, the same action "
+           f"listed twice, or left out at review. Nothing is estimated.")]
 
     jsonld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", t)}}
@@ -403,11 +413,12 @@ def main():
                           "contentUrl": f"{URL}/{csv_rel}"}]}, ensure_ascii=False)
     faq = "".join(f'<div class=q><b>{esc(q)}</b><div>{esc(t)}</div></div>' for q, t in qa)
 
+    late_next_txt = "; ".join(esc(x["drug"].split(" (")[0]) + " " + format(x["delta"], "+d") for x in late_next)
     wk_line = (f'{len(wk)} of the {n} goal dates fell on a Saturday, Sunday or US federal holiday. Of those, '
                f'{len(wk_prev)} were decided on the last business day before the goal date and {len(wk_next)} on the '
                f'first business day after it; overall {we} came early, {wo} on the goal date itself and {wl} late.'
                + (f' {len(late_next)} of the {L} late decisions came on the first business day after a weekend or '
-                  f'holiday goal date ({"; ".join(esc(x["drug"].split(" (")[0]) + " " + f"{x["delta"]:+d}" for x in late_next)}).'
+                  f'holiday goal date ({late_next_txt}).'
                   if late_next else ""))
 
     css = ("*{box-sizing:border-box}body{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,"
@@ -428,11 +439,11 @@ def main():
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{URL}"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#02060d"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="article"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{URL}"><style>{css}</style><script type="application/ld+json">{jsonld}</script><script type="application/ld+json">{ds_ld}</script></head><body><div class="wrap"><div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/research">Research</a></div></div><div class="bc"><a href="/">Home</a> &rsaquo; <a href="/research">Research</a> &rsaquo; <a href="/research/fda-decision-timing">Decision timing</a> &rsaquo; Since 2024</div><h1>Early, on the goal date, or late: FDA decisions since January 2024</h1><div class="sub">{lede} The median decision came {esc(fmt_med(median([x["delta"] for x in rows])))} the goal date.</div>
 <div class="box note"><b style="color:#e3ba5e">Definitions.</b> <b>Goal date in effect</b>: the PDUFA goal (target action) date that applied on the day the FDA acted, after any extension. <b>Early</b>: the FDA acted on a calendar day before that date. <b>On the goal date</b>: the same calendar day. <b>Late</b>: a calendar day after it. <b>CRL</b>: a complete response letter. <b>Split</b>: one action that approved part of an application and issued a CRL on another part the same day. Days are calendar days. A decision is counted in the year the FDA acted.</div>
 <h2>By year</h2>{yr_table}
-<h2>How far from the goal date</h2>{dist}<p class="note">Earliest: {esc(earliest["drug"][:70])}, {abs(earliest["delta"])} {dw(earliest["delta"])} before its goal date of {esc(pretty(earliest["goal"]))}. Latest: {esc(latest["drug"][:70])}, {latest["delta"]} {dw(latest["delta"])} after its goal date of {esc(pretty(latest["goal"]))}.</p>
-<h2>Do late decisions end in a CRL more often?</h2><div class="sub" style="font-size:14.5px">{ans_crl}</div>{out_table}<p class="note">This table counts only the candidates that were not picked by outcome: decisions on the pdufa.bio tracked list (2024 and 2025) and the 2026 calendar. The {len(letters)} decisions that entered the census because the FDA released their complete response letter are left out of it, because adding letters adds only CRLs and would inflate the share. Across every CRL or split action in the census, including those letters ({len(all_crl)}), {ce} came early, {co} on the goal date and {cl} late. Of the {L} late decisions, {len(late_crl)} ended in a CRL or split action. These are counts of what happened; the late group is small, and the page does not claim that timing causes an outcome.</p>
-<h2>Extended goal dates</h2><p class="note">{len(ext)} decisions had a goal date the FDA extended before it acted. Against the extended date in effect, {ee} came early, {eo} on it and {el} late. Where the original date is sourced ({len(ext_known)} of {len(ext)}), {oe} came before the original date, {oo} on it and {ol} after it. Each case is shown against both dates.</p><div class=tw><table><tr><th>Decision</th><th>Original goal</th><th>Extended goal</th><th>FDA action</th><th>Days vs extended</th><th>Outcome</th></tr>{ext_list}</table></div>
-<h2>Goal dates on a weekend or holiday</h2><p class="note">{wk_line} The FDA&rsquo;s goal date can fall on a non-business day; an action on the business day before it counts here as early and an action on the business day after it counts as late, and each such row is flagged in the list below.</p>
-<h2>What is counted, and what is left out</h2><div class="note"><p>For 2024 and 2025 the candidates were {doc["candidates"]["tracked"]} PDUFA decisions on the pdufa.bio tracked list and {doc["candidates"]["crl_letter"]} complete response letters the FDA has released that are dated in those years ({cand} in all). The tracked list is not every FDA action: it leans toward companies that publish their goal dates, mostly listed biotech and pharmaceutical companies. A decision is counted only when a sponsor or partner document dated before the action (a press release or an SEC filing) states its goal date to the day, and an FDA record (Drugs@FDA, a CBER approval letter or summary, or the released CRL) or a sponsor document states the day the FDA acted. 2026 rows are the sourced decisions on <a href="/research/fda-decision-timing">the 2026 decision-timing page</a> and follow its rules. Counted: {n45} actions in 2024 and 2025 and {len(r26)} in 2026.</p><p>Every 2024 and 2025 decision that is late, ends in a CRL, had an extension, or rested on a search result, and a random sample of 25 others, was re-checked against its documents by a separate review on November 26, 2026 (102 rows including 2026 late and CRL rows). That review changed no goal or action date; it replaced some sources with the original filing, moved one row to a split action, dropped the {n_dropped} rows named below, and flagged one counted row as a manufacturing (packaging) supplement, which stays in the count because its sponsor stated a PDUFA goal date and is marked in the list.</p></div><table><tr><th>Candidates for 2024 and 2025 not counted</th><th>Rows</th></tr>{excl_items}</table>
+<h2>How far from the goal date</h2>{dist}<p class="note">Earliest: {esc(short(earliest["drug"], 70))}, {abs(earliest["delta"])} {dw(earliest["delta"])} before its goal date of {esc(pretty(earliest["goal"]))}. Latest: {esc(short(latest["drug"], 70))}, {latest["delta"]} {dw(latest["delta"])} after its goal date of {esc(pretty(latest["goal"]))}.</p>
+<h2>CRLs by timing in this census</h2><div class="sub" style="font-size:14.5px">{ans_crl}</div>{out_table}<p class="note">This table counts only the candidates that were not picked by outcome: decisions on the pdufa.bio tracked list (2024 and 2025) and the 2026 calendar. The {len(letters)} decisions that entered the census because the FDA released their complete response letter are left out of it, because adding letters adds only CRLs or split actions and would inflate the share. Across every CRL or split action in the census, including those letters ({len(all_crl)}), {ce} came early, {co} on the goal date and {cl} late. Of the {L} late decisions, {len(late_crl)} ended in a CRL or split action. These are counts of what happened; the late group is small, and the page does not claim that timing causes an outcome.</p>
+<h2>Extended goal dates</h2><p class="note">{len(ext)} decisions had a goal date the FDA extended before it acted. Against the extended date in effect, {ee} came early, {eo} on it and {el} late. Where the original date is sourced ({len(ext_known)} of {len(ext)}), {oe} came before the original date, {oo} on it and {ol} after it. Each case is shown against both dates where the original date is sourced.</p><div class=tw><table><tr><th>Decision</th><th>Original goal</th><th>Extended goal</th><th>FDA action</th><th>Days vs extended</th><th>Outcome</th></tr>{ext_list}</table></div>
+<h2>Goal dates on a weekend or holiday</h2><p class="note">{wk_line} Holidays here are the annual US federal holidays in statute; one-off closures by executive order are not treated as holidays. The FDA&rsquo;s goal date can fall on a non-business day; an action on the business day before it counts here as early and an action on the business day after it counts as late, and each such row is flagged in the list below.</p>
+<h2>What is counted, and what is left out</h2><div class="note"><p>For 2024 and 2025 the candidates were {doc["candidates"]["tracked"]} PDUFA decisions on the pdufa.bio tracked list and {doc["candidates"]["crl_letter"]} complete response letters the FDA has released that are dated in those years ({cand} in all). The tracked list is not every FDA action: it leans toward companies that publish their goal dates, mostly listed biotech and pharmaceutical companies. A decision is counted only when a sponsor or partner document dated before the action (a press release or an SEC filing) states its goal date to the day, and an FDA record (Drugs@FDA, a CBER approval letter or summary, or the released CRL) or a sponsor document states the day the FDA acted. 2026 rows are the sourced decisions on <a href="/research/fda-decision-timing">the 2026 decision-timing page</a> and follow its rules. Counted: {n45} actions in 2024 and 2025 and {len(r26)} in 2026.</p><p>A separate review on November 26, 2026 re-checked {n_rt} of the 2024 and 2025 actions against their documents (every one that was late, ended in a CRL, had an extension or rested on a search result, plus a random sample of the others) and the 2026 late and CRL rows. That review changed no goal or action date; it replaced some sources with the original filing, and the rows it left out are named below. Two further actions were changed to split decisions after the review, from the FDA&rsquo;s own records.</p></div><table><tr><th>Candidates for 2024 and 2025 not counted</th><th>Rows</th></tr>{excl_items}</table>
 <h2>Every counted decision</h2><p class="note">Sorted by FDA action date. Days are the FDA action date minus the goal date in effect; negative is early. &ldquo;Sponsor states the day&rdquo; marks an action date taken from a company document that names the day, not from an FDA record. Where this site&rsquo;s decision page for the same action is filed under a different day, the row names that day; the count uses the FDA action date shown here.</p>{full}
 <div class="box note"><b style="color:#e3ba5e">Download ({ver}, CSV, CC BY 4.0):</b> <a href="/{REL}/{csv_rel}">{csv_rel}</a>, or the always-current <a href="/{REL}/{alias_rel}">{alias_rel}</a>. One row per decision: goal date in effect, original goal date, FDA action date, days, timing, outcome, weekend or holiday flag, and the source URL behind each date. Cite as &ldquo;pdufa.bio, PDUFA decision timing 2024 to present ({ver}), {URL}&rdquo;. The version is the row count; earlier versions stay at their own addresses{": " + ", ".join(f'<a href="/{REL}/{v}">{re.search(r"-(v[0-9]+)[.]csv$", v).group(1)}</a>' for v in older) if older else ""}.</div>
 <h2>Related</h2><p class="note"><a href="/research/fda-decision-timing">2026 decisions, goal date vs actual</a> &middot; <a href="/crl/review-clock">CRL review clock</a> &middot; <a href="/crl">FDA complete response letters</a> &middot; <a href="/pdufa-date-changes">PDUFA date changes</a> &middot; <a href="/research/fda-approval-weekdays">Approval weekdays</a> &middot; <a href="/changes">Dataset changes</a></p>
@@ -448,8 +459,8 @@ def main():
     # the /research card and the line on the 2026 page carry this page's own numbers, rewritten every build
     card = (f"{CARD_BEGIN}<a class='row' href='/{REL}'><div class='t'>Early, on the goal date, or late: FDA decisions "
             f"since 2024</div><div class='d'>{n} sourced FDA decisions since January 2024: {E} came before the PDUFA "
-            f"goal date, {O} on it and {L} after it, with CRL counts by timing and every extension shown against both "
-            f"dates.</div></a>{CARD_END}")
+            f"goal date, {O} on it and {L} after it, with CRL counts by timing and extended goal dates shown against "
+            f"the original date where it is sourced.</div></a>{CARD_END}")
     link = (f'{LINK_BEGIN}<p class="sub" data-timing="since-2024">Since January 2024: {E} of {n} sourced decisions '
             f'came before the goal date, {O} on it and {L} after it. <a href="/{REL}">Every decision since 2024, by '
             f'year, with CRL counts by timing</a>.</p>{LINK_END}')

@@ -4,7 +4,7 @@
   "tracked": 334,
   "crl_letter": 129
  },
- "merged_duplicate_rows": 26,
+ "merged_duplicate_rows": 29,
  "actions": [
   {
    "cid": "C001",
@@ -2215,7 +2215,7 @@
    ],
    "origin": "tracked",
    "outcome": "Approved",
-   "excluded": null,
+   "excluded": "a manufacturing (packaging) supplement for a vial access needle, not a drug efficacy decision; Heron called its date a PDUFA goal date, but the review recommended leaving it out",
    "scope_note": "manufacturing (packaging) supplement; Heron stated a PDUFA goal date",
    "red_team": "reject",
    "notes": "Heron 8-K Ex.99.1 of Jul 2, 2024 (four-month review of the VAN prior approval supplement) and Aug 6, 2024 Q2 release ('The ZYNRELEF VAN PDUFA goal date is set for September 23, 2024.', https://www.sec.gov/Archives/edgar/data/818033/000095017024091769/hrtx-ex99_1.htm) both state Sept 23, 2024 (Monday). Drugs@FDA S-016 action 09/24/2024 = 1 day AFTER goal (LATE by 1 day). Caveat: this is a CMC/packaging prior approval supplement, not an efficacy application; consider flagging separately on the pag"
@@ -2356,7 +2356,8 @@
    "announcement_date": "2024-10-09",
    "announcement_url": null,
    "members": [
-    "C129"
+    "C129",
+    "L051"
    ],
    "origin": "tracked",
    "outcome": "CRL",
@@ -5803,14 +5804,15 @@
    "announcement_date": null,
    "announcement_url": null,
    "members": [
-    "C323"
+    "C323",
+    "L124"
    ],
    "origin": "tracked",
-   "outcome": "Approved",
+   "outcome": "Split",
    "excluded": null,
    "scope_note": null,
    "red_team": null,
-   "notes": "Goal from GSK release 'Depemokimab applications accepted for review by the US FDA' (6-K, issued Mar 3, 2025) covering both asthma and CRSwNP indications. Approval 2025-12-16 (Tuesday) = ON GOAL DATE. Possible split action: batch crl_corpus lists CRL_BLA761458_20251216.pdf (GlaxoSmithKline LLC) dated the same day - likely one indication approved and the other got a CRL; either way the action fell on the goal date. Drugs@FDA page showed only ORIG-1."
+   "notes": "Goal from GSK release 'Depemokimab applications accepted for review by the US FDA' (6-K, issued Mar 3, 2025) covering both asthma and CRSwNP indications. Approval 2025-12-16 (Tuesday) = ON GOAL DATE. Possible split action: batch crl_corpus lists CRL_BLA761458_20251216.pdf (GlaxoSmithKline LLC) dated the same day - likely one indication approved and the other got a CRL; either way the action fell on the goal date. Drugs@FDA page showed only ORIG-1. Split: the FDA approved one indication and issued a CRL (CRL_BLA761458_20251216) on the other the same day."
   },
   {
    "cid": "C325",
@@ -6270,9 +6272,10 @@
    "announcement_date": null,
    "announcement_url": null,
    "members": [
+    "C275",
     "L107"
    ],
-   "origin": "crl_letter",
+   "origin": "tracked",
    "outcome": "CRL",
    "excluded": null,
    "scope_note": null,
@@ -7581,15 +7584,6 @@
    "reason": "not a PDUFA action: ANDA (generic, GDUFA) approval"
   },
   {
-   "cid": "C275",
-   "origin": "tracked",
-   "drug": "SPINRAZA (nusinersen) higher-dose regimen (DEVOTE)",
-   "sponsor": "Biogen",
-   "tickers": "BIIB",
-   "category": "not_researched",
-   "reason": "NOT RESEARCHED (pass 2 budget)"
-  },
-  {
    "cid": "C278",
    "origin": "tracked",
    "drug": "INLURIYO (imlunestrant), ESR1m ER+/HER2- breast cancer",
@@ -8247,15 +8241,6 @@
    "reason": "no sponsor-stated goal date found (one search: CSL's Dec 14, 2023 FDA filing-acceptance release and trade coverage show acceptance but no PDUFA day; CSL is ASX-listed, no SEC filings to search)"
   },
   {
-   "cid": "L051",
-   "origin": "crl_letter",
-   "drug": "dasiglucagon injection for congenital hyperinsulinism (resubmission)",
-   "sponsor": "Zealand Pharma (Zealand Pharma US, Inc.)",
-   "tickers": "ZEAL.CO",
-   "category": "goal_month_or_quarter",
-   "reason": "no sponsor-stated goal date found (one pass-2 search of Zealand announcements and coverage of the 2024 resubmission and Oct 8, 2024 CRL found no day-precision PDUFA date; Zealand had guided only to resubmission 'in the first half of 2024')."
-  },
-  {
    "cid": "L052",
    "origin": "crl_letter",
    "drug": "irinotecan liposome injection",
@@ -8707,17 +8692,6 @@
    ],
    "category": "not_pdufa",
    "reason": "not a PDUFA action (BsUFA): pass-1 reading of the FDA letter shows a proposed biosimilar (references biosimilar labeling guidance); same BLA 761271 as L061, whose letter refers to 'the proposed biosimilar product and the U.S.-licensed reference product'."
-  },
-  {
-   "cid": "L124",
-   "origin": "crl_letter",
-   "drug": "Exdensur (depemokimab-ulaa), chronic rhinosinusitis with nasal polyps indication",
-   "sponsor": "GlaxoSmithKline LLC (GSK plc)",
-   "tickers": [
-    "GSK"
-   ],
-   "category": "goal_month_or_quarter",
-   "reason": "goal stated only as month/quarter: GSK 6-K (15 Dec 2025) says decisions 'expected starting in December 2025 and continuing through H1 2026'; no US PDUFA day located (pass-1 finding; not re-searched in pass 2)."
   },
   {
    "cid": "L125",

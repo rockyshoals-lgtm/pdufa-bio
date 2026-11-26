@@ -106,6 +106,39 @@ def test_no_advice_or_causal_language():
     assert "does not claim that timing causes an outcome" in t
 
 
+def test_goal_source_published_before_action():
+    """A goal date is only a goal date if a document stated it before the FDA acted."""
+    doc = json.load(io.open(DATA, encoding="utf-8"))
+    for a in doc["actions"]:
+        if a.get("excluded"):
+            continue
+        for k in ("goal_original_doc_date", "goal_extended_doc_date"):
+            v = a.get(k) or ""
+            if re.match(r"^\d{4}-\d{2}-\d{2}$", v):
+                assert v <= a["action_date"], f"{a['cid']}: {k} {v} is after the action {a['action_date']}"
+
+
+def test_no_candidate_counted_twice():
+    doc = json.load(io.open(DATA, encoding="utf-8"))
+    members = [m for a in doc["actions"] for m in a["members"]]
+    assert len(members) == len(set(members)), "a candidate sits in two actions"
+    left_out = {r["cid"] for r in doc["excluded_rows"]}
+    both = left_out & set(members)
+    assert not both, f"in an action and in excluded_rows: {sorted(both)}"
+
+
+def test_linked_csv_exists_and_is_not_gitignored():
+    d = io.open(PAGE, encoding="utf-8").read()
+    links = set(re.findall(r'href="(/research/fda-decision-timing/since-2024/[^"]+\.csv)"', d))
+    assert links, "the page links no CSV"
+    for l_ in links:
+        f = os.path.join(HERE, "pdufa_site_src", l_.lstrip("/"))
+        assert os.path.exists(f), f"linked CSV missing: {l_}"
+        gi = io.open(os.path.join(HERE, ".gitignore"), encoding="utf-8").read()
+        assert "!pdufa_site_src/research/fda-decision-timing/since-2024/*.csv" in gi, \
+            "*.csv in .gitignore would keep the download out of git (404 live)"
+
+
 def main():
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_") and callable(v)]
     fails = []
