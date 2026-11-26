@@ -856,6 +856,13 @@ jobs:
       - name: "Readouts: relink company-guided rows to this build's drug pages"
         run: python build_guided_readouts.py
 
+      # 2026-11-26 (GSC: /screener ranked for drug names it only printed): the screener's crawlable rows link each
+      # readout to its /drug page when that page exists. The first pass runs before this build's drug pages, so this
+      # second pass (idempotent: it replaces only the ssr-rows block) runs once every drug page of this build is on
+      # disk, and never ships a link to a drug page the build removed.
+      - name: "Screener: relink server-rendered rows to this build's drug pages"
+        run: python build_screener_rows.py
+
       # 2026-11-17: one page per FDA application (/fda-application/nda-NNNNNN) joining brand, ingredient,
       # code names, FDA applicant of record, owner and ticker. FDA facts are read from the Orange Book
       # (fetched above); every other name comes from _fda_applications.json with a primary-source quote.
