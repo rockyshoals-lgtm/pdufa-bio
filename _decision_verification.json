@@ -555,8 +555,17 @@
    "date": "2025-06-12",
    "asset": "Prednisolone Acetate Ophthalmic Suspension",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218256",
+    "source_label": "Drugs@FDA, ANDA 218256, approval June 11, 2025",
+    "quote": "06/11/2025 ORIG-1 Approval",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-06-11",
+    "announced": "2025-06-12"
+   },
+   "status_before_recheck": "unverified"
   },
   "AMRX-2025-09-04": {
    "ticker": "AMRX",
@@ -608,8 +617,14 @@
    "date": "2025-10-29",
    "asset": "Beclomethasone Dipropionate HFA Inhalation Aerosol",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-26",
+    "why": "The FDA's letter of October 28, 2025 tentatively approved Amneal's beclomethasone dipropionate HFA inhaler (ANDA 213811) and said it could not grant final approval yet; a tentative approval is not an approval.",
+    "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213811Orig1s000TAltr.pdf"
+   }
   },
   "AMRX-2025-11-13": {
    "ticker": "AMRX",
@@ -631,8 +646,17 @@
    "date": "2025-12-01",
    "asset": "RESTASIS (Cyclosporine Ophthalmic Emulsion)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.globenewswire.com/news-release/2025/12/01/3197418/0/en/Amneal-Announces-U-S-FDA-Approval-of-Cyclosporine-Ophthalmic-Emulsion-0-05.html",
+    "source_label": "Amneal release, December 1, 2025",
+    "quote": "the U.S. Food and Drug Administration (FDA) has approved the Company's cyclosporine ophthalmic emulsion 0.05%",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": null,
+    "announced": "2025-12-01"
+   },
+   "status_before_recheck": "unverified"
   },
   "AMRX-2025-12-22": {
    "ticker": "AMRX",
@@ -920,8 +944,14 @@
    "date": "2025-06-09",
    "asset": "Esreboxetine (AXS-14) - (FORWARD)",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-26",
+    "why": "The FDA did not issue a Complete Response Letter for AXS-14 (esreboxetine). On June 9, 2025 Axsome said it had received a Refusal to File letter: the FDA found the application not complete enough to review.",
+    "source": "https://www.sec.gov/Archives/edgar/data/1579428/000095017025083441/axsm-ex99_1.htm"
+   }
   },
   "AZN-2025-01-17": {
    "ticker": "AZN",
@@ -1273,16 +1303,31 @@
    "date": "2025-06-27",
    "asset": "Breyanzi® (lisocabtagene maraleucel; liso-cel) (CAR Tcell therapy)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-26",
+    "why": "There was no FDA approval for Breyanzi on or near June 27, 2025. That day the FDA removed the REMS for six CAR-T therapies, Breyanzi among them, with label updates; no new indication was approved.",
+    "source": "https://www.fda.gov/news-events/press-announcements/fda-eliminates-risk-evaluation-and-mitigation-strategies-rems-autologous-chimeric-antigen-receptor"
+   }
   },
   "BMY-2025-12-04": {
    "ticker": "BMY",
    "date": "2025-12-04",
    "asset": "Breyanzi (lisocabtagene maraleucel)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-car-t-cell-therapy-marginal-zone-lymphoma-us",
+    "source_label": "FDA press announcement, December 4, 2025",
+    "quote": "The U.S. Food and Drug Administration today approved a new indication for Breyanzi",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-12-04",
+    "announced": null
+   },
+   "status_before_recheck": "unverified"
   },
   "BNTX-2025-08-27": {
    "ticker": "BNTX",
@@ -1577,8 +1622,17 @@
    "date": "2025-06-23",
    "asset": "Datopotamab deruxtecan - (TROPION-Lung05)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761464",
+    "source_label": "Drugs@FDA, BLA 761464, action date June 23, 2025",
+    "quote": "On June 23, 2025, the Food and Drug Administration granted accelerated approval to datopotamab deruxtecan-dlnk",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-06-23",
+    "announced": null
+   },
+   "status_before_recheck": "unverified"
   },
   "DSNKY-2025-12-15": {
    "ticker": "DSNKY",
@@ -1731,8 +1785,14 @@
    "date": "2025-06-20",
    "asset": "GH001-TRD-201",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-26",
+    "why": "There was no FDA decision on GH001 in June 2025. No marketing application had been filed; on June 20 GH Research said it had sent the FDA its response to a clinical hold on its IND.",
+    "source": "https://www.sec.gov/Archives/edgar/data/0001855129/000114036125023162/ef20050847_ex99-1.htm"
+   }
   },
   "GILD-2025-06-18": {
    "ticker": "GILD",
@@ -1889,7 +1949,7 @@
    "date": "2025-09-12",
    "asset": "Epcoritamab-bysp - (EPCORE CLL-1 )",
    "claimed": "crl",
-   "status": "conflicting_evidence_needs_human_review",
+   "status": "retracted",
    "evidence": {
     "kind": "approval",
     "matched_name": "Epcoritamab",
@@ -1897,6 +1957,12 @@
     "approval_date": "2025-09-11",
     "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761324",
     "source_label": "Drugs@FDA, application BLA761324, action date 2025-09-11"
+   },
+   "status_before_retraction": "conflicting_evidence_needs_human_review",
+   "retracted": {
+    "date": "2026-11-26",
+    "why": "There was no FDA decision on epcoritamab within 14 days of September 12, 2025. Genmab's report for the nine months to September 30, 2025 lists no Complete Response Letter; the pending application then had a target date of November 30, 2025.",
+    "source": "https://www.sec.gov/Archives/edgar/data/1434265/000143426525000092/genmabinterimreportq32025.htm"
    }
   },
   "GMAB-2025-11-18": {
@@ -1919,8 +1985,14 @@
    "date": "2025-02-17",
    "asset": "MenABCWY",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-26",
+    "why": "The FDA approved Penmenvy on February 14, 2025 and GSK announced it on February 15; February 17 was a US market holiday. The decision now has its page on February 18, the first day GSK's US shares traded on the news.",
+    "source": "https://www.fda.gov/files/vaccines%2C%20blood%20%26%20biologics/published/february_14_2025_approval_letter_-_penmenvy.pdf"
+   }
   },
   "GSK-2025-03-25": {
    "ticker": "GSK",
@@ -2056,8 +2128,14 @@
    "date": "2025-02-19",
    "asset": "WAKIX (pitolisant) - (INTUNE)",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-26",
+    "why": "The FDA did not issue a Complete Response Letter for pitolisant in idiopathic hypersomnia. On February 19, 2025 Harmony said it had received a Refusal to File letter for the supplemental application.",
+    "source": "https://ir.harmonybiosciences.com/news-releases/news-release-details/harmony-biosciences-provides-update-status-supplemental-new-drug"
+   }
   },
   "IBRX-2025-02-19": {
    "ticker": "IBRX",
@@ -2155,8 +2233,17 @@
    "date": "2025-01-16",
    "asset": "Niktimvo (axatilimab-csfr)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://investor.incyte.com/news-releases/news-release-details/incyte-and-syndax-announce-us-food-and-drug-administration-fda",
+    "source_label": "Incyte and Syndax release, January 15, 2025, 5:34 p.m. ET",
+    "quote": "the U.S. Food and Drug Administration (FDA) has approved Niktimvo (axatilimab-csfr) in 9 mg and 22 mg vial sizes",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": null,
+    "announced": "2025-01-15, after the close"
+   },
+   "status_before_recheck": "unverified"
   },
   "INCY-2025-05-15": {
    "ticker": "INCY",
@@ -2667,8 +2754,17 @@
    "date": "2026-02-17",
    "asset": "",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.jnj.com/media-center/press-releases/fda-approves-rybrevant-faspro-amivantamab-and-hyaluronidase-lpuj-as-the-only-egfr-targeted-therapy-that-can-be-administered-once-a-month",
+    "source_label": "Johnson & Johnson release, February 17, 2026",
+    "quote": "the U.S. Food and Drug Administration (FDA) has approved a new, simplified monthly dosing schedule",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": null,
+    "announced": "2026-02-17"
+   },
+   "status_before_recheck": "unverified"
   },
   "JSPR-2025-06-16": {
    "ticker": "JSPR",
@@ -2704,8 +2800,17 @@
    "date": "2025-09-15",
    "asset": "VYJUVEK (beremagene geperpavec-svdt)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/vaccines-blood-biologics/vyjuvek",
+    "source_label": "FDA product page for VYJUVEK (approval letter of September 12, 2025)",
+    "quote": "September 12, 2025 Approval Letter",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-09-12",
+    "announced": "2025-09-15"
+   },
+   "status_before_recheck": "unverified"
   },
   "KURA-2025-11-13": {
    "ticker": "KURA",
@@ -2990,8 +3095,17 @@
    "date": "2025-06-09",
    "asset": "ENFLONSIA (Clesrovimab) (MK-1654-004) - (CLEVER)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761432Orig1s000Correctedltr.pdf",
+    "source_label": "FDA approval letter (corrected), BLA 761432, action date June 9, 2025",
+    "quote": "The effective action date will remain June 9, 2025, the date of the original approval letter.",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-06-09",
+    "announced": null
+   },
+   "status_before_recheck": "unverified"
   },
   "MRK-2025-06-13": {
    "ticker": "MRK",
@@ -3101,24 +3215,51 @@
    "date": "2025-05-31",
    "asset": "mRNA-1283 - (NEXTCove)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/media/186740/download",
+    "source_label": "FDA approval letter, BLA STN 125835/0, May 30, 2025",
+    "quote": "COVID-19 Vaccine, mRNA (MNEXSPIKE) is indicated for active immunization to prevent coronavirus disease 2019 (COVID-19)",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-05-30",
+    "announced": "2025-05-31"
+   },
+   "status_before_recheck": "unverified"
   },
   "MRNA-2025-06-12": {
    "ticker": "MRNA",
    "date": "2025-06-12",
    "asset": "mRESVIA (mRNA-1345)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/media/187046/download",
+    "source_label": "FDA approval letter, BLA STN 125796/37, June 12, 2025",
+    "quote": "in individuals 18 through 59 years of age who are at increased risk for LRTD caused by RSV",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-06-12",
+    "announced": null
+   },
+   "status_before_recheck": "unverified"
   },
   "MRNA-2025-08-27": {
    "ticker": "MRNA",
    "date": "2025-08-27",
    "asset": "Spikevax and mNEXSPIKE - (LP.8.1 variant)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2025-biological-license-application-supplement-noteworthy-approvals",
+    "source_label": "FDA list of 2025 biologics supplement approvals, STN 125752/305 and 125835/6, August 27, 2025",
+    "quote": "To include the 2025-2026 Formula and associated labeling revisions.",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-08-27",
+    "announced": null
+   },
+   "status_before_recheck": "unverified"
   },
   "NRIX-2025-06-12": {
    "ticker": "NRIX",
@@ -3514,8 +3655,17 @@
    "date": "2025-08-27",
    "asset": "COMIRNATY LP.8.1",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2025-biological-license-application-supplement-noteworthy-approvals",
+    "source_label": "FDA list of 2025 biologics supplement approvals, STN 125742/656, August 27, 2025",
+    "quote": "10 mcg drug product (2025-2026 Formula) in the single-dose vial presentation",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-08-27",
+    "announced": null
+   },
+   "status_before_recheck": "unverified"
   },
   "PFE-2025-11-21": {
    "ticker": "PFE",
@@ -3853,8 +4003,17 @@
    "date": "2026-02-24",
    "asset": "",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s075ltr.pdf",
+    "source_label": "FDA approval letter, BLA 761055 S-075, February 23, 2026",
+    "quote": "This Prior Approval sBLA provides for a new indication of treatment of adult and pediatric patients aged 6 years and older",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2026-02-23",
+    "announced": "2026-02-24"
+   },
+   "status_before_recheck": "unverified"
   },
   "RHHBY-2025-02-04": {
    "ticker": "RHHBY",
@@ -3921,8 +4080,17 @@
    "date": "2025-07-18",
    "asset": "Columvi + GemOx - (STARGLO)",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.gene.com/media/press-releases/15070/2025-07-18/genentech-provides-update-on-supplementa",
+    "source_label": "Genentech release, July 18, 2025",
+    "quote": "the U.S. Food and Drug Administration (FDA) issued a Complete Response Letter (CRL)",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": null,
+    "announced": "2025-07-18"
+   },
+   "status_before_recheck": "unverified"
   },
   "RHHBY-2025-10-02": {
    "ticker": "RHHBY",
@@ -3944,8 +4112,17 @@
    "date": "2025-10-20",
    "asset": "Gazyva/Gazyvaro",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.gene.com/media/press-releases/15085/2025-10-19/fda-approves-genentechs-gazyva-for-the-t",
+    "source_label": "Genentech release, October 19, 2025",
+    "quote": "has approved Gazyva (obinutuzumab) for the treatment of adult patients with active lupus nephritis",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": null,
+    "announced": "2025-10-19, a Sunday"
+   },
+   "status_before_recheck": "unverified"
   },
   "RHHBY-2025-11-25": {
    "ticker": "RHHBY",
@@ -4052,8 +4229,17 @@
    "date": "2025-01-16",
    "asset": "Niktimvo (axatilimab-csfr)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://investor.incyte.com/news-releases/news-release-details/incyte-and-syndax-announce-us-food-and-drug-administration-fda",
+    "source_label": "Incyte and Syndax release, January 15, 2025, 5:34 p.m. ET",
+    "quote": "the U.S. Food and Drug Administration (FDA) has approved Niktimvo (axatilimab-csfr) in 9 mg and 22 mg vial sizes",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": null,
+    "announced": "2025-01-15, after the close"
+   },
+   "status_before_recheck": "unverified"
   },
   "SNDX-2025-10-24": {
    "ticker": "SNDX",
@@ -4205,8 +4391,14 @@
    "date": "2025-11-25",
    "asset": "SRP-9001-103 - (ENDEAVOR)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-26",
+    "why": "There was no FDA approval for Elevidys on or near November 25, 2025. On November 14 the FDA approved a boxed warning and narrowed the indication to ambulatory patients, a safety labeling change, not an approval.",
+    "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-new-safety-warning-and-revised-indication-limits-use-elevidys-following-reports-fatal"
+   }
   },
   "SRRK-2025-09-23": {
    "ticker": "SRRK",
@@ -4286,8 +4478,17 @@
    "date": "2025-09-05",
    "asset": "VONVENDI [von Willebrand factor (Recombinant)]",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2025-biological-license-application-supplement-noteworthy-approvals",
+    "source_label": "FDA list of 2025 biologics supplement approvals, STN 125577/691, September 5, 2025",
+    "quote": "To expand the current approved adult prophylaxis indication for type 3 von Willebrand disease (VWD)",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-09-05",
+    "announced": null
+   },
+   "status_before_recheck": "unverified"
   },
   "TARA-2025-04-26": {
    "ticker": "TARA",
@@ -4352,8 +4553,17 @@
    "date": "2025-08-28",
    "asset": "Generic Saxenda (liraglutide injection)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/drugs/drug-and-biologic-approval-and-ind-activity-reports/2025-first-generic-drug-approvals",
+    "source_label": "FDA list of 2025 first generic approvals, ANDA 214568, August 27, 2025",
+    "quote": "ANDA 214568, Liraglutide Injection, Teva Pharmaceuticals Development, Inc., Saxenda Injection, 8/27/2025",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-08-27",
+    "announced": "2025-08-28"
+   },
+   "status_before_recheck": "unverified"
   },
   "TEVA-2025-10-10": {
    "ticker": "TEVA",
@@ -4474,8 +4684,14 @@
    "date": "2025-08-25",
    "asset": "IXCHIQ",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-26",
+    "why": "The FDA did not approve IXCHIQ in August 2025. On August 22, 2025 it suspended the vaccine's biologics license; Valneva announced it on August 25.",
+    "source": "https://www.fda.gov/safety/medical-product-safety-information/fda-update-safety-ixchiq-chikungunya-vaccine-live-fda-suspends-biologics-license-fda-safety"
+   }
   },
   "VNDA-2025-12-30": {
    "ticker": "VNDA",
@@ -6508,6 +6724,23 @@
     "approval_date": "2025-12-16",
     "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761458",
     "source_label": "Drugs@FDA, application BLA761458, action date 2025-12-16"
+   }
+  },
+  "GSK-2025-02-18": {
+   "ticker": "GSK",
+   "date": "2025-02-18",
+   "asset": "Penmenvy (MenABCWY vaccine)",
+   "claimed": "approval",
+   "status_before_recheck": null,
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/files/vaccines%2C%20blood%20%26%20biologics/published/february_14_2025_approval_letter_-_penmenvy.pdf",
+    "source_label": "FDA approval letter, BLA STN 125819/0, February 14, 2025",
+    "quote": "February 14, 2025 ... in individuals 10 through 25 years of age.",
+    "quote_checked": "2026-11-26",
+    "fda_action_date": "2025-02-14",
+    "announced": "2025-02-15"
    }
   }
  }

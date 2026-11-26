@@ -215,6 +215,15 @@
    "Ipratropium"
   ]
  },
+ "AMRX-2025-06-12": {
+  "checked": "2026-11-26",
+  "date": "2025-06-11",
+  "record": "ANDA 218256",
+  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218256",
+  "name": "Prednisolone acetate ophthalmic suspension 1% (generic of Pred Forte)",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
+ },
  "AMRX-2026-06-04": {
   "checked": "2026-11-24",
   "name": "Romidepsin injection solution, 27.5 mg/5.5 m",
@@ -616,6 +625,15 @@
    "pegvaliase-pqpz"
   ]
  },
+ "BMY-2025-12-04": {
+  "checked": "2026-11-26",
+  "date": "2025-12-04",
+  "record": "BLA 125714 (FDA press announcement)",
+  "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-car-t-cell-therapy-marginal-zone-lymphoma-us",
+  "name": "Breyanzi (lisocabtagene maraleucel), marginal zone lymphoma",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
+ },
  "BMY-2026-03-06": {
   "checked": "2026-10-03",
   "class": "EFFICACY",
@@ -732,6 +750,15 @@
    "Tividenofusp"
   ]
  },
+ "DSNKY-2025-06-23": {
+  "checked": "2026-11-26",
+  "date": "2025-06-23",
+  "record": "BLA 761464",
+  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761464",
+  "name": "Datroway (datopotamab deruxtecan-dlnk), EGFR-mutated NSCLC (accelerated approval)",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
+ },
  "EBS-2026-01-14": {
   "checked": "2026-11-26",
   "name": "OTC NARCAN Nasal Spray - carrying case",
@@ -832,6 +859,15 @@
   "oc": "Approved",
   "record": "NDA 219910",
   "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219910"
+ },
+ "GSK-2025-02-18": {
+  "checked": "2026-11-26",
+  "date": "2025-02-14",
+  "record": "BLA STN 125819/0",
+  "source_url": "https://www.fda.gov/files/vaccines%2C%20blood%20%26%20biologics/published/february_14_2025_approval_letter_-_penmenvy.pdf",
+  "name": "Penmenvy (MenABCWY vaccine)",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
  },
  "GSK-2025-03-25": {
   "basis": "decision-timing census 2026-11-26: FDA record read",
@@ -1112,6 +1148,15 @@
   "record": "NDA 219301",
   "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219301"
  },
+ "KRYS-2025-09-15": {
+  "checked": "2026-11-26",
+  "date": "2025-09-12",
+  "record": "BLA STN 125774 (approval letter of September 12, 2025)",
+  "source_url": "https://www.fda.gov/vaccines-blood-biologics/vyjuvek",
+  "name": "VYJUVEK (beremagene geperpavec-svdt), label update",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
+ },
  "KURA-2025-11-13": {
   "basis": "decision-timing census 2026-11-26: FDA record read",
   "checked": "2026-11-26",
@@ -1271,6 +1316,15 @@
   "record": "NDA 215383 S-012",
   "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215383Orig1s012ltr.pdf"
  },
+ "MRK-2025-06-09": {
+  "checked": "2026-11-26",
+  "date": "2025-06-09",
+  "record": "BLA 761432",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761432Orig1s000Correctedltr.pdf",
+  "name": "ENFLONSIA (clesrovimab-cfor)",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
+ },
  "MRK-2025-09-19": {
   "basis": "decision-timing census 2026-11-26: FDA record read",
   "checked": "2026-11-26",
@@ -1359,6 +1413,33 @@
    "Welireg",
    "belzutifan"
   ]
+ },
+ "MRNA-2025-05-31": {
+  "checked": "2026-11-26",
+  "date": "2025-05-30",
+  "record": "BLA STN 125835/0",
+  "source_url": "https://www.fda.gov/media/186740/download",
+  "name": "MNEXSPIKE (mRNA-1283)",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
+ },
+ "MRNA-2025-06-12": {
+  "checked": "2026-11-26",
+  "date": "2025-06-12",
+  "record": "BLA STN 125796/37",
+  "source_url": "https://www.fda.gov/media/187046/download",
+  "name": "mRESVIA (mRNA-1345), adults 18 to 59 at increased risk",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
+ },
+ "MRNA-2025-08-27": {
+  "checked": "2026-11-26",
+  "date": "2025-08-27",
+  "record": "STN 125752/305 and 125835/6",
+  "source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2025-biological-license-application-supplement-noteworthy-approvals",
+  "name": "Spikevax and mNEXSPIKE, 2025-2026 Formula",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
  },
  "NUVB-2025-06-11": {
   "basis": "decision-timing census 2026-11-26: FDA record read",
@@ -1511,6 +1592,15 @@
   "oc": "CRL",
   "record": "BLA 761320",
   "source_url": "https://download.open.fda.gov/crl/CRL_BLA761320_20251230.pdf"
+ },
+ "PFE-2025-08-27": {
+  "checked": "2026-11-26",
+  "date": "2025-08-27",
+  "record": "STN 125742/656",
+  "source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2025-biological-license-application-supplement-noteworthy-approvals",
+  "name": "COMIRNATY, 2025-2026 Formula",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
  },
  "PFE-2026-02-24": {
   "checked": "2026-11-24",
@@ -1689,6 +1779,15 @@
   "oc": "CRL",
   "record": "BLA 761303",
   "source_url": "https://download.open.fda.gov/crl/CRL_BLA761303_20250730.pdf"
+ },
+ "REGN-2026-02-24": {
+  "checked": "2026-11-26",
+  "date": "2026-02-23",
+  "record": "BLA 761055 S-075",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s075ltr.pdf",
+  "name": "DUPIXENT (dupilumab), allergic fungal rhinosinusitis",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
  },
  "REGN-2026-04-02": {
   "checked": "2026-10-03",
@@ -1940,6 +2039,24 @@
   "oc": "Approved",
   "record": "NDA 219379 (capsule) / NDA 219389 (tablet for oral suspension)",
   "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219379"
+ },
+ "TAK-2025-09-05": {
+  "checked": "2026-11-26",
+  "date": "2025-09-05",
+  "record": "STN 125577/691",
+  "source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2025-biological-license-application-supplement-noteworthy-approvals",
+  "name": "VONVENDI [von Willebrand factor (Recombinant)], expanded indication",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
+ },
+ "TEVA-2025-08-28": {
+  "checked": "2026-11-26",
+  "date": "2025-08-27",
+  "record": "ANDA 214568",
+  "source_url": "https://www.fda.gov/drugs/drug-and-biologic-approval-and-ind-activity-reports/2025-first-generic-drug-approvals",
+  "name": "Liraglutide injection (first generic of Saxenda)",
+  "oc": "Approved",
+  "basis": "held-page audit 2026-11-26: FDA record read directly"
  },
  "TEVA-2026-03-30": {
   "checked": "2026-10-03",

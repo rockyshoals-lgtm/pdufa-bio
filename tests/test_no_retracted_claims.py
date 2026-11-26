@@ -72,6 +72,12 @@ try:
     RETRACTED.update({s: v[1] for s, v in _R1126C.items()})
 except Exception:  # noqa: BLE001
     pass
+# 2026-11-26: eight held pages that were not FDA decisions, and one re-keyed to its first US trading day (apply_1126d_held_real.py).
+try:
+    from apply_1126d_held_real import RETIRE as _R1126D
+    RETRACTED.update({s: v[1] for s, v in _R1126D.items()})
+except Exception:  # noqa: BLE001
+    pass
 # Pages allowed to mention a retracted slug, because their job is to document the retraction.
 ALLOWED = {"corrections/index.html", "changelog/index.html"}
 DEC_LINK = re.compile(r"/fda-decision/([A-Z]+-\d{4}-\d{2}-\d{2})")

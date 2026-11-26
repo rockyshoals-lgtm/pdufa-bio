@@ -1,0 +1,17 @@
+[
+ {
+  "ticker": "GSK",
+  "date": "2025-02-18",
+  "fda_action_date": "2025-02-14",
+  "outcome": "Approved",
+  "drug": "Penmenvy (Meningococcal Groups A, B, C, W, and Y Vaccine)",
+  "indication": "Active immunization against invasive meningococcal disease caused by serogroups A, B, C, W and Y, ages 10 through 25",
+  "company": "GSK plc",
+  "cap": "Large",
+  "headline": "The FDA approved Penmenvy, GSK's 5-in-1 meningococcal (MenABCWY) vaccine, on Friday, February 14, 2025, for individuals aged 10 through 25. GSK announced it on Saturday, February 15 from London, and Monday, February 17 was a US market holiday, so February 18 is the first day GSK's US shares could trade on the news.",
+  "pdufa_note": "The FDA's approval letter for BLA STN 125819/0 is dated February 14, 2025 (<a href=\"https://www.fda.gov/files/vaccines%2C%20blood%20%26%20biologics/published/february_14_2025_approval_letter_-_penmenvy.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA letter</a>). GSK's release is dated February 15, 2025 (<a href=\"https://gsk.com/en-gb/media/press-releases/penmenvy-gsk-s-5-in-1-meningococcal-vaccine-approved-by-us-fda-to-help-protect-against-menabcwy\" rel=\"noopener\" style=\"color:#e3ba5e\">GSK release</a>). Run-up and decision-day figures use GSK's NYSE-listed shares.",
+  "source": "https://www.fda.gov/files/vaccines%2C%20blood%20%26%20biologics/published/february_14_2025_approval_letter_-_penmenvy.pdf",
+  "source_label": "FDA approval letter, BLA STN 125819/0, February 14, 2025",
+  "h1": "Penmenvy (MenABCWY vaccine) <span class=\"g\">FDA approval</span>: Feb 14, 2025"
+ }
+]
