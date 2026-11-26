@@ -13,6 +13,7 @@ What each surface states and which statistic it is:
   /pricing              "the N-event T-120->T+5 daily data"                 t120_coverage_n
                         (Pro's export is the per-event daily path; only events WITH a path count)
   /developers           "price path for N FDA decisions"                    t120_coverage_n
+  /pricing, /developers ULTRA history feed "all N FDA decisions"            n_events (2026-11-26)
   /vktx                 "run-up study (N FDA decisions)"                    n_events
   /fda-approval-rate    headline rate + n + the 2024-26 by-year sentence     approval_rate, n_events,
                                                                              by_year
@@ -137,6 +138,15 @@ def main():
         # the newest have no T+5 yet, so "a full daily price path" overstated it
         rf"\g<1>T-120&rarr;T+5 daily data for {fmt(t120)} of the study&rsquo;s {fmt(n)} events (those with 120 trading "
         "days of history before the decision; the days after fill in as they trade)")], a.dry_run)
+
+    # 2026-11-26: ULTRA's history feed (/api/v1/history, build_history_api.py) is every event in the study, so /pricing
+    # and /developers state the study's own size for it.
+    changed += edit("pricing.html", [(
+        r"(<b>The whole run-up study as data</b>: all )\d{1,2},\d{3}( FDA decisions from 2020 on)",
+        rf"\g<1>{fmt(n)}\g<2>")], a.dry_run)
+    changed += edit("developers/index.html", [(
+        r"(<b>The whole run-up study</b>, one row per FDA decision \(all )\d{1,2},\d{3}( in the study, 2020 on\))",
+        rf"\g<1>{fmt(n)}\g<2>")], a.dry_run)
 
     changed += edit("developers/index.html", [(
         r"(the (?:full )?daily T-120 &rarr; T\+5 price path for <b>)\d{1,2},\d{3}( FDA decisions</b>)(?: \(of the "
