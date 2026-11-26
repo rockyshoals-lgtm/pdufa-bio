@@ -26,7 +26,7 @@ TIER_COL = "cap_tier_pit"
 
 # Red team 2026-11-26: the old wording ("anchored on the meeting start date") was false. Each row's
 # anchor is the day that row was recorded in our catalyst history: the abstract release for some
-# meetings (most ASCO 2024 rows sit on one pre-meeting day), the presentation day for others (ASH
+# meetings (37 of 90 ASCO 2024 rows sit on the abstract-release days), the presentation day for others (ASH
 # 2024 rows sit on the meeting days). anchor_audit() counts the rows that sit far from their meeting.
 ANCHOR_CAVEAT = ("anchored on the date our catalyst history records for each row: the abstract "
                  "release for some rows, the presentation day for others (even within one meeting), "
@@ -111,9 +111,12 @@ def audit_sentence(a=None):
     a = a or anchor_audit()
     return (f"Of the {a['checked']:,} rows in meeting-years with three or more rows, "
             f"{a['far']:,} sit more than {a['far_days']} days from that group's median date; "
-            f"that flags rows dated to another meeting and also some genuine abstract-release "
-            f"rows. {a['unknown']:,} rows carry no meeting name. All of them are counted in "
-            f"every figure until the rows are re-checked against their sources.")
+            f"that flags rows dated to another meeting, but also some genuine abstract-release "
+            f"rows, and where most of a group sits off its meeting it flags the on-meeting rows "
+            f"instead, so it is a flag count, not a count of misdated rows. The "
+            f"{a['n'] - a['checked'] - a['unknown']:,} rows in smaller meeting-years are not "
+            f"checked. {a['unknown']:,} rows carry no meeting name. All of these rows are counted "
+            f"in the headline figures until they are re-checked against their sources.")
 
 
 def block_sentence(f):

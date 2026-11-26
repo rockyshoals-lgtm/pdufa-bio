@@ -30,7 +30,7 @@ sys.path.insert(0, HERE)
 import conference_runup_facts as crf  # noqa: E402
 
 B, E = "<!--CSTUDYX:BEGIN-->", "<!--CSTUDYX:END-->"
-PUBLIC_COLS = ["ticker", "company", "conf", "year", "cap_tier_pit", "runup_30d",
+PUBLIC_COLS = ["ticker", "company", "conf", "year", "anchor", "cap_tier_pit", "runup_30d",
                "runup_20d", "runup_10d", "runup_5d", "event_day", "post_5d", "post_10d"]
 
 
@@ -41,7 +41,7 @@ def write_csv():
                  "License: CC BY 4.0. Tier column is point-in-time market cap. Returns in "
                  "percent, anchored on the date our catalyst history records for each row (abstract "
                  "release for some, presentation day for others, a date outside the named meeting "
-                 "for a few). Not investment advice.\n")
+                 "for some rows). Columns: anchor is that date. Not investment advice.\n")
         w = csv.DictWriter(fh, fieldnames=PUBLIC_COLS, extrasaction="ignore")
         w.writeheader()
         for r in rows:

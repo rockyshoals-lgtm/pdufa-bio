@@ -118,7 +118,8 @@ def main():
             + rows + tier_block +
             '<div style="font-size:12px;color:#7c93b6;margin-top:10px;line-height:1.6">'
             'Each row is anchored on the date our catalyst history records for it: the '
-            'abstract release for some, the presentation day for others. Medians are shown because a handful of large '
+            'abstract release for some, the presentation day for others, and for some rows a '
+            'date outside the named meeting. Medians are shown because a handful of large '
             'moves pulls an average away from the typical case. '
             'This is a historical distribution for a cohort of companies &mdash; not a forecast '
             'for any single company, and not investment advice. '

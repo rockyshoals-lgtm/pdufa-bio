@@ -1,8 +1,8 @@
 """CI guard (red team 2026-11-26): the conference run-up study must describe its anchor truthfully.
 
 The study said every figure was "anchored on the meeting start date". The rows say otherwise: each
-anchor is the day that row's data became public for the meeting, the abstract release for some
-meetings and the presentation day for others. This guard keeps the false wording off every page and
+anchor is the date our catalyst history records for that row, the abstract release for some, the
+presentation day for others, and for some rows a date outside the named meeting. This guard keeps the false wording off every page and
 checks that the study page states the audit counts computed from the CSV (never typed).
 
 PLANT=1 puts the old sentence back into a copy of a page and must make this guard fail.
@@ -20,7 +20,8 @@ BANNED = ("anchored on the meeting start date", "anchored on the conference star
           "trading days before the meeting", "price move on the presentation day",
           ">presentation day</span>", "presentation day itself",
           # the study does not show this pattern (30-day median about flat, nano caps negative)
-          "drift up into these meetings", "drifted <b>up into</b>")
+          "drift up into these meetings", "drifted <b>up into</b>",
+          "<td>event day</td>", "what if i held", "what happens to you")
 fail = []
 
 pages = {}
