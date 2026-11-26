@@ -1,4 +1,14 @@
 {
+ "ABBV-2025-05-14": {
+  "cid": "C216",
+  "goal": "2025-05-27",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/761384Orig1s000MultidisciplineR.pdf",
+  "doc_date": "2025-05-13",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-05-14",
+  "outcome": "Approved"
+ },
  "ABBV-2025-11-18": {
   "cid": "C302",
   "goal": "2025-11-30",
@@ -229,6 +239,16 @@
   "action": "2025-01-17",
   "outcome": "Approved"
  },
+ "AZN-2025-06-23": {
+  "cid": "C236",
+  "goal": "2025-07-12",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/761464Orig1s000MultidisciplineR.pdf",
+  "doc_date": "2025-06-20",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-06-23",
+  "outcome": "Approved"
+ },
  "AZN-2025-12-15": {
   "cid": "C319",
   "goal": "2026-01-23",
@@ -237,6 +257,16 @@
   "extended": false,
   "goal_original": null,
   "action": "2025-12-15",
+  "outcome": "Approved"
+ },
+ "BAYRY-2025-10-24": {
+  "cid": "C291",
+  "goal": "2025-10-26",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/219469Orig1s000IntegratedR.pdf",
+  "doc_date": "2025-10-22",
+  "extended": true,
+  "goal_original": null,
+  "action": "2025-10-24",
   "outcome": "Approved"
  },
  "BCRX-2025-12-12": {
@@ -479,6 +509,26 @@
   "action": "2025-10-02",
   "outcome": "Approved"
  },
+ "JNJ-2025-04-30": {
+  "cid": "C213",
+  "goal": "2025-04-29",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/761430Orig1s000IntegratedR.pdf",
+  "doc_date": "2025-04-29",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-04-29",
+  "outcome": "Approved"
+ },
+ "JNJ-2025-09-09": {
+  "cid": "C269",
+  "goal": "2025-09-14",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2026/219683Orig1s000MultidisciplineR.pdf",
+  "doc_date": "2025-09-08",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-09-09",
+  "outcome": "Approved"
+ },
  "KALV-2025-07-07": {
   "cid": "C242",
   "goal": "2025-06-17",
@@ -517,6 +567,16 @@
   "extended": false,
   "goal_original": null,
   "action": "2025-08-27",
+  "outcome": "Approved"
+ },
+ "LQDA-2025-05-23": {
+  "cid": "C224",
+  "goal": "2025-05-24",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/0001819576/000110465925029401/tm2510788d1_ex99-1.htm",
+  "doc_date": "2025-03-28",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-05-23",
   "outcome": "Approved"
  },
  "MIST-2025-03-28": {
@@ -577,6 +637,56 @@
   "extended": false,
   "goal_original": null,
   "action": "2025-06-11",
+  "outcome": "Approved"
+ },
+ "NVAX-2025-05-19": {
+  "cid": "C220",
+  "goal": "2025-04-01",
+  "source_url": "https://www.fda.gov/media/186879/download",
+  "doc_date": "2025-04-01",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-05-16",
+  "outcome": "Approved"
+ },
+ "NVO-2025-12-22": {
+  "cid": "C327",
+  "goal": "2025-12-28",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2026/218316Orig1s000StatR.pdf",
+  "doc_date": "2025-11-13",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-12-22",
+  "outcome": "Approved"
+ },
+ "NVS-2025-04-03": {
+  "cid": "C202",
+  "goal": "2025-04-02",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/219208Orig1s000IntegratedR.pdf",
+  "doc_date": "2025-04-02",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-04-02",
+  "outcome": "Approved"
+ },
+ "NVS-2025-09-30": {
+  "cid": "C280",
+  "goal": "2025-09-30",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/218436Orig1s000IntegratedR.pdf",
+  "doc_date": "2025-09-30",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-09-30",
+  "outcome": "Approved"
+ },
+ "NVS-2025-11-24": {
+  "cid": "C309",
+  "goal": "2025-11-26",
+  "source_url": "https://www.fda.gov/media/190313/download",
+  "doc_date": "2025-11-24",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-11-24",
   "outcome": "Approved"
  },
  "OMER-2025-12-24": {
@@ -767,6 +877,26 @@
   "extended": false,
   "goal_original": null,
   "action": "2025-02-11",
+  "outcome": "Approved"
+ },
+ "TAK-2025-06-30": {
+  "cid": "C238",
+  "goal": "2025-06-29",
+  "source_url": "https://www.fda.gov/media/188070/download",
+  "doc_date": "2025-06-27",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-06-27",
+  "outcome": "Approved"
+ },
+ "TEVA-2025-08-06": {
+  "cid": "C253",
+  "goal": "2025-08-05",
+  "source_url": "https://www.fda.gov/media/188564/download",
+  "doc_date": "2025-08-05",
+  "extended": false,
+  "goal_original": null,
+  "action": "2025-08-05",
   "outcome": "Approved"
  },
  "TLX-2025-03-21": {
