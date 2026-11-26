@@ -2453,6 +2453,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/allogeneic-mesenchymal-stem-cells",
+   "destination": "/drug/cardiallo",
+   "permanent": true
+  },
+  {
    "source": "/drug/aln-2232-phase",
    "destination": "/drug/aln-2232",
    "permanent": true
@@ -2685,6 +2690,11 @@
   {
    "source": "/drug/deucravacitinib",
    "destination": "/drug/sotyktu",
+   "permanent": true
+  },
+  {
+   "source": "/drug/deuterated-psilocin",
+   "destination": "/drug/hlp003",
    "permanent": true
   },
   {
@@ -3523,6 +3533,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/bgb-11417",
+   "destination": "/ticker/ONC",
+   "permanent": true
+  },
+  {
    "source": "/drug/bgb-3111",
    "destination": "/ticker/ONC",
    "permanent": true
@@ -3555,6 +3570,11 @@
   {
    "source": "/drug/comp360-psilocybin",
    "destination": "/ticker/CMPS",
+   "permanent": true
+  },
+  {
+   "source": "/drug/decartes-08",
+   "destination": "/drug/descartes-08",
    "permanent": true
   },
   {
@@ -3593,6 +3613,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/naporafenib",
+   "destination": "/ticker/ERAS",
+   "permanent": true
+  },
+  {
    "source": "/drug/niraparib",
    "destination": "/ticker/MYGN",
    "permanent": true
@@ -3615,6 +3640,11 @@
   {
    "source": "/drug/safusidenib",
    "destination": "/ticker/NUVB",
+   "permanent": true
+  },
+  {
+   "source": "/drug/sgt-003",
+   "destination": "/ticker/SLDB",
    "permanent": true
   },
   {

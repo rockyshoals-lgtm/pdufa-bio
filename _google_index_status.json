@@ -4511,12 +4511,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/drug/atumelnant": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/auto8": {
 "checked": "2026-11-25",
 "crawled": null,
@@ -5028,12 +5022,6 @@
 "verdict": "NEUTRAL"
 },
 "/drug/clemidsogene-lanparvovec": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/drug/cleminorexton": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -12509,6 +12497,18 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/pdufa/UNCY": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/pdufa/UNCY-olc": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/pdufa/URGN": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -13047,6 +13047,12 @@
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/ticker/ANRO": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/ticker/ANTE": {
@@ -14201,6 +14207,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/ticker/NGNE": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/ticker/NRIX": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -14517,6 +14529,12 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/ticker/SABS": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/ticker/SCYX": {
@@ -14899,6 +14917,12 @@
 },
 "/ticker/ZLAB": {
 "checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/ticker/ZNTL": {
+"checked": "2026-11-25",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"

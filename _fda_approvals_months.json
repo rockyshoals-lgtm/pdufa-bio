@@ -8415,7 +8415,7 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-11-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221251Orig1s001ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221251Orig1s000ltr.pdf"
 },
 {
 "app": "BLA761156",
@@ -8438,9 +8438,20 @@
 "class": "Efficacy",
 "date": "2026-11-20",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761156Orig1s016,s017ltr.pdf"
+},
+{
+"app": "NDA211675",
+"brand": "Rinvoq",
+"generic": "upadacitinib",
+"sponsor": "Abbvie",
+"kind": "efficacy supplement",
+"sub": "SUPPL-32",
+"class": "Efficacy",
+"date": "2026-11-23",
+"letter": ""
 }
 ],
-"openfda_total": 200,
+"openfda_total": 216,
 "complete": true
 }
 }

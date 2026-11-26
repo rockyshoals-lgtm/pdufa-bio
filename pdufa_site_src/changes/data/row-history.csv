@@ -2464,3 +2464,21 @@ time_et,commit,row_id,ticker,name,field,old,new,status_was,status_now
 2026-11-25 18:57 ET,b42a2f3864ce1fe5073e254e575d841a13f7daea,readout_crnx_2027-11-15,CRNX,Atumelnant,row,,left,Estimated,
 2026-11-25 18:57 ET,b42a2f3864ce1fe5073e254e575d841a13f7daea,readout_nuvl_2027-12-15,NUVL,Neladalkib,row,,left,Estimated,
 2026-11-25 18:59 ET,1c1a59ac07d3cc7b2ac8609f0751373ce5b06f73,pdufa_uncy_2027-03-25,UNCY,Oxylanthanum Carbonate (OLC),row,,entered,,Upcoming
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_anro_2027-06-30,ANRO,ALTO-300 Phase 2b topline data,row,,entered,,Guided
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_anro_2027-12-31,ANRO,ALTO-100 Phase 2b topline data,row,,entered,,Guided
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_anro_2027-12-31-alto207,ANRO,ALTO-207 Phase 2b PACE-1 topline data,row,,entered,,Guided
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_arvn_2027-11-15,ARVN,ARV-471,row,,left,Estimated,
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_bcda_2026-12-15,BCDA,CardiALLO (allogeneic mesenchymal stem cells),name,Autologous cell therapy,CardiALLO (allogeneic mesenchymal stem cells),Estimated,Estimated
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_cgem_2026-11-15,CGEM,CLN-081,row,,left,Estimated,
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_eras_2026-11-15,ERAS,Naporafenib,row,,left,Estimated,
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_gild_2026-11-15,GILD,Sacituzumab Govitecan,row,,left,Estimated,
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_help_2026-12-31,HELP,HLP003 readout,company,Cybin Inc.,Helus Pharma Inc.,Reported,Reported
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_help_2027-12-31,HELP,HLP003 (deuterated psilocin) Phase 3 EMBRACE topline results,row,,entered,,Guided
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_ngne_2027-12-31,NGNE,NGN-401 Embolden registrational trial topline data,row,,entered,,Guided
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_onc_2026-11-15,ONC,BGB-11417,row,,left,Estimated,
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_phar_2026-11-15,PHAR,Leniolisib,row,,left,Estimated,
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_rnac_2026-12-15,RNAC,Descartes-08,name,Decartes-08,Descartes-08,Estimated,Estimated
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_sabs_2027-12-31,SABS,SAB-142 Phase 2b SAFEGUARD topline data,row,,entered,,Guided
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_sldb_2026-10-15,SLDB,SGT-003,row,,left,Estimated,
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_tlx_2026-11-15,TLX,177Lu-TLX591,row,,left,Estimated,
+2026-11-25 20:02 ET,15cd235492287153bfeb0960ad7d15b8372c9e01,readout_zntl_2027-06-30,ZNTL,azenosertib DENALI Phase 2 topline readout,row,,entered,,Guided

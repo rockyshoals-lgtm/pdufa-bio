@@ -1,126 +1,1548 @@
 {
  "_note": "ClinicalTrials.gov registry facts for the trial records that forward Estimated readout rows link to: overall status, primary completion date, conditions and interventions, exactly as the registry gives them. Read by build_readout_forward.py, which renders the estimated table on /readouts and refreshes these entries from the registry API on each run (a failed fetch keeps the last good entry and its checked date). Never used to set an outcome.",
- "checked": "2026-11-26",
+ "checked": "2026-11-25",
  "trials": {
-  "NCT02343042": {"status": "RECRUITING", "pcd": "2027-04", "conditions": ["Multiple Myeloma"], "interventions": ["Selinexor", "Dexamethasone", "Lenalidomide", "Pomalidomide"]},
-  "NCT02736656": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["Attention-Deficit/Hyperactivity Disorder"], "interventions": ["SPN-812"]},
-  "NCT03152318": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-01", "conditions": ["Malignant Glioma of Brain", "Astrocytoma", "Malignant Astrocytoma"], "interventions": ["rQNestin", "Cyclophosphamide", "Stereotactic biopsy"]},
-  "NCT03368742": {"status": "COMPLETED", "pcd": "2026-11-03", "conditions": ["Duchenne Muscular Dystrophy"], "interventions": ["SGT-001"]},
-  "NCT03407144": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-02-12", "conditions": ["Hodgkin Lymphoma"], "interventions": ["pembrolizumab", "doxorubicin", "vinblastine", "dacarbazine"]},
-  "NCT03449108": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-04-30", "conditions": ["Bone Sarcoma", "Dedifferentiated Chondrosarcoma", "Giant Cell Tumor of Bone"], "interventions": ["Aldesleukin", "Autologous Tumor Infiltrating Lymphocytes LN-145", "Autologous Tumor Infiltrating Lymphocytes LN-145-S1", "Cyclophosphamide"]},
-  "NCT03474770": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12-30", "conditions": ["Focal Impaired Awareness Seizures"], "interventions": ["BIS-001ER"]},
-  "NCT03564340": {"status": "RECRUITING", "pcd": "2027-05-10", "conditions": ["Recurrent Ovarian Cancer", "Recurrent Fallopian Tube Cancer", "Recurrent Primary Peritoneal Cancer"], "interventions": ["Ubamatamab", "Cemiplimab", "Sarilumab", "Tocilizumab"]},
-  "NCT03589339": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-04-30", "conditions": ["Radiotherapy", "Immunotherapy", "Microsatellite Instability-High Solid Malignant Tumour"], "interventions": ["NBTXR3", "SABR", "Nivolumab", "Pembrolizumab"]},
-  "NCT03604198": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["Cushing Syndrome"], "interventions": ["relacorilant"]},
-  "NCT03688178": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-03-31", "conditions": ["Glioblastoma"], "interventions": ["Human CMV pp65-LAMP mRNA-pulsed autologous DCs", "Temozolomide", "Varlilumab", "Td"]},
-  "NCT03897127": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-06", "conditions": ["Acute Myeloid Leukemia"], "interventions": ["Cytarabine", "Daunorubicin", "CPX-351"]},
-  "NCT03899987": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-04-30", "conditions": ["Prostate Adenocarcinoma", "Stage I Prostate Cancer AJCC v8", "Stage II Prostate Cancer AJCC v8"], "interventions": ["EC Aspirin", "Radical Prostatectomy", "Recombinant Interferon Alfa-2b", "Rintatolimod"]},
-  "NCT04057898": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-04", "conditions": ["Amyotrophic Lateral Sclerosis"], "interventions": ["MN-166", "placebo"]},
-  "NCT04170283": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12-31", "conditions": ["B-cell Malignancies"], "interventions": ["Zanubrutinib", "Tislelizumab"]},
-  "NCT04198766": {"status": "RECRUITING", "pcd": "2033-07", "conditions": ["Solid Tumor", "Non-Small Cell Lung Cancer", "Head and Neck Cancer"], "interventions": ["INBRX-106 - Hexavalent OX40 agonist antibody", "pembrolizumab 200 mg", "pembrolizumab 400 mg", "Carboplatin AUC-5"]},
-  "NCT04442022": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["Relapsed/Refractory Diffuse Large B-cell Lymphoma"], "interventions": ["Selinexor (combination therapy)", "Placebo matching for Selinexor (combination therapy)", "Rituximab (combination therapy)", "Gemcitabine (combination therapy)"]},
-  "NCT04483440": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-05-26", "conditions": ["Choroideremia"], "interventions": ["4D-110"]},
-  "NCT04529772": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-02-22", "conditions": ["Diffuse Large B-Cell Lymphoma"], "interventions": ["acalabrutinib", "placebo", "Prednisone", "Rituximab"]},
-  "NCT04743505": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12-10", "conditions": ["Metastatic Non Small Cell Lung Cancer"], "interventions": ["APL-101", "Osimertinib"]},
-  "NCT04791839": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-04-30", "conditions": ["Non Small Cell Lung Cancer", "Non-small Cell Carcinoma", "Non-small Cell Lung Cancer"], "interventions": ["Zimberelimab", "Domvanalimab", "Etrumadenant"]},
-  "NCT04798235": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-03-12", "conditions": ["Infantile GM2 Gangliosidosis (Disorder)"], "interventions": ["TSHA-101"]},
-  "NCT04866134": {"status": "COMPLETED", "pcd": "2026-07-01", "conditions": ["Advanced or Metastatic Solid Tumors"], "interventions": ["ERAS-007", "ERAS-601"]},
-  "NCT04951219": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-03", "conditions": ["Non-Alcoholic Fatty Liver Disease"], "interventions": ["Resmetirom"]},
-  "NCT04957485": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-01-01", "conditions": ["Smallpox"], "interventions": ["Tecovirimat", "Smallpox and Mpox Vaccine", "Placebo"]},
-  "NCT05025605": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-07-31", "conditions": ["Schizophrenia", "Schizo-Affective Disorder", "Schizophreniform; Schizophrenic"], "interventions": ["BXCL501 80 Micrograms", "Placebo Film", "BXCL501 120 Micrograms", "BXCL501 60 Micrograms"]},
-  "NCT05077800": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12-31", "conditions": ["Pancreatic Adenocarcinoma", "Pancreatic Adenocarcinoma Metastatic"], "interventions": ["FOLFIRNINOX", "Losartan", "9-ING-41"]},
-  "NCT05081609": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-08", "conditions": ["Advanced Solid Tumor", "Locally Advanced Solid Tumor", "Metastatic Solid Tumor"], "interventions": ["TransCon IL-2 β/γ", "Pembrolizumab", "Chemotherapy drug", "TransCon TLR7/8 Agonist"]},
-  "NCT05112861": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-12", "conditions": ["Age-Related Macular Degeneration", "Neovascular Age-related Macular Degeneration", "Wet Macular Degeneration"], "interventions": ["bevacizumab"]},
-  "NCT05130827": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-11", "conditions": ["Multiple Myeloma"], "interventions": ["Plinabulin"]},
-  "NCT05134441": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-11", "conditions": ["Multiple Sclerosis"], "interventions": ["IMU-838 tablets", "Placebo matching IMU-838 tablets"]},
-  "NCT05143970": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-03", "conditions": ["Metastatic Cancer", "Metastatic Breast Cancer", "Metastatic Pancreatic Cancer"], "interventions": ["IPH5301 ALONE OR IN COMBINATION WITH CHEMOTHERAPY AND TRASTUZUMAB"]},
-  "NCT05185843": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-06", "conditions": ["Familial Chylomicronemia Syndrome"], "interventions": ["Olezarsen"]},
-  "NCT05186974": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-03", "conditions": ["Non-small Cell Lung Cancer"], "interventions": ["Sacituzumab Govitecan-hziy (SG)", "Pembrolizumab", "Carboplatin", "Cisplatin"]},
-  "NCT05205330": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["Refractory Metastatic Colorectal Cancer", "Solid Tumor", "Metastatic Microsatellite-stable Colorectal Cancer"], "interventions": ["CR6086", "AGEN2034"]},
-  "NCT05208944": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-09-30", "conditions": ["Carcinoma, Non-Small-Cell Lung"], "interventions": ["6-Thio-2'-Deoxyguanosine", "Cemiplimab"]},
-  "NCT05275777": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-12", "conditions": ["HER2-negative Breast Cancer", "Advanced Solid Tumor"], "interventions": ["ADG106", "Doxorubicin", "Cyclophosphamide", "Paclitaxel"]},
-  "NCT05349890": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-04-15", "conditions": ["Malignant Epithelial Neoplasms"], "interventions": ["TCR-transduced T cells", "CDX-1140", "Pembrolizumab"]},
-  "NCT05383196": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12-15", "conditions": ["Breast Cancer", "Invasive Breast Cancer", "Unresectable Breast Carcinoma"], "interventions": ["Onvansertib", "Paclitaxel"]},
-  "NCT05392114": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["Hereditary Angioedema"], "interventions": ["Donidalorsen"]},
-  "NCT05464784": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12-31", "conditions": ["Diabetes Mellitus, Type 2", "Hypertriglyceridemia", "Non-Alcoholic Fatty Liver Disease"], "interventions": ["MN-001", "MN-001 placebo"]},
-  "NCT05500222": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["NASH", "Cirrhosis, Liver"], "interventions": ["Resmetirom", "Placebo"]},
-  "NCT05509777": {"status": "RECRUITING", "pcd": "2027-12", "conditions": ["Crohn's Disease"], "interventions": ["Mirikizumab"]},
-  "NCT05531656": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-05-31", "conditions": ["Early Alzheimer's Disease"], "interventions": ["CT1812", "Placebo"]},
-  "NCT05539430": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-12", "conditions": ["Gastric Cancer", "Gastroesophageal-junction Cancer", "Esophageal Cancer"], "interventions": ["LB1908"]},
-  "NCT05548127": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-03-24", "conditions": ["Breast Cancer"], "interventions": ["ARV-471", "Abemaciclib"]},
-  "NCT05556512": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-10", "conditions": ["Obesity", "Overweight"], "interventions": ["Tirzepatide", "Placebo"]},
-  "NCT05607004": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-11", "conditions": ["Breast Neoplasms", "Invasive Breast Cancer", "Estrogen-receptor-positive Breast Cancer"], "interventions": ["(Z)-endoxifen", "goserelin"]},
-  "NCT05607953": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-09", "conditions": ["Locally Advanced Pancreatic Adenocarcinoma"], "interventions": ["SD-101", "anti-PD-1"]},
-  "NCT05608044": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-09", "conditions": ["Metastatic Colorectal Cancer"], "interventions": ["Botensilimab", "Balstilimab", "Standard of Care"]},
-  "NCT05640193": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-11", "conditions": ["Metastatic Melanoma"], "interventions": ["Lifileucel (LN-144)"]},
-  "NCT05649748": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12-31", "conditions": ["Pulmonary Arterial Hypertension"], "interventions": ["Treprostinil Palmitil", "Placebo"]},
-  "NCT05651022": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-06-30", "conditions": ["Solid Tumor, Adult", "HCC - Hepatocellular Carcinoma", "CRC (Colorectal Cancer)"], "interventions": ["Decoy20", "Tislelizumab"]},
-  "NCT05681351": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-03", "conditions": ["Severe Hypertriglyceridemia"], "interventions": ["Olezarsen"]},
-  "NCT05707377": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-10", "conditions": ["Primary Membranous Nephropathy"], "interventions": ["Zanubrutinib", "Tacrolimus"]},
-  "NCT05764954": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-08", "conditions": ["Adenocarcinoma of Lung"], "interventions": ["NovoTTF-200T System"]},
-  "NCT05879744": {"status": "TERMINATED", "pcd": "2024-06-01", "conditions": ["NHL", "NHL, Relapsed, Adult"], "interventions": ["CLN-978"]},
-  "NCT05885464": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["Lymphoblastic Lymphoma", "T-Cell Lymphoblastic Leukemia/Lymphoma", "Lymphoblastic Leukemia"], "interventions": ["BEAM-201"]},
-  "NCT05907954": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-04-30", "conditions": ["Uveal Melanoma"], "interventions": ["Darovasertib"]},
-  "NCT05908084": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-06", "conditions": ["End Stage Renal Disease (ESRD)"], "interventions": ["Acellular Tissue Engineered Vessel (ATEV)", "AVF"]},
-  "NCT05909397": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12-30", "conditions": ["Breast Cancer"], "interventions": ["Vepdegestrant (ARV-471/PF-07850327)", "Palbociclib", "Letrozole"]},
-  "NCT05925608": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["Heart Failure, Systolic"], "interventions": ["CardiALLO™ Human Allogenic Culture-expanded Bone marrow-derived Mesenchymal Stem Cells (hMSCs)", "Diagnostic Catheterization"]},
-  "NCT05933200": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-08", "conditions": ["Long-chain Fatty Acid Oxidation Disorders (LC-FAOD)"], "interventions": ["Triheptanoin", "MCT Oil"]},
-  "NCT05949593": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-06-30", "conditions": ["Geographic Atrophy"], "interventions": ["Tinlarebant", "Placebo"]},
-  "NCT05971251": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12-31", "conditions": ["Chronic Lymphocytic Leukemia"], "interventions": ["Loncastuximab Tesirine and Acalabrutinib"]},
-  "NCT05987332": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-01-15", "conditions": ["Metastatic Uveal Melanoma"], "interventions": ["IDE196", "Crizotinib", "Pembrolizumab", "Ipilimumab"]},
-  "NCT06038474": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12-01", "conditions": ["Systemic Lupus Erythematosus (SLE)"], "interventions": ["Descartes-08"]},
-  "NCT06106308": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-04-16", "conditions": ["Metastatic Colorectal Cancer", "CRC", "KRAS/NRAS Mutation"], "interventions": ["Onvansertib", "FOLFIRI", "Bevacizumab", "FOLFOX"]},
-  "NCT06109181": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["Arrhythmogenic Cardiomyopathy", "PKP2-ACM", "PKP2-ARVC"], "interventions": ["LX2020"]},
-  "NCT06138613": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-09-30", "conditions": ["Motion Sickness"], "interventions": ["Tradipitant"]},
-  "NCT06152172": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-02", "conditions": ["Idiopathic Inflammatory Myopathies", "Diffuse Cutaneous Systemic Sclerosis", "SLE Nephritis"], "interventions": ["KYV-101", "Cyclophosphamide", "Fludarabine"]},
-  "NCT06188702": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-05-01", "conditions": ["MTAP-deleted Solid Tumors"], "interventions": ["S095035", "TNG462"]},
-  "NCT06263231": {"status": "RECRUITING", "pcd": "2027-12", "conditions": ["Sarcoma,Soft Tissue"], "interventions": ["INT230-6", "Eribulin", "Trabectedin", "Pazopanib"]},
-  "NCT06265220": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-08", "conditions": ["Lupus Nephritis - WHO Class III", "Lupus Nephritis - WHO Class IV", "Refractory Systemic Lupus Erythematosus"], "interventions": ["AB-101", "Cyclophosphamide", "Fludarabine", "Rituximab"]},
-  "NCT06274801": {"status": "RECRUITING", "pcd": "2026-12", "conditions": ["Pulmonary Arterial Hypertension"], "interventions": ["Seralutinib", "Gereic Dry Powder Inhaler"]},
-  "NCT06325566": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-07", "conditions": ["Degenerative Disc Disease"], "interventions": ["Rexlemestrocel-L + HA mixture", "Saline"]},
-  "NCT06328738": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-01", "conditions": ["HER2-positive Breast Cancer", "HER2-positive Gastric Cancer", "HER2 Positive Solid Tumors"], "interventions": ["ELVN-002", "Trastuzumab", "5-Fluorouracil", "Oxaliplatin"]},
-  "NCT06329401": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-06", "conditions": ["Pulmonary Fibrosis", "Progressive Pulmonary Fibrosis", "Pulmonary Fibrosis Secondary to Systemic Sclerosis"], "interventions": ["AP01", "Placebo"]},
-  "NCT06334432": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-03", "conditions": ["Advanced Solid Tumor", "HER2-negative Breast Cancer", "Metastatic Castration-resistant Prostate Cancer (mCRPC)"], "interventions": ["NUV-1511"]},
-  "NCT06384976": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-04", "conditions": ["Multiple Sclerosis, Primary Progressive", "Multiple Sclerosis, Secondary Progressive", "Multiple Sclerosis"], "interventions": ["KYV-101", "Standard lymphodepletion regimen", "Anti-CD20 mAB"]},
-  "NCT06395948": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-11", "conditions": ["Atopic Dermatitis"], "interventions": ["APG777", "Placebo"]},
-  "NCT06431776": {"status": "RECRUITING", "pcd": "2027-06", "conditions": ["Autoimmune Pulmonary Alveolar Proteinosis"], "interventions": ["Molgramostim"]},
-  "NCT06475495": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-06", "conditions": ["Rheumatoid Arthritis"], "interventions": ["KYV101", "Rituximab (active comparator)"]},
-  "NCT06481891": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-01", "conditions": ["Obstructive Cardiomyopathy, Hypertrophic", "Non-obstructive Hypertrophic Cardiomyopathy"], "interventions": ["Sotagliflozin", "Placebo"]},
-  "NCT06500702": {"status": "RECRUITING", "pcd": "2026-12-23", "conditions": ["Focal Segmental Glomerulosclerosis", "Glomerulonephritis Minimal Lesion"], "interventions": ["frexalimab", "brivekimig", "rilzabrutinib", "placebo"]},
-  "NCT06517758": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-04-30", "conditions": ["Generalized Myasthenia Gravis"], "interventions": ["Iptacopan", "Matching Placebo"]},
-  "NCT06520345": {"status": "RECRUITING", "pcd": "2027-12", "conditions": ["Metastatic Castration-resistant Prostate Cancer"], "interventions": ["177Lu-TLX591", "Enzalutamide", "Abiraterone", "Docetaxel"]},
-  "NCT06531941": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2028-05", "conditions": ["Hypoparathyroidism"], "interventions": ["400 µg of MBX 2109 once-weekly by subcutaneous injection", "200-1600 µg of MBX 2109 once-weekly by subcutaneous injection"]},
-  "NCT06548360": {"status": "RECRUITING", "pcd": "2028-06-05", "conditions": ["NonSegmental Vitiligo"], "interventions": ["Ruxolitinib Cream", "Vehicle Cream"]},
-  "NCT06585774": {"status": "RECRUITING", "pcd": "2027-09-28", "conditions": ["Chronic Graft-versus-host-disease"], "interventions": ["INCA034176", "Placebo", "Corticosteroids"]},
-  "NCT06602193": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-03", "conditions": ["Parkinson Disease"], "interventions": ["BIIB122 225 mg", "BIIB122-Matching Placebo"]},
-  "NCT06636071": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-01", "conditions": ["Osteogenesis Imperfecta"], "interventions": ["setrusumab"]},
-  "NCT06672055": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-05", "conditions": ["SARS-CoV2", "COVID-19"], "interventions": ["VXA-CoV2-3.1", "COMIRNATY®", "VXA-CoV2-3.3"]},
-  "NCT06679985": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-09", "conditions": ["Hepatocellular Carcinoma"], "interventions": ["Casdozokitug", "Toripalimab", "Bevacizumab"]},
-  "NCT06685757": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-11-04", "conditions": ["Antibody-mediated Rejection"], "interventions": ["Felzartamab", "Placebo"]},
-  "NCT06709014": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-12", "conditions": ["Early Alzheimers Disease"], "interventions": ["buntanetap/posiphen", "Placebo"]},
-  "NCT06726265": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-06", "conditions": ["Advanced/Metastatic Non-Small Cell Lung Cancer (NSCLC)"], "interventions": ["eftilagimod alfa", "carboplatin plus paclitaxel", "cisplatin or carboplatin + pemetrexed", "pembrolizumab (KEYTRUDA®)"]},
-  "NCT06754462": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-09", "conditions": ["Rheumatoid Arthritis"], "interventions": ["IMVT-1402", "Placebo"]},
-  "NCT06772597": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-11-03", "conditions": ["Prader-Willi Syndrome", "Obesity", "Hyperphagia"], "interventions": ["Setmelanotide"]},
-  "NCT06840392": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-06-03", "conditions": ["Hidradenitis Suppurativa"], "interventions": ["Remibrutinib Dose A", "Remibrutinib Dose B", "Placebo 1", "Placebo 2"]},
-  "NCT06864988": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-06", "conditions": ["Macular Neovascularization Secondary to Age-Related Macular Degeneration"], "interventions": ["4D-150 IVT (3E10 vg/eye)", "EYLEA® (aflibercept) Injection 2 mg (0.05mL)"]},
-  "NCT06892639": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-09", "conditions": ["Dystrophic Epidermolysis Bullosa"], "interventions": ["D-Fi"]},
-  "NCT06914609": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-08", "conditions": ["Angelman Syndrome"], "interventions": ["obudanersen", "Placebo"]},
-  "NCT06935357": {"status": "RECRUITING", "pcd": "2027-05-31", "conditions": ["Immunoglobulin A Nephropathy (IgAN)"], "interventions": ["Felzartamab", "Placebo"]},
-  "NCT06966479": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-09", "conditions": ["Severe Asthma"], "interventions": ["Verekitug", "Placebo"]},
-  "NCT06972264": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["Androgenetic Alopecia", "AGA", "Male Pattern Baldness"], "interventions": ["VDPHL01", "Placebo"]},
-  "NCT06980649": {"status": "RECRUITING", "pcd": "2027-09", "conditions": ["Graves Disease"], "interventions": ["BHV-1300"]},
-  "NCT06983028": {"status": "RECRUITING", "pcd": "2027-11", "conditions": ["pMN", "IgAN", "Nephrotic Syndrome"], "interventions": ["Atacicept"]},
-  "NCT07023731": {"status": "COMPLETED", "pcd": "2026-10-30", "conditions": ["KRAS G12D Mutation", "Advanced Solid Cancer"], "interventions": ["ARV-806"]},
-  "NCT07037277": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["HEPATITIS C VIRUS CHRONIC INFECTION", "Hepatitis C, Chronic", "Hepatitis C Virus Infection"], "interventions": ["Bemnifosbuvir-Ruzasvir", "Sofosbuvir-Velpatasvir"]},
-  "NCT07055243": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2029-10", "conditions": ["Anemia"], "interventions": ["Mitapivat"]},
-  "NCT07071623": {"status": "RECRUITING", "pcd": "2027-10-18", "conditions": ["Human Immunodeficiency Virus (HIV)", "HIV Pre-Exposure Prophylaxis"], "interventions": ["MK-8527", "Emtricitabine/tenofovir disoproxil (FTC/TDF)", "Placebo matched to MK-8527", "Placebo matched to FTC/TDF"]},
-  "NCT07086755": {"status": "RECRUITING", "pcd": "2031-05-31", "conditions": ["Nonintubated Acute Respiratory Distress Syndrome (ARDS)", "Pathogen-associated Lung Injury"], "interventions": ["Vadadustat 900mg", "Vadadustat 1200mg", "Placebo"]},
-  "NCT07104500": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-07-01", "conditions": ["Weight Loss"], "interventions": ["VK2735"]},
-  "NCT07142811": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2029-03", "conditions": ["Viral Hepatitis"], "interventions": ["Tobevibart", "Elebsiran", "Bulevirtide"]},
-  "NCT07216079": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-11-25", "conditions": ["Immune Thrombocytopenia"], "interventions": ["rilzabrutinib"]},
-  "NCT07280377": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-07-30", "conditions": ["Anal Cancer Metastatic", "Squamous Cell Carcinoma of the Anus Stage Unspecified", "Pancreatic Cancer Metastatic"], "interventions": ["Pelareorep", "Atezolizumab", "Gemcitabine and nab-paclitaxel", "Trifluridine Tipiracil"]},
-  "NCT07371650": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2026-12", "conditions": ["Influenza"], "interventions": ["TRX-100", "Standard of Care (SOC)"]},
-  "NCT07562087": {"status": "ACTIVE_NOT_RECRUITING", "pcd": "2027-10", "conditions": ["Lyme Disease"], "interventions": ["TP-05 (lotilaner) Low Dose", "TP-05 (lotilaner) High Dose", "Placebo"]},
-  "NCT07614776": {"status": "RECRUITING", "pcd": "2027-07-31", "conditions": ["Neovascular Age-related Macular Degeneration", "nAMD"], "interventions": ["ABP 938 8 mg", "Aflibercept (US) 8 mg"]}
+  "NCT02343042": {
+   "status": "RECRUITING",
+   "pcd": "2027-04",
+   "conditions": [
+    "Multiple Myeloma"
+   ],
+   "interventions": [
+    "Selinexor",
+    "Dexamethasone",
+    "Lenalidomide",
+    "Pomalidomide"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT02736656": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Attention-Deficit/Hyperactivity Disorder"
+   ],
+   "interventions": [
+    "SPN-812"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT03152318": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-01",
+   "conditions": [
+    "Malignant Glioma of Brain",
+    "Astrocytoma",
+    "Malignant Astrocytoma"
+   ],
+   "interventions": [
+    "rQNestin",
+    "Cyclophosphamide",
+    "Stereotactic biopsy"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT03368742": {
+   "status": "COMPLETED",
+   "pcd": "2026-11-03",
+   "conditions": [
+    "Duchenne Muscular Dystrophy"
+   ],
+   "interventions": [
+    "SGT-001"
+   ]
+  },
+  "NCT03407144": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-02-12",
+   "conditions": [
+    "Hodgkin Lymphoma"
+   ],
+   "interventions": [
+    "pembrolizumab",
+    "doxorubicin",
+    "vinblastine",
+    "dacarbazine"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT03449108": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-04-30",
+   "conditions": [
+    "Bone Sarcoma",
+    "Dedifferentiated Chondrosarcoma",
+    "Giant Cell Tumor of Bone"
+   ],
+   "interventions": [
+    "Aldesleukin",
+    "Autologous Tumor Infiltrating Lymphocytes LN-145",
+    "Autologous Tumor Infiltrating Lymphocytes LN-145-S1",
+    "Cyclophosphamide"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT03474770": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12-30",
+   "conditions": [
+    "Focal Impaired Awareness Seizures"
+   ],
+   "interventions": [
+    "BIS-001ER"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT03564340": {
+   "status": "RECRUITING",
+   "pcd": "2027-05-10",
+   "conditions": [
+    "Recurrent Ovarian Cancer",
+    "Recurrent Fallopian Tube Cancer",
+    "Recurrent Primary Peritoneal Cancer"
+   ],
+   "interventions": [
+    "Ubamatamab",
+    "Cemiplimab",
+    "Sarilumab",
+    "Tocilizumab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT03589339": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-04-30",
+   "conditions": [
+    "Radiotherapy",
+    "Immunotherapy",
+    "Microsatellite Instability-High Solid Malignant Tumour"
+   ],
+   "interventions": [
+    "NBTXR3",
+    "SABR",
+    "Nivolumab",
+    "Pembrolizumab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT03604198": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Cushing Syndrome"
+   ],
+   "interventions": [
+    "relacorilant"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT03688178": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-03-31",
+   "conditions": [
+    "Glioblastoma"
+   ],
+   "interventions": [
+    "Human CMV pp65-LAMP mRNA-pulsed autologous DCs",
+    "Temozolomide",
+    "Varlilumab",
+    "Td"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT03897127": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-06",
+   "conditions": [
+    "Acute Myeloid Leukemia"
+   ],
+   "interventions": [
+    "Cytarabine",
+    "Daunorubicin",
+    "CPX-351"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT03899987": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-04-30",
+   "conditions": [
+    "Prostate Adenocarcinoma",
+    "Stage I Prostate Cancer AJCC v8",
+    "Stage II Prostate Cancer AJCC v8"
+   ],
+   "interventions": [
+    "EC Aspirin",
+    "Radical Prostatectomy",
+    "Recombinant Interferon Alfa-2b",
+    "Rintatolimod"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04057898": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-04",
+   "conditions": [
+    "Amyotrophic Lateral Sclerosis"
+   ],
+   "interventions": [
+    "MN-166",
+    "placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04170283": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12-31",
+   "conditions": [
+    "B-cell Malignancies"
+   ],
+   "interventions": [
+    "Zanubrutinib",
+    "Tislelizumab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04198766": {
+   "status": "RECRUITING",
+   "pcd": "2033-07",
+   "conditions": [
+    "Solid Tumor",
+    "Non-Small Cell Lung Cancer",
+    "Head and Neck Cancer"
+   ],
+   "interventions": [
+    "INBRX-106 - Hexavalent OX40 agonist antibody",
+    "pembrolizumab 200 mg",
+    "pembrolizumab 400 mg",
+    "Carboplatin AUC-5"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04442022": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Relapsed/Refractory Diffuse Large B-cell Lymphoma"
+   ],
+   "interventions": [
+    "Selinexor (combination therapy)",
+    "Selinexor (combination therapy)",
+    "Selinexor (combination therapy)",
+    "Placebo matching for Selinexor (combination therapy)"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04483440": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-05-26",
+   "conditions": [
+    "Choroideremia"
+   ],
+   "interventions": [
+    "4D-110"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04529772": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-02-22",
+   "conditions": [
+    "Diffuse Large B-Cell Lymphoma"
+   ],
+   "interventions": [
+    "acalabrutinib",
+    "placebo",
+    "Prednisone",
+    "Rituximab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04743505": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12-10",
+   "conditions": [
+    "Metastatic Non Small Cell Lung Cancer"
+   ],
+   "interventions": [
+    "APL-101",
+    "Osimertinib"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04791839": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-04-30",
+   "conditions": [
+    "Non Small Cell Lung Cancer",
+    "Non-small Cell Carcinoma",
+    "Non-small Cell Lung Cancer"
+   ],
+   "interventions": [
+    "Zimberelimab",
+    "Domvanalimab",
+    "Etrumadenant"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04798235": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-03-12",
+   "conditions": [
+    "Infantile GM2 Gangliosidosis (Disorder)"
+   ],
+   "interventions": [
+    "TSHA-101"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04866134": {
+   "status": "COMPLETED",
+   "pcd": "2026-07-01",
+   "conditions": [
+    "Advanced or Metastatic Solid Tumors"
+   ],
+   "interventions": [
+    "ERAS-007",
+    "ERAS-601"
+   ]
+  },
+  "NCT04951219": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-03",
+   "conditions": [
+    "Non-Alcoholic Fatty Liver Disease"
+   ],
+   "interventions": [
+    "Resmetirom"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT04957485": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-01-01",
+   "conditions": [
+    "Smallpox"
+   ],
+   "interventions": [
+    "Tecovirimat",
+    "Smallpox and Mpox Vaccine",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05025605": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-07-31",
+   "conditions": [
+    "Schizophrenia",
+    "Schizo-Affective Disorder",
+    "Schizophreniform; Schizophrenic"
+   ],
+   "interventions": [
+    "BXCL501 80 Micrograms",
+    "Placebo Film",
+    "BXCL501 120 Micrograms",
+    "BXCL501 60 Micrograms"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05077800": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12-31",
+   "conditions": [
+    "Pancreatic Adenocarcinoma",
+    "Pancreatic Adenocarcinoma Metastatic"
+   ],
+   "interventions": [
+    "FOLFIRNINOX",
+    "Losartan",
+    "9-ING-41"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05081609": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-08",
+   "conditions": [
+    "Advanced Solid Tumor",
+    "Locally Advanced Solid Tumor",
+    "Metastatic Solid Tumor"
+   ],
+   "interventions": [
+    "TransCon IL-2 β/γ",
+    "Pembrolizumab",
+    "Chemotherapy drug",
+    "TransCon TLR7/8 Agonist"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05112861": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-12",
+   "conditions": [
+    "Age-Related Macular Degeneration",
+    "Neovascular Age-related Macular Degeneration",
+    "Wet Macular Degeneration"
+   ],
+   "interventions": [
+    "bevacizumab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05130827": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-11",
+   "conditions": [
+    "Multiple Myeloma"
+   ],
+   "interventions": [
+    "Plinabulin"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05134441": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-11",
+   "conditions": [
+    "Multiple Sclerosis"
+   ],
+   "interventions": [
+    "IMU-838 tablets",
+    "Placebo matching IMU-838 tablets"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05143970": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-03",
+   "conditions": [
+    "Metastatic Cancer",
+    "Metastatic Breast Cancer",
+    "Metastatic Pancreatic Cancer"
+   ],
+   "interventions": [
+    "IPH5301 ALONE OR IN COMBINATION WITH CHEMOTHERAPY AND TRASTUZUMAB"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05185843": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-06",
+   "conditions": [
+    "Familial Chylomicronemia Syndrome"
+   ],
+   "interventions": [
+    "Olezarsen"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05186974": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-03",
+   "conditions": [
+    "Non-small Cell Lung Cancer"
+   ],
+   "interventions": [
+    "Sacituzumab Govitecan-hziy (SG)",
+    "Pembrolizumab",
+    "Carboplatin",
+    "Cisplatin"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05205330": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Refractory Metastatic Colorectal Cancer",
+    "Solid Tumor",
+    "Metastatic Microsatellite-stable Colorectal Cancer"
+   ],
+   "interventions": [
+    "CR6086",
+    "AGEN2034"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05208944": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-09-30",
+   "conditions": [
+    "Carcinoma, Non-Small-Cell Lung"
+   ],
+   "interventions": [
+    "6-Thio-2'-Deoxyguanosine",
+    "Cemiplimab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05275777": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-12",
+   "conditions": [
+    "HER2-negative Breast Cancer",
+    "Advanced Solid Tumor"
+   ],
+   "interventions": [
+    "ADG106",
+    "Doxorubicin",
+    "Cyclophosphamide",
+    "Paclitaxel"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05349890": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-04-15",
+   "conditions": [
+    "Malignant Epithelial Neoplasms"
+   ],
+   "interventions": [
+    "TCR-transduced T cells",
+    "CDX-1140",
+    "Pembrolizumab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05383196": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12-15",
+   "conditions": [
+    "Breast Cancer",
+    "Invasive Breast Cancer",
+    "Unresectable Breast Carcinoma"
+   ],
+   "interventions": [
+    "Onvansertib",
+    "Paclitaxel"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05392114": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Hereditary Angioedema"
+   ],
+   "interventions": [
+    "Donidalorsen"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05464784": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12-31",
+   "conditions": [
+    "Diabetes Mellitus, Type 2",
+    "Hypertriglyceridemia",
+    "Non-Alcoholic Fatty Liver Disease"
+   ],
+   "interventions": [
+    "MN-001",
+    "MN-001 placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05500222": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "NASH",
+    "Cirrhosis, Liver"
+   ],
+   "interventions": [
+    "Resmetirom",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05509777": {
+   "status": "RECRUITING",
+   "pcd": "2027-12",
+   "conditions": [
+    "Crohn's Disease"
+   ],
+   "interventions": [
+    "Mirikizumab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05531656": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-05-31",
+   "conditions": [
+    "Early Alzheimer's Disease"
+   ],
+   "interventions": [
+    "CT1812",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05539430": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-12",
+   "conditions": [
+    "Gastric Cancer",
+    "Gastroesophageal-junction Cancer",
+    "Esophageal Cancer"
+   ],
+   "interventions": [
+    "LB1908"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05548127": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-03-24",
+   "conditions": [
+    "Breast Cancer"
+   ],
+   "interventions": [
+    "ARV-471",
+    "Abemaciclib"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05556512": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-10",
+   "conditions": [
+    "Obesity",
+    "Overweight"
+   ],
+   "interventions": [
+    "Tirzepatide",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05607004": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-11",
+   "conditions": [
+    "Breast Neoplasms",
+    "Invasive Breast Cancer",
+    "Estrogen-receptor-positive Breast Cancer"
+   ],
+   "interventions": [
+    "(Z)-endoxifen",
+    "goserelin"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05607953": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-09",
+   "conditions": [
+    "Locally Advanced Pancreatic Adenocarcinoma"
+   ],
+   "interventions": [
+    "SD-101",
+    "anti-PD-1"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05608044": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-09",
+   "conditions": [
+    "Metastatic Colorectal Cancer"
+   ],
+   "interventions": [
+    "Botensilimab",
+    "Balstilimab",
+    "Standard of Care"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05640193": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-11",
+   "conditions": [
+    "Metastatic Melanoma"
+   ],
+   "interventions": [
+    "Lifileucel (LN-144)"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05649748": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12-31",
+   "conditions": [
+    "Pulmonary Arterial Hypertension"
+   ],
+   "interventions": [
+    "Treprostinil Palmitil",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05651022": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-06-30",
+   "conditions": [
+    "Solid Tumor, Adult",
+    "HCC - Hepatocellular Carcinoma",
+    "CRC (Colorectal Cancer)"
+   ],
+   "interventions": [
+    "Decoy20",
+    "Tislelizumab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05681351": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-03",
+   "conditions": [
+    "Severe Hypertriglyceridemia"
+   ],
+   "interventions": [
+    "Olezarsen"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05707377": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-10",
+   "conditions": [
+    "Primary Membranous Nephropathy"
+   ],
+   "interventions": [
+    "Zanubrutinib",
+    "Tacrolimus"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05764954": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-08",
+   "conditions": [
+    "Adenocarcinoma of Lung"
+   ],
+   "interventions": [
+    "NovoTTF-200T System"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05879744": {
+   "status": "TERMINATED",
+   "pcd": "2024-06-01",
+   "conditions": [
+    "NHL",
+    "NHL, Relapsed, Adult"
+   ],
+   "interventions": [
+    "CLN-978"
+   ]
+  },
+  "NCT05885464": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Lymphoblastic Lymphoma",
+    "T-Cell Lymphoblastic Leukemia/Lymphoma",
+    "Lymphoblastic Leukemia"
+   ],
+   "interventions": [
+    "BEAM-201"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05907954": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-04-30",
+   "conditions": [
+    "Uveal Melanoma"
+   ],
+   "interventions": [
+    "Darovasertib"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05908084": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-06",
+   "conditions": [
+    "End Stage Renal Disease (ESRD)"
+   ],
+   "interventions": [
+    "Acellular Tissue Engineered Vessel (ATEV)",
+    "AVF"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05909397": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12-30",
+   "conditions": [
+    "Breast Cancer"
+   ],
+   "interventions": [
+    "Vepdegestrant (ARV-471/PF-07850327)",
+    "Palbociclib",
+    "Letrozole",
+    "Palbociclib"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05925608": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Heart Failure, Systolic"
+   ],
+   "interventions": [
+    "CardiALLO™ Human Allogenic Culture-expanded Bone marrow-derived Mesenchymal Stem Cells (hMSCs)",
+    "Diagnostic Catheterization"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05933200": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-08",
+   "conditions": [
+    "Long-chain Fatty Acid Oxidation Disorders (LC-FAOD)"
+   ],
+   "interventions": [
+    "Triheptanoin",
+    "MCT Oil"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05949593": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-06-30",
+   "conditions": [
+    "Geographic Atrophy"
+   ],
+   "interventions": [
+    "Tinlarebant",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05971251": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12-31",
+   "conditions": [
+    "Chronic Lymphocytic Leukemia"
+   ],
+   "interventions": [
+    "Loncastuximab Tesirine and Acalabrutinib"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT05987332": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-01-15",
+   "conditions": [
+    "Metastatic Uveal Melanoma"
+   ],
+   "interventions": [
+    "IDE196",
+    "Crizotinib",
+    "Pembrolizumab",
+    "Ipilimumab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06038474": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12-01",
+   "conditions": [
+    "Systemic Lupus Erythematosus (SLE)"
+   ],
+   "interventions": [
+    "Descartes-08"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06106308": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-04-16",
+   "conditions": [
+    "Metastatic Colorectal Cancer",
+    "CRC",
+    "KRAS/NRAS Mutation"
+   ],
+   "interventions": [
+    "Onvansertib",
+    "FOLFIRI",
+    "Bevacizumab",
+    "FOLFOX"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06109181": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Arrhythmogenic Cardiomyopathy",
+    "PKP2-ACM",
+    "PKP2-ARVC"
+   ],
+   "interventions": [
+    "LX2020"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06138613": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-09-30",
+   "conditions": [
+    "Motion Sickness"
+   ],
+   "interventions": [
+    "Tradipitant"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06152172": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-02",
+   "conditions": [
+    "Idiopathic Inflammatory Myopathies",
+    "Diffuse Cutaneous Systemic Sclerosis",
+    "SLE Nephritis"
+   ],
+   "interventions": [
+    "KYV-101",
+    "Cyclophosphamide",
+    "Fludarabine"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06188702": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-05-01",
+   "conditions": [
+    "MTAP-deleted Solid Tumors"
+   ],
+   "interventions": [
+    "S095035",
+    "TNG462"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06263231": {
+   "status": "RECRUITING",
+   "pcd": "2027-12",
+   "conditions": [
+    "Sarcoma,Soft Tissue"
+   ],
+   "interventions": [
+    "INT230-6",
+    "Eribulin",
+    "Trabectedin",
+    "Pazopanib"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06265220": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-08",
+   "conditions": [
+    "Lupus Nephritis - WHO Class III",
+    "Lupus Nephritis - WHO Class IV",
+    "Refractory Systemic Lupus Erythematosus"
+   ],
+   "interventions": [
+    "AB-101",
+    "Cyclophosphamide",
+    "Fludarabine",
+    "Rituximab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06274801": {
+   "status": "RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Pulmonary Arterial Hypertension"
+   ],
+   "interventions": [
+    "Seralutinib",
+    "Gereic Dry Powder Inhaler"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06325566": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-07",
+   "conditions": [
+    "Degenerative Disc Disease"
+   ],
+   "interventions": [
+    "Rexlemestrocel-L + HA mixture",
+    "Saline"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06328738": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-01",
+   "conditions": [
+    "HER2-positive Breast Cancer",
+    "HER2-positive Gastric Cancer",
+    "HER2 Positive Solid Tumors"
+   ],
+   "interventions": [
+    "ELVN-002",
+    "Trastuzumab",
+    "5-Fluorouracil",
+    "Oxaliplatin"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06329401": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-06",
+   "conditions": [
+    "Pulmonary Fibrosis",
+    "Progressive Pulmonary Fibrosis",
+    "Pulmonary Fibrosis Secondary to Systemic Sclerosis"
+   ],
+   "interventions": [
+    "AP01",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06334432": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-03",
+   "conditions": [
+    "Advanced Solid Tumor",
+    "HER2-negative Breast Cancer",
+    "Metastatic Castration-resistant Prostate Cancer (mCRPC)"
+   ],
+   "interventions": [
+    "NUV-1511"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06384976": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-04",
+   "conditions": [
+    "Multiple Sclerosis, Primary Progressive",
+    "Multiple Sclerosis, Secondary Progressive",
+    "Multiple Sclerosis"
+   ],
+   "interventions": [
+    "KYV-101",
+    "Standard lymphodepletion regimen",
+    "Anti-CD20 mAB"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06395948": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-11",
+   "conditions": [
+    "Atopic Dermatitis"
+   ],
+   "interventions": [
+    "APG777",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06431776": {
+   "status": "RECRUITING",
+   "pcd": "2027-06",
+   "conditions": [
+    "Autoimmune Pulmonary Alveolar Proteinosis"
+   ],
+   "interventions": [
+    "Molgramostim"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06475495": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-06",
+   "conditions": [
+    "Rheumatoid Arthritis"
+   ],
+   "interventions": [
+    "KYV101",
+    "Rituximab (active comparator)"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06481891": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-01",
+   "conditions": [
+    "Obstructive Cardiomyopathy, Hypertrophic",
+    "Non-obstructive Hypertrophic Cardiomyopathy"
+   ],
+   "interventions": [
+    "Sotagliflozin",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06500702": {
+   "status": "RECRUITING",
+   "pcd": "2026-12-23",
+   "conditions": [
+    "Focal Segmental Glomerulosclerosis",
+    "Glomerulonephritis Minimal Lesion"
+   ],
+   "interventions": [
+    "frexalimab",
+    "brivekimig",
+    "rilzabrutinib",
+    "placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06517758": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-04-30",
+   "conditions": [
+    "Generalized Myasthenia Gravis"
+   ],
+   "interventions": [
+    "Iptacopan",
+    "Matching Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06520345": {
+   "status": "RECRUITING",
+   "pcd": "2027-12",
+   "conditions": [
+    "Metastatic Castration-resistant Prostate Cancer"
+   ],
+   "interventions": [
+    "177Lu-TLX591",
+    "Enzalutamide",
+    "Abiraterone",
+    "Docetaxel"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06531941": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2028-05",
+   "conditions": [
+    "Hypoparathyroidism"
+   ],
+   "interventions": [
+    "400 µg of MBX 2109 once-weekly by subcutaneous injection",
+    "200-1600 µg of MBX 2109 once-weekly by subcutaneous injection"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06548360": {
+   "status": "RECRUITING",
+   "pcd": "2028-06-05",
+   "conditions": [
+    "NonSegmental Vitiligo"
+   ],
+   "interventions": [
+    "Ruxolitinib Cream",
+    "Vehicle Cream"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06585774": {
+   "status": "RECRUITING",
+   "pcd": "2027-09-28",
+   "conditions": [
+    "Chronic Graft-versus-host-disease"
+   ],
+   "interventions": [
+    "INCA034176",
+    "Placebo",
+    "Corticosteroids"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06602193": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-03",
+   "conditions": [
+    "Parkinson Disease"
+   ],
+   "interventions": [
+    "BIIB122 225 mg",
+    "BIIB122-Matching Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06636071": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-01",
+   "conditions": [
+    "Osteogenesis Imperfecta"
+   ],
+   "interventions": [
+    "setrusumab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06672055": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-05",
+   "conditions": [
+    "SARS-CoV2",
+    "COVID-19"
+   ],
+   "interventions": [
+    "VXA-CoV2-3.1",
+    "COMIRNATY®",
+    "VXA-CoV2-3.3"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06679985": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-09",
+   "conditions": [
+    "Hepatocellular Carcinoma"
+   ],
+   "interventions": [
+    "Casdozokitug",
+    "Toripalimab",
+    "Bevacizumab"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06685757": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-11-04",
+   "conditions": [
+    "Antibody-mediated Rejection"
+   ],
+   "interventions": [
+    "Felzartamab",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06709014": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-12",
+   "conditions": [
+    "Early Alzheimers Disease"
+   ],
+   "interventions": [
+    "buntanetap/posiphen",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06726265": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-06",
+   "conditions": [
+    "Advanced/Metastatic Non-Small Cell Lung Cancer (NSCLC)"
+   ],
+   "interventions": [
+    "eftilagimod alfa",
+    "carboplatin plus paclitaxel",
+    "cisplatin or carboplatin + pemetrexed",
+    "pembrolizumab (KEYTRUDA®)"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06754462": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-09",
+   "conditions": [
+    "Rheumatoid Arthritis"
+   ],
+   "interventions": [
+    "IMVT-1402",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06772597": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-11-03",
+   "conditions": [
+    "Prader-Willi Syndrome",
+    "Obesity",
+    "Hyperphagia"
+   ],
+   "interventions": [
+    "Setmelanotide"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06840392": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-06-03",
+   "conditions": [
+    "Hidradenitis Suppurativa"
+   ],
+   "interventions": [
+    "Remibrutinib Dose A",
+    "Remibrutinib Dose B",
+    "Placebo 1",
+    "Placebo 2"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06864988": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-06",
+   "conditions": [
+    "Macular Neovascularization Secondary to Age-Related Macular Degeneration"
+   ],
+   "interventions": [
+    "4D-150 IVT (3E10 vg/eye)",
+    "EYLEA® (aflibercept) Injection 2 mg (0.05mL)"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06892639": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-09",
+   "conditions": [
+    "Dystrophic Epidermolysis Bullosa"
+   ],
+   "interventions": [
+    "D-Fi"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06914609": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-08",
+   "conditions": [
+    "Angelman Syndrome"
+   ],
+   "interventions": [
+    "obudanersen",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06935357": {
+   "status": "RECRUITING",
+   "pcd": "2027-05-31",
+   "conditions": [
+    "Immunoglobulin A Nephropathy (IgAN)"
+   ],
+   "interventions": [
+    "Felzartamab",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06966479": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-09",
+   "conditions": [
+    "Severe Asthma"
+   ],
+   "interventions": [
+    "Verekitug",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06972264": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Androgenetic Alopecia",
+    "AGA",
+    "Male Pattern Baldness"
+   ],
+   "interventions": [
+    "VDPHL01",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06980649": {
+   "status": "RECRUITING",
+   "pcd": "2027-09",
+   "conditions": [
+    "Graves Disease"
+   ],
+   "interventions": [
+    "BHV-1300"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT06983028": {
+   "status": "RECRUITING",
+   "pcd": "2027-11",
+   "conditions": [
+    "pMN",
+    "IgAN",
+    "Nephrotic Syndrome"
+   ],
+   "interventions": [
+    "Atacicept"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07023731": {
+   "status": "COMPLETED",
+   "pcd": "2026-10-30",
+   "conditions": [
+    "KRAS G12D Mutation",
+    "Advanced Solid Cancer"
+   ],
+   "interventions": [
+    "ARV-806"
+   ]
+  },
+  "NCT07037277": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "HEPATITIS C VIRUS CHRONIC INFECTION",
+    "Hepatitis C, Chronic",
+    "Hepatitis C Virus Infection"
+   ],
+   "interventions": [
+    "Bemnifosbuvir-Ruzasvir",
+    "Sofosbuvir-Velpatasvir"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07055243": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2029-10",
+   "conditions": [
+    "Anemia"
+   ],
+   "interventions": [
+    "Mitapivat"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07071623": {
+   "status": "RECRUITING",
+   "pcd": "2027-10-18",
+   "conditions": [
+    "Human Immunodeficiency Virus (HIV)",
+    "HIV Pre-Exposure Prophylaxis"
+   ],
+   "interventions": [
+    "MK-8527",
+    "Emtricitabine/tenofovir disoproxil (FTC/TDF)",
+    "Placebo matched to MK-8527",
+    "Placebo matched to FTC/TDF"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07086755": {
+   "status": "RECRUITING",
+   "pcd": "2031-05-31",
+   "conditions": [
+    "Nonintubated Acute Respiratory Distress Syndrome (ARDS)",
+    "Pathogen-associated Lung Injury"
+   ],
+   "interventions": [
+    "Vadadustat 900mg",
+    "Vadadustat 1200mg",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07104500": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-07-01",
+   "conditions": [
+    "Weight Loss"
+   ],
+   "interventions": [
+    "VK2735"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07142811": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2029-03",
+   "conditions": [
+    "Viral Hepatitis"
+   ],
+   "interventions": [
+    "Tobevibart",
+    "Elebsiran",
+    "Bulevirtide"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07216079": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-11-25",
+   "conditions": [
+    "Immune Thrombocytopenia"
+   ],
+   "interventions": [
+    "rilzabrutinib"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07280377": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-07-30",
+   "conditions": [
+    "Anal Cancer Metastatic",
+    "Squamous Cell Carcinoma of the Anus Stage Unspecified",
+    "Pancreatic Cancer Metastatic"
+   ],
+   "interventions": [
+    "Pelareorep",
+    "Atezolizumab",
+    "Gemcitabine and nab-paclitaxel",
+    "Trifluridine Tipiracil"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07371650": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2026-12",
+   "conditions": [
+    "Influenza"
+   ],
+   "interventions": [
+    "TRX-100",
+    "Standard of Care (SOC)"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07562087": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "pcd": "2027-10",
+   "conditions": [
+    "Lyme Disease"
+   ],
+   "interventions": [
+    "TP-05 (lotilaner) Low Dose",
+    "TP-05 (lotilaner) High Dose",
+    "Placebo"
+   ],
+   "checked": "2026-11-25"
+  },
+  "NCT07614776": {
+   "status": "RECRUITING",
+   "pcd": "2027-07-31",
+   "conditions": [
+    "Neovascular Age-related Macular Degeneration",
+    "nAMD"
+   ],
+   "interventions": [
+    "ABP 938 8 mg",
+    "Aflibercept (US) 8 mg"
+   ],
+   "checked": "2026-11-25"
+  }
  }
 }
