@@ -49,7 +49,7 @@ from site_dates import eastern_today  # noqa: E402
 CACHE = os.path.join(HERE, "_earnings_dates.json")
 SITE = os.path.join(HERE, "pdufa_site_src")
 RECENT_DAYS = 30
-MIN_RESULTS = 2          # a ticker page needs this many results releases, or an announced day still ahead
+MIN_PERIODS = 2          # a ticker page needs this many periods read, or an announced day ahead or passed
 TICKER_OK = re.compile(r"^[A-Z][A-Z0-9.]{0,6}$")
 COLUMNS = ["ticker", "company", "kind", "period", "period_key", "published_et", "report_date", "timing_words",
            "call_time", "release_title", "release_url", "newswire_site", "ticker_page"]
@@ -158,6 +158,25 @@ def days_after_end(k, r):
     return (d - end).days if end and d else None
 
 
+LEGAL_CASE = {"INC": "Inc", "CORP": "Corp", "CORPORATION": "Corporation", "LTD": "Ltd", "LIMITED": "Limited",
+              "CO": "Co", "COMPANY": "Company", "HOLDINGS": "Holdings"}
+
+
+def display_name(n):
+    """A name filed in capitals ('ADMA BIOLOGICS, INC.') reads as 'ADMA Biologics, Inc.': words of four letters or
+    fewer stay as filed (they are often the brand's own capitals), longer ones and legal forms take capitals only at
+    the start. Any other name is left exactly as filed."""
+    if not n.isupper() or len(n) <= 6:
+        return n
+
+    def one(w):
+        core = w.strip(".,")
+        if core in LEGAL_CASE:
+            return w.replace(core, LEGAL_CASE[core])
+        return w if len(core) <= 4 else w.replace(core, core.capitalize())
+    return " ".join(one(w) for w in n.split(" "))
+
+
 def load(path):
     c = json.load(io.open(path, encoding="utf-8"))
     T = {}
@@ -166,7 +185,7 @@ def load(path):
             continue
         rel = [r for r in (v.get("releases") or []) if isinstance(r, dict) and ok_url(r.get("url"))]
         if rel:
-            T[tk] = {"name": v.get("name") or tk, "rel": rel, "P": periods(rel)}
+            T[tk] = {"name": display_name(v.get("name") or tk), "rel": rel, "P": periods(rel)}
     return c, T
 
 
@@ -222,7 +241,9 @@ def gather(T, today):
                     recent.append((r["published_et"], tk, k, r))
                 n = days_after_end(k, r)
                 m = re.fullmatch(r"(20\d\d)Q([1-4])(\+FY)?", k)
-                if n is not None and m:
+                # quarter stats count a release only when its own headline names the quarter: a full-year-only or
+                # half-year release (annual and semiannual filers) is not a quarterly report
+                if n is not None and m and re.fullmatch(r"20\d\dQ[1-4](\+FY)?", r.get("period_key") or ""):
                     by_q[(int(m.group(1)), int(m.group(2)))].append((n, tk))
     ahead.sort(key=lambda x: (x[0], x[1]))
     recent.sort(key=lambda x: (x[0], x[1]), reverse=True)
@@ -230,8 +251,9 @@ def gather(T, today):
 
 
 def has_page(t, today):
-    n = sum(1 for p in t["P"].values() if p["results"])
-    return n >= MIN_RESULTS or any(status_of(p, today)[1] == "ahead" for p in t["P"].values())
+    """A company page needs two periods read (any mix of announced days and results), or an announced day ahead or
+    passed, so every row the hub lists in short has a page that shows it in full."""
+    return len(t["P"]) >= MIN_PERIODS or any(status_of(p, today)[1] in ("ahead", "passed") for p in t["P"].values())
 
 
 def write_csv(T, path, pages):
@@ -311,9 +333,9 @@ def hub(T, pages, today, fetched, n_csv):
     if qs:
         B += ['<h2>Days from quarter end to results, across companies</h2>',
               '<p class="sub">For each calendar quarter, the calendar days from the quarter\'s last day to the date of '
-              'each company\'s results release for it (fourth-quarter releases that also report the full year '
-              'and full-year releases counted once). Periods a company prints as fiscal (a fiscal quarter or a fiscal '
-              'year) are left out, since a fiscal period need not end with the calendar quarter. Quarters with fewer '
+              'each company\'s results release for it (a fourth-quarter release that also reports the full year counted '
+              'once). Releases that report only a full year or a half year are left out, and so are periods a company '
+              'prints as fiscal, since a fiscal period need not end with the calendar quarter. Quarters with fewer '
               'than five companies are not shown.</p>',
               '<table><tr><th>Quarter</th><th>Companies</th><th>Median days</th><th>Middle half (25th to 75th '
               'percentile)</th><th>Shortest</th><th>Longest</th></tr>']
@@ -334,12 +356,12 @@ def hub(T, pages, today, fetched, n_csv):
         for d, tk, k, s in passed[:60]:
             B.append(f'<tr data-earn-passed="{esc(tk)}|{esc(k)}"><td>{esc(pretty(d))}</td><td>{co(tk, T, pages)}</td>'
                      f'<td>{esc(label(k, T[tk]["P"][k]))}</td><td>{rel_link(s, pretty(d_of(s["published_et"])))}</td></tr>')
-        B.append('</table>' + (f'<p class="sub">The {len(passed) - 60} older ones are in the CSV.</p>'
+        B.append('</table>' + (f'<p class="sub">The {len(passed) - 60} older ones show on each company\'s page.</p>'
                                 if len(passed) > 60 else ''))
     lst = sorted(pages)
     B += [f'<h2>Every company with an earnings page ({len(lst)})</h2>',
-          '<p class="sub">A company has a page here once its releases show at least two results releases, or a report '
-          'day still ahead.</p>',
+          '<p class="sub">A company has a page here once its releases cover at least two periods (an announced report '
+          'day or a results release for each), or show an announced report day still ahead or passed.</p>',
           '<p class="sub" data-earn="index">' + " &middot; ".join(
               f'<a href="/earnings/{esc(tk)}">{esc(tk)}</a>' for tk in lst) + '</p>',
           f'<p class="sub">Every row read ({n_csv}): <a href="/earnings/data/earnings-dates.csv">earnings-dates.csv</a> '
@@ -392,8 +414,11 @@ def ticker_page(tk, T, pages, today, fetched, site):
         _, k, _, _, _, r = done[0]
         lede += f' Its latest results release, for {esc(label(k, t["P"][k]))}, went out on {esc(fmt_et(r["published_et"]))}.'
     title = f"{nm} ({tk}) Earnings Dates | pdufa.bio"
-    desc = (f"When {nm} ({tk}) reports quarterly results: the report days it announced and when each results release "
-            f"went out, from the company's own press releases.")
+    desc = (f"{nm} ({tk}) earnings dates: the report days it announced and when each results release went out, "
+            f"from its own press releases.")
+    if len(desc) > 155:                     # search engines cut longer descriptions mid-word
+        desc = (f"{tk} earnings dates: the report days the company announced and when each results release went out, "
+                f"from its own press releases.")
     B = [f'<h1>{esc(nm)} ({esc(tk)}) <span class="g">earnings dates</span></h1>',
          f'<p class="sub" data-earn="lede">{lede}</p>',
          '<table><tr><th>Period</th><th>Report day announced</th><th>Results released</th>'

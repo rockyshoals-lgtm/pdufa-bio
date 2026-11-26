@@ -22,6 +22,23 @@ if os.environ.get("PLANT") == "1":
     E.mentions = lambda *a, **k: True
 
 CASES = [
+    # real, 2026-11-26 red team of the built pages: three results headlines the parser missed, so the announced day
+    # showed as passed with no results release
+    ("BMY", "Bristol-Myers Squibb Company",
+     {"publishedDate": "2026-10-29 06:59:00", "title": "Bristol Myers Squibb Reports Third Quarter Financial Results "
+      "for 2026", "text": "PRINCETON, N.J.--(BUSINESS WIRE)--Bristol Myers Squibb Reports Third Quarter Financial "
+      "Results for 2026.", "url": "u-bmy"},
+     {"kind": "results", "period_key": "2026Q3", "published_et": "2026-10-29 06:59"}),
+    ("AMPH", "Amphastar Pharmaceuticals, Inc.",
+     {"publishedDate": "2026-11-05 16:10:00", "title": "Amphastar Pharmaceuticals Reports Financial Results for the "
+      "Three Months Ended September 30, 2026", "text": "Net revenues of $207.6 million for the three months ended "
+      "September 30, 2026 GAAP net income of $37.8 million, or $0.87 per share, for the third quarter ... RANCHO "
+      "CUCAMONGA, Calif.", "url": "u-amph"},
+     {"kind": "results", "period_key": "2026Q3", "published_et": "2026-11-05 16:10"}),
+    ("AXGN", "Axogen, Inc.",
+     {"publishedDate": "2026-07-29 07:05:00", "title": "Axogen, Inc. Reports Second Quarter 2026 Financial Results",
+      "text": "ALACHUA, Fla. and TAMPA, Fla.", "url": "u-axgn"},
+     {"kind": "results", "period_key": "2026Q2", "published_et": "2026-07-29 07:05"}),
     # (ticker, name, item, expected subset or None)
     ("VKTX", "Viking Therapeutics, Inc.",
      {"publishedDate": "2026-10-21 16:05:00", "title": "Viking Therapeutics to Report Financial Results for Third "

@@ -14,6 +14,7 @@ ticker page and a row the regex could miss, and the guard must fail.
 """
 import csv
 import datetime as dt
+import html
 import io
 import json
 import os
@@ -82,6 +83,21 @@ def rule_checks():
     if B.fmt_et("2026-10-28 16:05") != "October 28, 2026, 4:05 p.m. ET" or B.fmt_et("2026-10-28 00:30") != \
             "October 28, 2026, 12:30 a.m. ET":
         f.append("fmt_et misformats Eastern times")
+    # red team 2026-11-26: a full-year-only release (annual filer) is not a fourth-quarter report in the quarter stats
+    T = {"AAA": {"P": B.periods([R("results", "2026-04-23 08:00", "2025FY")])},
+         "BBB": {"P": B.periods([R("results", "2026-02-11 16:16", "2025Q4+FY")])}}
+    by_q = B.gather(T, today)[3]
+    if [tk for _, tk in by_q.get((2025, 4), [])] != ["BBB"]:
+        f.append("a full-year-only release is counted in the Q4 quarter stats")
+    # a company page needs two periods read, or a day ahead or passed: a lone results release gets none
+    one = {"P": B.periods([R("results", "2026-10-20 08:00", "2026Q3")])}
+    two = {"P": B.periods([R("schedule", "2026-10-01 08:00", "2026Q3", report_date="2026-10-20"),
+                           R("results", "2026-08-01 08:00", "2026Q2")])}
+    lone_passed = {"P": B.periods([R("schedule", "2026-10-01 08:00", "2026Q3", report_date="2026-10-20")])}
+    if B.has_page(one, today) or not B.has_page(two, today) or not B.has_page(lone_passed, today):
+        f.append("has_page does not follow the two-periods rule")
+    if B.display_name("ADMA BIOLOGICS, INC.") != "ADMA Biologics, Inc." or B.display_name("GSK plc") != "GSK plc":
+        f.append("display_name changes a name it should not, or leaves a capitals-filed name shouting")
     return f
 
 
@@ -112,6 +128,8 @@ def page_checks(plant=False):
         p = (T.get(tk) or {}).get("P", {}).get(k)
         if not p or B.status_of(p, asof)[1] != "passed":
             f.append(f"/earnings passed row {tk} {k}: the cache does not have a passed announced day")
+        if not os.path.isfile(os.path.join(SITE, tk, "index.html")):
+            f.append(f"/earnings passed row {tk} {k}: no company page shows it in full")
     for tk, k in re.findall(r'data-earn-recent="([^"|]+)\|([^"]+)"', doc):
         p = (T.get(tk) or {}).get("P", {}).get(k)
         if not p or not p["results"]:
@@ -123,6 +141,9 @@ def page_checks(plant=False):
         if d not in T:
             f.append(f"/earnings/{d}: ticker not in the cache")
             continue
+        m = re.search(r'<meta name="description" content="([^"]*)"', io.open(pg, encoding="utf-8").read())
+        if not m or len(html.unescape(m.group(1))) > 160:
+            f.append(f"/earnings/{d}: description missing or over 160 characters")
         P = T[d]["P"]
         tdoc = io.open(pg, encoding="utf-8").read()
         if plant and d == sorted(x for x in os.listdir(SITE) if B.TICKER_OK.match(x))[0]:

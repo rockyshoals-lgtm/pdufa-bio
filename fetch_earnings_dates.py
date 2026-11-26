@@ -56,7 +56,7 @@ UA = {"User-Agent": "pdufa.bio-research-script/1.0"}
 FROM = "2024-01-01"
 # Bump when the parse rules change: every ticker is then re-read from FROM (90 a run); its old rows stay until its
 # full read replaces them.
-PARSER_VERSION = 4
+PARSER_VERSION = 5
 
 MONTHS = {m: i + 1 for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july", "august",
                                           "september", "october", "november", "december"])}
@@ -73,6 +73,9 @@ P_QN = re.compile(r"\b(?:Q([1-4])|([1-4])Q)[\s'-]*(?:FY)?\s*((?:20)?\d\d)\b", re
 P_FY = re.compile(r"\b(?:full[\s-]+year|fiscal[\s-]+(?:year[\s-]+)?(20\d\d)?\s*(?:full[\s-]+year)?|year[\s-]+end(?:ed)?)"
                   r"\s*(20\d\d)?\b", re.I)
 P_FISCAL_Q = re.compile(r"\bfiscal\s+(?:year\s+)?(20\d\d)\s+(first|second|third|fourth)\s+quarter\b", re.I)
+P_MONTHS_ENDED = re.compile(r"\b(three|six|nine|twelve|year)(?:[\s-]+months?)?\s+(and\s+(?:full\s+|fiscal\s+)?year\s+)?"
+                            r"ended\s+(january|february|march|april|may|june|july|august|september|october|november|"
+                            r"december)\s+(\d{1,2}),?\s+(20\d\d)\b", re.I)
 P_HALF = re.compile(r"\b(first|second)[\s-]+half(?:[\s-]+(?:of\s+)?(?:year\s+)?(20\d\d))?\b|\b(H[12])\s*(20\d\d)\b", re.I)
 
 RESULTS_WORD = re.compile(r"\b(financial results|results|earnings)\b", re.I)
@@ -150,6 +153,22 @@ def period_of(text, published=None):
         # "fiscal year" may not be the calendar year, so it gets a fiscal key (no calendar day count)
         fy = m.group(1).lower().startswith("fiscal")
         return m.group(0), (f"FY{m.group(2)}Q4" if fy else f"{m.group(2)}Q4+FY")
+    # "Financial Results for the Three Months Ended September 30, 2026" (no quarter named): the period that ends on the
+    # printed day, only when that day ends a calendar quarter
+    m = P_MONTHS_ENDED.search(t)
+    if m and not re.search(r"\bquarter\b", t, re.I):
+        n, yr_and, mon, day, y = m.group(1).lower(), m.group(2), MONTHS[m.group(3).lower()], int(m.group(4)), m.group(5)
+        if int(y) <= pub_y and (mon, day) in ((3, 31), (6, 30), (9, 30), (12, 31)):
+            q = mon // 3
+            if n in ("twelve", "year") or (n == "three" and yr_and and q == 4):
+                return m.group(0), f"{y}Q4+FY" if n == "three" else f"{y}FY"
+            if n == "three" and not yr_and:
+                return m.group(0), f"{y}Q{q}"
+            if n == "six" and q in (2, 4) and not yr_and:
+                return m.group(0), f"{y}H{q // 2}"
+            if n == "nine" and q == 3 and not yr_and:
+                return m.group(0), f"{y}Q3"
+        return m.group(0), None
     m = P_QUARTER.search(t)
     if m:
         q = ORD[m.group(1).lower()]
@@ -169,6 +188,12 @@ def period_of(text, published=None):
             full = full or (q == 4 and bool(re.match(r"\s*(and|&)\s+(full|year[\s-]+end)", tail, re.I)))
             return m.group(0) + tail[:y2.end()], (f"FY{y2.group(2)}Q{q}" if fy else f"{y2.group(2)}Q{q}") + \
                 ("+FY" if full else "")
+        # "Third Quarter Financial Results for 2026": the year printed after the results words
+        tail = t[m.end():m.end() + 50]
+        y3 = re.match(r"\s+(?:financial\s+)?(?:results|earnings)\s+(?:for\s+)?(?:the\s+)?(fiscal\s+(?:year\s+)?)?(20\d\d)\b"
+                      r"(?!\s*/)", tail, re.I)
+        if y3 and int(y3.group(2)) <= pub_y:
+            return m.group(0) + tail[:y3.end()], (f"FY{y3.group(2)}Q{q}" if y3.group(1) else f"{y3.group(2)}Q{q}")
         return m.group(0), None
     m = P_QN.search(t)
     if m:
@@ -376,6 +401,9 @@ def _norm_words(s):
     return re.sub(r"[-‐‑]", " ", s).lower()
 
 
+LEGAL_FORMS = {"inc", "corp", "corporation", "ltd", "limited", "plc", "n.v", "nv", "s.a", "sa", "ag", "se", "co"}
+
+
 def mentions(tk, name, title, text):
     """True when the release is the ticker's own.
     1. The headline must open with one of the company's names (short name, full name or a listed headline brand),
@@ -415,6 +443,9 @@ def mentions(tk, name, title, text):
         i += 1
     if i == 0:
         i = len(re.findall(r"[A-Za-z0-9&'.]+", _norm_words(hit)))
+    # a legal-form suffix the headline adds after the name ('Axogen, Inc. Reports') is still the same name
+    while i < len(words) and (words[i] == "," or words[i].strip(".") in LEGAL_FORMS):
+        i += 1
     nxt = words[i] if i < len(words) else ""
     return bool(nxt) and (nxt in HEADLINE_VERBS)
 
