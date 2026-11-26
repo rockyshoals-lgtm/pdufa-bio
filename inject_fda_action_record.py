@@ -23,6 +23,8 @@ import io
 import json
 import os
 import re
+
+UNANNOUNCED = re.compile(r"did not announce (?:the|this) letter on its date")
 import sys
 
 try:
@@ -80,6 +82,10 @@ def main():
         ad = announced_iso(doc, dcd)
         ann = (f" The sponsor announced it on {pretty(ad)}{', after the close' if after_close(doc) else ''}."
                if fd != ad else " The sponsor announced it the same day.")
+        # 2026-11-26: a page for a letter the sponsor never announced (dated on the FDA's letter, kept out of the
+        # run-up study) must not claim a same-day announcement (ALVO-2025-11-24 did, live, for one rebuild).
+        if UNANNOUNCED.search(doc):
+            ann = " The sponsor did not announce it that day."
         block = (f'{B}<p class="sub" style="font-size:13px;margin:8px 0">'
                  f'<b>FDA record of the action:</b> the FDA {verb} on <b>{pretty(fd)}</b>, per '
                  f'<a href="{html.escape(url, quote=True)}" rel="noopener" style="color:#e3ba5e">'
