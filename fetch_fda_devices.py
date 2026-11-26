@@ -121,10 +121,11 @@ def ticker_for(applicant, sec, aliases):
 def iso(d):
     """openFDA prints dates as YYYY-MM-DD (PMA) or YYYYMMDD in some records."""
     d = (d or "").strip()
-    if re.fullmatch(r"\d{8}", d):
-        return f"{d[:4]}-{d[4:6]}-{d[6:]}"
-    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d):
-        return d
+    for fmt in ("%Y-%m-%d", "%Y%m%d"):
+        try:
+            return datetime.strptime(d, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            pass
     return None
 
 
@@ -137,6 +138,8 @@ def pma_row(r, sec, aliases):
     sup = (r.get("supplement_number") or "").strip().upper()
     if not re.fullmatch(r"[PHN]\d{5,6}", num):
         return None
+    if sup and not re.fullmatch(r"S?\d{1,4}", sup):
+        return None   # an unusual supplement number is skipped rather than given an id the guard cannot read
     if sup and not is_panel_track(r.get("supplement_type")):
         return None   # 180-day, real-time, 30-day notices etc. are not collected
     rid = num + (f"S{sup.lstrip('S')}" if sup else "")

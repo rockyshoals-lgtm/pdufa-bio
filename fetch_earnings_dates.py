@@ -56,7 +56,7 @@ UA = {"User-Agent": "pdufa.bio-research-script/1.0"}
 FROM = "2024-01-01"
 # Bump when the parse rules change: every ticker is then re-read from FROM (90 a run), so no row parsed by older
 # rules stays in the cache.
-PARSER_VERSION = 2
+PARSER_VERSION = 3
 
 MONTHS = {m: i + 1 for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july", "august",
                                           "september", "october", "november", "december"])}
@@ -83,14 +83,20 @@ STRONG_RESULTS = re.compile(r"\b(reports?|announces?|posts?|delivers?)\s+(?:its\
                             r"\b(?:financial\s+)?(?:results|earnings)\b", re.I)
 # "... Third Quarter 2026 Financial Results Conference Call", "... Earnings Release Date", "Announces Date of ...":
 # a release ABOUT the results release, i.e. a schedule, even though it 'announces ... results'
-ABOUT_RESULTS = re.compile(r"^\s*(conference call|call|webcast|release|date|announcement|timing)\b", re.I)
+ABOUT_RESULTS = re.compile(r"^\s*(?:and\s+)?(conference call|call|webcast|teleconference|release|date|announcement|"
+                           r"timing)\b", re.I)
+# words that, inside the matched 'Announces ... Third Quarter 2026 ... Results' span, make it about a call, a plan or a
+# preliminary figure rather than the results themselves
+NOT_IN_STRONG = re.compile(r"\b(conference|call|webcast|teleconference|will|plans?|to|preliminary|unaudited|date|"
+                           r"timing|schedule\w*|postpone\w*|delay\w*|upcoming)\b", re.I)
 SCHEDULE_LEAD = re.compile(r"\b(date|dates|timing|upcoming|schedule[sd]?)\b", re.I)
 # law-firm and shareholder-alert releases are never earnings rows (word forms chosen so 'Investigational' and
 # 'Letter to Shareholders' do not match)
 NOISE = re.compile(r"\b(investigation|investigations|investigating|investigates|investor alert|shareholder alert|"
                    r"class action|law firm|lawsuit|securities fraud|rosen law|pomerantz|levi & korsinsky|lost money|"
                    r"annual (general )?meeting|special meeting|voting results)\b", re.I)
-POSTPONED = re.compile(r"\b(postpone\w*|delays?|delayed)\b", re.I)
+# a postponement OF the results: the word comes before 'results'/'earnings' within a few words
+POSTPONED = re.compile(r"\b(postpone\w*|delays?|delayed)\b(?:\s+[\w'-]+){0,7}?\s+(results|earnings)\b", re.I)
 FUTURE = re.compile(r"\b(to|will|plans? to|set to|schedules?|scheduled)\s+(report|announce|release|host|present|"
                     r"hold|discuss|issue)\b|\b(conference call|webcast)\s+(to|will|on)\b|\b(date|dates|timing)\s+(for|of)\b"
                     r"|\bto (report|announce|release)\b|\bupcoming\b|\breschedul\w*\b|\b(results|earnings)\s+(conference "
@@ -120,23 +126,39 @@ def clean(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
-def period_of(text):
-    """(printed period, period key) from a headline/sentence. Key like '2026Q3', '2025FY', '2026H1'; None if unknown."""
+def period_of(text, published=None):
+    """(printed period, period key) from a headline/sentence. Keys: '2026Q3' (calendar quarter), 'FY2027Q1' (fiscal
+    quarter), '2025Q4+FY' (fourth quarter AND full year), '2025FY', '2026H1'; key None if the year is not printed.
+    A year that belongs to a printed date ('on March 3, 2026') or is later than the release year is never read as the
+    period's year."""
     t = clean(text)
+    pub_y = published.year if published else 9999
     m = P_FISCAL_Q.search(t)
     if m:
         return m.group(0), f"FY{m.group(1)}Q{ORD[m.group(2).lower()]}"
+    m = re.search(r"\bQ([1-4])\s+(?:of\s+)?(?:fiscal\s+(?:year\s+)?|FY\s*)(20\d\d)\b|\bFY\s*(20\d\d)\s+Q([1-4])\b"
+                  r"|\bQ([1-4])\s*FY\s*(20\d\d|\d\d)\b", t, re.I)
+    if m:
+        q = m.group(1) or m.group(4) or m.group(5)
+        y = m.group(2) or m.group(3) or m.group(6)
+        y = y if len(y) == 4 else "20" + y
+        return m.group(0), f"FY{y}Q{q}"
     m = P_QUARTER.search(t)
     if m:
         q = ORD[m.group(1).lower()]
         yr = m.group(2)
-        full = bool(re.search(r"(full|fiscal)[\s-]+year", m.group(0), re.I))
+        full = bool(re.search(r"(and|&)[\s,]+(full|fiscal)[\s-]+year", m.group(0), re.I))
+        fiscal = bool(re.search(r"\bfiscal\b", m.group(0), re.I)) and not full
         if yr:
-            return m.group(0), f"{yr}Q{q}" + ("+FY" if full else "")
-        # year printed after "full year" ("Fourth Quarter and Full Year 2025" is caught above); else look nearby
-        y2 = re.search(r"\b(20\d\d)\b", t[m.end():m.end() + 25])
-        if y2:
-            return m.group(0) + " " + y2.group(1), f"{y2.group(1)}Q{q}" + ("+FY" if full else "")
+            return m.group(0), (f"FY{yr}Q{q}" if fiscal else f"{yr}Q{q}") + ("+FY" if full else "")
+        # year printed after "full year" or "fiscal": "Fourth Quarter and Full Year 2025", "First Quarter Fiscal 2027"
+        tail = t[m.end():m.end() + 25]
+        y2 = re.match(r"\s*(?:(?:and|&)\s+full[\s-]+year\s+|(fiscal)\s+(?:year\s+)?|of\s+)?(20\d\d)\b(?!\s*/)", tail, re.I)
+        if y2 and int(y2.group(2)) <= pub_y:
+            fy = bool(y2.group(1))
+            full = full or bool(re.match(r"\s*(and|&)\s+full", tail, re.I))
+            return m.group(0) + tail[:y2.end()], (f"FY{y2.group(2)}Q{q}" if fy else f"{y2.group(2)}Q{q}") + \
+                ("+FY" if full else "")
         return m.group(0), None
     m = P_QN.search(t)
     if m:
@@ -156,6 +178,22 @@ def period_of(text):
     return None, None
 
 
+def period_end(key):
+    """Last day of a calendar-quarter / half / calendar-year key; None for fiscal keys (their calendar is the
+    company's own)."""
+    m = re.fullmatch(r"(20\d\d)Q([1-4])(\+FY)?", key or "")
+    if m:
+        y, q = int(m.group(1)), int(m.group(2))
+        return dt.date(y, 12, 31) if q == 4 else dt.date(y, 3 * q + 1, 1) - dt.timedelta(days=1)
+    m = re.fullmatch(r"(20\d\d)H([12])", key or "")
+    if m:
+        return dt.date(int(m.group(1)), 6, 30) if m.group(2) == "1" else dt.date(int(m.group(1)), 12, 31)
+    m = re.fullmatch(r"(20\d\d)FY", key or "")
+    if m:
+        return dt.date(int(m.group(1)), 12, 31)
+    return None
+
+
 def _future_verb(t, m):
     """True when the matched verb is itself future ('to Report', 'will report', 'plans to announce')."""
     return bool(re.search(r"\b(to|will|plans? to|set to|expects? to|intends? to)\s*$", t[:m.start()], re.I))
@@ -164,16 +202,19 @@ def _future_verb(t, m):
 def is_results(title):
     """A headline that says the company reports its periodic results (not a schedule, not trial results)."""
     t = clean(title)
-    if NOISE.search(t) or POSTPONED.search(t):
+    if NOISE.search(t):
         return False
     m = STRONG_RESULTS.search(t)
     if m and not _future_verb(t, m) and period_of(m.group(0))[0]:
-        if ABOUT_RESULTS.match(t[m.end():]) or SCHEDULE_LEAD.search(m.group(0)):
+        if ABOUT_RESULTS.match(t[m.end():]) or SCHEDULE_LEAD.search(m.group(0)) or NOT_IN_STRONG.search(
+                m.group(0)[len(m.group(1)):]):
             return False            # 'Announces Third Quarter 2026 Financial Results Conference Call'
         return True
+    if POSTPONED.search(t):
+        return False
     if not RESULTS_WORD.search(t) or not REPORTS.search(t):
         return False
-    if FUTURE.search(t) or NOT_RESULTS.search(t):
+    if FUTURE.search(t) or NOT_RESULTS.search(t) or CALL_WORD.search(t):
         return False
     p, _ = period_of(t)
     return bool(p)
@@ -197,13 +238,14 @@ def is_postponed(title):
     """'Viking Therapeutics Postpones Third Quarter 2026 Financial Results Release': the earlier announced day no longer
     holds. Kept as its own row so a page never shows the old day as current."""
     t = clean(title)
-    return bool(POSTPONED.search(t) and re.search(r"\b(results|earnings)\b", t, re.I) and not NOISE.search(t)
-                and not NOT_RESULTS.search(t))
+    return bool(POSTPONED.search(t) and not NOISE.search(t) and not NOT_RESULTS.search(t))
 
 
 WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 WIRE = re.compile(r"\s*(?:/PRNewswire[^/]{0,20}/|\(\s*GLOBE NEWSWIRE\s*\)|-*\s*\(\s*BUSINESS WIRE\s*\)|/CNW/|\(?ACCESSWIRE\)?|"
                   r"/EINPresswire/|\(\s*Newsfile Corp\.?\s*\)|/?\(?\s*Globe Newswire\s*\)?)", re.I)
+WIRE_BEFORE = re.compile(r"(ACCESSWIRE|Newsfile Corp\.?|PRNewswire[^/]{0,20}|GLOBE NEWSWIRE|BUSINESS WIRE|"
+                         r"EINPresswire)\s*\)?\s*[/\-]+\s*$", re.I)
 CALL_WORD = re.compile(r"\b(conference call|call|webcast|teleconference|fireside)\b", re.I)
 REL_WORD = re.compile(r"\b(report|reports|release|released|releases|announce|announced|results|earnings)\b", re.I)
 
@@ -233,12 +275,12 @@ def find_date(text, published):
                 continue
             before, after = t[max(0, m.start() - 60):m.start()], t[m.end():m.end() + 30]
             bl = before.lower()
-            if WIRE.match(after):
-                continue                                   # the dateline
+            if WIRE.match(after) or WIRE_BEFORE.search(before):
+                continue                                   # the dateline (before or after the wire's name)
             if re.search(r"\b(ended|ending|end of|as of|through)\s*$", bl):
                 continue                                   # a period end
-            if d == published and not re.search(r"\b(today|tonight|this (morning|afternoon|evening))\b",
-                                                bl + " " + after.lower()):
+            if d == published and not (re.search(r"\b(today|tonight|this (morning|afternoon|evening))\W{0,3}$", bl)
+                                        or re.match(r"\W{0,3}\(?(today|tonight)\b", after, re.I)):
                 continue
             calls = [c.end() for c in CALL_WORD.finditer(before)]
             rels = [r.end() for r in REL_WORD.finditer(before)]
@@ -397,15 +439,18 @@ def parse_item(tk, name, it):
            "site": it.get("site") or it.get("publisher") or "", "stem": short_name(name)}
 
     def period():
-        p, k = period_of(title)
+        p, k = period_of(title, pub)
         if not k:
-            p2, k2 = period_of(text[:500])
+            p2, k2 = period_of(text[:500], pub)
             if k2:
                 return p2, k2
         return p, k
 
     if is_results(title):
         p, k = period()
+        end = period_end(k)
+        if not k or (end and end > pub.date()):
+            return None                # no period, or a period that had not ended when the 'results' came out
         row.update(kind="results", period=p, period_key=k)
         return row
     if is_postponed(title):
@@ -414,11 +459,16 @@ def parse_item(tk, name, it):
         return row
     if is_schedule(title, text):
         p, k = period()
-        # the reporting day: the headline's own day first, else the release text
-        d = find_date(title, pub.date())
+        if not k:
+            return None                # results of a trial or a meeting, not of a reporting period
+        # the reporting day: the headline's own day first (unless the headline is about a call), else the text
+        d = None if CALL_WORD.search(title) else find_date(title, pub.date())
         if d is None:
             d = find_date(text, pub.date())
         if not d or d < pub.date() or (d - pub.date()).days > 75:
+            return None
+        end = period_end(k)
+        if end and end > d:
             return None
         tm, words = timing_of(text) if timing_of(text)[0] else timing_of(title)
         row.update(kind="schedule", period=p, period_key=k, report_date=d.isoformat(), timing=tm, timing_words=words,
@@ -524,6 +574,7 @@ def main():
     if cache.get("parser_version") != PARSER_VERSION:
         for ent in tks.values():
             ent.pop("backfilled", None)          # re-read and re-parse everything under the new rules
+            ent["releases"] = []                 # and drop rows parsed by the old ones
         cache["parser_version"] = PARSER_VERSION
     uni = universe()
     tracked = set(uni)

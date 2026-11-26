@@ -184,6 +184,22 @@ CONSTRUCTED = [
     (V, VN, {"publishedDate": "2026-11-18 08:00:00", "title": "Viking Therapeutics to Report Third Quarter 2026 Financial "
      "Results on November 24", "text": "Viking (NASDAQ: VKTX), which last reported on Wednesday, October 28, will release "
      "results on Tuesday, November 24, 2026.", "url": "d12"}, {"kind": "schedule", "report_date": "2026-11-24"}),
+    # round 3: call announcements, preliminary figures, wire datelines after the tag, fiscal periods
+    (V, VN, {"publishedDate": "2026-10-20 08:00:00", "title": 'Viking Therapeutics Announces Conference Call and Webcast for Third Quarter 2026 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e1"}, None),
+    (V, VN, {"publishedDate": "2026-10-20 08:00:00", "title": 'Viking Therapeutics Announces Conference Call to Discuss Third Quarter 2026 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e2"}, None),
+    (V, VN, {"publishedDate": "2026-10-20 08:00:00", "title": 'Viking Therapeutics Announces Webcast of Third Quarter 2026 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e3"}, None),
+    (V, VN, {"publishedDate": "2026-10-20 08:00:00", "title": 'Viking Therapeutics Announces It Will Report Third Quarter 2026 Financial Results on November 5', "text": '(NASDAQ: VKTX)', "url": "e4"}, {"kind": "schedule", "report_date": "2026-11-05"}),
+    (V, VN, {"publishedDate": "2026-01-12 08:00:00", "title": 'Viking Therapeutics Announces Preliminary Fourth Quarter and Full Year 2025 Results', "text": '(NASDAQ: VKTX)', "url": "e5"}, None),
+    (V, VN, {"publishedDate": "2026-10-20 08:00:00", "title": 'Viking Therapeutics Announces Third Quarter 2026 Financial Results and Conference Call Date', "text": '(NASDAQ: VKTX)', "url": "e6"}, None),
+    (V, VN, {"publishedDate": "2026-10-28 16:05:00", "title": 'Viking Therapeutics Reports Third Quarter 2026 Financial Results and Provides Update on Manufacturing Delay', "text": '(NASDAQ: VKTX)', "url": "e7"}, {"kind": "results", "period_key": "2026Q3"}),
+    (V, VN, {"publishedDate": "2026-10-21 16:05:00", "title": 'Viking Therapeutics to Report Third Quarter 2026 Financial Results', "text": 'SAN DIEGO / ACCESSWIRE / October 21, 2026 / Viking (NASDAQ: VKTX) today announced it will report results after the market close November 4, 2026.', "url": "e8"}, {"kind": "schedule", "report_date": "2026-11-04"}),
+    (V, VN, {"publishedDate": "2026-10-21 16:05:00", "title": 'Viking Therapeutics to Host Conference Call to Discuss Third Quarter 2026 Financial Results on November 5, 2026', "text": '(NASDAQ: VKTX) will release results after the market close on Wednesday, November 4, 2026.', "url": "e9"}, {"kind": "schedule", "report_date": "2026-11-04"}),
+    (V, VN, {"publishedDate": "2026-10-20 08:00:00", "title": 'Viking Therapeutics to Present New Long-Term Efficacy Results for VK2735 at ObesityWeek 2026', "text": '(NASDAQ: VKTX)', "url": "e10"}, None),
+    (V, VN, {"publishedDate": "2027-02-25 16:05:00", "title": 'Viking Therapeutics Reports Fourth Quarter Results; Issues 2027 Outlook', "text": '(NASDAQ: VKTX)', "url": "e11"}, None),
+    (V, VN, {"publishedDate": "2026-08-10 16:05:00", "title": 'Viking Therapeutics Reports First Quarter Fiscal 2027 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e12"}, {"kind": "results", "period_key": "FY2027Q1"}),
+    (V, VN, {"publishedDate": "2026-08-10 16:05:00", "title": 'Viking Therapeutics Reports Q1 Fiscal 2027 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e13"}, {"kind": "results", "period_key": "FY2027Q1"}),
+    (V, VN, {"publishedDate": "2026-02-25 16:05:00", "title": 'Viking Therapeutics Reports Fourth Quarter and Full Year 2025 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e14"}, {"kind": "results", "period_key": "2025Q4+FY"}),
+    (V, VN, {"publishedDate": "2026-10-28 16:05:00", "title": 'Viking Therapeutics Reports Third Quarter 2027 Financial Results', "text": '(NASDAQ: VKTX)', "url": "e15"}, None),
 ]
 
 
