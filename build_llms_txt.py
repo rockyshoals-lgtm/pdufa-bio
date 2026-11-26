@@ -197,6 +197,7 @@ Full archive: https://www.pdufa.bio/decisions
 - `/api/v1/adcomm` - advisory committee meetings
 - `/api/v1/events` - everything, with source_url, decision_source and fda_action_date fields
 - Docs: https://www.pdufa.bio/developers
+- Paid keys (not open yet): Pro adds the per-event daily price path into each FDA decision (`/api/v1/runup`), bulk export and a calendar feed; ULTRA adds the whole run-up study as data, one row per decision (`/api/v1/history`), and what the options market priced before each decision beside what happened (`/api/v1/implied`). Plans: https://www.pdufa.bio/pricing
 - Rule we hold ourselves to: **if it is visible on a public page, it is free in the API.**
 
 ## Main pages
