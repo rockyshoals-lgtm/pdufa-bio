@@ -183,7 +183,13 @@ def load(path):
     for tk, v in (c.get("tickers") or {}).items():
         if not TICKER_OK.match(tk or "") or not isinstance(v, dict):
             continue
-        rel = [r for r in (v.get("releases") or []) if isinstance(r, dict) and ok_url(r.get("url"))]
+        rel, seen = [], set()
+        for r in (v.get("releases") or []):
+            # the feed sometimes carries one release twice (same time, same headline): count it once
+            key = (r.get("published_et"), (r.get("title") or "").strip().lower()) if isinstance(r, dict) else None
+            if key and ok_url(r.get("url")) and key not in seen:
+                seen.add(key)
+                rel.append(r)
         if rel:
             T[tk] = {"name": display_name(v.get("name") or tk), "rel": rel, "P": periods(rel)}
     return c, T
@@ -198,12 +204,18 @@ def label(k, p=None):
     keys = (p or {}).get("keys") or set()
     m = re.fullmatch(r"(20\d\d)Q([1-4])", k)
     if m:
-        full = m.group(2) == "4" and any(re.fullmatch(r"20\d\d(Q4\+FY|FY)", x) for x in keys)
-        return f"Q{m.group(2)} {'and full year ' if full else ''}{m.group(1)}"
+        y, q = m.group(1), m.group(2)
+        if q == "4" and keys and keys <= {f"{y}FY"}:
+            return f"Full year {y}"            # every release names only the year, never a fourth quarter
+        full = q == "4" and any(re.fullmatch(r"20\d\d(Q4\+FY|FY)", x) for x in keys)
+        return f"Q{q} {'and full year ' if full else ''}{y}"
     m = re.fullmatch(r"FY(20\d\d)Q([1-4])", k)
     if m:
-        full = m.group(2) == "4" and f"FY{m.group(1)}" in keys
-        return f"Fiscal {m.group(1)} Q{m.group(2)}" + (" and fiscal year" if full else "")
+        y, q = m.group(1), m.group(2)
+        if q == "4" and keys and keys <= {f"FY{y}"}:
+            return f"Fiscal year {y}"
+        full = q == "4" and f"FY{y}" in keys
+        return f"Fiscal {y} Q{q}" + (" and fiscal year" if full else "")
     m = re.fullmatch(r"(20\d\d)H([12])", k)
     if m:
         return f"{'First' if m.group(2) == '1' else 'Second'} half {m.group(1)}"
@@ -237,7 +249,7 @@ def gather(T, today):
             r = p["results"]
             if r:
                 rd = d_of(r["published_et"])
-                if 0 <= (today - rd).days <= RECENT_DAYS:
+                if 0 <= (today - rd).days < RECENT_DAYS:
                     recent.append((r["published_et"], tk, k, r))
                 n = days_after_end(k, r)
                 m = re.fullmatch(r"(20\d\d)Q([1-4])(\+FY)?", k)

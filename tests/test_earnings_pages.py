@@ -83,6 +83,10 @@ def rule_checks():
     if B.fmt_et("2026-10-28 16:05") != "October 28, 2026, 4:05 p.m. ET" or B.fmt_et("2026-10-28 00:30") != \
             "October 28, 2026, 12:30 a.m. ET":
         f.append("fmt_et misformats Eastern times")
+    # red team round 2: a period whose releases name only the year is labelled as the year, not as a fourth quarter
+    P = B.periods([R("results", "2026-04-23 08:00", "2025FY")])
+    if B.label("2025Q4", P["2025Q4"]) != "Full year 2025":
+        f.append("a full-year-only period is labelled with a fourth quarter it never names")
     # red team 2026-11-26: a full-year-only release (annual filer) is not a fourth-quarter report in the quarter stats
     T = {"AAA": {"P": B.periods([R("results", "2026-04-23 08:00", "2025FY")])},
          "BBB": {"P": B.periods([R("results", "2026-02-11 16:16", "2025Q4+FY")])}}
@@ -114,6 +118,9 @@ def page_checks(plant=False):
     if not m:
         return [f"/earnings: no 'as of' day in the lede"], ""
     asof = dt.date(int(m.group(3)), MON[m.group(1)], int(m.group(2)))
+    # in the site build, a page left over from an earlier run (its build step failed) would show passed days as ahead
+    if os.environ.get("GITHUB_ACTIONS") and (B.eastern_today() - asof).days > 1:
+        f.append(f"/earnings is stale: built as of {asof}, today is {B.eastern_today()} (Eastern)")
     for tk, k, cells in re.findall(r'<tr[^>]*data-earn-ahead="([^"|]+)\|([^"]+)"[^>]*>(.*?)</tr>', doc, re.S):
         p = (T.get(tk) or {}).get("P", {}).get(k)
         if not p:
@@ -130,10 +137,16 @@ def page_checks(plant=False):
             f.append(f"/earnings passed row {tk} {k}: the cache does not have a passed announced day")
         if not os.path.isfile(os.path.join(SITE, tk, "index.html")):
             f.append(f"/earnings passed row {tk} {k}: no company page shows it in full")
-    for tk, k in re.findall(r'data-earn-recent="([^"|]+)\|([^"]+)"', doc):
+    for tk, k, cells in re.findall(r'<tr[^>]*data-earn-recent="([^"|]+)\|([^"]+)"[^>]*>(.*?)</tr>', doc, re.S):
         p = (T.get(tk) or {}).get("P", {}).get(k)
         if not p or not p["results"]:
             f.append(f"/earnings recent row {tk} {k}: no results row in the cache")
+            continue
+        tds = re.findall(r"<td>(.*?)</td>", cells, re.S)
+        if not tds or tds[0] != B.esc(B.fmt_et(p["results"]["published_et"])):
+            f.append(f"/earnings recent row {tk} {k}: release time does not match the cache")
+        if not 0 <= (asof - B.d_of(p["results"]["published_et"])).days < B.RECENT_DAYS:
+            f.append(f"/earnings recent row {tk} {k}: not within the last {B.RECENT_DAYS} days of {asof}")
     for d in sorted(os.listdir(SITE)):
         pg = os.path.join(SITE, d, "index.html")
         if not B.TICKER_OK.match(d) or not os.path.isfile(pg):
@@ -157,8 +170,15 @@ def page_checks(plant=False):
             if k not in P:
                 f.append(f"/earnings/{d} row {k}: period not in the cache")
                 continue
-            res = re.findall(r"<td>(.*?)</td>", cells, re.S)
-            res = res[2] if len(res) > 2 else ""
+            tds = re.findall(r"<td>(.*?)</td>", cells, re.S)
+            res = tds[2] if len(tds) > 2 else ""
+            sch = P[k]["schedules"][-1] if P[k]["schedules"] else None
+            ann_want = B.esc(B.pretty(B.d_of(sch["report_date"]))) if sch else "no announcement read"
+            if not (tds and len(tds) > 1 and tds[1].startswith(ann_want)):
+                f.append(f"/earnings/{d} row {k}: announced-day cell does not start with {ann_want!r}")
+            n = B.days_after_end(k, P[k]["results"]) if P[k]["results"] else None
+            if len(tds) > 3 and tds[3] != ("" if n is None else str(n)):
+                f.append(f"/earnings/{d} row {k}: days cell {tds[3]!r}, the cache gives {n!r}")
             st = B.status_of(P[k], asof)[1]
             want = (B.esc(B.fmt_et(P[k]["results"]["published_et"])) if P[k]["results"] else
                     {"postponed": "postponed by the company", "ahead": "ahead"}.get(
