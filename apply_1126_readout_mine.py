@@ -358,6 +358,10 @@ def main():
             continue
         seen.add(k)
         same = [e for e in existing_keys.get((tk, p), []) if e.get("d") == d]
+        # 2026-11-26: the same drug can have two readouts due the same day in different trials (Incyte's povorcitinib:
+        # prurigo nodularis Phase 3 and asthma Phase 2, both "Q4 2026"). A record that names the row it was checked
+        # against in "distinct_from" is not a duplicate of that row.
+        same = [e for e in same if e["id"] != r.get("distinct_from")]
         if same:
             log["dup"].append(f"{tk} {r.get('drug')} {d}: already on site as {same[0]['id']}")
             sup = r.get("supersedes_id")
