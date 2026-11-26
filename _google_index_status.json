@@ -4241,12 +4241,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/drug/albuterol-sulfate": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/aleniglipron": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9221,12 +9215,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/fda-decision/AMRN-2025-12-02": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/fda-decision/AMRX-2025-01-23": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9235,6 +9223,12 @@
 },
 "/fda-decision/AMRX-2025-05-15": {
 "checked": "2026-11-20",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/AMRX-2025-06-12": {
+"checked": "2026-11-26",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -9259,6 +9253,12 @@
 },
 "/fda-decision/AMRX-2025-11-13": {
 "checked": "2026-11-20",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/AMRX-2025-12-01": {
+"checked": "2026-11-26",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -9617,6 +9617,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/BMY-2025-12-04": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/BMY-2026-03-06": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9725,6 +9731,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/DSNKY-2025-06-23": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/DSNKY-2025-12-15": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9825,6 +9837,12 @@
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/GSK-2025-02-18": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/fda-decision/GSK-2025-03-25": {
@@ -9929,6 +9947,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/INCY-2025-01-16": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/INCY-2025-05-15": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9983,19 +10007,7 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/fda-decision/INTE-2025-03-28": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/fda-decision/INVA-2025-12-15": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/IONI-2025-08-21": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -10133,6 +10145,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/JNJ-2026-02-17": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/JNJ-2026-03-05": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -10159,6 +10177,12 @@
 },
 "/fda-decision/KALV-2025-07-07": {
 "checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/KRYS-2025-09-15": {
+"checked": "2026-11-26",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -10337,6 +10361,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/MRK-2025-06-09": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/MRK-2025-06-13": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -10419,6 +10449,24 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/MRNA-2025-05-31": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/MRNA-2025-06-12": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/MRNA-2025-08-27": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/fda-decision/MRNA-2026-08-05": {
@@ -10619,6 +10667,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/PFE-2025-08-27": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/PFE-2025-11-21": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -10793,6 +10847,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/REGN-2026-02-24": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/REGN-2026-04-02": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -10871,8 +10931,20 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/RHHBY-2025-07-18": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/RHHBY-2025-10-02": {
 "checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/RHHBY-2025-10-20": {
+"checked": "2026-11-26",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -10954,6 +11026,12 @@
 "crawled": "2026-11-20",
 "state": "Submitted and indexed",
 "verdict": "PASS"
+},
+"/fda-decision/SNDX-2025-01-16": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
 },
 "/fda-decision/SNDX-2025-10-24": {
 "checked": "2026-11-21",
@@ -11057,6 +11135,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/TAK-2025-09-05": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/TAK-2026-08-05": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -11071,6 +11155,12 @@
 },
 "/fda-decision/TEVA-2025-08-06": {
 "checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/TEVA-2025-08-28": {
+"checked": "2026-11-26",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -11813,12 +11903,6 @@
 "state": "Submitted and indexed",
 "verdict": "PASS"
 },
-"/pdufa/CGEM": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/pdufa/CGEM-zipalertinib": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -11976,12 +12060,6 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/IMNM-varegacestat": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/pdufa/INBX": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "URL is unknown to Google",
@@ -12995,12 +13073,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/ticker/ANIK": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/ticker/ANIP": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -13021,12 +13093,6 @@
 },
 "/ticker/ANRO": {
 "checked": "2026-11-25",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/ticker/ANTE": {
-"checked": "2026-11-20",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -13059,12 +13125,6 @@
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/ticker/APTO": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/ticker/AQST": {
@@ -13313,12 +13373,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/ticker/CASI": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/ticker/CCCC": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -13367,12 +13421,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/ticker/CLDI": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/ticker/CLDX": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -13391,22 +13439,10 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/ticker/CMND": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/ticker/CMPX": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/ticker/CNTA": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/ticker/COCP": {
@@ -13467,12 +13503,6 @@
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/ticker/CUE": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/ticker/CYTK": {
@@ -13589,12 +13619,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/ticker/GHRS": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/ticker/GILD": {
 "checked": "2026-11-20",
 "crawled": "2026-10-11",
@@ -13605,18 +13629,6 @@
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/ticker/GLPG": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/ticker/GLSI": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/ticker/GMAB": {
@@ -13668,12 +13680,6 @@
 "verdict": "NEUTRAL"
 },
 "/ticker/HELP": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/ticker/HOTH": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -14243,12 +14249,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/ticker/OGEN": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/ticker/OGN": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -14291,12 +14291,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/ticker/PBM": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/ticker/PBYI": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -14328,12 +14322,6 @@
 "verdict": "NEUTRAL"
 },
 "/ticker/PHAT": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/ticker/PHIO": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -14376,12 +14364,6 @@
 "verdict": "NEUTRAL"
 },
 "/ticker/PRTA": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/ticker/PRTC": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "URL is unknown to Google",
@@ -14481,12 +14463,6 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/ticker/RPRX": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/ticker/RVMD": {
@@ -14741,12 +14717,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/ticker/TURN": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/ticker/TVTX": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -14775,12 +14745,6 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/ticker/VALN": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/ticker/VERA": {
