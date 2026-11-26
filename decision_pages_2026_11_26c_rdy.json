@@ -1,0 +1,32 @@
+[
+ {
+  "ticker": "RDY",
+  "date": "2025-10-16",
+  "fda_action_date": "2025-10-16",
+  "outcome": "CRL",
+  "drug": "DRL_RI (proposed rituximab biosimilar)",
+  "indication": "Proposed biosimilar to Rituxan (rituximab)",
+  "company": "Dr. Reddy's Laboratories Limited",
+  "cap": "Large",
+  "headline": "The FDA issued a second Complete Response Letter on October 16, 2025 for DRL_RI, Dr. Reddy's proposed biosimilar to Rituxan (rituximab), citing deficiencies from a pre-license facility inspection. Dr. Reddy's did not announce the letter on its date.",
+  "pdufa_note": "The FDA's Complete Response Letter for BLA 761376 is dated October 16, 2025 and names the product as DRL_RI (<a href=\"https://download.open.fda.gov/crl/CRL_BLA761376_20251016.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA CRL file</a>). It is addressed to Dr. Reddy's Laboratories SA in care of Parexel International. The letter says the application was a complete response to the FDA's April 19, 2024 action letter (<a href=\"/crl/letter/bla-761376-2024-04-19\" style=\"color:#e3ba5e\">that letter's text</a>), and that after a pre-license inspection of a facility listed in the application the FDA conveyed deficiencies on a Form 483 that the facility should answer before the company responds; product quality deficiencies are redacted. Dr. Reddy's filed no release with the SEC on Form 6-K from October 14 through October 24, 2025 that announces this letter, and its second-quarter results filed October 24, 2025 do not mention it. The FDA approved BLA 761376 on July 31, 2026 as Zimrixby (rituximab-cdxx), and its approval letter says the resubmission of February 2, 2026 responded to the October 16, 2025 action letter (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761376Orig1s000ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA approval letter</a>). Because the letter was not announced on its date, this page is left out of the run-up study. No PDUFA goal date is stated, so no early or late margin is given. A Complete Response Letter means the FDA will not approve the application in its present form; the sponsor can resubmit.",
+  "source": "https://download.open.fda.gov/crl/CRL_BLA761376_20251016.pdf",
+  "source_label": "FDA Complete Response Letter, BLA 761376, October 16, 2025",
+  "h1": "DRL_RI rituximab biosimilar (RDY) <span class=\"g\">FDA Complete Response Letter</span>: Oct 16, 2025"
+ },
+ {
+  "ticker": "RDY",
+  "date": "2025-12-31",
+  "fda_action_date": "2025-12-30",
+  "outcome": "CRL",
+  "drug": "AVT03 (proposed denosumab biosimilar)",
+  "indication": "Proposed biosimilar to Prolia and Xgeva (denosumab)",
+  "company": "Dr. Reddy's Laboratories Limited",
+  "cap": "Large",
+  "headline": "Dr. Reddy's disclosed on December 31, 2025 that the FDA issued a Complete Response Letter on its BLA for AVT03, a proposed denosumab biosimilar developed by Alvotech, citing observations from an inspection of Alvotech's Reykjavik manufacturing facility; the FDA's letter is dated December 30, 2025.",
+  "pdufa_note": "Dr. Reddy's stock exchange disclosure dated December 31, 2025, filed with the SEC on Form 6-K that day, says its subsidiary Dr. Reddy's Laboratories SA received a Complete Response Letter from the FDA for its BLA for AVT03 (denosumab), and that the CRL refers to the observations from a pre-license inspection of Alvotech's Reykjavik manufacturing facility (<a href=\"https://www.sec.gov/Archives/edgar/data/1135951/000157587225000775/rdy0835_ex99-1.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">Dr. Reddy's disclosure, SEC Exhibit 99.1</a>). The FDA's released letter on BLA 761471 is dated December 30, 2025 and names the product as AVT03 (<a href=\"/crl/letter/bla-761471-2025-12-30\" style=\"color:#e3ba5e\">the letter's text</a>). It says the FDA conveyed deficiencies on a Form 483 after a pre-license inspection of a facility listed in the application, asks for revised labeling, and agrees that a REMS will be needed for AVT03 if it is approved, because of the risk of severe hypocalcemia in patients with advanced chronic kidney disease. Alvotech's annual report on Form 20-F for 2025 states that the FDA issued Complete Response Letters on the BLAs for AVT03, AVT05 and AVT06 (<a href=\"https://www.sec.gov/Archives/edgar/data/1898416/000189841626000004/alvo-20251231.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">Alvotech 20-F</a>). The disclosure states no PDUFA goal date, so no early or late margin is given. A Complete Response Letter means the FDA will not approve the application in its present form; the sponsor can resubmit.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1135951/000157587225000775/rdy0835_ex99-1.htm",
+  "source_label": "Dr. Reddy's disclosure, December 31, 2025 (SEC Exhibit 99.1)",
+  "h1": "AVT03 denosumab biosimilar (RDY) <span class=\"g\">FDA Complete Response Letter</span>: Dec 31, 2025"
+ }
+]

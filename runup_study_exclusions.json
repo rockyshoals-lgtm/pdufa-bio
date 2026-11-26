@@ -821,6 +821,12 @@
    "document": "https://download.open.fda.gov/crl/CRL_NDA219112_20250117.pdf",
    "finding": "the FDA letter is real, but the company did not announce it on its date, so the share price had no news to react to on that day",
    "checked": "2026-11-26"
+  },
+  "RDY-2025-10-16": {
+   "reason": "not announced on its date: Complete Response Letter for DRL_RI, a proposed rituximab biosimilar (BLA 761376), dated 2025-10-16; Dr. Reddy's 6-K filings of October 14 to 24, 2025 do not announce it.",
+   "document": "https://download.open.fda.gov/crl/CRL_BLA761376_20251016.pdf",
+   "finding": "the FDA letter is real, but the company did not announce it on its date, so the share price had no news to react to on that day",
+   "checked": "2026-11-26"
   }
  }
 }
