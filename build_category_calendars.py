@@ -170,7 +170,8 @@ open(os.path.join(OUT, "devices.html"), "w", encoding="utf-8").write(page(
     "https://www.pdufa.bio/devices",
     '2026 <span class="g">FDA Medical Device Calendar</span>',
     "Upcoming medical-device FDA milestones " + DASH + " PMA, 510(k), De Novo submissions/decisions and pivotal device readouts. "
-    "Company, product, indication and the source filing. Tap any row for the source.",
+    "Company, product, indication and the source filing. Tap any row for the source."
+    ' Past FDA decisions: <a href="/devices/decisions">PMA approvals and De Novo grants since 2010</a>.',
     devices,
     f"{nD} upcoming device milestones. Sources: company filings / curated device seed. Many device dates are quarter/half-year windows."))
 

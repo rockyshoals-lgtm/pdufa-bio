@@ -72,6 +72,8 @@ SITE_LINKS = [
     ("Run-up study", "/runup-by-year"), ("FDA approval rate", "/fda-approval-rate"), ("Oncology readouts", "/readouts/oncology"),
     # 2026-11-26 (moat: earnings dates): the new /earnings hub, linked site-wide so its company pages sit 2 clicks from /
     ("Earnings dates", "/earnings"),
+    # 2026-11-26 (moat: device decisions): FDA device approvals and De Novo grants since 2010, from FDA records
+    ("Device approvals", "/devices/decisions"),
     ("Readouts", "/readouts"), ("Conferences", "/conferences"), ("Corrections", "/corrections"), ("All pages", "/sitemap"),
 ]
 
@@ -86,7 +88,7 @@ SITE_GROUPS = [
     ("Decisions", ["/decisions/2026", "/decisions/2025", "/pdufa-date-changes", "/fda-approval-letters",
                    "/fda-approval-rate"]),
     ("Approvals", ["/fda-approvals", "/fda-approvals/companies", "/fda-approvals/drugs", "/fda-approvals/types",
-                   "/research/fda-approval-weekdays"]),
+                   "/research/fda-approval-weekdays", "/devices/decisions"]),
     ("CRLs", ["/crl", "/crl/facts", "/crl/companies", "/crl/review-clock", "/learn/what-is-a-crl"]),
     ("Trials", ["/readouts", "/readouts/oncology", "/conferences", "/clinical-trial-success-rates"]),
     ("Studies and data", ["/research/fda-decision-timing", "/research/fda-decision-timing/since-2024", "/runup-by-year", "/coverage", "/changes", "/corrections"]),

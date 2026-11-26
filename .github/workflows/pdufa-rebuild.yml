@@ -566,6 +566,14 @@ jobs:
         continue-on-error: true
         run: python build_earnings_pages.py || echo "::warning::/earnings not rebuilt this run"
 
+      # 2026-11-26 (moat: device decisions). /devices/decisions and /devices/decisions/<YEAR> from _fda_devices.json:
+      # PMA approvals, panel-track supplement approvals and De Novo grants since 2010 as openFDA lists them, each linked to its FDA
+      # record; decision words only where the FDA defines the code. After the cache step, before the normalisers.
+      # Guard: tests/test_device_decisions.py.
+      - name: "Device decisions: /devices/decisions from the FDA's own records"
+        continue-on-error: true
+        run: python build_device_decisions.py || echo "::warning::/devices/decisions not rebuilt this run"
+
       - name: "Quarantine: record held leads, one issue per new lead, escalate after 2 held runs"
         env:
           GH_TOKEN: ${{ github.token }}
@@ -1392,6 +1400,7 @@ jobs:
           git add -f pdufa_site_src/fda-approvals/data/approvals-by-drug.csv 2>/dev/null || true   # /fda-approvals/drugs download (*.csv is ignored)
           git add -f pdufa_site_src/fda-approvals/data/approvals-by-type.csv 2>/dev/null || true   # /fda-approvals/types download (*.csv is ignored)
           git add -f pdufa_site_src/earnings/data/earnings-dates.csv 2>/dev/null || true   # /earnings download (*.csv is ignored)
+          git add -f pdufa_site_src/devices/decisions/data/device-decisions.csv 2>/dev/null || true   # /devices/decisions download (*.csv is ignored)
           # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot
           # reach openFDA reads the newest release, not the August 2026 file (red team of /crl/data, Nov 22)
           git add CRL_corpus_openFDA_*.json 2>/dev/null || true
