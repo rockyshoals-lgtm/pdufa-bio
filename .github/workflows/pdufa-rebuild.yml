@@ -525,6 +525,27 @@ jobs:
           done
           exit 0
 
+      # 2026-11-26 (moat: earnings dates): company-announced earnings dates for every tracked ticker, from the
+      # company's own releases on the newswire (FMP press-release feed, ET timestamps). Results releases give
+      # the reported date; "to report on <date>" releases give upcoming dates. FMP's estimated next date is
+      # never used. Writes the committed cache _earnings_dates.json only; no page reads it yet.
+      # Guard: tests/test_earnings_dates_parse.py.
+      - name: "Earnings dates: company-announced report dates from company releases (cache only)"
+        timeout-minutes: 12   # first run backfills ~370 tickers from 2024; daily runs read 21 days (~4 min)
+        continue-on-error: true
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python fetch_earnings_dates.py || echo "::warning::_earnings_dates.json not refreshed this run"
+
+      # 2026-11-26 (moat: device decisions): PMA originals, panel-track PMA supplements and De Novo grants since
+      # 2010 from the FDA's own device databases (openFDA pma.json / 510k.json), each with its FDA record link.
+      # Ticker only from an exact one-company SEC name or device_applicant_aliases.json. A partial pull never
+      # replaces the cache. Writes _fda_devices.json only. Guard: tests/test_fda_devices_cache.py.
+      - name: "Device decisions: FDA PMA, panel-track and De Novo records (cache only)"
+        timeout-minutes: 8
+        continue-on-error: true
+        run: python fetch_fda_devices.py || echo "::warning::_fda_devices.json not refreshed this run"
+
       - name: "Quarantine: record held leads, one issue per new lead, escalate after 2 held runs"
         env:
           GH_TOKEN: ${{ github.token }}
@@ -1357,6 +1378,7 @@ jobs:
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
           git add _date_checks.json 2>/dev/null || true   # recheck_upcoming_dates.py's CONFIRMED re-reads
+          git add _earnings_dates.json _fda_devices.json 2>/dev/null || true   # fetch_earnings_dates.py, fetch_fda_devices.py (moat caches, 2026-11-26)
           git add _google_indexed.json _google_index_status.json _google_search_stats.json 2>/dev/null || true   # gsc_index_status.py
           git add catalysts_out/conference_presenters_mined.csv 2>/dev/null || true
           git add -f readout_miner.csv 2>/dev/null || true

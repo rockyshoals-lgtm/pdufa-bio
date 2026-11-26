@@ -204,6 +204,9 @@ def self_test():
         {"id": "r3", "t": "Y", "type": "Readout", "st": "Guided", "d": "2027-12-31", "dp": "year",
          "_d": {"source_url": "https://x", "guidance_text": "data expected in the first half of 2027",
                 "guided_precision": "half", "guided_window": "2027-H1"}},
+        {"id": "r4", "t": "Y", "type": "Readout", "st": "Guided", "d": "2027-12-31", "dp": "quarter",
+         "_d": {"source_url": "https://x", "guidance_text": "Two readouts anticipated in 2027: A in the first half "
+                "and B in the third quarter.", "guided_precision": "quarter", "guided_window": "2027-Q4"}},
     ]
     good = [
         {"id": "g1", "t": "X", "type": "PDUFA", "st": "Upcoming", "d": "2026-12-30", "dp": "day",
@@ -219,6 +222,10 @@ def self_test():
                 "guided_precision": "half", "guided_window": "2027-H1"}},
         {"id": "g5", "t": "N", "type": "PDUFA", "st": "Under review", "d": "2026-12-31", "dp": "month",
          "_d": {"source_url": "https://sec.gov/x", "source_quote": "launch in early 2027", "goal_date": "not announced"}},
+        {"id": "g6", "t": "Y", "type": "Readout", "st": "Guided", "d": "2027-12-31", "dp": "quarter",
+         "_d": {"source_url": "https://x", "guidance_text": "Two Phase 2 readouts anticipated in 2027: A in the second "
+                "half and, for the first time, guidance for B in the fourth quarter.",
+                "guided_precision": "quarter", "guided_window": "2027-Q4"}},
     ]
     f_bad = check(base + bad, t, {})
     f_good = check(base + good, t, {})
