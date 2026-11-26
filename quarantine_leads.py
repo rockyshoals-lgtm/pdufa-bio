@@ -434,6 +434,13 @@ def cmd_apply(a):
                 import inject_site_type
                 if inject_site_type.public(p, old):
                     old = inject_site_type.apply(old)[0]
+            if p.endswith(".html") and url:
+                # 2026-11-26: the committed copy can predate the Browse pdufa.bio footer's current layout (run 540
+                # put the old dotted row back on two Vertex pages and tests/test_browse_footer.py blocked the
+                # deploy). The block is marker-bounded and site-wide, not the held row's, so it is placed again;
+                # build_sitemap strips it from the content hash, so the held page's lastmod is unchanged.
+                import inject_site_links
+                old = inject_site_links.refresh_browse(old, url)
             if p.endswith(".html"):  # after the badges and the site type, as in the build
                 # a page committed before the accessibility pass gets it too (named charts first, then the phone
                 # copies that carry their names), or the page it restores would fail tests/test_accessibility.py
