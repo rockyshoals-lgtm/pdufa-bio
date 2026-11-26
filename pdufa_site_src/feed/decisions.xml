@@ -5,9 +5,49 @@
 <id>https://www.pdufa.bio/feed/decisions.xml</id>
 <link rel="self" type="application/atom+xml" href="https://www.pdufa.bio/feed/decisions.xml"/>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/feed"/>
-<updated>2026-11-26T20:48:35Z</updated>
+<updated>2026-11-26T22:17:53Z</updated>
 <author><name>pdufa.bio</name><uri>https://www.pdufa.bio</uri></author>
 <rights>Facts from FDA and sponsor documents, each linked. Not investment advice.</rights>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/RDY-2025-12-31</id>
+<title>AVT03 (proposed denosumab biosimilar) CRL Dec 30, 2025 | RDY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RDY-2025-12-31"/>
+<published>2025-12-31T17:00:00Z</published>
+<updated>2026-11-26T22:17:53Z</updated>
+<category term="Complete Response Letter"/>
+<summary>AVT03 (proposed denosumab biosimilar), Dr. Reddy's Laboratories Limited: Complete Response Letter. FDA action date: December 30, 2025. Announced: December 31, 2025.</summary>
+<content type="html">&lt;p&gt;AVT03 (proposed denosumab biosimilar), Dr. Reddy's Laboratories Limited: Complete Response Letter. FDA action date: December 30, 2025. Announced: December 31, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761471_20251230.pdf"&gt;FDA Complete Response Letter&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1135951/000157587225000775/rdy0835_ex99-1.htm"&gt;Dr. Reddy's disclosure&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 26, 2026, 5:17 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/RDY-2025-10-16</id>
+<title>DRL_RI (proposed rituximab biosimilar) CRL Oct 16, 2025 | RDY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RDY-2025-10-16"/>
+<published>2025-10-16T16:00:00Z</published>
+<updated>2026-11-26T22:17:53Z</updated>
+<category term="Complete Response Letter"/>
+<summary>DRL_RI (proposed rituximab biosimilar), Dr. Reddy's Laboratories Limited: Complete Response Letter. FDA action date: October 16, 2025.</summary>
+<content type="html">&lt;p&gt;DRL_RI (proposed rituximab biosimilar), Dr. Reddy's Laboratories Limited: Complete Response Letter. FDA action date: October 16, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761376_20251016.pdf"&gt;FDA Complete Response Letter&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 26, 2026, 5:17 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/AMRX-2025-04-02</id>
+<title>Phenylephrine hydrochloride in sodium chloride CRL Apr 2, 2025 | AMRX FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/AMRX-2025-04-02"/>
+<published>2025-04-02T16:00:00Z</published>
+<updated>2026-11-26T21:30:30Z</updated>
+<category term="Complete Response Letter"/>
+<summary>Phenylephrine hydrochloride in sodium chloride injection, Amneal Pharmaceuticals Inc.: Complete Response Letter. FDA action date: April 2, 2025.</summary>
+<content type="html">&lt;p&gt;Phenylephrine hydrochloride in sodium chloride injection, Amneal Pharmaceuticals Inc.: Complete Response Letter. FDA action date: April 2, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA218345_20250402.pdf"&gt;FDA Complete Response Letter&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 26, 2026, 4:30 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/PFE-2025-01-17</id>
+<title>Diazepam injection (Hospira) CRL Jan 17, 2025 | PFE FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/PFE-2025-01-17"/>
+<published>2025-01-17T17:00:00Z</published>
+<updated>2026-11-26T21:30:30Z</updated>
+<category term="Complete Response Letter"/>
+<summary>Diazepam injection (Hospira), Pfizer Inc.: Complete Response Letter. FDA action date: January 17, 2025.</summary>
+<content type="html">&lt;p&gt;Diazepam injection (Hospira), Pfizer Inc.: Complete Response Letter. FDA action date: January 17, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA219112_20250117.pdf"&gt;FDA Complete Response Letter&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository by Nov 26, 2026, 4:30 PM ET.&lt;/p&gt;</content>
+</entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/AMPH-2026-02-26</id>
 <title>Insulin aspart biosimilar (AMP-004) CRL Feb 26, 2026 | AMPH FDA Decision</title>
@@ -587,46 +627,6 @@
 <category term="Approved"/>
 <summary>Gazyva (obinutuzumab), Roche Holding AG: Approved. FDA action date: September 25, 2026.</summary>
 <content type="html">&lt;p&gt;Gazyva (obinutuzumab), Roche Holding AG: Approved. FDA action date: September 25, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125486Orig1s043ltr.pdf"&gt;BLA 125486 SUPPL-43&lt;/a&gt; &amp;middot; &lt;a href="https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-drug-treat-idiopathic-nephrotic-syndrome-patients-2-years-and-older"&gt;FDA approval letter, BLA 125486 supplement 043&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 3, 2026, 6:53 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/ABBV-2026-09-28</id>
-<title>JUVMO (tavapadon) Approved Sep 25, 2026 | ABBV FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/ABBV-2026-09-28"/>
-<published>2026-09-28T16:00:00Z</published>
-<updated>2026-10-03T19:28:32Z</updated>
-<category term="Approved"/>
-<summary>JUVMO (tavapadon), AbbVie: Approved. FDA action date: September 25, 2026. Announced: September 28, 2026.</summary>
-<content type="html">&lt;p&gt;JUVMO (tavapadon), AbbVie: Approved. FDA action date: September 25, 2026. Announced: September 28, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220415Orig1s000ltr.pdf"&gt;NDA 220415 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://news.abbvie.com/2026-09-28-U-S-FDA-Approves-AbbVies-JUVMO-TM-tavapadon-for-Parkinsons-Disease"&gt;FDA approval letter, NDA 220415&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 3, 2026, 3:28 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/MIRM-2026-09-25</id>
-<title>Atebrioz (zilurgisertib) Approved Sep 25, 2026, 1 Day Early | MIRM FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/MIRM-2026-09-25"/>
-<published>2026-09-25T16:00:00Z</published>
-<updated>2026-09-27T04:35:21Z</updated>
-<category term="Approved"/>
-<summary>Atebrioz (zilurgisertib), Mirum Pharmaceuticals, Inc.: Approved. FDA action date: September 25, 2026.</summary>
-<content type="html">&lt;p&gt;Atebrioz (zilurgisertib), Mirum Pharmaceuticals, Inc.: Approved. FDA action date: September 25, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221198Orig1s000ltr.pdf"&gt;NDA 221198 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.businesswire.com/news/home/20260925436454/en/Mirum-Pharmaceuticals-and-Incyte-Announce-U.S.-FDA-Approval-of-Atebrioz-zilurgisertib-for-Adult-and-Pediatric-Patients-with-Fibrodysplasia-Ossificans-Progressiva"&gt;FDA notice&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm"&gt;Mirum 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 27, 2026, 12:35 AM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/INCY-2026-09-25</id>
-<title>Atebrioz (zilurgisertib) Approved Sep 25, 2026, 1 Day Early | INCY FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/INCY-2026-09-25"/>
-<published>2026-09-25T16:00:00Z</published>
-<updated>2026-09-27T04:35:21Z</updated>
-<category term="Approved"/>
-<summary>Atebrioz (zilurgisertib), Incyte Corp: Approved. FDA action date: September 25, 2026.</summary>
-<content type="html">&lt;p&gt;Atebrioz (zilurgisertib), Incyte Corp: Approved. FDA action date: September 25, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221198Orig1s000ltr.pdf"&gt;NDA 221198 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.businesswire.com/news/home/20260925436454/en/Mirum-Pharmaceuticals-and-Incyte-Announce-U.S.-FDA-Approval-of-Atebrioz-zilurgisertib-for-Adult-and-Pediatric-Patients-with-Fibrodysplasia-Ossificans-Progressiva"&gt;FDA notice&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm"&gt;Mirum 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 27, 2026, 12:35 AM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/BAYRY-2026-09-16</id>
-<title>KERENDIA (finerenone), T1D-CKD Approved Sep 16, 2026 | BAYRY FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/BAYRY-2026-09-16"/>
-<published>2026-09-16T16:00:00Z</published>
-<updated>2026-09-24T01:25:52Z</updated>
-<category term="Approved"/>
-<summary>KERENDIA (finerenone), T1D-CKD, Bayer AG: Approved. FDA action date: September 16, 2026.</summary>
-<content type="html">&lt;p&gt;KERENDIA (finerenone), T1D-CKD, Bayer AG: Approved. FDA action date: September 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215341Orig1s011ltr.pdf"&gt;NDA 215341 S-011&lt;/a&gt; &amp;middot; &lt;a href="https://www.bayer.com/media/en-us/us-fda-approves-finerenone-for-new-indication-in-patients-with-chronic-kidney-disease-associated-with-type-1-diabetes/"&gt;FDA approval letter NDA 215341/S-011 dated&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 23, 2026, 9:25 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>tag:pdufa.bio,2026:pdufa-date-change/CAPR/2026-08-22/2026-11-22</id>

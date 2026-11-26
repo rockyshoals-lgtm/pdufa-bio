@@ -2903,6 +2903,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/adjuvant-intravesical",
+   "destination": "/drug/cretostimogene-grenadenorepvec",
+   "permanent": true
+  },
+  {
    "source": "/drug/aflibercept",
    "destination": "/drug/eylea-hd",
    "permanent": true
@@ -3718,6 +3723,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/pre-emptive-therapy",
+   "destination": "/drug/revumenib",
+   "permanent": true
+  },
+  {
    "source": "/drug/prefilled-syringe",
    "destination": "/drug/shingrix",
    "permanent": true
@@ -3725,6 +3735,11 @@
   {
    "source": "/drug/proposed-aflibercept-biosimilar",
    "destination": "/drug/avt06",
+   "permanent": true
+  },
+  {
+   "source": "/drug/proposed-denosumab-biosimilar",
+   "destination": "/drug/avt03",
    "permanent": true
   },
   {
@@ -3868,11 +3883,6 @@
    "permanent": true
   },
   {
-   "source": "/drug/tambiciclib",
-   "destination": "/drug/sls009",
-   "permanent": true
-  },
-  {
    "source": "/drug/tau-lowering",
    "destination": "/drug/vy1706",
    "permanent": true
@@ -3988,8 +3998,18 @@
    "permanent": true
   },
   {
+   "source": "/drug/ab-101",
+   "destination": "/ticker/ARTV",
+   "permanent": true
+  },
+  {
    "source": "/drug/aglatimagene-besadenovec",
    "destination": "/ticker/CADL",
+   "permanent": true
+  },
+  {
+   "source": "/drug/apg777",
+   "destination": "/ticker/APGE",
    "permanent": true
   },
   {
@@ -4053,6 +4073,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/decoy20",
+   "destination": "/ticker/INDP",
+   "permanent": true
+  },
+  {
    "source": "/drug/dehydratech",
    "destination": "/ticker/LEXX",
    "permanent": true
@@ -4065,6 +4090,11 @@
   {
    "source": "/drug/elranatamab",
    "destination": "/ticker/PFE",
+   "permanent": true
+  },
+  {
+   "source": "/drug/fcx-007",
+   "destination": "/drug",
    "permanent": true
   },
   {
@@ -4103,6 +4133,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/rexlemestrocel-l",
+   "destination": "/ticker/MESO",
+   "permanent": true
+  },
+  {
    "source": "/drug/rgx",
    "destination": "/ticker/RGNX",
    "permanent": true
@@ -4128,6 +4163,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/sotagliflozin",
+   "destination": "/ticker/LXRX",
+   "permanent": true
+  },
+  {
    "source": "/drug/temozolomide",
    "destination": "/ticker/NVCR",
    "permanent": true
@@ -4143,6 +4183,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/tp-05",
+   "destination": "/ticker/TARS",
+   "permanent": true
+  },
+  {
    "source": "/drug/ttx",
    "destination": "/ticker/RNAZ",
    "permanent": true
@@ -4150,6 +4195,11 @@
   {
    "source": "/drug/uproleselan",
    "destination": "/ticker/APLM",
+   "permanent": true
+  },
+  {
+   "source": "/drug/verekitug",
+   "destination": "/ticker/UPB",
    "permanent": true
   },
   {
