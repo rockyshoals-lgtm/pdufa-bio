@@ -293,6 +293,16 @@
    "source": "https://www.asco.org/gu/dates-know"
   },
   {
+   "code": "ADPD",
+   "name": "AD/PD International Conference on Alzheimer's and Parkinson's Diseases",
+   "start": "2027-03-16",
+   "end": "2027-03-20",
+   "city": "Barcelona, ES",
+   "focus": "Neurology, neurodegeneration",
+   "source": "https://adpd.kenes.com/",
+   "verified_on": "2026-11-26"
+  },
+  {
    "code": "AAD",
    "name": "American Academy of Dermatology Annual Meeting",
    "start": "2027-03-19",
@@ -309,6 +319,16 @@
    "city": "Orlando, US",
    "focus": "Cancer research",
    "source": "https://www.aacr.org/meeting/aacr-annual-meeting-2027/"
+  },
+  {
+   "code": "ESCMID",
+   "name": "ESCMID Global Congress",
+   "start": "2027-04-09",
+   "end": "2027-04-13",
+   "city": "Stockholm, SE",
+   "focus": "Infectious disease",
+   "source": "https://escmid.org/congress-events/escmid-global",
+   "verified_on": "2026-11-26"
   },
   {
    "code": "ACC",
@@ -329,6 +349,16 @@
    "source": "https://www.aan.com/events/upcoming-events"
   },
   {
+   "code": "APA",
+   "name": "American Psychiatric Association Annual Meeting",
+   "start": "2027-05-01",
+   "end": "2027-05-05",
+   "city": "New York, US",
+   "focus": "Psychiatry",
+   "source": "https://psychiatry.org/Psychiatrists/Meetings",
+   "verified_on": "2026-11-26"
+  },
+  {
    "code": "ASGCT",
    "name": "American Society of Gene and Cell Therapy Annual Meeting",
    "start": "2027-05-03",
@@ -336,6 +366,26 @@
    "city": "Philadelphia, US",
    "focus": "Gene and cell therapy",
    "source": "https://annualmeeting.asgct.org/about/future-annual-meetings"
+  },
+  {
+   "code": "ESMO Breast",
+   "name": "ESMO Breast Cancer Annual Congress",
+   "start": "2027-05-12",
+   "end": "2027-05-14",
+   "city": "Milan, IT",
+   "focus": "Oncology, breast",
+   "source": "https://www.esmo.org/meeting-calendar/esmo-breast-cancer-2027",
+   "verified_on": "2026-11-26"
+  },
+  {
+   "code": "HRS",
+   "name": "Heart Rhythm (Heart Rhythm Society annual meeting)",
+   "start": "2027-05-13",
+   "end": "2027-05-16",
+   "city": "San Francisco, US",
+   "focus": "Cardiology, electrophysiology",
+   "source": "https://www.hrsonline.org/event/heart-rhythm-2027/",
+   "verified_on": "2026-11-26"
   },
   {
    "code": "ATS",
@@ -356,6 +406,26 @@
    "source": "https://ddw.org/"
   },
   {
+   "code": "AUA",
+   "name": "American Urological Association Annual Meeting",
+   "start": "2027-05-21",
+   "end": "2027-05-24",
+   "city": "San Diego, US",
+   "focus": "Urology",
+   "source": "https://www.auanet.org/AUA2027/for-exhibitors",
+   "verified_on": "2026-11-26"
+  },
+  {
+   "code": "ERA",
+   "name": "European Renal Association Congress",
+   "start": "2027-06-03",
+   "end": "2027-06-06",
+   "city": "Rotterdam, NL",
+   "focus": "Nephrology",
+   "source": "https://www.era-online.org/events/rotterdam-2027/scientific-programme/",
+   "verified_on": "2026-11-26"
+  },
+  {
    "code": "ASCO",
    "name": "ASCO Annual Meeting",
    "start": "2027-06-04",
@@ -365,6 +435,26 @@
    "source": "https://www.asco.org/annual-meeting"
   },
   {
+   "code": "ENDO",
+   "name": "ENDO, the Endocrine Society Annual Meeting",
+   "start": "2027-06-05",
+   "end": "2027-06-07",
+   "city": "Toronto, CA",
+   "focus": "Endocrinology",
+   "source": "https://endocrine.org/meetings-and-events/endo-future-meetings",
+   "verified_on": "2026-11-26"
+  },
+  {
+   "code": "EULAR",
+   "name": "EULAR European Congress of Rheumatology",
+   "start": "2027-06-09",
+   "end": "2027-06-12",
+   "city": "Berlin, DE",
+   "focus": "Rheumatology",
+   "source": "https://congress.eular.org/about",
+   "verified_on": "2026-11-26"
+  },
+  {
    "code": "EHA",
    "name": "European Hematology Association Congress",
    "start": "2027-06-10",
@@ -372,6 +462,16 @@
    "city": "Barcelona, ES",
    "focus": "Haematology",
    "source": "https://ehaweb.org/connect-network/eha2027-congress"
+  },
+  {
+   "code": "EAN",
+   "name": "European Academy of Neurology Congress",
+   "start": "2027-06-12",
+   "end": "2027-06-15",
+   "city": "Gothenburg, SE",
+   "focus": "Neurology",
+   "source": "https://ean.org/meet/congresses/future-congresses",
+   "verified_on": "2026-11-26"
   },
   {
    "code": "EASL",
@@ -390,6 +490,46 @@
    "city": "Washington DC, US",
    "focus": "Diabetes",
    "source": "https://professional.diabetes.org/scientific-sessions"
+  },
+  {
+   "code": "ISTH",
+   "name": "International Society on Thrombosis and Haemostasis Congress",
+   "start": "2027-06-26",
+   "end": "2027-06-30",
+   "city": "Vancouver, CA",
+   "focus": "Haematology, thrombosis",
+   "source": "https://www.isth.org/page/FutureMeetings",
+   "verified_on": "2026-11-26"
+  },
+  {
+   "code": "AAIC",
+   "name": "Alzheimer's Association International Conference",
+   "start": "2027-07-18",
+   "end": "2027-07-21",
+   "city": "Chicago, US",
+   "focus": "Neurology, Alzheimer's disease",
+   "source": "https://alz.org/futuremeetings",
+   "verified_on": "2026-11-26"
+  },
+  {
+   "code": "ESC",
+   "name": "European Society of Cardiology Congress",
+   "start": "2027-08-27",
+   "end": "2027-08-30",
+   "city": "Milan, IT",
+   "focus": "Cardiology",
+   "source": "https://www.escardio.org/events/congresses/esc-congress/future-destinations/",
+   "verified_on": "2026-11-26"
+  },
+  {
+   "code": "ERS",
+   "name": "European Respiratory Society Congress",
+   "start": "2027-09-11",
+   "end": "2027-09-14",
+   "city": "Milan, IT",
+   "focus": "Respiratory",
+   "source": "https://www.ersnet.org/congress-and-events/congress",
+   "verified_on": "2026-11-26"
   }
  ]
 }

@@ -24,8 +24,14 @@ STATS = os.path.join(HERE, "_conference_runup_stats.json")
 CSVF = os.path.join(HERE, "conf_study", "conference_runup_PUBLISHED.csv")
 TIER_COL = "cap_tier_pit"
 
-ANCHOR_CAVEAT = ("anchored on the meeting start date, not on the abstract release; the "
-                 "true catalyst may be earlier")
+# Red team 2026-11-26: the old wording ("anchored on the meeting start date") was false. Each row's
+# anchor is the day that row was recorded in our catalyst history: the abstract release for some
+# meetings (most ASCO 2024 rows sit on one pre-meeting day), the presentation day for others (ASH
+# 2024 rows sit on the meeting days). anchor_audit() counts the rows that sit far from their meeting.
+ANCHOR_CAVEAT = ("anchored on the date our catalyst history records for each row: the abstract "
+                 "release for some rows, the presentation day for others (even within one meeting), "
+                 "and for some rows a date outside the named meeting")
+FAR_DAYS = 14
 SELECTION_CAVEAT = ("Companies choose what to present; part of any difference between "
                     "presenters and non-presenters is that choice.")
 NOT_FORECAST = "This measures what happened; it is not a forecast for any company."
@@ -72,13 +78,52 @@ def load():
     return out
 
 
+def anchor_audit(rows=None):
+    """Among rows in meeting-year groups of 3 or more (conf, year), the rows whose anchor sits more
+    than FAR_DAYS from that group's median anchor (the row itself included in the median); and the
+    rows with no meeting name. A flag, not a verdict: real abstract-release rows (ASH posts abstracts
+    about five weeks early) can sit that far too. Computed from the CSV, never typed."""
+    import datetime as _dt
+    import statistics as _st
+    if rows is None:
+        rows = list(csv.DictReader(io.open(CSVF, encoding="utf-8-sig", errors="replace")))
+    groups = {}
+    for r in rows:
+        try:
+            d = _dt.date.fromisoformat(str(r.get("anchor", ""))[:10])
+        except ValueError:
+            continue
+        groups.setdefault((r.get("conf", ""), str(r.get("year", ""))), []).append(d)
+    far = checked = 0
+    for (conf, _y), ds in groups.items():
+        if conf == "UNKNOWN" or len(ds) < 3:
+            continue
+        checked += len(ds)
+        mid = _dt.date.fromordinal(int(_st.median(x.toordinal() for x in ds)))
+        far += sum(1 for x in ds if abs((x - mid).days) > FAR_DAYS)
+    unknown = sum(1 for r in rows if r.get("conf") == "UNKNOWN")
+    named = len({r.get("conf") for r in rows if r.get("conf") and r.get("conf") != "UNKNOWN"})
+    return {"far": far, "checked": checked, "unknown": unknown, "named_meetings": named, "far_days": FAR_DAYS,
+            "n": len(rows)}
+
+
+def audit_sentence(a=None):
+    a = a or anchor_audit()
+    return (f"Of the {a['checked']:,} rows in meeting-years with three or more rows, "
+            f"{a['far']:,} sit more than {a['far_days']} days from that group's median date; "
+            f"that flags rows dated to another meeting and also some genuine abstract-release "
+            f"rows. {a['unknown']:,} rows carry no meeting name. All of them are counted in "
+            f"every figure until the rows are re-checked against their sources.")
+
+
 def block_sentence(f):
     """The one paragraph for every conference page. Numbers from the data, never typed."""
     o, bc, q = f["overall"], f["by_cap"], f["quartiles"]["runup_30d"]
     return (
         f"Across {f['n']:,} presentations at major medical meetings from 2017 to 2026, the "
         f"median presenting company's stock moved <b>{_fmt(o['runup_30d']['median'])}</b> in "
-        f"the 30 trading days before the meeting ({o['runup_30d']['pct_up']}% rose) and "
+        f"the 30 trading days before its anchor day "
+        f"({o['runup_30d']['pct_up']}% rose) and "
         f"<b>{_fmt(o['post_5d']['median'])}</b> in the 5 trading days after "
         f"({o['post_5d']['pct_up']}% rose). Small caps: {_fmt(bc['small']['runup_30d']['median'])} "
         f"before (n={bc['small']['runup_30d']['n']}); nano caps: "

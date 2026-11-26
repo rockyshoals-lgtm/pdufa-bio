@@ -16,10 +16,10 @@ WHAT GETS SHOWN, AND WHAT DOES NOT
   * Every number carries its n, and the block states in plain language that this is a historical
     distribution for a cohort of companies, not a prediction for any one of them, and not advice.
 
-The pattern in the data is worth stating plainly because it is the opposite of the intuition:
-stocks drift UP into these meetings and DOWN out of them, and the effect is strongest in the
-smallest companies. The block says that, because a page that shows only the run-up would be
-telling half the truth.
+Red team 2026-11-26: an earlier version claimed stocks "drift UP into these meetings and DOWN
+out of them, strongest in the smallest companies". The study does not show that (30-day median
+about flat, nano caps negative), so the block now states only the measured numbers and what the
+anchor day is.
 
 Idempotent via CRUN markers.
 
@@ -39,7 +39,7 @@ B, E = "<!--CRUN:BEGIN-->", "<!--CRUN:END-->"
 TIERS = [("nano", "Nano (&lt;$50M)"), ("micro", "Micro ($50-300M)"),
          ("small", "Small ($300M-$2B)"), ("mid", "Mid ($2-10B)"), ("large", "Large (&gt;$10B)")]
 LABELS = [("runup_30d", "30 days before"), ("runup_10d", "10 days before"),
-          ("event_day", "Presentation day"), ("post_5d", "5 days after"),
+          ("event_day", "Anchor day and next"), ("post_5d", "5 days after"),
           ("post_10d", "10 days after")]
 
 
@@ -73,7 +73,7 @@ def main():
         _m = re.search(r'<div class="bc">.*?&rsaquo;\s*([^<]+)</div>', _doc, re.S)
         code = (_m.group(1).strip() if _m else slug.replace("-", " "))
         src = own or overall
-        scope = (f"{code} presentations" if own else "all tracked conference presentations")
+        scope = (f"{code} presentations" if own else "tracked conference presentations")
         n = src.get("runup_10d", {}).get("n") or src.get("runup_30d", {}).get("n") or 0
 
         rows = ""
@@ -111,15 +111,14 @@ def main():
             f'<div style="background:#0c1d38;border:1px solid #1e3a63;border-radius:12px;'
             f'padding:14px 16px;margin:12px 0">'
             f'<div style="font-size:13.5px;color:#9db3d4;margin-bottom:8px">'
-            f'Median share-price move around a presentation, measured across <b>{n}</b> '
+            f'Median share-price move around a presentation, measured across <b>{n:,}</b> '
             f'{esc(scope)} in our study (2017&ndash;2026)'
             + ("" if own else f", because our study holds fewer than {S['_min_n']} "
                               f"{esc(code)} events on their own") + '.</div>'
             + rows + tier_block +
             '<div style="font-size:12px;color:#7c93b6;margin-top:10px;line-height:1.6">'
-            'Read the whole row, not just the first line: across this study stocks have drifted '
-            '<b>up into</b> these meetings and <b>down out of</b> them, and the effect is '
-            'largest in the smallest companies. Medians are shown because a handful of large '
+            'Each row is anchored on the date our catalyst history records for it: the '
+            'abstract release for some, the presentation day for others. Medians are shown because a handful of large '
             'moves pulls an average away from the typical case. '
             'This is a historical distribution for a cohort of companies &mdash; not a forecast '
             'for any single company, and not investment advice. '
