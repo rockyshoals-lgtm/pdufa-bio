@@ -3721,6 +3721,26 @@
    "source": "/fda-decision/ANTE-2025-04-23",
    "destination": "/decisions/approvals",
    "permanent": true
+  },
+  {
+   "source": "/drug/andembry",
+   "destination": "/drug/garadacimab",
+   "permanent": true
+  },
+  {
+   "source": "/drug/romvimza",
+   "destination": "/decisions/approvals",
+   "permanent": true
+  },
+  {
+   "source": "/drug/zegfrovy",
+   "destination": "/decisions/approvals",
+   "permanent": true
+  },
+  {
+   "source": "/drug/penpulimab",
+   "destination": "/decisions/approvals",
+   "permanent": true
   }
  ],
  "headers": [

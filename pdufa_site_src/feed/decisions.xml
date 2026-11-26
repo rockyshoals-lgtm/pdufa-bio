@@ -5,9 +5,19 @@
 <id>https://www.pdufa.bio/feed/decisions.xml</id>
 <link rel="self" type="application/atom+xml" href="https://www.pdufa.bio/feed/decisions.xml"/>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/feed"/>
-<updated>2026-11-25T20:28:13Z</updated>
+<updated>2026-11-26T06:09:14Z</updated>
 <author><name>pdufa.bio</name><uri>https://www.pdufa.bio</uri></author>
 <rights>Facts from FDA and sponsor documents, each linked. Not investment advice.</rights>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/GSK-2025-12-16</id>
+<title>GSK FDA Decision (Dec 16, 2025): Exdensur (depemokimab): Approved</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/GSK-2025-12-16"/>
+<published>2025-12-16T17:00:00Z</published>
+<updated>2026-11-26T06:09:14Z</updated>
+<category term="Approved"/>
+<summary>Exdensur (depemokimab), GSK plc: Approved. FDA action date: December 16, 2025.</summary>
+<content type="html">&lt;p&gt;Exdensur (depemokimab), GSK plc: Approved. FDA action date: December 16, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=761458"&gt;BLA 761458 Original 1 (Drugs@FDA) (Drugs@FDA)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 26, 2026, 1:09 AM ET.&lt;/p&gt;</content>
+</entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/AZN-2026-02-03</id>
 <title>Saphnelo (anifrolumab) for subcutaneous use CRL Oct 10, 2025 | AZN FDA Decision</title>
@@ -176,7 +186,7 @@
 <updated>2026-11-18T03:25:35Z</updated>
 <category term="Complete Response Letter"/>
 <summary>tolebrutinib, Sanofi: Complete Response Letter. FDA action date: December 23, 2025. Announced: December 24, 2025.</summary>
-<content type="html">&lt;p&gt;tolebrutinib, Sanofi: Complete Response Letter. FDA action date: December 23, 2025. Announced: December 24, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf"&gt;FDA Complete Response Letter&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
+<content type="html">&lt;p&gt;tolebrutinib, Sanofi: Complete Response Letter. FDA action date: December 23, 2025. Announced: December 24, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf"&gt;FDA Complete Response Letter&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1121404/000119312525211134/d36300dex992.htm"&gt;SEC filing, September 22, 2025&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/SNY-2025-06-20</id>
@@ -196,7 +206,7 @@
 <updated>2026-11-18T03:25:35Z</updated>
 <category term="Approved"/>
 <summary>DUPIXENT (dupilumab), Regeneron Pharmaceuticals Inc.: Approved. FDA action date: June 18, 2025. Announced: June 20, 2025.</summary>
-<content type="html">&lt;p&gt;DUPIXENT (dupilumab), Regeneron Pharmaceuticals Inc.: Approved. FDA action date: June 18, 2025. Announced: June 20, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf"&gt;BLA 761055 S-070 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
+<content type="html">&lt;p&gt;DUPIXENT (dupilumab), Regeneron Pharmaceuticals Inc.: Approved. FDA action date: June 18, 2025. Announced: June 20, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf"&gt;BLA 761055 S-070 (FDA letter)&lt;/a&gt; &amp;middot; &lt;a href="https://investor.regeneron.com/news-releases/news-release-details/dupixentr-dupilumab-sbla-accepted-fda-priority-review-targeted"&gt;sponsor document, February 18, 2025&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/GSK-2026-11-17</id>
@@ -617,16 +627,6 @@
 <category term="Approved"/>
 <summary>Pixclara (floretyrosine F 18; TLX101-Px), Telix Pharmaceuticals Limited: Approved. FDA action date: September 11, 2026. Announced: September 14, 2026.</summary>
 <content type="html">&lt;p&gt;Pixclara (floretyrosine F 18; TLX101-Px), Telix Pharmaceuticals Limited: Approved. FDA action date: September 11, 2026. Announced: September 14, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218592Orig1s000ltr.pdf"&gt;NDA 218592 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/2007191/000162828026061892/pixclaraapprovalvfinal.htm"&gt;Telix 6-K&lt;/a&gt; &amp;middot; &lt;a href="https://telixpharma.com/news-views/fda-accepts-nda-for-tlx101-px-pixclara/"&gt;Telix release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 19, 2026, 5:14 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/LLY-2026-09-18</id>
-<title>Inluriyo (imlunestrant) + Verzenio Approved Sep 18, 2026 | LLY FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/LLY-2026-09-18"/>
-<published>2026-09-18T16:00:00Z</published>
-<updated>2026-09-19T01:33:50Z</updated>
-<category term="Approved"/>
-<summary>Inluriyo (imlunestrant) with Verzenio (abemaciclib), Eli Lilly and Company: Approved. FDA action date: September 18, 2026.</summary>
-<content type="html">&lt;p&gt;Inluriyo (imlunestrant) with Verzenio (abemaciclib), Eli Lilly and Company: Approved. FDA action date: September 18, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218881Orig1s001ltr.pdf"&gt;NDA 218881 S-001&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 18, 2026, 9:33 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>tag:pdufa.bio,2026:pdufa-date-change/CAPR/2026-08-22/2026-11-22</id>

@@ -81,7 +81,7 @@ RETIRE = {
 NEW = "GSK-2025-12-16"
 NEW_ARCHIVE = {"basis": "decision-timing census 2026-11-26: FDA record read", "checked": TODAY, "cid": "C323",
                "date": "2025-12-16", "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761458Orig1s000ltr.pdf",
-               "name": "Exdensur (depemokimab)", "oc": "Approved", "record": "BLA 761458 Original 1 (Drugs@FDA)",
+               "name": "Exdensur (depemokimab)", "oc": "Approved", "record": "BLA 761458 Original 1",
                "source_url": DAF + "761458"}
 
 
@@ -119,6 +119,66 @@ def new_page_ledgers(dry):
         print(f"_decision_published.json: {NEW} added")
 
 
+# Drug pages. /drug/andembry, /drug/romvimza, /drug/zegfrovy and /drug/penpulimab were built only from a misfiled page,
+# so build_drug_pages.py drops them; each redirects where the decision now lives. Three pages that keep a decision are
+# patched to what build_drug_pages.py now writes for them (checked against its output on 2026-11-26).
+DRUG_REDIRECTS = {"/drug/andembry": "/drug/garadacimab", "/drug/romvimza": "/decisions/approvals",
+                  "/drug/zegfrovy": "/decisions/approvals", "/drug/penpulimab": "/decisions/approvals"}
+GSK_ROW = ('<a class="row" href="/fda-decision/GSK-2025-12-16"><span class="t">FDA decision &middot; Dec 16, 2025 '
+           '<span class="ok">&#10003; Approved</span></span><span class="d">GSK</span></a>')
+DRUG_PATCH = {
+    "exdensur": [('<a class="lit" href="/ticker/GILD">GILD catalyst hub</a>', '<a class="lit" href="/ticker/GSK">GSK catalyst hub</a>'),
+                 ("<h2>Catalyst history</h2>", "<h2>Catalyst history</h2>" + GSK_ROW)],
+    "vanrafia": [("2 FDA decisions on record below.", "1 FDA decision on record below."),
+                 ('<a class="lit" href="/ticker/ABBV">ABBV catalyst hub</a> &middot; ', ""),
+                 ("We track 2 catalyst events for this program: 0 upcoming and 2 in the record.",
+                  "We track 1 catalyst event for this program: 0 upcoming and 1 in the record."),
+                 ("2 FDA decisions are on record below.", "1 FDA decision is on record below.")],
+    "garadacimab": [("2 FDA decisions on record below.", "1 FDA decision on record below."),
+                    (' &middot; <a class="lit" href="/ticker/HOTH">HOTH catalyst hub</a>', ""),
+                    ('Garadacimab is marketed as <a class="lit" href="/drug/andembry">Andembry (garadacimab-gxii)</a>; the events '
+                     'below include those tracked under the brand name. We track 2 catalyst events for this program: 0 upcoming '
+                     'and 2 in the record.', "We track 1 catalyst event for this program: 0 upcoming and 1 in the record."),
+                    ("2 FDA decisions are on record below.", "1 FDA decision is on record below.")],
+}
+
+
+def drug_pages(dry):
+    import re
+    import shutil
+    site = os.path.join(HERE, "pdufa_site_src")
+    for src in DRUG_REDIRECTS:
+        d = os.path.join(site, src.strip("/"))
+        if os.path.isdir(d) and not dry:
+            shutil.rmtree(d)
+    vp = os.path.join(site, "vercel.json")
+    v = json.load(io.open(vp, encoding="utf-8"))
+    have = {r["source"] for r in v["redirects"]}
+    n = 0
+    for src, dst in DRUG_REDIRECTS.items():
+        if src not in have:
+            v["redirects"].append({"source": src, "destination": dst, "permanent": True})
+            n += 1
+    if n and not dry:
+        io.open(vp, "w", encoding="utf-8").write(json.dumps(v, indent=1, ensure_ascii=False) + "\n")
+    print(f"drug redirects added: {n}")
+    for slug, reps in DRUG_PATCH.items():
+        p = os.path.join(site, "drug", slug, "index.html")
+        doc = io.open(p, encoding="utf-8").read()
+        new = doc
+        for a, b in reps:
+            if b and b in new and a not in new:
+                continue
+            if a == "<h2>Catalyst history</h2>" and "GSK-2025-12-16" in new:
+                continue
+            new = new.replace(a, b)
+        if slug == "vanrafia":       # 13F block about AbbVie holders: AbbVie has no part in Vanrafia
+            new = re.sub(r"<!--F13:BEGIN-->.*?<!--F13:END-->", "", new, flags=re.S)
+        if new != doc and not dry:
+            io.open(p, "w", encoding="utf-8", newline="").write(new)
+        print(f"/drug/{slug}: {'patched' if new != doc else 'already current'}")
+
+
 def main():
     dry = "--dry-run" in sys.argv
     if not os.path.exists(os.path.join(HERE, "pdufa_site_src", "fda-decision", NEW, "index.html")):
@@ -143,6 +203,7 @@ def main():
     if n:
         io.open(p, "w", encoding="utf-8").write(json.dumps(ex, indent=1, ensure_ascii=False))
     print(f"runup_study_exclusions.json: {n} entr(ies) added")
+    drug_pages(dry)
 
 
 if __name__ == "__main__":
