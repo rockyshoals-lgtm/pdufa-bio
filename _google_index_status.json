@@ -4373,12 +4373,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/drug/andembry": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/anito-cel": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -7103,12 +7097,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/drug/penpulimab": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/phentolamine-ophthalmic": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -7428,12 +7416,6 @@
 "verdict": "NEUTRAL"
 },
 "/drug/romidepsin-injection": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/drug/romvimza": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -8609,12 +8591,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/drug/zegfrovy": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/drug/zelicapavir-lotus": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -9047,12 +9023,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/fda-decision/ABBV-2025-04-02": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/fda-decision/ABBV-2025-04-29": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9321,12 +9291,6 @@
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/ANTE-2025-04-23": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/fda-decision/APLS-2025-07-28": {
@@ -9803,12 +9767,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/fda-decision/EXEL-2025-07-02": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/fda-decision/FBIO-2026-01-13": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9816,12 +9774,6 @@
 "verdict": "NEUTRAL"
 },
 "/fda-decision/GILD-2025-06-18": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/GILD-2025-12-16": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -9911,6 +9863,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/GSK-2025-12-16": {
+"checked": "2026-11-26",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/GSK-2026-03-13": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -9954,12 +9912,6 @@
 "verdict": "NEUTRAL"
 },
 "/fda-decision/HALO-2026-03-05": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/HOTH-2025-06-16": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -11181,12 +11133,6 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/fda-decision/TURN-2025-02-14": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/fda-decision/TVTX-2025-08-27": {
