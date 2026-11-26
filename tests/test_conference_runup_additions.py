@@ -108,6 +108,28 @@ check(not X.own("ZZQA", "Zorvexa Therapeutics Inc.", "Partnerco Presents Overall
       "attribution: partner's release landed on the ticker")
 check(X.own("ZZQA", "Zorvexa Therapeutics Inc.", "Zorvexa Therapeutics Presents Overall Survival Data at ESMO 2026",
             "Zorvexa Therapeutics Inc. (NASDAQ: ZZQA) today"), "attribution: the company's own release rejected")
+# attribution from what is stored: the tie to the ticker can sit past the stored excerpt (run 558: seven rows such
+# as Lyell's EHA release, whose "(Nasdaq: LYEL)" sits 700 characters in, passed at fetch and failed this guard).
+# The row keeps the tying words as release_evidence, so a row that passed at fetch passes here. Synthetic names.
+_lead = ("Highlights: more than 100 patients treated, no Grade 3 events, translational data support durable "
+         "responses and dual targeting; partner Partnerco (NYSE: PRTN) holds rights outside the US. ") * 4
+for tag, body in [("tag", _lead + "CITY, Oct. 24, 2026 -- Zorvexa Therapeutics, Inc. (Nasdaq: ZZQA), a clinical company"),
+                  ("name", _lead + "CITY, Oct. 24, 2026 -- Zorvexa Therapeutics, Inc., a clinical company, announced")]:
+    nm, tt = "Zorvexa Therapeutics, Inc.", "Zorvexa Presents Updated Data at ESMO 2026"
+    check(len(body) > X.EXCERPT + 20, f"evidence case {tag}: body not longer than the excerpt")
+    check(X.own("ZZQA", nm, tt, body), f"evidence case {tag}: full release not attributed")
+    check(not X.own("ZZQA", nm, tt, body[:X.EXCERPT]), f"evidence case {tag}: excerpt alone should not attribute")
+    row = {"ticker": "ZZQA", "release_excerpt": body[:X.EXCERPT], "release_evidence": X.evidence("ZZQA", nm, body)}
+    check(0 < len(row["release_evidence"]) <= 400, f"evidence case {tag}: evidence missing or too long")
+    check(row["release_evidence"] in body, f"evidence case {tag}: evidence is not the release's own words")
+    check(X.own("ZZQA", nm, tt, X.stored_text(row)), f"evidence case {tag}: stored row no longer attributed")
+    row.update({"meeting_code": "ESMO", "conf": "ESMO", "meeting_start": esmo["start"], "meeting_end": esmo["end"],
+                "meeting_source": esmo["source"], "anchor": "2026-10-24", "release_title": tt})
+    check(X.passes(row, [esmo, esmo_asia], nm), f"evidence case {tag}: stored row fails passes()")
+check(X.evidence("ZZQA", "Zorvexa Therapeutics, Inc.", "Zorvexa Therapeutics, Inc. (Nasdaq: ZZQA)" + " x" * 400) == "",
+      "evidence kept although the tag is inside the excerpt")
+check(X.evidence("ZZQA", "Zorvexa Therapeutics, Inc.", _lead + " (NYSE: PRTN) partner of Zorvexa") == "",
+      "evidence kept from another company's tag")
 check(X.study_code("IDWeek") == "IDWEEK" and X.study_code("ESMO") == "ESMO", "study codes do not match the study")
 
 # 2. window arithmetic ------------------------------------------------------------------------------------
@@ -173,6 +195,8 @@ if cache is not None:
         except (KeyError, ValueError):
             check(False, f"cache {k}: missing or bad dates")
         check(r.get("status") in ("pending", "complete", "check"), f"cache {k}: bad status")
+        ev = r.get("release_evidence", "")
+        check(len(ev) <= 400, f"cache {k}: release_evidence longer than 400 characters")
         check(X.passes(r, X.meetings(X.EARLY_DATE, "9999-12-31"), r.get("company", "")),
               f"cache {k}: no longer passes the headline, meeting or attribution rules ({r.get('release_title', '')[:80]})")
         check(str(r.get("year")) == str(r.get("meeting_start", ""))[:4], f"cache {k}: year is not the meeting's")
