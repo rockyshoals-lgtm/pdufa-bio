@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""apply_1126b_misfiled_decisions.py -- six FDA decision pages filed under a company that had nothing to do with the drug.
+"""apply_1126b_misfiled_decisions.py -- six FDA decision pages filed under a company that is not the applicant.
 
 David, 2026-11-26 ("Continue"), with his standing hand-off for site fixes ("just do it, red team everything"). Found by
 the decision-timing census of 2026-11-26 (decision_timing_2024_2025.json, cids C181 C199 C209 C231 C240 C323), which
@@ -17,7 +17,10 @@ compared each tracked decision's ticker with the applicant Drugs@FDA names. Appl
   EXEL-2025-07-02  Zegfrovy (sunvozertinib), NDA 219839, applicant Dizal.
   ANTE-2025-04-23  penpulimab-kcqx, BLA 761258, applicant Akeso Biopharma.
                    The last three applicants have no ticker on pdufa.bio, so there is no right ticker to move the page to;
-                   each redirects to /decisions/approvals.
+                   each redirects to the /fda-approvals month page that lists the approval.
+AbbVie licensed atrasentan to Chinook in 2019 and is owed milestones and royalties (Chinook 10-K for 2022), but the
+applicant is Novartis, which bought Chinook, and the decision already has its Novartis page; an AbbVie run-up does not
+describe it.
 
 Each misfiled page carried the wrong company's share price as its run-up. Retired the way apply_1118_retire_decisions.py
 retires a page (that script's main): page deleted, permanent redirect, every link removed, verification entry marked
@@ -61,17 +64,17 @@ RETIRE = {
                              "The decision already has its page under CSL."),
                         "Drugs@FDA, BLA 761367 (applicant CSL Behring LLC, approved 2025-06-16) " + DAF + "761367",
                         "A decision page for HOTH dated 2025-06-16 recording CSL's Andembry approval as a Hoth approval."),
-    "TURN-2025-02-14": ("/decisions/approvals",
+    "TURN-2025-02-14": ("/fda-approvals/2025/february",
                         _why("Romvimza (vimseltinib)", "NDA 219304", "Deciphera Pharmaceuticals (Ono Pharmaceutical group)",
                              "February 14, 2025", "TURN", "Deciphera has no ticker on pdufa.bio."),
                         "Drugs@FDA, NDA 219304 (applicant Deciphera, approved 2025-02-14) " + DAF + "219304",
                         "A decision page for TURN dated 2025-02-14 recording Deciphera's Romvimza approval under TURN."),
-    "EXEL-2025-07-02": ("/decisions/approvals",
+    "EXEL-2025-07-02": ("/fda-approvals/2025/july",
                         _why("Zegfrovy (sunvozertinib)", "NDA 219839", "Dizal", "July 2, 2025", "Exelixis",
                              "Dizal has no ticker on pdufa.bio."),
                         "Drugs@FDA, NDA 219839 (applicant Dizal, approved 2025-07-02) " + DAF + "219839",
                         "A decision page for EXEL dated 2025-07-02 recording Dizal's Zegfrovy approval as an Exelixis approval."),
-    "ANTE-2025-04-23": ("/decisions/approvals",
+    "ANTE-2025-04-23": ("/fda-approvals/2025/april",
                         _why("penpulimab-kcqx", "BLA 761258", "Akeso Biopharma", "April 23, 2025", "ANTE",
                              "Akeso has no ticker on pdufa.bio."),
                         "Drugs@FDA, BLA 761258 (applicant Akeso Biopharma, approved 2025-04-23) " + DAF + "761258",
@@ -122,8 +125,18 @@ def new_page_ledgers(dry):
 # Drug pages. /drug/andembry, /drug/romvimza, /drug/zegfrovy and /drug/penpulimab were built only from a misfiled page,
 # so build_drug_pages.py drops them; each redirects where the decision now lives. Three pages that keep a decision are
 # patched to what build_drug_pages.py now writes for them (checked against its output on 2026-11-26).
-DRUG_REDIRECTS = {"/drug/andembry": "/drug/garadacimab", "/drug/romvimza": "/decisions/approvals",
-                  "/drug/zegfrovy": "/decisions/approvals", "/drug/penpulimab": "/decisions/approvals"}
+DRUG_REDIRECTS = {"/drug/andembry": "/drug/garadacimab", "/drug/romvimza": "/fda-approvals/2025/february",
+                  "/drug/zegfrovy": "/fda-approvals/2025/july", "/drug/penpulimab": "/fda-approvals/2025/april"}
+# The two surviving pages are dated to the announcement; the FDA acted the day before (Drugs@FDA, _fda_approvals_months.json).
+# Their archive entries let the FDA-day pipeline give the FDA's day, as for the 71 pages of apply_1126_census_fda_days.py.
+ARCHIVE_FDA_DAY = {
+    "NVS-2025-04-03": {"basis": "misfiled-page fix 2026-11-26: FDA record read", "checked": TODAY, "date": "2025-04-02",
+                       "name": "Vanrafia (atrasentan)", "oc": "Approved", "record": "NDA 219208",
+                       "source_url": DAF + "219208"},
+    "CSLLY-2025-06-17": {"basis": "misfiled-page fix 2026-11-26: FDA record read", "checked": TODAY, "date": "2025-06-16",
+                         "name": "Andembry (garadacimab)", "oc": "Approved", "record": "BLA 761367",
+                         "source_url": DAF + "761367"},
+}
 GSK_ROW = ('<a class="row" href="/fda-decision/GSK-2025-12-16"><span class="t">FDA decision &middot; Dec 16, 2025 '
            '<span class="ok">&#10003; Approved</span></span><span class="d">GSK</span></a>')
 DRUG_PATCH = {
@@ -133,13 +146,15 @@ DRUG_PATCH = {
                  ('<a class="lit" href="/ticker/ABBV">ABBV catalyst hub</a> &middot; ', ""),
                  ("We track 2 catalyst events for this program: 0 upcoming and 2 in the record.",
                   "We track 1 catalyst event for this program: 0 upcoming and 1 in the record."),
-                 ("2 FDA decisions are on record below.", "1 FDA decision is on record below.")],
+                 ("2 FDA decisions are on record below.", "1 FDA decision is on record below."),
+                 ("Apr 3, 2025", "Apr 2, 2025"), ("April 3, 2025", "April 2, 2025")],
     "garadacimab": [("2 FDA decisions on record below.", "1 FDA decision on record below."),
                     (' &middot; <a class="lit" href="/ticker/HOTH">HOTH catalyst hub</a>', ""),
                     ('Garadacimab is marketed as <a class="lit" href="/drug/andembry">Andembry (garadacimab-gxii)</a>; the events '
                      'below include those tracked under the brand name. We track 2 catalyst events for this program: 0 upcoming '
                      'and 2 in the record.', "We track 1 catalyst event for this program: 0 upcoming and 1 in the record."),
-                    ("2 FDA decisions are on record below.", "1 FDA decision is on record below.")],
+                    ("2 FDA decisions are on record below.", "1 FDA decision is on record below."),
+                    ("Jun 17, 2025", "Jun 16, 2025"), ("June 17, 2025", "June 16, 2025")],
 }
 
 
@@ -155,13 +170,35 @@ def drug_pages(dry):
     v = json.load(io.open(vp, encoding="utf-8"))
     have = {r["source"] for r in v["redirects"]}
     n = 0
+    moved = dict(DRUG_REDIRECTS)
+    moved.update({f"/fda-decision/{s}": v[0] for s, v in RETIRE.items()})
+    for r in v["redirects"]:                 # older redirects that pointed at a page now gone, or at a first target
+        dst = r["destination"].rstrip("/")
+        if dst in moved and r["source"] != dst:
+            if r["destination"] != moved[dst]:
+                r["destination"] = moved[dst]
+                n += 1
+        if r["source"] in moved and r["destination"] != moved[r["source"]]:
+            r["destination"] = moved[r["source"]]
+            n += 1
     for src, dst in DRUG_REDIRECTS.items():
         if src not in have:
             v["redirects"].append({"source": src, "destination": dst, "permanent": True})
             n += 1
     if n and not dry:
         io.open(vp, "w", encoding="utf-8").write(json.dumps(v, indent=1, ensure_ascii=False) + "\n")
-    print(f"drug redirects added: {n}")
+    print(f"drug redirects added or repointed: {n}")
+    arch = jload("_fda_action_archive.json")
+    na = 0
+    for s, e in ARCHIVE_FDA_DAY.items():
+        if arch.get(s, {}).get("basis") and arch[s] != e:
+            continue                          # a hand-read entry already there wins
+        if arch.get(s) != e:
+            arch[s] = e
+            na += 1
+    if na and not dry:
+        jsave("_fda_action_archive.json", arch)
+    print(f"_fda_action_archive.json: {na} FDA day(s) set")
     for slug, reps in DRUG_PATCH.items():
         p = os.path.join(site, "drug", slug, "index.html")
         doc = io.open(p, encoding="utf-8").read()
@@ -172,7 +209,7 @@ def drug_pages(dry):
             if a == "<h2>Catalyst history</h2>" and "GSK-2025-12-16" in new:
                 continue
             new = new.replace(a, b)
-        if slug == "vanrafia":       # 13F block about AbbVie holders: AbbVie has no part in Vanrafia
+        if slug == "vanrafia":       # 13F block about AbbVie holders, carried over from the misfiled ABBV row
             new = re.sub(r"<!--F13:BEGIN-->.*?<!--F13:END-->", "", new, flags=re.S)
         if new != doc and not dry:
             io.open(p, "w", encoding="utf-8", newline="").write(new)

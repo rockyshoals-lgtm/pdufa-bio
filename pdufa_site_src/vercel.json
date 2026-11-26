@@ -2829,7 +2829,7 @@
   },
   {
    "source": "/drug/garadacimab-gxii",
-   "destination": "/drug/andembry",
+   "destination": "/drug/garadacimab",
    "permanent": true
   },
   {
@@ -3364,7 +3364,7 @@
   },
   {
    "source": "/drug/sunvozertinib",
-   "destination": "/drug/zegfrovy",
+   "destination": "/fda-approvals/2025/july",
    "permanent": true
   },
   {
@@ -3464,7 +3464,7 @@
   },
   {
    "source": "/drug/vimseltinib",
-   "destination": "/drug/romvimza",
+   "destination": "/fda-approvals/2025/february",
    "permanent": true
   },
   {
@@ -3709,17 +3709,17 @@
   },
   {
    "source": "/fda-decision/TURN-2025-02-14",
-   "destination": "/decisions/approvals",
+   "destination": "/fda-approvals/2025/february",
    "permanent": true
   },
   {
    "source": "/fda-decision/EXEL-2025-07-02",
-   "destination": "/decisions/approvals",
+   "destination": "/fda-approvals/2025/july",
    "permanent": true
   },
   {
    "source": "/fda-decision/ANTE-2025-04-23",
-   "destination": "/decisions/approvals",
+   "destination": "/fda-approvals/2025/april",
    "permanent": true
   },
   {
@@ -3729,17 +3729,17 @@
   },
   {
    "source": "/drug/romvimza",
-   "destination": "/decisions/approvals",
+   "destination": "/fda-approvals/2025/february",
    "permanent": true
   },
   {
    "source": "/drug/zegfrovy",
-   "destination": "/decisions/approvals",
+   "destination": "/fda-approvals/2025/july",
    "permanent": true
   },
   {
    "source": "/drug/penpulimab",
-   "destination": "/decisions/approvals",
+   "destination": "/fda-approvals/2025/april",
    "permanent": true
   }
  ],
