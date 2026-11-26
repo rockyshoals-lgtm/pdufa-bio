@@ -9753,36 +9753,6 @@ export default [
   "dm": "2027-04"
  },
  {
-  "id": "readout_imux_2026-11-15",
-  "t": "IMUX",
-  "company": "Immunic, Inc.",
-  "d": "2026-11-15",
-  "dp": "month",
-  "name": "IMU-838 tablets",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05134441",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05134441",
-    "status": "active_not_recruiting",
-    "pcd": "2026-11",
-    "pcd_type": "estimated",
-    "updated": "2026-09-28",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05134441",
-   "ta_basis": "ClinicalTrials.gov conditions: Multiple Sclerosis"
-  },
-  "dm": "2026-11"
- },
- {
   "id": "pdufa_nvcr_2026-11-15",
   "t": "NVCR",
   "company": "NovoCure Limited",
@@ -14012,36 +13982,6 @@ export default [
   "dm": "2027-03"
  },
  {
-  "id": "readout_tsha_2027-03-15",
-  "t": "TSHA",
-  "company": "Taysha Gene Therapies, Inc.",
-  "d": "2027-03-15",
-  "dp": "month",
-  "name": "TSHA-101",
-  "type": "Readout",
-  "ta": "Rare disease",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04798235",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04798235",
-    "status": "active_not_recruiting",
-    "pcd": "2027-03-12",
-    "pcd_type": "estimated",
-    "updated": "2023-05-08",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04798235",
-   "ta_basis": "ClinicalTrials.gov conditions: Infantile GM2 Gangliosidosis (Disorder)"
-  },
-  "dm": "2027-03"
- },
- {
   "id": "pdufa_aqst_2027-03-16",
   "t": "AQST",
   "company": "Aquestive Therapeutics, Inc.",
@@ -15280,36 +15220,6 @@ export default [
   "dm": "2027-06"
  },
  {
-  "id": "readout_indp_2027-06-15",
-  "t": "INDP",
-  "company": "Indaptus Therapeutics, Inc.",
-  "d": "2027-06-15",
-  "dp": "month",
-  "name": "Decoy20",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05651022",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05651022",
-    "status": "active_not_recruiting",
-    "pcd": "2027-06-30",
-    "pcd_type": "estimated",
-    "updated": "2026-01-09",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05651022",
-   "ta_basis": "ClinicalTrials.gov conditions: Solid Tumor, Adult, HCC - Hepatocellular Carcinoma, CRC (Colorectal Cancer), Pancreatic Adenocarcinoma, NSCLC Non-small Cell Lung Cancer, Squamous Cell Cancer of the Head and Neck"
-  },
-  "dm": "2027-06"
- },
- {
   "id": "readout_ions_2027-06-15",
   "t": "IONS",
   "company": "Ionis Pharmaceuticals Inc.",
@@ -15714,70 +15624,6 @@ export default [
   "dm": "2027-07"
  },
  {
-  "id": "readout_artv_2027-08-15",
-  "t": "ARTV",
-  "company": "Artiva Biotherapeutics, Inc.",
-  "d": "2027-08-15",
-  "dp": "month",
-  "name": "AB-101",
-  "type": "Readout",
-  "ta": "Immunology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06265220",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06265220",
-    "status": "active_not_recruiting",
-    "pcd": "2027-08",
-    "pcd_type": "estimated",
-    "updated": "2025-12-03",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06265220"
-  },
-  "dm": "2027-08"
- },
- {
-  "id": "readout_asnd_2027-08-15",
-  "t": "ASND",
-  "company": "Ascendis Pharma A/S",
-  "d": "2027-08-15",
-  "dp": "month",
-  "name": "TransCon IL-2 \u03b2/\u03b3",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05081609",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05081609",
-    "status": "active_not_recruiting",
-    "pcd": "2027-08",
-    "pcd_type": "estimated",
-    "updated": "2026-10-09",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05081609",
-   "ta_basis": "ClinicalTrials.gov conditions: Advanced Solid Tumor, Locally Advanced Solid Tumor, Metastatic Solid Tumor, Platinum-resistant Ovarian Cancer, Post Anti-PD-1 Melanoma, 2L+ Cervical Cancer",
-   "name_fix": {
-    "checked": "2026-11-17",
-    "was": "TransCon CNP",
-    "why": "the linked ClinicalTrials.gov record tests TransCon IL-2 \u03b2/\u03b3, not TransCon CNP"
-   }
-  },
-  "dm": "2027-08"
- },
- {
   "id": "readout_nvcr_2027-08-15",
   "t": "NVCR",
   "company": "NovoCure Limited",
@@ -15901,36 +15747,6 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "source_url": "https://clinicaltrials.gov/study/NCT06980649",
    "ta_basis": "ClinicalTrials.gov conditions: Graves Disease"
-  },
-  "dm": "2027-09"
- },
- {
-  "id": "readout_cstl_2027-09-15",
-  "t": "CSTL",
-  "company": "Castle Biosciences Inc",
-  "d": "2027-09-15",
-  "dp": "month",
-  "name": "FCX-007",
-  "type": "Readout",
-  "ta": "Rare disease",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06892639",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06892639",
-    "status": "active_not_recruiting",
-    "pcd": "2027-09",
-    "pcd_type": "estimated",
-    "updated": "2026-03-12",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06892639",
-   "ta_basis": "ClinicalTrials.gov conditions: Dystrophic Epidermolysis Bullosa"
   },
   "dm": "2027-09"
  },
@@ -34440,5 +34256,155 @@ export default [
    ]
   },
   "dm": "2026-12"
+ },
+ {
+  "id": "readout_xfor_2028-03-31",
+  "t": "XFOR",
+  "company": "X4 Pharmaceuticals, Inc.",
+  "d": "2028-03-31",
+  "dp": "quarter",
+  "name": "mavorixafor 4WARD global Phase 3 topline data",
+  "type": "Readout",
+  "ta": "",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.globenewswire.com/news-release/2026/11/04/3395871/0/en/x4-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+  "ua": "2026-11-26T21:09:56Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "chronic neutropenia",
+   "market_cap_usd": null,
+   "program": "mavorixafor",
+   "trial": "4WARD global Phase 3",
+   "guided_precision": "quarter",
+   "guided_window": "2028-Q1",
+   "guided_label": "first quarter of 2028",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-04",
+   "guidance_text": "With topline data from both our global 4WARD trial and our new 4STEPS trial expected in the first quarter of 2028",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/04/3395871/0/en/x4-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "source": "company guidance (company release)",
+   "readout_described": "topline data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the X4 Q3 release (Nov 4 2026, 16:15 ET): CEO quote 'With topline data from both our global 4WARD trial and our new 4STEPS trial expected in the first quarter of 2028'. 4WARD is the global pivotal Phase 3 of mavorixafor in (primary) chronic neutropenia. XFOR currently trades on Nasdaq, and…",
+   "date_history": [
+    {
+     "date": "2028-03-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
+    }
+   ]
+  },
+  "dm": "2028-03"
+ },
+ {
+  "id": "readout_xfor_2028-03-31-mavorixafo",
+  "t": "XFOR",
+  "company": "X4 Pharmaceuticals, Inc.",
+  "d": "2028-03-31",
+  "dp": "quarter",
+  "name": "mavorixafor 4STEPS Phase 2b topline data",
+  "type": "Readout",
+  "ta": "",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.globenewswire.com/news-release/2026/11/04/3395871/0/en/x4-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+  "ua": "2026-11-26T21:09:56Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "chronic neutropenia",
+   "market_cap_usd": null,
+   "program": "mavorixafor",
+   "trial": "4STEPS Phase 2b",
+   "guided_precision": "quarter",
+   "guided_window": "2028-Q1",
+   "guided_label": "first quarter of 2028",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-04",
+   "guidance_text": "With topline data from both our global 4WARD trial and our new 4STEPS trial expected in the first quarter of 2028",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/04/3395871/0/en/x4-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "source": "company guidance (company release)",
+   "readout_described": "topline data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same Nov 4 2026 X4 release: 4STEPS is a planned Phase 2b (about 25 patients, G-CSF dose reduction with mavorixafor), first participant expected Q1 2027, and 'topline data expected in the first quarter of 2028.' XFOR is listed on Nasdaq.",
+   "date_history": [
+    {
+     "date": "2028-03-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
+    }
+   ]
+  },
+  "dm": "2028-03"
+ },
+ {
+  "id": "readout_obx_2027-12-31",
+  "t": "OBX",
+  "company": "Obsidian Therapeutics, Inc.",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "amsoki-cel (amsokigene autoleucel, formerly OBX-115) Agni-01 Phase 1/2,…",
+  "type": "Readout",
+  "ta": "",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.businesswire.com/news/home/20261112501893/en/Obsidian-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Business-Updates",
+  "ua": "2026-11-26T21:09:56Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "immune checkpoint inhibitor-resistant advanced melanoma",
+   "market_cap_usd": null,
+   "program": "amsoki-cel (amsokigene autoleucel, formerly OBX-115)",
+   "trial": "Agni-01 Phase 1/2, registration-enabling cohort",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "by year-end 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-12",
+   "guidance_text": "with topline data expected by year-end 2027",
+   "source_url": "https://www.businesswire.com/news/home/20261112501893/en/Obsidian-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Business-Updates",
+   "source": "company guidance (company release)",
+   "readout_described": "topline data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Obsidian Q3 release on Business Wire (FMP shows it published 2026-11-12 16:05): 'complete enrollment in the registration-enabling cohort by the end of the first quarter of 2027 and report topline data by year-end 2027' for the ICI-resistant advanced melanoma cohort of Agni-01. Year…",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-12)"
+    }
+   ]
+  }
+ },
+ {
+  "id": "readout_obx_2027-06-30",
+  "t": "OBX",
+  "company": "Obsidian Therapeutics, Inc.",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "amsoki-cel (amsokigene autoleucel, formerly OBX-115) Agni-01 Phase 1/2 Phase 1 data",
+  "type": "Readout",
+  "ta": "",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.businesswire.com/news/home/20261112501893/en/Obsidian-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Business-Updates",
+  "ua": "2026-11-26T21:09:56Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "non-small cell lung cancer",
+   "market_cap_usd": null,
+   "program": "amsoki-cel (amsokigene autoleucel, formerly OBX-115)",
+   "trial": "Agni-01 Phase 1/2",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "first half of 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-12",
+   "guidance_text": "NSCLC Phase 1 data are expected in the first half of 2027.",
+   "source_url": "https://www.businesswire.com/news/home/20261112501893/en/Obsidian-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Business-Updates",
+   "source": "company guidance (company release)",
+   "readout_described": "Phase 1 data",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same Nov 12 2026 Obsidian release: 'Obsidian is also investigating amsoki-cel in patients with non-small cell lung cancer (NSCLC) in the Agni-01 trial. NSCLC Phase 1 data are expected in the first half of 2027.' OBX is listed on Nasdaq.",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-12)"
+    }
+   ]
+  }
  }
 ];

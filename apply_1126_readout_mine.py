@@ -55,7 +55,7 @@ from text_hygiene import join_phrases  # noqa: E402
 DATASET = os.path.join(HERE, "pdufa_site_src", "api", "v1", "dataset.mjs")
 MANUAL = os.path.join(HERE, "readout_reported_manual.json")
 ACK = os.path.join(HERE, "_readout_watch_ack.json")
-MINE = os.path.join(HERE, "odin_cowork_dropbox", "2026-11-26_readout_mine.json")
+MINE = os.path.join(HERE, "odin_cowork_dropbox", os.environ.get("READOUT_MINE_FILE", "2026-11-26_readout_mine.json"))
 MINED_ON = "2026-11-26"
 TODAY = eastern_today().isoformat()
 NOW = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
