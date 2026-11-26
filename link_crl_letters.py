@@ -212,6 +212,16 @@ def main():
             # the page ALREADY links, from the same 4-day window, is the page's own earlier match: re-render it.
             own = set(re.findall(r'href="https://download\.open\.fda\.gov/crl/([^"]+?\.pdf)"', doc))
             hits = [(iso, r) for iso, r in cands if str(r.get("file_name") or "").strip() in own]
+        if len(hits) > 1:
+            # 2026-11-26 (CRL red team): ALVO-2025-11-26 (AVT05, BLA 761461, letter Nov 26) also matched Alvotech's
+            # Nov 24 letter on BLA 761435 (AVT06) inside the 4-day window, so it got no card at all. When exactly one
+            # of the matching letters carries an application number the page itself cites, that letter is the page's.
+            page_nums = set(re.sub(r"\D", " ", doc).split())
+            cited = [(iso, r_) for iso, r_ in hits
+                     if any(re.sub(r"\D", "", a.split("/")[0]) in page_nums
+                            for a in (r_.get("application_number") or []))]
+            if len(cited) == 1:
+                hits = cited
         if len(hits) != 1:
             if not hits and B in doc:
                 print(f"  NOTE {slug}: carries a letter card that no longer matches; card left as is -- check by hand")

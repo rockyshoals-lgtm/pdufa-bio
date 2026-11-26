@@ -375,22 +375,24 @@ def main():
         # document" in its snippet, and says the outcome has none yet
         if page_kind(doc) == "unsourced":
             desc = hedge_unsourced(desc, tk, dcd)
+        # 2026-11-26 (CRL red team): 176 pages carried content="...date."""> since 09-02; the old patterns stopped at
+        # the first quote and kept the stray ones. ("+) takes every quote, and a single one is written back.
         new = re.sub(r"<title[^>]*>.*?</title>",
                      f"<title>{_html.escape(title)}</title>", doc, count=1, flags=re.S)
-        new = re.sub(r'(<meta name="description" content=")[^"]*(")',
-                     lambda mm: mm.group(1) + _html.escape(desc, quote=True) + mm.group(2),
+        new = re.sub(r'(<meta name="description" content=")[^"]*("+)',
+                     lambda mm: mm.group(1) + _html.escape(desc, quote=True) + "\"",
                      new, count=1)
-        new = re.sub(r'(<meta property="og:title" content=")[^"]*(")',
-                     lambda mm: mm.group(1) + _html.escape(title, quote=True) + mm.group(2),
+        new = re.sub(r'(<meta property="og:title" content=")[^"]*("+)',
+                     lambda mm: mm.group(1) + _html.escape(title, quote=True) + "\"",
                      new, count=1)
-        new = re.sub(r'(<meta property="og:description" content=")[^"]*(")',
-                     lambda mm: mm.group(1) + _html.escape(desc, quote=True) + mm.group(2),
+        new = re.sub(r'(<meta property="og:description" content=")[^"]*("+)',
+                     lambda mm: mm.group(1) + _html.escape(desc, quote=True) + "\"",
                      new, count=1)
-        new = re.sub(r'(<meta name="twitter:title" content=")[^"]*(")',
-                     lambda mm: mm.group(1) + _html.escape(title, quote=True) + mm.group(2),
+        new = re.sub(r'(<meta name="twitter:title" content=")[^"]*("+)',
+                     lambda mm: mm.group(1) + _html.escape(title, quote=True) + "\"",
                      new, count=1)
-        new = re.sub(r'(<meta name="twitter:description" content=")[^"]*(")',
-                     lambda mm: mm.group(1) + _html.escape(desc, quote=True) + mm.group(2),
+        new = re.sub(r'(<meta name="twitter:description" content=")[^"]*("+)',
+                     lambda mm: mm.group(1) + _html.escape(desc, quote=True) + "\"",
                      new, count=1)
         if new != doc:
             io.open(p, "w", encoding="utf-8").write(new)

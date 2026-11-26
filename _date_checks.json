@@ -226,18 +226,18 @@
    "note": "Q3 2026 release (8-K EX-99.1, Nov 5 2026) contains 'AdvSM PDUFA target action date June 29, 2027' and 'Potential FDA approval of bezuclastinib in AdvSM - PDUFA date of June 29, 2027'. NDA acceptance r"
   },
   "pdufa_bmy_2027-03-11": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-26",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/0000014272/000001427226000022/a2026q3ex991-filing.htm",
-   "by": "red team 2026-11-17",
-   "note": "Q2 2026 release (Jul 30 2026) contains 'The FDA granted a Prescription Drug User Fee Act (PDUFA) date of March 11, 2027.' Q3 2026 release does not mention Reblozyl-MF (no change reported). The 2026 FD"
+   "source": "https://www.businesswire.com/news/home/20261118967070/en/Bristol-Myers-Squibb-Demonstrates-Breadth-and-Clinical-Momentum-Across-Blood-Cancers-and-Rare-Hematologic-Disorders-at-ASH-2026/",
+   "by": "manual",
+   "note": "Re-read BMS's 2026-11-18 ASH 2026 release: it gives no FDA action date or regulatory timing for this application, so the row's goal date stands."
   },
   "pdufa_bmy_2027-05-13": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-26",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/0000014272/000001427226000022/a2026q3ex991-filing.htm",
-   "by": "red team 2026-11-17",
-   "note": "Q2 2026 release (Jul 30 2026) contains '...granting a PDUFA date of May 13, 2027.' for MeziKd in RRMM (NDA acceptance announced Jul 13 2026 on BusinessWire). Q3 2026 release mentions no mezigdomide ch"
+   "source": "https://www.businesswire.com/news/home/20261118967070/en/Bristol-Myers-Squibb-Demonstrates-Breadth-and-Clinical-Momentum-Across-Blood-Cancers-and-Rare-Hematologic-Disorders-at-ASH-2026/",
+   "by": "manual",
+   "note": "Re-read BMS's 2026-11-18 ASH 2026 release: it gives no FDA action date or regulatory timing for this application, so the row's goal date stands."
   },
   "pdufa_agio_2026-11-01": {
    "checked": "2026-11-17",
@@ -471,11 +471,18 @@
    "note": "Opened Atossa 2026-11-10: arms enrollment complete, 'select data will be presented at SABCS in December 2026.' Only month given; no newer Atossa release."
   },
   "readout_atos_2026-12-31-x": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.prnewswire.com/news-releases/atossa-therapeutics-reports-third-quarter-2026-financial-results-and-provides-a-corporate-update-302933991.html",
-   "by": "red team 2026-11-17",
-   "note": "Opened Atossa 2026-11-10: CEO quote 'presentations at the San Antonio Breast Cancer Symposium will include Karisma follow-up results'; milestones say SABCS 'in December 2026'. No newer release."
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.prnewswire.com/news-releases/atossa-therapeutics-reports-third-quarter-2026-financial-results-and-provides-a-corporate-update-302933991.html",
+    "by": "red team 2026-11-17",
+    "note": "Opened Atossa 2026-11-10: CEO quote 'presentations at the San Antonio Breast Cancer Symposium will include Karisma follow-up results'; milestones say SABCS 'in December 2026'. No newer release."
+   }
   },
   "readout_gpcr_2027-12-31": {
    "checked": "2026-11-17",
@@ -2247,6 +2254,13 @@
    "source": "https://www.globenewswire.com/news-release/2026/11/25/3410154/0/en/cg-oncology-to-present-new-data-on-cretostimogene-grenadenorepvec-at-the-society-of-urologic-oncology-27th-annual-meeting.html",
    "by": "manual",
    "note": "Independent red-team pass re-opened this company release on 2026-11-26 and confirmed the presentation day."
+  },
+  "readout_lly_2026-12-11": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/lilly-highlights-strength-of-breast-cancer-portfolio-with-new-data-across-validated-drivers-of-hormone-receptor-positive-disease-at-the-2026-san-antonio-breast-cancer-symposium-302948353.html",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
   }
  }
 }
