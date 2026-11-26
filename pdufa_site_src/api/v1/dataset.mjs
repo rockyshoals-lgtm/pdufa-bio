@@ -10202,12 +10202,14 @@ export default [
    "trial": "FORTIFY",
    "decision_source": "BridgeBio 8-K Exhibit 99.1, November 23, 2026 (SEC EDGAR)",
    "decision_source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm",
-   "decision_date_unsourced": true,
    "decision_quote": "BridgeBio Pharma, Inc. (Nasdaq: BBIO) today announced that the FDA granted traditional (full) approval to Welgemda (BBP-418, ribitol)",
-   "decision_note": "BridgeBio announced the approval on November 23, 2026, four days before the November 27, 2026 goal date it disclosed. The FDA's own record of the action day was not read when this row was updated, so no early or late margin is published yet.",
+   "decision_note": "The FDA's Novel Drug Approvals 2026 table lists Welgemda (ribitol) as approved on November 23, 2026, the day BridgeBio announced it, four days before the November 27, 2026 goal date BridgeBio disclosed on August 10, 2026.",
    "announcement": "BridgeBio 8-K Exhibit 99.1, November 23, 2026 (SEC EDGAR)",
    "announcement_url": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm",
-   "review": "NDA accepted with Priority Review, PDUFA goal date November 27, 2026 (BridgeBio 8-K, August 10, 2026). BridgeBio states the FDA granted traditional (full) approval. Per BridgeBio, in the Phase 3 FORTIFY trial the 100-meter timed test showed a 0.27 m/s velocity benefit relative to placebo at 12 months (p<0.0001), and forced vital capacity (percent predicted) a 4.89% benefit at 12 months (p=0.0071)."
+   "review": "NDA accepted with Priority Review, PDUFA goal date November 27, 2026 (BridgeBio 8-K, August 10, 2026). BridgeBio states the FDA granted traditional (full) approval. Per BridgeBio, in the Phase 3 FORTIFY trial the 100-meter timed test showed a 0.27 m/s velocity benefit relative to placebo at 12 months (p<0.0001), and forced vital capacity (percent predicted) a 4.89% benefit at 12 months (p=0.0071).",
+   "fda_action_date": "2026-11-23",
+   "fda_action_source_url": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
+   "fda_action_record": "FDA, Novel Drug Approvals for 2026 table"
   },
   "oc": "Approved",
   "dcd": "2026-11-23"

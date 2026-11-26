@@ -256,14 +256,18 @@ def census_goal(slug):
         p = os.path.join(HERE, "_decision_goal_dates.json")
         _GOALS = json.load(io.open(p, encoding="utf-8")) if os.path.exists(p) else {}
     g = _GOALS.get(slug or "")
-    if not (g and g.get("goal") and g.get("source_url") and g.get("doc_date")):
+    st = (g or {}).get("source_type") or "sponsor"
+    fda_doc = st in ("fda_review", "fda_letter")
+    if not (g and g.get("goal") and g.get("source_url") and (g.get("doc_date") or fda_doc)):
         return "Goal date: none on record"
     u = g["source_url"]
-    who = "SEC filing" if "sec.gov/" in u else "sponsor document"
+    # 2026-11-26: a goal read off the FDA's own review or letter is labelled as the FDA's, never as the sponsor's
+    who = ("FDA review" if st == "fda_review" else "FDA letter") if fda_doc else (
+        "SEC filing" if "sec.gov/" in u else "sponsor document")
     s = f"Goal date {pretty(g['goal'])}"
     if g.get("extended") and g.get("goal_original"):
         s += f", extended from {pretty(g['goal_original'])}"
-    label = who + ", " + pretty(g["doc_date"])
+    label = who + (", " + pretty(g["doc_date"]) if g.get("doc_date") else "")
     return s + f" ({link(label, u)})"
 
 
