@@ -210,10 +210,7 @@ def main():
                             m.get("fda_action_date") or "", m.get("action_source_type") or "",
                             m.get("action_source_url") or "", "" if f is None else ("yes" if f else "no")])
 
-    # under 100 characters at any count (test_meta_lengths; at 54 meetings the old title ran to 102)
-    title = f"FDA Advisory Committee Votes {span}: {n} Meetings, Each Question and the FDA's Decision | pdufa.bio"
-    if len(title) > 100:
-        title = f"FDA Advisory Committee Votes {span}: {n} Meetings and the FDA's Decisions | pdufa.bio"
+    title = f"FDA Advisory Committee Votes {span}: {n} Meetings and the FDA's Decisions | pdufa.bio"  # room for growth (max 100)
     desc = (f"{n} FDA advisory committee votes since {years[0] if years else ''}, each question's yes, no and abstain "
             f"count from the FDA's minutes, and whether the FDA's final action followed the vote.")
     if len(desc) > 158:
