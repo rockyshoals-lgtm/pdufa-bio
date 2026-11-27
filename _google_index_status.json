@@ -4955,6 +4955,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/drug/bacfenssi": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/drug/balstilimab": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -11201,6 +11207,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/earnings/ENTA": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/earnings/EQ": {
 "checked": "2026-11-27",
 "crawled": null,
@@ -11247,6 +11259,12 @@
 "checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/earnings/FDMT": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/earnings/FTH": {
@@ -11484,6 +11502,12 @@
 "verdict": "NEUTRAL"
 },
 "/earnings/IRD": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/earnings/IRLA": {
 "checked": "2026-11-27",
 "crawled": null,
 "state": "URL is unknown to Google",
@@ -16926,7 +16950,7 @@
 "verdict": "PASS"
 },
 "/sls": {
-"checked": "2026-11-20",
+"checked": "2026-11-27",
 "crawled": "2026-08-08",
 "state": "Crawled - currently not indexed",
 "verdict": "NEUTRAL"

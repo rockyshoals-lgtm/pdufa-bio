@@ -3,9 +3,9 @@
 "dated": 4287,
 "dated_bad": 7,
 "median_min": 5.0,
-"n": 2897
+"n": 2906
 },
-"fetched": "2026-11-27T22:05:51Z",
+"fetched": "2026-11-27T22:36:41Z",
 "rules_version": 4,
 "tickers": {
 "AAPG": {
@@ -11489,28 +11489,44 @@
 "filing_date": "2024-05-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985624000036/0001619856-24-000036-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985624000036/0001619856-24-000036-index.htm",
+"where": "8-K"
 },
 "0001619856-24-000054": {
 "accepted_et": "2024-07-16 16:01",
 "filing_date": "2024-07-16",
 "form": "8-K",
 "items": "2.02,2.05,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985624000054/0001619856-24-000054-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985624000054/0001619856-24-000054-index.htm",
+"where": "8-K"
 },
 "0001619856-24-000063": {
 "accepted_et": "2024-08-06 16:07",
 "filing_date": "2024-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985624000063/0001619856-24-000063-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985624000063/0001619856-24-000063-index.htm",
+"where": "8-K"
 },
 "0001619856-24-000080": {
 "accepted_et": "2024-11-06 16:07",
 "filing_date": "2024-11-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985624000080/0001619856-24-000080-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985624000080/0001619856-24-000080-index.htm",
+"where": "8-K"
 },
 "0001619856-25-000014": {
 "accepted_et": "2025-03-10 16:08",
@@ -11525,7 +11541,11 @@
 "filing_date": "2025-04-24",
 "form": "8-K",
 "items": "2.02,2.05,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985625000023/0001619856-25-000023-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985625000023/0001619856-25-000023-index.htm",
+"where": "8-K"
 },
 "0001619856-25-000040": {
 "accepted_et": "2025-05-08 16:06",
@@ -11548,7 +11568,11 @@
 "filing_date": "2025-11-03",
 "form": "8-K",
 "items": "2.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985625000065/0001619856-25-000065-index.htm"
+"period": "quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1619856/000161985625000065/0001619856-25-000065-index.htm",
+"where": "8-K"
 },
 "0001619856-25-000070": {
 "accepted_et": "2025-11-12 16:08",
@@ -11600,7 +11624,11 @@
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1213037/000095017024123303/0000950170-24-123303-index.htm"
+"period": "Third Quarter 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1213037/000095017024123303/0000950170-24-123303-index.htm",
+"where": "EX-99.1"
 },
 "0000950170-25-029065": {
 "accepted_et": "2025-02-27 16:15",
@@ -11623,7 +11651,11 @@
 "filing_date": "2025-07-29",
 "form": "8-K",
 "items": "2.02,7.01,8.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1213037/000095017025099631/0000950170-25-099631-index.htm"
+"period": "second quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1213037/000095017025099631/0000950170-25-099631-index.htm",
+"where": "8-K"
 },
 "0001193125-25-269492": {
 "accepted_et": "2025-11-06 16:08",
@@ -11678,7 +11710,11 @@
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1213037/000162828024036122/0001628280-24-036122-index.htm"
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1213037/000162828024036122/0001628280-24-036122-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -11690,84 +11726,132 @@
 "filing_date": "2026-11-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110465926127041/0001104659-26-127041-index.htm"
+"period": null,
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110465926127041/0001104659-26-127041-index.htm",
+"where": "8-K"
 },
 "0001108205-24-000008": {
 "accepted_et": "2024-02-08 08:01",
 "filing_date": "2024-02-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820524000008/0001108205-24-000008-index.htm"
+"period": "quarter ended December 31, 2023",
+"period_key": "2023Q4",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820524000008/0001108205-24-000008-index.htm",
+"where": "8-K"
 },
 "0001108205-24-000032": {
 "accepted_et": "2024-05-07 08:02",
 "filing_date": "2024-05-07",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820524000032/0001108205-24-000032-index.htm"
+"period": null,
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820524000032/0001108205-24-000032-index.htm",
+"where": "8-K"
 },
 "0001108205-24-000061": {
 "accepted_et": "2024-08-01 08:05",
 "filing_date": "2024-08-01",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820524000061/0001108205-24-000061-index.htm"
+"period": null,
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820524000061/0001108205-24-000061-index.htm",
+"where": "8-K"
 },
 "0001108205-24-000071": {
 "accepted_et": "2024-11-14 08:03",
 "filing_date": "2024-11-14",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820524000071/0001108205-24-000071-index.htm"
+"period": null,
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820524000071/0001108205-24-000071-index.htm",
+"where": "8-K"
 },
 "0001108205-25-000022": {
 "accepted_et": "2025-03-28 08:16",
 "filing_date": "2025-03-28",
 "form": "8-K",
 "items": "1.01,2.02,3.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820525000022/0001108205-25-000022-index.htm"
+"period": "twelve months ended December 31, 2024",
+"period_key": "2024FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820525000022/0001108205-25-000022-index.htm",
+"where": "8-K"
 },
 "0001108205-25-000028": {
 "accepted_et": "2025-03-31 08:06",
 "filing_date": "2025-03-31",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820525000028/0001108205-25-000028-index.htm"
+"period": null,
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820525000028/0001108205-25-000028-index.htm",
+"where": "8-K"
 },
 "0001108205-25-000045": {
 "accepted_et": "2025-05-06 08:03",
 "filing_date": "2025-05-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820525000045/0001108205-25-000045-index.htm"
+"period": null,
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820525000045/0001108205-25-000045-index.htm",
+"where": "8-K"
 },
 "0001108205-25-000079": {
 "accepted_et": "2025-08-05 08:07",
 "filing_date": "2025-08-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820525000079/0001108205-25-000079-index.htm"
+"period": null,
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820525000079/0001108205-25-000079-index.htm",
+"where": "8-K"
 },
 "0001108205-25-000105": {
 "accepted_et": "2025-11-06 16:01",
 "filing_date": "2025-11-06",
 "form": "8-K",
 "items": "1.02,2.01,2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820525000105/0001108205-25-000105-index.htm"
+"period": null,
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820525000105/0001108205-25-000105-index.htm",
+"where": "8-K"
 },
 "0001108205-26-000030": {
 "accepted_et": "2026-03-19 16:09",
 "filing_date": "2026-03-19",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820526000030/0001108205-26-000030-index.htm"
+"period": null,
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820526000030/0001108205-26-000030-index.htm",
+"where": "8-K"
 },
 "0001108205-26-000059": {
 "accepted_et": "2026-05-12 16:01",
 "filing_date": "2026-05-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820526000059/0001108205-26-000059-index.htm"
+"period": null,
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1108205/000110820526000059/0001108205-26-000059-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -11819,7 +11903,11 @@
 "filing_date": "2025-05-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1674416/000095017025064435/0000950170-25-064435-index.htm"
+"period": "quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1674416/000095017025064435/0000950170-25-064435-index.htm",
+"where": "8-K"
 },
 "0000950170-25-102027": {
 "accepted_et": "2025-08-04 16:21",
@@ -11879,7 +11967,11 @@
 "filing_date": "2024-04-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774924011212/0001437749-24-011212-index.htm"
+"period": "quarter and full year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774924011212/0001437749-24-011212-index.htm",
+"where": "8-K"
 },
 "0001437749-24-017132": {
 "accepted_et": "2024-05-15 17:06",
@@ -11894,7 +11986,11 @@
 "filing_date": "2024-08-15",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774924027012/0001437749-24-027012-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774924027012/0001437749-24-027012-index.htm",
+"where": "8-K"
 },
 "0001437749-24-034889": {
 "accepted_et": "2024-11-13 16:01",
@@ -11909,7 +12005,11 @@
 "filing_date": "2025-03-18",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774925008249/0001437749-25-008249-index.htm"
+"period": "quarter and full year ended December 31, 2024",
+"period_key": "2024Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774925008249/0001437749-25-008249-index.htm",
+"where": "8-K"
 },
 "0001437749-25-016131": {
 "accepted_et": "2025-05-12 16:29",
@@ -11924,14 +12024,22 @@
 "filing_date": "2025-08-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774925025814/0001437749-25-025814-index.htm"
+"period": "quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774925025814/0001437749-25-025814-index.htm",
+"where": "8-K"
 },
 "0001437749-25-034095": {
 "accepted_et": "2025-11-10 16:05",
 "filing_date": "2025-11-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774925034095/0001437749-25-034095-index.htm"
+"period": "quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774925034095/0001437749-25-034095-index.htm",
+"where": "8-K"
 },
 "0001437749-26-008611": {
 "accepted_et": "2026-03-17 16:31",
@@ -12063,7 +12171,11 @@
 "filing_date": "2026-11-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1626971/000117184326007175/0001171843-26-007175-index.htm"
+"period": "three and nine months ended September 30, 2026",
+"period_key": "2026Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1626971/000117184326007175/0001171843-26-007175-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -12079,7 +12191,11 @@
 "filing_date": "2024-01-08",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1447362/000144736224000006/0001447362-24-000006-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1447362/000144736224000006/0001447362-24-000006-index.htm",
+"where": "8-K"
 },
 "0001447362-24-000016": {
 "accepted_et": "2024-02-28 16:07",
@@ -12094,7 +12210,11 @@
 "filing_date": "2024-05-02",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1447362/000144736224000059/0001447362-24-000059-index.htm"
+"period": "first quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1447362/000144736224000059/0001447362-24-000059-index.htm",
+"where": "8-K"
 },
 "0001447362-24-000121": {
 "accepted_et": "2024-08-05 16:08",
@@ -12109,14 +12229,22 @@
 "filing_date": "2024-11-04",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1447362/000144736224000168/0001447362-24-000168-index.htm"
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1447362/000144736224000168/0001447362-24-000168-index.htm",
+"where": "8-K"
 },
 "0001447362-25-000012": {
 "accepted_et": "2025-01-13 06:58",
 "filing_date": "2025-01-13",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1447362/000144736225000012/0001447362-25-000012-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1447362/000144736225000012/0001447362-25-000012-index.htm",
+"where": "8-K"
 },
 "0001447362-25-000030": {
 "accepted_et": "2025-02-27 16:07",
@@ -12155,7 +12283,11 @@
 "filing_date": "2026-01-13",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1447362/000162828026001909/0001628280-26-001909-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1447362/000162828026001909/0001628280-26-001909-index.htm",
+"where": "8-K"
 },
 "0001628280-26-012263": {
 "accepted_et": "2026-02-26 16:07",
@@ -12178,7 +12310,11 @@
 "filing_date": "2026-07-30",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1447362/000162828026051045/0001628280-26-051045-index.htm"
+"period": "second quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1447362/000162828026051045/0001628280-26-051045-index.htm",
+"where": "8-K"
 },
 "0001628280-26-071030": {
 "accepted_et": "2026-11-05 16:07",
@@ -12198,7 +12334,11 @@
 "filing_date": "2024-03-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1501989/000095017024029207/0000950170-24-029207-index.htm"
+"period": "year ended December 31, 2023",
+"period_key": "2023FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1501989/000095017024029207/0000950170-24-029207-index.htm",
+"where": "8-K"
 },
 "0000950170-24-055598": {
 "accepted_et": "2024-05-08 16:04",
@@ -12229,7 +12369,11 @@
 "filing_date": "2025-03-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1501989/000095017025034585/0000950170-25-034585-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1501989/000095017025034585/0000950170-25-034585-index.htm",
+"where": "8-K"
 },
 "0000950170-25-105053": {
 "accepted_et": "2025-08-07 16:16",
@@ -12260,7 +12404,11 @@
 "filing_date": "2026-03-16",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1501989/000119312526107152/0001193125-26-107152-index.htm"
+"period": "year ended December 31, 2025",
+"period_key": "2025FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1501989/000119312526107152/0001193125-26-107152-index.htm",
+"where": "8-K"
 },
 "0001193125-26-211920": {
 "accepted_et": "2026-05-07 16:12",
@@ -12309,7 +12457,11 @@
 "filing_date": "2024-05-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1645460/000095017024056848/0000950170-24-056848-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1645460/000095017024056848/0000950170-24-056848-index.htm",
+"where": "8-K"
 },
 "0000950170-24-127004": {
 "accepted_et": "2024-11-14 16:00",
@@ -12348,7 +12500,11 @@
 "filing_date": "2025-04-15",
 "form": "8-K",
 "items": "1.01,2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1645460/000119312525081592/0001193125-25-081592-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1645460/000119312525081592/0001193125-25-081592-index.htm",
+"where": "8-K"
 },
 "0001193125-25-277468": {
 "accepted_et": "2025-11-12 16:00",
@@ -12464,7 +12620,11 @@
 "filing_date": "2026-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1061983/000119312526338021/0001193125-26-338021-index.htm"
+"period": "second quarter 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1061983/000119312526338021/0001193125-26-338021-index.htm",
+"where": "8-K"
 },
 "0001193125-26-447198": {
 "accepted_et": "2026-11-04 16:05",
@@ -12484,77 +12644,121 @@
 "filing_date": "2024-02-28",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017024021650/0000950170-24-021650-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017024021650/0000950170-24-021650-index.htm",
+"where": "8-K"
 },
 "0000950170-24-055649": {
 "accepted_et": "2024-05-08 16:10",
 "filing_date": "2024-05-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017024055649/0000950170-24-055649-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017024055649/0000950170-24-055649-index.htm",
+"where": "8-K"
 },
 "0000950170-24-095749": {
 "accepted_et": "2024-08-13 07:15",
 "filing_date": "2024-08-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017024095749/0000950170-24-095749-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017024095749/0000950170-24-095749-index.htm",
+"where": "8-K"
 },
 "0000950170-24-123366": {
 "accepted_et": "2024-11-07 16:15",
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017024123366/0000950170-24-123366-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017024123366/0000950170-24-123366-index.htm",
+"where": "8-K"
 },
 "0000950170-25-034175": {
 "accepted_et": "2025-03-06 07:30",
 "filing_date": "2025-03-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017025034175/0000950170-25-034175-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017025034175/0000950170-25-034175-index.htm",
+"where": "8-K"
 },
 "0000950170-25-066374": {
 "accepted_et": "2025-05-08 07:15",
 "filing_date": "2025-05-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017025066374/0000950170-25-066374-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017025066374/0000950170-25-066374-index.htm",
+"where": "8-K"
 },
 "0000950170-25-100902": {
 "accepted_et": "2025-07-31 16:10",
 "filing_date": "2025-07-31",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017025100902/0000950170-25-100902-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000095017025100902/0000950170-25-100902-index.htm",
+"where": "8-K"
 },
 "0001104659-24-088108": {
 "accepted_et": "2024-08-12 08:38",
 "filing_date": "2024-08-12",
 "form": "8-K",
 "items": "1.01,2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000110465924088108/0001104659-24-088108-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000110465924088108/0001104659-24-088108-index.htm",
+"where": "8-K"
 },
 "0001104659-25-103726": {
 "accepted_et": "2025-10-29 16:11",
 "filing_date": "2025-10-29",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000110465925103726/0001104659-25-103726-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000110465925103726/0001104659-25-103726-index.htm",
+"where": "8-K"
 },
 "0001193125-25-269548": {
 "accepted_et": "2025-11-06 16:12",
 "filing_date": "2025-11-06",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000119312525269548/0001193125-25-269548-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000119312525269548/0001193125-25-269548-index.htm",
+"where": "8-K"
 },
 "0001193125-26-009854": {
 "accepted_et": "2026-01-12 08:24",
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,5.03,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1813814/000119312526009854/0001193125-26-009854-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1813814/000119312526009854/0001193125-26-009854-index.htm",
+"where": "8-K"
 },
 "0001193125-26-076612": {
 "accepted_et": "2026-02-26 16:10",
@@ -12699,84 +12903,132 @@
 "filing_date": "2024-01-08",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017024002707/0000950170-24-002707-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017024002707/0000950170-24-002707-index.htm",
+"where": "8-K"
 },
 "0000950170-24-034667": {
 "accepted_et": "2024-03-21 16:04",
 "filing_date": "2024-03-21",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017024034667/0000950170-24-034667-index.htm"
+"period": "quarter and full year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017024034667/0000950170-24-034667-index.htm",
+"where": "8-K"
 },
 "0000950170-24-056925": {
 "accepted_et": "2024-05-09 16:08",
 "filing_date": "2024-05-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017024056925/0000950170-24-056925-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017024056925/0000950170-24-056925-index.htm",
+"where": "8-K"
 },
 "0000950170-24-093920": {
 "accepted_et": "2024-08-08 16:06",
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017024093920/0000950170-24-093920-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017024093920/0000950170-24-093920-index.htm",
+"where": "8-K"
 },
 "0000950170-24-123255": {
 "accepted_et": "2024-11-07 16:03",
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017024123255/0000950170-24-123255-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017024123255/0000950170-24-123255-index.htm",
+"where": "8-K"
 },
 "0000950170-25-037125": {
 "accepted_et": "2025-03-11 16:03",
 "filing_date": "2025-03-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017025037125/0000950170-25-037125-index.htm"
+"period": "quarter and full year ended December 31, 2024",
+"period_key": "2024Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017025037125/0000950170-25-037125-index.htm",
+"where": "8-K"
 },
 "0000950170-25-069195": {
 "accepted_et": "2025-05-12 16:10",
 "filing_date": "2025-05-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017025069195/0000950170-25-069195-index.htm"
+"period": "quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017025069195/0000950170-25-069195-index.htm",
+"where": "8-K"
 },
 "0000950170-25-105002": {
 "accepted_et": "2025-08-07 16:07",
 "filing_date": "2025-08-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017025105002/0000950170-25-105002-index.htm"
+"period": "quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000095017025105002/0000950170-25-105002-index.htm",
+"where": "8-K"
 },
 "0001193125-25-240858": {
 "accepted_et": "2025-10-16 08:00",
 "filing_date": "2025-10-16",
 "form": "8-K",
 "items": "1.01,2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000119312525240858/0001193125-25-240858-index.htm"
+"period": "Three Months Ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000119312525240858/0001193125-25-240858-index.htm",
+"where": "8-K"
 },
 "0001193125-25-266867": {
 "accepted_et": "2025-11-05 16:03",
 "filing_date": "2025-11-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000119312525266867/0001193125-25-266867-index.htm"
+"period": "quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000119312525266867/0001193125-25-266867-index.htm",
+"where": "8-K"
 },
 "0001193125-26-009898": {
 "accepted_et": "2026-01-12 09:01",
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000119312526009898/0001193125-26-009898-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000119312526009898/0001193125-26-009898-index.htm",
+"where": "8-K"
 },
 "0001193125-26-097555": {
 "accepted_et": "2026-03-09 07:19",
 "filing_date": "2026-03-09",
 "form": "8-K",
 "items": "2.02,7.01,8.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1690585/000119312526097555/0001193125-26-097555-index.htm"
+"period": "quarter and full year ended December 31, 2025",
+"period_key": "2025Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1690585/000119312526097555/0001193125-26-097555-index.htm",
+"where": "8-K"
 },
 "0001690585-26-000021": {
 "accepted_et": "2026-05-05 16:03",
@@ -12913,7 +13165,11 @@
 "filing_date": "2024-01-11",
 "form": "8-K",
 "items": "1.01,2.02,3.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1357874/000095017024003761/0000950170-24-003761-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1357874/000095017024003761/0000950170-24-003761-index.htm",
+"where": "8-K"
 },
 "0000950170-24-036816": {
 "accepted_et": "2024-03-27 07:15",
@@ -12928,7 +13184,11 @@
 "filing_date": "2024-04-16",
 "form": "8-K",
 "items": "1.02,2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1357874/000095017024044831/0000950170-24-044831-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1357874/000095017024044831/0000950170-24-044831-index.htm",
+"where": "8-K"
 },
 "0000950170-24-058191": {
 "accepted_et": "2024-05-13 07:15",
@@ -12943,14 +13203,22 @@
 "filing_date": "2024-08-01",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1357874/000095017024088950/0000950170-24-088950-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1357874/000095017024088950/0000950170-24-088950-index.htm",
+"where": "8-K"
 },
 "0000950170-24-116864": {
 "accepted_et": "2024-10-24 08:45",
 "filing_date": "2024-10-24",
 "form": "8-K",
 "items": "2.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1357874/000095017024116864/0000950170-24-116864-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1357874/000095017024116864/0000950170-24-116864-index.htm",
+"where": "8-K"
 },
 "0000950170-24-120278": {
 "accepted_et": "2024-11-04 07:15",
@@ -12965,7 +13233,11 @@
 "filing_date": "2025-01-08",
 "form": "8-K",
 "items": "2.02,8.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1357874/000095017025003290/0000950170-25-003290-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1357874/000095017025003290/0000950170-25-003290-index.htm",
+"where": "8-K"
 },
 "0000950170-25-044764": {
 "accepted_et": "2025-03-26 07:30",
@@ -13004,7 +13276,11 @@
 "filing_date": "2026-01-13",
 "form": "8-K",
 "items": "2.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026001955/0001628280-26-001955-index.htm"
+"period": "year ended December 31, 2025",
+"period_key": "2025FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026001955/0001628280-26-001955-index.htm",
+"where": "8-K"
 },
 "0001628280-26-017018": {
 "accepted_et": "2026-03-12 07:30",
@@ -13088,28 +13364,44 @@
 "filing_date": "2024-02-29",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818844/000155837024002113/0001558370-24-002113-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1818844/000155837024002113/0001558370-24-002113-index.htm",
+"where": "8-K"
 },
 "0001558370-24-007474": {
 "accepted_et": "2024-05-09 08:01",
 "filing_date": "2024-05-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818844/000155837024007474/0001558370-24-007474-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1818844/000155837024007474/0001558370-24-007474-index.htm",
+"where": "8-K"
 },
 "0001558370-24-011486": {
 "accepted_et": "2024-08-08 09:30",
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818844/000155837024011486/0001558370-24-011486-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1818844/000155837024011486/0001558370-24-011486-index.htm",
+"where": "8-K"
 },
 "0001558370-24-014749": {
 "accepted_et": "2024-11-07 07:15",
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818844/000155837024014749/0001558370-24-014749-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1818844/000155837024014749/0001558370-24-014749-index.htm",
+"where": "8-K"
 },
 "0001558370-25-004150": {
 "accepted_et": "2025-03-31 15:55",
@@ -13169,7 +13461,11 @@
 "filing_date": "2024-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818794/000095017024124583/0000950170-24-124583-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1818794/000095017024124583/0000950170-24-124583-index.htm",
+"where": "8-K"
 },
 "0000950170-25-028369": {
 "accepted_et": "2025-02-27 07:35",
@@ -13200,7 +13496,11 @@
 "filing_date": "2025-01-10",
 "form": "8-K",
 "items": "2.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818794/000119312525004057/0001193125-25-004057-index.htm"
+"period": "fourth quarter and fiscal year ended December 31, 2024",
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1818794/000119312525004057/0001193125-25-004057-index.htm",
+"where": "8-K"
 },
 "0001193125-25-266979": {
 "accepted_et": "2025-11-05 16:16",
@@ -13215,7 +13515,11 @@
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818794/000119312526009782/0001193125-26-009782-index.htm"
+"period": "fourth quarter and fiscal year ended December 31, 2025",
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1818794/000119312526009782/0001193125-26-009782-index.htm",
+"where": "8-K"
 },
 "0001193125-26-084207": {
 "accepted_et": "2026-03-02 07:35",
@@ -13259,7 +13563,11 @@
 "filing_date": "2024-10-02",
 "form": "8-K",
 "items": "1.01,2.02,2.03,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1367644/000119312524230710/0001193125-24-230710-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1367644/000119312524230710/0001193125-24-230710-index.htm",
+"where": "8-K"
 },
 "0001367644-24-000026": {
 "accepted_et": "2024-03-06 16:15",
@@ -13290,7 +13598,11 @@
 "filing_date": "2024-11-06",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1367644/000136764424000176/0001367644-24-000176-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1367644/000136764424000176/0001367644-24-000176-index.htm",
+"where": "8-K"
 },
 "0001367644-25-000019": {
 "accepted_et": "2025-03-03 16:27",
@@ -13390,7 +13702,11 @@
 "filing_date": "2024-10-22",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650664/000165066424000114/0001650664-24-000114-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1650664/000165066424000114/0001650664-24-000114-index.htm",
+"where": "8-K"
 },
 "0001650664-24-000120": {
 "accepted_et": "2024-11-04 07:33",
@@ -13405,7 +13721,11 @@
 "filing_date": "2025-01-13",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650664/000165066425000003/0001650664-25-000003-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1650664/000165066425000003/0001650664-25-000003-index.htm",
+"where": "8-K"
 },
 "0001650664-25-000020": {
 "accepted_et": "2025-03-05 16:11",
@@ -13518,7 +13838,11 @@
 "filing_date": "2024-03-29",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1601485/000160148524000021/0001601485-24-000021-index.htm"
+"period": "year ended December 31, 2023",
+"period_key": "2023FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1601485/000160148524000021/0001601485-24-000021-index.htm",
+"where": "8-K"
 },
 "0001601485-24-000032": {
 "accepted_et": "2024-05-15 16:34",
@@ -13549,7 +13873,11 @@
 "filing_date": "2025-03-31",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1601485/000160148525000046/0001601485-25-000046-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1601485/000160148525000046/0001601485-25-000046-index.htm",
+"where": "8-K"
 },
 "0001601485-25-000072": {
 "accepted_et": "2025-05-13 16:27",
@@ -13625,21 +13953,33 @@
 "filing_date": "2024-05-14",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1672619/000095017024059544/0000950170-24-059544-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1672619/000095017024059544/0000950170-24-059544-index.htm",
+"where": "8-K"
 },
 "0000950170-24-096204": {
 "accepted_et": "2024-08-13 16:10",
 "filing_date": "2024-08-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1672619/000095017024096204/0000950170-24-096204-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1672619/000095017024096204/0000950170-24-096204-index.htm",
+"where": "8-K"
 },
 "0000950170-24-126323": {
 "accepted_et": "2024-11-13 16:10",
 "filing_date": "2024-11-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1672619/000095017024126323/0000950170-24-126323-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1672619/000095017024126323/0000950170-24-126323-index.htm",
+"where": "8-K"
 },
 "0000950170-25-038737": {
 "accepted_et": "2025-03-13 16:10",
@@ -13654,42 +13994,66 @@
 "filing_date": "2025-05-14",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1672619/000095017025071387/0000950170-25-071387-index.htm"
+"period": "quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1672619/000095017025071387/0000950170-25-071387-index.htm",
+"where": "8-K"
 },
 "0001193125-25-179837": {
 "accepted_et": "2025-08-13 16:15",
 "filing_date": "2025-08-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1672619/000119312525179837/0001193125-25-179837-index.htm"
+"period": "quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1672619/000119312525179837/0001193125-25-179837-index.htm",
+"where": "8-K"
 },
 "0001193125-25-277580": {
 "accepted_et": "2025-11-12 16:10",
 "filing_date": "2025-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1672619/000119312525277580/0001193125-25-277580-index.htm"
+"period": "quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1672619/000119312525277580/0001193125-25-277580-index.htm",
+"where": "8-K"
 },
 "0001193125-26-088195": {
 "accepted_et": "2026-03-03 16:10",
 "filing_date": "2026-03-03",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1672619/000119312526088195/0001193125-26-088195-index.htm"
+"period": "quarter and year ended December 31, 2025",
+"period_key": "2025Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1672619/000119312526088195/0001193125-26-088195-index.htm",
+"where": "8-K"
 },
 "0001193125-26-211921": {
 "accepted_et": "2026-05-07 16:12",
 "filing_date": "2026-05-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1672619/000119312526211921/0001193125-26-211921-index.htm"
+"period": "quarter ended March 31, 2026",
+"period_key": "2026Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1672619/000119312526211921/0001193125-26-211921-index.htm",
+"where": "8-K"
 },
 "0001193125-26-335101": {
 "accepted_et": "2026-08-05 16:10",
 "filing_date": "2026-08-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1672619/000119312526335101/0001193125-26-335101-index.htm"
+"period": "quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1672619/000119312526335101/0001193125-26-335101-index.htm",
+"where": "8-K"
 },
 "0001193125-26-449819": {
 "accepted_et": "2026-11-05 16:10",
@@ -13717,84 +14081,132 @@
 "filing_date": "2024-03-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017024029396/0000950170-24-029396-index.htm"
+"period": "quarter ended January 31, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017024029396/0000950170-24-029396-index.htm",
+"where": "8-K"
 },
 "0000950170-24-073326": {
 "accepted_et": "2024-06-14 07:12",
 "filing_date": "2024-06-14",
 "form": "8-K",
 "items": "2.02,7.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017024073326/0000950170-24-073326-index.htm"
+"period": "quarter ended April 30, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017024073326/0000950170-24-073326-index.htm",
+"where": "8-K"
 },
 "0000950170-24-105175": {
 "accepted_et": "2024-09-10 16:34",
 "filing_date": "2024-09-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017024105175/0000950170-24-105175-index.htm"
+"period": "Third Quarter 2024",
+"period_key": "2024Q3",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017024105175/0000950170-24-105175-index.htm",
+"where": "EX-99.1"
 },
 "0000950170-24-138446": {
 "accepted_et": "2024-12-19 16:09",
 "filing_date": "2024-12-19",
 "form": "8-K",
 "items": "1.01,2.02,2.03,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017024138446/0000950170-24-138446-index.htm"
+"period": "year ended October 31, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017024138446/0000950170-24-138446-index.htm",
+"where": "8-K"
 },
 "0000950170-25-036264": {
 "accepted_et": "2025-03-10 16:07",
 "filing_date": "2025-03-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017025036264/0000950170-25-036264-index.htm"
+"period": "First Quarter 2025",
+"period_key": "2025Q1",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017025036264/0000950170-25-036264-index.htm",
+"where": "EX-99.1"
 },
 "0000950170-25-085138": {
 "accepted_et": "2025-06-12 08:05",
 "filing_date": "2025-06-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017025085138/0000950170-25-085138-index.htm"
+"period": "Second Quarter 2025",
+"period_key": "2025Q2",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017025085138/0000950170-25-085138-index.htm",
+"where": "EX-99.1"
 },
 "0000950170-25-114220": {
 "accepted_et": "2025-09-11 16:08",
 "filing_date": "2025-09-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017025114220/0000950170-25-114220-index.htm"
+"period": "quarter ended July 31, 2025",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000095017025114220/0000950170-25-114220-index.htm",
+"where": "8-K"
 },
 "0001193125-25-328706": {
 "accepted_et": "2025-12-22 16:04",
 "filing_date": "2025-12-22",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000119312525328706/0001193125-25-328706-index.htm"
+"period": "year ended October 31, 2025",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000119312525328706/0001193125-25-328706-index.htm",
+"where": "8-K"
 },
 "0001193125-26-097534": {
 "accepted_et": "2026-03-09 07:04",
 "filing_date": "2026-03-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000119312526097534/0001193125-26-097534-index.htm"
+"period": "three months ended January 31, 2026",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000119312526097534/0001193125-26-097534-index.htm",
+"where": "8-K"
 },
 "0001193125-26-270384": {
 "accepted_et": "2026-06-15 09:14",
 "filing_date": "2026-06-15",
 "form": "8-K",
 "items": "2.02,2.05,5.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000119312526270384/0001193125-26-270384-index.htm"
+"period": "three months ended April 30, 2026",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000119312526270384/0001193125-26-270384-index.htm",
+"where": "8-K"
 },
 "0001193125-26-384380": {
 "accepted_et": "2026-09-08 07:33",
 "filing_date": "2026-09-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000119312526384380/0001193125-26-384380-index.htm"
+"period": "three and nine months ended July 31, 2026",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000119312526384380/0001193125-26-384380-index.htm",
+"where": "8-K"
 },
 "0001193125-26-456703": {
 "accepted_et": "2026-11-12 06:14",
 "filing_date": "2026-11-12",
 "form": "8-K",
 "items": "2.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1980845/000119312526456703/0001193125-26-456703-index.htm"
+"period": "Year Ended October 31, 2026",
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1980845/000119312526456703/0001193125-26-456703-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -13806,27 +14218,40 @@
 "filing_date": "2024-02-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017024012186/0000950170-24-012186-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017024012186/0000950170-24-012186-index.htm",
+"where": "8-K"
 },
 "0000950170-24-053532": {
 "accepted_et": "2024-05-06 16:05",
 "filing_date": "2024-05-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017024053532/0000950170-24-053532-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017024053532/0000950170-24-053532-index.htm",
+"where": "8-K"
 },
 "0000950170-24-090722": {
 "accepted_et": "2024-08-05 16:05",
 "filing_date": "2024-08-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017024090722/0000950170-24-090722-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017024090722/0000950170-24-090722-index.htm",
+"where": "8-K"
 },
 "0000950170-24-130553": {
 "accepted_et": "2024-11-25 16:05",
 "filing_date": "2024-11-25",
 "form": "8-K",
 "items": "2.02,9.01",
+"status": "covered",
 "url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017024130553/0000950170-24-130553-index.htm"
 },
 "0000950170-25-017035": {
@@ -13834,27 +14259,40 @@
 "filing_date": "2025-02-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017025017035/0000950170-25-017035-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017025017035/0000950170-25-017035-index.htm",
+"where": "8-K"
 },
 "0000950170-25-069155": {
 "accepted_et": "2025-05-12 16:05",
 "filing_date": "2025-05-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017025069155/0000950170-25-069155-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1177648/000095017025069155/0000950170-25-069155-index.htm",
+"where": "8-K"
 },
 "0001193125-25-177941": {
 "accepted_et": "2025-08-11 16:15",
 "filing_date": "2025-08-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1177648/000119312525177941/0001193125-25-177941-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1177648/000119312525177941/0001193125-25-177941-index.htm",
+"where": "8-K"
 },
 "0001193125-25-284633": {
 "accepted_et": "2025-11-17 16:15",
 "filing_date": "2025-11-17",
 "form": "8-K",
 "items": "2.02,9.01",
+"status": "covered",
 "url": "https://www.sec.gov/Archives/edgar/data/1177648/000119312525284633/0001193125-25-284633-index.htm"
 },
 "0001193125-26-042812": {
@@ -13862,27 +14300,40 @@
 "filing_date": "2026-02-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1177648/000119312526042812/0001193125-26-042812-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1177648/000119312526042812/0001193125-26-042812-index.htm",
+"where": "8-K"
 },
 "0001193125-26-216735": {
 "accepted_et": "2026-05-11 16:05",
 "filing_date": "2026-05-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1177648/000119312526216735/0001193125-26-216735-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1177648/000119312526216735/0001193125-26-216735-index.htm",
+"where": "8-K"
 },
 "0001193125-26-342336": {
 "accepted_et": "2026-08-10 16:05",
 "filing_date": "2026-08-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1177648/000119312526342336/0001193125-26-342336-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1177648/000119312526342336/0001193125-26-342336-index.htm",
+"where": "8-K"
 },
 "0001193125-26-463508": {
 "accepted_et": "2026-11-16 16:10",
 "filing_date": "2026-11-16",
 "form": "8-K",
 "items": "2.02,9.01",
+"status": "covered",
 "url": "https://www.sec.gov/Archives/edgar/data/1177648/000119312526463508/0001193125-26-463508-index.htm"
 }
 }
@@ -13903,7 +14354,11 @@
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1746466/000095017024093884/0000950170-24-093884-index.htm"
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1746466/000095017024093884/0000950170-24-093884-index.htm",
+"where": "8-K"
 },
 "0000950170-24-126288": {
 "accepted_et": "2024-11-13 16:05",
@@ -13918,14 +14373,22 @@
 "filing_date": "2025-03-27",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1746466/000095017025045723/0000950170-25-045723-index.htm"
+"period": "fourth quarter and full year ended December 31, 2024",
+"period_key": "2024Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1746466/000095017025045723/0000950170-25-045723-index.htm",
+"where": "8-K"
 },
 "0001193125-24-044664": {
 "accepted_et": "2024-02-23 17:12",
 "filing_date": "2024-02-23",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1746466/000119312524044664/0001193125-24-044664-index.htm"
+"period": "year ended December 31, 2023",
+"period_key": "2023FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1746466/000119312524044664/0001193125-24-044664-index.htm",
+"where": "8-K"
 },
 "0001193125-24-076471": {
 "accepted_et": "2024-03-25 16:05",
@@ -13940,21 +14403,33 @@
 "filing_date": "2024-07-18",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1746466/000119312524180952/0001193125-24-180952-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1746466/000119312524180952/0001193125-24-180952-index.htm",
+"where": "8-K"
 },
 "0001193125-25-092435": {
 "accepted_et": "2025-04-24 09:05",
 "filing_date": "2025-04-24",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1746466/000119312525092435/0001193125-25-092435-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1746466/000119312525092435/0001193125-25-092435-index.htm",
+"where": "8-K"
 },
 "0001193125-25-172207": {
 "accepted_et": "2025-08-04 08:35",
 "filing_date": "2025-08-04",
 "form": "8-K",
 "items": "1.01,2.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1746466/000119312525172207/0001193125-25-172207-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1746466/000119312525172207/0001193125-25-172207-index.htm",
+"where": "8-K"
 },
 "0001193125-25-280173": {
 "accepted_et": "2025-11-13 16:10",
@@ -14070,7 +14545,11 @@
 "filing_date": "2026-01-20",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1761918/000119312526016556/0001193125-26-016556-index.htm"
+"period": "year ended December 31, 2025",
+"period_key": "2025FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1761918/000119312526016556/0001193125-26-016556-index.htm",
+"where": "8-K"
 },
 "0001193125-26-104105": {
 "accepted_et": "2026-03-12 16:05",
@@ -14264,35 +14743,55 @@
 "filing_date": "2024-01-19",
 "form": "8-K",
 "items": "2.02,8.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1710072/000110465924004966/0001104659-24-004966-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1710072/000110465924004966/0001104659-24-004966-index.htm",
+"where": "8-K"
 },
 "0001104659-24-026336": {
 "accepted_et": "2024-02-22 08:00",
 "filing_date": "2024-02-22",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1710072/000110465924026336/0001104659-24-026336-index.htm"
+"period": "fourth quarter and full year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1710072/000110465924026336/0001104659-24-026336-index.htm",
+"where": "8-K"
 },
 "0001104659-24-059136": {
 "accepted_et": "2024-05-09 08:00",
 "filing_date": "2024-05-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1710072/000110465924059136/0001104659-24-059136-index.htm"
+"period": "first quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1710072/000110465924059136/0001104659-24-059136-index.htm",
+"where": "8-K"
 },
 "0001104659-24-087031": {
 "accepted_et": "2024-08-08 08:00",
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1710072/000110465924087031/0001104659-24-087031-index.htm"
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1710072/000110465924087031/0001104659-24-087031-index.htm",
+"where": "8-K"
 },
 "0001104659-24-115077": {
 "accepted_et": "2024-11-07 08:00",
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1710072/000110465924115077/0001104659-24-115077-index.htm"
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1710072/000110465924115077/0001104659-24-115077-index.htm",
+"where": "8-K"
 },
 "0001104659-25-019498": {
 "accepted_et": "2025-03-03 08:00",
@@ -14368,7 +14867,11 @@
 "filing_date": "2024-01-08",
 "form": "8-K",
 "items": "2.02,2.05,5.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/939767/000093976724000002/0000939767-24-000002-index.htm"
+"period": "year ended December 29, 2023",
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/939767/000093976724000002/0000939767-24-000002-index.htm",
+"where": "8-K"
 },
 "0000939767-24-000025": {
 "accepted_et": "2024-02-06 16:28",
@@ -14391,21 +14894,33 @@
 "filing_date": "2024-08-06",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/939767/000093976724000116/0000939767-24-000116-index.htm"
+"period": "quarter ended June 28, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/939767/000093976724000116/0000939767-24-000116-index.htm",
+"where": "8-K"
 },
 "0000939767-24-000149": {
 "accepted_et": "2024-10-29 16:07",
 "filing_date": "2024-10-29",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/939767/000093976724000149/0000939767-24-000149-index.htm"
+"period": "quarter ended September 27, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/939767/000093976724000149/0000939767-24-000149-index.htm",
+"where": "8-K"
 },
 "0000939767-25-000004": {
 "accepted_et": "2025-01-13 16:34",
 "filing_date": "2025-01-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/939767/000093976725000004/0000939767-25-000004-index.htm"
+"period": "year ended January 3, 2025",
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/939767/000093976725000004/0000939767-25-000004-index.htm",
+"where": "8-K"
 },
 "0000939767-25-000017": {
 "accepted_et": "2025-02-11 16:08",
@@ -14444,7 +14959,11 @@
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/939767/000093976726000003/0000939767-26-000003-index.htm"
+"period": "year ended January 2, 2026",
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/939767/000093976726000003/0000939767-26-000003-index.htm",
+"where": "8-K"
 },
 "0000939767-26-000019": {
 "accepted_et": "2026-02-10 16:08",
@@ -14488,56 +15007,88 @@
 "filing_date": "2024-01-10",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024003512/0000950170-24-003512-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024003512/0000950170-24-003512-index.htm",
+"where": "8-K"
 },
 "0000950170-24-027582": {
 "accepted_et": "2024-03-07 07:05",
 "filing_date": "2024-03-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024027582/0000950170-24-027582-index.htm"
+"period": "quarter and year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024027582/0000950170-24-027582-index.htm",
+"where": "8-K"
 },
 "0000950170-24-055055": {
 "accepted_et": "2024-05-08 07:05",
 "filing_date": "2024-05-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024055055/0000950170-24-055055-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024055055/0000950170-24-055055-index.htm",
+"where": "8-K"
 },
 "0000950170-24-077636": {
 "accepted_et": "2024-06-26 09:25",
 "filing_date": "2024-06-26",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024077636/0000950170-24-077636-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024077636/0000950170-24-077636-index.htm",
+"where": "8-K"
 },
 "0000950170-24-092262": {
 "accepted_et": "2024-08-07 07:00",
 "filing_date": "2024-08-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024092262/0000950170-24-092262-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024092262/0000950170-24-092262-index.htm",
+"where": "8-K"
 },
 "0000950170-24-117568": {
 "accepted_et": "2024-10-28 07:05",
 "filing_date": "2024-10-28",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024117568/0000950170-24-117568-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024117568/0000950170-24-117568-index.htm",
+"where": "8-K"
 },
 "0000950170-24-122772": {
 "accepted_et": "2024-11-07 07:05",
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024122772/0000950170-24-122772-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017024122772/0000950170-24-122772-index.htm",
+"where": "8-K"
 },
 "0000950170-25-004557": {
 "accepted_et": "2025-01-13 07:05",
 "filing_date": "2025-01-13",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017025004557/0000950170-25-004557-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000095017025004557/0000950170-25-004557-index.htm",
+"where": "8-K"
 },
 "0000950170-25-033065": {
 "accepted_et": "2025-03-05 07:05",
@@ -14568,7 +15119,11 @@
 "filing_date": "2025-10-14",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000119312525239008/0001193125-25-239008-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000119312525239008/0001193125-25-239008-index.htm",
+"where": "8-K"
 },
 "0001193125-25-265706": {
 "accepted_et": "2025-11-05 07:05",
@@ -14583,7 +15138,11 @@
 "filing_date": "2026-01-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000119312526005418/0001193125-26-005418-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000119312526005418/0001193125-26-005418-index.htm",
+"where": "8-K"
 },
 "0001193125-26-089856": {
 "accepted_et": "2026-03-04 07:05",
@@ -14614,7 +15173,11 @@
 "filing_date": "2026-10-19",
 "form": "8-K",
 "items": "2.02,2.05,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1314102/000119312526424755/0001193125-26-424755-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1314102/000119312526424755/0001193125-26-424755-index.htm",
+"where": "8-K"
 },
 "0001193125-26-456889": {
 "accepted_et": "2026-11-12 07:05",
@@ -14634,7 +15197,11 @@
 "filing_date": "2024-03-28",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1429260/000110465924040521/0001104659-24-040521-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1429260/000110465924040521/0001104659-24-040521-index.htm",
+"where": "8-K"
 },
 "0001104659-24-061958": {
 "accepted_et": "2024-05-15 16:20",
@@ -14657,7 +15224,11 @@
 "filing_date": "2026-03-31",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1429260/000110465926037749/0001104659-26-037749-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1429260/000110465926037749/0001104659-26-037749-index.htm",
+"where": "8-K"
 },
 "0001104659-26-061208": {
 "accepted_et": "2026-05-14 16:23",
@@ -14704,7 +15275,11 @@
 "filing_date": "2025-03-31",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1429260/000155837025004154/0001558370-25-004154-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1429260/000155837025004154/0001558370-25-004154-index.htm",
+"where": "8-K"
 },
 "0001558370-25-007878": {
 "accepted_et": "2025-05-15 16:10",
@@ -14732,105 +15307,165 @@
 "filing_date": "2024-02-29",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017024023088/0000950170-24-023088-index.htm"
+"period": "year ended December 31, 2023",
+"period_key": "2023FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017024023088/0000950170-24-023088-index.htm",
+"where": "8-K"
 },
 "0000950170-24-057035": {
 "accepted_et": "2024-05-09 16:22",
 "filing_date": "2024-05-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017024057035/0000950170-24-057035-index.htm"
+"period": "three months ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017024057035/0000950170-24-057035-index.htm",
+"where": "8-K"
 },
 "0000950170-24-093992": {
 "accepted_et": "2024-08-08 16:14",
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017024093992/0000950170-24-093992-index.htm"
+"period": "three months ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017024093992/0000950170-24-093992-index.htm",
+"where": "8-K"
 },
 "0000950170-24-126346": {
 "accepted_et": "2024-11-13 16:17",
 "filing_date": "2024-11-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017024126346/0000950170-24-126346-index.htm"
+"period": "three months ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017024126346/0000950170-24-126346-index.htm",
+"where": "8-K"
 },
 "0000950170-25-003832": {
 "accepted_et": "2025-01-10 08:36",
 "filing_date": "2025-01-10",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017025003832/0000950170-25-003832-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017025003832/0000950170-25-003832-index.htm",
+"where": "8-K"
 },
 "0000950170-25-030020": {
 "accepted_et": "2025-02-28 16:15",
 "filing_date": "2025-02-28",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017025030020/0000950170-25-030020-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017025030020/0000950170-25-030020-index.htm",
+"where": "8-K"
 },
 "0000950170-25-067013": {
 "accepted_et": "2025-05-08 16:16",
 "filing_date": "2025-05-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017025067013/0000950170-25-067013-index.htm"
+"period": "three months ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017025067013/0000950170-25-067013-index.htm",
+"where": "8-K"
 },
 "0000950170-25-106243": {
 "accepted_et": "2025-08-11 08:05",
 "filing_date": "2025-08-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017025106243/0000950170-25-106243-index.htm"
+"period": "three months ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000095017025106243/0000950170-25-106243-index.htm",
+"where": "8-K"
 },
 "0001193125-25-267934": {
 "accepted_et": "2025-11-06 06:02",
 "filing_date": "2025-11-06",
 "form": "8-K",
 "items": "2.02,8.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312525267934/0001193125-25-267934-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312525267934/0001193125-25-267934-index.htm",
+"where": "8-K"
 },
 "0001193125-25-273340": {
 "accepted_et": "2025-11-10 08:17",
 "filing_date": "2025-11-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312525273340/0001193125-25-273340-index.htm"
+"period": "three months ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312525273340/0001193125-25-273340-index.htm",
+"where": "8-K"
 },
 "0001193125-26-005470": {
 "accepted_et": "2026-01-07 08:05",
 "filing_date": "2026-01-07",
 "form": "8-K",
 "items": "2.02,5.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312526005470/0001193125-26-005470-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312526005470/0001193125-26-005470-index.htm",
+"where": "8-K"
 },
 "0001193125-26-113949": {
 "accepted_et": "2026-03-18 16:09",
 "filing_date": "2026-03-18",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312526113949/0001193125-26-113949-index.htm"
+"period": "year ended December 31, 2025",
+"period_key": "2025FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312526113949/0001193125-26-113949-index.htm",
+"where": "8-K"
 },
 "0001193125-26-211904": {
 "accepted_et": "2026-05-07 16:10",
 "filing_date": "2026-05-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312526211904/0001193125-26-211904-index.htm"
+"period": "three months ended March 31, 2026",
+"period_key": "2026Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312526211904/0001193125-26-211904-index.htm",
+"where": "8-K"
 },
 "0001193125-26-349160": {
 "accepted_et": "2026-08-13 16:06",
 "filing_date": "2026-08-13",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312526349160/0001193125-26-349160-index.htm"
+"period": "three months ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312526349160/0001193125-26-349160-index.htm",
+"where": "8-K"
 },
 "0001193125-26-458394": {
 "accepted_et": "2026-11-12 16:11",
 "filing_date": "2026-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312526458394/0001193125-26-458394-index.htm"
+"period": "three months ended September 30, 2026",
+"period_key": "2026Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1650648/000119312526458394/0001193125-26-458394-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -14842,70 +15477,110 @@
 "filing_date": "2024-02-28",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312524049197/0001193125-24-049197-index.htm"
+"period": "year ended December 31, 2023",
+"period_key": "2023FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312524049197/0001193125-24-049197-index.htm",
+"where": "8-K"
 },
 "0001193125-24-134767": {
 "accepted_et": "2024-05-09 07:37",
 "filing_date": "2024-05-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312524134767/0001193125-24-134767-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312524134767/0001193125-24-134767-index.htm",
+"where": "8-K"
 },
 "0001193125-24-194428": {
 "accepted_et": "2024-08-06 07:36",
 "filing_date": "2024-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312524194428/0001193125-24-194428-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312524194428/0001193125-24-194428-index.htm",
+"where": "8-K"
 },
 "0001193125-24-258006": {
 "accepted_et": "2024-11-14 07:35",
 "filing_date": "2024-11-14",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312524258006/0001193125-24-258006-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312524258006/0001193125-24-258006-index.htm",
+"where": "8-K"
 },
 "0001193125-25-066261": {
 "accepted_et": "2025-03-28 07:36",
 "filing_date": "2025-03-28",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312525066261/0001193125-25-066261-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312525066261/0001193125-25-066261-index.htm",
+"where": "8-K"
 },
 "0001193125-25-113299": {
 "accepted_et": "2025-05-06 07:35",
 "filing_date": "2025-05-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312525113299/0001193125-25-113299-index.htm"
+"period": "quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312525113299/0001193125-25-113299-index.htm",
+"where": "8-K"
 },
 "0001193125-25-173043": {
 "accepted_et": "2025-08-05 07:31",
 "filing_date": "2025-08-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312525173043/0001193125-25-173043-index.htm"
+"period": "quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312525173043/0001193125-25-173043-index.htm",
+"where": "8-K"
 },
 "0001193125-25-281581": {
 "accepted_et": "2025-11-14 07:35",
 "filing_date": "2025-11-14",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312525281581/0001193125-25-281581-index.htm"
+"period": "quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312525281581/0001193125-25-281581-index.htm",
+"where": "8-K"
 },
 "0001193125-26-130419": {
 "accepted_et": "2026-03-30 07:35",
 "filing_date": "2026-03-30",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312526130419/0001193125-26-130419-index.htm"
+"period": "year ended December 31, 2025",
+"period_key": "2025FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312526130419/0001193125-26-130419-index.htm",
+"where": "8-K"
 },
 "0001193125-26-225323": {
 "accepted_et": "2026-05-15 07:35",
 "filing_date": "2026-05-15",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312526225323/0001193125-26-225323-index.htm"
+"period": "quarter ended March 31, 2026",
+"period_key": "2026Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312526225323/0001193125-26-225323-index.htm",
+"where": "8-K"
 },
 "0001193125-26-331563": {
 "accepted_et": "2026-08-04 07:40",
@@ -14957,7 +15632,11 @@
 "filing_date": "2024-01-08",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/886744/000095017024002722/0000950170-24-002722-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/886744/000095017024002722/0000950170-24-002722-index.htm",
+"where": "8-K"
 },
 "0000950170-24-021658": {
 "accepted_et": "2024-02-28 07:20",
@@ -14980,21 +15659,33 @@
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.01,2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/886744/000095017024093307/0000950170-24-093307-index.htm"
+"period": "three and six months ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/886744/000095017024093307/0000950170-24-093307-index.htm",
+"where": "8-K"
 },
 "0000950170-24-122771": {
 "accepted_et": "2024-11-07 07:05",
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "1.01,1.02,2.01,2.02,2.03,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/886744/000095017024122771/0000950170-24-122771-index.htm"
+"period": "three and nine months ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/886744/000095017024122771/0000950170-24-122771-index.htm",
+"where": "8-K"
 },
 "0000950170-25-004579": {
 "accepted_et": "2025-01-13 08:05",
 "filing_date": "2025-01-13",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/886744/000095017025004579/0000950170-25-004579-index.htm"
+"period": "fourth quarter ended December 31, 2024",
+"period_key": "2024Q4",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/886744/000095017025004579/0000950170-25-004579-index.htm",
+"where": "8-K"
 },
 "0000950170-25-027331": {
 "accepted_et": "2025-02-26 07:45",
@@ -15058,7 +15749,11 @@
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/882095/000088209524000020/0000882095-24-000020-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/882095/000088209524000020/0000882095-24-000020-index.htm",
+"where": "8-K"
 },
 "0000882095-24-000025": {
 "accepted_et": "2024-11-06 16:09",
@@ -15089,7 +15784,11 @@
 "filing_date": "2025-08-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/882095/000088209525000030/0000882095-25-000030-index.htm"
+"period": "quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/882095/000088209525000030/0000882095-25-000030-index.htm",
+"where": "8-K"
 },
 "0000882095-25-000044": {
 "accepted_et": "2025-10-30 16:04",
@@ -15149,7 +15848,11 @@
 "filing_date": "2026-01-13",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1192448/000110465926003321/0001104659-26-003321-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1192448/000110465926003321/0001104659-26-003321-index.htm",
+"where": "8-K"
 },
 "0001104659-26-016410": {
 "accepted_et": "2026-02-17 16:10",
@@ -15188,7 +15891,11 @@
 "filing_date": "2024-01-09",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1192448/000155837024000141/0001558370-24-000141-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1192448/000155837024000141/0001558370-24-000141-index.htm",
+"where": "8-K"
 },
 "0001558370-24-001431": {
 "accepted_et": "2024-02-21 16:10",
@@ -15211,21 +15918,33 @@
 "filing_date": "2024-07-31",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1192448/000155837024010478/0001558370-24-010478-index.htm"
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1192448/000155837024010478/0001558370-24-010478-index.htm",
+"where": "8-K"
 },
 "0001558370-24-014262": {
 "accepted_et": "2024-11-04 16:10",
 "filing_date": "2024-11-04",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1192448/000155837024014262/0001558370-24-014262-index.htm"
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1192448/000155837024014262/0001558370-24-014262-index.htm",
+"where": "8-K"
 },
 "0001558370-25-001217": {
 "accepted_et": "2025-02-20 16:10",
 "filing_date": "2025-02-20",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1192448/000155837025001217/0001558370-25-001217-index.htm"
+"period": "fourth quarter and fiscal year ended December 31, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1192448/000155837025001217/0001558370-25-001217-index.htm",
+"where": "8-K"
 },
 "0001558370-25-005999": {
 "accepted_et": "2025-04-30 16:10",
@@ -15281,14 +16000,22 @@
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1826457/000095017024122766/0000950170-24-122766-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1826457/000095017024122766/0000950170-24-122766-index.htm",
+"where": "8-K"
 },
 "0000950170-25-003776": {
 "accepted_et": "2025-01-10 07:03",
 "filing_date": "2025-01-10",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1826457/000095017025003776/0000950170-25-003776-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1826457/000095017025003776/0000950170-25-003776-index.htm",
+"where": "8-K"
 },
 "0000950170-25-042319": {
 "accepted_et": "2025-03-20 07:03",
@@ -15376,21 +16103,33 @@
 "filing_date": "2024-05-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1728117/000172811724000057/0001728117-24-000057-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1728117/000172811724000057/0001728117-24-000057-index.htm",
+"where": "8-K"
 },
 "0001728117-24-000086": {
 "accepted_et": "2024-08-12 16:02",
 "filing_date": "2024-08-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1728117/000172811724000086/0001728117-24-000086-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1728117/000172811724000086/0001728117-24-000086-index.htm",
+"where": "8-K"
 },
 "0001728117-24-000093": {
 "accepted_et": "2024-11-07 16:02",
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1728117/000172811724000093/0001728117-24-000093-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1728117/000172811724000093/0001728117-24-000093-index.htm",
+"where": "8-K"
 },
 "0001728117-25-000022": {
 "accepted_et": "2025-03-13 16:02",
@@ -15445,7 +16184,11 @@
 "filing_date": "2026-07-27",
 "form": "8-K",
 "items": "1.01,1.02,2.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1728117/000172811726000064/0001728117-26-000064-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1728117/000172811726000064/0001728117-26-000064-index.htm",
+"where": "8-K"
 },
 "0001728117-26-000073": {
 "accepted_et": "2026-08-13 16:02",
@@ -15481,35 +16224,55 @@
 "filing_date": "2024-05-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465924059329/0001104659-24-059329-index.htm"
+"period": "first quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465924059329/0001104659-24-059329-index.htm",
+"where": "8-K"
 },
 "0001104659-24-087275": {
 "accepted_et": "2024-08-08 16:14",
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465924087275/0001104659-24-087275-index.htm"
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465924087275/0001104659-24-087275-index.htm",
+"where": "8-K"
 },
 "0001104659-24-117691": {
 "accepted_et": "2024-11-13 16:10",
 "filing_date": "2024-11-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465924117691/0001104659-24-117691-index.htm"
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465924117691/0001104659-24-117691-index.htm",
+"where": "8-K"
 },
 "0001104659-25-018275": {
 "accepted_et": "2025-02-27 16:38",
 "filing_date": "2025-02-27",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465925018275/0001104659-25-018275-index.htm"
+"period": "fourth quarter and full year ended December 31, 2024",
+"period_key": "2024Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465925018275/0001104659-25-018275-index.htm",
+"where": "8-K"
 },
 "0001104659-25-046149": {
 "accepted_et": "2025-05-08 16:21",
 "filing_date": "2025-05-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465925046149/0001104659-25-046149-index.htm"
+"period": "first quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465925046149/0001104659-25-046149-index.htm",
+"where": "8-K"
 },
 "0001104659-25-074712": {
 "accepted_et": "2025-08-06 16:06",
@@ -15548,7 +16311,11 @@
 "filing_date": "2026-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926092017/0001104659-26-092017-index.htm"
+"period": "second quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926092017/0001104659-26-092017-index.htm",
+"where": "8-K"
 },
 "0001104659-26-124494": {
 "accepted_et": "2026-11-09 16:11",
@@ -15568,84 +16335,132 @@
 "filing_date": "2024-02-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000095017024013568/0000950170-24-013568-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000095017024013568/0000950170-24-013568-index.htm",
+"where": "8-K"
 },
 "0000950170-24-075880": {
 "accepted_et": "2024-06-21 08:00",
 "filing_date": "2024-06-21",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000095017024075880/0000950170-24-075880-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000095017024075880/0000950170-24-075880-index.htm",
+"where": "8-K"
 },
 "0000950170-24-094359": {
 "accepted_et": "2024-08-09 08:00",
 "filing_date": "2024-08-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000095017024094359/0000950170-24-094359-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000095017024094359/0000950170-24-094359-index.htm",
+"where": "8-K"
 },
 "0001140361-24-046314": {
 "accepted_et": "2024-11-13 08:00",
 "filing_date": "2024-11-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036124046314/0001140361-24-046314-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036124046314/0001140361-24-046314-index.htm",
+"where": "8-K"
 },
 "0001140361-25-004157": {
 "accepted_et": "2025-02-13 08:00",
 "filing_date": "2025-02-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036125004157/0001140361-25-004157-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036125004157/0001140361-25-004157-index.htm",
+"where": "8-K"
 },
 "0001140361-25-023261": {
 "accepted_et": "2025-06-23 08:00",
 "filing_date": "2025-06-23",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036125023261/0001140361-25-023261-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036125023261/0001140361-25-023261-index.htm",
+"where": "8-K"
 },
 "0001140361-25-030400": {
 "accepted_et": "2025-08-12 08:00",
 "filing_date": "2025-08-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036125030400/0001140361-25-030400-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036125030400/0001140361-25-030400-index.htm",
+"where": "8-K"
 },
 "0001140361-25-041807": {
 "accepted_et": "2025-11-13 08:01",
 "filing_date": "2025-11-13",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036125041807/0001140361-25-041807-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036125041807/0001140361-25-041807-index.htm",
+"where": "8-K"
 },
 "0001140361-26-004927": {
 "accepted_et": "2026-02-12 08:01",
 "filing_date": "2026-02-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126004927/0001140361-26-004927-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126004927/0001140361-26-004927-index.htm",
+"where": "8-K"
 },
 "0001140361-26-025667": {
 "accepted_et": "2026-06-18 08:01",
 "filing_date": "2026-06-18",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126025667/0001140361-26-025667-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126025667/0001140361-26-025667-index.htm",
+"where": "8-K"
 },
 "0001140361-26-032644": {
 "accepted_et": "2026-08-13 08:01",
 "filing_date": "2026-08-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126032644/0001140361-26-032644-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126032644/0001140361-26-032644-index.htm",
+"where": "8-K"
 },
 "0001140361-26-043308": {
 "accepted_et": "2026-11-12 08:01",
 "filing_date": "2026-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126043308/0001140361-26-043308-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126043308/0001140361-26-043308-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -15729,14 +16544,22 @@
 "filing_date": "2026-01-05",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1572616/000119312526001492/0001193125-26-001492-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1572616/000119312526001492/0001193125-26-001492-index.htm",
+"where": "8-K"
 },
 "0001193125-26-121780": {
 "accepted_et": "2026-03-24 16:03",
 "filing_date": "2026-03-24",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1572616/000119312526121780/0001193125-26-121780-index.htm"
+"period": "quarter and full year ended December 31, 2025",
+"period_key": "2025Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1572616/000119312526121780/0001193125-26-121780-index.htm",
+"where": "8-K"
 },
 "0001193125-26-219365": {
 "accepted_et": "2026-05-12 16:05",
@@ -15751,7 +16574,11 @@
 "filing_date": "2026-08-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1572616/000119312526342343/0001193125-26-342343-index.htm"
+"period": "quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1572616/000119312526342343/0001193125-26-342343-index.htm",
+"where": "8-K"
 },
 "0001193125-26-458308": {
 "accepted_et": "2026-11-12 16:05",
@@ -15771,7 +16598,11 @@
 "filing_date": "2024-01-17",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1159036/000115903624000003/0001159036-24-000003-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1159036/000115903624000003/0001159036-24-000003-index.htm",
+"where": "8-K"
 },
 "0001159036-24-000007": {
 "accepted_et": "2024-02-20 16:03",
@@ -15810,14 +16641,22 @@
 "filing_date": "2025-01-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1159036/000115903625000003/0001159036-25-000003-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1159036/000115903625000003/0001159036-25-000003-index.htm",
+"where": "8-K"
 },
 "0001159036-25-000008": {
 "accepted_et": "2025-02-18 16:06",
 "filing_date": "2025-02-18",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1159036/000115903625000008/0001159036-25-000008-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1159036/000115903625000008/0001159036-25-000008-index.htm",
+"where": "8-K"
 },
 "0001159036-25-000025": {
 "accepted_et": "2025-05-06 16:06",
@@ -15848,14 +16687,22 @@
 "filing_date": "2026-01-28",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1159036/000115903626000011/0001159036-26-000011-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1159036/000115903626000011/0001159036-26-000011-index.htm",
+"where": "8-K"
 },
 "0001159036-26-000023": {
 "accepted_et": "2026-02-17 16:04",
 "filing_date": "2026-02-17",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1159036/000115903626000023/0001159036-26-000023-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1159036/000115903626000023/0001159036-26-000023-index.htm",
+"where": "8-K"
 },
 "0001159036-26-000067": {
 "accepted_et": "2026-05-11 16:06",
@@ -15939,7 +16786,11 @@
 "filing_date": "2025-08-14",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1828673/000095017025109035/0000950170-25-109035-index.htm"
+"period": "quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1828673/000095017025109035/0000950170-25-109035-index.htm",
+"where": "8-K"
 },
 "0001193125-25-283230": {
 "accepted_et": "2025-11-14 16:50",
@@ -15970,14 +16821,22 @@
 "filing_date": "2026-08-14",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1828673/000149315226038258/0001493152-26-038258-index.htm"
+"period": "quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1828673/000149315226038258/0001493152-26-038258-index.htm",
+"where": "8-K"
 },
 "0001493152-26-052053": {
 "accepted_et": "2026-11-16 08:30",
 "filing_date": "2026-11-16",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1828673/000149315226052053/0001493152-26-052053-index.htm"
+"period": "quarter ended September 30, 2026",
+"period_key": "2026Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1828673/000149315226052053/0001493152-26-052053-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -16017,7 +16876,11 @@
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1785530/000178553024000033/0001785530-24-000033-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1785530/000178553024000033/0001785530-24-000033-index.htm",
+"where": "8-K"
 },
 "0001785530-25-000006": {
 "accepted_et": "2025-03-11 07:05",
@@ -16085,7 +16948,11 @@
 "filing_date": "2025-10-23",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465925101688/0001104659-25-101688-index.htm"
+"period": "third quarter of 2025",
+"period_key": "2025Q3",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465925101688/0001104659-25-101688-index.htm",
+"where": "8-K"
 },
 "0001104659-25-105942": {
 "accepted_et": "2025-11-04 08:05",
@@ -16100,91 +16967,143 @@
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926002731/0001104659-26-002731-index.htm"
+"period": "fourth quarter and year ended December 31, 2025",
+"period_key": "2025Q4+FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926002731/0001104659-26-002731-index.htm",
+"where": "8-K"
 },
 "0001104659-26-018858": {
 "accepted_et": "2026-02-24 08:10",
 "filing_date": "2026-02-24",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926018858/0001104659-26-018858-index.htm"
+"period": "quarter and year ended December 31, 2025",
+"period_key": "2025Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926018858/0001104659-26-018858-index.htm",
+"where": "8-K"
 },
 "0001104659-26-056786": {
 "accepted_et": "2026-05-07 09:24",
 "filing_date": "2026-05-07",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926056786/0001104659-26-056786-index.htm"
+"period": "quarter ended March 31, 2026",
+"period_key": "2026Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926056786/0001104659-26-056786-index.htm",
+"where": "8-K"
 },
 "0001104659-26-084095": {
 "accepted_et": "2026-07-16 08:35",
 "filing_date": "2026-07-16",
 "form": "8-K",
 "items": "2.02,5.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926084095/0001104659-26-084095-index.htm"
+"period": "second quarter of 2026",
+"period_key": "2026Q2",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926084095/0001104659-26-084095-index.htm",
+"where": "8-K"
 },
 "0001104659-26-090086": {
 "accepted_et": "2026-08-04 08:05",
 "filing_date": "2026-08-04",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926090086/0001104659-26-090086-index.htm"
+"period": "quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926090086/0001104659-26-090086-index.htm",
+"where": "8-K"
 },
 "0001104659-26-122377": {
 "accepted_et": "2026-11-04 08:00",
 "filing_date": "2026-11-04",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/0001104659-26-122377-index.htm"
+"period": "quarter ended September 30, 2026",
+"period_key": "2026Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/0001104659-26-122377-index.htm",
+"where": "8-K"
 },
 "0001558370-24-000128": {
 "accepted_et": "2024-01-08 08:30",
 "filing_date": "2024-01-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837024000128/0001558370-24-000128-index.htm"
+"period": "fourth quarter and year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837024000128/0001558370-24-000128-index.htm",
+"where": "8-K"
 },
 "0001558370-24-001465": {
 "accepted_et": "2024-02-22 07:45",
 "filing_date": "2024-02-22",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837024001465/0001558370-24-001465-index.htm"
+"period": "quarter and year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837024001465/0001558370-24-001465-index.htm",
+"where": "8-K"
 },
 "0001558370-24-006200": {
 "accepted_et": "2024-04-30 07:45",
 "filing_date": "2024-04-30",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837024006200/0001558370-24-006200-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837024006200/0001558370-24-006200-index.htm",
+"where": "8-K"
 },
 "0001558370-24-010960": {
 "accepted_et": "2024-08-06 08:15",
 "filing_date": "2024-08-06",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837024010960/0001558370-24-010960-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837024010960/0001558370-24-010960-index.htm",
+"where": "8-K"
 },
 "0001558370-24-013802": {
 "accepted_et": "2024-10-29 07:50",
 "filing_date": "2024-10-29",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837024013802/0001558370-24-013802-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837024013802/0001558370-24-013802-index.htm",
+"where": "8-K"
 },
 "0001558370-25-000157": {
 "accepted_et": "2025-01-13 08:15",
 "filing_date": "2025-01-13",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837025000157/0001558370-25-000157-index.htm"
+"period": "fourth quarter and year ended December 31, 2024",
+"period_key": "2024Q4+FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837025000157/0001558370-25-000157-index.htm",
+"where": "8-K"
 },
 "0001558370-25-001439": {
 "accepted_et": "2025-02-25 07:45",
 "filing_date": "2025-02-25",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837025001439/0001558370-25-001439-index.htm"
+"period": "quarter and year ended December 31, 2024",
+"period_key": "2024Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1802665/000155837025001439/0001558370-25-001439-index.htm",
+"where": "8-K"
 },
 "0001558370-25-006393": {
 "accepted_et": "2025-05-06 08:00",
@@ -16220,7 +17139,11 @@
 "filing_date": "2026-03-19",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818382/000110465926031780/0001104659-26-031780-index.htm"
+"period": "Year Ended December 31, 2025",
+"period_key": "2025FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1818382/000110465926031780/0001104659-26-031780-index.htm",
+"where": "8-K"
 },
 "0001104659-26-094440": {
 "accepted_et": "2026-08-12 07:03",
@@ -16243,28 +17166,44 @@
 "filing_date": "2024-03-22",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818382/000181838224000034/0001818382-24-000034-index.htm"
+"period": "fourth quarter and full year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1818382/000181838224000034/0001818382-24-000034-index.htm",
+"where": "8-K"
 },
 "0001818382-24-000054": {
 "accepted_et": "2024-05-10 07:06",
 "filing_date": "2024-05-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818382/000181838224000054/0001818382-24-000054-index.htm"
+"period": "first quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1818382/000181838224000054/0001818382-24-000054-index.htm",
+"where": "8-K"
 },
 "0001818382-24-000153": {
 "accepted_et": "2024-08-13 07:04",
 "filing_date": "2024-08-13",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818382/000181838224000153/0001818382-24-000153-index.htm"
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1818382/000181838224000153/0001818382-24-000153-index.htm",
+"where": "8-K"
 },
 "0001818382-24-000197": {
 "accepted_et": "2024-11-08 08:04",
 "filing_date": "2024-11-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1818382/000181838224000197/0001818382-24-000197-index.htm"
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1818382/000181838224000197/0001818382-24-000197-index.htm",
+"where": "8-K"
 },
 "0001818382-25-000030": {
 "accepted_et": "2025-03-28 07:55",
@@ -16300,14 +17239,22 @@
 "filing_date": "2024-11-25",
 "form": "8-K",
 "items": "2.02,5.07,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1420720/000110465924122387/0001104659-24-122387-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1420720/000110465924122387/0001104659-24-122387-index.htm",
+"where": "8-K"
 },
 "0001104659-25-079816": {
 "accepted_et": "2025-08-18 16:24",
 "filing_date": "2025-08-18",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1420720/000110465925079816/0001104659-25-079816-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1420720/000110465925079816/0001104659-25-079816-index.htm",
+"where": "8-K"
 },
 "0001104659-26-059408": {
 "accepted_et": "2026-05-12 16:15",
@@ -16322,7 +17269,11 @@
 "filing_date": "2024-05-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1420720/000142072024000018/0001420720-24-000018-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1420720/000142072024000018/0001420720-24-000018-index.htm",
+"where": "8-K"
 },
 "0001420720-24-000036": {
 "accepted_et": "2024-09-20 16:07",
@@ -16337,21 +17288,33 @@
 "filing_date": "2024-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1420720/000142072024000053/0001420720-24-000053-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1420720/000142072024000053/0001420720-24-000053-index.htm",
+"where": "8-K"
 },
 "0001420720-25-000010": {
 "accepted_et": "2025-02-10 16:06",
 "filing_date": "2025-02-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1420720/000142072025000010/0001420720-25-000010-index.htm"
+"period": "quarter ended December 31, 2024",
+"period_key": "2024Q4",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1420720/000142072025000010/0001420720-25-000010-index.htm",
+"where": "8-K"
 },
 "0001420720-25-000024": {
 "accepted_et": "2025-05-02 08:05",
 "filing_date": "2025-05-02",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1420720/000142072025000024/0001420720-25-000024-index.htm"
+"period": "quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1420720/000142072025000024/0001420720-25-000024-index.htm",
+"where": "8-K"
 },
 "0001420720-25-000039": {
 "accepted_et": "2025-11-12 16:05",
@@ -16403,7 +17366,11 @@
 "filing_date": "2025-07-25",
 "form": "8-K",
 "items": "1.01,2.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000119312525164789/0001193125-25-164789-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000119312525164789/0001193125-25-164789-index.htm",
+"where": "8-K"
 },
 "0001326110-24-000109": {
 "accepted_et": "2024-11-12 07:25",
@@ -16418,56 +17385,88 @@
 "filing_date": "2025-03-03",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000031/0001326110-25-000031-index.htm"
+"period": "fourth quarter and year ended December 31, 2024",
+"period_key": "2024Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000031/0001326110-25-000031-index.htm",
+"where": "8-K"
 },
 "0001326110-25-000044": {
 "accepted_et": "2025-04-15 08:10",
 "filing_date": "2025-04-15",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000044/0001326110-25-000044-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000044/0001326110-25-000044-index.htm",
+"where": "8-K"
 },
 "0001326110-25-000069": {
 "accepted_et": "2025-05-12 06:40",
 "filing_date": "2025-05-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000069/0001326110-25-000069-index.htm"
+"period": "first quarter",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000069/0001326110-25-000069-index.htm",
+"where": "8-K"
 },
 "0001326110-25-000112": {
 "accepted_et": "2025-08-05 07:17",
 "filing_date": "2025-08-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000112/0001326110-25-000112-index.htm"
+"period": "second quarter and six months ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000112/0001326110-25-000112-index.htm",
+"where": "8-K"
 },
 "0001326110-25-000138": {
 "accepted_et": "2025-11-04 21:48",
 "filing_date": "2025-11-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000138/0001326110-25-000138-index.htm"
+"period": "third quarter and nine months ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000138/0001326110-25-000138-index.htm",
+"where": "8-K"
 },
 "0001326110-26-000008": {
 "accepted_et": "2026-01-15 08:35",
 "filing_date": "2026-01-15",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000008/0001326110-26-000008-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000008/0001326110-26-000008-index.htm",
+"where": "8-K"
 },
 "0001326110-26-000025": {
 "accepted_et": "2026-02-23 07:06",
 "filing_date": "2026-02-23",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000025/0001326110-26-000025-index.htm"
+"period": "fourth quarter and year ended December 31, 2025",
+"period_key": "2025Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000025/0001326110-26-000025-index.htm",
+"where": "8-K"
 },
 "0001326110-26-000036": {
 "accepted_et": "2026-04-09 07:39",
 "filing_date": "2026-04-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000036/0001326110-26-000036-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000036/0001326110-26-000036-index.htm",
+"where": "8-K"
 },
 "0001326110-26-000057": {
 "accepted_et": "2026-05-07 07:32",
@@ -16482,14 +17481,22 @@
 "filing_date": "2026-08-04",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000077/0001326110-26-000077-index.htm"
+"period": "three and six months ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000077/0001326110-26-000077-index.htm",
+"where": "8-K"
 },
 "0001326110-26-000097": {
 "accepted_et": "2026-11-09 07:39",
 "filing_date": "2026-11-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000097/0001326110-26-000097-index.htm"
+"period": "three and nine months ended September 30, 2026",
+"period_key": "2026Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000097/0001326110-26-000097-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -16557,7 +17564,11 @@
 "filing_date": "2024-07-09",
 "form": "8-K",
 "items": "2.02,8.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1676725/000119312524176736/0001193125-24-176736-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1676725/000119312524176736/0001193125-24-176736-index.htm",
+"where": "8-K"
 },
 "0001193125-25-263383": {
 "accepted_et": "2025-11-04 06:02",
@@ -16609,7 +17620,11 @@
 "filing_date": "2025-03-27",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1750149/000119312525065511/0001193125-25-065511-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1750149/000119312525065511/0001193125-25-065511-index.htm",
+"where": "8-K"
 },
 "0001193125-25-119939": {
 "accepted_et": "2025-05-14 17:06",
@@ -16677,7 +17692,11 @@
 "filing_date": "2024-01-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080324000002/0001110803-24-000002-index.htm"
+"period": "fourth quarter and fiscal year ended December 31, 2023",
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080324000002/0001110803-24-000002-index.htm",
+"where": "8-K"
 },
 "0001110803-24-000007": {
 "accepted_et": "2024-02-08 16:13",
@@ -16716,7 +17735,11 @@
 "filing_date": "2025-01-14",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080325000009/0001110803-25-000009-index.htm"
+"period": "fourth quarter and fiscal year ended December 29, 2024",
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080325000009/0001110803-25-000009-index.htm",
+"where": "8-K"
 },
 "0001110803-25-000014": {
 "accepted_et": "2025-02-06 16:11",
@@ -16731,7 +17754,11 @@
 "filing_date": "2025-05-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080325000044/0001110803-25-000044-index.htm"
+"period": "first quarter ended March 30, 2025",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080325000044/0001110803-25-000044-index.htm",
+"where": "8-K"
 },
 "0001110803-25-000057": {
 "accepted_et": "2025-07-31 16:11",
@@ -16754,7 +17781,11 @@
 "filing_date": "2026-01-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000009/0001110803-26-000009-index.htm"
+"period": "fourth quarter and fiscal year ended December 28, 2025",
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000009/0001110803-26-000009-index.htm",
+"where": "8-K"
 },
 "0001110803-26-000018": {
 "accepted_et": "2026-02-05 16:09",
@@ -16798,7 +17829,11 @@
 "filing_date": "2024-01-18",
 "form": "8-K",
 "items": "2.02,2.05,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1835579/000119312524010227/0001193125-24-010227-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1835579/000119312524010227/0001193125-24-010227-index.htm",
+"where": "8-K"
 },
 "0001193125-25-275910": {
 "accepted_et": "2025-11-12 07:25",
@@ -16867,14 +17902,22 @@
 "filing_date": "2025-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1472012/000095017025104015/0000950170-25-104015-index.htm"
+"period": "second quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1472012/000095017025104015/0000950170-25-104015-index.htm",
+"where": "8-K"
 },
 "0001104659-24-019883": {
 "accepted_et": "2024-02-13 16:10",
 "filing_date": "2024-02-13",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1472012/000110465924019883/0001104659-24-019883-index.htm"
+"period": "year ended December 31, 2023",
+"period_key": "2023FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1472012/000110465924019883/0001104659-24-019883-index.htm",
+"where": "8-K"
 },
 "0001104659-24-040503": {
 "accepted_et": "2024-03-28 16:04",
@@ -16897,21 +17940,33 @@
 "filing_date": "2024-08-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1472012/000110465924088340/0001104659-24-088340-index.htm"
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1472012/000110465924088340/0001104659-24-088340-index.htm",
+"where": "8-K"
 },
 "0001104659-24-117682": {
 "accepted_et": "2024-11-13 16:06",
 "filing_date": "2024-11-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1472012/000110465924117682/0001104659-24-117682-index.htm"
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1472012/000110465924117682/0001104659-24-117682-index.htm",
+"where": "8-K"
 },
 "0001104659-25-007198": {
 "accepted_et": "2025-01-29 16:03",
 "filing_date": "2025-01-29",
 "form": "8-K",
 "items": "2.02,8.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1472012/000110465925007198/0001104659-25-007198-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1472012/000110465925007198/0001104659-25-007198-index.htm",
+"where": "8-K"
 },
 "0001104659-25-025558": {
 "accepted_et": "2025-03-19 16:08",
@@ -16926,7 +17981,11 @@
 "filing_date": "2025-05-12",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1472012/000110465925047304/0001104659-25-047304-index.htm"
+"period": "first quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1472012/000110465925047304/0001104659-25-047304-index.htm",
+"where": "8-K"
 },
 "0001193125-25-269538": {
 "accepted_et": "2025-11-06 16:12",
@@ -17083,7 +18142,11 @@
 "filing_date": "2024-02-22",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1280776/000119380524000257/0001193805-24-000257-index.htm"
+"period": "quarter and year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1280776/000119380524000257/0001193805-24-000257-index.htm",
+"where": "8-K"
 },
 "0001193805-24-000605": {
 "accepted_et": "2024-05-08 06:45",
@@ -17130,7 +18193,11 @@
 "filing_date": "2026-02-26",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1280776/000119380526000181/0001193805-26-000181-index.htm"
+"period": "quarter and year ended December 31, 2025",
+"period_key": "2025Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1280776/000119380526000181/0001193805-26-000181-index.htm",
+"where": "8-K"
 },
 "0001193805-26-000593": {
 "accepted_et": "2026-05-13 07:01",
@@ -17166,84 +18233,132 @@
 "filing_date": "2024-02-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401324000025/0001764013-24-000025-index.htm"
+"period": "third quarter",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401324000025/0001764013-24-000025-index.htm",
+"where": "8-K"
 },
 "0001764013-24-000107": {
 "accepted_et": "2024-05-29 16:17",
 "filing_date": "2024-05-29",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401324000107/0001764013-24-000107-index.htm"
+"period": "fourth quarter and fiscal year",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401324000107/0001764013-24-000107-index.htm",
+"where": "8-K"
 },
 "0001764013-24-000147": {
 "accepted_et": "2024-08-06 16:13",
 "filing_date": "2024-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401324000147/0001764013-24-000147-index.htm"
+"period": "first quarter ended June 30, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401324000147/0001764013-24-000147-index.htm",
+"where": "8-K"
 },
 "0001764013-24-000183": {
 "accepted_et": "2024-11-07 06:42",
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401324000183/0001764013-24-000183-index.htm"
+"period": "second quarter",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401324000183/0001764013-24-000183-index.htm",
+"where": "8-K"
 },
 "0001764013-25-000024": {
 "accepted_et": "2025-02-06 06:37",
 "filing_date": "2025-02-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401325000024/0001764013-25-000024-index.htm"
+"period": "third quarter",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401325000024/0001764013-25-000024-index.htm",
+"where": "8-K"
 },
 "0001764013-25-000091": {
 "accepted_et": "2025-05-29 07:14",
 "filing_date": "2025-05-29",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401325000091/0001764013-25-000091-index.htm"
+"period": "fourth quarter and fiscal year ended March 31, 2025",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401325000091/0001764013-25-000091-index.htm",
+"where": "8-K"
 },
 "0001764013-25-000128": {
 "accepted_et": "2025-08-11 07:14",
 "filing_date": "2025-08-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401325000128/0001764013-25-000128-index.htm"
+"period": "first quarter ended June 30, 2025",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401325000128/0001764013-25-000128-index.htm",
+"where": "8-K"
 },
 "0001764013-25-000148": {
 "accepted_et": "2025-11-10 07:15",
 "filing_date": "2025-11-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401325000148/0001764013-25-000148-index.htm"
+"period": "second quarter",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401325000148/0001764013-25-000148-index.htm",
+"where": "8-K"
 },
 "0001764013-26-000010": {
 "accepted_et": "2026-02-06 07:16",
 "filing_date": "2026-02-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401326000010/0001764013-26-000010-index.htm"
+"period": "third quarter",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401326000010/0001764013-26-000010-index.htm",
+"where": "8-K"
 },
 "0001764013-26-000062": {
 "accepted_et": "2026-05-20 07:14",
 "filing_date": "2026-05-20",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401326000062/0001764013-26-000062-index.htm"
+"period": "fourth quarter and fiscal year ended March 31, 2026",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401326000062/0001764013-26-000062-index.htm",
+"where": "8-K"
 },
 "0001764013-26-000100": {
 "accepted_et": "2026-08-06 07:15",
 "filing_date": "2026-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401326000100/0001764013-26-000100-index.htm"
+"period": "first quarter ended June 30, 2026",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401326000100/0001764013-26-000100-index.htm",
+"where": "8-K"
 },
 "0001764013-26-000121": {
 "accepted_et": "2026-11-09 07:09",
 "filing_date": "2026-11-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401326000121/0001764013-26-000121-index.htm"
+"period": "second quarter",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/1764013/000176401326000121/0001764013-26-000121-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -17340,42 +18455,66 @@
 "filing_date": "2024-02-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916924000042/0000879169-24-000042-index.htm"
+"period": "fourth fiscal quarter and year ended December 31, 2023",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916924000042/0000879169-24-000042-index.htm",
+"where": "8-K"
 },
 "0000879169-24-000074": {
 "accepted_et": "2024-04-30 07:10",
 "filing_date": "2024-04-30",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916924000074/0000879169-24-000074-index.htm"
+"period": "first fiscal quarter ended March 31, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916924000074/0000879169-24-000074-index.htm",
+"where": "8-K"
 },
 "0000879169-24-000146": {
 "accepted_et": "2024-07-30 07:15",
 "filing_date": "2024-07-30",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916924000146/0000879169-24-000146-index.htm"
+"period": "second fiscal quarter ended June 30, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916924000146/0000879169-24-000146-index.htm",
+"where": "8-K"
 },
 "0000879169-24-000169": {
 "accepted_et": "2024-10-29 07:05",
 "filing_date": "2024-10-29",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916924000169/0000879169-24-000169-index.htm"
+"period": "third fiscal quarter ended September 30, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916924000169/0000879169-24-000169-index.htm",
+"where": "8-K"
 },
 "0000879169-25-000053": {
 "accepted_et": "2025-04-29 07:03",
 "filing_date": "2025-04-29",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916925000053/0000879169-25-000053-index.htm"
+"period": "first fiscal quarter ended March 31, 2025",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916925000053/0000879169-25-000053-index.htm",
+"where": "8-K"
 },
 "0000879169-25-000100": {
 "accepted_et": "2025-07-29 07:06",
 "filing_date": "2025-07-29",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916925000100/0000879169-25-000100-index.htm"
+"period": "second fiscal quarter ended June 30, 2025",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/879169/000087916925000100/0000879169-25-000100-index.htm",
+"where": "8-K"
 },
 "0000879169-25-000115": {
 "accepted_et": "2025-10-28 07:04",
@@ -17422,7 +18561,11 @@
 "filing_date": "2025-02-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/879169/000162828025004514/0001628280-25-004514-index.htm"
+"period": "fourth fiscal quarter and year ended December 31, 2024",
+"period_key": null,
+"status": "no_period",
+"url": "https://www.sec.gov/Archives/edgar/data/879169/000162828025004514/0001628280-25-004514-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -17450,14 +18593,22 @@
 "filing_date": "2024-08-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1857044/000149315224031157/0001493152-24-031157-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1857044/000149315224031157/0001493152-24-031157-index.htm",
+"where": "8-K"
 },
 "0001493152-24-044533": {
 "accepted_et": "2024-11-12 08:04",
 "filing_date": "2024-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1857044/000149315224044533/0001493152-24-044533-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1857044/000149315224044533/0001493152-24-044533-index.htm",
+"where": "8-K"
 },
 "0001493152-25-010138": {
 "accepted_et": "2025-03-13 07:40",
@@ -17613,14 +18764,22 @@
 "filing_date": "2026-07-29",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1055726/000119312526323628/0001193125-26-323628-index.htm"
+"period": "quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1055726/000119312526323628/0001193125-26-323628-index.htm",
+"where": "8-K"
 },
 "0001193125-26-449853": {
 "accepted_et": "2026-11-05 16:13",
 "filing_date": "2026-11-05",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1055726/000119312526449853/0001193125-26-449853-index.htm"
+"period": "quarter ended September 30, 2026",
+"period_key": "2026Q3",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1055726/000119312526449853/0001193125-26-449853-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -17757,7 +18916,11 @@
 "filing_date": "2025-03-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1567264/000156726425000011/0001567264-25-000011-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1567264/000156726425000011/0001567264-25-000011-index.htm",
+"where": "8-K"
 },
 "0001567264-25-000040": {
 "accepted_et": "2025-05-13 16:08",
@@ -17788,14 +18951,22 @@
 "filing_date": "2026-03-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1567264/000156726426000011/0001567264-26-000011-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1567264/000156726426000011/0001567264-26-000011-index.htm",
+"where": "8-K"
 },
 "0001567264-26-000025": {
 "accepted_et": "2026-03-27 16:13",
 "filing_date": "2026-03-27",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1567264/000156726426000025/0001567264-26-000025-index.htm"
+"period": "year ended December 31, 2025",
+"period_key": "2025FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1567264/000156726426000025/0001567264-26-000025-index.htm",
+"where": "8-K"
 },
 "0001567264-26-000047": {
 "accepted_et": "2026-05-07 16:10",
@@ -17847,21 +19018,33 @@
 "filing_date": "2024-05-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1080014/000110465924058747/0001104659-24-058747-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1080014/000110465924058747/0001104659-24-058747-index.htm",
+"where": "8-K"
 },
 "0001104659-24-084357": {
 "accepted_et": "2024-07-31 16:17",
 "filing_date": "2024-07-31",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1080014/000110465924084357/0001104659-24-084357-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1080014/000110465924084357/0001104659-24-084357-index.htm",
+"where": "8-K"
 },
 "0001104659-24-114800": {
 "accepted_et": "2024-11-06 16:18",
 "filing_date": "2024-11-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1080014/000110465924114800/0001104659-24-114800-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1080014/000110465924114800/0001104659-24-114800-index.htm",
+"where": "8-K"
 },
 "0001104659-25-017461": {
 "accepted_et": "2025-02-26 16:37",
@@ -17876,7 +19059,11 @@
 "filing_date": "2025-05-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1080014/000110465925045556/0001104659-25-045556-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1080014/000110465925045556/0001104659-25-045556-index.htm",
+"where": "8-K"
 },
 "0001104659-25-074730": {
 "accepted_et": "2025-08-06 16:21",
@@ -17989,7 +19176,11 @@
 "filing_date": "2025-04-30",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/874015/000114036125016562/0001140361-25-016562-index.htm"
+"period": "quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/874015/000114036125016562/0001140361-25-016562-index.htm",
+"where": "8-K"
 },
 "0001140361-25-027949": {
 "accepted_et": "2025-07-30 11:16",
@@ -18012,7 +19203,11 @@
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126000893/0001140361-26-000893-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126000893/0001140361-26-000893-index.htm",
+"where": "8-K"
 },
 "0001140361-26-006718": {
 "accepted_et": "2026-02-25 07:00",
@@ -18056,7 +19251,11 @@
 "filing_date": "2024-02-20",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1425205/000110465924025082/0001104659-24-025082-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1425205/000110465924025082/0001104659-24-025082-index.htm",
+"where": "8-K"
 },
 "0001104659-24-028704": {
 "accepted_et": "2024-02-28 16:05",
@@ -18103,7 +19302,11 @@
 "filing_date": "2025-05-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1425205/000110465925046101/0001104659-25-046101-index.htm"
+"period": "quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1425205/000110465925046101/0001104659-25-046101-index.htm",
+"where": "8-K"
 },
 "0001104659-25-075175": {
 "accepted_et": "2025-08-07 16:06",
@@ -18118,7 +19321,11 @@
 "filing_date": "2025-11-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1425205/000110465925107426/0001104659-25-107426-index.htm"
+"period": "quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1425205/000110465925107426/0001104659-25-107426-index.htm",
+"where": "8-K"
 },
 "0001104659-26-018837": {
 "accepted_et": "2026-02-24 08:00",
@@ -18141,14 +19348,22 @@
 "filing_date": "2026-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1425205/000110465926091619/0001104659-26-091619-index.htm"
+"period": "second quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1425205/000110465926091619/0001104659-26-091619-index.htm",
+"where": "8-K"
 },
 "0001104659-26-123030": {
 "accepted_et": "2026-11-05 07:05",
 "filing_date": "2026-11-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1425205/000110465926123030/0001104659-26-123030-index.htm"
+"period": "third quarter ended September 30, 2026",
+"period_key": "2026Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1425205/000110465926123030/0001104659-26-123030-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -18196,7 +19411,11 @@
 "filing_date": "2025-01-13",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1850119/000110465925002841/0001104659-25-002841-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1850119/000110465925002841/0001104659-25-002841-index.htm",
+"where": "8-K"
 },
 "0001104659-25-025559": {
 "accepted_et": "2025-03-19 16:08",
@@ -18235,14 +19454,22 @@
 "filing_date": "2026-03-12",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1850119/000110465926026761/0001104659-26-026761-index.htm"
+"period": "year ended December 31, 2025",
+"period_key": "2025FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1850119/000110465926026761/0001104659-26-026761-index.htm",
+"where": "8-K"
 },
 "0001104659-26-059824": {
 "accepted_et": "2026-05-13 08:09",
 "filing_date": "2026-05-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1850119/000110465926059824/0001104659-26-059824-index.htm"
+"period": "quarter ended March 31, 2026",
+"period_key": "2026Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1850119/000110465926059824/0001104659-26-059824-index.htm",
+"where": "8-K"
 },
 "0001104659-26-094533": {
 "accepted_et": "2026-08-12 08:12",
@@ -18270,42 +19497,66 @@
 "filing_date": "2024-03-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036124012128/0001140361-24-012128-index.htm"
+"period": "fourth quarter and full year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036124012128/0001140361-24-012128-index.htm",
+"where": "8-K"
 },
 "0001140361-24-025329": {
 "accepted_et": "2024-05-10 08:12",
 "filing_date": "2024-05-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036124025329/0001140361-24-025329-index.htm"
+"period": "first quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036124025329/0001140361-24-025329-index.htm",
+"where": "8-K"
 },
 "0001140361-24-036944": {
 "accepted_et": "2024-08-13 08:14",
 "filing_date": "2024-08-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036124036944/0001140361-24-036944-index.htm"
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036124036944/0001140361-24-036944-index.htm",
+"where": "8-K"
 },
 "0001140361-24-043915": {
 "accepted_et": "2024-10-22 17:09",
 "filing_date": "2024-10-22",
 "form": "8-K",
 "items": "1.01,2.01,2.02,3.02,3.03,5.02,5.03,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036124043915/0001140361-24-043915-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036124043915/0001140361-24-043915-index.htm",
+"where": "8-K"
 },
 "0001140361-24-046028": {
 "accepted_et": "2024-11-12 08:23",
 "filing_date": "2024-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036124046028/0001140361-24-046028-index.htm"
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036124046028/0001140361-24-046028-index.htm",
+"where": "8-K"
 },
 "0001140361-25-009729": {
 "accepted_et": "2025-03-20 17:27",
 "filing_date": "2025-03-20",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036125009729/0001140361-25-009729-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036125009729/0001140361-25-009729-index.htm",
+"where": "8-K"
 },
 "0001140361-25-011181": {
 "accepted_et": "2025-03-31 08:26",
@@ -18344,7 +19595,11 @@
 "filing_date": "2026-02-19",
 "form": "8-K",
 "items": "1.01,2.02,3.02,5.03,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036126006176/0001140361-26-006176-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036126006176/0001140361-26-006176-index.htm",
+"where": "8-K"
 },
 "0001140361-26-008621": {
 "accepted_et": "2026-03-10 07:17",
@@ -18367,7 +19622,11 @@
 "filing_date": "2026-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1228627/000162828026053824/0001628280-26-053824-index.htm"
+"period": "second quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1228627/000162828026053824/0001628280-26-053824-index.htm",
+"where": "8-K"
 },
 "0001628280-26-072493": {
 "accepted_et": "2026-11-10 07:01",
@@ -18387,28 +19646,44 @@
 "filing_date": "2025-08-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1662774/000095017025106536/0000950170-25-106536-index.htm"
+"period": "quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1662774/000095017025106536/0000950170-25-106536-index.htm",
+"where": "8-K"
 },
 "0001193125-25-277523": {
 "accepted_et": "2025-11-12 16:05",
 "filing_date": "2025-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1662774/000119312525277523/0001193125-25-277523-index.htm"
+"period": "quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1662774/000119312525277523/0001193125-25-277523-index.htm",
+"where": "8-K"
 },
 "0001193125-26-047544": {
 "accepted_et": "2026-02-12 06:06",
 "filing_date": "2026-02-12",
 "form": "8-K",
 "items": "2.02,8.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1662774/000119312526047544/0001193125-26-047544-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1662774/000119312526047544/0001193125-26-047544-index.htm",
+"where": "8-K"
 },
 "0001193125-26-350568": {
 "accepted_et": "2026-08-14 08:21",
 "filing_date": "2026-08-14",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1662774/000119312526350568/0001193125-26-350568-index.htm"
+"period": "quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1662774/000119312526350568/0001193125-26-350568-index.htm",
+"where": "8-K"
 },
 "0001193125-26-460775": {
 "accepted_et": "2026-11-13 16:30",
@@ -18423,28 +19698,44 @@
 "filing_date": "2024-08-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1662774/000166277424000004/0001662774-24-000004-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1662774/000166277424000004/0001662774-24-000004-index.htm",
+"where": "8-K"
 },
 "0001662774-24-000010": {
 "accepted_et": "2024-11-13 16:15",
 "filing_date": "2024-11-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1662774/000166277424000010/0001662774-24-000010-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1662774/000166277424000010/0001662774-24-000010-index.htm",
+"where": "8-K"
 },
 "0001662774-25-000011": {
 "accepted_et": "2025-03-24 16:06",
 "filing_date": "2025-03-24",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1662774/000166277425000011/0001662774-25-000011-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1662774/000166277425000011/0001662774-25-000011-index.htm",
+"where": "8-K"
 },
 "0001662774-25-000031": {
 "accepted_et": "2025-05-13 08:01",
 "filing_date": "2025-05-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1662774/000166277425000031/0001662774-25-000031-index.htm"
+"period": "quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1662774/000166277425000031/0001662774-25-000031-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -18480,14 +19771,22 @@
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312524196507/0001193125-24-196507-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312524196507/0001193125-24-196507-index.htm",
+"where": "8-K"
 },
 "0001193125-24-255200": {
 "accepted_et": "2024-11-12 08:14",
 "filing_date": "2024-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312524255200/0001193125-24-255200-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312524255200/0001193125-24-255200-index.htm",
+"where": "8-K"
 },
 "0001193125-25-037650": {
 "accepted_et": "2025-02-27 08:11",
@@ -18502,21 +19801,33 @@
 "filing_date": "2025-10-20",
 "form": "8-K",
 "items": "2.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312525242959/0001193125-25-242959-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312525242959/0001193125-25-242959-index.htm",
+"where": "8-K"
 },
 "0001193125-25-268196": {
 "accepted_et": "2025-11-06 08:33",
 "filing_date": "2025-11-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312525268196/0001193125-25-268196-index.htm"
+"period": "third quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312525268196/0001193125-25-268196-index.htm",
+"where": "8-K"
 },
 "0001193125-26-009871": {
 "accepted_et": "2026-01-12 08:37",
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312526009871/0001193125-26-009871-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312526009871/0001193125-26-009871-index.htm",
+"where": "8-K"
 },
 "0001193125-26-073594": {
 "accepted_et": "2026-02-26 08:32",
@@ -18547,7 +19858,11 @@
 "filing_date": "2026-10-22",
 "form": "8-K",
 "items": "1.01,2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312526429105/0001193125-26-429105-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312526429105/0001193125-26-429105-index.htm",
+"where": "8-K"
 },
 "0001193125-26-448711": {
 "accepted_et": "2026-11-05 08:32",
@@ -18562,7 +19877,11 @@
 "filing_date": "2025-08-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1816736/000181673625000006/0001816736-25-000006-index.htm"
+"period": "second quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1816736/000181673625000006/0001816736-25-000006-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -18574,7 +19893,11 @@
 "filing_date": "2024-01-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465924001989/0001104659-24-001989-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465924001989/0001104659-24-001989-index.htm",
+"where": "8-K"
 },
 "0001104659-24-024345": {
 "accepted_et": "2024-02-15 07:04",
@@ -18589,35 +19912,55 @@
 "filing_date": "2024-05-09",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465924059101/0001104659-24-059101-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465924059101/0001104659-24-059101-index.htm",
+"where": "8-K"
 },
 "0001104659-24-086992": {
 "accepted_et": "2024-08-08 07:07",
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465924086992/0001104659-24-086992-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465924086992/0001104659-24-086992-index.htm",
+"where": "8-K"
 },
 "0001104659-24-115052": {
 "accepted_et": "2024-11-07 07:07",
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465924115052/0001104659-24-115052-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465924115052/0001104659-24-115052-index.htm",
+"where": "8-K"
 },
 "0001104659-25-017774": {
 "accepted_et": "2025-02-27 07:08",
 "filing_date": "2025-02-27",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465925017774/0001104659-25-017774-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465925017774/0001104659-25-017774-index.htm",
+"where": "8-K"
 },
 "0001104659-25-039013": {
 "accepted_et": "2025-04-25 07:18",
 "filing_date": "2025-04-25",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465925039013/0001104659-25-039013-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465925039013/0001104659-25-039013-index.htm",
+"where": "8-K"
 },
 "0001104659-25-045310": {
 "accepted_et": "2025-05-07 07:11",
@@ -18648,7 +19991,11 @@
 "filing_date": "2026-01-02",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465926000057/0001104659-26-000057-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465926000057/0001104659-26-000057-index.htm",
+"where": "8-K"
 },
 "0001104659-26-019405": {
 "accepted_et": "2026-02-25 07:11",
@@ -18671,14 +20018,22 @@
 "filing_date": "2026-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465926091625/0001104659-26-091625-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465926091625/0001104659-26-091625-index.htm",
+"where": "8-K"
 },
 "0001104659-26-123029": {
 "accepted_et": "2026-11-05 07:05",
 "filing_date": "2026-11-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465926123029/0001104659-26-123029-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465926123029/0001104659-26-123029-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -18698,14 +20053,22 @@
 "filing_date": "2024-10-29",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1832038/000095017024117934/0000950170-24-117934-index.htm"
+"period": "Third Quarter 2024",
+"period_key": "2024Q3",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1832038/000095017024117934/0000950170-24-117934-index.htm",
+"where": "8-K"
 },
 "0000950170-25-012018": {
 "accepted_et": "2025-02-03 07:05",
 "filing_date": "2025-02-03",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1832038/000095017025012018/0000950170-25-012018-index.htm"
+"period": "Fourth Quarter 2024",
+"period_key": "2024Q4",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1832038/000095017025012018/0000950170-25-012018-index.htm",
+"where": "8-K"
 },
 "0000950170-25-042331": {
 "accepted_et": "2025-03-20 08:05",
@@ -18720,7 +20083,11 @@
 "filing_date": "2024-03-25",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1832038/000119312524075582/0001193125-24-075582-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1832038/000119312524075582/0001193125-24-075582-index.htm",
+"where": "8-K"
 },
 "0001193125-24-079597": {
 "accepted_et": "2024-03-28 07:05",
@@ -18783,7 +20150,11 @@
 "filing_date": "2026-01-08",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1832038/000119312526006997/0001193125-26-006997-index.htm"
+"period": "Fourth Quarter 2025",
+"period_key": "2025Q4",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1832038/000119312526006997/0001193125-26-006997-index.htm",
+"where": "8-K"
 },
 "0001193125-26-092528": {
 "accepted_et": "2026-03-05 07:11",
@@ -18839,7 +20210,11 @@
 "filing_date": "2025-03-31",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1585608/000095017025047220/0000950170-25-047220-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1585608/000095017025047220/0000950170-25-047220-index.htm",
+"where": "8-K"
 },
 "0001104659-24-088683": {
 "accepted_et": "2024-08-13 08:13",
@@ -18854,35 +20229,55 @@
 "filing_date": "2025-05-15",
 "form": "8-K",
 "items": "1.01,2.02,2.03,3.02,5.03,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312525120763/0001193125-25-120763-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312525120763/0001193125-25-120763-index.htm",
+"where": "8-K"
 },
 "0001193125-26-144604": {
 "accepted_et": "2026-04-07 08:35",
 "filing_date": "2026-04-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526144604/0001193125-26-144604-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526144604/0001193125-26-144604-index.htm",
+"where": "8-K"
 },
 "0001193125-26-232722": {
 "accepted_et": "2026-05-20 16:36",
 "filing_date": "2026-05-20",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526232722/0001193125-26-232722-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526232722/0001193125-26-232722-index.htm",
+"where": "8-K"
 },
 "0001193125-26-356915": {
 "accepted_et": "2026-08-19 16:15",
 "filing_date": "2026-08-19",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526356915/0001193125-26-356915-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526356915/0001193125-26-356915-index.htm",
+"where": "8-K"
 },
 "0001193125-26-462345": {
 "accepted_et": "2026-11-16 09:15",
 "filing_date": "2026-11-16",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526462345/0001193125-26-462345-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526462345/0001193125-26-462345-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -18902,14 +20297,22 @@
 "filing_date": "2024-05-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1817713/000095017024054950/0000950170-24-054950-index.htm"
+"period": "three months ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1817713/000095017024054950/0000950170-24-054950-index.htm",
+"where": "8-K"
 },
 "0000950170-24-092830": {
 "accepted_et": "2024-08-07 16:20",
 "filing_date": "2024-08-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1817713/000095017024092830/0000950170-24-092830-index.htm"
+"period": "three and six months ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1817713/000095017024092830/0000950170-24-092830-index.htm",
+"where": "8-K"
 },
 "0000950170-24-122279": {
 "accepted_et": "2024-11-06 16:07",
@@ -18924,14 +20327,22 @@
 "filing_date": "2025-02-27",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1817713/000095017025029165/0000950170-25-029165-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1817713/000095017025029165/0000950170-25-029165-index.htm",
+"where": "8-K"
 },
 "0000950170-25-066969": {
 "accepted_et": "2025-05-08 16:12",
 "filing_date": "2025-05-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1817713/000095017025066969/0000950170-25-066969-index.htm"
+"period": "three months ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1817713/000095017025066969/0000950170-25-066969-index.htm",
+"where": "8-K"
 },
 "0000950170-25-105010": {
 "accepted_et": "2025-08-07 16:08",
@@ -18991,21 +20402,33 @@
 "filing_date": "2024-01-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1232524/000119312524003910/0001193125-24-003910-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1232524/000119312524003910/0001193125-24-003910-index.htm",
+"where": "8-K"
 },
 "0001193125-25-004989": {
 "accepted_et": "2025-01-13 07:45",
 "filing_date": "2025-01-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1232524/000119312525004989/0001193125-25-004989-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1232524/000119312525004989/0001193125-25-004989-index.htm",
+"where": "8-K"
 },
 "0001193125-26-009899": {
 "accepted_et": "2026-01-12 09:01",
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1232524/000119312526009899/0001193125-26-009899-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1232524/000119312526009899/0001193125-26-009899-index.htm",
+"where": "8-K"
 },
 "0001232524-24-000014": {
 "accepted_et": "2024-02-28 16:06",
@@ -19108,7 +20531,11 @@
 "filing_date": "2026-10-26",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1232524/000162828026067275/0001628280-26-067275-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1232524/000162828026067275/0001628280-26-067275-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -19120,7 +20547,11 @@
 "filing_date": "2025-05-01",
 "form": "8-K",
 "items": "1.01,2.01,2.02,3.03,4.01,5.01,5.02,5.03,5.05,5.06,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1798749/000119312525110004/0001193125-25-110004-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/1798749/000119312525110004/0001193125-25-110004-index.htm",
+"where": "8-K"
 },
 "0001193125-25-119856": {
 "accepted_et": "2025-05-14 16:12",
@@ -19151,7 +20582,11 @@
 "filing_date": "2026-01-05",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1798749/000119312526001502/0001193125-26-001502-index.htm"
+"period": "first half of 2028",
+"period_key": "2028H1",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1798749/000119312526001502/0001193125-26-001502-index.htm",
+"where": "8-K"
 },
 "0001193125-26-094967": {
 "accepted_et": "2026-03-06 07:11",
@@ -19190,14 +20625,22 @@
 "filing_date": "2024-03-25",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1798749/000179874924000014/0001798749-24-000014-index.htm"
+"period": "fourth quarter and full year 2023",
+"period_key": "2023Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1798749/000179874924000014/0001798749-24-000014-index.htm",
+"where": "8-K"
 },
 "0001798749-24-000029": {
 "accepted_et": "2024-05-13 16:39",
 "filing_date": "2024-05-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1798749/000179874924000029/0001798749-24-000029-index.htm"
+"period": "first quarter 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1798749/000179874924000029/0001798749-24-000029-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -19225,14 +20668,22 @@
 "filing_date": "2024-05-01",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/200406/000020040624000048/0000200406-24-000048-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/200406/000020040624000048/0000200406-24-000048-index.htm",
+"where": "8-K"
 },
 "0000200406-24-000071": {
 "accepted_et": "2024-07-17 08:14",
 "filing_date": "2024-07-17",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/200406/000020040624000071/0000200406-24-000071-index.htm"
+"period": null,
+"period_key": null,
+"status": "not_results",
+"url": "https://www.sec.gov/Archives/edgar/data/200406/000020040624000071/0000200406-24-000071-index.htm",
+"where": "8-K"
 },
 "0000200406-24-000088": {
 "accepted_et": "2024-10-15 07:37",
@@ -19451,7 +20902,11 @@
 "filing_date": "2025-03-18",
 "form": "8-K",
 "items": "2.01,2.02,5.01,5.02,5.03,5.06,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1754068/000119312525056725/0001193125-25-056725-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1754068/000119312525056725/0001193125-25-056725-index.htm",
+"where": "8-K"
 },
 "0001193125-25-119408": {
 "accepted_et": "2025-05-14 08:09",
@@ -19620,7 +21075,11 @@
 "filing_date": "2025-01-13",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1503802/000095017025004591/0000950170-25-004591-index.htm"
+"period": "fourth quarter and full year 2024",
+"period_key": "2024Q4+FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1503802/000095017025004591/0000950170-25-004591-index.htm",
+"where": "8-K"
 },
 "0000950170-25-022764": {
 "accepted_et": "2025-02-19 07:32",
@@ -19651,7 +21110,11 @@
 "filing_date": "2024-01-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1503802/000119312524003978/0001193125-24-003978-index.htm"
+"period": "fourth quarter and full year 2023",
+"period_key": "2023Q4+FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1503802/000119312524003978/0001193125-24-003978-index.htm",
+"where": "8-K"
 },
 "0001193125-24-051845": {
 "accepted_et": "2024-02-29 07:35",
@@ -19690,7 +21153,11 @@
 "filing_date": "2025-10-08",
 "form": "8-K",
 "items": "1.01,2.02,2.03,3.02,5.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1503802/000119312525233983/0001193125-25-233983-index.htm"
+"period": "three months ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1503802/000119312525233983/0001193125-25-233983-index.htm",
+"where": "8-K"
 },
 "0001193125-25-261663": {
 "accepted_et": "2025-11-03 07:10",
@@ -19705,7 +21172,11 @@
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1503802/000119312526009738/0001193125-26-009738-index.htm"
+"period": "fourth quarter and full year ended December 31, 2025",
+"period_key": "2025Q4+FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1503802/000119312526009738/0001193125-26-009738-index.htm",
+"where": "8-K"
 },
 "0001193125-26-047670": {
 "accepted_et": "2026-02-12 07:32",
@@ -19741,7 +21212,11 @@
 "filing_date": "2025-10-15",
 "form": "8-K",
 "items": "1.01,2.02,5.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1664710/000110465925099512/0001104659-25-099512-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1664710/000110465925099512/0001104659-25-099512-index.htm",
+"where": "8-K"
 },
 "0001664710-24-000016": {
 "accepted_et": "2024-02-28 16:02",
@@ -19836,7 +21311,11 @@
 "filing_date": "2026-11-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1664710/000166471026000065/0001664710-26-000065-index.htm"
+"period": "quarter ended September 30, 2026",
+"period_key": "2026Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1664710/000166471026000065/0001664710-26-000065-index.htm",
+"where": "8-K"
 }
 }
 },
@@ -19864,7 +21343,11 @@
 "filing_date": "2024-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1703647/000095017024125347/0000950170-24-125347-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1703647/000095017024125347/0000950170-24-125347-index.htm",
+"where": "8-K"
 },
 "0000950170-25-040755": {
 "accepted_et": "2025-03-18 07:01",
@@ -19903,14 +21386,22 @@
 "filing_date": "2025-11-12",
 "form": "8-K",
 "items": "1.01,2.02,2.05,5.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1703647/000119312525277556/0001193125-25-277556-index.htm"
+"period": "quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1703647/000119312525277556/0001193125-25-277556-index.htm",
+"where": "8-K"
 },
 "0001193125-26-097575": {
 "accepted_et": "2026-03-09 07:35",
 "filing_date": "2026-03-09",
 "form": "8-K",
 "items": "1.01,2.02,3.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1703647/000119312526097575/0001193125-26-097575-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1703647/000119312526097575/0001193125-26-097575-index.htm",
+"where": "8-K"
 },
 "0001193125-26-104135": {
 "accepted_et": "2026-03-12 16:08",
@@ -19970,42 +21461,66 @@
 "filing_date": "2024-08-05",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127924000038/0001711279-24-000038-index.htm"
+"period": "Second Quarter 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127924000038/0001711279-24-000038-index.htm",
+"where": "EX-99.1"
 },
 "0001711279-24-000055": {
 "accepted_et": "2024-11-04 08:04",
 "filing_date": "2024-11-04",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127924000055/0001711279-24-000055-index.htm"
+"period": "Third Quarter 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127924000055/0001711279-24-000055-index.htm",
+"where": "EX-99.1"
 },
 "0001711279-25-000045": {
 "accepted_et": "2025-05-06 08:09",
 "filing_date": "2025-05-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127925000045/0001711279-25-000045-index.htm"
+"period": "First Quarter 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127925000045/0001711279-25-000045-index.htm",
+"where": "EX-99.1"
 },
 "0001711279-25-000078": {
 "accepted_et": "2025-08-04 07:09",
 "filing_date": "2025-08-04",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127925000078/0001711279-25-000078-index.htm"
+"period": "Second Quarter 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127925000078/0001711279-25-000078-index.htm",
+"where": "EX-99.1"
 },
 "0001711279-25-000088": {
 "accepted_et": "2025-11-03 07:04",
 "filing_date": "2025-11-03",
 "form": "8-K",
 "items": "2.02",
-"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127925000088/0001711279-25-000088-index.htm"
+"period": "Third Quarter 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127925000088/0001711279-25-000088-index.htm",
+"where": "EX-99.1"
 },
 "0001711279-26-000008": {
 "accepted_et": "2026-01-12 07:50",
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127926000008/0001711279-26-000008-index.htm"
+"period": "year ended December 31, 2025",
+"period_key": "2025FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1711279/000171127926000008/0001711279-26-000008-index.htm",
+"where": "8-K"
 },
 "0001711279-26-000018": {
 "accepted_et": "2026-02-17 07:06",
@@ -20057,14 +21572,22 @@
 "filing_date": "2024-08-08",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1422143/000095017024093945/0000950170-24-093945-index.htm"
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1422143/000095017024093945/0000950170-24-093945-index.htm",
+"where": "8-K"
 },
 "0000950170-24-123321": {
 "accepted_et": "2024-11-07 16:10",
 "filing_date": "2024-11-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1422143/000095017024123321/0000950170-24-123321-index.htm"
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1422143/000095017024123321/0000950170-24-123321-index.htm",
+"where": "8-K"
 },
 "0000950170-25-027706": {
 "accepted_et": "2025-02-26 16:05",
@@ -20095,7 +21618,11 @@
 "filing_date": "2024-01-30",
 "form": "8-K",
 "items": "2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1422143/000119312524018713/0001193125-24-018713-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1422143/000119312524018713/0001193125-24-018713-index.htm",
+"where": "8-K"
 },
 "0001193125-25-263491": {
 "accepted_et": "2025-11-04 06:35",
@@ -20110,7 +21637,11 @@
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1422143/000119312526009649/0001193125-26-009649-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1422143/000119312526009649/0001193125-26-009649-index.htm",
+"where": "8-K"
 },
 "0001193125-26-092465": {
 "accepted_et": "2026-03-05 06:35",
@@ -20170,7 +21701,11 @@
 "filing_date": "2024-08-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1815442/000095017024092272/0000950170-24-092272-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1815442/000095017024092272/0000950170-24-092272-index.htm",
+"where": "8-K"
 },
 "0000950170-24-119245": {
 "accepted_et": "2024-10-31 07:40",
@@ -20193,21 +21728,33 @@
 "filing_date": "2024-01-05",
 "form": "8-K",
 "items": "1.01,2.02,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312524003373/0001193125-24-003373-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312524003373/0001193125-24-003373-index.htm",
+"where": "8-K"
 },
 "0001193125-25-006124": {
 "accepted_et": "2025-01-14 16:02",
 "filing_date": "2025-01-14",
 "form": "8-K",
 "items": "2.02,7.01,8.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312525006124/0001193125-25-006124-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312525006124/0001193125-25-006124-index.htm",
+"where": "8-K"
 },
 "0001193125-25-037588": {
 "accepted_et": "2025-02-27 07:13",
 "filing_date": "2025-02-27",
 "form": "8-K",
 "items": "2.02,5.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312525037588/0001193125-25-037588-index.htm"
+"period": "quarter ended December 31, 2024",
+"period_key": "2024Q4",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312525037588/0001193125-25-037588-index.htm",
+"where": "8-K"
 },
 "0001193125-25-116443": {
 "accepted_et": "2025-05-09 07:05",
@@ -20222,21 +21769,33 @@
 "filing_date": "2025-11-04",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312525263540/0001193125-25-263540-index.htm"
+"period": "quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312525263540/0001193125-25-263540-index.htm",
+"where": "8-K"
 },
 "0001193125-26-011104": {
 "accepted_et": "2026-01-13 07:08",
 "filing_date": "2026-01-13",
 "form": "8-K",
 "items": "2.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312526011104/0001193125-26-011104-index.htm"
+"period": null,
+"period_key": null,
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312526011104/0001193125-26-011104-index.htm",
+"where": "8-K"
 },
 "0001193125-26-073386": {
 "accepted_et": "2026-02-26 07:10",
 "filing_date": "2026-02-26",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312526073386/0001193125-26-073386-index.htm"
+"period": "quarter ended December 31, 2025",
+"period_key": "2025Q4",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/1815442/000119312526073386/0001193125-26-073386-index.htm",
+"where": "8-K"
 },
 "0001193125-26-193957": {
 "accepted_et": "2026-04-30 07:10",
@@ -20272,63 +21831,99 @@
 "filing_date": "2024-02-26",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017024020146/0000950170-24-020146-index.htm"
+"period": "quarter and the year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017024020146/0000950170-24-020146-index.htm",
+"where": "8-K"
 },
 "0000950170-24-053533": {
 "accepted_et": "2024-05-06 16:05",
 "filing_date": "2024-05-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017024053533/0000950170-24-053533-index.htm"
+"period": "quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017024053533/0000950170-24-053533-index.htm",
+"where": "8-K"
 },
 "0000950170-24-091766": {
 "accepted_et": "2024-08-06 16:05",
 "filing_date": "2024-08-06",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017024091766/0000950170-24-091766-index.htm"
+"period": "quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017024091766/0000950170-24-091766-index.htm",
+"where": "8-K"
 },
 "0000950170-24-125332": {
 "accepted_et": "2024-11-12 16:05",
 "filing_date": "2024-11-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017024125332/0000950170-24-125332-index.htm"
+"period": "quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017024125332/0000950170-24-125332-index.htm",
+"where": "8-K"
 },
 "0000950170-25-023729": {
 "accepted_et": "2025-02-20 07:00",
 "filing_date": "2025-02-20",
 "form": "8-K",
 "items": "1.01,2.02,5.02,7.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017025023729/0000950170-25-023729-index.htm"
+"period": "year ended December 31, 2024",
+"period_key": "2024FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017025023729/0000950170-25-023729-index.htm",
+"where": "8-K"
 },
 "0000950170-25-040248": {
 "accepted_et": "2025-03-17 16:10",
 "filing_date": "2025-03-17",
 "form": "8-K",
 "items": "2.02,3.01,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017025040248/0000950170-25-040248-index.htm"
+"period": "quarter and year ended December 31, 2024",
+"period_key": "2024Q4+FY",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017025040248/0000950170-25-040248-index.htm",
+"where": "8-K"
 },
 "0000950170-25-069159": {
 "accepted_et": "2025-05-12 16:05",
 "filing_date": "2025-05-12",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017025069159/0000950170-25-069159-index.htm"
+"period": "quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017025069159/0000950170-25-069159-index.htm",
+"where": "8-K"
 },
 "0000950170-25-106534": {
 "accepted_et": "2025-08-11 16:05",
 "filing_date": "2025-08-11",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017025106534/0000950170-25-106534-index.htm"
+"period": "quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/921299/000095017025106534/0000950170-25-106534-index.htm",
+"where": "8-K"
 },
 "0001193125-25-274192": {
 "accepted_et": "2025-11-10 16:05",
 "filing_date": "2025-11-10",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/921299/000119312525274192/0001193125-25-274192-index.htm"
+"period": "quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"status": "results",
+"url": "https://www.sec.gov/Archives/edgar/data/921299/000119312525274192/0001193125-25-274192-index.htm",
+"where": "8-K"
 },
 "0001193125-26-108324": {
 "accepted_et": "2026-03-16 16:05",
@@ -20436,7 +22031,11 @@
 "filing_date": "2026-01-12",
 "form": "8-K",
 "items": "2.02,5.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1994702/000119312526009810/0001193125-26-009810-index.htm"
+"period": "year ended December 31, 2025",
+"period_key": "2025FY",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1994702/000119312526009810/0001193125-26-009810-index.htm",
+"where": "8-K"
 },
 "0001193125-26-126216": {
 "accepted_et": "2026-03-26 16:06",
@@ -20594,7 +22193,11 @@
 "filing_date": "2026-01-07",
 "form": "8-K",
 "items": "2.02,9.01",
-"url": "https://www.sec.gov/Archives/edgar/data/1815776/000181577626000003/0001815776-26-000003-index.htm"
+"period": "three months ended December 31, 2025",
+"period_key": "2025Q4",
+"status": "preliminary",
+"url": "https://www.sec.gov/Archives/edgar/data/1815776/000181577626000003/0001815776-26-000003-index.htm",
+"where": "8-K"
 },
 "0001815776-26-000008": {
 "accepted_et": "2026-03-24 08:10",

@@ -3542,11 +3542,6 @@
    "permanent": true
   },
   {
-   "source": "/drug/long-term-extension",
-   "destination": "/drug/zanubrutinib",
-   "permanent": true
-  },
-  {
    "source": "/drug/lonvo-z",
    "destination": "/drug/lonvoguran-ziclumeran",
    "permanent": true
@@ -4217,6 +4212,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/donidalorsen",
+   "destination": "/ticker/IONS",
+   "permanent": true
+  },
+  {
    "source": "/drug/elranatamab",
    "destination": "/ticker/PFE",
    "permanent": true
@@ -4234,6 +4234,11 @@
   {
    "source": "/drug/lx1001",
    "destination": "/ticker/LXEO",
+   "permanent": true
+  },
+  {
+   "source": "/drug/mbx-2109",
+   "destination": "/ticker/MBX",
    "permanent": true
   },
   {
@@ -4267,6 +4272,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/ptc923",
+   "destination": "/ticker/PTCT",
+   "permanent": true
+  },
+  {
    "source": "/drug/rexlemestrocel-l",
    "destination": "/ticker/MESO",
    "permanent": true
@@ -4292,6 +4302,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/seralutinib",
+   "destination": "/ticker/GOSS",
+   "permanent": true
+  },
+  {
    "source": "/drug/sgt-003",
    "destination": "/ticker/SLDB",
    "permanent": true
@@ -4304,6 +4319,11 @@
   {
    "source": "/drug/sotagliflozin",
    "destination": "/ticker/LXRX",
+   "permanent": true
+  },
+  {
+   "source": "/drug/spn-812",
+   "destination": "/ticker/SUPN",
    "permanent": true
   },
   {
@@ -4324,6 +4344,11 @@
   {
    "source": "/drug/tp-05",
    "destination": "/ticker/TARS",
+   "permanent": true
+  },
+  {
+   "source": "/drug/treprostinil-palmitil",
+   "destination": "/ticker/INSM",
    "permanent": true
   },
   {

@@ -1,5 +1,5 @@
 {
-"fetched": "2026-11-27T21:59:22Z",
+"fetched": "2026-11-27T22:29:40Z",
 "from": "2024-01-01",
 "parser_version": 6,
 "tickers": {
@@ -11689,6 +11689,7 @@
 "tracked": true
 },
 "BIOA": {
+"backfilled": "2026-11-27",
 "name": "BioAge Labs, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -11766,12 +11767,14 @@
 "tracked": true
 },
 "BIVI": {
+"backfilled": "2026-11-27",
 "name": "Biovie Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "BLSM": {
+"backfilled": "2026-11-27",
 "name": "BlossomHill Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -11799,6 +11802,7 @@
 "tracked": true
 },
 "BLTE": {
+"backfilled": "2026-11-27",
 "name": "Belite Bio, Inc",
 "read": "2026-11-27",
 "releases": [
@@ -11861,11 +11865,42 @@
 "stem": "Belite",
 "title": "Belite Bio Reports Second Quarter 2025 Financial Results and Provides a Corporate Update",
 "url": "https://www.globenewswire.com/news-release/2025/08/11/3130705/0/en/Belite-Bio-Reports-Second-Quarter-2025-Financial-Results-and-Provides-a-Corporate-Update.html"
+},
+{
+"kind": "results",
+"period": "First Quarter 2026",
+"period_key": "2026Q1",
+"published_et": "2026-05-20 06:00",
+"site": "globenewswire.com",
+"stem": "Belite",
+"title": "Belite Bio Reports Unaudited First Quarter 2026 Financial Results and Provides a Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2026/05/20/3298259/0/en/Belite-Bio-Reports-Unaudited-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update.html"
+},
+{
+"kind": "results",
+"period": "Second Quarter 2026",
+"period_key": "2026Q2",
+"published_et": "2026-08-12 21:45",
+"site": "globenewswire.com",
+"stem": "Belite",
+"title": "Belite Bio Reports Unaudited Second Quarter 2026 Financial Results and Provides a Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2026/08/13/3344190/0/en/belite-bio-reports-unaudited-second-quarter-2026-financial-results-and-provides-a-corporate-update.html"
+},
+{
+"kind": "results",
+"period": "Third Quarter 2026",
+"period_key": "2026Q3",
+"published_et": "2026-11-12 06:00",
+"site": "globenewswire.com",
+"stem": "Belite",
+"title": "Belite Bio Reports Unaudited Third Quarter 2026 Financial Results and Provides a Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2026/11/12/3401341/0/en/belite-bio-reports-unaudited-third-quarter-2026-financial-results-and-provides-a-corporate-update.html"
 }
 ],
 "tracked": true
 },
 "BMEA": {
+"backfilled": "2026-11-27",
 "name": "Biomea Fusion, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -11983,6 +12018,7 @@
 "tracked": true
 },
 "BMRN": {
+"backfilled": "2026-11-27",
 "name": "Biomarin Pharmaceutical Inc",
 "read": "2026-11-27",
 "releases": [
@@ -12080,6 +12116,7 @@
 "tracked": true
 },
 "BMY": {
+"backfilled": "2026-11-27",
 "name": "Bristol-Myers Squibb Company",
 "read": "2026-11-27",
 "releases": [
@@ -12289,6 +12326,7 @@
 "tracked": true
 },
 "BNTX": {
+"backfilled": "2026-11-27",
 "name": "BioNTech SE",
 "read": "2026-11-27",
 "releases": [
@@ -12584,6 +12622,7 @@
 "tracked": true
 },
 "BOLT": {
+"backfilled": "2026-11-27",
 "name": "Bolt Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -12691,6 +12730,7 @@
 "tracked": true
 },
 "BRVE": {
+"backfilled": "2026-11-27",
 "name": "Braveheart Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -12718,6 +12758,7 @@
 "tracked": true
 },
 "BSEM": {
+"backfilled": "2026-11-27",
 "name": "BioStem Technologies, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -12983,6 +13024,7 @@
 "tracked": true
 },
 "BTAI": {
+"backfilled": "2026-11-27",
 "name": "BioXcel Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13112,6 +13154,7 @@
 "tracked": true
 },
 "BYSI": {
+"backfilled": "2026-11-27",
 "name": "BeyondSpring Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13149,6 +13192,7 @@
 "tracked": true
 },
 "CABA": {
+"backfilled": "2026-11-27",
 "name": "Cabaletta Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13256,6 +13300,7 @@
 "tracked": true
 },
 "CADL": {
+"backfilled": "2026-11-27",
 "name": "Candel Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13363,6 +13408,7 @@
 "tracked": true
 },
 "CALC": {
+"backfilled": "2026-11-27",
 "name": "CalciMedica, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13450,6 +13496,7 @@
 "tracked": true
 },
 "CANF": {
+"backfilled": "2026-11-27",
 "name": "Can-Fite BioPharma Ltd.",
 "read": "2026-11-27",
 "releases": [
@@ -13477,6 +13524,7 @@
 "tracked": true
 },
 "CAPR": {
+"backfilled": "2026-11-27",
 "name": "Capricor Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13676,6 +13724,7 @@
 "tracked": true
 },
 "CASI": {
+"backfilled": "2026-11-27",
 "name": "CASI Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13773,6 +13822,7 @@
 "tracked": true
 },
 "CBIO": {
+"backfilled": "2026-11-27",
 "name": "Crescent Biopharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13840,6 +13890,7 @@
 "tracked": true
 },
 "CCCC": {
+"backfilled": "2026-11-27",
 "name": "C4 Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13947,6 +13998,7 @@
 "tracked": true
 },
 "CELC": {
+"backfilled": "2026-11-27",
 "name": "Celcuity Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13989,6 +14041,16 @@
 "url": "https://www.globenewswire.com/news-release/2024/05/08/2877694/0/en/Celcuity-Inc-Schedules-Release-of-First-Quarter-2024-Financial-Results-and-Webcast-Conference-Call.html"
 },
 {
+"kind": "results",
+"period": "first quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"published_et": "2024-05-15 16:01",
+"site": "globenewswire.com",
+"stem": "Celcuity",
+"title": "Celcuity Inc. Reports First Quarter Financial Results and Provides Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2024/05/15/2882852/0/en/Celcuity-Inc-Reports-First-Quarter-Financial-Results-and-Provides-Corporate-Update.html"
+},
+{
 "call_time": "4:30 p.m. ET",
 "kind": "schedule",
 "period": "Second Quarter 2024",
@@ -14003,6 +14065,16 @@
 "url": "https://www.globenewswire.com/news-release/2024/08/07/2925839/0/en/Celcuity-Inc-Schedules-Release-of-Second-Quarter-2024-Financial-Results-and-Webcast-Conference-Call.html"
 },
 {
+"kind": "results",
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"published_et": "2024-08-14 16:01",
+"site": "globenewswire.com",
+"stem": "Celcuity",
+"title": "Celcuity Inc. Reports Second Quarter Financial Results and Provides Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2024/08/14/2930435/0/en/Celcuity-Inc-Reports-Second-Quarter-Financial-Results-and-Provides-Corporate-Update.html"
+},
+{
 "call_time": "4:30 p.m. ET",
 "kind": "schedule",
 "period": "Third Quarter 2024",
@@ -14015,6 +14087,16 @@
 "timing_words": "after the market closes",
 "title": "Celcuity Inc. Schedules Release of Third Quarter 2024 Financial Results and Webcast/Conference Call",
 "url": "https://www.globenewswire.com/news-release/2024/11/07/2976536/0/en/Celcuity-Inc-Schedules-Release-of-Third-Quarter-2024-Financial-Results-and-Webcast-Conference-Call.html"
+},
+{
+"kind": "results",
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"published_et": "2024-11-14 16:01",
+"site": "globenewswire.com",
+"stem": "Celcuity",
+"title": "Celcuity Inc. Reports Third Quarter Financial Results and Provides Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2024/11/14/2981567/0/en/Celcuity-Inc-Reports-Third-Quarter-Financial-Results-and-Provides-Corporate-Update.html"
 },
 {
 "call_time": "4:30 p.m. ET",
@@ -14202,6 +14284,7 @@
 "tracked": true
 },
 "CERS": {
+"backfilled": "2026-11-27",
 "name": "Cerus Corp",
 "read": "2026-11-27",
 "releases": [
@@ -14467,6 +14550,7 @@
 "tracked": true
 },
 "CGEM": {
+"backfilled": "2026-11-27",
 "name": "Cullinan Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -14564,6 +14648,7 @@
 "tracked": true
 },
 "CGEN": {
+"backfilled": "2026-11-27",
 "name": "Compugen Ltd.",
 "read": "2026-11-27",
 "releases": [
@@ -14845,6 +14930,7 @@
 "tracked": true
 },
 "CGON": {
+"backfilled": "2026-11-27",
 "name": "CG Oncology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -14932,6 +15018,7 @@
 "tracked": true
 },
 "CGTX": {
+"backfilled": "2026-11-27",
 "name": "Cognition Therapeutics Inc",
 "read": "2026-11-27",
 "releases": [
@@ -15031,6 +15118,7 @@
 "tracked": true
 },
 "CHRS": {
+"backfilled": "2026-11-27",
 "name": "Coherus Oncology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15266,6 +15354,7 @@
 "tracked": true
 },
 "CING": {
+"backfilled": "2026-11-27",
 "name": "Cingulate Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15363,6 +15452,7 @@
 "tracked": true
 },
 "CLDI": {
+"backfilled": "2026-11-27",
 "name": "Calidi Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15470,6 +15560,7 @@
 "tracked": true
 },
 "CLDX": {
+"backfilled": "2026-11-27",
 "name": "Celldex Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15552,11 +15643,22 @@
 "stem": "Celldex",
 "title": "Celldex Reports Fourth Quarter and Year End 2025 Financial Results and Provides Corporate Update",
 "url": "https://www.globenewswire.com/news-release/2026/02/25/3244966/24180/en/Celldex-Reports-Fourth-Quarter-and-Year-End-2025-Financial-Results-and-Provides-Corporate-Update.html"
+},
+{
+"kind": "results",
+"period": "first quarter ended March 31, 2026",
+"period_key": "2026Q1",
+"published_et": "2026-05-07 16:01",
+"site": "globenewswire.com",
+"stem": "Celldex",
+"title": "Celldex Reports First Quarter Financial Results and Provides Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2026/05/07/3290499/24180/en/Celldex-Reports-First-Quarter-Financial-Results-and-Provides-Corporate-Update.html"
 }
 ],
 "tracked": true
 },
 "CLLS": {
+"backfilled": "2026-11-27",
 "name": "Cellectis S.A.",
 "read": "2026-11-27",
 "releases": [
@@ -15814,6 +15916,7 @@
 "tracked": true
 },
 "CLRB": {
+"backfilled": "2026-11-27",
 "name": "Cellectar Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15904,6 +16007,20 @@
 "url": "https://www.globenewswire.com/news-release/2025/03/05/3037379/29076/en/Cellectar-Biosciences-to-Report-Full-Year-Financial-Results-and-Host-a-Conference-Call-on-Thursday-March-13-2025.html"
 },
 {
+"call_time": null,
+"kind": "schedule",
+"period": "first quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"published_et": "2025-05-07 08:05",
+"report_date": "2025-05-13",
+"site": "globenewswire.com",
+"stem": "Cellectar",
+"timing": null,
+"timing_words": null,
+"title": "Cellectar Biosciences to Report First Quarter Financial Results and Host a Conference Call on Tuesday, May 13, 2025",
+"url": "https://www.globenewswire.com/news-release/2025/05/07/3076103/29076/en/Cellectar-Biosciences-to-Report-First-Quarter-Financial-Results-and-Host-a-Conference-Call-on-Tuesday-May-13-2025.html"
+},
+{
 "kind": "results",
 "period": "First Quarter 2025",
 "period_key": "2025Q1",
@@ -15912,6 +16029,20 @@
 "stem": "Cellectar",
 "title": "Cellectar Biosciences Reports First Quarter 2025 Financial Results and Provides a Corporate Update",
 "url": "https://www.globenewswire.com/news-release/2025/05/13/3079968/29076/en/Cellectar-Biosciences-Reports-First-Quarter-2025-Financial-Results-and-Provides-a-Corporate-Update.html"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "second quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"published_et": "2025-08-07 08:05",
+"report_date": "2025-08-14",
+"site": "globenewswire.com",
+"stem": "Cellectar",
+"timing": null,
+"timing_words": null,
+"title": "Cellectar Biosciences to Report Second Quarter Financial Results and Host a Conference Call on Thursday, August 14, 2025",
+"url": "https://www.globenewswire.com/news-release/2025/08/07/3129223/29076/en/Cellectar-Biosciences-to-Report-Second-Quarter-Financial-Results-and-Host-a-Conference-Call-on-Thursday-August-14-2025.html"
 },
 {
 "kind": "results",
@@ -15948,6 +16079,20 @@
 "url": "https://www.globenewswire.com/news-release/2026/02/25/3244575/29076/en/Cellectar-Biosciences-to-Report-Full-Year-Financial-Results-and-Host-a-Conference-Call-on-Wednesday-March-4-2026.html"
 },
 {
+"call_time": null,
+"kind": "schedule",
+"period": "first quarter ended March 31, 2026",
+"period_key": "2026Q1",
+"published_et": "2026-05-11 08:05",
+"report_date": "2026-05-14",
+"site": "globenewswire.com",
+"stem": "Cellectar",
+"timing": null,
+"timing_words": null,
+"title": "Cellectar Biosciences to Report First Quarter Financial Results and Host a Conference Call on Thursday, May 14, 2026",
+"url": "https://www.globenewswire.com/news-release/2026/05/11/3291850/29076/en/Cellectar-Biosciences-to-Report-First-Quarter-Financial-Results-and-Host-a-Conference-Call-on-Thursday-May-14-2026.html"
+},
+{
 "kind": "results",
 "period": "First Quarter 2026",
 "period_key": "2026Q1",
@@ -15958,6 +16103,20 @@
 "url": "https://www.globenewswire.com/news-release/2026/05/14/3294782/29076/en/Cellectar-Biosciences-Reports-First-Quarter-2026-Financial-Results-and-Provides-Corporate-Updates.html"
 },
 {
+"call_time": null,
+"kind": "schedule",
+"period": "second quarter ended June 30, 2026",
+"period_key": "2026Q2",
+"published_et": "2026-07-30 08:05",
+"report_date": "2026-08-13",
+"site": "globenewswire.com",
+"stem": "Cellectar",
+"timing": null,
+"timing_words": null,
+"title": "Cellectar Biosciences to Report Second Quarter Financial Results and Host a Conference Call on Thursday, August 13, 2026",
+"url": "https://www.globenewswire.com/news-release/2026/07/30/3336025/29076/en/cellectar-biosciences-to-report-second-quarter-financial-results-and-host-a-conference-call-on-thursday-august-13-2026.html"
+},
+{
 "kind": "results",
 "period": "Second Quarter 2026",
 "period_key": "2026Q2",
@@ -15966,6 +16125,20 @@
 "stem": "Cellectar",
 "title": "Cellectar Biosciences Reports Second Quarter 2026 Financial Results and Provides Corporate Updates",
 "url": "https://www.globenewswire.com/news-release/2026/08/13/3344389/29076/en/cellectar-biosciences-reports-second-quarter-2026-financial-results-and-provides-corporate-updates.html"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "third quarter ended September 30, 2026",
+"period_key": "2026Q3",
+"published_et": "2026-11-02 08:00",
+"report_date": "2026-11-10",
+"site": "globenewswire.com",
+"stem": "Cellectar",
+"timing": null,
+"timing_words": null,
+"title": "Cellectar Biosciences to Report Third Quarter Financial Results and Host a Conference Call on Tuesday, November 10, 2026",
+"url": "https://www.globenewswire.com/news-release/2026/11/02/3393103/29076/en/cellectar-biosciences-to-report-third-quarter-financial-results-and-host-a-conference-call-on-tuesday-november-10-2026.html"
 },
 {
 "kind": "results",
@@ -15981,6 +16154,7 @@
 "tracked": true
 },
 "CLYM": {
+"backfilled": "2026-11-27",
 "name": "Climb Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16068,12 +16242,14 @@
 "tracked": true
 },
 "CMND": {
+"backfilled": "2026-11-27",
 "name": "Clearmind Medicine Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "CMPS": {
+"backfilled": "2026-11-27",
 "name": "COMPASS Pathways plc",
 "read": "2026-11-27",
 "releases": [
@@ -16198,6 +16374,20 @@
 "url": "https://www.businesswire.com/news/home/20250227873097/en/Compass-Pathways-Announces-Fourth-Quarter-and-Full-Year-2024-Financial-Results-and-Business-Highlights/"
 },
 {
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "first quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"published_et": "2025-04-28 06:30",
+"report_date": "2025-05-08",
+"site": "businesswire.com",
+"stem": "COMPASS Pathways",
+"timing": null,
+"timing_words": null,
+"title": "Compass Pathways to Announce First Quarter Financial Results on May 8, 2025",
+"url": "https://www.businesswire.com/news/home/20250428993513/en/Compass-Pathways-to-Announce-First-Quarter-Financial-Results-on-May-8-2025/"
+},
+{
 "kind": "results",
 "period": "First Quarter 2025",
 "period_key": "2025Q1",
@@ -16208,6 +16398,20 @@
 "url": "https://www.businesswire.com/news/home/20250508552210/en/Compass-Pathways-Announces-First-Quarter-2025-Financial-Results-and-Business-Highlights/"
 },
 {
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "second quarter ended June 30, 2025",
+"period_key": "2025Q2",
+"published_et": "2025-07-22 06:30",
+"report_date": "2025-07-31",
+"site": "businesswire.com",
+"stem": "COMPASS Pathways",
+"timing": null,
+"timing_words": null,
+"title": "Compass Pathways to Announce Second Quarter Financial Results on July 31, 2025",
+"url": "https://www.businesswire.com/news/home/20250722516595/en/Compass-Pathways-to-Announce-Second-Quarter-Financial-Results-on-July-31-2025/"
+},
+{
 "kind": "results",
 "period": "Second Quarter 2025",
 "period_key": "2025Q2",
@@ -16216,6 +16420,20 @@
 "stem": "COMPASS Pathways",
 "title": "Compass Pathways Announces Second Quarter 2025 Financial Results and Business Highlights",
 "url": "https://www.businesswire.com/news/home/20250731175223/en/Compass-Pathways-Announces-Second-Quarter-2025-Financial-Results-and-Business-Highlights/"
+},
+{
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "third quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"published_et": "2025-10-28 06:30",
+"report_date": "2025-11-04",
+"site": "businesswire.com",
+"stem": "COMPASS Pathways",
+"timing": null,
+"timing_words": null,
+"title": "Compass Pathways to Announce Third Quarter Financial Results on November 4, 2025",
+"url": "https://www.businesswire.com/news/home/20251028541021/en/Compass-Pathways-to-Announce-Third-Quarter-Financial-Results-on-November-4-2025/"
 },
 {
 "kind": "results",
@@ -16289,6 +16507,7 @@
 "tracked": true
 },
 "CMPX": {
+"backfilled": "2026-11-27",
 "name": "Compass Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16346,6 +16565,7 @@
 "tracked": true
 },
 "CNTA": {
+"backfilled": "2026-11-27",
 "name": "Centessa Pharmaceuticals plc",
 "read": "2026-11-27",
 "releases": [
@@ -16433,6 +16653,7 @@
 "tracked": true
 },
 "CNTX": {
+"backfilled": "2026-11-27",
 "name": "Context Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16550,6 +16771,7 @@
 "tracked": true
 },
 "COAG": {
+"backfilled": "2026-11-27",
 "name": "Hemab Therapeutics",
 "read": "2026-11-27",
 "releases": [
@@ -16581,6 +16803,7 @@
 "tracked": true
 },
 "COCP": {
+"backfilled": "2026-11-27",
 "name": "Cocrystal Pharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16648,6 +16871,7 @@
 "tracked": true
 },
 "COGT": {
+"backfilled": "2026-11-27",
 "name": "Cogent Biosciences",
 "read": "2026-11-27",
 "releases": [
@@ -16745,6 +16969,7 @@
 "tracked": true
 },
 "CORT": {
+"backfilled": "2026-11-27",
 "name": "Corcept Therapeutics Inc",
 "read": "2026-11-27",
 "releases": [
@@ -16834,6 +17059,7 @@
 "tracked": true
 },
 "COYA": {
+"backfilled": "2026-11-27",
 "name": "Coya Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16846,6 +17072,26 @@
 "stem": "Coya",
 "title": "Coya Therapeutics Provides a Corporate Update and Reports Fiscal 2023 Financial Results",
 "url": "https://www.businesswire.com/news/home/20240319867067/en/Coya-Therapeutics-Provides-a-Corporate-Update-and-Reports-Fiscal-2023-Financial-Results/"
+},
+{
+"kind": "results",
+"period": "First Quarter 2024",
+"period_key": "2024Q1",
+"published_et": "2024-05-09 16:10",
+"site": "businesswire.com",
+"stem": "Coya",
+"title": "Coya Therapeutics Provides a Corporate Update and Reports Unaudited First Quarter 2024 Financial Results",
+"url": "https://www.businesswire.com/news/home/20240509929442/en/Coya-Therapeutics-Provides-a-Corporate-Update-and-Reports-Unaudited-First-Quarter-2024-Financial-Results/"
+},
+{
+"kind": "results",
+"period": "Third Quarter 2024",
+"period_key": "2024Q3",
+"published_et": "2024-11-06 08:00",
+"site": "businesswire.com",
+"stem": "Coya",
+"title": "Coya Therapeutics Provides a Corporate Update and Reports Unaudited Third Quarter 2024 Financial Results",
+"url": "https://www.businesswire.com/news/home/20241106135734/en/Coya-Therapeutics-Provides-a-Corporate-Update-and-Reports-Unaudited-Third-Quarter-2024-Financial-Results/"
 },
 {
 "kind": "results",
@@ -16901,6 +17147,7 @@
 "tracked": true
 },
 "CRBP": {
+"backfilled": "2026-11-27",
 "name": "Corbus Pharmaceuticals Holdings, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16958,6 +17205,7 @@
 "tracked": true
 },
 "CRBU": {
+"backfilled": "2026-11-27",
 "name": "Caribou Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -17055,6 +17303,7 @@
 "tracked": true
 },
 "CRDF": {
+"backfilled": "2026-11-27",
 "name": "Cardiff Oncology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -17152,6 +17401,7 @@
 "tracked": true
 },
 "CRIS": {
+"backfilled": "2026-11-27",
 "name": "Curis Inc",
 "read": "2026-11-27",
 "releases": [
@@ -17313,6 +17563,7 @@
 "tracked": true
 },
 "CRNX": {
+"backfilled": "2026-11-27",
 "name": "Crinetics Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -17560,6 +17811,7 @@
 "tracked": true
 },
 "CRSP": {
+"backfilled": "2026-11-27",
 "name": "CRISPR Therapeutics AG",
 "read": "2026-11-27",
 "releases": [
@@ -17677,6 +17929,7 @@
 "tracked": true
 },
 "CRVO": {
+"backfilled": "2026-11-27",
 "name": "CervoMed Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -17764,6 +18017,7 @@
 "tracked": true
 },
 "CRVS": {
+"backfilled": "2026-11-27",
 "name": "Corvus Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -17971,12 +18225,14 @@
 "tracked": true
 },
 "CSLLY": {
+"backfilled": "2026-11-27",
 "name": "Csl Ltd",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "CSTL": {
+"backfilled": "2026-11-27",
 "name": "Castle Biosciences INC",
 "read": "2026-11-27",
 "releases": [
@@ -18200,6 +18456,7 @@
 "tracked": true
 },
 "CTMX": {
+"backfilled": "2026-11-27",
 "name": "CytomX Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18423,6 +18680,7 @@
 "tracked": true
 },
 "CTY": {
+"backfilled": "2026-11-27",
 "name": "City Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18440,6 +18698,7 @@
 "tracked": true
 },
 "CUE": {
+"backfilled": "2026-11-27",
 "name": "Cue Biopharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18557,6 +18816,7 @@
 "tracked": true
 },
 "CYTK": {
+"backfilled": "2026-11-27",
 "name": "Cytokinetics Inc",
 "read": "2026-11-27",
 "releases": [
@@ -18674,6 +18934,7 @@
 "tracked": true
 },
 "DFTX": {
+"backfilled": "2026-11-27",
 "name": "Definium Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18749,6 +19010,7 @@
 "tracked": true
 },
 "DNLI": {
+"backfilled": "2026-11-27",
 "name": "Denali Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18904,6 +19166,7 @@
 "tracked": true
 },
 "DNTH": {
+"backfilled": "2026-11-27",
 "name": "Dianthus Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18941,6 +19204,7 @@
 "tracked": true
 },
 "DSGN": {
+"backfilled": "2026-11-27",
 "name": "Design Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -19068,6 +19332,7 @@
 "tracked": true
 },
 "DSNKY": {
+"backfilled": "2026-11-27",
 "name": "Daiichi Sankyo Company, Limited",
 "read": "2026-11-27",
 "releases": [
@@ -19095,6 +19360,7 @@
 "tracked": true
 },
 "DTIL": {
+"backfilled": "2026-11-27",
 "name": "Precision BioSciences",
 "read": "2026-11-27",
 "releases": [
@@ -19380,6 +19646,7 @@
 "tracked": true
 },
 "DWTX": {
+"backfilled": "2026-11-27",
 "name": "Dogwood Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -19523,6 +19790,7 @@
 "tracked": true
 },
 "DYN": {
+"backfilled": "2026-11-27",
 "name": "Dyne Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -19640,6 +19908,7 @@
 "tracked": true
 },
 "EBS": {
+"backfilled": "2026-11-27",
 "name": "Emergent BioSolutions",
 "read": "2026-11-27",
 "releases": [
@@ -19855,6 +20124,7 @@
 "tracked": true
 },
 "EDIT": {
+"backfilled": "2026-11-27",
 "name": "Editas Medicine, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20010,6 +20280,7 @@
 "tracked": true
 },
 "EIKN": {
+"backfilled": "2026-11-27",
 "name": "Eikon Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20057,6 +20328,7 @@
 "tracked": true
 },
 "ELTX": {
+"backfilled": "2026-11-27",
 "name": "Elicio Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20164,6 +20436,7 @@
 "tracked": true
 },
 "ELVN": {
+"backfilled": "2026-11-27",
 "name": "Enliven Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20201,6 +20474,7 @@
 "tracked": true
 },
 "ENGN": {
+"backfilled": "2026-11-27",
 "name": "enGene Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20218,12 +20492,45 @@
 "tracked": true
 },
 "ENTA": {
+"backfilled": "2026-11-27",
 "name": "Enanta Pharmaceuticals Inc",
 "read": "2026-11-27",
-"releases": [],
+"releases": [
+{
+"kind": "results",
+"period": "Fiscal Fourth Quarter and Year-Ended September 30, 2024",
+"period_key": "FY2024Q4",
+"published_et": "2024-11-25 16:01",
+"site": "businesswire.com",
+"stem": "Enanta",
+"title": "Enanta Pharmaceuticals Reports Financial Results for its Fiscal Fourth Quarter and Year-Ended September 30, 2024",
+"url": "https://www.businesswire.com/news/home/20241125650982/en/Enanta-Pharmaceuticals-Reports-Financial-Results-for-its-Fiscal-Fourth-Quarter-and-Year-Ended-September-30-2024/"
+},
+{
+"kind": "results",
+"period": "Fiscal Fourth Quarter and Year-Ended September 30, 2025",
+"period_key": "FY2025Q4",
+"published_et": "2025-11-17 16:01",
+"site": "businesswire.com",
+"stem": "Enanta",
+"title": "Enanta Pharmaceuticals Reports Financial Results for its Fiscal Fourth Quarter and Year-Ended September 30, 2025",
+"url": "https://www.businesswire.com/news/home/20251117823831/en/Enanta-Pharmaceuticals-Reports-Financial-Results-for-its-Fiscal-Fourth-Quarter-and-Year-Ended-September-30-2025/"
+},
+{
+"kind": "results",
+"period": "Fiscal Fourth Quarter and Year-Ended September 30, 2026",
+"period_key": "FY2026Q4",
+"published_et": "2026-11-16 16:01",
+"site": "businesswire.com",
+"stem": "Enanta",
+"title": "Enanta Pharmaceuticals Reports Financial Results for its Fiscal Fourth Quarter and Year-Ended September 30, 2026",
+"url": "https://www.businesswire.com/news/home/20261116633822/en/Enanta-Pharmaceuticals-Reports-Financial-Results-for-its-Fiscal-Fourth-Quarter-and-Year-Ended-September-30-2026/"
+}
+],
 "tracked": true
 },
 "EQ": {
+"backfilled": "2026-11-27",
 "name": "Equillium, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20311,6 +20618,7 @@
 "tracked": true
 },
 "ERAS": {
+"backfilled": "2026-11-27",
 "name": "Erasca, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20438,12 +20746,14 @@
 "tracked": true
 },
 "ESLA": {
+"backfilled": "2026-11-27",
 "name": "Estrella Immunopharma, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "ETON": {
+"backfilled": "2026-11-27",
 "name": "Eton Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20739,6 +21049,7 @@
 "tracked": true
 },
 "EVMN": {
+"backfilled": "2026-11-27",
 "name": "Evommune, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20796,6 +21107,7 @@
 "tracked": true
 },
 "EWTX": {
+"backfilled": "2026-11-27",
 "name": "Edgewise Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20883,6 +21195,7 @@
 "tracked": true
 },
 "EXEL": {
+"backfilled": "2026-11-27",
 "name": "Exelixis",
 "read": "2026-11-27",
 "releases": [
@@ -21130,6 +21443,7 @@
 "tracked": true
 },
 "EYPT": {
+"backfilled": "2026-11-27",
 "name": "EyePoint, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -21329,6 +21643,7 @@
 "tracked": true
 },
 "FBIO": {
+"backfilled": "2026-11-27",
 "name": "Fortress Biotech, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -21426,12 +21741,14 @@
 "tracked": true
 },
 "FDMT": {
+"backfilled": "2026-11-27",
 "name": "4D Molecular Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "FTH": {
+"backfilled": "2026-11-27",
 "name": "Faeth Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -21459,6 +21776,7 @@
 "tracked": true
 },
 "GERN": {
+"backfilled": "2026-11-27",
 "name": "Geron Corporation",
 "read": "2026-11-27",
 "releases": [
@@ -21720,6 +22038,7 @@
 "tracked": true
 },
 "GHRS": {
+"backfilled": "2026-11-27",
 "name": "GH Research PLC",
 "read": "2026-11-27",
 "releases": [
@@ -21847,6 +22166,7 @@
 "tracked": true
 },
 "GILD": {
+"backfilled": "2026-11-27",
 "name": "Gilead Sciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -22066,6 +22386,7 @@
 "tracked": true
 },
 "GKOS": {
+"backfilled": "2026-11-27",
 "name": "GLAUKOS Corp",
 "read": "2026-11-27",
 "releases": [
@@ -22317,6 +22638,7 @@
 "tracked": true
 },
 "GLPG": {
+"backfilled": "2026-11-27",
 "name": "Galapagos N.V.",
 "read": "2026-11-27",
 "releases": [
@@ -22384,6 +22706,7 @@
 "tracked": true
 },
 "GLSI": {
+"backfilled": "2026-11-27",
 "name": "Greenwich LifeSciences, Inc.",
 "read": "2026-11-27",
 "releases": [],

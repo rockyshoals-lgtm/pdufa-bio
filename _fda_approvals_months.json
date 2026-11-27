@@ -5658,7 +5658,7 @@
 "complete": true
 },
 "2025-08": {
-"fetched": "2026-11-23",
+"fetched": "2026-11-27",
 "items": [
 {
 "app": "NDA219840",
@@ -5669,7 +5669,16 @@
 "sub": "ORIG-1",
 "class": "Type 7 - Drug Already Marketed without Approved NDA",
 "date": "2025-08-01",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219840Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219840Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219840s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "700MG"
+}
+]
 },
 {
 "app": "NDA216099",
@@ -5680,7 +5689,41 @@
 "sub": "SUPPL-5",
 "class": "Efficacy",
 "date": "2025-08-01",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/216099Orig1s005ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/216099Orig1s005ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/216099s005lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "100MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "70MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "20MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "140MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "80MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "50MG"
+}
+]
 },
 {
 "app": "BLA761089",
@@ -5691,7 +5734,16 @@
 "sub": "SUPPL-31",
 "class": "Efficacy",
 "date": "2025-08-05",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761089Orig1s031ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761089Orig1s031ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761089s031lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "150MG/ML"
+}
+]
 },
 {
 "app": "NDA219876",
@@ -5702,7 +5754,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-08-06",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219876Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219876Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219876s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 125MG BASE"
+}
+]
 },
 {
 "app": "BLA125276",
@@ -5713,7 +5774,26 @@
 "sub": "SUPPL-149",
 "class": "Efficacy",
 "date": "2025-08-08",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125276Orig1s149ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125276Orig1s149ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/125276s149lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "400MG/20ML"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "80MG/4ML"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "200MG/10ML"
+}
+]
 },
 {
 "app": "NDA219042",
@@ -5724,7 +5804,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-08-08",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219042Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219042Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219042s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "60MG"
+}
+]
 },
 {
 "app": "NDA219921",
@@ -5735,7 +5824,21 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2025-08-08",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219921Ori1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219921Ori1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219921s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "500MG/50ML (10MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "80MG/8ML (10MG/ML)"
+}
+]
 },
 {
 "app": "NDA217673",
@@ -5746,18 +5849,46 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-08-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217673Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217673Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/217673s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "25MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "10MG"
+}
+]
 },
 {
 "app": "NDA219008",
 "brand": "Lazcluze",
-"generic": "lazertinib",
+"generic": "lazertinib mesylate",
 "sponsor": "Janssen Biotech",
 "kind": "efficacy supplement",
 "sub": "SUPPL-2",
 "class": "Efficacy",
 "date": "2025-08-14",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219008Orig1s002ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219008Orig1s002ltr.pdf",
+"label": "",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 80MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 240MG BASE"
+}
+]
 },
 {
 "app": "BLA761210",
@@ -5768,7 +5899,16 @@
 "sub": "SUPPL-9",
 "class": "Efficacy",
 "date": "2025-08-14",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761210Orig1s009ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761210Orig1s009ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761210s009lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "350MG/7ML(50MG/ML)"
+}
+]
 },
 {
 "app": "NDA218643",
@@ -5779,7 +5919,10 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form and Type 4 - New Combination",
 "date": "2025-08-15",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218643Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218643Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218643s000lbl.pdf",
+"priority": "STANDARD",
+"products": []
 },
 {
 "app": "NDA219428",
@@ -5790,7 +5933,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-08-15",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219428Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219428Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219428s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "SUBLINGUAL",
+"strength": "2.8MG"
+}
+]
 },
 {
 "app": "NDA215256",
@@ -5801,7 +5953,46 @@
 "sub": "SUPPL-24",
 "class": "Efficacy",
 "date": "2025-08-15",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215256Orig1s024ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215256Orig1s024ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215256s024lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "1MG/0.5ML (1MG/0.5ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "0.25MG/0.5ML (0.25MG/0.5ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "2.4MG/0.75ML (2.4MG/0.75ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "0.5MG/0.5ML (0.5MG/0.5ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "7.2MG/0.75ML (7.2MG/0.75ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "9.6MG/3ML (3.2MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "1.7MG/0.75ML (1.7MG/0.75ML)"
+}
+]
 },
 {
 "app": "BLA761119",
@@ -5812,7 +6003,16 @@
 "sub": "SUPPL-10",
 "class": "Efficacy",
 "date": "2025-08-18",
-"letter": ""
+"letter": "",
+"label": "",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "100MG/ML"
+}
+]
 },
 {
 "app": "NDA219407",
@@ -5823,7 +6023,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-08-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219407Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219407Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219407s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "EQ 80MG BASE/0.8ML (EQ 80MG BASE/0.8ML)"
+}
+]
 },
 {
 "app": "NDA219745",
@@ -5834,7 +6043,16 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2025-08-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219745Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219745Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219745s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "EMULSION",
+"route": "SUBCUTANEOUS",
+"strength": "EQ 21MG BASE"
+}
+]
 },
 {
 "app": "NDA212045",
@@ -5845,7 +6063,16 @@
 "sub": "SUPPL-5",
 "class": "Efficacy",
 "date": "2025-08-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/212045Orig1s005ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/212045Orig1s005ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/212045s005lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SPRAY",
+"route": "NASAL",
+"strength": "8MG/SPRAY"
+}
+]
 },
 {
 "app": "NDA216403",
@@ -5856,7 +6083,21 @@
 "sub": "SUPPL-5",
 "class": "Efficacy",
 "date": "2025-08-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/216403Orig1s005ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/216403Orig1s005ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/216403s005lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "400MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "200MG"
+}
+]
 },
 {
 "app": "NDA218033",
@@ -5867,7 +6108,16 @@
 "sub": "SUPPL-2",
 "class": "Efficacy",
 "date": "2025-08-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218033Orig1s002, s003ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218033Orig1s002, s003ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218033s002s003lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "FOR SUSPENSION",
+"route": "ORAL",
+"strength": "25MG/ML"
+}
+]
 },
 {
 "app": "NDA217700",
@@ -5878,7 +6128,16 @@
 "sub": "SUPPL-2",
 "class": "Efficacy",
 "date": "2025-08-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217700Orig1s002, s003, s004ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217700Orig1s002, s003, s004ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/217700s002s003s004lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "100MG"
+}
+]
 },
 {
 "app": "NDA218698",
@@ -5889,7 +6148,16 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2025-08-28",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218698Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218698Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218698s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "12.5MG"
+}
+]
 },
 {
 "app": "BLA761444",
@@ -5900,7 +6168,21 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2025-08-29",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761444Orig1s000correctedltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761444Orig1s000correctedltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761444Orig1s000correctedlbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "120MG/1.7ML(70MG/ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "60MG/ML"
+}
+]
 },
 {
 "app": "NDA219130",
@@ -5911,7 +6193,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-08-29",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219130Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219130Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219130s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 15MG BASE"
+}
+]
 },
 {
 "app": "BLA761375",
@@ -5922,7 +6213,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-08-29",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761375Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761375Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761375s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "360MG/1.8ML(200MG/ML)"
+}
+]
 },
 {
 "app": "NDA210745",
@@ -5933,7 +6233,31 @@
 "sub": "ORIG-2",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2025-08-29",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210745Orig1s000Orig2s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210745Orig1s000Orig2s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/210745s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "30MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "20MG"
+},
+{
+"form": "TABLET, EXTENDED RELEASE",
+"route": "ORAL",
+"strength": "75MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "10MG"
+}
+]
 },
 {
 "app": "NDA210745",
@@ -5944,7 +6268,31 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2025-08-29",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210745Orig1s000Orig2s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210745Orig1s000Orig2s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/210745s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "30MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "20MG"
+},
+{
+"form": "TABLET, EXTENDED RELEASE",
+"route": "ORAL",
+"strength": "75MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "10MG"
+}
+]
 },
 {
 "app": "NDA219685",
@@ -5955,26 +6303,24 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-08-29",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219685Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219685Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219685s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "400MG"
+}
+]
 }
 ],
 "openfda_total": 274,
 "complete": true
 },
 "2025-09": {
-"fetched": "2026-11-23",
+"fetched": "2026-11-27",
 "items": [
-{
-"app": "BLA761105",
-"brand": "Skyrizi",
-"generic": "risankizumab-rzaa",
-"sponsor": "Abbvie Inc",
-"kind": "efficacy supplement",
-"sub": "SUPPL-39",
-"class": "Efficacy",
-"date": "2025-09-03",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761105Orig1s039, 761262Orig1s011ltr.pdf"
-},
 {
 "app": "BLA761262",
 "brand": "Skyrizi",
@@ -5984,7 +6330,41 @@
 "sub": "SUPPL-11",
 "class": "Efficacy",
 "date": "2025-09-03",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761105Orig1s039, 761262Orig1s011ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761105Orig1s039, 761262Orig1s011ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761105s039,761262s011lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INTRAVENOUS",
+"strength": "600MG/VIAL"
+}
+]
+},
+{
+"app": "BLA761105",
+"brand": "Skyrizi",
+"generic": "risankizumab-rzaa",
+"sponsor": "Abbvie Inc",
+"kind": "efficacy supplement",
+"sub": "SUPPL-39",
+"class": "Efficacy",
+"date": "2025-09-03",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761105Orig1s039, 761262Orig1s011ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761105s039,761262s011lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "150MG/ML"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "75MG/0.83ML"
+}
+]
 },
 {
 "app": "NDA217684",
@@ -5995,7 +6375,16 @@
 "sub": "SUPPL-2",
 "class": "Efficacy",
 "date": "2025-09-03",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217684Orig1s002, s004ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217684Orig1s002, s004ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/217684s002s004lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "ORAL",
+"strength": "100MG/ML"
+}
+]
 },
 {
 "app": "NDA219683",
@@ -6006,7 +6395,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-09-09",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219683Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219683Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219683s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "SYSTEM",
+"route": "INTRAVESICAL",
+"strength": "EQ 225MG BASE"
+}
+]
 },
 {
 "app": "NDA217307",
@@ -6017,7 +6415,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-09-09",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217307Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217307Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/217307s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "GEL",
+"route": "OPHTHALMIC",
+"strength": "0.01%"
+}
+]
 },
 {
 "app": "NDA208692",
@@ -6028,7 +6435,51 @@
 "sub": "SUPPL-18",
 "class": "Efficacy",
 "date": "2025-09-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/208692Orig1s018ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/208692Orig1s018ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/208692s018lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 60MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 20MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 40MG BASE"
+}
+]
+},
+{
+"app": "NDA213756",
+"brand": "Koselugo",
+"generic": "selumetinib",
+"sponsor": "Astrazeneca",
+"kind": "efficacy supplement",
+"sub": "SUPPL-5",
+"class": "Efficacy",
+"date": "2025-09-10",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213756Orig1s005ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/213756Orig1s005lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 25MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 10MG BASE"
+}
+]
 },
 {
 "app": "NDA219943",
@@ -6039,18 +6490,31 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-09-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219943Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219943Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219943Orig1s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "10MG"
 },
 {
-"app": "NDA213756",
-"brand": "Koselugo",
-"generic": "selumetinib",
-"sponsor": "Astrazeneca",
-"kind": "efficacy supplement",
-"sub": "SUPPL-5",
-"class": "Efficacy",
-"date": "2025-09-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213756Orig1s005ltr.pdf"
+"form": "GRANULE",
+"route": "ORAL",
+"strength": "EQ 5MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "25MG"
+},
+{
+"form": "GRANULE",
+"route": "ORAL",
+"strength": "EQ 7.5MG BASE"
+}
+]
 },
 {
 "app": "NDA219500",
@@ -6061,7 +6525,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-09-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219500Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219500Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219500Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SPRAY",
+"route": "NASAL",
+"strength": "0.5MG/SPRAY"
+}
+]
 },
 {
 "app": "NDA214070",
@@ -6072,7 +6545,16 @@
 "sub": "SUPPL-1",
 "class": "Efficacy",
 "date": "2025-09-15",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/214070Orig1s001correctedltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/214070Orig1s001correctedltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/214070s001lblCorrected.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "AEROSOL, METERED",
+"route": "INHALATION",
+"strength": "EQ 0.09MG BASE/INH; 0.08MG/INH"
+}
+]
 },
 {
 "app": "BLA761436",
@@ -6083,7 +6565,21 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2025-09-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761436Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761436Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761436s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "120MG/1.7ML(70MG/ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "60MG/ML"
+}
+]
 },
 {
 "app": "NDA207103",
@@ -6094,7 +6590,26 @@
 "sub": "SUPPL-23",
 "class": "Efficacy",
 "date": "2025-09-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s023;212436Orig1s011ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s023;212436Orig1s011ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/207103s023lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "125MG"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "75MG"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "100MG"
+}
+]
 },
 {
 "app": "NDA212436",
@@ -6105,7 +6620,26 @@
 "sub": "SUPPL-11",
 "class": "Efficacy",
 "date": "2025-09-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s023;212436Orig1s011ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s023;212436Orig1s011ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/212436s011lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "125MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "75MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "100MG"
+}
+]
 },
 {
 "app": "NDA218879",
@@ -6116,7 +6650,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-09-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218879Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218879Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218879s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SUSPENSION",
+"route": "ORAL",
+"strength": "10MG/ML"
+}
+]
 },
 {
 "app": "NDA215309",
@@ -6127,7 +6670,16 @@
 "sub": "SUPPL-7",
 "class": "Efficacy",
 "date": "2025-09-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215309Orig1s007ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215309Orig1s007ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215309s007lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CREAM",
+"route": "TOPICAL",
+"strength": "EQ 1.5% BASE"
+}
+]
 },
 {
 "app": "NDA215244",
@@ -6138,7 +6690,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-09-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215244Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215244Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215244s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "EQ 280MG BASE/3.5ML (EQ 80MG BASE/ML)"
+}
+]
 },
 {
 "app": "BLA761467",
@@ -6149,7 +6710,21 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-09-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761467Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761467Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761467s000lblOrig1.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "790MG/9600UNITS(4.8ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "395MG/4800UNITS(2.4ML)"
+}
+]
 },
 {
 "app": "BLA761467",
@@ -6160,7 +6735,21 @@
 "sub": "ORIG-2",
 "class": "Efficacy",
 "date": "2025-09-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761467Orig2s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761467Orig2s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761467s000lblOrig2.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "790MG/9600UNITS(4.8ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "395MG/4800UNITS(2.4ML)"
+}
+]
 },
 {
 "app": "BLA761061",
@@ -6171,7 +6760,16 @@
 "sub": "SUPPL-26",
 "class": "Efficacy",
 "date": "2025-09-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761061Orig1s026ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761061Orig1s026ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761061s026lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "100MG/ML"
+}
+]
 },
 {
 "app": "NDA215029",
@@ -6182,7 +6780,16 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2025-09-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215029Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215029Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215029s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SYSTEM",
+"route": "TOPICAL",
+"strength": "10%"
+}
+]
 },
 {
 "app": "BLA761181",
@@ -6193,7 +6800,21 @@
 "sub": "SUPPL-2",
 "class": "Efficacy",
 "date": "2025-09-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761181Orig1s002ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761181Orig1s002ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761181s002lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INJECTION",
+"strength": "345MG/2.3ML"
+},
+{
+"form": "SOLUTION",
+"route": "INJECTION",
+"strength": "1200MG/8ML"
+}
+]
 },
 {
 "app": "NDA218881",
@@ -6204,7 +6825,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-09-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218881Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218881Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218881s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 200MG BASE"
+}
+]
 },
 {
 "app": "NDA219070",
@@ -6215,7 +6845,21 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-09-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219070Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219070Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219070s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 20MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 30MG BASE"
+}
+]
 },
 {
 "app": "NDA217628",
@@ -6226,7 +6870,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-09-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217628Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217628Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/217628s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "SOLUTION/DROPS",
+"route": "OTIC",
+"strength": "1%"
+}
+]
 },
 {
 "app": "BLA761439",
@@ -6237,7 +6890,21 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2025-09-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761439Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761439Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761439s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INJECTION",
+"strength": "60MG/ML"
+},
+{
+"form": "SOLUTION",
+"route": "INJECTION",
+"strength": "120MG/1.7ML(70MG/ML)"
+}
+]
 },
 {
 "app": "BLA761061",
@@ -6248,7 +6915,16 @@
 "sub": "SUPPL-29",
 "class": "Efficacy",
 "date": "2025-09-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761061Orig1s028s029ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761061Orig1s028s029ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761061s028s029lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "100MG/ML"
+}
+]
 },
 {
 "app": "BLA761061",
@@ -6259,7 +6935,16 @@
 "sub": "SUPPL-28",
 "class": "Efficacy",
 "date": "2025-09-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761061Orig1s028s029ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761061Orig1s028s029ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761061s028s029lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "100MG/ML"
+}
+]
 },
 {
 "app": "NDA218436",
@@ -6270,14 +6955,23 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-09-30",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218436Orig1s000ltr.pdf"
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218436Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218436s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "25MG"
+}
+]
 }
 ],
 "openfda_total": 325,
 "complete": true
 },
 "2025-10": {
-"fetched": "2026-11-24",
+"fetched": "2026-11-27",
 "items": [
 {
 "app": "BLA761377",
@@ -6288,7 +6982,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-10-02",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761377Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761377Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761377s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "2MG(0.05ML"
+}
+]
 },
 {
 "app": "NDA215358",
@@ -6299,7 +7002,26 @@
 "sub": "SUPPL-10",
 "class": "Efficacy",
 "date": "2025-10-02",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215358Orig1s010ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215358Orig1s010ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215358s010lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 40MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 100MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 20MG BASE"
+}
+]
 },
 {
 "app": "BLA761034",
@@ -6310,7 +7032,16 @@
 "sub": "SUPPL-58",
 "class": "Efficacy",
 "date": "2025-10-02",
-"letter": ""
+"letter": "",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761034s058lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "1200MG/20ML"
+}
+]
 },
 {
 "app": "BLA761347",
@@ -6321,7 +7052,16 @@
 "sub": "SUPPL-3",
 "class": "Efficacy",
 "date": "2025-10-02",
-"letter": ""
+"letter": "",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761347s003lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "125MG"
+}
+]
 },
 {
 "app": "NDA213702",
@@ -6332,7 +7072,16 @@
 "sub": "SUPPL-11",
 "class": "Efficacy",
 "date": "2025-10-02",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213702Orig1s011ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213702Orig1s011ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/213702s011lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "POWDER",
+"route": "INTRAVENOUS",
+"strength": "4MG/VIAL"
+}
+]
 },
 {
 "app": "NDA210661",
@@ -6343,7 +7092,21 @@
 "sub": "SUPPL-4",
 "class": "Efficacy",
 "date": "2025-10-03",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210661Orig1s004ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210661Orig1s004ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/210661s004lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "POWDER",
+"route": "INTRAVENOUS",
+"strength": "EQ 100MG BASE/VIAL"
+},
+{
+"form": "POWDER",
+"route": "INTRAVENOUS",
+"strength": "EQ 500MG BASE/VIAL"
+}
+]
 },
 {
 "app": "NDA215985",
@@ -6354,7 +7117,26 @@
 "sub": "SUPPL-12",
 "class": "Efficacy",
 "date": "2025-10-04",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215985Orig1s012ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215985Orig1s012ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215985Orig1s012lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CREAM",
+"route": "TOPICAL",
+"strength": "0.05%"
+},
+{
+"form": "CREAM",
+"route": "TOPICAL",
+"strength": "0.3%"
+},
+{
+"form": "CREAM",
+"route": "TOPICAL",
+"strength": "0.15%"
+}
+]
 },
 {
 "app": "NDA218764",
@@ -6365,7 +7147,21 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-10-07",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218764Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218764Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218764s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "18MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "9MG"
+}
+]
 },
 {
 "app": "NDA217294",
@@ -6376,7 +7172,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-10-07",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217294Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217294Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/217294s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "80MG/2.67ML (30MG/ML)"
+}
+]
 },
 {
 "app": "BLA125289",
@@ -6387,7 +7192,16 @@
 "sub": "SUPPL-157",
 "class": "Efficacy",
 "date": "2025-10-07",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125289Orig1s157ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125289Orig1s157ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/125289s157lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "50MG"
+}
+]
 },
 {
 "app": "BLA761097",
@@ -6398,7 +7212,16 @@
 "sub": "SUPPL-30",
 "class": "Efficacy",
 "date": "2025-10-08",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761097Orig1s030ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761097Orig1s030ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761097s030lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INTRAVENOUS",
+"strength": "350MG"
+}
+]
 },
 {
 "app": "BLA125559",
@@ -6409,7 +7232,21 @@
 "sub": "SUPPL-47",
 "class": "Efficacy",
 "date": "2025-10-09",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125559Orig1s047Correctedltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125559Orig1s047Correctedltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/125559s047lblcorrection.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "75MG"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "150MG"
+}
+]
 },
 {
 "app": "NDA203469",
@@ -6420,7 +7257,31 @@
 "sub": "SUPPL-38",
 "class": "Efficacy",
 "date": "2025-10-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/203469Orig1s038ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/203469Orig1s038ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/203469s038lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 10MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 45MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 30MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 15MG BASE"
+}
+]
 },
 {
 "app": "NDA018735",
@@ -6431,7 +7292,31 @@
 "sub": "SUPPL-75",
 "class": "Efficacy",
 "date": "2025-10-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/018735Orig1s075,s076ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/018735Orig1s075,s076ltr.pdf",
+"label": "",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "51%"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "76%"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "41%"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "61%"
+}
+]
 },
 {
 "app": "NDA214860",
@@ -6442,7 +7327,51 @@
 "sub": "SUPPL-7",
 "class": "Efficacy",
 "date": "2025-10-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/214860Orig1s007ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/214860Orig1s007ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/214860s007lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "FOR SUSPENSION",
+"route": "ORAL",
+"strength": "1GM/PACKET"
+},
+{
+"form": "FOR SUSPENSION",
+"route": "ORAL",
+"strength": "6.67GM/PACKET"
+},
+{
+"form": "FOR SUSPENSION",
+"route": "ORAL",
+"strength": "5GM/PACKET"
+},
+{
+"form": "FOR SUSPENSION",
+"route": "ORAL",
+"strength": "3GM/PACKET"
+},
+{
+"form": "FOR SUSPENSION",
+"route": "ORAL",
+"strength": "0.5GM/PACKET"
+},
+{
+"form": "FOR SUSPENSION",
+"route": "ORAL",
+"strength": "6GM/PACKET"
+},
+{
+"form": "FOR SUSPENSION",
+"route": "ORAL",
+"strength": "4GM/PACKET"
+},
+{
+"form": "FOR SUSPENSION",
+"route": "ORAL",
+"strength": "2GM/PACKET"
+}
+]
 },
 {
 "app": "NDA211675",
@@ -6453,7 +7382,26 @@
 "sub": "SUPPL-28",
 "class": "Efficacy",
 "date": "2025-10-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211675Orig1s028,218347Orig1s005Correctedltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211675Orig1s028,218347Orig1s005Correctedltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/211675Orig1s028,218347Orig1s005lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET, EXTENDED RELEASE",
+"route": "ORAL",
+"strength": "30MG"
+},
+{
+"form": "TABLET, EXTENDED RELEASE",
+"route": "ORAL",
+"strength": "45MG"
+},
+{
+"form": "TABLET, EXTENDED RELEASE",
+"route": "ORAL",
+"strength": "15MG"
+}
+]
 },
 {
 "app": "NDA213586",
@@ -6464,7 +7412,46 @@
 "sub": "SUPPL-8",
 "class": "Efficacy",
 "date": "2025-10-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213586Orig1s008,s009ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213586Orig1s008,s009ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/213586s008s009lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SUSPENSION, EXTENDED RELEASE",
+"route": "SUBCUTANEOUS",
+"strength": "200MG/0.56ML (200MG/0.56ML)"
+},
+{
+"form": "SUSPENSION, EXTENDED RELEASE",
+"route": "SUBCUTANEOUS",
+"strength": "125MG/0.35ML (125MG/0.35ML)"
+},
+{
+"form": "SUSPENSION, EXTENDED RELEASE",
+"route": "SUBCUTANEOUS",
+"strength": "75MG/0.21ML (75MG/0.21ML)"
+},
+{
+"form": "SUSPENSION, EXTENDED RELEASE",
+"route": "SUBCUTANEOUS",
+"strength": "250MG/0.7ML (250MG/0.7ML)"
+},
+{
+"form": "SUSPENSION, EXTENDED RELEASE",
+"route": "SUBCUTANEOUS",
+"strength": "150MG/0.42ML (150MG/0.42ML)"
+},
+{
+"form": "SUSPENSION, EXTENDED RELEASE",
+"route": "SUBCUTANEOUS",
+"strength": "100MG/0.28ML (100MG/0.28ML)"
+},
+{
+"form": "SUSPENSION, EXTENDED RELEASE",
+"route": "SUBCUTANEOUS",
+"strength": "50MG/0.14ML (50MG/0.14ML)"
+}
+]
 },
 {
 "app": "BLA761495",
@@ -6475,7 +7462,10 @@
 "sub": "ORIG-1",
 "class": "Type 9 - New indication submitted as distinct BLA, consolidated",
 "date": "2025-10-15",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761495Orig1s000ltr.pdf"
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761495Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761495s000lbl.pdf",
+"priority": "PRIORITY",
+"products": []
 },
 {
 "app": "NDA219868",
@@ -6486,7 +7476,21 @@
 "sub": "ORIG-1",
 "class": "Type 10 - New Indication Submitted as Distinct NDA - Not Consolidated",
 "date": "2025-10-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219868Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219868Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219868s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "EQ 510MG IRON/17ML (EQ 30MG IRON/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "EQ 300MG IRON/10ML (EQ 30MG IRON/ML)"
+}
+]
 },
 {
 "app": "NDA213082",
@@ -6497,7 +7501,16 @@
 "sub": "SUPPL-11",
 "class": "Efficacy",
 "date": "2025-10-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/203214Orig1s039, 213082Orig1s011ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/203214Orig1s039, 213082Orig1s011ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/203214s039,213082s011lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "ORAL",
+"strength": "EQ 1MG BASE/ML"
+}
+]
 },
 {
 "app": "NDA203214",
@@ -6508,7 +7521,21 @@
 "sub": "SUPPL-39",
 "class": "Efficacy",
 "date": "2025-10-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/203214Orig1s039, 213082Orig1s011ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/203214Orig1s039, 213082Orig1s011ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/203214s039,213082s011lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 10MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 5MG BASE"
+}
+]
 },
 {
 "app": "NDA215904",
@@ -6519,7 +7546,16 @@
 "sub": "SUPPL-11",
 "class": "Efficacy",
 "date": "2025-10-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215904Orig1s011s013ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215904Orig1s011s013ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215904s011s013lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SUSPENSION",
+"route": "ORAL",
+"strength": "50MG/ML"
+}
+]
 },
 {
 "app": "NDA219910",
@@ -6530,7 +7566,16 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2025-10-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219910Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219910Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219910s000Correctedlbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION/DROPS",
+"route": "OPHTHALMIC",
+"strength": "EQ 0.239% BASE/ML"
+}
+]
 },
 {
 "app": "BLA125486",
@@ -6541,7 +7586,16 @@
 "sub": "SUPPL-38",
 "class": "Efficacy",
 "date": "2025-10-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125486Orig1s037,s038ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125486Orig1s037,s038ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/125486s037s038lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "1000MG/40ML"
+}
+]
 },
 {
 "app": "BLA125486",
@@ -6552,7 +7606,16 @@
 "sub": "SUPPL-37",
 "class": "Efficacy",
 "date": "2025-10-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125486Orig1s037,s038ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125486Orig1s037,s038ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/125486s037s038lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "1000MG/40ML"
+}
+]
 },
 {
 "app": "NDA213051",
@@ -6563,7 +7626,41 @@
 "sub": "SUPPL-24",
 "class": "Efficacy",
 "date": "2025-10-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213051Orig1s024,s028,s029ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213051Orig1s024,s028,s029ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/213051s024,s028s029lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "9MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "1.5MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "7MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "4MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "14MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "3MG"
+}
+]
 },
 {
 "app": "BLA761224",
@@ -6574,7 +7671,16 @@
 "sub": "SUPPL-6",
 "class": "Efficacy",
 "date": "2025-10-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761224Orig1s006ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761224Orig1s006ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761224s006lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "210MG/1.91ML(110MG/ML)"
+}
+]
 },
 {
 "app": "BLA761195",
@@ -6585,29 +7691,61 @@
 "sub": "SUPPL-12",
 "class": "Efficacy",
 "date": "2025-10-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761195Orig1s012,761304Orig1s010ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761195Orig1s012,761304Orig1s010ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761195s012lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "400MG"
+}
+]
 },
 {
 "app": "BLA761304",
 "brand": "Vyvgart Hytrulo",
-"generic": "efgartigimod alfa and hyaluronidase (human recombinant)",
+"generic": "efgartigimod alfa and hyaluronidase-qvfc",
 "sponsor": "Argenx Bv",
 "kind": "efficacy supplement",
 "sub": "SUPPL-10",
 "class": "Efficacy",
 "date": "2025-10-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761195Orig1s012,761304Orig1s010ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761195Orig1s012,761304Orig1s010ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761304s010lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "1008MG"
+}
+]
 },
 {
 "app": "BLA761328",
 "brand": "Beyfortus",
-"generic": "nirsevimab",
+"generic": "nirsevimab-alip",
 "sponsor": "Astrazeneca Ab",
 "kind": "efficacy supplement",
 "sub": "SUPPL-12",
 "class": "Efficacy",
 "date": "2025-10-20",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761328Orig1s012ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761328Orig1s012ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761328s012lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "50MG"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "100MG"
+}
+]
 },
 {
 "app": "NDA212271",
@@ -6618,7 +7756,16 @@
 "sub": "ORIG-1",
 "class": "Type 2 - New Active Ingredient",
 "date": "2025-10-22",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/212271Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/212271Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/212271s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "POWDER",
+"route": "INTRAVENOUS",
+"strength": "EQ 6GM BASE/VIAL"
+}
+]
 },
 {
 "app": "BLA761119",
@@ -6629,7 +7776,16 @@
 "sub": "SUPPL-11",
 "class": "Efficacy",
 "date": "2025-10-22",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761119Orig1s011ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761119Orig1s011ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761119s011lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "100MG/ML"
+}
+]
 },
 {
 "app": "BLA761440",
@@ -6640,7 +7796,16 @@
 "sub": "ORIG-1",
 "class": "Type 2 - New Active Ingredient",
 "date": "2025-10-23",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761440Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761440Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761440s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "70MG"
+}
+]
 },
 {
 "app": "NDA214988",
@@ -6651,7 +7816,16 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2025-10-23",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/214988Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/214988Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/214988s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "98% (5ML)"
+}
+]
 },
 {
 "app": "NDA220256",
@@ -6662,7 +7836,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-10-23",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/220256Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/220256Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/220256s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "ORAL",
+"strength": "0.02MG/ML"
+}
+]
 },
 {
 "app": "NDA219469",
@@ -6673,7 +7856,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-10-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219469Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219469Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219469s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "60MG"
+}
+]
 },
 {
 "app": "NDA218944",
@@ -6684,7 +7876,26 @@
 "sub": "SUPPL-3",
 "class": "Efficacy",
 "date": "2025-10-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218944Orig1s003ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218944Orig1s003ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218944s003lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 110MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 160MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 25MG BASE"
+}
+]
 },
 {
 "app": "NDA219108",
@@ -6695,7 +7906,16 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2025-10-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219108Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219108Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219108s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "50MG/5ML (10MG/ML)"
+}
+]
 },
 {
 "app": "BLA761363",
@@ -6706,7 +7926,21 @@
 "sub": "SUPPL-7",
 "class": "Efficacy",
 "date": "2025-10-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761363Orig1s007ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761363Orig1s007ltr.pdf",
+"label": "",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "60MG"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "45MG"
+}
+]
 },
 {
 "app": "NDA221021",
@@ -6717,7 +7951,16 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2025-10-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/221021Orig1s000MGLtr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/221021Orig1s000MGLtr.pdf",
+"label": "",
+"priority": "UNKNOWN",
+"products": [
+{
+"form": "GAS",
+"route": "INHALATION",
+"strength": "N/A"
+}
+]
 },
 {
 "app": "BLA761381",
@@ -6728,7 +7971,16 @@
 "sub": "SUPPL-2",
 "class": "Efficacy",
 "date": "2025-10-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761381Orig1s002ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761381Orig1s002ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761381s002lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "600MG; 10000UNITS PER5ML(120MG/2000UNITS PER ML)"
+}
+]
 },
 {
 "app": "BLA761381",
@@ -6739,7 +7991,16 @@
 "sub": "SUPPL-1",
 "class": "Efficacy",
 "date": "2025-10-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761381Orig1s001ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761381Orig1s001ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761381s001lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "600MG; 10000UNITS PER5ML(120MG/2000UNITS PER ML)"
+}
+]
 },
 {
 "app": "BLA761444",
@@ -6750,7 +8011,21 @@
 "sub": "ORIG-2",
 "class": "Efficacy",
 "date": "2025-10-29",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761444Orig2s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761444Orig2s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761444s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "120MG/1.7ML(70MG/ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "60MG/ML"
+}
+]
 },
 {
 "app": "BLA761436",
@@ -6761,7 +8036,21 @@
 "sub": "ORIG-2",
 "class": "Efficacy",
 "date": "2025-10-29",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761436Orig2s000ltr.pdf"
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761436Orig2s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761436s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "120MG/1.7ML(70MG/ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "60MG/ML"
+}
+]
 },
 {
 "app": "BLA761398",
@@ -6772,7 +8061,21 @@
 "sub": "ORIG-2",
 "class": "Efficacy",
 "date": "2025-10-29",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761398Orig2s000ltr.pdf"
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761398Orig2s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761398Orig2s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTION",
+"route": "",
+"strength": "60MG/ML"
+},
+{
+"form": "INJECTION",
+"route": "",
+"strength": "120MG/1.7ML (70 MG/ML)"
+}
+]
 },
 {
 "app": "BLA761439",
@@ -6783,7 +8086,21 @@
 "sub": "ORIG-2",
 "class": "Efficacy",
 "date": "2025-10-29",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761439Orig2s000ltr.pdf"
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761439Orig2s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761439s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INJECTION",
+"strength": "60MG/ML"
+},
+{
+"form": "SOLUTION",
+"route": "INJECTION",
+"strength": "120MG/1.7ML(70MG/ML)"
+}
+]
 },
 {
 "app": "BLA761424",
@@ -6794,7 +8111,21 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2025-10-29",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761424Orig1s000ltr.pdf"
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761424Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761424s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "60MG/ML"
+},
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "120MG/1.7ML"
+}
+]
 },
 {
 "app": "BLA761097",
@@ -6805,7 +8136,16 @@
 "sub": "SUPPL-32",
 "class": "Efficacy",
 "date": "2025-10-29",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761097Orig1s032ltr.pdf"
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761097Orig1s032ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761097s032lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INTRAVENOUS",
+"strength": "350MG"
+}
+]
 },
 {
 "app": "BLA761392",
@@ -6816,7 +8156,21 @@
 "sub": "ORIG-2",
 "class": "Efficacy",
 "date": "2025-10-29",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761392Orig2s000ltr.pdf"
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761392Orig2s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761392s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "60MG/ML"
+},
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "70MG/ML"
+}
+]
 },
 {
 "app": "BLA761404",
@@ -6827,14 +8181,28 @@
 "sub": "ORIG-2",
 "class": "Efficacy",
 "date": "2025-10-29",
-"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761404Orig2s000ltr.pdf"
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761404Orig2s000ltr.pdf",
+"label": "",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "120MG/1.7ML(70MG/ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "60MG/ML"
+}
+]
 }
 ],
 "openfda_total": 286,
 "complete": true
 },
 "2025-11": {
-"fetched": "2026-11-24",
+"fetched": "2026-11-27",
 "items": [
 {
 "app": "NDA219792",
@@ -6845,7 +8213,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-11-03",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219792Orig1000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219792Orig1000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219792s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "FOR SOLUTION",
+"route": "ORAL",
+"strength": "2GM/PACKET; 2GM/PACKET"
+}
+]
 },
 {
 "app": "NDA202811",
@@ -6856,7 +8233,26 @@
 "sub": "SUPPL-22",
 "class": "Efficacy",
 "date": "2025-11-04",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/202811Orig1s022ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/202811Orig1s022ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/202811s022lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "72MCG"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "145MCG"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "290MCG"
+}
+]
 },
 {
 "app": "NDA209500",
@@ -6867,7 +8263,26 @@
 "sub": "SUPPL-16",
 "class": "Efficacy",
 "date": "2025-11-05",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209500Orig1s016ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209500Orig1s016ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/209500s016lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 21MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 42MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 10.5MG BASE"
+}
+]
 },
 {
 "app": "BLA761145",
@@ -6878,7 +8293,16 @@
 "sub": "SUPPL-29",
 "class": "Efficacy",
 "date": "2025-11-06",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761145Orig1s029ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761145Orig1s029ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761145s029lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "120MG"
+}
+]
 },
 {
 "app": "NDA220305",
@@ -6889,7 +8313,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-11-13",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/220305Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/220305Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/220305s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "200MG"
+}
+]
 },
 {
 "app": "BLA761450",
@@ -6900,7 +8333,16 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2025-11-13",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761450Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761450Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761450s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INTRAVENOUS",
+"strength": "420MG/14ML(30MG/ML)"
+}
+]
 },
 {
 "app": "BLA761324",
@@ -6911,7 +8353,21 @@
 "sub": "SUPPL-9",
 "class": "Efficacy",
 "date": "2025-11-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761324Orig1s009ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761324Orig1s009ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761324s009lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "4MG/0.8ML"
+},
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "48MG/0.8ML"
+}
+]
 },
 {
 "app": "NDA219947",
@@ -6922,7 +8378,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-11-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219947Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219947Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219947s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "EQ 25MG BASE/0.5ML (EQ 25MG BASE/0.5ML)"
+}
+]
 },
 {
 "app": "BLA761145",
@@ -6933,7 +8398,16 @@
 "sub": "SUPPL-32",
 "class": "Efficacy",
 "date": "2025-11-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761145Orig1s032ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761145Orig1s032ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761145s032lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "120MG"
+}
+]
 },
 {
 "app": "BLA761355",
@@ -6944,7 +8418,16 @@
 "sub": "SUPPL-10",
 "class": "Efficacy",
 "date": "2025-11-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761355Orig1s010ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761355Orig1s010ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761355s010lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "8MG(0.07ML"
+}
+]
 },
 {
 "app": "NDA219972",
@@ -6955,7 +8438,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-11-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219972Orig1s000correctedltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219972Orig1s000correctedltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219972s000lblCorrected.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "10MG"
+}
+]
 },
 {
 "app": "NDA215390",
@@ -6966,7 +8458,21 @@
 "sub": "SUPPL-2",
 "class": "Efficacy",
 "date": "2025-11-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215390Orig1s002ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215390Orig1s002ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215390s002lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "FILM",
+"route": "BUCCAL, SUBLINGUAL",
+"strength": "EQ 0.18MG BASE"
+},
+{
+"form": "FILM",
+"route": "BUCCAL, SUBLINGUAL",
+"strength": "EQ 0.12MG BASE"
+}
+]
 },
 {
 "app": "BLA761344",
@@ -6977,7 +8483,21 @@
 "sub": "SUPPL-1",
 "class": "Efficacy",
 "date": "2025-11-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761344Orig1s001ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761344Orig1s001ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761344s001lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "1MG"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "10MG"
+}
+]
 },
 {
 "app": "NDA213756",
@@ -6988,7 +8508,21 @@
 "sub": "SUPPL-6",
 "class": "Efficacy",
 "date": "2025-11-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213756Orig1s006ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213756Orig1s006ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/213756s006lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 25MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 10MG BASE"
+}
+]
 },
 {
 "app": "NDA218160",
@@ -6999,7 +8533,41 @@
 "sub": "SUPPL-6",
 "class": "Efficacy",
 "date": "2025-11-20",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213246Orig1s015,%20s016,%20218160Orig1s005,%20s006ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213246Orig1s015,%20s016,%20218160Orig1s005,%20s006ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/213246s015s016,218160s005s006lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "40MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "120MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "40MG"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "80MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "160MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "80MG"
+}
+]
 },
 {
 "app": "NDA213246",
@@ -7010,7 +8578,21 @@
 "sub": "SUPPL-15",
 "class": "Efficacy",
 "date": "2025-11-20",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213246Orig1s015,%20s016,%20218160Orig1s005,%20s006ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213246Orig1s015,%20s016,%20218160Orig1s005,%20s006ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/213246s015s016,218160s005s006lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "40MG"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "80MG"
+}
+]
 },
 {
 "app": "BLA125514",
@@ -7021,7 +8603,16 @@
 "sub": "SUPPL-188",
 "class": "Efficacy",
 "date": "2025-11-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125514Orig1s188ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/125514Orig1s188ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/125514s188lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "100MG/4ML (25MG/ML)"
+}
+]
 },
 {
 "app": "BLA761467",
@@ -7032,7 +8623,21 @@
 "sub": "SUPPL-1",
 "class": "Efficacy",
 "date": "2025-11-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761467Orig1s001ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761467Orig1s001ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761467s001lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "790MG/9600UNITS(4.8ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "395MG/4800UNITS(2.4ML)"
+}
+]
 },
 {
 "app": "NDA215596",
@@ -7043,7 +8648,16 @@
 "sub": "SUPPL-7",
 "class": "Efficacy",
 "date": "2025-11-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215596Orig1s007correctedltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215596Orig1s007correctedltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215596Orig1s007correctedlbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "200MG"
+}
+]
 },
 {
 "app": "NDA211616",
@@ -7054,7 +8668,16 @@
 "sub": "SUPPL-24",
 "class": "Efficacy",
 "date": "2025-11-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211616Orig1s024ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211616Orig1s024ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/211616s024lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "180MG"
+}
+]
 },
 {
 "app": "NDA211617",
@@ -7065,7 +8688,16 @@
 "sub": "SUPPL-29",
 "class": "Efficacy",
 "date": "2025-11-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211617Orig1s029ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/211617Orig1s029ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/211617s029lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "180MG; 10MG"
+}
+]
 },
 {
 "app": "BLA761137",
@@ -7076,7 +8708,21 @@
 "sub": "SUPPL-32",
 "class": "Efficacy",
 "date": "2025-11-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761137Orig1s032ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761137Orig1s032ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761137s032lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "20MG/VIAL"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "30MG/VIAL"
+}
+]
 },
 {
 "app": "BLA761297",
@@ -7087,7 +8733,16 @@
 "sub": "SUPPL-1",
 "class": "Efficacy",
 "date": "2025-11-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761297Orig1s001ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761297Orig1s001ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761297s001lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "300MG/5ML(60MG/ML)"
+}
+]
 },
 {
 "app": "NDA215256",
@@ -7098,7 +8753,46 @@
 "sub": "SUPPL-23",
 "class": "Efficacy",
 "date": "2025-11-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215256Orig1s023ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215256Orig1s023ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215256s023lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "1MG/0.5ML (1MG/0.5ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "0.25MG/0.5ML (0.25MG/0.5ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "2.4MG/0.75ML (2.4MG/0.75ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "0.5MG/0.5ML (0.5MG/0.5ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "7.2MG/0.75ML (7.2MG/0.75ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "9.6MG/3ML (3.2MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "1.7MG/0.75ML (1.7MG/0.75ML)"
+}
+]
 },
 {
 "app": "BLA761381",
@@ -7109,7 +8803,16 @@
 "sub": "SUPPL-5",
 "class": "Efficacy",
 "date": "2025-11-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761381Orig1s005ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761381Orig1s005ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761381s005lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "600MG; 10000UNITS PER5ML(120MG/2000UNITS PER ML)"
+}
+]
 },
 {
 "app": "BLA761347",
@@ -7120,7 +8823,16 @@
 "sub": "SUPPL-4",
 "class": "Efficacy",
 "date": "2025-11-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761347Orig1s004ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761347Orig1s004ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761347s004lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "125MG"
+}
+]
 },
 {
 "app": "BLA761069",
@@ -7131,7 +8843,16 @@
 "sub": "SUPPL-52",
 "class": "Efficacy",
 "date": "2025-11-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761069Orig1s052ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761069Orig1s052ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761069s052lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "50MG/ML"
+}
+]
 },
 {
 "app": "NDA215358",
@@ -7142,7 +8863,26 @@
 "sub": "SUPPL-12",
 "class": "Efficacy",
 "date": "2025-11-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215358Orig1s012ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215358Orig1s012ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215358s012lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 40MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 100MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 20MG BASE"
+}
+]
 },
 {
 "app": "BLA761434",
@@ -7153,7 +8893,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-11-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761434Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761434Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761434s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "400MG/2ML(200MG/ML)"
+}
+]
 },
 {
 "app": "BLA761212",
@@ -7164,7 +8913,16 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2025-11-28",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761212Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761212Orig1s000ltr.pdf",
+"label": "",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTION",
+"route": "SOLUTION",
+"strength": "6MG/0.6ML"
+}
+]
 },
 {
 "app": "BLA761340",
@@ -7175,14 +8933,23 @@
 "sub": "ORIG-2",
 "class": "Efficacy",
 "date": "2025-11-28",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761340Orig2s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761340Orig2s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761340s000_Orig2lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTION",
+"route": "SOLUTION",
+"strength": "300 mg/30 mL (10 mg/mL)"
+}
+]
 }
 ],
 "openfda_total": 246,
 "complete": true
 },
 "2025-12": {
-"fetched": "2026-11-24",
+"fetched": "2026-11-27",
 "items": [
 {
 "app": "NDA216059",
@@ -7193,7 +8960,21 @@
 "sub": "SUPPL-5",
 "class": "Efficacy",
 "date": "2025-12-02",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/216059Orig1s005ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/216059Orig1s005ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/216059s005lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "50MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "100MG"
+}
+]
 },
 {
 "app": "NDA212819",
@@ -7204,7 +8985,10 @@
 "sub": "SUPPL-8",
 "class": "Efficacy",
 "date": "2025-12-09",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/212819Orig1s008ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/212819Orig1s008ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/212819s008lbl.pdf",
+"priority": "STANDARD",
+"products": []
 },
 {
 "app": "BLA761232",
@@ -7215,7 +8999,16 @@
 "sub": "SUPPL-10",
 "class": "Efficacy",
 "date": "2025-12-09",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761232Orig1s010ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761232Orig1s010ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761232s010lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTION",
+"route": "SOLUTION",
+"strength": "100MG/10ML"
+}
+]
 },
 {
 "app": "BLA761232",
@@ -7226,7 +9019,16 @@
 "sub": "SUPPL-9",
 "class": "Efficacy",
 "date": "2025-12-09",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761232Orig1s009ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761232Orig1s009ltr.pdf",
+"label": "",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTION",
+"route": "SOLUTION",
+"strength": "100MG/10ML"
+}
+]
 },
 {
 "app": "BLA761232",
@@ -7237,7 +9039,16 @@
 "sub": "SUPPL-13",
 "class": "Efficacy",
 "date": "2025-12-09",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761232Orig1s013ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761232Orig1s013ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761232s013lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTION",
+"route": "SOLUTION",
+"strength": "100MG/10ML"
+}
+]
 },
 {
 "app": "NDA218230",
@@ -7248,7 +9059,16 @@
 "sub": "SUPPL-1",
 "class": "Efficacy",
 "date": "2025-12-11",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218230Orig1s001ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218230Orig1s001ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218230s001lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 750MG BASE"
+}
+]
 },
 {
 "app": "NDA219884",
@@ -7259,7 +9079,36 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-12-11",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219884Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219884Orig1s000ltr.pdf",
+"label": "",
+"priority": "STANDARD",
+"products": [
+{
+"form": "FOR SOLUTION",
+"route": "ORAL",
+"strength": "8000MG/PACKET"
+},
+{
+"form": "FOR SOLUTION",
+"route": "ORAL",
+"strength": "5000MG/PACKET"
+},
+{
+"form": "SOLUTION",
+"route": "ORAL",
+"strength": "10,000MG"
+},
+{
+"form": "FOR SOLUTION",
+"route": "ORAL",
+"strength": "6000MG/PACKET"
+},
+{
+"form": "SOLUTION",
+"route": "ORAL",
+"strength": "12,000MG"
+}
+]
 },
 {
 "app": "NDA219776",
@@ -7270,7 +9119,36 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-12-11",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219776Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219776Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219776Orig1s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "PELLETS",
+"route": "ORAL",
+"strength": "EQ 132MG BASE/PACKET"
+},
+{
+"form": "PELLETS",
+"route": "ORAL",
+"strength": "EQ 96MG BASE/PACKET"
+},
+{
+"form": "PELLETS",
+"route": "ORAL",
+"strength": "EQ 150MG BASE/PACKET"
+},
+{
+"form": "PELLETS",
+"route": "ORAL",
+"strength": "EQ 108MG BASE/PACKET"
+},
+{
+"form": "PELLETS",
+"route": "ORAL",
+"strength": "EQ 72MG BASE/PACKET"
+}
+]
 },
 {
 "app": "BLA761142",
@@ -7281,7 +9159,16 @@
 "sub": "SUPPL-4",
 "class": "Efficacy",
 "date": "2025-12-11",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761142Orig1s004ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761142Orig1s004ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761142s004lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "100MG/10ML"
+}
+]
 },
 {
 "app": "NDA216793",
@@ -7292,7 +9179,21 @@
 "sub": "SUPPL-1",
 "class": "Efficacy",
 "date": "2025-12-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/216793Orig1s001ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/216793Orig1s001ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/216793s001lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "500MG; EQ 100MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "500MG; EQ 50MG BASE"
+}
+]
 },
 {
 "app": "NDA218571",
@@ -7303,7 +9204,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-12-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218571Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218571Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218571s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SPRAY",
+"route": "NASAL",
+"strength": "70MG"
+}
+]
 },
 {
 "app": "BLA761067",
@@ -7314,7 +9224,16 @@
 "sub": "SUPPL-24",
 "class": "Efficacy",
 "date": "2025-12-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761067Orig1s024ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761067Orig1s024ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761067s024lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "100MG/1ML"
+}
+]
 },
 {
 "app": "BLA761427",
@@ -7325,7 +9244,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-12-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761427Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761427Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761427Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "300MG/1.2ML"
+}
+]
 },
 {
 "app": "NDA219491",
@@ -7336,7 +9264,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-12-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219491Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219491Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/219491Orig1s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "FOR SUSPENSION",
+"route": "ORAL",
+"strength": "3GM/PACKET"
+}
+]
 },
 {
 "app": "NDA022526",
@@ -7347,7 +9284,16 @@
 "sub": "SUPPL-13",
 "class": "Efficacy",
 "date": "2025-12-13",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/022526Orig1s013ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/022526Orig1s013ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022526s013lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "100MG"
+}
+]
 },
 {
 "app": "BLA761139",
@@ -7358,7 +9304,16 @@
 "sub": "SUPPL-38",
 "class": "Efficacy",
 "date": "2025-12-15",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761139Orig1s038; s042ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761139Orig1s038; s042ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761139s038s042lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "100MG"
+}
+]
 },
 {
 "app": "BLA761458",
@@ -7369,7 +9324,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-12-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761458Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761458Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761458Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTION",
+"route": "",
+"strength": "100MG"
+}
+]
 },
 {
 "app": "NDA210858",
@@ -7380,7 +9344,31 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-12-16",
-"letter": "httpS://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210858Orig1s000ltr.pdf"
+"letter": "httpS://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210858Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/210858s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "FILM",
+"route": "ORAL",
+"strength": "EQ 100MG BASE"
+},
+{
+"form": "FILM",
+"route": "ORAL",
+"strength": "EQ 50MG BASE"
+},
+{
+"form": "FILM",
+"route": "ORAL",
+"strength": "EQ 75MG BASE"
+},
+{
+"form": "FILM",
+"route": "ORAL",
+"strength": "EQ 25MG BASE"
+}
+]
 },
 {
 "app": "NDA209115",
@@ -7391,7 +9379,26 @@
 "sub": "SUPPL-15",
 "class": "Efficacy",
 "date": "2025-12-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209115Orig1s014,s015ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209115Orig1s014,s015ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/209115s014s015lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 250MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 200MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 300MG BASE"
+}
+]
 },
 {
 "app": "NDA209115",
@@ -7402,7 +9409,26 @@
 "sub": "SUPPL-14",
 "class": "Efficacy",
 "date": "2025-12-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209115Orig1s014,s015ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209115Orig1s014,s015ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/209115s014s015lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 250MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 200MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 300MG BASE"
+}
+]
 },
 {
 "app": "BLA761433",
@@ -7413,7 +9439,21 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2025-12-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761433Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761433Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761433s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTION",
+"route": "",
+"strength": "14ML"
+},
+{
+"form": "INJECTION",
+"route": "",
+"strength": "10ML"
+}
+]
 },
 {
 "app": "BLA761334",
@@ -7424,7 +9464,16 @@
 "sub": "SUPPL-5",
 "class": "Efficacy",
 "date": "2025-12-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761334Orig1s005ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761334Orig1s005ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761334s005lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INTRAVENOUS",
+"strength": "500MG/20ML(25MG/ML)"
+}
+]
 },
 {
 "app": "BLA761473",
@@ -7435,7 +9484,21 @@
 "sub": "ORIG-1",
 "class": "Type 2 - New Active Ingredient",
 "date": "2025-12-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761473Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761473Orig1s000ltr.pdf",
+"label": "",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTION",
+"route": "",
+"strength": "6MG/ML"
+},
+{
+"form": "INJECTION",
+"route": "",
+"strength": "10MG/ML"
+}
+]
 },
 {
 "app": "NDA204370",
@@ -7446,7 +9509,41 @@
 "sub": "SUPPL-17",
 "class": "Efficacy",
 "date": "2025-12-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/204370Orig1s014,s015,s016,s017ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/204370Orig1s014,s015,s016,s017ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/204370s014s015s016s017lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 0.75MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 6MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 3MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 0.5MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 4.5MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 1.5MG BASE"
+}
+]
 },
 {
 "app": "NDA204370",
@@ -7457,7 +9554,41 @@
 "sub": "SUPPL-15",
 "class": "Efficacy",
 "date": "2025-12-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/204370Orig1s014,s015,s016,s017ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/204370Orig1s014,s015,s016,s017ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/204370s014s015s016s017lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 0.75MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 6MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 3MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 0.5MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 4.5MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 1.5MG BASE"
+}
+]
 },
 {
 "app": "NDA204370",
@@ -7468,7 +9599,41 @@
 "sub": "SUPPL-16",
 "class": "Efficacy",
 "date": "2025-12-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/204370Orig1s014,s015,s016,s017ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/204370Orig1s014,s015,s016,s017ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/204370s014s015s016s017lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 0.75MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 6MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 3MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 0.5MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 4.5MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 1.5MG BASE"
+}
+]
 },
 {
 "app": "NDA204370",
@@ -7479,7 +9644,41 @@
 "sub": "SUPPL-14",
 "class": "Efficacy",
 "date": "2025-12-18",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/204370Orig1s014,s015,s016,s017ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/204370Orig1s014,s015,s016,s017ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/204370s014s015s016s017lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 0.75MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 6MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 3MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 0.5MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 4.5MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 1.5MG BASE"
+}
+]
 },
 {
 "app": "NDA212320",
@@ -7490,7 +9689,16 @@
 "sub": "SUPPL-19",
 "class": "Efficacy",
 "date": "2025-12-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/212320Orig1s019ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/212320Orig1s019ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/212320s019lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "30MG IRON"
+}
+]
 },
 {
 "app": "BLA761456",
@@ -7501,7 +9709,16 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2025-12-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761456Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761456Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761456s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "60MG/ML"
+}
+]
 },
 {
 "app": "NDA215498",
@@ -7512,7 +9729,31 @@
 "sub": "SUPPL-5",
 "class": "Efficacy",
 "date": "2025-12-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215498Orig1s005ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215498Orig1s005ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215498s005lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "1.2MG"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "0.4MG"
+},
+{
+"form": "CAPSULE, PELLETS",
+"route": "ORAL",
+"strength": "0.6MG"
+},
+{
+"form": "CAPSULE, PELLETS",
+"route": "ORAL",
+"strength": "0.2MG"
+}
+]
 },
 {
 "app": "NDA220449",
@@ -7523,7 +9764,21 @@
 "sub": "ORIG-1",
 "class": "Type 9 - New Indication Submitted as Distinct NDA, Consolidated with Original NDA after Approval",
 "date": "2025-12-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/220449Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/220449Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/220449s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "18MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "9MG"
+}
+]
 },
 {
 "app": "BLA761263",
@@ -7534,7 +9789,31 @@
 "sub": "SUPPL-6",
 "class": "Efficacy",
 "date": "2025-12-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761263Orig1s006ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761263Orig1s006ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761263s006lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "5MG/0.5ML"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "1MG/ML"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "45MG/ML"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "30MG/30ML"
+}
+]
 },
 {
 "app": "NDA215866",
@@ -7545,7 +9824,51 @@
 "sub": "SUPPL-39",
 "class": "Efficacy",
 "date": "2025-12-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215866Orig1s039ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215866Orig1s039ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215866s039lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "60MG/2.4ML (25MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "40MG/2.4ML (16.7MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "5MG/0.5ML (5MG/0.5ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "20MG/2.4ML (8.33MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "15MG/0.5ML (15MG/0.5ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "10MG/0.5ML (10MG/0.5ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "10MG/2.4ML (4.17MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "50MG/2.4ML (20.8MG/ML)"
+}
+]
 },
 {
 "app": "NDA219083",
@@ -7556,7 +9879,31 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-12-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219083Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219083Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219083s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "20MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "10MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "15MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "5MG"
+}
+]
 },
 {
 "app": "BLA761457",
@@ -7567,7 +9914,16 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2025-12-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761457Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761457Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761457s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "120MG/1.7ML (70MG/ML)"
+}
+]
 },
 {
 "app": "NDA209988",
@@ -7578,7 +9934,21 @@
 "sub": "SUPPL-4",
 "class": "Efficacy",
 "date": "2025-12-22",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209988Orig1s004ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209988Orig1s004ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/209988s004lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "80MG/10ML (8MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "80MG/ML (80MG/ML)"
+}
+]
 },
 {
 "app": "NDA217338",
@@ -7589,7 +9959,16 @@
 "sub": "ORIG-1",
 "class": "Type 4 - New Combination",
 "date": "2025-12-22",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217338Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217338Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/217338Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET, EXTENDED RELEASE",
+"route": "ORAL",
+"strength": "30MG; 600MG; 110MG"
+}
+]
 },
 {
 "app": "NDA218316",
@@ -7600,7 +9979,31 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2025-12-22",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215256s031,218316s00ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215256s031,218316s00ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215256s031,218316s00lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "9MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "1.5MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "25MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "4MG"
+}
+]
 },
 {
 "app": "NDA216196",
@@ -7611,7 +10014,31 @@
 "sub": "SUPPL-3",
 "class": "Efficacy",
 "date": "2025-12-23",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216196Orig1s003ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216196Orig1s003ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/216196Orig1s003lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 20MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 50MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 5MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 100MG BASE"
+}
+]
 },
 {
 "app": "BLA761112",
@@ -7622,7 +10049,16 @@
 "sub": "SUPPL-18",
 "class": "Efficacy",
 "date": "2025-12-23",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761112Orig1s018ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761112Orig1s018ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761112s018lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "11MG/VIAL"
+}
+]
 },
 {
 "app": "BLA761152",
@@ -7633,7 +10069,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-12-23",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761152Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761152Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761152Orig1s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTION",
+"route": "",
+"strength": ""
+}
+]
 },
 {
 "app": "NDA220152",
@@ -7644,14 +10089,23 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2025-12-30",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/220152Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/220152Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/220152Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "85MG"
+}
+]
 }
 ],
 "openfda_total": 497,
 "complete": true
 },
 "2026-01": {
-"fetched": "2026-11-25",
+"fetched": "2026-11-27",
 "items": [
 {
 "app": "BLA020367",
@@ -7662,7 +10116,21 @@
 "sub": "SUPPL-123",
 "class": "Efficacy",
 "date": "2026-01-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/020367Orig1s123ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/020367Orig1s123ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/020367s123lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "400 UNITS/VIAL"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "200 UNITS/VIAL"
+}
+]
 },
 {
 "app": "NDA211241",
@@ -7673,7 +10141,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-01-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211241Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211241Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/211241s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "POWDER",
+"route": "SUBCUTANEOUS",
+"strength": "2.9MG/VIAL"
+}
+]
 },
 {
 "app": "BLA761027",
@@ -7684,7 +10161,21 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2026-01-15",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761027Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761027Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761027s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "300MCG/0.5ML"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "480MCG/0.8ML"
+}
+]
 },
 {
 "app": "NDA021529",
@@ -7695,7 +10186,16 @@
 "sub": "SUPPL-27",
 "class": "Efficacy",
 "date": "2026-01-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/021529Orig1s027ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/021529Orig1s027ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/021529Orig1s027lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "IMPLANT",
+"route": "IMPLANTATION",
+"strength": "68MG/IMPLANT"
+}
+]
 },
 {
 "app": "BLA761498",
@@ -7706,7 +10206,31 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2026-01-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761498Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761498Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761498s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "IV (INFUSION)",
+"strength": "400MG/20ML(20MG/ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "IV (INFUSION)",
+"strength": "80MG/4ML(20MG/ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "SUBCUTANEOUS",
+"strength": "162MG/20ML(20MG/ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "IV (INFUSION)",
+"strength": "200MG/10ML(20MG/ML)"
+}
+]
 },
 {
 "app": "NDA214377",
@@ -7717,7 +10241,26 @@
 "sub": "SUPPL-5",
 "class": "Efficacy",
 "date": "2026-01-21",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214377Orig1s005ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214377Orig1s005ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/214377s005lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "5MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "10MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "2.5MG"
+}
+]
 },
 {
 "app": "BLA022472",
@@ -7728,7 +10271,26 @@
 "sub": "SUPPL-27",
 "class": "Efficacy",
 "date": "2026-01-23",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022472Orig1s027ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022472Orig1s027ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/022472s027lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "POWDER",
+"route": "INHALATION",
+"strength": "12 UNITS/INH"
+},
+{
+"form": "POWDER",
+"route": "INHALATION",
+"strength": "4 UNITS/INH"
+},
+{
+"form": "POWDER",
+"route": "INHALATION",
+"strength": "8 UNITS/INH"
+}
+]
 },
 {
 "app": "NDA022348",
@@ -7739,7 +10301,21 @@
 "sub": "SUPPL-28",
 "class": "Efficacy",
 "date": "2026-01-23",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022348Orig1s028ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022348Orig1s028ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/022348s028lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "800MG/8ML (100MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "800MG/200ML (4MG/ML)"
+}
+]
 },
 {
 "app": "NDA216395",
@@ -7750,7 +10326,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2026-01-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216395Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216395Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/216395Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "ORAL",
+"strength": "0.2MG/ML"
+}
+]
 },
 {
 "app": "BLA761145",
@@ -7761,7 +10346,16 @@
 "sub": "SUPPL-28",
 "class": "Efficacy",
 "date": "2026-01-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761145Orig1s028ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761145Orig1s028ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761145s028lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "120MG"
+}
+]
 },
 {
 "app": "NDA218010",
@@ -7772,7 +10366,16 @@
 "sub": "SUPPL-4",
 "class": "Efficacy",
 "date": "2026-01-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218010Orig1s004ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218010Orig1s004ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/218010s004lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "IMPLANT",
+"route": "INTRACAMERAL",
+"strength": "75MCG"
+}
+]
 },
 {
 "app": "NDA205596",
@@ -7783,18 +10386,10 @@
 "sub": "SUPPL-21",
 "class": "Efficacy",
 "date": "2026-01-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf"
-},
-{
-"app": "NDA022003",
-"brand": "Noxafil",
-"generic": "posaconazole",
-"sponsor": "Schering",
-"kind": "efficacy supplement",
-"sub": "SUPPL-34",
-"class": "Efficacy",
-"date": "2026-01-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/022003s034,205053s018,205596s021,214770s009lbl.pdf",
+"priority": "STANDARD",
+"products": []
 },
 {
 "app": "NDA214770",
@@ -7805,7 +10400,16 @@
 "sub": "SUPPL-9",
 "class": "Efficacy",
 "date": "2026-01-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/022003s034,205053s018,205596s021,214770s009lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "FOR SUSPENSION, DELAYED RELEASE",
+"route": "ORAL",
+"strength": "300MG"
+}
+]
 },
 {
 "app": "NDA205053",
@@ -7816,7 +10420,30 @@
 "sub": "SUPPL-18",
 "class": "Efficacy",
 "date": "2026-01-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/022003s034,205053s018,205596s021,214770s009lbl.pdf",
+"priority": "STANDARD",
+"products": []
+},
+{
+"app": "NDA022003",
+"brand": "Noxafil",
+"generic": "posaconazole",
+"sponsor": "Schering",
+"kind": "efficacy supplement",
+"sub": "SUPPL-34",
+"class": "Efficacy",
+"date": "2026-01-27",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022003Orig1s034;205053Orig1s018;205596Orig1s021;214770Orig1s009ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/022003s034,205053s018,205596s021,214770s009lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SUSPENSION",
+"route": "ORAL",
+"strength": "40MG/ML"
+}
+]
 },
 {
 "app": "NDA209401",
@@ -7827,7 +10454,16 @@
 "sub": "SUPPL-18",
 "class": "Efficacy",
 "date": "2026-01-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209401Orig1s018ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209401Orig1s018ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/209401s018lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "POWDER",
+"route": "INTRAVENOUS",
+"strength": "100MG; 44MG"
+}
+]
 },
 {
 "app": "NDA220142",
@@ -7838,14 +10474,23 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form and Type 4 - New Combination",
 "date": "2026-01-28",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220142Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220142Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220142s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION/DROPS",
+"route": "OPHTHALMIC",
+"strength": "0.1%; 2.75%"
+}
+]
 }
 ],
 "openfda_total": 238,
 "complete": true
 },
 "2026-02": {
-"fetched": "2026-11-25",
+"fetched": "2026-11-27",
 "items": [
 {
 "app": "NDA221287",
@@ -7856,7 +10501,16 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2026-02-02",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221287Orig1s000MGltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221287Orig1s000MGltr.pdf",
+"label": "",
+"priority": "UNKNOWN",
+"products": [
+{
+"form": "GAS",
+"route": "INHALATION",
+"strength": "N/A"
+}
+]
 },
 {
 "app": "NDA220406",
@@ -7867,7 +10521,26 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2026-02-03",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220406Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220406Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220406s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAMUSCULAR, INTRAVENOUS",
+"strength": "EQ 500MG BASE/50ML (EQ 10MG BASE/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAMUSCULAR, INTRAVENOUS",
+"strength": "EQ 50MG BASE/5ML (EQ 10MG BASE/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAMUSCULAR, INTRAVENOUS",
+"strength": "EQ 350MG BASE/35ML (EQ 10MG BASE/ML)"
+}
+]
 },
 {
 "app": "BLA125514",
@@ -7878,7 +10551,16 @@
 "sub": "SUPPL-186",
 "class": "Efficacy",
 "date": "2026-02-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125514Orig1s186ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125514Orig1s186ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/125514Orig1s186lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "100MG/4ML (25MG/ML)"
+}
+]
 },
 {
 "app": "BLA761467",
@@ -7889,7 +10571,21 @@
 "sub": "SUPPL-2",
 "class": "Efficacy",
 "date": "2026-02-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761467Orig1s002ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761467Orig1s002ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761467Orig1s002lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "790MG/9600UNITS(4.8ML)"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "395MG/4800UNITS(2.4ML)"
+}
+]
 },
 {
 "app": "NDA219474",
@@ -7900,7 +10596,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-02-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219474Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219474Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/219474Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "OINTMENT",
+"route": "TOPICAL",
+"strength": "1%"
+}
+]
 },
 {
 "app": "NDA214012",
@@ -7911,7 +10616,16 @@
 "sub": "SUPPL-18",
 "class": "Efficacy",
 "date": "2026-02-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214012Orig1s017,s018ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214012Orig1s017,s018ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/214012s018lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "EQ 284MG BASE/1.5ML (EQ 189MG BASE/ML)"
+}
+]
 },
 {
 "app": "NDA214012",
@@ -7922,7 +10636,16 @@
 "sub": "SUPPL-17",
 "class": "Efficacy",
 "date": "2026-02-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214012Orig1s017,s018ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214012Orig1s017,s018ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/214012s017lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "EQ 284MG BASE/1.5ML (EQ 189MG BASE/ML)"
+}
+]
 },
 {
 "app": "NDA220200",
@@ -7933,7 +10656,21 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2026-02-13",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220200Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220200Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220200Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "100MG/5ML (20MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "500MG/25ML (20MG/ML)"
+}
+]
 },
 {
 "app": "NDA211413",
@@ -7944,18 +10681,41 @@
 "sub": "SUPPL-3",
 "class": "Efficacy",
 "date": "2026-02-13",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211413Orig1s003ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211413Orig1s003ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/211413s003lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "POWDER",
+"route": "INTRAVENOUS",
+"strength": "EQ 3GM BASE/VIAL"
+},
+{
+"form": "POWDER",
+"route": "INTRAVENOUS",
+"strength": "EQ 2GM BASE/VIAL"
+}
+]
 },
 {
 "app": "NDA217202",
 "brand": "Rapiblyk",
-"generic": "landiolol",
+"generic": "landiolol hydrochloride",
 "sponsor": "Aop Hlth Us",
 "kind": "efficacy supplement",
 "sub": "SUPPL-1",
 "class": "Efficacy",
 "date": "2026-02-13",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217202Orig1s001ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217202Orig1s001ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/217202s001lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "POWDER",
+"route": "INTRAVENOUS",
+"strength": "EQ 280MG BASE/VIAL"
+}
+]
 },
 {
 "app": "BLA761484",
@@ -7966,7 +10726,31 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2026-02-13",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761484Orig1s000correctedltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761484Orig1s000correctedltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761484Orig1s000correctedlbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "VIAL",
+"route": "SINGLE-USE",
+"strength": "2,400MG/30,000 UNITS PER 15ML"
+},
+{
+"form": "VIAL",
+"route": "SINGLE-USE",
+"strength": "1,600MG/20,000 UNITS PER 10ML"
+},
+{
+"form": "VIAL",
+"route": "SINGLE-USE",
+"strength": "3,5200MG/44,000 UNITS PER 22ML"
+},
+{
+"form": "VIAL",
+"route": "SINGLE-USE",
+"strength": "2,240MG/28,000 UNITS PER 14ML"
+}
+]
 },
 {
 "app": "NDA211150",
@@ -7977,7 +10761,21 @@
 "sub": "SUPPL-6",
 "class": "Efficacy",
 "date": "2026-02-13",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211150Orig1s006ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211150Orig1s006ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/211150s006lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 4.45MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 17.8MG BASE"
+}
+]
 },
 {
 "app": "NDA221337",
@@ -7988,18 +10786,16 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2026-02-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221337Orig1s000MGLtr.pdf"
-},
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221337Orig1s000MGLtr.pdf",
+"label": "",
+"priority": "UNKNOWN",
+"products": [
 {
-"app": "NDA216387",
-"brand": "Calquence",
-"generic": "acalabrutinib",
-"sponsor": "Astrazeneca",
-"kind": "efficacy supplement",
-"sub": "SUPPL-6",
-"class": "Efficacy",
-"date": "2026-02-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210259Orig1s012, 216387Orig1s006ltr.pdf"
+"form": "GAS",
+"route": "INHALATION",
+"strength": ""
+}
+]
 },
 {
 "app": "NDA210259",
@@ -8010,7 +10806,36 @@
 "sub": "SUPPL-12",
 "class": "Efficacy",
 "date": "2026-02-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210259Orig1s012, 216387Orig1s006ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210259Orig1s012, 216387Orig1s006ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/210259s012lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "100MG"
+}
+]
+},
+{
+"app": "NDA216387",
+"brand": "Calquence",
+"generic": "acalabrutinib",
+"sponsor": "Astrazeneca",
+"kind": "efficacy supplement",
+"sub": "SUPPL-6",
+"class": "Efficacy",
+"date": "2026-02-19",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210259Orig1s012, 216387Orig1s006ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/216387s006lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "EQ 100MG BASE"
+}
+]
 },
 {
 "app": "NDA208573",
@@ -8021,7 +10846,26 @@
 "sub": "SUPPL-31",
 "class": "Efficacy",
 "date": "2026-02-19",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/208573Orig1s031ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/208573Orig1s031ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/208573s031lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "100MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "10MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "50MG"
+}
+]
 },
 {
 "app": "NDA220358",
@@ -8032,7 +10876,46 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-02-20",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220358Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220358Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220358Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "4MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "1MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "10MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "6MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "2MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "12MG"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "8MG"
+}
+]
 },
 {
 "app": "NDA220201",
@@ -8043,7 +10926,21 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2026-02-20",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220201Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220201Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220201Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "2.5GM/100ML (25MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "250MG/10ML (25MG/ML)"
+}
+]
 },
 {
 "app": "NDA216986",
@@ -8054,7 +10951,46 @@
 "sub": "SUPPL-9",
 "class": "Efficacy",
 "date": "2026-02-20",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216986Orig1s009ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216986Orig1s009ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/216986s009lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "24.255GM/50ML (485.1MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "7.2765GM/15ML (485.1MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "3.63825GM/7.5ML (485.1MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "48.51GM/100ML (485.1MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "14.553GM/30ML (485.1MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "4.851GM/10ML (485.1MG/ML)"
+},
+{
+"form": "SOLUTION",
+"route": "INTRAVENOUS",
+"strength": "1.4553GM/3ML (485.1MG/ML)"
+}
+]
 },
 {
 "app": "BLA761055",
@@ -8065,7 +11001,16 @@
 "sub": "SUPPL-75",
 "class": "Efficacy",
 "date": "2026-02-23",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s075ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s075ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761055s075lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "150MG/ML"
+}
+]
 },
 {
 "app": "BLA761211",
@@ -8076,7 +11021,16 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-02-23",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761211Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761211Orig1s000ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761211Orig1s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "Injectable",
+"route": "Injection",
+"strength": "0.1MG/KG"
+}
+]
 },
 {
 "app": "NDA210496",
@@ -8087,7 +11041,16 @@
 "sub": "SUPPL-19",
 "class": "Efficacy",
 "date": "2026-02-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210496Orig1s019ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210496Orig1s019ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/210496s019lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "75MG"
+}
+]
 },
 {
 "app": "NDA210496",
@@ -8098,7 +11061,16 @@
 "sub": "SUPPL-21",
 "class": "Efficacy",
 "date": "2026-02-24",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210496Orig1s021ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/210496Orig1s021ltr.pdf",
+"label": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/210496s021lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "75MG"
+}
+]
 },
 {
 "app": "NDA219873",
@@ -8109,7 +11081,16 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2026-02-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219873Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219873Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/219873Orig1s000lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "ORAL",
+"strength": "0.05MG/ML"
+}
+]
 },
 {
 "app": "NDA203858",
@@ -8120,7 +11101,36 @@
 "sub": "SUPPL-27",
 "class": "Efficacy",
 "date": "2026-02-25",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/203858Orig1s027ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/203858Orig1s027ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/203858s027lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 2MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 20MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 5MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 30MG BASE"
+},
+{
+"form": "CAPSULE",
+"route": "ORAL",
+"strength": "EQ 10MG BASE"
+}
+]
 },
 {
 "app": "NDA219042",
@@ -8131,7 +11141,16 @@
 "sub": "SUPPL-1",
 "class": "Efficacy",
 "date": "2026-02-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219042Orig1s001ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219042Orig1s001ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/219042s001lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "60MG"
+}
+]
 },
 {
 "app": "NDA205394",
@@ -8142,7 +11161,21 @@
 "sub": "SUPPL-5",
 "class": "Efficacy",
 "date": "2026-02-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/205394Orig1s005ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/205394Orig1s005ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/205394s005lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "FILM",
+"route": "ORAL",
+"strength": "EQ 5MG BASE"
+},
+{
+"form": "FILM",
+"route": "ORAL",
+"strength": "EQ 10MG BASE"
+}
+]
 },
 {
 "app": "NDA219131",
@@ -8153,7 +11186,26 @@
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2026-02-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219131Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219131Orig1s000ltr.pdf",
+"label": "",
+"priority": "STANDARD",
+"products": [
+{
+"form": "CAPSULE, DELAYED REL PELLETS",
+"route": "ORAL",
+"strength": "EQ 90MG BASE"
+},
+{
+"form": "CAPSULE, DELAYED REL PELLETS",
+"route": "ORAL",
+"strength": "EQ 120MG BASE"
+},
+{
+"form": "CAPSULE, DELAYED REL PELLETS",
+"route": "ORAL",
+"strength": "EQ 80MG BASE"
+}
+]
 },
 {
 "app": "BLA761079",
@@ -8164,7 +11216,26 @@
 "sub": "SUPPL-31",
 "class": "Efficacy",
 "date": "2026-02-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761079Orig1s031correctedltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761079Orig1s031correctedltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761079s031lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "20MG/ML"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "2.5MG/0.5ML"
+},
+{
+"form": "INJECTABLE",
+"route": "INJECTION",
+"strength": "10MG/0.5ML"
+}
+]
 },
 {
 "app": "NDA205395",
@@ -8175,7 +11246,21 @@
 "sub": "SUPPL-29",
 "class": "Efficacy",
 "date": "2026-02-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/205395Orig1s029ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/205395Orig1s029ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/205395s29lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "150MG; EQ 675MG BASE"
+},
+{
+"form": "TABLET",
+"route": "ORAL",
+"strength": "150MG; EQ 800MG BASE"
+}
+]
 },
 {
 "app": "NDA220092",
@@ -8186,7 +11271,26 @@
 "sub": "ORIG-1",
 "class": "Type 3 - New Dosage Form",
 "date": "2026-02-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220092Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220092Orig1s000ltr.pdf",
+"label": "",
+"priority": "STANDARD",
+"products": [
+{
+"form": "TABLET, FOR SUSPENSION",
+"route": "ORAL",
+"strength": "675MG/150MG"
+},
+{
+"form": "TABLET, FOR SUSPENSION",
+"route": "ORAL",
+"strength": "600MG/90MG"
+},
+{
+"form": "TABLET, FOR SUSPENSION",
+"route": "ORAL",
+"strength": "90MG; EQ 600MG BASE"
+}
+]
 },
 {
 "app": "BLA761156",
@@ -8197,7 +11301,16 @@
 "sub": "SUPPL-15",
 "class": "Efficacy",
 "date": "2026-02-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761156Orig1s012, 761156Orig1s014, 761156Orig1s015ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761156Orig1s012, 761156Orig1s014, 761156Orig1s015ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761156s015lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "10MG/1.5ML"
+}
+]
 },
 {
 "app": "BLA761156",
@@ -8208,7 +11321,16 @@
 "sub": "SUPPL-14",
 "class": "Efficacy",
 "date": "2026-02-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761156Orig1s012, 761156Orig1s014, 761156Orig1s015ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761156Orig1s012, 761156Orig1s014, 761156Orig1s015ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761156s014lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "10MG/1.5ML"
+}
+]
 },
 {
 "app": "BLA761156",
@@ -8219,7 +11341,16 @@
 "sub": "SUPPL-12",
 "class": "Efficacy",
 "date": "2026-02-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761156Orig1s012, 761156Orig1s014, 761156Orig1s015ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761156Orig1s012, 761156Orig1s014, 761156Orig1s015ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761156s012lbl.pdf",
+"priority": "STANDARD",
+"products": [
+{
+"form": "SOLUTION",
+"route": "SUBCUTANEOUS",
+"strength": "10MG/1.5ML"
+}
+]
 },
 {
 "app": "NDA219164",
@@ -8230,7 +11361,26 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-02-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219164Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219164Orig1s000ltr.pdf",
+"label": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/219164Orig1s000lbl.pdf",
+"priority": "PRIORITY",
+"products": [
+{
+"form": "POWDER",
+"route": "SUBCUTANEOUS",
+"strength": "2.8MG/VIAL"
+},
+{
+"form": "POWDER",
+"route": "SUBCUTANEOUS",
+"strength": "5.5MG/VIAL"
+},
+{
+"form": "POWDER",
+"route": "SUBCUTANEOUS",
+"strength": "1.3MG/VIAL"
+}
+]
 }
 ],
 "openfda_total": 275,
