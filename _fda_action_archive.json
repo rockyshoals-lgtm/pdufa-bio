@@ -2054,6 +2054,16 @@
   "record": "BLA 125840 CRL",
   "source_url": "https://download.open.fda.gov/crl/CRL_BLA125840_20260207.pdf"
  },
+ "RHHBY-2025-02-12": {
+  "basis": "decision-timing census 2026-11-27 (pass 5): FDA record read",
+  "checked": "2026-11-27",
+  "cid": "C179",
+  "date": "2025-02-11",
+  "name": "EVRYSDI (risdiplam) 5 mg tablets, original NDA",
+  "oc": "Approved",
+  "record": "NDA 219285 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219285"
+ },
  "RHHBY-2026-02-20": {
   "checked": "2026-11-24",
   "name": "CALQUENCE plus venetoclax",

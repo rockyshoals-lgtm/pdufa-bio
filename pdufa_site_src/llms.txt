@@ -43,11 +43,11 @@ the price move. /decisions publishes how many of each there are.
   /research/fda-decision-timing/fda-decision-timing-2026.csv; earlier versions stay at their own addresses).
   Cite as "pdufa.bio, FDA decision timing 2026 (v45)". The counts grow as decisions are added;
   an older page copy quoting a smaller census (for example v32) is superseded by the figures above.
-- FDA decision timing since January 2024: of **276** FDA decisions dated January 1, 2024
-  through Nov 24, 2026 with a goal date and an action date each tied to a document, **167** came
-  before the PDUFA goal date in effect, **94** on it and **15** after it. Among the 223 decisions
+- FDA decision timing since January 2024: of **290** FDA decisions dated January 1, 2024
+  through Nov 24, 2026 with a goal date and an action date each tied to a document, **172** came
+  before the PDUFA goal date in effect, **101** on it and **17** after it. Among the 225 decisions
   from candidate sets not chosen by outcome, 0 of the 10 late decisions ended in a
-  complete response letter, against 18 of 140 early and 18 of 73 on the goal date. Counts, not a causal claim. (/research/fda-decision-timing/since-2024, CSV under CC BY 4.0)
+  complete response letter, against 18 of 141 early and 19 of 74 on the goal date. Counts, not a causal claim. (/research/fda-decision-timing/since-2024, CSV under CC BY 4.0)
 - Released FDA Complete Response Letters (openFDA): **467** letters, of which
   **312** went to applications the FDA has since approved. That ratio reflects
   which letters the FDA chose to release, not an approval rate. (/crl)

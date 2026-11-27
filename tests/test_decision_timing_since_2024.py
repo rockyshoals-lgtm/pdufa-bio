@@ -172,5 +172,21 @@ def test_fda_goal_sources_are_fda_documents():
     assert n >= 30
 
 
+def test_goal_ledger_pages_belong_to_their_row():
+    """Pass 5: one FDA action with several tickers lends its goal to each ticker's page for that day, and to no
+    other page: the page's ticker is one of the row's tickers and its date is within 4 days of the FDA action."""
+    doc = json.load(io.open(DATA, encoding="utf-8"))
+    rows = {a["cid"]: a for a in doc["actions"]}
+    led = json.load(io.open(os.path.join(HERE, "_decision_goal_dates.json"), encoding="utf-8"))
+    for page, e in led.items():
+        if not e.get("cid") or e["cid"] not in rows:
+            continue
+        a = rows[e["cid"]]
+        tk, day = page[:-11], page[-10:]
+        assert tk in [t.upper() for t in a.get("tickers") or []], f"{page}: not a ticker of {e['cid']}"
+        gap = abs((dt.date.fromisoformat(day) - dt.date.fromisoformat(a["action_date"])).days)
+        assert gap <= 4, f"{page}: {gap} days from the FDA action"
+
+
 if __name__ == "__main__":
     sys.exit(main())

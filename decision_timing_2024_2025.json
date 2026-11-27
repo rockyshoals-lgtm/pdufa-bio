@@ -1,5 +1,5 @@
 {
- "about": "pdufa.bio decision-timing census, FDA actions dated 2024-01-01 to 2025-12-31. Candidates: every PDUFA decision on the pdufa.bio tracked list for those years plus every FDA-released complete response letter dated in those years. Goal dates from sponsor or partner documents dated before the action, or from the FDA's own review documents (review cover sheets, CBER Summary Basis for Regulatory Action) posted with the approval; action dates from FDA records or a sponsor document that states the day. Researched and red-teamed 2026-11-26 (four research passes).",
+ "about": "pdufa.bio decision-timing census, FDA actions dated 2024-01-01 to 2025-12-31. Candidates: every PDUFA decision on the pdufa.bio tracked list for those years plus every FDA-released complete response letter dated in those years. Goal dates from sponsor or partner documents dated before the action, or from the FDA's own review documents (review cover sheets, CBER Summary Basis for Regulatory Action) posted with the approval; action dates from FDA records or a sponsor document that states the day. Researched and red-teamed 2026-11-26 (five research passes).",
  "candidates": {
   "tracked": 334,
   "crl_letter": 129
@@ -8579,6 +8579,542 @@
    "excluded": null,
    "scope_note": null,
    "red_team": "Pass 4 (2026-11-26): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C044",
+   "drug": "ENTYVIO (vedolizumab) subcutaneous, maintenance in Crohn's disease",
+   "application": "BLA 761359 (ORIG-1; the same approval letter also covers BLA 761133 S-005/S-006 and BLA 125476 S-060/S-061)",
+   "sponsor": "Takeda",
+   "tickers": [
+    "TAK"
+   ],
+   "goal_date_original": "2024-04-30",
+   "goal_original_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/761359Orig1s000MultidisciplineR.pdf",
+   "goal_original_doc_date": "2024-04-17",
+   "goal_original_quote": "Application Number(s) 761359 ... Received Date(s) June 30, 2023 ... PDUFA Goal Date April 30, 2024 ... Review Completion Date April 17, 2024",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-04-30",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-04-18",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761359",
+   "action_quote": "Drugs@FDA BLA 761359 (ENTYVIO, Takeda): ORIG-1 Approval, action date 04/18/2024",
+   "announcement_date": null,
+   "announcement_url": null,
+   "outcome": "Approved",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "Multidiscipline Review (cover sheet), BLA 761359 (Entyvio SC, Crohn's disease)",
+   "notes": "Pass 5: The Crohn's SC indication was approved as a new BLA, 761359 ORIG-1 (Drugs@FDA: ENTYVIO IV 300 mg and SC 108 mg/0.68 mL, Takeda), on 04/18/2024; the approval letter is bundled with BLA 761133 S-005/S-006 and BLA 125476 S-060/S-061 (pass 4 had mapped the row only to 125476 S-060/S-061). The Multidiscipline Review cover sheet (fetched) states Received June 30, 2023, PDUFA Goal Date April 30, 2024, indication moderately to severely active Crohn's disease, Division of Gastroenterology, applicant Takeda. It shows a single goal date and says nothing of an extension, so extended is null (unknown); the date equals receipt + 10 months (standard review), which is consistent with no extension but is not used as proof. AdminCorres in the same package (fetched) holds only 2014/2022 IND meeting minutes, no goal date. Goal Tuesday 2024-04-30; action 12 days before the goal. No sponsor-stated goal date exists to conflict (passes 1-3 found none).",
+   "members": [
+    "C044"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C090",
+   "drug": "Potassium Phosphates in 0.9% Sodium Chloride Injection (RTU bags)",
+   "application": "NDA 218343",
+   "sponsor": "Amneal",
+   "tickers": [
+    "AMRX"
+   ],
+   "goal_date_original": "2024-07-26",
+   "goal_original_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/218343Orig1s000MultidisciplineR.pdf",
+   "goal_original_doc_date": "2024-07-26",
+   "goal_original_quote": "Submit Date(s) September 28, 2023 ... Received Date(s) September 28, 2023 ... PDUFA Goal Date July 26, 2024 ... Review Completion Date July 16, 2024",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-07-26",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-07-26",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218343",
+   "action_quote": "Drugs@FDA: 07/26/2024 ORIG-1 Approval, Type 5 New Formulation or New Manufacturer, Standard (218343Orig1s000ltr.pdf)",
+   "announcement_date": null,
+   "announcement_url": null,
+   "outcome": "Approved",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "NDA/BLA Multi-disciplinary Review and Evaluation NDA 218343 (cover sheet)",
+   "notes": "Pass 5: FDA Multi-disciplinary Review (https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/218343Orig1s000MultidisciplineR.pdf, fetched; signatures 07/26/2024) cover sheet: received September 28, 2023; 'PDUFA Goal Date July 26, 2024'. Single goal date; no document seen states an extension, so extended is null (unknown). Goal is a Friday. Action 2024-07-26 (Drugs@FDA, kept from pass 4): approval on the goal date. AdminCorres file (fetched) holds only 2022 pre-IND written responses; SumR file does not exist. Pass 4: Drugs@FDA overview ORIG-1 07/26/2024, Type 5 New Formulation or New Manufacturer, letter 218343Orig1s000ltr.pdf.",
+   "members": [
+    "C090"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C209",
+   "drug": "penpulimab-kcqx (AK105), R/M non-keratinizing nasopharyngeal carcinoma",
+   "application": "BLA 761258",
+   "sponsor": "Akeso (private-to-US; HKEX-listed)",
+   "tickers": [],
+   "goal_date_original": "2025-04-02",
+   "goal_original_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/761258Orig1s000MultidisciplineR.pdf",
+   "goal_original_doc_date": "2025-04-23",
+   "goal_original_quote": "PDUFA Goal Date April 2, 2025",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-04-02",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-04-23",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/761258Orig1s000Approv.pdf",
+   "action_quote": "Drugs@FDA BLA 761258 ORIG-1 approval 04/23/2025 (approval package; pass 4)",
+   "announcement_date": null,
+   "announcement_url": null,
+   "outcome": "Approved",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "Multidiscipline Review (cover sheet), BLA 761258Orig1s000, Class 2 resubmission submitted and received October 2, 2024",
+   "notes": "Pass 5: fetched the approval Multidiscipline Review for BLA 761258Orig1s000. Cover sheet: 'Submit Date(s) October 2, 2024', 'Received Date(s) October 2, 2024', 'PDUFA Goal Date April 2, 2025', 'Review Completion Date April 23, 2025'. No original/extended goal line on the cover sheet; review text read at characters 0-20k, 20k-40k and 45k-65k of about 92k found no mention of a goal extension or major amendment. Administrative and Correspondence file (fetched) holds only 2021 IND documents (BTD review, pre-BLA minutes): no filing or extension letter. Pass 4 found the same April 2, 2025 PDUFA date in the Clinical Inspection Summary (Mar 27, 2025) and its Addendum (Apr 21, 2025) in the Other Reviews file. Regulatory history (review): first-cycle CRL January 19, 2024. Extension cannot be fully ruled out (extended null), but the FDA review completed on the action date states April 2, 2025 as the goal. Result: LATE by 21 days. Flag for red-team: an FDA action 21 days after the stated goal with no recorded extension.",
+   "members": [
+    "C209"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "L042",
+   "drug": "OX124 naloxone hydrochloride nasal powder (high-dose)",
+   "application": "NDA 217433",
+   "sponsor": "Orexo AB",
+   "tickers": [
+    "ORX.ST"
+   ],
+   "goal_date_original": "2024-07-15",
+   "goal_original_url": "https://orexo.com/media/pressrelease/orexo-announces-fda-acceptance-of-new-drug-application-filing-for-ox124-a-high-dose-rescue-medication-for-opioid-overdose-963ff56d",
+   "goal_original_doc_date": "2023-11-28",
+   "goal_original_quote": "The PDUFA date is set to July 15, 2024, but recent review processes in the category indicate a risk of some delay.",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-07-15",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-07-15",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/CRL_NDA217433_20240715.pdf",
+   "action_quote": "NDA 217433 COMPLETE RESPONSE Orexo AB ... Naloxone hydrochloride nasal powder (openFDA letter_date 07/15/2024)",
+   "announcement_date": null,
+   "announcement_url": null,
+   "outcome": "CRL",
+   "goal_source_type": "sponsor",
+   "goal_fda_doc_title": null,
+   "notes": "Pass 5: Orexo's own release of November 28, 2023 (orexo.com, fetched), announcing FDA acceptance of the OX124 NDA, states the day-precision PDUFA date July 15, 2024 (a Monday). This fixes the earlier 'month only' finding (Q1 2024 interim report: 'the original PDUFA date in July'). Extension: none reported by Orexo in documents read across passes, and the FDA-published CRL is dated July 15, 2024 (the stated goal day); the CRL excerpt mentions amendments 'not reviewed for this action' but no goal extension (unlike CRLs that cite a major amendment extending the goal). extended set false on that basis. Result: CRL ON THE GOAL DATE. A secondary news report (not a source) mentions a prior refuse-to-file in 2023 and a September 2023 resubmission; the acceptance release is for the application that received this CRL.",
+   "members": [
+    "L042"
+   ],
+   "origin": "crl_letter",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C077",
+   "drug": "VYALEV (foscarbidopa/foslevodopa), Parkinson's disease",
+   "application": "NDA 216962",
+   "sponsor": "AbbVie",
+   "tickers": [
+    "ABBV"
+   ],
+   "goal_date_original": "2024-06-19",
+   "goal_original_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/216962Orig1s000MedR.pdf",
+   "goal_original_doc_date": "2024-06-16",
+   "goal_original_quote": "Application Type NDA Class 2 Resubmission ... Submit Date(s) 12/19/2023 ... Received Date(s) 12/19/2023 ... PDUFA Goal Date 6/19/2024",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-06-19",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-06-18",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/216962Orig1s000SumR.pdf",
+   "action_quote": "in response to the FDA's June 18, 2024, Complete Response Letter",
+   "announcement_date": null,
+   "announcement_url": null,
+   "outcome": "CRL",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "Clinical Review, NDA 216962 Class 2 Resubmission (cover sheet), review completion 06/16/2024, in Medical Review(s) of the 2024 approval package",
+   "notes": "Pass 4: Drugs@FDA NDA 216962 ORIG-1 approved 10/16/2024; review package at /drugsatfda_docs/nda/2025/ (TOC loads dynamically). Read 216962Orig1s000SumR.pdf (Summary Review signed 10/16/2024 plus the resubmission review signed 06/17/2024), 216962Orig1s000AdminCorres.pdf and 216962Orig1s000OtherR.pdf (labeling/device reviews): no PDUFA goal date for the Dec 19, 2023 resubmission cycle found in the text read (final 2-17k chars of each PDF unread). Duplicate of L035 (same June 18, 2024 CRL); count once. | Pass 5: Medical Review(s) PDF of the approval package (216962Orig1s000MedR.pdf, fetched) holds the clinical review of the Dec 19, 2023 class 2 resubmission whose cover sheet states PDUFA Goal Date 6/19/2024 (review completion 06/16/2024). Action 2024-06-18 (FDA CRL letter, prior) is one day before that goal. The cover sheet shows a single goal date; no extension stated, so extended left null (unknown), though the date equals receipt + 6 months. No sponsor-stated date exists to conflict. Duplicate of L035 (same June 18, 2024 CRL): count once. AdminCorres (meeting minutes only) and SumR re-read: no goal line.",
+   "members": [
+    "C077",
+    "L035"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C132",
+   "drug": "VYALEV (foscarbidopa and foslevodopa)",
+   "application": "NDA 216962",
+   "sponsor": "AbbVie",
+   "tickers": [
+    "ABBV"
+   ],
+   "goal_date_original": "2024-10-16",
+   "goal_original_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/216962Orig1s000MedR.pdf",
+   "goal_original_doc_date": "2024-10-16",
+   "goal_original_quote": "Application Type NDA Class 1 Resubmission ... Submit Date(s) 08/16/2024 ... Received Date(s) 08/16/2024 ... PDUFA Goal Date 10/16/2024",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-10-16",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-10-16",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216962",
+   "action_quote": "Drugs@FDA NDA 216962 ORIG-1 Approval action date 10/16/2024",
+   "announcement_date": null,
+   "announcement_url": null,
+   "outcome": "Approved",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "Clinical Review, NDA 216962 Class 1 Resubmission (cover sheet), signed 10/16/2024, in Medical Review(s)",
+   "notes": "Pass 4: one WebSearch for the 216962Orig1s000 review found only secondary sites; https://www.accessdata.fda.gov/drugsatfda_docs/nda/2024/216962Orig1s000IntegratedR.pdf returned an error. Action date 2024-10-16 from Drugs@FDA (prior pass). | Pass 5: Clinical review of the Aug 16, 2024 class 1 resubmission (216962Orig1s000MedR.pdf, fetched) states PDUFA Goal Date 10/16/2024 on its cover sheet; approval 10/16/2024 (Drugs@FDA, prior) is on the goal date. Single goal date shown, no extension stated (extended null). No sponsor-stated date to conflict.",
+   "members": [
+    "C132"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C086",
+   "drug": "Insulin icodec",
+   "application": "BLA 761326",
+   "sponsor": "Novo Nordisk",
+   "tickers": [
+    "NVO"
+   ],
+   "goal_date_original": null,
+   "goal_original_url": null,
+   "goal_original_doc_date": null,
+   "goal_original_quote": null,
+   "extended": true,
+   "goal_date_extended": "2024-07-10",
+   "goal_extended_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2026/761326Orig2s000OtherR.pdf",
+   "goal_extended_doc_date": "2024-05-09",
+   "goal_extended_quote": "PDUFA Date: 7/10/2024 (FDA Decision Support and Analysis Memorandum, May 9, 2024)",
+   "extension_reason": "major amendment: Novo Nordisk's Q4 2023 report (6-K, January 31, 2024, https://www.sec.gov/Archives/edgar/data/353278/000162828024002639/caq42023.htm) says data it submitted during the review 'is considered to constitute a major amendment' and 'the regulatory review is extended with three months'",
+   "goal_in_effect": "2024-07-10",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-07-10",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/CRL_BLA761326_20240710.pdf",
+   "action_quote": "FDA CRL corpus: CRL_BLA761326_20240710.pdf 07/10/2024 Novo Nordisk Inc.",
+   "announcement_date": null,
+   "announcement_url": null,
+   "outcome": "CRL",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "Decision Support and Analysis Memorandum (CDER OSP/OPSA, Memo Date May 9, 2024, Reference ID 5378475), in Other Review(s) of the BLA 761326 ORIG-2 approval package",
+   "notes": "Pass 5: goal from the FDA review package of the later approval (BLA 761326 ORIG-2, AWIQLI FLEXTOUCH, approved 2026-03-26). Other Review(s) PDF (fetched) contains a CDER Decision Support and Analysis Memorandum dated May 9, 2024 whose header reads \"Decision: Review of BLA 761326, insulin icodec ...\" and \"PDUFA Date: 7/10/2024\"; the memo mentions no major amendment or extension. The same PDF (Label and Labeling Review, Jan 27, 2026) says \"Novo Nordisk previously submitted BLA 761326 on April 10, 2023, which received a Complete Response on July 10, 2024\". The memo was written during the first cycle (May 9, 2024), so 7/10/2024 is the goal in effect two months before action; whether it was itself an extended date is not stated (extended=null; not inferred from arithmetic). AdminCorres (761326Orig2s000AdminCorres.pdf, 40,498 chars, fully read) holds only a Dec 2022 pre-BLA meeting letter and a 2021 IND letter, no filing letter. No sponsor-stated goal date exists (earlier passes), so no conflict. Action date 2024-07-10 kept from FDA-published CRL (fda_record). Goal date fell on a Wednesday; action on the goal date.",
+   "members": [
+    "C086"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; corrected: the review was extended three months after a major amendment (Novo Nordisk Q4 2023 report), so July 10, 2024 is the extended goal."
+  },
+  {
+   "cid": "C161",
+   "drug": "TEVIMBRA (tislelizumab-jsgr) + chemo, 1L HER2-neg gastric/GEJ adenocarcinoma (PD-L1>=1)",
+   "application": "BLA 761417 (ORIG-1)",
+   "sponsor": "BeiGene",
+   "tickers": [
+    "ONC"
+   ],
+   "goal_date_original": "2024-12-28",
+   "goal_original_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/761417Orig1s000MultidisciplineR.pdf",
+   "goal_original_doc_date": null,
+   "goal_original_quote": "APPLICATION NUMBER: 761417Orig1s000 ... Received Date(s) 12/28/23 ... PDUFA Goal Date 12/28/24",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-12-28",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-12-26",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761417",
+   "action_quote": "Drugs@FDA BLA 761417 TEVIMBRA (tislelizumab-jsgr), BEIGENE: ORIG-1 Action Date 12/26/2024, Approval",
+   "announcement_date": "2024-12-27",
+   "announcement_url": "https://www.businesswire.com/news/home/20241227403101/en/TEVIMBRA-Approved-in-U.S.-for-First-line-Treatment-of-Gastric-and-Gastroesophageal-Junction-Cancers-in-Combination-with-Chemotherapy/",
+   "outcome": "Approved",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "NDA/BLA Multi-disciplinary Review and Evaluation, BLA 761417 (cover sheet)",
+   "notes": "Pass 5: one web search found the application number (FDA label 761417s000 linked from a drug-info site; used only to find it). Drugs@FDA overview for BLA 761417 (fetched): TEVIMBRA (tislelizumab-jsgr), BEIGENE, ORIG-1 approval 12/26/2024, review TOC 2025/761417Orig1s000TOC.html (loads dynamically). Multidiscipline Review PDF (fetched) cover sheet: Submit/Received Date 12/28/23, PDUFA Goal Date 12/28/24; no extended date or major amendment mentioned (extended=null, not inferred). Consistent with the sponsor acceptance release (Feb 27, 2024) that gave only \"December 2024\", so no conflict. Goal fell on a Saturday; FDA acted Thursday 2024-12-26, 2 days before the goal. Signature/completion date of the review not read (goal_original_doc_date null).",
+   "members": [
+    "C161"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C136",
+   "drug": "Pyridostigmine Bromide Extended-Release Tablets 105 mg (soman nerve agent pretreatment)",
+   "application": "NDA 217604",
+   "sponsor": "Amneal Pharmaceuticals",
+   "tickers": [
+    "AMRX"
+   ],
+   "goal_date_original": "2024-10-04",
+   "goal_original_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/217604Orig1s000MedR.pdf",
+   "goal_original_doc_date": "2024-10-03",
+   "goal_original_quote": "Submit Date(s) December 4, 2023 / Received Date(s) December 4, 2023 / PDUFA Goal Date October 4, 2024 / Review Completion Date October 3, 2024",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-10-04",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-10-04",
+   "action_basis": "fda_record",
+   "action_url": "https://api.fda.gov/drug/drugsfda.json?search=sponsor_name:AMNEAL+AND+products.active_ingredients.name:PYRIDOSTIGMINE&limit=10",
+   "action_quote": "openFDA Drugs@FDA NDA217604 (AMNEAL, pyridostigmine bromide tablet, extended release 105MG): ORIG 1, status AP, submission_status_date 20241004, TYPE 5; letter 217604Orig1s000ltr.pdf",
+   "announcement_date": "2024-10-21",
+   "announcement_url": "https://www.businesswire.com/news/home/20241021221510/en",
+   "outcome": "Approved",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "Clinical Review (cover sheet), NDA 217604, in Medical Review(s)",
+   "notes": "Pass 5: Application number found via openFDA drugsfda API (fetched): NDA 217604, ORIG-1 approved 2024-10-04, review package posted (217604Orig1s000TOC.html, 2025). 217604Orig1s000SumR.pdf fetched: signed 10/04/2024, no goal date. 217604Orig1s000AdminCorres.pdf fetched: pre-NDA meeting minutes only, no goal date. 217604Orig1s000MedR.pdf fetched: Clinical Review cover sheet 'PDUFA Goal Date October 4, 2024' (submitted and received December 4, 2023; review completed October 3, 2024; signed 10/03 and 10/04/2024). No extension or major amendment mentioned; a standard 10-month clock from Dec 4, 2023 matches, but extended is left null (not proven). Approval on the goal date (Friday). The approval letter PDF itself was not opened; action date is the Drugs@FDA submission status date via openFDA, and the Summary Review was signed the same day.",
+   "members": [
+    "C136"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C179",
+   "drug": "EVRYSDI (risdiplam) 5 mg film-coated tablets",
+   "application": "NDA 219285",
+   "sponsor": "Genentech (Roche)",
+   "tickers": [
+    "RHHBY"
+   ],
+   "goal_date_original": "2025-02-11",
+   "goal_original_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/219285Orig1s000MedR.pdf",
+   "goal_original_doc_date": "2025-02-11",
+   "goal_original_quote": "Submit Date(s) April 11, 2024 / Received Date(s) April 11, 2024 / PDUFA Goal Date February 11, 2025",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-02-11",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-02-11",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219285",
+   "action_quote": "Drugs@FDA: 02/11/2025 ORIG-1 Approval, Type 3 - New Dosage Form, STANDARD; Orphan (letter 219285Orig1s000ltr.pdf)",
+   "announcement_date": "2025-02-12",
+   "announcement_url": null,
+   "outcome": "Approved",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "Clinical Review (cover sheet), NDA 219285, in Medical Review(s)",
+   "notes": "Pass 5. pass 4: Drugs@FDA overview for NDA 219285 (fetched) lists a review package (TOC 219285Orig1s000TOC.html). Summary Review https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/219285Orig1s000SumR.pdf fetched: signed 02/11/2025, but states no submission date or PDUFA goal date. Guessed 'IntegratedR' and 'MultidisciplineR' file names do not exist; other review files in the package not located (TOC loads by script). Announcement date from Roche release URL in search results (not fetched). | Pass 5: 219285Orig1s000AdminCorres.pdf does not exist (client_error). 219285Orig1s000OtherR.pdf fetched: labeling memos only (confirms NDA submitted April 11, 2024), no goal line. 219285Orig1s000MedR.pdf fetched: Clinical Review cover sheet states 'PDUFA Goal Date February 11, 2025' (submitted and received April 11, 2024); review completion date line blank; signatures 02/11/2025, the action date itself. No extension or major amendment shown, so extended null (not proven false). Action on the goal date (Drugs@FDA 02/11/2025).",
+   "members": [
+    "C179"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C308",
+   "drug": "PADCEV (enfortumab vedotin) + KEYTRUDA / KEYTRUDA QLEX, MIBC (EV-303 / KEYNOTE-905)",
+   "application": "BLA 125514 S-188 (KEYTRUDA) and BLA 761467 S-001 (KEYTRUDA QLEX), co-approved with Padcev BLA 761137 S-032",
+   "sponsor": "Merck (KEYTRUDA/KEYTRUDA QLEX sBLAs); Astellas/Pfizer (Padcev)",
+   "tickers": [
+    "ALPMY",
+    "MRK",
+    "PFE"
+   ],
+   "goal_date_original": "2026-04-07",
+   "goal_original_url": "https://www.merck.com/news/fda-grants-priority-review-for-keytruda-pembrolizumab-and-keytruda-qlex-pembrolizumab-and-berahyaluronidase-alfa-pmph-each-in-combination-with-padcev-enfortumab-vedotin-ejfv/",
+   "goal_original_doc_date": "2025-10-23",
+   "goal_original_quote": "The FDA set a Prescription Drug User Fee Act (PDUFA), or target action, date of April 7, 2026",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2026-04-07",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-11-21",
+   "action_basis": "fda_record",
+   "action_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pembrolizumab-enfortumab-vedotin-ejfv-muscle-invasive-bladder-cancer",
+   "action_quote": "On November 21, 2025, the Food and Drug Administration approved pembrolizumab (Keytruda, Merck) ... The FDA approved this application 5 months ahead of the FDA goal date.",
+   "announcement_date": null,
+   "announcement_url": null,
+   "outcome": "Approved",
+   "goal_source_type": "sponsor",
+   "goal_fda_doc_title": null,
+   "notes": "Pass 5. pass 4: Drugs@FDA lists no review for Padcev SUPPL-32 (11/21/2025). Action date now from Drugs@FDA. Merck's April 7, 2026 PDUFA date (8-K Ex.99.1, Oct 30, 2025) kept in goal_original_url/quote as an unlinked lead only. | Pass 5: Merck release (fetched; page dated October 23, 2025, Business Wire dateline; the Business Wire copy's URL carries 20251022) announcing priority review of two sBLAs, for KEYTRUDA and KEYTRUDA QLEX each with Padcev, 'based on data from the Phase 3 KEYNOTE-905 trial (also known as EV-303)' for MIBC patients 'who are ineligible for cisplatin-based chemotherapy', with PDUFA date April 7, 2026. This names the trial and population, which fixes the pass-4 linkage problem. FDA approval notice (fetched): approved November 21, 2025 for exactly that use (KEYNOTE-905/EV-303, cisplatin-ineligible MIBC) and says 'approved this application 5 months ahead of the FDA goal date', consistent with April 7, 2026. extended set false because the action came long before the goal, so no extension could be in effect. CAVEAT for review: the stated goal is for Merck's KEYTRUDA/KEYTRUDA QLEX sBLAs; Merck's release names no Padcev sBLA goal, so the row is keyed to the Keytruda action (Drugs@FDA hint BLA125514 SUPPL-188 2025-11-21, not fetched in pass 5), co-approved the same day with Padcev S-032. The FDA notice and Merck release were read; the Drugs@FDA Keytruda row was not.",
+   "members": [
+    "C308"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed.",
+   "decision_pages": [
+    "MRK-2025-11-21"
+   ]
+  },
+  {
+   "cid": "L050",
+   "drug": "garadacimab (CSL312; later ANDEMBRY)",
+   "application": "BLA 761367",
+   "sponsor": "CSL Behring LLC (CSL Limited)",
+   "tickers": [
+    "CSLLY"
+   ],
+   "goal_date_original": "2024-10-13",
+   "goal_original_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/761367Orig1s000OtherR.pdf",
+   "goal_original_doc_date": "2024-08-22",
+   "goal_original_quote": "Clinical Inspection Summary BLA 761367, Garadacimab (CSL 312) Date August 22, 2024 ... Action Goal Date October 11, 2024 PDUFA Date October 13, 2024",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2024-10-13",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-10-07",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/761367Orig1s000OtherActionLtrs.pdf",
+   "action_quote": "BLA 761367 COMPLETE RESPONSE (openFDA letter_date 2024-10-07)",
+   "announcement_date": null,
+   "announcement_url": null,
+   "outcome": "CRL",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "Clinical Inspection Summary (OSI), signed 08/22/2024, in Other Review(s) of the BLA 761367 approval package",
+   "notes": "Pass 4: BLA 761367 approved 06/16/2025 (Drugs@FDA, ANDEMBRY); review TOC https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/761367Orig1s000TOC.html loads dynamically; IntegratedR, MultidisciplineR and SumR PDF names all failed (client_error). One fresh web search for a CSL statement of the goal day found none. Approval row is C232 in batch A5. | Pass 5: 761367Orig1s000AdminCorres.pdf fetched: holds only the 08/28/2023 Refusal to File letter (for the June 29, 2023 submission) and IND meeting documents, no goal date. 761367Orig1s000OtherR.pdf fetched: the OSI Clinical Inspection Summary for this first cycle (BLA received Oct 13, 2023 per the CRL), dated and signed August 22, 2024, before the Oct 7, 2024 CRL, states 'PDUFA Date October 13, 2024' (a Sunday) and an internal 'Action Goal Date October 11, 2024' (the Friday before); it also shows 'Summary Goal Date August 27, 2023', apparently a typo for 2024. goal_in_effect uses the PDUFA Date line. The CRL says the Aug 9, 2024 amendment was not reviewed for this action and no document read mentions an extension, so extended is left null (not proven false). Same package: DMEPA and patient-labeling memos confirm the CRL of October 7, 2024 and the class 2 resubmission of December 17, 2024. CRL came 6 days before the PDUFA date (4 days before the internal action goal date). Action date remains the FDA-published CRL letter.",
+   "members": [
+    "L050"
+   ],
+   "origin": "crl_letter",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C027",
+   "drug": "TEVIMBRA (tislelizumab-jsgr) - 2L ESCC",
+   "application": "BLA 761232",
+   "sponsor": "BeiGene",
+   "tickers": [
+    "ONC"
+   ],
+   "goal_date_original": "2022-07-12",
+   "goal_original_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2024/761232Orig1s000MultidisciplineR.pdf",
+   "goal_original_doc_date": null,
+   "goal_original_quote": "PDUFA Goal Date July 12, 2022",
+   "extended": false,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2022-07-12",
+   "goal_verified_by": "fetched",
+   "action_date": "2024-03-13",
+   "action_basis": "fda_record",
+   "action_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761232",
+   "action_quote": "Drugs@FDA BLA 761232 TEVIMBRA (tislelizumab-jsgr), BEIGENE: 03/13/2024 ORIG-1 Approval",
+   "announcement_date": null,
+   "announcement_url": null,
+   "outcome": "Approved",
+   "goal_source_type": "fda_review",
+   "goal_fda_doc_title": "Multidiscipline Review (cover sheet), BLA 761232Orig1s000, submitted July 10, 2021, received July 12, 2021",
+   "notes": "Pass 5: Drugs@FDA overview (fetched) confirms BLA 761232, applicant BeiGene, ORIG-1 approved 03/13/2024 with a review (TOC loads dynamically). Multidiscipline Review cover sheet (fetched): 'Submit Date(s) July 10, 2021', 'Received Date(s) July 12, 2021', 'PDUFA Goal Date July 12, 2022', 'Review Completion Date See electronic stamp date'; no extended or revised goal shown and no sentence about deferral or resubmission found in the part read. This matches BeiGene's July 2022 statement (prior goal_original_url). The goal day itself is now FDA-confirmed; the open question is classification only. July 12, 2022 was a Tuesday. Deferred action: the FDA deferred action at the July 12, 2022 goal pending inspections in China and gave no new anticipated action date (BeiGene 8-K, July 14, 2022, https://www.sec.gov/Archives/edgar/data/1651308/000165130822000124/ax14jul2022xex991xtisle2le.htm); approval came March 13, 2024, about 20 months after the goal. Counted as late, as penpulimab's first cycle (L004) is.",
+   "members": [
+    "C027"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+  },
+  {
+   "cid": "C333",
+   "drug": "relacorilant - hypertension secondary to hypercortisolism (endogenous Cushing's syndrome)",
+   "application": "NDA 219398",
+   "sponsor": "Corcept Therapeutics",
+   "tickers": [
+    "CORT"
+   ],
+   "goal_date_original": "2025-12-30",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/1088856/000162828025048814/cort110425ex991pressrelease.htm",
+   "goal_original_doc_date": "2025-11-04",
+   "goal_original_quote": "Our New Drug Application (NDA) for relacorilant in hypercortisolism has a Prescription Drug User Fee Act (PDUFA) date of December 30, 2025.",
+   "extended": null,
+   "goal_date_extended": null,
+   "goal_extended_url": null,
+   "goal_extended_doc_date": null,
+   "goal_extended_quote": null,
+   "extension_reason": null,
+   "goal_in_effect": "2025-12-30",
+   "goal_verified_by": "fetched",
+   "action_date": "2025-12-30",
+   "action_basis": "fda_record",
+   "action_url": "https://download.open.fda.gov/crl/CRL_NDA219398_20260128.pdf",
+   "action_quote": "NDA 219398 CORRECTED COMPLETE RESPONSE ... We also refer to our complete response letter dated December 30, 2025 ... The effective action date will remain December 30, 2025, the date of the original letter.",
+   "announcement_date": "2025-12-31",
+   "announcement_url": null,
+   "outcome": "CRL",
+   "goal_source_type": "sponsor",
+   "goal_fda_doc_title": null,
+   "notes": "Pass 5: the FDA's corrected CRL (e-signed 01/28/2026) states the original letter was dated December 30, 2025 and that the effective action date stays December 30, 2025 (first page as held in the openFDA CRL corpus; the PDF copy served today starts at page 2). Corcept announced the CRL on December 31, 2025. Goal from Corcept's November 4, 2025 release (fetched 2026-11-27). CRL on the goal date (a Tuesday).",
+   "members": [
+    "C333"
+   ],
+   "origin": "tracked",
+   "excluded": null,
+   "scope_note": null,
+   "red_team": "Pass 5 (2026-11-27): goal re-read in Corcept's November 4, 2025 release; action date read in the FDA's corrected letter text (openFDA CRL corpus); confirmed."
   }
  ],
  "excluded_rows": [
@@ -8664,15 +9200,6 @@
    "reason": "pass 3: no sponsor-stated goal date found (pass 3: one web search of Novo Nordisk SELECT sNDA approval coverage found no PDUFA/goal day; Novo does not typically disclose one)"
   },
   {
-   "cid": "C027",
-   "origin": "tracked",
-   "drug": "TEVIMBRA (tislelizumab-jsgr) - 2L ESCC",
-   "sponsor": "BeiGene",
-   "tickers": "ONC",
-   "category": "goal_month_or_quarter",
-   "reason": "no goal date in effect at action: the only sponsor-stated goal day (July 12, 2022) passed with FDA deferring action pending China inspections, and BeiGene stated the FDA gave no new anticipated action date; approval came 2024-03-13 (about 20 months after that goal). Not classifiable against a goal in effect; could be reported separately as a deferred action."
-  },
-  {
    "cid": "C029",
    "origin": "tracked",
    "drug": "ICLUSIG (ponatinib) with chemotherapy, newly diagnosed Ph+ ALL",
@@ -8707,15 +9234,6 @@
    "tickers": "ALVO/TEVA",
    "category": "not_pdufa",
    "reason": "not a PDUFA action (BsUFA): SELARSDI is a 351(k) biosimilar"
-  },
-  {
-   "cid": "C044",
-   "origin": "tracked",
-   "drug": "ENTYVIO (vedolizumab) subcutaneous, maintenance in Crohn's disease",
-   "sponsor": "Takeda",
-   "tickers": "TAK",
-   "category": "no_sourced_goal_day",
-   "reason": "pass 3: no sponsor-stated goal date found (pass 3: web search for Takeda's Entyvio SC Crohn's BLA acceptance/PDUFA statement found only coverage without a day; SEC EDGAR full-text search of Takeda filings (CIK 1395064) for PDUFA, Jun 2023 to Apr 2024, hits only two 6-Ks, one checked: its PDUFA sentence is for fruquintinib)"
   },
   {
    "cid": "C048",
@@ -8799,15 +9317,6 @@
    "reason": "pass 3: no sponsor-stated goal date found (one search: AbbVie Aug 2023 submission and June 18, 2024 approval coverage show no PDUFA day); not searched further in pass 3"
   },
   {
-   "cid": "C077",
-   "origin": "tracked",
-   "drug": "VYALEV (foscarbidopa/foslevodopa), Parkinson's disease",
-   "sponsor": "AbbVie",
-   "tickers": "ABBV",
-   "category": "no_sourced_goal_day",
-   "reason": "pass 3: no sponsor-stated goal date found"
-  },
-  {
    "cid": "C083",
    "origin": "tracked",
    "drug": "Vabysmo (faricimab) prefilled syringe",
@@ -8826,15 +9335,6 @@
    "reason": "pass 3: not a PDUFA action (product reintroduction; no 2024 Drugs@FDA supplement approval)"
   },
   {
-   "cid": "C086",
-   "origin": "tracked",
-   "drug": "Insulin icodec",
-   "sponsor": "Novo Nordisk",
-   "tickers": "NVO",
-   "category": "no_sourced_goal_day",
-   "reason": "pass 3: no sponsor-stated goal date found (Novo disclosed only submission timing; pass 3: SEC EDGAR full-text search for icodec Apr 2023 to Jul 2024 hits only Novo 6-K/20-F company reports, and a parallel search pairing PDUFA with it found none of them stating a goal day)"
-  },
-  {
    "cid": "C088",
    "origin": "tracked",
    "drug": "BRINEURA (cerliponase alfa) - children under 3 / all ages",
@@ -8851,15 +9351,6 @@
    "tickers": "MIRM",
    "category": "no_sourced_goal_day",
    "reason": "pass 3: no sponsor-stated goal date found for the July 2024 age-expansion supplements (pass 3: EDGAR full-text search maralixibat+PDUFA Jan-Jul 24, 2024 hits only Mirum filings; Mirum 8-K exhibit of 2024-02-28 fetched: PDUFA sentences concern only the PFIC sNDA, March 13, 2024)"
-  },
-  {
-   "cid": "C090",
-   "origin": "tracked",
-   "drug": "Potassium Phosphates in 0.9% Sodium Chloride Injection (RTU bags)",
-   "sponsor": "Amneal",
-   "tickers": "AMRX",
-   "category": "no_sourced_goal_day",
-   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C091",
@@ -9006,15 +9497,6 @@
    "reason": "pass 3: no sponsor-stated goal date found (pass 3: EDGAR full-text search Tagrisso+PDUFA Mar-Sep 2024; AstraZeneca Q1 2024 6-K of 2024-04-25 fetched in full: no PDUFA sentence, LAURA listed only as Phase III readout)"
   },
   {
-   "cid": "C132",
-   "origin": "tracked",
-   "drug": "VYALEV (foscarbidopa and foslevodopa)",
-   "sponsor": "AbbVie",
-   "tickers": "ABBV",
-   "category": "no_sourced_goal_day",
-   "reason": "pass 3: no sponsor-stated goal date found"
-  },
-  {
    "cid": "C135",
    "origin": "tracked",
    "drug": "BOTOX Cosmetic (onabotulinumtoxinA) - platysma prominence",
@@ -9022,15 +9504,6 @@
    "tickers": "ABBV",
    "category": "no_sourced_goal_day",
    "reason": "pass 3: no sponsor-stated goal date found (pass 3: web search found no AbbVie submission/PDUFA statement for the platysma sBLA; SEC EDGAR full-text search of AbbVie filings (CIK 1551152) for PDUFA, Oct 2023 to Apr 2025: no hits)"
-  },
-  {
-   "cid": "C136",
-   "origin": "tracked",
-   "drug": "Pyridostigmine Bromide Extended-Release Tablets 105 mg (soman nerve agent pretreatment)",
-   "sponsor": "Amneal Pharmaceuticals",
-   "tickers": "AMRX",
-   "category": "no_sourced_goal_day",
-   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C137",
@@ -9076,15 +9549,6 @@
    "tickers": "LLY",
    "category": "no_sourced_goal_day",
    "reason": "pass 3: no sponsor-stated goal date found (pass 3: one web search on Lilly OSA submission/priority review/PDUFA found only approval coverage; Lilly typically does not disclose a goal day)"
-  },
-  {
-   "cid": "C161",
-   "origin": "tracked",
-   "drug": "TEVIMBRA (tislelizumab-jsgr) + chemo, 1L HER2-neg gastric/GEJ adenocarcinoma (PD-L1>=1)",
-   "sponsor": "BeiGene",
-   "tickers": "ONC",
-   "category": "goal_month_or_quarter",
-   "reason": "goal stated only as month/quarter: BeiGene's BLA acceptance release (Business Wire, Feb 27, 2024, https://www.businesswire.com/news/home/20240227824706/en) gave a PDUFA target action date of December 2024 (search snippet)"
   },
   {
    "cid": "C162",
@@ -9157,15 +9621,6 @@
    "tickers": "PFE",
    "category": "goal_month_or_quarter",
    "reason": "goal stated only as month/quarter (Pfizer: 'PDUFA action date of March 2025')"
-  },
-  {
-   "cid": "C179",
-   "origin": "tracked",
-   "drug": "EVRYSDI (risdiplam) 5 mg tablet",
-   "sponsor": "Genentech (Roche)",
-   "tickers": "RHHBY",
-   "category": "no_sourced_goal_day",
-   "reason": "pass 3: no sponsor-stated goal date found (pass 1 search of Genentech/Roche releases; pass 3 SEC EDGAR full-text search for risdiplam/Evrysdi + PDUFA and Evrysdi + tablet, Mar 2024 to Feb 2025: partner PTC Therapeutics' filings give no tablet goal day)"
   },
   {
    "cid": "C184",
@@ -9247,15 +9702,6 @@
    "tickers": "MIRM",
    "category": "no_sourced_goal_day",
    "reason": "pass 3: no sponsor-stated goal date found (pass 2 EDGAR zero hits; pass 3 one web search found only the Apr 14, 2025 approval and the older PFIC PDUFA date)"
-  },
-  {
-   "cid": "C209",
-   "origin": "tracked",
-   "drug": "penpulimab-kcqx (AK105), R/M non-keratinizing nasopharyngeal carcinoma",
-   "sponsor": "Akeso (private-to-US; HKEX-listed)",
-   "tickers": "ANTE",
-   "category": "no_sourced_goal_day",
-   "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
    "cid": "C211",
@@ -9555,15 +10001,6 @@
    "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
-   "cid": "C308",
-   "origin": "tracked",
-   "drug": "PADCEV (enfortumab vedotin) + KEYTRUDA / KEYTRUDA QLEX, MIBC (EV-303 / KEYNOTE-905)",
-   "sponsor": "Astellas / Pfizer (Padcev); Merck (Keytruda)",
-   "tickers": "ALPMY/MRK/PFE",
-   "category": "goal_month_or_quarter",
-   "reason": "goal date found but NOT safely linked to this action: Merck Q3 2025 earnings 8-K Ex.99.1 (Oct 30, 2025) lists 'FDA Granted Priority Review for KEYTRUDA and KEYTRUDA QLEX, Each in Combination With Padcev, for Certain Patients With MIBC' with 'FDA Set Prescription Drug User Fee Act (PDUFA) Date of April 7, 2026', but the entry does not name KEYNOTE-905 or the cisplatin-ineligible population, so it c"
-  },
-  {
    "cid": "C310",
    "origin": "tracked",
    "drug": "Imfinzi (durvalumab) + FLOT, perioperative (MATTERHORN)",
@@ -9643,15 +10080,6 @@
    "tickers": "RHHBY",
    "category": "no_sourced_goal_day",
    "reason": "pass 3: no sponsor-stated goal date found (pass 3: one web search of gene.com/roche.com/businesswire found the Dec 21, 2025 approval release and an unrelated later LBCL acceptance, but no acceptance release with a decision day for the subcutaneous FL sBLA)"
-  },
-  {
-   "cid": "C333",
-   "origin": "tracked",
-   "drug": "relacorilant - hypertension secondary to hypercortisolism (endogenous Cushing's syndrome)",
-   "sponsor": "Corcept Therapeutics",
-   "tickers": "CORT",
-   "category": "action_day_not_established",
-   "reason": "action date unresolved: Corcept announced the CRL on 2025-12-31 without stating the day the FDA acted, while the only FDA-published Corcept CRL (CRL_NDA219398_20260128.pdf, relacorilant) carries an electronic signature of 01/28/2026, after the announcement; cannot tell which date is the action date"
   },
   {
    "cid": "L002",
@@ -9861,15 +10289,6 @@
    "reason": "pass 3: no sponsor-stated goal date found"
   },
   {
-   "cid": "L035",
-   "origin": "crl_letter",
-   "drug": "Vyalev (foscarbidopa/foslevodopa) subcutaneous infusion, resubmission after Mar 17, 2023 CRL",
-   "sponsor": "AbbVie Inc.",
-   "tickers": "ABBV",
-   "category": "no_sourced_goal_day",
-   "reason": "pass 3: no sponsor-stated goal date found"
-  },
-  {
    "cid": "L037",
    "origin": "crl_letter",
    "drug": "product name redacted in FDA letter (Celltrion biosimilar)",
@@ -9906,15 +10325,6 @@
    "reason": "no sponsor-stated goal date found (one search: Novo Nordisk's July 10, 2024 CRL announcement and coverage state no PDUFA day; FDA letter says a major amendment extended the goal by three months, dates redacted)"
   },
   {
-   "cid": "L042",
-   "origin": "crl_letter",
-   "drug": "OX124 naloxone hydrochloride nasal powder (high-dose)",
-   "sponsor": "Orexo AB",
-   "tickers": "ORX (Nasdaq Stockholm)",
-   "category": "goal_month_or_quarter",
-   "reason": "goal stated only as month/quarter: Orexo's Q1 2024 interim report refers to 'the original PDUFA date in July'; Q4 2023 report gives no date; no day-precision sponsor statement found in Orexo's Jan-Oct 2024 press-release list"
-  },
-  {
    "cid": "L044",
    "origin": "crl_letter",
    "drug": "naproxen sodium / dextromethorphan HBr / guaifenesin extended-release tablet (OTC)",
@@ -9940,15 +10350,6 @@
    "tickers": "068270.KS",
    "category": "not_pdufa",
    "reason": "not a PDUFA action (BsUFA): CT-P43 is a 351(k) ustekinumab biosimilar"
-  },
-  {
-   "cid": "L050",
-   "origin": "crl_letter",
-   "drug": "garadacimab (CSL312) for hereditary angioedema prophylaxis",
-   "sponsor": "CSL Behring LLC (CSL Limited)",
-   "tickers": "CSL.AX",
-   "category": "no_sourced_goal_day",
-   "reason": "pass 3: no sponsor-stated goal date found (two searches across passes: CSL's Dec 14, 2023 BLA-acceptance announcement and coverage show acceptance but no PDUFA day; CSL is ASX-listed, no SEC filings to search)"
   },
   {
    "cid": "L052",
