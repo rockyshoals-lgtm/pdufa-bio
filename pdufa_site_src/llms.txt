@@ -130,6 +130,7 @@ Full archive: https://www.pdufa.bio/decisions
 - /screener - upcoming PDUFA dates, clinical readouts, advisory committees and conferences in one filterable table
 - /fda-application - one page per FDA application (/fda-application/nda-NNNNNN): brand, ingredient, code names, FDA applicant and owner, FDA facts from the Orange Book
 - /condition - upcoming PDUFA decisions and readouts grouped by therapeutic area
+- /learn/what-is-pdufa - the Prescription Drug User Fee Act itself: every renewal since 1992 and the FDA's user fees for fiscal years 2026 and 2027, from the FDA's own pages
 - /ticker/<TICKER> - one company's PDUFA dates, FDA decisions, readouts and conferences (for example /ticker/VRTX)
 - /drug/<name> - one drug's FDA decision dates and catalyst history (for example /drug/donidalorsen)
 - /fda-decision/<TICKER>-<YYYY-MM-DD> - one FDA decision: the outcome, its date and the source behind it (for example /fda-decision/GSK-2025-10-23)
