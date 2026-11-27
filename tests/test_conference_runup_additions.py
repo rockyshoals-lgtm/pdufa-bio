@@ -102,6 +102,20 @@ for title, m, want in CASES:
     got = X.anchors(title, m, ms)
     check(got == want, f"headline rule: {title!r} -> {got}, want {want}")
 
+# red team 2026-11-27: the meeting a headline names, and what a release out before the meeting opens says
+endo = {"code": "ENDO", "name": "ENDO", "start": "2026-06-13", "end": "2026-06-16", "source": "https://example.org/endo"}
+check(not X.anchors("Zorvexa Presents New Data at the Pediatric Endocrine Society's 2026 Annual Meeting", endo, ms + [endo]),
+      "headline rule: the Pediatric Endocrine Society was read as ENDO")
+check(not X.anchors("Zorvexa Announces Multiple AlloNK\u00ae Data Presentations at ESMO 2026", esmo, ms),
+      "headline rule: a notice of presentations with a trademark sign in it was read as data")
+check(not X.early_ok("Zorvexa Highlights Pipeline at ESMO 2026", "Zorvexa announced that new data will be presented at "
+                     "ESMO 2026.", "2026-09-22", esmo), "early release: a notice of talks to come anchored the meeting")
+check(X.early_ok("Zorvexa Highlights Pipeline at ESMO 2026", "Data will be presented: ORR was 42% in 30 patients.",
+                 "2026-10-13", esmo), "early release: an abstract-day release with a result in figures was dropped")
+check(X.early_ok("Zorvexa Highlights Pipeline at ESMO 2026", "new data will be presented today", "2026-10-24", esmo),
+      "early release: a release during the meeting was held to the before-the-meeting rule")
+check(not X.early_ok("Zorvexa Showcases Data at AD/PD 2026 and ESMO 2026", "Zorvexa today showcased data.",
+                     "2026-10-01", esmo), "early release: a release naming another meeting anchored this one")
 # attribution: a partner's release that only cites the ticker is not the ticker's
 check(not X.own("ZZQA", "Zorvexa Therapeutics Inc.", "Partnerco Presents Overall Survival Data at ESMO 2026",
                 "Partnerco (HKEX: 9999.HK) and its partner Zorvexa Therapeutics Inc. (NASDAQ: ZZQA) today"),
