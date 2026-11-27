@@ -1,5 +1,5 @@
 {
- "about": "PDUFA goal-date extensions for pdufa.bio's /pdufa-date-changes page (build_date_changes.py). 'rows' holds extensions found after the 2024-2025 decision-timing census (decision_timing_2024_2025.json), in the census's field names: goal_date_original / goal_original_url / goal_original_quote, goal_date_extended / goal_extended_url / goal_extended_quote, extension_reason, action_date / action_url / outcome. 'reasons' is the public sentence shown for each extension's stated reason, keyed by census cid or 'TICKER|extended-date', written from the quoted documents; an extension with no entry here shows 'No reason stated in the documents read'.",
+ "about": "PDUFA goal-date extensions for pdufa.bio's /pdufa-date-changes page (build_date_changes.py). 'rows' holds extensions found after the 2024-2025 decision-timing census (decision_timing_2024_2025.json), in the census's field names: goal_date_original / goal_original_url / goal_original_quote, goal_date_extended / goal_extended_url / goal_extended_quote, extension_reason, action_date / action_url / outcome, and for a pending row whose extended date has passed, after_note / after_url (a public sentence on what the sponsor said later, with its source). 'reasons' is the public sentence shown for each extension's stated reason, keyed by census cid or 'TICKER|extended-date', written from the quoted documents; an extension with no entry here shows 'No reason stated in the documents read'.",
  "reasons": {
   "C331": "Sanofi said the FDA determined that additional analyses submitted during the review were a major amendment, extending the target date by three months.",
   "C330": "Omeros said the date was extended after its comprehensive response to an FDA information request; its release does not use the term major amendment.",
@@ -24,7 +24,10 @@
   "PRAX|2026-12-27": "The FDA deemed the sponsor's submission of additional sensitivity analyses of existing clinical data a major amendment.",
   "BLTE|2027-05-12": "The sponsor said the extension gives the FDA additional time to review information provided in support of the application.",
   "LNTH|2026-06-29": "The sponsor said the extension gives the FDA additional time to review further manufacturing information it submitted, and that it was not related to the efficacy or safety data.",
-  "VRTX|2027-02-28": "The sponsor said the FDA classified its response to an information request near the end of the review cycle as a major amendment."
+  "VRTX|2027-02-28": "The sponsor said the FDA classified its response to an information request near the end of the review cycle as a major amendment.",
+  "SVRA|2026-11-22": "Savara said the FDA determined that its responses to recent information requests were a major amendment, and that the FDA raised no safety, efficacy or manufacturing concerns.",
+  "AGIO|2027-02-01": "Agios said the FDA asked whether a REMS was needed, and that its reply with updated safety data was classified as a major amendment, adding three months.",
+  "EXEL|2027-03-03": "Exelixis said updated safety and efficacy data it submitted in response to an FDA information request was deemed a major amendment, extending the review by three months."
  },
  "rows": [
   {
@@ -110,6 +113,60 @@
    "goal_extended_url": "https://news.vrtx.com/news-releases/news-release-details/vertex-announces-extension-pdufa-target-action-date-three-months",
    "goal_extended_doc_date": "2026-11-25",
    "goal_extended_quote": "The original PDUFA target action date was November 30, 2026, and the revised target action date for the FDA decision is no later than February 28, 2027.",
+   "action_date": null,
+   "action_outcome": "pending",
+   "action_url": null
+  },
+  {
+   "ticker": "SVRA",
+   "name": "MOLBREEVI (molgramostim inhalation solution)",
+   "company": "Savara",
+   "goal_date_original": "2026-08-22",
+   "goal_original_url": "https://www.businesswire.com/news/home/20260220017435/en",
+   "goal_original_doc_date": "2026-02-20",
+   "goal_original_quote": "The FDA granted Priority Review with a PDUFA action date of August 22, 2026.",
+   "extended": true,
+   "goal_date_extended": "2026-11-22",
+   "goal_extended_url": "https://s205.q4cdn.com/999407632/files/doc_news/Savara-Announces-the-U-S--Food--Drug-Administration-FDA-Has-Extended-the-Review-Period-for-the-Molgramostim-Inhalation-Solution-Molgr-HR78W.pdf",
+   "goal_extended_doc_date": "2026-04-15",
+   "goal_extended_quote": "The FDA determined that the Company's responses to recent information requests ... constituted a major amendment to the BLA, resulting in a three-month extension of the PDUFA date ... the new PDUFA target action date is November 22, 2026.",
+   "action_date": null,
+   "action_outcome": "pending",
+   "action_url": null,
+   "after_note": "Savara later said the FDA would not meet the extended date and had not given a revised action date.",
+   "after_url": "https://www.businesswire.com/news/home/20261120300122/en/",
+   "after_quote": "will not meet the Prescription Drug User Fee Act (PDUFA) target action date of November 22, 2026 ... no revised action date has been provided by the agency."
+  },
+  {
+   "ticker": "AGIO",
+   "name": "Mitapivat, sickle cell disease",
+   "company": "Agios Pharmaceuticals",
+   "goal_date_original": "2026-11-01",
+   "goal_original_url": "https://www.biospace.com/press-releases/u-s-fda-grants-priority-review-to-agios-snda-for-mitapivat-in-sickle-cell-disease",
+   "goal_original_doc_date": "2026-07-07",
+   "goal_original_quote": "FDA's PDUFA goal date is November 1, 2026.",
+   "extended": true,
+   "goal_date_extended": "2027-02-01",
+   "goal_extended_url": "https://finviz.com/news/412465/agios-announces-new-pdufa-goal-date-of-february-1-2027-for-mitapivat-sickle-cell-disease-snda-company-is-launch-ready-and-in-labeling-discussions-with-fda",
+   "goal_extended_doc_date": "2026-10-30",
+   "goal_extended_quote": "the U.S. Food and Drug Administration (FDA) has extended the Prescription Drug User Fee Act (PDUFA) goal date for the supplemental New Drug Application (sNDA) for mitapivat, an oral pyruvate kinase (PK) activator, in sickle cell disease. The PDUFA goal date for this sNDA, which was submitted under the FDA’s accelerated approval pathway and granted Priority Review, is now February 1, 2027.",
+   "action_date": null,
+   "action_outcome": "pending",
+   "action_url": null
+  },
+  {
+   "ticker": "EXEL",
+   "name": "Zanzalintinib + atezolizumab (STELLAR-303)",
+   "company": "Exelixis",
+   "goal_date_original": "2026-12-03",
+   "goal_original_url": "https://ir.exelixis.com/node/27136",
+   "goal_original_doc_date": "2026-02-02",
+   "goal_original_quote": "assigned a standard review with a Prescription Drug User Fee Act target action date of December 3, 2026.",
+   "extended": true,
+   "goal_date_extended": "2027-03-03",
+   "goal_extended_url": "https://www.sec.gov/Archives/edgar/data/0000939767/000093976726000108/exel-20260910.htm",
+   "goal_extended_doc_date": "2026-09-10",
+   "goal_extended_quote": "Today, Exelixis, Inc. (Exelixis) announced that on September 10, 2026, the U.S. Food and Drug Administration (FDA) notified Exelixis that it had extended the review period for Exelixis’ new drug application (NDA) for zanzalintinib, in combination with atezolizumab, for the treatment of patients with metastatic colorectal cancer by three months. ... The updated Prescription Drug User Fee Act action date is March 3, 2027.",
    "action_date": null,
    "action_outcome": "pending",
    "action_url": null
