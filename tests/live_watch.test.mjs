@@ -711,3 +711,32 @@ test('red team 10: corrections that slipped past now pause; the clock runs from 
   // a status the watch never writes is treated as paused
   assert.equal(reconcile({ a: { ...late.a, status: 'Paused' } }, { ...ARMED, status: {} }, t0 + 3600000).a.status, 'paused');
 });
+
+test('red team 11: twins of the post never pause it; baselines stay old; filing prose needs a plain retraction', () => {
+  const r = ARMED.rows[0];
+  const run = ago(60);
+  const H = 'Mineralys Announces FDA Approval of Lorundrostat for Hypertension';
+  const pub = { [r.id]: { kind: 'approval', status: 'posted', run_ms: run, headline: H, source: { url: 'https://www.sec.gov/a', published_at: etIso(run) } } };
+  const ed = (title, o = {}) => ({ channel: 'edgar', cik: r.cik, title, atMs: ago(5), firstMs: ago(5), url: 'https://www.sec.gov/b', ...o });
+  // the same release furnished as an exhibit, with a subheadline that says "correct"
+  assert.deepEqual(corrections(ed(H + ' Lorundrostat is the first therapy approved to correct the cause',
+    { ctitle: H + ' Lorundrostat is the first therapy approved to correct the cause' }), ARMED, pub), []);
+  assert.deepEqual(corrections(ed('CORRECTION -- ' + H), ARMED, pub), [r.id], 'a corrected reissue still pauses');
+  assert.deepEqual(corrections(ed(H + ' Was Announced Prematurely'), ARMED, pub), [r.id]);
+  // a baseline feed item that the feed re-stamps with the read time
+  const A2 = { ...ARMED, rows: ARMED.rows.map(x => x.id === r.id ? { ...x, feeds: ['https://investor.mineralys.com/rss'] } : x) };
+  const fi = { channel: 'rss', feed: 'https://investor.mineralys.com/rss', url: 'https://investor.mineralys.com/news/9', atMs: ago(1),
+               title: 'Mineralys Responds to Misleading Short Seller Report' };
+  assert.deepEqual(corrections({ ...fi, firstMs: 0 }, A2, pub), [], 'baseline');
+  assert.deepEqual(corrections({ ...fi, firstMs: ago(1) }, A2, pub), [r.id], 'new after the post');
+  // filing prose (no exhibit): passing words do not count; a plain retraction does
+  const body = t => ed('', { ctitle: t, cbody: true });
+  assert.deepEqual(corrections(body('On Dec 1 the FDA approved lorundrostat, the first therapy approved to correct aldosterone excess.'), ARMED, pub), []);
+  assert.deepEqual(corrections(body('On Dec 1 the FDA approved lorundrostat after a complete response letter in 2025.'), ARMED, pub), []);
+  assert.deepEqual(corrections(body('The press release furnished earlier today was issued in error. No FDA decision has been received.'), ARMED, pub), [r.id]);
+  assert.deepEqual(corrections(body('The Company received a complete response letter from the FDA for lorundrostat.'), ARMED, pub), [r.id]);
+  // Item text runs past a long Item 7.01 up to Item 9.01
+  const long = '<p>Item 7.01 Regulation FD Disclosure.</p><p>' + 'x '.repeat(500) + '</p><p>Item 8.01 Other Events.</p><p>The release was issued in error.</p><p>Item 9.01 Exhibits</p><p>retracts</p>';
+  assert.match(itemText(long), /issued in error/);
+  assert.doesNotMatch(itemText(long), /retracts/);
+});

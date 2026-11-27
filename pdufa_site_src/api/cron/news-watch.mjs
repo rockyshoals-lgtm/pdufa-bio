@@ -63,36 +63,47 @@ async function edgarItems(ua, beat, seen, until, listed, nowMs) {
       if (!m || !ciks.has(Number(m[2]))) continue;
       const acc = (e.url.match(/(\d{10}-\d{2}-\d{6})/) || [])[1];
       if (acc) listed.push(`edgar|${acc}`);
-      if (!acc || seen[`edgar|${acc}`]) continue;
-      fresh.push({ form: m[1], cik: Number(m[2]), acc, atMs: e.atMs });
+      // a filing is read until it reads (5 tries at most, so unreadable ones never crowd out new ones, red team 11)
+      const was = seen[`edgar|${acc}`];
+      if (!acc || (was && (!plain(was) || typeof was.title === 'string' || Number(was.tries) >= 5))) continue;
+      fresh.push({ form: m[1], cik: Number(m[2]), acc, atMs: e.atMs, tries: plain(was) ? Number(was.tries) || 0 : 0,
+                   first: plain(was) && Number(was.first) > 0 ? Number(was.first) : nowMs });
     }
   }
   await Promise.all(fresh.slice(0, 8).map(async f => {
     const base = `https://www.sec.gov/Archives/edgar/data/${f.cik}/${f.acc.replace(/-/g, '')}`;
+    const miss = () => { seen[`edgar|${f.acc}`] = { form: f.form, cik: f.cik, atMs: f.atMs, first: f.first, tries: f.tries + 1 }; };
     const idx = await get(base + '/index.json', { ua, until });
-    if (!idx) return;                                        // unread: try again next minute
+    if (!idx) return miss();                                 // unread: try again next minute
     let names = [];
     try { names = JSON.parse(idx).directory.item.map(x => x.name).filter(n => /\.html?$/i.test(n)); } catch {}
     const ex = names.filter(n => /ex(?:hibit)?[-_]?99|press/i.test(n)).sort()[0];
     const doc = ex ? await get(`${base}/${ex}`, { ua, until }) : '';
-    if (ex && !doc) return;
+    if (ex && !doc) return miss();
     // No press release exhibit: the filing's own text (Item 7.01 or 8.01) is read for corrections only (red team 10).
-    const docs = ex ? [] : names.filter(n => !/^ex|[-_]ex\d|^R\d+\.htm|FilingSummary/i.test(n)).sort();
-    const main = docs.find(n => /8-?k|6-?k|form/i.test(n)) || docs[0];
-    const body = main ? await get(`${base}/${main}`, { ua, until }) : '';
-    if (main && !body) return;
+    // The main document: not an exhibit, an index page or an XBRL view (red team 11); the first two read, until one has
+    // the Item text.
+    const docs = ex ? [] : names.filter(n => !/^ex|[-_]ex\d|-index(?:-headers)?\.html?$|^R\d+\.htm|FilingSummary/i.test(n))
+      .sort((a, b) => (/8-?k|6-?k|form/i.test(b) ? 1 : 0) - (/8-?k|6-?k|form/i.test(a) ? 1 : 0) || a.localeCompare(b));
+    let text = '';
+    for (const n of docs.slice(0, 2)) {
+      const body = await get(`${base}/${n}`, { ua, until });
+      if (!body) return miss();
+      text = itemText(body);
+      if (text) break;
+    }
     const cos = ARMED.rows.filter(r => Number(r.cik) === f.cik).flatMap(r => [r.company, ...(r.aliases || [])]);
-    seen[`edgar|${f.acc}`] = { form: f.form, cik: f.cik, atMs: f.atMs, first: nowMs, url: ex ? `${base}/${ex}` : base,
+    seen[`edgar|${f.acc}`] = { form: f.form, cik: f.cik, atMs: f.atMs, first: f.first, url: ex ? `${base}/${ex}` : base,
                                title: ex ? exhibitHeadline(doc, cos) : '', exDay: ex ? exhibitDate(doc) : '',
                                // what a correction is read from: the text above the dateline, struck-out text included
-                               ctitle: ex ? correctionHeadline(doc) : itemText(body) };
+                               ctitle: ex ? correctionHeadline(doc) : text, ...(ex ? {} : { cbody: true }) };
   }));
   beat.edgar = read ? 'read' : 'unreadable';
   return Object.entries(seen).filter(([k, v]) => k.startsWith('edgar|') && plain(v)
       && ((typeof v.title === 'string' && v.title) || (typeof v.ctitle === 'string' && v.ctitle) || /\/A$/i.test(String(v.form || ''))))
     .map(([k, v]) => ({ channel: 'edgar', form: v.form, cik: v.cik, title: typeof v.title === 'string' ? v.title : '',
                         ctitle: typeof v.ctitle === 'string' ? v.ctitle : '', exDay: v.exDay, url: v.url, atMs: v.atMs, key: k,
-                        firstMs: Number(v.first) || 0 }));
+                        firstMs: Number(v.first) || 0, cbody: v.cbody === true }));
 }
 
 /** Sponsor feeds. A feed is first read as a baseline: nothing in it then is ever posted, so an old release the feed
@@ -249,8 +260,9 @@ export default async (req, res) => {
       posted_at: etIso(Date.now()), run_ms: nowMs, headline: item.title, minutes_after_source: Math.max(0, Math.floor((Date.now() - item.atMs) / 60000)),
       page: c.row.url, status: 'posted', check: `headline "${item.title.slice(0, 160)}" names ${c.term} and an FDA ${c.kind === 'approval' ? 'approval' : 'complete response letter'}`,
     };
-    // A later release by the sponsor in this same read that contradicts or retracts it: never posted (red team 8).
-    const would = { ...pub, [rec.id]: rec };
+    // A release by the sponsor in this same read that contradicts or retracts it, first seen in the last day (so one
+    // read a minute earlier counts too, red team 10), never lets it post; the feed's baseline never does (red team 11).
+    const would = { ...pub, [rec.id]: { ...rec, run_ms: nowMs - 86400000 } };
     if ([...edgar, ...rssList].some(x => x !== item && corrections(x, armed, would).includes(rec.id))) {
       held.push({ key: item.key, why: 'a release by the sponsor in the same read may contradict it' });
       continue;
