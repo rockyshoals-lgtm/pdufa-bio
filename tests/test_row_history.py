@@ -266,7 +266,7 @@ def main():
         who = f"{c['t']} · {c['name']}" if c["name"] else c["t"]
         want = [c["ts"], f"{who} {c['id']}".strip(), NAMES[c["field"]], cell(c, "old"), cell(c, "new")]
         hrefs = re.findall(r'href="([^"]*)"', r)
-        if cells != want or hrefs:   # 2026-11-27: the repository went private; the table links nothing
+        if cells != want or hrefs:   # 2026-11-27: the repository is to go private; the table links nothing
             fails.append(f"/changes: a table row reads {cells[:4]}, the ledger's entry is {want[:4]}")
             break
     own = doc[doc.find("<h1"):(doc.find('<div class="legal"') if '<div class="legal"' in doc else None)]

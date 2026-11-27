@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """build_row_history.py -- /changes: the changes to 12 fields of each row of pdufa.bio's published dataset, from its
-commits (the repository went private on 2026-11-27; the page names no commit or repository).
+commits (2026-11-27: the repository is to go private, so the page names no commit or repository).
 
 pdufa.bio's dataset (pdufa_site_src/api/v1/dataset.mjs, served at /api/v1) is committed to the repository on
 every rebuild. This reads each committed version in the order main received them (first parent), compares it with

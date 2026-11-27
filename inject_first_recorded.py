@@ -5,7 +5,7 @@
 Competitors publish a decision with no time on it. pdufa.bio's repository is public, so the moment a decision page
 first entered it is a checkable fact. Under the Verified-against line each /fda-decision page gets:
     "This page entered pdufa.bio's records on Nov 17, 2026, 1:24 AM ET."
-(2026-11-27: the repository went private, so the line no longer links or names the commit.)
+(2026-11-27: the repository is to go private, so the line no longer links or names the commit.)
 (written once in Eastern; RULE 1: commit timestamps carry their own offset and are converted with zoneinfo, never
 assumed). Pages that came in with the repository's first import (2026-07-25/26) predate the repository: their
 line says so and names the import commit, never claiming the import time as when we first recorded the decision
