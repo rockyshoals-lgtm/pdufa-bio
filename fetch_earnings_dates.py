@@ -99,7 +99,8 @@ ABOUT_RESULTS = re.compile(r"^\s*(?:and\s+)?(conference call|call|webcast|teleco
                            r"timing)\b", re.I)
 # words that, inside the matched 'Announces ... Third Quarter 2026 ... Results' span, make it about a call, a plan or a
 # preliminary figure rather than the results themselves
-NOT_IN_STRONG = re.compile(r"\b(conference|call|webcast|teleconference|will|plans?|to|preliminary|date|"
+NOT_IN_STRONG = re.compile(r"\b(conference|call|webcast|teleconference|will|plans?|to|preliminary|unaudited|selected?|"
+                           r"estimated|expected|anticipated|date|"
                            r"timing|schedule\w*|postpone\w*|delay\w*|upcoming)\b", re.I)
 SCHEDULE_LEAD = re.compile(r"\b(date|dates|timing|upcoming|schedule[sd]?)\b", re.I)
 # law-firm and shareholder-alert releases are never earnings rows (word forms chosen so 'Investigational' and
@@ -162,7 +163,7 @@ def period_of(text, published=None):
         fy = m.group(1).lower().startswith("fiscal")
         return m.group(0), (f"FY{m.group(2)}Q4" if fy else f"{m.group(2)}Q4+FY")
     m = P_Q_ENDED.search(t)
-    if m:
+    if m and _q_ended_key(m, pub_y):
         return m.group(0), _q_ended_key(m, pub_y)
     # "Financial Results for the Three Months Ended September 30, 2026" (no quarter named): the period that ends on the
     # printed day, only when that day ends a calendar quarter
@@ -248,9 +249,11 @@ def _q_ended_key(m, pub_y):
         return None
     qd = mon // 3
     o = o1 or o2
-    q = ORD[o.lower()] if o else None
+    if not o:
+        return None        # "Quarter Ended September 30" names no quarter: for a March or June fiscal year it is not Q3
+    q = ORD[o.lower()]
     want = {"six": 2, "nine": 3, "twelve": 4}.get((months or "").lower())
-    if q is not None and q != qd:
+    if q != qd:
         if q == 4 and (yr_and or want == 4) and (want in (None, 4)):
             return f"FY{y}Q4"
         return None
@@ -292,8 +295,10 @@ def is_results(title):
         return False
     m = STRONG_RESULTS.search(t)
     if m and not _future_verb(t, m) and period_of(m.group(0))[0]:
-        if ABOUT_RESULTS.match(t[m.end():]) or SCHEDULE_LEAD.search(m.group(0)) or NOT_IN_STRONG.search(
-                m.group(0)[len(m.group(1)):]):
+        # 'Reports Unaudited Third Quarter 2026 Financial Results' (Belite Bio): 'unaudited' straight after the verb is
+        # just the quarter's usual state; 'Selected / Estimated Unaudited ...' still marks preliminary figures
+        rest = re.sub(r"^\s+(?:its\s+|the\s+)?unaudited\b", " ", m.group(0)[len(m.group(1)):], flags=re.I)
+        if ABOUT_RESULTS.match(t[m.end():]) or SCHEDULE_LEAD.search(m.group(0)) or NOT_IN_STRONG.search(rest):
             return False            # 'Announces Third Quarter 2026 Financial Results Conference Call'
         return True
     if POSTPONED.search(t):

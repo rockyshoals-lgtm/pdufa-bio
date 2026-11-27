@@ -39,6 +39,17 @@ CASES = [
      {"publishedDate": "2026-07-29 07:05:00", "title": "Axogen, Inc. Reports Second Quarter 2026 Financial Results",
       "text": "ALACHUA, Fla. and TAMPA, Fla.", "url": "u-axgn"},
      {"kind": "results", "period_key": "2026Q2", "published_et": "2026-07-29 07:05"}),
+    # constructed (red team 2026-11-27): preliminary wordings around 'unaudited' stay out
+    ("BLTE", "Belite Bio, Inc",
+     {"publishedDate": "2026-01-09 07:00:00", "title": "Belite Bio Announces Selected Unaudited Fourth Quarter and Full "
+      "Year 2025 Financial Results", "text": "Belite Bio, Inc (NASDAQ: BLTE) today", "url": "u-blte-s"}, None),
+    ("BLTE", "Belite Bio, Inc",
+     {"publishedDate": "2026-01-09 07:00:00", "title": "Belite Bio Announces Estimated Unaudited Fourth Quarter 2025 "
+      "Financial Results", "text": "Belite Bio, Inc (NASDAQ: BLTE) today", "url": "u-blte-e"}, None),
+    ("ENTA", "Enanta Pharmaceuticals Inc",
+     {"publishedDate": "2026-11-16 16:01:00", "title": "Enanta Pharmaceuticals Reports Financial Results for the "
+      "Fiscal Quarter Ended September 30, 2026", "text": "Enanta Pharmaceuticals, Inc. (NASDAQ:ENTA) today", "url":
+      "u-enta-f"}, None),
     # real, 2026-11-27 (David: "use the info in drive and see what you can verify by linked sources"): results
     # releases FMP carried that the parser missed, found by checking Drive earnings watchlists against the companies'
     # own releases. The year sat in the end date, not beside the quarter; "Unaudited" blocked the headline; and
@@ -53,7 +64,7 @@ CASES = [
      {"publishedDate": "2026-11-09 07:00:00", "title": "Immunovant Provides Corporate Updates and Reports Financial "
       "Results for the Quarter Ended September 30, 2026", "text": "IMVT-1402 600 mg met the primary endpoint of ACR20 "
       "response at Week 28 ... Roivant will host a live conference call and webcast at 8:00 a.m.", "url": "u-imvt"},
-     {"kind": "results", "period_key": "2026Q3", "published_et": "2026-11-09 07:00"}),
+     None),   # red team: "Quarter Ended" names no quarter; Immunovant's fiscal year ends March 31 (its fiscal Q2)
     ("ENTA", "Enanta Pharmaceuticals Inc",
      {"publishedDate": "2026-11-16 16:01:00", "title": "Enanta Pharmaceuticals Reports Financial Results for its "
       "Fiscal Fourth Quarter and Year-Ended September 30, 2026", "text": "WATERTOWN, Mass.--(BUSINESS WIRE)--Enanta "
