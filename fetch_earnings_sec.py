@@ -16,7 +16,7 @@ submissions) and keeps the 8-Ks whose item list includes 2.02. A filing is opene
     "preliminary" and never shown as the period's results
   * a filing whose Item 2.02 text names no period, or no results, is kept with that status and never shown
 
-Times: EDGAR's acceptance time, US Eastern as EDGAR prints it (CLAUDE.md RULE 1). It is when the SEC accepted the
+Times: EDGAR's acceptance time, which EDGAR's filing list gives in UTC, converted to US Eastern (CLAUDE.md RULE 1). It is when the SEC accepted the
 filing, which can be minutes or hours after the release went out; the pages say so. A self-check compares 8-K times
 with newswire times where both exist and stores the median difference; build_earnings_pages.py ignores every 8-K row
 if that median is implausible (a time-zone error would show as a shift of hours).
@@ -47,6 +47,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from zoneinfo import ZoneInfo
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -63,16 +64,25 @@ TICKERS = os.path.join(HERE, "sec_company_tickers.json")
 UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio", "Accept-Encoding": "identity"}
 FROM = "2024-01-01"
 PAUSE = 0.15                       # SEC asks for no more than 10 requests a second
-RULES_VERSION = 3                  # bump when the parse rules change: every opened filing is re-read
+RULES_VERSION = 4                  # bump when the parse rules change: every opened filing is re-read (4: UTC times)
 ACC = re.compile(r"^\d{10}-\d{2}-\d{6}$")
+UTC, ET = dt.timezone.utc, ZoneInfo("America/New_York")
 
 
 def accepted_et(s):
-    """EDGAR's acceptanceDateTime ('2026-10-28T06:07:33.000Z') -> '2026-10-28 06:07'. EDGAR prints the Eastern clock
-    time with a 'Z' it does not mean (the filing index page shows the same 06:07:33 as 'Accepted'); the self-check in
-    main() and the guard in build_earnings_pages.py catch it if that ever changes."""
+    """EDGAR's acceptanceDateTime ('2026-10-28T20:07:33.000Z') -> '2026-10-28 16:07', the US Eastern clock time.
+    The 'Z' is meant: the value is UTC (CLAUDE.md RULE 1). 2026-11-27: read as Eastern, 2056 of 4287 stored 8-K
+    times broke EDGAR's filing-date rule (an after-close 16:05 filing read as 20:05 should carry the next day's date,
+    and none did) and the 8-K times ran a median 254 minutes after the companies' own newswire releases, the 4-hour
+    EDT offset plus the usual filing lag. zoneinfo handles the EDT/EST switch."""
     m = re.match(r"(20\d\d-\d\d-\d\d)T(\d\d):(\d\d)", str(s or ""))
-    return f"{m.group(1)} {m.group(2)}:{m.group(3)}" if m else ""
+    if not m:
+        return ""
+    try:
+        u = dt.datetime.strptime(f"{m.group(1)} {m.group(2)}:{m.group(3)}", "%Y-%m-%d %H:%M").replace(tzinfo=UTC)
+    except ValueError:
+        return ""
+    return u.astimezone(ET).strftime("%Y-%m-%d %H:%M")
 
 
 def text_of(raw):
