@@ -53,6 +53,16 @@
   "treprostinil-palmitil": "/ticker/INSM",
   "donidalorsen": "/ticker/IONS",
   "ptc923": "/ticker/PTCT",
-  "spn-812": "/ticker/SUPN"
+  "spn-812": "/ticker/SUPN",
+  "wtx-330": "/ticker/HOWL",
+  "lcar-b38m-car-t": "/ticker/LEGN",
+  "axs-14": "/ticker/AXSM",
+  "tavocept": "/ticker/LTRN",
+  "nov-002": "/ticker/CLRB",
+  "a-101": "/ticker/ACRS",
+  "cln-081": "/ticker/CGEM",
+  "wve-210201": "/ticker/WVE",
+  "mk-7240": "/ticker/MRK",
+  "18f-mfbg": "/readouts"
  }
 }
