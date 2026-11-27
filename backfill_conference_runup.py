@@ -77,6 +77,11 @@ def save(out):
     os.replace(tmp, CACHE)
 
 
+def owns(m, end_field="end"):
+    """The backfill owns a meeting only if it ended before the cut-off; the additions read every later one."""
+    return str(m.get(end_field) or "9999") < CUTOFF
+
+
 def find_row(tk, name, m, ms, items, lead_source, today):
     """The row for this lead from the ticker's releases, or (None, reason). Earliest qualifying release only: if it
     cannot be stored so that it re-checks from what is kept, no later release stands in."""
@@ -121,7 +126,8 @@ def main():
     nm = names()
     rows, dropped = {}, 0
     for r in cache.get("rows", []):
-        if X.passes(r, ms, r.get("company") or nm.get(r["ticker"], r["ticker"])):
+        if (str(r.get("anchor", "9999")) < CUTOFF and owns(r, "meeting_end")
+                and X.passes(r, ms, r.get("company") or nm.get(r["ticker"], r["ticker"]))):
             rows[r["key"]] = r
         else:
             dropped += 1
@@ -141,6 +147,11 @@ def main():
         m = mk.get((conf, yr))
         if m is None or m["start"] >= CUTOFF:
             done[k] = "no organiser-dated meeting before the cut-off"
+            continue
+        if not owns(m):
+            # EULAR 2026 ran Jun 3-6: CGEM's first release came Jun 6, after the study stops, and failed the
+            # backfill guard in run 576. extend_conference_runup reads every meeting ending on or after the cut-off.
+            done[k] = "meeting runs past the cut-off; read by the additions"
             continue
         name = nm.get(tk, "")
         if not name or name == tk:

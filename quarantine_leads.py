@@ -453,6 +453,18 @@ def cmd_apply(a):
                     os.makedirs(os.path.dirname(p), exist_ok=True)
                     io.open(p, "w", encoding="utf-8", newline="").write(old)
                 restored.append(os.path.relpath(p, SITE).replace("\\", "/"))
+    # 2026-11-27: a restored page's committed copy can predate the marker-bounded cross-link lines this build writes
+    # from the page's own rows or from the earnings and device caches, never from the held row. Run 576 put back
+    # /drug/abs-201-headline without its month links and tests/test_drug_month_links.py blocked the deploy; a held
+    # /ticker hub would fail tests/test_ticker_crosslinks.py the same way. Both passes are idempotent, so they run
+    # again over the site whenever a page of their kind was restored.
+    if not a.dry_run:
+        for prefix, mod in (("drug/", "inject_drug_month_links"), ("ticker/", "inject_ticker_crosslinks")):
+            if any(r.startswith(prefix) for r in restored):
+                try:
+                    __import__(mod).main(["--site", SITE])
+                except Exception as ex:  # noqa: BLE001
+                    print(f"  note: {mod} not re-run after the restore ({ex.__class__.__name__}: {ex})")
     # 2026-10-15: a restored page must keep its committed content-change date too. Six scheduled runs on
     # 10-15 (14:35 to 23:38 UTC) failed test_datemodified_honest while the Anktiva lead was held: build_sitemap
     # had recorded the freshly built ticker/IBRX page as changed on 10-15, then this step put back the committed
