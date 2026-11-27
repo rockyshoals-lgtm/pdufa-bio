@@ -387,8 +387,8 @@ def card_name(raw, href="", qualify=False):
         tag = re.findall(r"\(([^()]{2,40})\)", raw.split(" - ", 1)[1]) if " - " in raw else []
         return f"{card_name(raw)} ({tag[-1]})" if tag else raw
     lab = _verified_labels().get(href.rstrip("/"))
-    if lab:
-        return lab.split(":", 1)[0].strip()
+    if lab:                                           # the label's name part, shortened like any other
+        raw = lab.split(":", 1)[0].strip()
     name = raw.split(" - ", 1)[0].strip()             # drop " - (TRIAL)" / " - indication"
     name = re.sub(r"\s+Dose \d+$", "", name, flags=re.I)  # slate artifact
     base = name.split(" (", 1)[0].strip()
