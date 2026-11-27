@@ -24,6 +24,15 @@ def rows():
             if str((r.get("_d") or {}).get("goal_date") or "").lower() == "not announced"]
 
 
+def review_update(d):
+    """A sponsor's later word on the review (e.g. an extension with no new timeline), from _d.review_update."""
+    u = d.get("review_update") or {}
+    if not (u.get("text") and u.get("source_url")):
+        return ""
+    return (f'<div style="margin-top:8px">{esc(u["text"])} (<a href="{esc(u["source_url"])}" rel="noopener">source</a>'
+            + (f': &ldquo;{esc(u["quote"])}&rdquo;' if u.get("quote") else "") + ")</div>")
+
+
 def fix(doc, r):
     d = r.get("_d") or {}
     drug = re.sub(r"\s*\(.*?\)\s*$", "", str(r.get("name") or "")).strip() or str(r.get("name") or "")
@@ -39,6 +48,11 @@ def fix(doc, r):
     doc = re.sub(r"All [A-Z][a-z]+ \d{4} PDUFA dates (&rarr;|→)", r"All upcoming PDUFA dates \1", doc)
     doc = re.sub(r'href="/calendar/\d{4}/[a-z]+"', 'href="/calendar"', doc)
     doc = re.sub(r"is expected in (?:Not announced|[A-Z][a-z]+ \d{4}|\d{4}|Q\d \d{4})", "has not been announced", doc)
+    # 2026-11-27: the visible FAQ answer still said "The FDA PDUFA target date for NVO ... is 2026 ... The sponsor has
+    # guided this window"; the JSON-LD copy below was already restated. Restate the visible one the same way.
+    doc = re.sub(r"The FDA PDUFA target date for [^<]*? is [^<]*?\. The sponsor has guided this window, not a specific day; "
+                 r"the date shown is the window, at the precision the source gave\.",
+                 lambda _: esc(sent), doc)
     # JSON-LD: drop Event objects (a date-less event cannot be scheduled), restate FAQ answers
     def ld(m):
         try:
@@ -65,7 +79,8 @@ def fix(doc, r):
     note = (f'<!--NOGOAL:BEGIN--><div class="card" style="margin:10px 0;border-color:#e3ba5e"><b>No FDA goal date has been '
             f'announced.</b> {esc(d.get("source") or "The sponsor")} (<a href="{esc(d.get("source_url"))}" rel="noopener">'
             f'source</a>) says: &ldquo;{esc(d.get("source_quote"))}&rdquo; That is not the FDA&#x27;s goal date, so this '
-            f'application is not on the calendar. We add the date when the sponsor or the FDA states it.</div><!--NOGOAL:END-->')
+            f'application is not on the calendar. We add the date when the sponsor or the FDA states it.'
+            + review_update(d) + '</div><!--NOGOAL:END-->')
     if "<!--NOGOAL:BEGIN-->" in doc:
         doc = re.sub(r"<!--NOGOAL:BEGIN-->.*?<!--NOGOAL:END-->", lambda _: note, doc, flags=re.S)
     else:

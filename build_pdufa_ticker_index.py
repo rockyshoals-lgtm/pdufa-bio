@@ -78,6 +78,16 @@ def esc(s):
     return html.escape(str(s or ""), quote=True)
 
 
+def no_goal(r):
+    """2026-11-27: a row whose sponsor states no FDA goal date (_d.goal_date "not announced", David's ruling 11-10)
+    carries a sort key in "d", not a date; it must never print as "Q2 2027"."""
+    return str(((r or {}).get("_d") or {}).get("goal_date") or "").lower() == "not announced"
+
+
+def when(r):
+    return "Goal date not announced" if no_goal(r) else pretty(r["d"], r.get("dp") or "day")
+
+
 def pretty(d, dp="day"):
     y, m, day = int(d[:4]), int(d[5:7]), int(d[8:10])
     if dp == "day":
@@ -306,7 +316,8 @@ def main():
         if t in sole:
             continue
         ups.sort(key=lambda r: r["d"])
-        nearest = ups[0] if ups else None
+        dated = [r for r in ups if not no_goal(r)]
+        nearest = (dated or ups)[0] if ups else None
         drug0 = str(nearest.get("name") or "") if nearest else ""
         # any name token of ANY upcoming drug counts: pages may use an alias the dataset
         # doesn't lead with (EXEL: page 'XL092', dataset 'Zanzalintinib (XL092)')
@@ -354,7 +365,7 @@ def main():
                   f'{"today" if days == 0 else "tomorrow" if days == 1 else f"in {days} days"}</span>'
                   if days is not None and (r.get("dp") or "day") == "day" and days >= 0 else "")
             evs.append(f'<a class="row" href="{esc(own_page(r, t) or "/calendar")}"><span class="t">'
-                       f'{esc(pretty(r["d"], r.get("dp") or "day"))} {cd}</span>'
+                       f'{esc(when(r))} {cd}</span>'
                        f'<span class="d">{esc(str(r.get("name") or ""))[:70]}</span></a>')
         hist = "".join(
             f'<a class="row" href="/fda-decision/{t}-{d}"><span class="t">{esc(pretty(d))} '
@@ -370,10 +381,18 @@ def main():
             f'<span class="d">{esc(str(r.get("name") or ""))[:70]}, before its {esc(pretty(r["d"]))} goal date</span></a>'
             for r in wds if re.match(r"^\d{4}-\d{2}-\d{2}$", str((r.get("_d") or {}).get("withdrawn_date") or "")[:10]))
         if ups:
-            lede = (f"{t} has {len(ups)} upcoming FDA decision date"
-                    f"{'s' if len(ups) != 1 else ''}; the nearest is "
-                    f"{esc(pretty(nearest['d'], nearest.get('dp') or 'day'))} for "
-                    f"{esc(drug0[:60])}.")
+            nd = len(ups) - len(dated)
+            if dated:
+                lede = (f"{t} has {len(dated)} upcoming FDA decision date"
+                        f"{'s' if len(dated) != 1 else ''}; the nearest is "
+                        f"{esc(pretty(nearest['d'], nearest.get('dp') or 'day'))} for "
+                        f"{esc(drug0[:60])}.")
+                if nd:
+                    lede += (f" {nd} more application{'s are' if nd != 1 else ' is'} under FDA review with no goal "
+                             f"date announced.")
+            else:
+                lede = (f"{t} has {nd} application{'s' if nd != 1 else ''} under FDA review with no goal date "
+                        f"announced.")
         else:
             lede = f"{t} has no FDA decision date ahead on the pdufa.bio calendar."
         if wds:
@@ -392,8 +411,10 @@ def main():
         page = SHELL.format(
             title=(f"{t} PDUFA Dates: {esc(drug0[:40])} &amp; History | pdufa.bio" if ups
                    else f"{t} FDA Decision History and PDUFA Dates | pdufa.bio"),
-            desc=esc((f"{t}'s FDA decision dates: {pretty(nearest['d'], nearest.get('dp') or 'day')}"
-                      f" for {drug0[:50]}, plus every past decision with its outcome." if ups else
+            desc=esc((f"{t}'s FDA decision dates: {when(nearest)}"
+                      f" for {drug0[:50]}, plus every past decision with its outcome." if dated else
+                      f"{t}: {len(ups)} application{'s' if len(ups) != 1 else ''} under FDA review with no goal date "
+                      f"announced, plus every past decision with its outcome." if ups else
                       f"{t} has no FDA decision date ahead. Every past {t} FDA decision with its outcome"
                       + (", and applications withdrawn before a decision." if wds else "."))[:158]),
             canon=f"{BASE}/pdufa/{t}", h1=f"{t} FDA decision dates", body=body)

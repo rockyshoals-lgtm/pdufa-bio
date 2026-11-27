@@ -608,6 +608,9 @@ def main():
             # point counted the same decision once per source feeding this page.
             when = (r.get("when_text")
                     or (pretty(day, dp) if re.match(r"^\d{4}-\d{2}-\d{2}$", day) else day))
+            # 2026-11-27: "not announced" rows (David's ruling 11-10) carry a sort key, not a date
+            if str((r.get("_d") or {}).get("goal_date") or "").lower() == "not announced":
+                when = "goal date not announced"
             conf = confirmed.get(r.get("id"))
             if conf:
                 oc = str(conf.get("outcome", "")).lower()

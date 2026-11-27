@@ -12391,7 +12391,15 @@ export default [
    "goal_date": "not announced",
    "runup_summary": null,
    "runup_note": "Run-up is measured for day-dated goals and decided events only",
-   "red_team": "2026-11-17: date red team; source re-opened and checked against the company's newest disclosure. 6-K: review extended, US decision H1 2027; the 2026 year-end sort key was wrong (sort key only, not a stated goal date)"
+   "red_team": "2026-11-17: date red team; source re-opened and checked against the company's newest disclosure. 6-K: review extended, US decision H1 2027; the 2026 year-end sort key was wrong (sort key only, not a stated goal date)",
+   "review_update": {
+    "date": "2026-10-02",
+    "source": "Novo Nordisk company announcement, 2 October 2026",
+    "source_url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=917287",
+    "text": "Earlier, on October 2, 2026, Novo Nordisk said the FDA had extended its review of the denecimig BLA, which Novo had expected to be decided in the third quarter of 2026. Novo said the FDA named the ongoing remediation at a manufacturing facility as the cause, and that the FDA has not given a new timeline.",
+    "quote": "The FDA has not communicated a new timeline for expected regulatory action on the BLA.",
+    "checked": "2026-11-27"
+   }
   }
  },
  {
