@@ -130,6 +130,8 @@ MORE_HUBS = [
     ("/fda-application", "one page per FDA application (/fda-application/nda-NNNNNN): brand, ingredient, code names, "
                          "FDA applicant and owner, FDA facts from the Orange Book"),
     ("/condition", "upcoming PDUFA decisions and readouts grouped by therapeutic area"),
+    ("/learn/what-is-pdufa", "the Prescription Drug User Fee Act itself: every renewal since 1992 and the FDA's user "
+                             "fees for fiscal years 2026 and 2027, from the FDA's own pages"),
 ]
 # One page per company, drug and decision: the pattern, an example that exists on disk, and what the page holds.
 PATTERNS = [
