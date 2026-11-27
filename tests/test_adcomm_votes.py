@@ -20,6 +20,17 @@ def main():
     rows = [m for m in d["meetings"] if m.get("kind") == "product_vote" and m.get("questions")]
     if len(rows) < 10:
         bad.append(f"only {len(rows)} product votes")
+    # A Federal Register amendment notice repeats its meeting; one meeting, one card.
+    seen = {}
+    for m in rows:
+        app = m.get("application") or ""
+        key = (m.get("meeting_date"), m.get("product")) if app.startswith("Emergency") else (m.get("meeting_date"), app)
+        if key in seen:
+            bad.append(f"{key}: duplicate meeting record")
+        seen[key] = 1
+        ns = [q.get("n") for q in m.get("questions") or []]
+        if len(ns) != len(set(ns)):
+            bad.append(f'{m.get("meeting_date")} {m.get("product")}: repeated question number')
     for m in rows:
         k = f'{m.get("meeting_date")} {m.get("product")}'
         if not ISO.match(m.get("meeting_date") or ""):

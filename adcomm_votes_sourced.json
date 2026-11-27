@@ -266,6 +266,38 @@
    "public_note": "Counts from the sponsor's release. The approval revised the chronic heart failure indication rather than adding a separate indication by name."
   },
   {
+   "meeting_date": "2020-12-17",
+   "committee": "Vaccines and Related Biological Products Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2020/12/03/2020-26704/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Moderna COVID-19 Vaccine (mRNA-1273)",
+   "application": "Emergency Use Authorization request",
+   "sponsor": "ModernaTX, Inc.",
+   "ticker": "MRNA",
+   "indication": "Prevention of COVID-19 in individuals 18 years of age and older (emergency use)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Based on the totality of scientific evidence available, do the benefits of the Moderna COVID-19 Vaccine outweigh its risks for use in individuals 18 years of age and older?",
+     "yes": 20,
+     "no": 0,
+     "abstain": 1,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/144959/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "The results of the vote were as follows: Yes = 20, No = 0, Abstain = 1.",
+   "fda_action": "other",
+   "fda_action_date": "2020-12-18",
+   "action_source_url": "https://www.fda.gov/media/144673/download",
+   "action_source_type": "fda",
+   "action_quote": "EUA Review Memorandum, review completed December 18, 2020",
+   "public_note": "Counts from the FDA's summary minutes of the meeting. The FDA's emergency use review memo describes the same vote as 20-1 with 1 abstention; this card follows the minutes.",
+   "action_label": "The FDA authorized the vaccine for emergency use"
+  },
+  {
    "meeting_date": "2021-02-26",
    "committee": "Vaccines and Related Biological Products Advisory Committee",
    "fr_url": "https://www.federalregister.gov/documents/2021/02/11/2021-02845/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
@@ -1004,6 +1036,36 @@
    "public_note": "The overall question asked whether the evidence of effectiveness met the standard for full approval. A separate question on the biomarker as a basis for accelerated approval was favorable, and the FDA granted accelerated approval."
   },
   {
+   "meeting_date": "2023-04-14",
+   "committee": "Joint Meeting of the Psychopharmacologic Drugs Advisory Committee and the Peripheral and Central Nervous System Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/03/30/2023-06577/joint-meeting-of-the-psychopharmacologic-drugs-advisory-committee-and-the-peripheral-and-central",
+   "kind": "product_vote",
+   "product": "Rexulti (brexpiprazole) tablets",
+   "application": "sNDA 205422/S-009",
+   "sponsor": "Otsuka Pharmaceutical Co., Ltd. and Lundbeck, Inc.",
+   "ticker": null,
+   "indication": "agitation associated with Alzheimer's dementia",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/april-14-2023-joint-meeting-psychopharmacologic-drugs-advisory-committee-and-peripheral-and-central",
+   "questions": [
+    {
+     "n": 3,
+     "text": "Has the Applicant provided sufficient data to allow identification of a population in whom the benefits of treating agitation associated with Alzheimer's dementia with brexpiprazole outweigh its risks? If you do not believe the Applicant has provided sufficient data, what additional data is needed to support the use of brexpiprazole for the treatment of agitation associated with Alzheimer's dementia?",
+     "yes": 9,
+     "no": 1,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/168323/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 9 No: 1 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2023-05-10",
+   "action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2023/205422Orig1s009Approv.pdf",
+   "action_source_type": "fda",
+   "action_quote": "Approval Date: May 10, 2023 ... NDA 205422/S-009 ... \"It is approved, effective on the date of this letter, for use as recommended in the enclosed agreed-upon labeling.\""
+  },
+  {
    "meeting_date": "2023-04-17",
    "committee": "Antimicrobial Drugs Advisory Committee",
    "fr_url": "https://www.federalregister.gov/documents/2023/03/13/2023-05068/antimicrobial-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request",
@@ -1094,6 +1156,74 @@
    "action_quote": "approved Opill (norgestrel) tablet for nonprescription use to prevent pregnancy ... granted the approval to Laboratoire HRA Pharma, recently acquired by Perrigo Company plc"
   },
   {
+   "meeting_date": "2023-05-11",
+   "committee": "Pulmonary-Allergy Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/03/29/2023-06481/pulmonary-allergy-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
+   "kind": "product_vote",
+   "product": "neffy (epinephrine nasal spray)",
+   "application": "NDA 214697",
+   "sponsor": "ARS Pharmaceuticals, Inc.",
+   "ticker": "SPRY",
+   "indication": "emergency treatment of allergic reactions (Type I) including anaphylaxis in adults and children >=30 kg",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 2,
+     "text": "Do the PK/PD results support a favorable benefit-risk assessment for ARS-1 in adults for the emergency treatment of allergic reactions (Type I) and anaphylaxis?",
+     "yes": 16,
+     "no": 6,
+     "abstain": 0,
+     "is_overall": true
+    },
+    {
+     "n": 3,
+     "text": "Do the PK/PD results support a favorable benefit-risk assessment for ARS-1 in children (<18 years of age) ≥30 kg for the emergency treatment of allergic reactions (Type I) and anaphylaxis?",
+     "yes": 17,
+     "no": 5,
+     "abstain": 0,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/171359/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Q2 Vote Result: Yes: 16 No: 6 Abstain: 0; Q3 Vote Result: Yes: 17 No: 5 Abstain: 0",
+   "fda_action": "crl",
+   "fda_action_date": "2023-09-19",
+   "action_source_url": "https://api.fda.gov/transparency/crl.json?search=application_number:\"NDA+214697\"&limit=3",
+   "action_source_type": "fda",
+   "action_quote": "letter_date 09/19/2023 ... 'we cannot approve this NDA in its present form.'"
+  },
+  {
+   "meeting_date": "2023-05-12",
+   "committee": "Cellular, Tissue, and Gene Therapies Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/04/11/2023-07518/cellular-tissue-and-gene-therapies-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "Elevidys (delandistrogene moxeparvovec, SRP-9001)",
+   "application": "BLA 125781 (STN 125781/0)",
+   "sponsor": "Sarepta Therapeutics, Inc.",
+   "ticker": "SRPT",
+   "indication": "treatment of ambulatory patients with Duchenne muscular dystrophy with a confirmed DMD gene mutation",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Do the overall considerations of benefit and risk, taking into account the existing uncertainties, support Accelerated Approval of SRP-9001 — using as a surrogate endpoint, expression of Sarepta's micro-dystrophin at Week 12 after administration of SRP-9001 — for the treatment of ambulatory patients with Duchenne muscular dystrophy with a confirmed mutation in the DMD gene?",
+     "yes": 8,
+     "no": 6,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/172119/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "8 Yes; 6 No; 0 Abstain.",
+   "fda_action": "approved",
+   "fda_action_date": "2023-06-22",
+   "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2023-biological-license-application-approvals",
+   "action_source_type": "fda",
+   "action_quote": "06/22/2023, STN 125781/0, Sarepta Therapeutics, Inc. ... ambulatory pediatric patients aged 4 through 5 years with Duchenne muscular dystrophy (DMD)"
+  },
+  {
    "meeting_date": "2023-05-18",
    "committee": "Vaccines and Related Biological Products Advisory Committee",
    "fr_url": "https://www.federalregister.gov/documents/2023/04/11/2023-07550/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
@@ -1130,6 +1260,45 @@
    "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2023-biological-license-application-approvals",
    "action_source_type": "fda",
    "action_quote": "08/21/2023, STN 125768/0, Pfizer Inc. ... active immunization of pregnant individuals at 32 through 36 weeks gestational age"
+  },
+  {
+   "meeting_date": "2023-05-19",
+   "committee": "Gastrointestinal Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/03/13/2023-05066/gastrointestinal-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request",
+   "kind": "product_vote",
+   "product": "obeticholic acid (OCA) 25 mg tablets",
+   "application": "NDA 212833",
+   "sponsor": "Intercept Pharmaceuticals, Inc.",
+   "ticker": null,
+   "indication": "treatment of pre-cirrhotic liver fibrosis due to nonalcoholic steatohepatitis (NASH)",
+   "meeting_url": "https://www.fda.gov/advisory-committees/committees-and-meeting-materials/may-19-2023-meeting-gastrointestinal-drugs-advisory-committee-meeting-announcement-05192023",
+   "questions": [
+    {
+     "n": 3,
+     "text": "Given the available efficacy and safety data, do the benefits of OCA 25 mg outweigh the risks in NASH patients with stage 2 or 3 fibrosis?",
+     "yes": 2,
+     "no": 12,
+     "abstain": 2,
+     "is_overall": true
+    },
+    {
+     "n": 4,
+     "text": "At present, which of the following would you recommend: A. Approval of OCA 25 mg at this time, under the accelerated approval pathway; B. Defer approval until clinical outcome data from Trial 747-303 are submitted and reviewed",
+     "yes": 1,
+     "no": 15,
+     "abstain": 0,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/169627/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote 3: Yes 2, No 12, Abstain 2; Vote 4: A 1, B 15, Abstain 0",
+   "fda_action": "crl",
+   "fda_action_date": "2023-06-22",
+   "action_source_url": "https://www.sec.gov/Archives/edgar/data/1270073/000110465923073909/tm2319514d1_ex99-1.htm",
+   "action_source_type": "sponsor",
+   "action_quote": "MORRISTOWN, N.J., June 22, 2023 – ... \"today announced that the U.S. Food and Drug Administration (FDA) has issued a Complete Response Letter (CRL)\" ... \"As a result of the CRL, Intercept has decided to discontinue all NASH-related investment,\"",
+   "public_note": "The action date is the day the sponsor announced the Complete Response Letter."
   },
   {
    "meeting_date": "2023-06-08",
@@ -1170,6 +1339,74 @@
    "action_quote": "Beyfortus | nirsevimab-alip | 7/17/2023 | To prevent respiratory syncytial virus (RSV) lower respiratory tract disease"
   },
   {
+   "meeting_date": "2023-06-09",
+   "committee": "Peripheral and Central Nervous System Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/04/11/2023-07526/peripheral-and-central-nervous-system-drugs-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Leqembi (lecanemab-irmb) injection for IV infusion",
+   "application": "sBLA 761269/S-001",
+   "sponsor": "Eisai, Inc. (partnered with Biogen)",
+   "ticker": "BIIB",
+   "indication": "early Alzheimer's disease (supplement seeking traditional approval)",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-information-june-9-2023-meeting-peripheral-and-central-nervous-system-drugs-advisory",
+   "questions": [
+    {
+     "n": 2,
+     "text": "Do the results of Study 301 (CLARITY AD) verify the clinical benefit of lecanemab for the treatment of AD?",
+     "yes": 6,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/170179/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 6 No: 0 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2023-07-06",
+   "action_source_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+   "action_source_type": "fda",
+   "action_quote": "July 06, 2023 ... \"Today, the U.S. Food and Drug Administration converted Leqembi (lecanemab-irmb)\" ... to traditional approval"
+  },
+  {
+   "meeting_date": "2023-06-28",
+   "committee": "Endocrinologic and Metabolic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/05/25/2023-11164/endocrinologic-and-metabolic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "Sohonos (palovarotene) capsules",
+   "application": "NDA 215559",
+   "sponsor": "Ipsen Biopharmaceuticals, Inc.",
+   "ticker": null,
+   "indication": "prevention of heterotopic ossification in fibrodysplasia ossificans progressiva (females >=8 y, males >=10 y)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 3,
+     "text": "Does the evidence from Study 301 of palovarotene's treatment effect show the drug is effective in patients with fibrodysplasia ossificans progressiva (FOP)?",
+     "yes": 10,
+     "no": 4,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 4,
+     "text": "Do the benefits of palovarotene outweigh its risks for the treatment of patients with FOP?",
+     "yes": 11,
+     "no": 3,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/174518/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Q3 Vote Result: Yes: 10 No: 4 Abstain: 0; Q4 Vote Result: Yes: 11 No: 3 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2023-08-16",
+   "action_source_url": "https://fda.gov/drugs/new-drugs-fda-cders-new-molecular-entities-and-new-therapeutic-biological-products/novel-drug-approvals-2023",
+   "action_source_type": "fda",
+   "action_quote": "Sohonos | palovarotene | 8/16/2023 | To reduce the volume of new heterotopic ossification in adults and pediatric patients ..."
+  },
+  {
    "meeting_date": "2023-09-13",
    "committee": "Cardiovascular and Renal Drugs Advisory Committee",
    "fr_url": "https://www.federalregister.gov/documents/2023/07/03/2023-14037/cardiovascular-and-renal-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
@@ -1201,6 +1438,67 @@
    "public_note": "The action date is the day the sponsor announced the Complete Response Letter."
   },
   {
+   "meeting_date": "2023-09-21",
+   "committee": "Endocrinologic and Metabolic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/08/24/2023-18250/endocrinologic-and-metabolic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "ITCA 650 (exenatide in DUROS osmotic mini-pump)",
+   "application": "NDA 209053",
+   "sponsor": "Intarcia Therapeutics, Inc.",
+   "ticker": null,
+   "indication": "improve glycemic control in adults with type 2 diabetes mellitus as an adjunct to diet and exercise",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/september-21-2023-meeting-endocrinologic-drugs-advisory-committee-meeting-announcement-09212023",
+   "questions": [
+    {
+     "n": 3,
+     "text": "Based on the available data has the Applicant demonstrated that the benefits of the ITCA 650 drug-device combination product outweigh its risks for the treatment of T2DM?",
+     "yes": 0,
+     "no": 19,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/175444/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 0 No: 19 Abstain: 0",
+   "fda_action": "other",
+   "fda_action_date": "2024-08-23",
+   "action_source_url": "https://www.govinfo.gov/content/pkg/FR-2024-08-23/pdf/2024-18898.pdf",
+   "action_source_type": "fda",
+   "action_quote": "\"FDA hereby denies approval to Intarcia's NDA in its current form.\" ... \"This notice is applicable August 23, 2024.\" ... \"Dated: August 16, 2024.\"",
+   "action_label": "No letter followed the meeting; an FDA final order published in the Federal Register in August 2024 refused approval of the application in its current form"
+  },
+  {
+   "meeting_date": "2023-09-27",
+   "committee": "Cellular, Tissue, and Gene Therapies Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/07/27/2023-15923/cellular-tissue-and-gene-therapies-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "debamestrocel (NurOwn; autologous MSC-NTF cells)",
+   "application": "BLA 125782",
+   "sponsor": "BrainStorm Cell Therapeutics, Inc.",
+   "ticker": "BCLI",
+   "indication": "treatment of amyotrophic lateral sclerosis (ALS)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 2,
+     "text": "Do the data presented demonstrate substantial evidence of effectiveness for treatment of mild to moderate ALS?",
+     "yes": 1,
+     "no": 17,
+     "abstain": 1,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/177306/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "1 Yes; 17 No; 1 Abstain.",
+   "fda_action": "withdrawn",
+   "fda_action_date": "2023-10-18",
+   "action_source_url": "https://ir.brainstorm-cell.com/2023-10-18-BrainStorm-Cell-Therapeutics-to-Meet-with-US-FDA-to-Discuss-Development-Plan-for-NurOwn-as-a-Treatment-of-ALS",
+   "action_source_type": "sponsor",
+   "action_quote": "Oct. 18, 2023 ... \"Brainstorm is withdrawing the Biologics License Application (BLA) for NurOwn.\" ... \"The decision to withdraw the BLA was coordinated with FDA and is viewed by FDA as a withdrawal without prejudice.\""
+  },
+  {
    "meeting_date": "2023-10-04",
    "committee": "Oncologic Drugs Advisory Committee",
    "fr_url": "https://www.federalregister.gov/documents/2023/08/16/2023-17510/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
@@ -1230,6 +1528,68 @@
    "action_source_type": "fda",
    "action_quote": "IWILFIN ... NDA 215500 ... 12/13/2023 ORIG-1 Approval",
    "public_note": "The only vote was on whether the evidence of improved event-free survival was sufficient."
+  },
+  {
+   "meeting_date": "2023-10-05",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/08/22/2023-18024/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Lumakras (sotorasib) tablets",
+   "application": "sNDA 214665/S-005",
+   "sponsor": "Amgen Inc.",
+   "ticker": "AMGN",
+   "indication": "KRAS G12C-mutated locally advanced or metastatic NSCLC after at least one prior systemic therapy (conversion to full approval based on CodeBreaK 200)",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/october-5-2023-meeting-oncologic-drugs-advisory-committee-meeting-announcement-10052023",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Can the primary endpoint, progression-free survival (PFS) per blinded independent central review (BICR), be reliably interpreted in CodeBreak200?",
+     "yes": 2,
+     "no": 10,
+     "abstain": 0,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/174559/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 2, No: 10, Abstain: 0",
+   "fda_action": "crl",
+   "fda_action_date": "2023-12-26",
+   "action_source_url": "https://www.amgen.com/newsroom/press-releases/2023/12/amgen-provides-regulatory-update-on-status-of-lumakras-sotorasib",
+   "action_source_type": "sponsor",
+   "action_quote": "THOUSAND OAKS, Calif., Dec. 26, 2023 ... FDA \"has completed its review of the company's supplemental New Drug Application seeking full approval\" ... \"resulted in a Complete Response Letter.\"",
+   "public_note": "The action date is the day the sponsor announced the Complete Response Letter. The letter concerned full approval; the sponsor says the drug stays on the market under accelerated approval."
+  },
+  {
+   "meeting_date": "2023-11-17",
+   "committee": "Pulmonary-Allergy Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/09/08/2023-19407/pulmonary-allergy-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
+   "kind": "product_vote",
+   "product": "gefapixant tablets",
+   "application": "NDA 215010",
+   "sponsor": "Merck Sharp & Dohme LLC",
+   "ticker": "MRK",
+   "indication": "refractory or unexplained chronic cough in adults",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 3,
+     "text": "Does the evidence demonstrate that gefapixant provides a clinically meaningful benefit to adult patients with refractory or unexplained chronic cough, given the small reduction in cough frequency and results from PROs?",
+     "yes": 1,
+     "no": 12,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/176352/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 1 No: 12 Abstain: 0",
+   "fda_action": "crl",
+   "fda_action_date": "2023-12-20",
+   "action_source_url": "https://www.merck.com/news/merck-provides-u-s-regulatory-update-on-gefapixant/",
+   "action_source_type": "sponsor",
+   "action_quote": "December 20, 2023 ... the FDA \"has issued a Complete Response Letter (CRL)\" ... \"the FDA concluded that Merck's application did not meet substantial evidence of effectiveness for treating RCC and UCC.\"",
+   "public_note": "The action date is the day the sponsor announced the Complete Response Letter."
   },
   {
    "meeting_date": "2024-03-05",
@@ -1776,6 +2136,167 @@
    "action_source_type": "sponsor",
    "action_quote": "September 20, 2025: 'Otsuka has received a Complete Response Letter (CRL) from the U.S. Food and Drug Administration (FDA)'",
    "public_note": "The only vote was on effectiveness. The action date is the day the sponsor announced the Complete Response Letter."
+  },
+  {
+   "meeting_date": "2026-04-30",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2026/03/09/2026-04497/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Etcamah (camizestrant)",
+   "application": "NDA 220359",
+   "sponsor": "AstraZeneca Pharmaceuticals LP",
+   "ticker": "AZN",
+   "indication": "With a CDK4/6 inhibitor (palbociclib, ribociclib, or abemaciclib) for adults with HR-positive, HER2-negative, locally advanced or metastatic breast cancer with an ESR1 mutation arising during first-line endocrine-based therapy, as detected by an FDA-approved test",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/april-30-2026-meeting-oncologic-drugs-advisory-committee-meeting-announcement-04302026",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Based on the results of SERENA-6, has clinically meaningful benefit for camizestrant been demonstrated for the treatment of patients with HR+/HER2- metastatic breast cancer with a tumor ESR1 mutation detected while on aromatase inhibitor and CDK4/6 inhibitor treatment, prior to radiographic progression?",
+     "yes": 3,
+     "no": 6,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/192813/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 3 No: 6 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2026-09-04",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220359",
+   "action_source_type": "fda",
+   "action_quote": "09/04/2026 ORIG-1 Approval (Type 1 - New Molecular Entity, standard review), ETCAMAH (camizestrant) 75 mg tablet",
+   "public_note": "The FDA approved the application after the committee voted 6 to 3 that clinically meaningful benefit had not been shown."
+  },
+  {
+   "meeting_date": "2026-04-30",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2026/03/09/2026-04497/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Truqap (capivasertib) with abiraterone",
+   "application": "sNDA 218197/S-004",
+   "sponsor": "AstraZeneca Pharmaceuticals LP",
+   "ticker": "AZN",
+   "indication": "With abiraterone for adults with PTEN-deficient metastatic hormone-sensitive prostate cancer, as detected by an FDA-approved test",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/april-30-2026-meeting-oncologic-drugs-advisory-committee-meeting-announcement-04302026",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Based on the CAPItello-281 results, does the benefit of adding capivasertib to abiraterone and prednisone outweigh the risk for the proposed indication?",
+     "yes": 7,
+     "no": 1,
+     "abstain": 1,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/192813/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 7 No: 1 Abstain: 1",
+   "fda_action": "approved",
+   "fda_action_date": "2026-06-12",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218197",
+   "action_source_type": "fda",
+   "action_quote": "06/12/2026 SUPPL-4 Efficacy-New Indication (approval)"
+  },
+  {
+   "meeting_date": "2026-06-18",
+   "committee": "Vaccines and Related Biological Products Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2026/05/22/2026-10321/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "mFlusiva (Influenza Vaccine, mRNA)",
+   "application": "BLA STN 125869/0",
+   "sponsor": "ModernaTX, Inc.",
+   "ticker": "MRNA",
+   "indication": "Prevention of influenza caused by influenza A and B virus subtypes in people 50 years of age and older",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-18-2026-meeting-announcement",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Do the benefits of mFlusiva outweigh its risks for the prevention of influenza disease in adults 50 through 64 years of age?",
+     "yes": 9,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 2,
+     "text": "Do the benefits of mFlusiva outweigh its risks for the prevention of influenza disease in adults 65 years of age and older?",
+     "yes": 9,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/194955/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Q1 Yes: 9, No: 0, Abstain: 0; Q2 Yes: 9, No: 0, Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2026-08-05",
+   "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2026-biological-license-application-approvals",
+   "action_source_type": "fda",
+   "action_quote": "MFLUSIVA (Influenza Vaccine, mRNA), ModernaTX, Inc., 8/5/2026: active immunization to prevent influenza (A and B) in persons 50 years and older; 65+ indication under accelerated approval",
+   "public_note": "Separate benefit-risk votes for two age groups. The FDA approved the vaccine for people 50 and older, with the 65-and-older indication under accelerated approval."
+  },
+  {
+   "meeting_date": "2026-07-29",
+   "committee": "Cellular, Tissue, and Gene Therapies Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2026/06/29/2026-13096/cellular-tissue-and-gene-therapies-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "deramiocel (human allogeneic cardiosphere-derived cells)",
+   "application": "BLA 125842",
+   "sponsor": "Capricor, Inc.",
+   "ticker": "CAPR",
+   "indication": "Treatment of cardiomyopathy in Duchenne muscular dystrophy",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/cellular-tissue-and-gene-therapies-advisory-committee-july-29-2026-meeting-announcement-07292026",
+   "questions": [
+    {
+     "n": 3,
+     "text": "Does the available evidence provide substantial evidence of effectiveness of deramiocel for the treatment of cardiomyopathy in patients with DMD?",
+     "yes": 3,
+     "no": 9,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/197053/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 3, No: 9, Abstain: 0",
+   "fda_action": "crl",
+   "fda_action_date": "2026-11-20",
+   "action_source_url": "https://download.open.fda.gov/crl/CRL_BLA125842_20261120.pdf",
+   "action_source_type": "fda",
+   "action_quote": "COMPLETE RESPONSE November 20, 2026"
+  },
+  {
+   "meeting_date": "2026-07-30",
+   "committee": "Cellular, Tissue, and Gene Therapies Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2026/07/08/2026-13810/cellular-tissue-and-gene-therapies-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "Tudriqev (vusolimogene oderparepvec-wtpg; RP1) with nivolumab",
+   "application": "BLA 125827",
+   "sponsor": "Replimune, Inc.",
+   "ticker": "REPL",
+   "indication": "In combination with nivolumab for adults with advanced melanoma who previously received an anti-PD-1-containing regimen",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/cellular-tissue-and-gene-therapies-advisory-committee-july-30-2026-meeting-announcement-07302026",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Are the efficacy results from IGNYTE evaluable and clinically meaningful?",
+     "yes": 10,
+     "no": 3,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/197054/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 10, No: 3, Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2026-08-06",
+   "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2026-biological-license-application-approvals",
+   "action_source_type": "fda",
+   "action_quote": "TUDRIQEV (vusolimogene oderparepvec-wtpg), 125827/0, Replimune, Inc., 8/6/2026: with nivolumab for adults with unresectable advanced cutaneous melanoma that progressed on a PD-1 blocking antibody regimen",
+   "public_note": "The only vote asked whether the trial's efficacy results were evaluable and clinically meaningful. The approved indication is narrower in wording than proposed: unresectable advanced cutaneous melanoma that progressed on a PD-1 blocking antibody regimen."
   }
  ]
 }
