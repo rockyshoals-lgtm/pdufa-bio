@@ -1454,9 +1454,28 @@ jobs:
               echo "push rejected (attempt $attempt) -- fetching and rebasing onto origin/main"
               git fetch origin main || true
               if ! git rebase --autostash origin/main; then
-                git rebase --abort || true
-                echo "::error::rebase onto origin/main conflicted -- not forcing; resolve by hand"
-                exit 1
+                # 2026-11-27 (runs 555 and 563 passed every guard and deployed nothing): PRs merged during the run
+                # had committed some of the same generated files, so the rebase conflicted and the whole build was
+                # thrown away. Each conflicted file now keeps main's committed version (a page or cache someone
+                # merged on purpose; the next run regenerates it) and every other file ships from this build.
+                # Anything that still will not continue fails loudly as before.
+                n=0
+                while [ -d .git/rebase-merge ] || [ -d .git/rebase-apply ]; do
+                  n=$((n+1)); [ "$n" -gt 10 ] && break
+                  files=$(git diff --name-only --diff-filter=U)
+                  if [ -n "$files" ]; then
+                    echo "$files" | while read -r f; do
+                      if git cat-file -e "HEAD:$f" 2>/dev/null; then git checkout HEAD -- "$f"; else git rm -q -- "$f" || true; fi
+                      echo "::warning::push race: kept main's committed $f; the next run regenerates it"
+                    done
+                  fi
+                  GIT_EDITOR=true git rebase --continue || { [ -z "$(git diff --name-only --diff-filter=U)" ] && git rebase --skip; } || true
+                done
+                if [ -d .git/rebase-merge ] || [ -d .git/rebase-apply ]; then
+                  git rebase --abort || true
+                  echo "::error::rebase onto origin/main conflicted and could not be resolved -- not forcing; resolve by hand"
+                  exit 1
+                fi
               fi
             done
             if [ "$pushed" != "1" ]; then
