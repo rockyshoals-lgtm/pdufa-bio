@@ -144,6 +144,7 @@ def collect_extensions():
             "act": act if ISO.match(act) else "",
             "basis": str(a.get("action_basis") or ("fda_record" if "fda.gov" in str(a.get("action_url") or "") else "")),
             "outcome": outcome, "act_url": str(a.get("action_url") or ""),
+            "after": str(a.get("after_note") or "").strip(), "after_url": str(a.get("after_url") or ""),
             "days": (dt.date.fromisoformat(new) - dt.date.fromisoformat(old)).days, "origin": origin,
         })
     seen, uniq = set(), []
@@ -204,6 +205,9 @@ def main():
                 res = f' The sponsor announced on {esc(pretty(x["act"]))} that the FDA {w}.'
         elif x["outcome"].lower() in ("pending", "") and x["new"] >= today.isoformat():
             res = " No FDA action on record yet."
+        elif x["outcome"].lower() in ("pending", "") and x["after"] and x["after_url"].startswith("http"):
+            res = f' {esc(x["after"])} <a class="lit" href="{esc(x["after_url"])}" rel="nofollow noopener">Later update</a>.'
+            x = dict(x, act_url="")
         src = (f' Sources: <a class="lit" href="{esc(x["old_url"])}" rel="nofollow noopener">original date</a>'
                f' &middot; <a class="lit" href="{esc(x["new_url"])}" rel="nofollow noopener">extension</a>'
                + (f' &middot; <a class="lit" href="{esc(x["act_url"])}" rel="nofollow noopener">'

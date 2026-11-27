@@ -1,5 +1,5 @@
 {
- "about": "PDUFA goal-date extensions for pdufa.bio's /pdufa-date-changes page (build_date_changes.py). 'rows' holds extensions found after the 2024-2025 decision-timing census (decision_timing_2024_2025.json), in the census's field names: goal_date_original / goal_original_url / goal_original_quote, goal_date_extended / goal_extended_url / goal_extended_quote, extension_reason, action_date / action_url / outcome. 'reasons' is the public sentence shown for each extension's stated reason, keyed by census cid or 'TICKER|extended-date', written from the quoted documents; an extension with no entry here shows 'No reason stated in the documents read'.",
+ "about": "PDUFA goal-date extensions for pdufa.bio's /pdufa-date-changes page (build_date_changes.py). 'rows' holds extensions found after the 2024-2025 decision-timing census (decision_timing_2024_2025.json), in the census's field names: goal_date_original / goal_original_url / goal_original_quote, goal_date_extended / goal_extended_url / goal_extended_quote, extension_reason, action_date / action_url / outcome, and for a pending row whose extended date has passed, after_note / after_url (a public sentence on what the sponsor said later, with its source). 'reasons' is the public sentence shown for each extension's stated reason, keyed by census cid or 'TICKER|extended-date', written from the quoted documents; an extension with no entry here shows 'No reason stated in the documents read'.",
  "reasons": {
   "C331": "Sanofi said the FDA determined that additional analyses submitted during the review were a major amendment, extending the target date by three months.",
   "C330": "Omeros said the date was extended after its comprehensive response to an FDA information request; its release does not use the term major amendment.",
@@ -24,7 +24,8 @@
   "PRAX|2026-12-27": "The FDA deemed the sponsor's submission of additional sensitivity analyses of existing clinical data a major amendment.",
   "BLTE|2027-05-12": "The sponsor said the extension gives the FDA additional time to review information provided in support of the application.",
   "LNTH|2026-06-29": "The sponsor said the extension gives the FDA additional time to review further manufacturing information it submitted, and that it was not related to the efficacy or safety data.",
-  "VRTX|2027-02-28": "The sponsor said the FDA classified its response to an information request near the end of the review cycle as a major amendment."
+  "VRTX|2027-02-28": "The sponsor said the FDA classified its response to an information request near the end of the review cycle as a major amendment.",
+  "SVRA|2026-11-22": "Savara said the FDA determined that its responses to recent information requests were a major amendment, and that the FDA raised no safety, efficacy or manufacturing concerns."
  },
  "rows": [
   {
@@ -113,6 +114,26 @@
    "action_date": null,
    "action_outcome": "pending",
    "action_url": null
+  },
+  {
+   "ticker": "SVRA",
+   "name": "MOLBREEVI (molgramostim inhalation solution)",
+   "company": "Savara",
+   "goal_date_original": "2026-08-22",
+   "goal_original_url": "https://www.businesswire.com/news/home/20260220017435/en",
+   "goal_original_doc_date": "2026-02-20",
+   "goal_original_quote": "The FDA granted Priority Review with a PDUFA action date of August 22, 2026.",
+   "extended": true,
+   "goal_date_extended": "2026-11-22",
+   "goal_extended_url": "https://s205.q4cdn.com/999407632/files/doc_news/Savara-Announces-the-U-S--Food--Drug-Administration-FDA-Has-Extended-the-Review-Period-for-the-Molgramostim-Inhalation-Solution-Molgr-HR78W.pdf",
+   "goal_extended_doc_date": "2026-04-15",
+   "goal_extended_quote": "The FDA determined that the Company's responses to recent information requests ... constituted a major amendment to the BLA, resulting in a three-month extension of the PDUFA date ... the new PDUFA target action date is November 22, 2026.",
+   "action_date": null,
+   "action_outcome": "pending",
+   "action_url": null,
+   "after_note": "Savara later said the FDA would not meet the extended date and had not given a revised action date.",
+   "after_url": "https://www.businesswire.com/news/home/20261120300122/en/",
+   "after_quote": "will not meet the Prescription Drug User Fee Act (PDUFA) target action date of November 22, 2026 ... no revised action date has been provided by the agency."
   }
  ]
 }
