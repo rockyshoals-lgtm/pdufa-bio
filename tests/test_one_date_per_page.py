@@ -60,6 +60,12 @@ def stamps(doc):
     return out
 
 
+def body_stamped(doc):
+    """A stamp in the page's own text, not the freshness strip's 'Page updated' content date."""
+    doc = BUILT_SPAN.sub("", doc)
+    return any(not doc[max(0, m.start() - 5):m.start()].endswith("Page ") for m in STAMP.finditer(doc))
+
+
 def test_one_date_per_page():
     today = eastern_today()
     bad = []
@@ -77,6 +83,10 @@ def test_one_date_per_page():
         elif found and p.endswith(tuple(d.replace("/", os.sep) for d in DAILY)) \
                 and found != {today}:
             bad.append(f"{rel}: stamped {next(iter(found))}, Eastern build date is {today}")
+        if p.endswith(tuple(d.replace("/", os.sep) for d in DAILY)) and not body_stamped(doc):
+            # 2026-11-27 (run 577): a daily page with no date in its own text keeps yesterday's content-change date
+            # whenever nothing else on it changes, and the check above then fails only on those days
+            bad.append(f"{rel}: a page rebuilt daily must state the build's Eastern date in its own text")
     assert not bad, "page(s) stamped with more than one date, or the wrong clock:\n  " \
         + "\n  ".join(bad)
 
