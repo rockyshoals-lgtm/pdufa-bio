@@ -934,6 +934,11 @@ jobs:
       - name: "AdComm history from Federal Register notices"
         run: python build_adcomm_history.py
 
+      # OMW 2026-11-27: /adcomm/votes, every hand-sourced committee vote by question (FDA minutes) and the FDA's
+      # first action afterwards, with whether it followed the overall vote (adcomm_votes_sourced.json).
+      - name: "AdComm votes and outcomes (/adcomm/votes)"
+        run: python build_adcomm_votes.py
+
       - name: "13F: specialist funds' latest filings from EDGAR"
         continue-on-error: true
         run: python sync_13f_specialists.py

@@ -1,0 +1,1224 @@
+{
+ "about": "FDA advisory committee votes on named drug and biologic applications since 2020. Each vote count is quoted from the FDA's own minutes (vote_source_type fda) or the sponsor's release (sponsor); each FDA action from an FDA record (fda) or the sponsor's filing (sponsor). public_note is written by pdufa.bio from those documents. Rendered by build_adcomm_votes.py.",
+ "meetings": [
+  {
+   "meeting_date": "2020-02-26",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2020/01/24/2020-01150/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Cyramza (ramucirumab) + erlotinib",
+   "application": "sBLA 125477/S-034",
+   "sponsor": "Eli Lilly and Company",
+   "ticker": "LLY",
+   "indication": "First-line metastatic NSCLC with EGFR exon 19 deletion or exon 21 (L858R) mutation, in combination with erlotinib",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Does CYRAMZA plus erlotinib demonstrate a favorable benefit/risk profile for first-line treatment of metastatic EGFR-mutated NSCLC? (paraphrased from sponsor release)",
+     "yes": 6,
+     "no": 5,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://investor.lilly.com/node/42781",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "voted 6-5 that CYRAMZA (ramucirumab) plus erlotinib demonstrated a favorable benefit/risk profile",
+   "fda_action": "approved",
+   "fda_action_date": "2020-05-29",
+   "action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2020/125477Orig1s034ltr.pdf",
+   "action_source_type": "fda",
+   "action_quote": "It is approved, effective on the date of this letter, for use as recommended in the enclosed agreed-upon labeling.",
+   "public_note": "Counts from the sponsor's release, which reported 6 yes and 5 no and did not mention abstentions."
+  },
+  {
+   "meeting_date": "2020-07-14",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2020/06/22/2020-13345/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Blenrep (belantamab mafodotin-blmf)",
+   "application": "BLA 761158",
+   "sponsor": "GlaxoSmithKline",
+   "ticker": "GSK",
+   "indication": "Relapsed or refractory multiple myeloma after at least four prior therapies (monotherapy)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Benefit of belantamab mafodotin monotherapy in relapsed/refractory multiple myeloma outweighs risks (paraphrased from sponsor release)",
+     "yes": 12,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.gsk.com/en-gb/media/press-releases/gsk-announces-fda-advisory-committee-votes-in-favour-of-positive-benefitrisk-profile-for-belantamab-mafodotin-for-patients-with-relapsedrefractory-multiple-myeloma/",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "voted 12-0 in favour of the demonstrated benefit of monotherapy treatment with belantamab mafodotin",
+   "fda_action": "approved",
+   "fda_action_date": "2020-08-05",
+   "action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2020/761158Orig1s000ltr.pdf",
+   "action_source_type": "fda",
+   "action_quote": "approved under the provisions of accelerated approval regulations (21 CFR 601.41)",
+   "public_note": "Accelerated approval, with a risk management program for eye toxicity."
+  },
+  {
+   "meeting_date": "2020-07-15",
+   "committee": "Cardiovascular and Renal Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2020/07/08/2020-14719/cardiovascular-and-renal-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
+   "kind": "product_vote",
+   "product": "terlipressin (Terlivaz)",
+   "application": "NDA 022231",
+   "sponsor": "Mallinckrodt Pharmaceuticals",
+   "ticker": "MNK",
+   "indication": "Treatment of hepatorenal syndrome type 1 (HRS-1)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Should terlipressin be approved for the treatment of HRS-1? (as summarized in FDA's Summary Review)",
+     "yes": 8,
+     "no": 7,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2022/022231Orig1s000IntegratedR.pdf",
+   "vote_source_type": "fda",
+   "vote_source_quote": "When asked to vote on whether terlipressin should be approved for the treatment of HRS-1, eight Committee members voted 'Yes' and seven members voted 'No.'",
+   "fda_action": "crl",
+   "fda_action_date": "2020-09-11",
+   "action_source_url": "https://download.open.fda.gov/crl/022231Orig1s000OtherActionLtrs.pdf",
+   "action_source_type": "fda",
+   "action_quote": "we cannot approve this application in its present form.",
+   "public_note": "Vote as recorded in the FDA's own review. The FDA approved the drug, as Terlivaz, in 2022 after a resubmission."
+  },
+  {
+   "meeting_date": "2020-08-13",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2020/07/21/2020-15719/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Ryoncil (remestemcel-L)",
+   "application": "BLA 125706",
+   "sponsor": "Mesoblast, Inc.",
+   "ticker": "MESO",
+   "indication": "Steroid-refractory acute graft-versus-host disease in pediatric patients",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Do the available data support the efficacy of remestemcel-L in pediatric patients with steroid-refractory acute GVHD? (paraphrased from sponsor release)",
+     "yes": 9,
+     "no": 1,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.biospace.com/u-s-fda-advisory-committee-votes-nine-to-one-in-favor-of-remestemcel-l-ryoncil-for-efficacy-in-children-with-steroid-refractory-acute-graft-versus-host-disease",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "U.S. FDA Advisory Committee Votes Nine to One in Favor of Remestemcel-L (Ryoncil) for Efficacy in Children with Steroid-Refractory Acute Graft Versus Host Disease",
+   "fda_action": "crl",
+   "fda_action_date": "2020-10-01",
+   "action_source_url": "https://www.biospace.com/mesoblast-receives-complete-response-letter-from-the-fda-for-biologics-license-application-for-steroid-refractory-acute-graft-versus-host-disease-in-children",
+   "action_source_type": "sponsor",
+   "action_quote": "has issued a Complete Response Letter to its Biologics License Application (BLA)",
+   "public_note": "The action date is the day the sponsor announced the Complete Response Letter. The FDA approved Ryoncil in December 2024 after a resubmission."
+  },
+  {
+   "meeting_date": "2020-10-09",
+   "committee": "Psychopharmacologic Drugs Advisory Committee + Drug Safety and Risk Management Advisory Committee (joint)",
+   "fr_url": "https://www.federalregister.gov/documents/2020/08/28/2020-18951/joint-meeting-of-the-psychopharmacologic-drugs-advisory-committee-and-the-drug-safety-and-risk",
+   "kind": "product_vote",
+   "product": "Lybalvi (olanzapine and samidorphan; ALKS 3831)",
+   "application": "NDA 213378",
+   "sponsor": "Alkermes, Inc.",
+   "ticker": "ALKS",
+   "indication": "Schizophrenia and bipolar I disorder",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Does samidorphan meaningfully mitigate olanzapine-associated weight gain?",
+     "yes": 16,
+     "no": 1,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 2,
+     "text": "Has the safety profile of ALKS 3831 been adequately characterized?",
+     "yes": 13,
+     "no": 3,
+     "abstain": 1,
+     "is_overall": false
+    },
+    {
+     "n": 3,
+     "text": "Is labeling sufficient to mitigate the risks related to the opioid antagonist action of samidorphan?",
+     "yes": 11,
+     "no": 6,
+     "abstain": 0,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://investor.alkermes.com/news-releases/news-release-details/fda-advisory-committee-votes-support-alks-3831-treatment",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "16 yes, 1 no ... 13 yes, 3 no, 1 abstain ... 11 yes, 6 no",
+   "fda_action": "crl",
+   "fda_action_date": "2020-11-13",
+   "action_source_url": "https://download.open.fda.gov/crl/213378Orig1Orig2s000OtherActionLtrs.pdf",
+   "action_source_type": "fda",
+   "action_quote": "COMPLETE RESPONSE ... the FDA noted objectionable conditions (facility inspection)",
+   "public_note": "The Complete Response Letter cited findings from a manufacturing facility inspection. The FDA approved the drug, as Lybalvi, in May 2021."
+  },
+  {
+   "meeting_date": "2022-02-15",
+   "committee": "Joint Meeting of the Anesthetic and Analgesic Drug Products Advisory Committee (AADPAC) and the Drug Safety and Risk Management Advisory Committee (DSaRM)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/01/04/2021-28474/joint-meeting-of-the-anesthetic-and-analgesic-drug-products-advisory-committee-and-the-drug-safety",
+   "kind": "product_vote",
+   "product": "tramadol hydrochloride injection (IV tramadol)",
+   "application": "NDA 213231",
+   "sponsor": "Avenue Therapeutics, Inc.",
+   "ticker": "ATXI",
+   "indication": "management of acute pain severe enough to require an opioid analgesic in an inpatient (medically supervised) setting",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 4,
+     "text": "Has the Applicant submitted adequate information to support the position that the benefits of their product outweigh the risks for the management of acute pain severe enough to require an opioid analgesic in an inpatient setting?",
+     "yes": 8,
+     "no": 14,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/156702/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 8 No: 14 Abstain: 0",
+   "fda_action": "other",
+   "fda_action_date": "2022-03-18",
+   "action_source_url": "https://www.sec.gov/Archives/edgar/data/1644963/000110465922035868/tm229842d1_8k.htm",
+   "action_source_type": "sponsor",
+   "action_quote": "received an Appeal Denied Letter from the Office of New Drugs of the Food and Drug Administration",
+   "action_label": "After the sponsor's appeal, the FDA's earlier Complete Response Letters stayed in place",
+   "public_note": "This meeting was held during the sponsor's formal appeal of earlier Complete Response Letters on the application."
+  },
+  {
+   "meeting_date": "2022-03-30",
+   "committee": "Peripheral and Central Nervous System Drugs Advisory Committee (PCNS)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/02/17/2022-03430/peripheral-and-central-nervous-system-drugs-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "sodium phenylbutyrate/taurursodiol (AMX0035; RELYVRIO)",
+   "application": "NDA 216660",
+   "sponsor": "Amylyx Pharmaceuticals, Inc.",
+   "ticker": "AMLX",
+   "indication": "treatment of amyotrophic lateral sclerosis (ALS)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Do the data from the single randomized, controlled trial and the open-label extension study establish a conclusion that sodium phenylbutyrate/taurursodiol is effective in the treatment of patients with amyotrophic lateral sclerosis (ALS)?",
+     "yes": 4,
+     "no": 6,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/157745/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 4, No: 6, Abstain: 0 (FDA final summary minutes, March 30, 2022)",
+   "fda_action": "approved",
+   "fda_action_date": "2022-09-29",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216660",
+   "action_source_type": "fda",
+   "action_quote": "Drugs@FDA: ORIG-1 approval 09/29/2022 (Type 1 - New Molecular Entity)",
+   "follow_not_counted": true,
+   "public_note": "The FDA held a second committee meeting on the same application on September 7, 2022, where the vote was favorable; the approval came after that second meeting, so this first vote is not counted either way."
+  },
+  {
+   "meeting_date": "2022-06-07",
+   "committee": "Vaccines and Related Biological Products Advisory Committee (VRBPAC)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/05/31/2022-11668/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Novavax COVID-19 Vaccine, Adjuvanted (NVX-CoV2373)",
+   "application": "Emergency Use Authorization request",
+   "sponsor": "Novavax, Inc.",
+   "ticker": "NVAX",
+   "indication": "active immunization to prevent COVID-19 in individuals 18 years of age and older (2-dose primary series), under EUA",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-7-2022-meeting-announcement",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Based on the totality of scientific evidence available, do the benefits of the Novavax COVID-19 Vaccine when administered as a 2-dose series outweigh its risks for use in individuals 18 years of age and older?",
+     "yes": 21,
+     "no": 0,
+     "abstain": 1,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/160162/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "21 Yes, 0 No, 1 Abstain (173rd VRBPAC summary minutes, June 7, 2022)",
+   "fda_action": "other",
+   "fda_action_date": "2022-07-13",
+   "action_source_url": "https://www.fda.gov/media/159902/download",
+   "action_source_type": "fda",
+   "action_quote": "On July 13, 2022, the Food and Drug Administration (FDA or the Agency) issued an Emergency Use Authorization (EUA)",
+   "action_label": "The FDA authorized the vaccine for emergency use"
+  },
+  {
+   "meeting_date": "2022-06-09",
+   "committee": "Cellular, Tissue, and Gene Therapies Advisory Committee (CTGTAC)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/04/14/2022-08022/cellular-tissue-and-gene-therapies-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "elivaldogene autotemcel (eli-cel; SKYSONA)",
+   "application": "BLA 125755",
+   "sponsor": "bluebird bio, Inc.",
+   "ticker": "BLUE",
+   "indication": "patients younger than 18 years with early cerebral adrenoleukodystrophy (CALD)",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/cellular-tissue-and-gene-therapies-advisory-committee-june-9-10-2022-meeting-announcement-06092022",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Are the lovo-cel safety data relevant to the safety assessment of eli-cel?",
+     "yes": 1,
+     "no": 13,
+     "abstain": 1,
+     "is_overall": false
+    },
+    {
+     "n": 2,
+     "text": "Do the benefits of eli-cel outweigh the risks, for the treatment of any subpopulation of children with early active cerebral adrenoleukodystrophy (CALD)?",
+     "yes": 15,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/160777/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Q1: Yes=1; No=13; Abstain=1. Q2: Yes=15; No=0; Abstain=0 (CTGTAC summary minutes, June 9, 2022 session)",
+   "fda_action": "approved",
+   "fda_action_date": "2022-09-16",
+   "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/skysona",
+   "action_source_type": "fda",
+   "action_quote": "September 16, 2022 Approval Letter - SKYSONA",
+   "public_note": "Accelerated approval, for a narrower population than the committee voted on: boys 4 to 17 years old with early, active cerebral adrenoleukodystrophy."
+  },
+  {
+   "meeting_date": "2022-06-10",
+   "committee": "Cellular, Tissue, and Gene Therapies Advisory Committee (CTGTAC)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/04/14/2022-08022/cellular-tissue-and-gene-therapies-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "betibeglogene autotemcel (beti-cel; ZYNTEGLO)",
+   "application": "BLA 125717",
+   "sponsor": "bluebird bio, Inc.",
+   "ticker": "BLUE",
+   "indication": "treatment of patients with beta-thalassemia who require regular red blood cell transfusions",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/cellular-tissue-and-gene-therapies-advisory-committee-june-9-10-2022-meeting-announcement-06092022",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Do the benefits of beti-cel outweigh the risks for the treatment of subjects with transfusion-dependent β-thalassemia?",
+     "yes": 13,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/160777/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes=13; No=0; Abstain=0 (CTGTAC summary minutes, June 10, 2022 session)",
+   "fda_action": "approved",
+   "fda_action_date": "2022-08-17",
+   "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/zynteglo",
+   "action_source_type": "fda",
+   "action_quote": "August 17, 2022 Approval Letter - ZYNTEGLO",
+   "public_note": "Voted on the second day of a two-day meeting."
+  },
+  {
+   "meeting_date": "2022-06-14",
+   "committee": "Vaccines and Related Biological Products Advisory Committee (VRBPAC)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/05/31/2022-11669/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Moderna COVID-19 Vaccine (mRNA-1273), primary series ages 6 through 17 years",
+   "application": "Emergency Use Authorization request",
+   "sponsor": "ModernaTX, Inc.",
+   "ticker": "MRNA",
+   "indication": "2-dose primary series in adolescents 12 through 17 years (100 μg) and children 6 through 11 years (50 μg), under EUA",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-14-15-2022-meeting-announcement",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Based on the totality of scientific evidence available, do the benefits of the Moderna COVID-19 Vaccine when administered as a 2-dose series (100 μg each dose) outweigh its risks for use in adolescents 12 through 17 years of age?",
+     "yes": 22,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 2,
+     "text": "Based on the totality of scientific evidence available, do the benefits of the Moderna COVID-19 Vaccine when administered as a 2-dose series (50 μg each dose) outweigh its risks for use in children 6 through 11 years of age?",
+     "yes": 22,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/160163/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Q1: 22 Yes, 0 No, 0 Abstain; Q2: 22 Yes, 0 No, 0 Abstain (174th VRBPAC summary minutes, June 14, 2022)",
+   "fda_action": "other",
+   "fda_action_date": "2022-06-17",
+   "action_source_url": "https://www.fda.gov/media/144636/download",
+   "action_source_type": "fda",
+   "action_quote": "For the June 17, 2022 authorization of the Moderna COVID-19 Vaccine (Original monovalent) ... for individuals 6 months through 17 years of age",
+   "action_label": "The FDA authorized the vaccine for emergency use"
+  },
+  {
+   "meeting_date": "2022-06-15",
+   "committee": "Vaccines and Related Biological Products Advisory Committee (VRBPAC)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/05/31/2022-11669/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Moderna COVID-19 Vaccine (mRNA-1273), primary series ages 6 months through 5 years",
+   "application": "Emergency Use Authorization request",
+   "sponsor": "ModernaTX, Inc.",
+   "ticker": "MRNA",
+   "indication": "2-dose primary series (25 μg each dose) in infants and children 6 months through 5 years of age, under EUA",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-14-15-2022-meeting-announcement",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Based on the totality of scientific evidence available, do the benefits of the Moderna COVID-19 Vaccine when administered as a 2-dose series (25 μg each dose) outweigh its risks for use in infants and children 6 months through 5 years of age?",
+     "yes": 21,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/160164/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "21 Yes, 0 No, 0 Abstain (174th VRBPAC summary minutes, June 15, 2022, Voting Question 1)",
+   "fda_action": "other",
+   "fda_action_date": "2022-06-17",
+   "action_source_url": "https://www.fda.gov/media/144636/download",
+   "action_source_type": "fda",
+   "action_quote": "For the June 17, 2022 authorization of the Moderna COVID-19 Vaccine (Original monovalent) ... for individuals 6 months through 17 years of age",
+   "action_label": "The FDA authorized the vaccine for emergency use"
+  },
+  {
+   "meeting_date": "2022-06-15",
+   "committee": "Vaccines and Related Biological Products Advisory Committee (VRBPAC)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/05/31/2022-11669/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Pfizer-BioNTech COVID-19 Vaccine (BNT162b2), primary series ages 6 months through 4 years",
+   "application": "Emergency Use Authorization request",
+   "sponsor": "Pfizer Inc. / BioNTech SE",
+   "ticker": "PFE",
+   "indication": "3-dose primary series (3 μg each dose) in infants and children 6 months through 4 years of age, under EUA",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-14-15-2022-meeting-announcement",
+   "questions": [
+    {
+     "n": 2,
+     "text": "Based on the totality of scientific evidence available, do the benefits of the Pfizer-BioNTech COVID-19 Vaccine when administered as a 3-dose series (3 μg each dose) outweigh its risks for use in infants and children 6 months through 4 years of age?",
+     "yes": 21,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/160164/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "21 Yes, 0 No, 0 Abstain (174th VRBPAC summary minutes, June 15, 2022, Voting Question 2)",
+   "fda_action": "other",
+   "fda_action_date": "2022-06-17",
+   "action_source_url": "https://www.fda.gov/media/150386/download",
+   "action_source_type": "fda",
+   "action_quote": "In the June 17, 2022 revision, FDA authorized the administration of Pfizer-BioNTech COVID-19 Vaccine (Original monovalent) ... for the prevention of COVID-19 in individuals 6 months through 4 years of age",
+   "action_label": "The FDA authorized the vaccine for emergency use"
+  },
+  {
+   "meeting_date": "2022-06-17",
+   "committee": "Psychopharmacologic Drugs Advisory Committee (PDAC)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/05/03/2022-09433/psychopharmacologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
+   "kind": "product_vote",
+   "product": "NUPLAZID (pimavanserin) tablets and capsules",
+   "application": "sNDA 210793/S-008 and sNDA 207318/S-011",
+   "sponsor": "Acadia Pharmaceuticals Inc.",
+   "ticker": "ACAD",
+   "indication": "treatment of hallucinations and delusions associated with Alzheimer's disease psychosis",
+   "meeting_url": "https://cacmap.fda.gov/advisory-committees/advisory-committee-calendar/june-17-2022-meeting-psychopharmacologic-drugs-advisory-committee-meeting-announcement-06172022",
+   "questions": [
+    {
+     "n": 2,
+     "text": "Does the available evidence support a conclusion that pimavanserin is effective for the treatment of hallucinations and delusions in the ADP population?",
+     "yes": 3,
+     "no": 9,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/161853/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 3 No: 9 Abstain: 0 (FDA final summary minutes, June 17, 2022)",
+   "fda_action": "crl",
+   "fda_action_date": "2022-08-04",
+   "action_source_url": "https://www.businesswire.com/news/home/20220804006095/en",
+   "action_source_type": "sponsor",
+   "action_quote": "the Company has received a Complete Response Letter (CRL) from the U.S. Food and Drug Administration (FDA) regarding its supplemental New Drug Application (sNDA) for NUPLAZID (pimavanserin)",
+   "public_note": "The action date is the day the sponsor announced the Complete Response Letter."
+  },
+  {
+   "meeting_date": "2022-09-07",
+   "committee": "Peripheral and Central Nervous System Drugs Advisory Committee (PCNS)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/08/03/2022-16570/peripheral-and-central-nervous-system-drugs-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "sodium phenylbutyrate/taurursodiol (AMX0035; RELYVRIO)",
+   "application": "NDA 216660",
+   "sponsor": "Amylyx Pharmaceuticals, Inc.",
+   "ticker": "AMLX",
+   "indication": "treatment of amyotrophic lateral sclerosis (ALS)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Considering the new information submitted and the information presented at the March 30, 2022, PCNS meeting, is the available evidence of effectiveness sufficient to support approval of sodium phenylbutyrate/taurursodiol (AMX0035) for the treatment of patients with ALS? In addition to the prior and new evidence presented, you may take into account in your vote the unmet need in ALS, the status of the ongoing Phase 3 trial, and the seriousness of ALS",
+     "yes": 7,
+     "no": 2,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/162088/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 7, No: 2, Abstain: 0 (FDA final summary minutes, Sept 7, 2022)",
+   "fda_action": "approved",
+   "fda_action_date": "2022-09-29",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216660",
+   "action_source_type": "fda",
+   "action_quote": "Drugs@FDA: ORIG-1 approval 09/29/2022 (Type 1 - New Molecular Entity)",
+   "public_note": "The second committee meeting on this application; the first, on March 30, 2022, voted 4 yes and 6 no. The approval was later withdrawn from the market."
+  },
+  {
+   "meeting_date": "2022-09-22",
+   "committee": "Oncologic Drugs Advisory Committee (ODAC)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/07/21/2022-15609/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "PEPAXTO (melphalan flufenamide)",
+   "application": "NDA 214383",
+   "sponsor": "Oncopeptides AB",
+   "ticker": null,
+   "indication": "in combination with dexamethasone, adults with relapsed or refractory multiple myeloma after at least four prior lines of therapy, refractory to a proteasome inhibitor, an immunomodulatory agent and an anti-CD38 monoclonal antibody (existing accelerated-approval indication)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Given the potential detriment in overall survival, failure to demonstrate a progression-free survival benefit, and lack of an appropriate dose, is the benefit-risk profile of melphalan flufenamide favorable for the currently indicated patient population?",
+     "yes": 2,
+     "no": 14,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/164048/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 2, No: 14, Abstain: 0 (ODAC final summary minutes, Sept 22-23, 2022)",
+   "fda_action": "other",
+   "fda_action_date": "2024-02-23",
+   "action_source_url": "https://fda.gov/media/176510/download",
+   "action_source_type": "fda",
+   "action_quote": "I find that the grounds for withdrawing approval have been met (FDA final decision, Feb 23, 2024, Docket FDA-2023-N-3167)",
+   "action_label": "The FDA withdrew the approval",
+   "follow_not_counted": true,
+   "public_note": "The committee reviewed an indication that already had accelerated approval, not a pending application."
+  },
+  {
+   "meeting_date": "2022-09-22",
+   "committee": "Vaccines and Related Biological Products Advisory Committee (VRBPAC)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/08/09/2022-17059/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "REBYOTA (fecal microbiota, live; RBX2660)",
+   "application": "BLA 125739",
+   "sponsor": "Rebiotix Inc. (a Ferring company)",
+   "ticker": null,
+   "indication": "reduce the recurrence of Clostridioides difficile infection (CDI) in adults 18 years and older following antibiotic treatment for recurrent CDI",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-september-22-2022-meeting-announcement",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Are the available data adequate to support the effectiveness of REBYOTA to reduce the recurrence of Clostridioides difficile infection (CDI) in adults 18 years of age and older following antibiotic treatment for recurrent CDI?",
+     "yes": 13,
+     "no": 4,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 2,
+     "text": "Are the available data adequate to support the safety of REBYOTA when administered to adults 18 years of age and older following antibiotic treatment for recurrent CDI?",
+     "yes": 12,
+     "no": 4,
+     "abstain": 1,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/162485/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Q1: 13 Yes, 4 No, 0 Abstain; Q2: 12 Yes, 4 No, 1 Abstain (176th VRBPAC summary minutes)",
+   "fda_action": "approved",
+   "fda_action_date": "2022-11-30",
+   "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/vaccines/rebyota",
+   "action_source_type": "fda",
+   "action_quote": "REBYOTA Approval Letter: November 30, 2022"
+  },
+  {
+   "meeting_date": "2022-09-22",
+   "committee": "Oncologic Drugs Advisory Committee (ODAC)",
+   "fr_url": "https://www.federalregister.gov/documents/2022/07/21/2022-15609/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "poziotinib",
+   "application": "NDA 215643",
+   "sponsor": "Spectrum Pharmaceuticals, Inc.",
+   "ticker": "SPPI",
+   "indication": "previously treated, locally advanced or metastatic non-small cell lung cancer (NSCLC) with HER2 exon 20 insertion mutations",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Do the current benefits of poziotinib outweigh its risks for the treatment of patients with NSCLC with HER2 exon 20 insertion mutations?",
+     "yes": 4,
+     "no": 9,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/164048/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 4, No: 9, Abstain: 0 (ODAC final summary minutes, Sept 22-23, 2022)",
+   "fda_action": "crl",
+   "fda_action_date": "2022-11-25",
+   "action_source_url": "https://www.sec.gov/Archives/edgar/data/831547/000083154723000007/sppi-20221231.htm",
+   "action_source_type": "sponsor",
+   "action_quote": "On November 25, 2022, we announced that we had received a Complete Response Letter (“CRL”) from the FDA regarding our NDA.",
+   "public_note": "The action date is the day the sponsor announced the Complete Response Letter. The sponsor had sought accelerated approval."
+  },
+  {
+   "meeting_date": "2023-02-15",
+   "committee": "Joint Meeting of the Nonprescription Drugs Advisory Committee and the Anesthetic and Analgesic Drug Products Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/01/09/2023-00110/joint-meeting-of-the-nonprescription-drugs-advisory-committee-and-the-anesthetic-and-analgesic-drug",
+   "kind": "product_vote",
+   "product": "Narcan (naloxone hydrochloride) nasal spray 4 mg/0.1 mL, nonprescription",
+   "application": "sNDA 208411/S-006",
+   "sponsor": "Emergent BioSolutions Inc.",
+   "ticker": "EBS",
+   "indication": "nonprescription use for the treatment of known or suspected opioid overdose",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/february-15-2023-joint-meeting-nonprescription-drugs-advisory-committee-and-anesthetic-and-analgesic",
+   "questions": [
+    {
+     "n": 4,
+     "text": "Is the benefit-risk profile of NNS supportive of its use as a nonprescription opioid overdose reversal agent?",
+     "yes": 19,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/166723/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 19 No: 0 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2023-03-29",
+   "action_source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-over-counter-naloxone-nasal-spray",
+   "action_source_type": "fda",
+   "action_quote": "Today, the U.S. Food and Drug Administration approved Narcan, 4 milligram (mg) naloxone hydrochloride nasal spray for over-the-counter, non-prescription, use"
+  },
+  {
+   "meeting_date": "2023-02-28",
+   "committee": "Vaccines and Related Biological Products Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/02/01/2023-02096/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Abrysvo (Respiratory Syncytial Virus Vaccine)",
+   "application": "BLA 125769 (STN 125769/0)",
+   "sponsor": "Pfizer Inc.",
+   "ticker": "PFE",
+   "indication": "active immunization to prevent RSV lower respiratory tract disease in adults 60 years of age and older",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-february-28-march-1-2023-meeting",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Are the available data adequate to support the safety of ABRYSVO (RSVPreF) when administered to individuals 60 years of age and older for the prevention of lower respiratory tract disease caused by RSV?",
+     "yes": 7,
+     "no": 4,
+     "abstain": 1,
+     "is_overall": false
+    },
+    {
+     "n": 2,
+     "text": "Are the available data adequate to support the effectiveness of ABRYSVO (RSVPreF) for the prevention of lower respiratory tract disease caused by RSV in individuals 60 years of age and older?",
+     "yes": 7,
+     "no": 4,
+     "abstain": 1,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/166776/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Voting Question #1 ... 7 Yes, 4 No, 1 Abstain; Voting Question #2 ... 7 Yes, 4 No, 1 Abstain",
+   "fda_action": "approved",
+   "fda_action_date": "2023-05-31",
+   "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2023-biological-license-application-approvals",
+   "action_source_type": "fda",
+   "action_quote": "05/31/2023, STN 125769/0, Pfizer Inc. ... prevention of lower respiratory tract disease (LRTD) caused by respiratory syncytial virus (RSV) in individuals 60 years of age and older"
+  },
+  {
+   "meeting_date": "2023-03-01",
+   "committee": "Vaccines and Related Biological Products Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/02/01/2023-02096/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Arexvy (Respiratory Syncytial Virus Vaccine, Recombinant, Adjuvanted)",
+   "application": "BLA 125775 (STN 125775/0)",
+   "sponsor": "GSK (GlaxoSmithKline Biologicals)",
+   "ticker": "GSK",
+   "indication": "active immunization to prevent lower respiratory tract disease caused by RSV-A and RSV-B in adults 60 years of age and older",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-february-28-march-1-2023-meeting",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Are the available data adequate to support the safety of AREXVY (RSVPreF3+AS01E) when administered to individuals 60 years of age and older for the prevention of lower respiratory tract disease caused by RSV?",
+     "yes": 10,
+     "no": 2,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 2,
+     "text": "Are the available data adequate to support the effectiveness of AREXVY (RSVPreF3+AS01E) for the prevention of lower respiratory tract disease caused by RSV in individuals 60 years of age and older?",
+     "yes": 12,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/166775/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Voting Question #1 ... 10 Yes, 2 No, 0 Abstain; Voting Question #2 ... 12 Yes, 0 No, 0 Abstain",
+   "fda_action": "approved",
+   "fda_action_date": "2023-05-03",
+   "action_source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-respiratory-syncytial-virus-rsv-vaccine",
+   "action_source_type": "fda",
+   "action_quote": "the first respiratory syncytial virus (RSV) vaccine approved for use in the United States (press release dated May 03, 2023); CBER list: 05/03/2023, STN 125775/0"
+  },
+  {
+   "meeting_date": "2023-03-09",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/01/26/2023-01553/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Polivy (polatuzumab vedotin-piiq)",
+   "application": "sBLA 761121/S-008",
+   "sponsor": "Genentech, Inc. (Roche)",
+   "ticker": null,
+   "indication": "in combination with a rituximab product, cyclophosphamide, doxorubicin, and prednisone for previously untreated diffuse large B-cell lymphoma (DLBCL) in adults",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/march-9-2023-meeting-oncologic-drugs-advisory-committee-meeting-announcement-03092023",
+   "questions": [
+    {
+     "n": 3,
+     "text": "Given the results of the POLARIX trial, does polatuzumab vedotin-piiq have a favorable benefit-risk profile in patients with previously untreated LBCL, including DLBCL NOS?",
+     "yes": 11,
+     "no": 2,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/167968/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 11, No: 2, Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2023-04-19",
+   "action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-polatuzumab-vedotin-piiq-previously-untreated-diffuse-large-b-cell-lymphoma-not",
+   "action_source_type": "fda",
+   "action_quote": "for adult patients who have previously untreated diffuse large B-cell lymphoma (DLBCL), not otherwise specified (NOS) or high-grade B-cell lymphoma (HGBL) who have an International Prognostic Index (IPI) score of 2 or greater",
+   "public_note": "The approved label is narrower than the population voted on: diffuse large B-cell lymphoma not otherwise specified or high-grade B-cell lymphoma, with an International Prognostic Index score of 2 or greater."
+  },
+  {
+   "meeting_date": "2023-03-16",
+   "committee": "Antimicrobial Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/02/27/2023-03971/antimicrobial-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request",
+   "kind": "product_vote",
+   "product": "Paxlovid (nirmatrelvir tablets; ritonavir tablets), co-packaged",
+   "application": "NDA 217188",
+   "sponsor": "Pfizer Inc.",
+   "ticker": "PFE",
+   "indication": "treatment of mild-to-moderate COVID-19 in adults at high risk for progression to severe COVID-19, including hospitalization or death",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-information-march-16-2023-antimicrobial-drugs-advisory-committee-meeting-announcement",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Is the overall benefit-risk assessment favorable for PAXLOVID when used for the treatment of mild-to-moderate COVID-19 in adults who are at high risk for progression to severe COVID-19, including hospitalization or death?",
+     "yes": 16,
+     "no": 1,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/167913/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 16 No: 1 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2023-05-25",
+   "action_source_url": "https://fda.gov/drugs/new-drugs-fda-cders-new-molecular-entities-and-new-therapeutic-biological-products/novel-drug-approvals-2023",
+   "action_source_type": "fda",
+   "action_quote": "Paxlovid | nirmatrelvir, ritonavir | 5/25/2023 | To treat mild-to-moderate COVID-19 in adults at high risk for progression to severe COVID-19"
+  },
+  {
+   "meeting_date": "2023-03-22",
+   "committee": "Peripheral and Central Nervous System Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/01/24/2023-01216/peripheral-and-central-nervous-system-drugs-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Qalsody (tofersen, BIIB067) intrathecal injection",
+   "application": "NDA 215887",
+   "sponsor": "Biogen Inc.",
+   "ticker": "BIIB",
+   "indication": "treatment of amyotrophic lateral sclerosis (ALS) associated with a mutation in the SOD1 gene",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-meeting-time-and-public-participation-information-march-22-2023-meeting-peripheral-and",
+   "questions": [
+    {
+     "n": 2,
+     "text": "Is the available evidence sufficient to conclude that a reduction in plasma NfL concentration in tofersen-treated patients is reasonably likely to predict clinical benefit of tofersen for treatment of patients with SOD1-ALS?",
+     "yes": 9,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 4,
+     "text": "Does the clinical data from the placebo-controlled study and available long-term extension study results, with additional supporting results from the effects on relevant biomarkers (i.e., changes in plasma NfL concentration and/or reductions in SOD1), provide convincing evidence of the effectiveness of tofersen in the treatment of patients with SOD1-ALS?",
+     "yes": 3,
+     "no": 5,
+     "abstain": 1,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/167354/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Question 2 ... Yes: 9, No: 0, Abstain: 0; Question 4 ... Yes: 3, No: 5, Abstain: 1",
+   "fda_action": "approved",
+   "fda_action_date": "2023-04-25",
+   "action_source_url": "https://fda.gov/drugs/new-drugs-fda-cders-new-molecular-entities-and-new-therapeutic-biological-products/novel-drug-approvals-2023",
+   "action_source_type": "fda",
+   "action_quote": "Qalsody | tofersen | 4/25/2023 | To treat amyotrophic lateral sclerosis in adults who have a SOD1 gene mutation",
+   "public_note": "The overall question asked whether the evidence of effectiveness met the standard for full approval. A separate question on the biomarker as a basis for accelerated approval was favorable, and the FDA granted accelerated approval."
+  },
+  {
+   "meeting_date": "2023-04-17",
+   "committee": "Antimicrobial Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/03/13/2023-05068/antimicrobial-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request",
+   "kind": "product_vote",
+   "product": "Xacduro (sulbactam-durlobactam) for injection",
+   "application": "NDA 216974",
+   "sponsor": "Entasis Therapeutics, Inc. (subsidiary of Innoviva)",
+   "ticker": "INVA",
+   "indication": "treatment of HABP/VABP caused by susceptible strains of Acinetobacter baumannii-calcoaceticus complex",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-information-april-17-2023-meeting-antimicrobial-drugs-advisory-committee-meeting",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Is the overall benefit-risk assessment favorable for the use of sulbactam-durlobactam for the treatment of patients with hospital-acquired bacterial pneumonia (HABP) and ventilator-associated bacterial pneumonia (VABP) caused by susceptible strains of Acinetobacter baumannii-calcoaceticus complex (ABC) organisms?",
+     "yes": 12,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/170565/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 12 No: 0 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2023-05-23",
+   "action_source_url": "https://fda.gov/drugs/new-drugs-fda-cders-new-molecular-entities-and-new-therapeutic-biological-products/novel-drug-approvals-2023",
+   "action_source_type": "fda",
+   "action_quote": "Xacduro | sulbactam, durlobactam | 5/23/2023 | To treat hospital-acquired bacterial pneumonia and ventilator-associated bacterial pneumonia ..."
+  },
+  {
+   "meeting_date": "2023-04-28",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/03/02/2023-04268/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Lynparza (olaparib) tablets, with abiraterone and prednisone/prednisolone",
+   "application": "sNDA 208558/S-025",
+   "sponsor": "AstraZeneca Pharmaceuticals LP",
+   "ticker": "AZN",
+   "indication": "in combination with abiraterone and prednisone or prednisolone for adult patients with metastatic castration-resistant prostate cancer (mCRPC)",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/april-28-2023-meeting-oncologic-drugs-advisory-committee-meeting-announcement-04282023",
+   "questions": [
+    {
+     "n": 1,
+     "text": "As FDA reviews the proposed indication for olaparib in combination with abiraterone for initial treatment of mCRPC, should the indication be restricted to patients whose tumors have a BRCA mutation?",
+     "yes": 11,
+     "no": 1,
+     "abstain": 1,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/169632/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 11, No: 1, Abstain: 1",
+   "fda_action": "approved",
+   "fda_action_date": "2023-05-31",
+   "action_source_url": "https://www.fda.gov/drugs/drug-approvals-and-databases/fda-approves-olaparib-abiraterone-and-prednisone-or-prednisolone-brca-mutated-metastatic-castration",
+   "action_source_type": "fda",
+   "action_quote": "On May 31, 2023, the Food and Drug Administration approved olaparib ... with abiraterone and prednisone (or prednisolone) for ... deleterious or suspected deleterious BRCA-mutated (BRCAm) metastatic castration-resistant prostate cancer"
+  },
+  {
+   "meeting_date": "2023-09-13",
+   "committee": "Cardiovascular and Renal Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2023/07/03/2023-14037/cardiovascular-and-renal-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
+   "kind": "product_vote",
+   "product": "Onpattro (patisiran) lipid complex injection",
+   "application": "sNDA 210922/S-015",
+   "sponsor": "Alnylam Pharmaceuticals, Inc.",
+   "ticker": "ALNY",
+   "indication": "the cardiomyopathy of wild-type or hereditary transthyretin-mediated amyloidosis in adults",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-public-participation-information-september-13-2023-cardiovascular-and-renal-drugs-advisory",
+   "questions": [
+    {
+     "n": 6,
+     "text": "Do patisiran's benefits outweigh its risks for the treatment of ATTR cardiomyopathy?",
+     "yes": 9,
+     "no": 3,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/173671/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 9 No: 3 Abstain: 0",
+   "fda_action": "crl",
+   "fda_action_date": "2023-10-09",
+   "action_source_url": "https://www.sec.gov/Archives/edgar/data/1178670/000119312523253084/d279887dex991.htm",
+   "action_source_type": "sponsor",
+   "action_quote": "the U.S. Food and Drug Administration (FDA) has issued a Complete Response Letter (CRL) in response to the supplemental New Drug Application (sNDA) for patisiran",
+   "public_note": "The action date is the day the sponsor announced the Complete Response Letter."
+  },
+  {
+   "meeting_date": "2024-03-05",
+   "committee": "Medical Imaging Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2024/01/19/2024-01016/medical-imaging-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request",
+   "kind": "product_vote",
+   "product": "Lumisight (pegulicianine)",
+   "application": "NDA 214511",
+   "sponsor": "Lumicell, Inc.",
+   "ticker": null,
+   "indication": "Adults with breast cancer, as an adjunct for intraoperative detection of cancerous tissue within the resection cavity following removal of the primary specimen during lumpectomy surgery",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/march-5-2024-meeting-medical-imaging-drugs-advisory-committee-meeting-announcement-03052024",
+   "questions": [
+    {
+     "n": 3,
+     "text": "Do the benefits of pegulicianine outweigh its risks?",
+     "yes": 16,
+     "no": 2,
+     "abstain": 1,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/177460/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 16 No: 2 Abstain: 1",
+   "fda_action": "approved",
+   "fda_action_date": "2024-04-17",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=214511",
+   "action_source_type": "fda",
+   "action_quote": "04/17/2024 ORIG-1 Approval (Type 1 - New Molecular Entity)"
+  },
+  {
+   "meeting_date": "2024-03-14",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2024/01/30/2024-01797/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Rytelo (imetelstat)",
+   "application": "NDA 217779",
+   "sponsor": "Geron Corporation",
+   "ticker": "GERN",
+   "indication": "Transfusion-dependent anemia in adults with low- to intermediate-1 risk myelodysplastic syndromes who have failed to respond to, lost response to, or are ineligible for erythropoiesis-stimulating agents",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/march-14-2024-meeting-oncologic-drugs-advisory-committee-meeting-announcement-03142024",
+   "questions": [
+    {
+     "n": 2,
+     "text": "Do the benefits of imetelstat outweigh its risks for the treatment of transfusion dependent anemia in adult patients with International Prognosis Scoring System (IPSS) low- to intermediate-1 risk MDS who have not responded to or have lost response to or are ineligible for erythropoiesis-stimulating agents?",
+     "yes": 12,
+     "no": 2,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/180262/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 12 No: 2 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2024-06-06",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217779",
+   "action_source_type": "fda",
+   "action_quote": "06/06/2024 ORIG-1 Approval (Type 1 - New Molecular Entity)"
+  },
+  {
+   "meeting_date": "2024-03-15",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2024/02/05/2024-02229/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Abecma (idecabtagene vicleucel)",
+   "application": "sBLA 125736/218",
+   "sponsor": "Celgene Corporation (Bristol-Myers Squibb)",
+   "ticker": "BMY",
+   "indication": "Adults with relapsed or refractory multiple myeloma who have received an immunomodulatory agent, a proteasome inhibitor, and an anti-CD38 monoclonal antibody",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/march-15-2024-meeting-oncologic-drugs-advisory-committee-meeting-announcement-03152024",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Is the risk-benefit assessment for idecabtagene vicleucel for the proposed indication, favorable?",
+     "yes": 8,
+     "no": 3,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/178184/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 8 No: 3 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2024-04-04",
+   "action_source_url": "https://www.fda.gov/media/177545/download",
+   "action_source_type": "fda",
+   "action_quote": "April 4, 2024 ... BL 125736/218 SUPPLEMENT APPROVAL ... adult patients with relapsed or refractory multiple myeloma after two or more prior lines of therapy",
+   "public_note": "The approved indication specifies use after two or more prior lines of therapy."
+  },
+  {
+   "meeting_date": "2024-03-15",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2024/02/05/2024-02229/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Carvykti (ciltacabtagene autoleucel)",
+   "application": "sBLA 125746/74",
+   "sponsor": "Janssen Biotech, Inc. (Johnson & Johnson); Legend Biotech partner",
+   "ticker": "JNJ",
+   "indication": "Adults with relapsed or refractory multiple myeloma who have received at least one prior line of therapy, including a proteasome inhibitor and an immunomodulatory agent, and are refractory to lenalidomide",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/march-15-2024-meeting-oncologic-drugs-advisory-committee-meeting-announcement-03152024",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Is the risk-benefit assessment for ciltacabtagene autoleucel for the proposed indication, favorable?",
+     "yes": 11,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/178184/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 11 No: 0 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2024-04-05",
+   "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2024-biological-license-application-supplement-noteworthy-approvals",
+   "action_source_type": "fda",
+   "action_quote": "CARVYKTI 125746/74 04/05/2024: To extend the indication based on the results of the CARTITUDE-4 clinical trial ... for treatment in lenalidomide-refractory participants, following 1 to 3 prior lines of therapy"
+  },
+  {
+   "meeting_date": "2024-05-24",
+   "committee": "Endocrinologic and Metabolic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2024/04/29/2024-09158/endocrinologic-and-metabolic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "insulin icodec (Awiqli)",
+   "application": "BLA 761326",
+   "sponsor": "Novo Nordisk",
+   "ticker": "NVO",
+   "indication": "Improve glycemic control in adults with diabetes mellitus",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/may-24-2024-meeting-endocrinologic-and-metabolic-drugs-advisory-committee-meeting-announcement",
+   "questions": [
+    {
+     "n": 5,
+     "text": "Based on the available data, has the Applicant demonstrated that the benefits of insulin icodec outweigh its risks for improving glycemic control in adults with T1D?",
+     "yes": 4,
+     "no": 7,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/182560/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 4 No: 7 Abstain: 0",
+   "fda_action": "crl",
+   "fda_action_date": "2024-07-10",
+   "action_source_url": "https://api.fda.gov/transparency/crl.json?search=application_number:%22BLA 761326%22",
+   "action_source_type": "fda",
+   "action_quote": "BLA 761326, Novo Nordisk Inc., letter date 07/10/2024, COMPLETE RESPONSE: 'we cannot approve these applications in their present form'",
+   "public_note": "The only voting question concerned type 1 diabetes; questions on type 2 diabetes were for discussion only."
+  },
+  {
+   "meeting_date": "2024-06-04",
+   "committee": "Psychopharmacologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2024/05/08/2024-10053/psychopharmacologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
+   "kind": "product_vote",
+   "product": "midomafetamine (MDMA) capsules",
+   "application": "NDA 215455",
+   "sponsor": "Lykos Therapeutics",
+   "ticker": null,
+   "indication": "Treatment of post-traumatic stress disorder",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-meeting-time-and-public-participation-information-june-4-2024-meeting-psychopharmacologic",
+   "questions": [
+    {
+     "n": 5,
+     "text": "Do the available data show that the drug is effective in patients with posttraumatic stress disorder?",
+     "yes": 2,
+     "no": 9,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 6,
+     "text": "Do the benefits of midomafetamine with FDA's proposed risk evaluation and mitigation strategy (REMS) outweigh its risks for the treatment of patients with PTSD?",
+     "yes": 1,
+     "no": 10,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/180463/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Q5 Vote Result: Yes: 2 No: 9 Abstain: 0; Q6 Vote Result: Yes: 1 No: 10 Abstain: 0",
+   "fda_action": "crl",
+   "fda_action_date": "2024-08-08",
+   "action_source_url": "https://api.fda.gov/transparency/crl.json?search=application_number:%22NDA 215455%22",
+   "action_source_type": "fda",
+   "action_quote": "NDA 215455, Lykos Therapeutics, letter date 08/08/2024, COMPLETE RESPONSE: 'we cannot approve this application in its present form'"
+  },
+  {
+   "meeting_date": "2024-06-10",
+   "committee": "Peripheral and Central Nervous System Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2024/05/08/2024-10051/peripheral-and-central-nervous-system-drugs-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Kisunla (donanemab-azbt)",
+   "application": "BLA 761248",
+   "sponsor": "Eli Lilly and Company",
+   "ticker": "LLY",
+   "indication": "Treatment of early symptomatic Alzheimer's disease",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-public-participation-information-june-10-2024-meeting-peripheral-and-central-nervous-system",
+   "questions": [
+    {
+     "n": 2,
+     "text": "Do the available data show that donanemab is effective for the treatment of Alzheimer's disease in the population enrolled in the clinical trials with mild cognitive impairment and mild dementia?",
+     "yes": 11,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 5,
+     "text": "Do the benefits outweigh the risks of donanemab in the treatment of AD in the population enrolled in the clinical trials with mild cognitive impairment and mild dementia?",
+     "yes": 11,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/180111/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Q2 Vote Result: Yes: 11 No: 0 Abstain: 0; Q5 Vote Result: Yes: 11 No: 0 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2024-07-02",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761248",
+   "action_source_type": "fda",
+   "action_quote": "07/02/2024 ORIG-1 Approval"
+  },
+  {
+   "meeting_date": "2024-08-02",
+   "committee": "Genetic Metabolic Diseases Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2024/07/10/2024-15127/genetic-metabolic-diseases-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
+   "kind": "product_vote",
+   "product": "Miplyffa (arimoclomol)",
+   "application": "NDA 214927",
+   "sponsor": "Zevra Denmark A/S (Zevra Therapeutics)",
+   "ticker": "ZVRA",
+   "indication": "Treatment of adults and pediatric patients 2 years of age and older with Niemann-Pick disease type C",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-public-participation-information-august-2-2024-meeting-genetic-metabolic-diseases-advisory",
+   "questions": [
+    {
+     "n": 3,
+     "text": "Do the results of trial NPC-002 in concert with the other data (clinical and nonclinical in particular) support a conclusion that arimoclomol is effective in the treatment of patients with NPC?",
+     "yes": 11,
+     "no": 5,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/181825/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 11 No: 5 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2024-09-20",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=214927",
+   "action_source_type": "fda",
+   "action_quote": "09/20/2024 ORIG-1 Approval (Type 1 - New Molecular Entity; priority; orphan)",
+   "public_note": "The only vote was on effectiveness; there was no separate benefit-risk vote."
+  },
+  {
+   "meeting_date": "2024-10-10",
+   "committee": "Cardiovascular and Renal Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2024/09/06/2024-20062/cardiovascular-and-renal-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
+   "kind": "product_vote",
+   "product": "Forzinity (elamipretide)",
+   "application": "NDA 215244",
+   "sponsor": "Stealth BioTherapeutics Inc.",
+   "ticker": null,
+   "indication": "Treatment of Barth syndrome",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/october-10-2024-meeting-cardiovascular-and-renal-drugs-advisory-committee-10102024",
+   "questions": [
+    {
+     "n": 4,
+     "text": "Based on available evidence, do you conclude that elamipretide is effective for the treatment of Barth syndrome?",
+     "yes": 10,
+     "no": 6,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/187179/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 10 No: 6 Abstain: 0",
+   "fda_action": "crl",
+   "fda_action_date": "2025-05-15",
+   "action_source_url": "https://api.fda.gov/transparency/crl.json?search=application_number:%22NDA 215244%22",
+   "action_source_type": "fda",
+   "action_quote": "NDA 215244, Stealth BioTherapeutics Inc., letter date 05/15/2025, COMPLETE RESPONSE: 'we cannot approve this application in its present form'",
+   "public_note": "The only vote was on effectiveness. The FDA approved the drug, as Forzinity, on September 19, 2025."
+  },
+  {
+   "meeting_date": "2024-10-31",
+   "committee": "Endocrinologic and Metabolic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2024/10/02/2024-22570/endocrinologic-and-metabolic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "sotagliflozin (Zynquista)",
+   "application": "NDA 210934",
+   "sponsor": "Lexicon Pharmaceuticals, Inc.",
+   "ticker": "LXRX",
+   "indication": "Adjunct to insulin therapy to improve glycemic control in adults with type 1 diabetes mellitus and chronic kidney disease",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-meeting-time-information-october-31-2024-meeting-endocrinologic-and-metabolic-drugs-advisory",
+   "questions": [
+    {
+     "n": 7,
+     "text": "Do the available data demonstrate that the benefits of sotagliflozin outweigh the risks for the indication of improved glycemic control in a population of patients with T1D and eGFR >= 45 to < 60 mL/min/1.73 m2 OR eGFR >= 60 mL/min/1.73 m2 and UACR >= 30 mg/g?",
+     "yes": 3,
+     "no": 11,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/184796/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 3 No: 11 Abstain: 0",
+   "fda_action": "crl",
+   "fda_action_date": "2024-12-20",
+   "action_source_url": "https://api.fda.gov/transparency/crl.json?search=application_number:%22NDA 210934%22",
+   "action_source_type": "fda",
+   "action_quote": "NDA 210934, Lexicon Pharmaceuticals, Inc., letter date 12/20/2024, COMPLETE RESPONSE: 'we cannot approve this application in its present form'",
+   "public_note": "The same application had received an earlier Complete Response Letter in 2019. Sotagliflozin is separately approved, as Inpefa, for heart failure."
+  }
+ ]
+}
