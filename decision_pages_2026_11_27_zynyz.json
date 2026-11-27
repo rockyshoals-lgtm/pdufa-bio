@@ -1,0 +1,17 @@
+[
+ {
+  "ticker": "INCY",
+  "date": "2026-03-06",
+  "fda_action_date": "2026-02-27",
+  "outcome": "CRL",
+  "drug": "Zynyz (retifanlimab-dlwr) - metastatic NSCLC with platinum chemotherapy (POD1UM-304)",
+  "indication": "Adults with metastatic non-small cell lung cancer (NSCLC), in combination with platinum-based chemotherapy (supplemental BLA)",
+  "company": "Incyte Corporation",
+  "cap": "Large",
+  "headline": "The FDA issued a Complete Response Letter on February 27, 2026 for Incyte's supplemental BLA for Zynyz (retifanlimab-dlwr) in adults with metastatic non-small cell lung cancer, in combination with platinum-based chemotherapy. Per Incyte, the letter's only approvability issue was inspection findings at Catalent Indiana, the third-party fill-finish site; it cited no other approvability concerns, including Zynyz's efficacy and safety data. Incyte disclosed the letter in a Form 8-K filed on March 6, 2026.",
+  "pdufa_note": "Incyte's Form 8-K (date of report February 27, 2026, signed March 6, 2026) states that the FDA issued the Complete Response Letter on February 27, 2026, that the letter cited inspection findings, not specific to Zynyz, at Catalent Indiana, LLC, part of Novo Nordisk, the fill-finish facility referenced in the sBLA, and that it cited that site's regulatory compliance as the sole approvability issue and did not cite other approvability concerns, including Zynyz's efficacy and safety data in NSCLC or the third-party drug substance manufacturer (<a href=\"https://www.sec.gov/Archives/edgar/data/879169/000087916926000013/incy-20260227.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">Incyte 8-K</a>). The sBLA was supported by the Phase 3 POD1UM-304 trial. Incyte said it is working with the FDA and Catalent Indiana toward a potential resubmission. No FDA letter for this supplement is published in openFDA's CRL files. Correction, November 27, 2026: earlier pages on this site dated this letter April 8, 2026 with no source (see /corrections).",
+  "source": "https://www.sec.gov/Archives/edgar/data/879169/000087916926000013/incy-20260227.htm",
+  "source_label": "Incyte Form 8-K, date of report February 27, 2026, filed March 6, 2026",
+  "h1": "Zynyz (retifanlimab-dlwr) <span class=\"g\">FDA Complete Response Letter in NSCLC</span>: Feb 27, 2026"
+ }
+]

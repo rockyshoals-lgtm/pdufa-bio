@@ -38,7 +38,7 @@ RETRACTED = {
 try:
     sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from apply_1118_retire_decisions import RETIRE as _R1118
-    RETRACTED.update({s: why for s, (_, why, _) in _R1118.items()})
+    RETRACTED.update({s: v[1] for s, v in _R1118.items()})  # v[1]: three SNY/REGN tuples carry a 4th field (2026-11-27)
 except Exception:  # noqa: BLE001
     pass
 # 2026-10-15 retirements (apply_1015_anktiva_and_corrections.py) that recorded no FDA action. Three /ticker hubs that
@@ -51,13 +51,13 @@ except Exception:  # noqa: BLE001
 # 2026-11-18: UCB's Kygevvi approval, recorded as an Agios one (apply_1118c_kygevvi.py).
 try:
     from apply_1118c_kygevvi import RETIRE as _R1118C
-    RETRACTED.update({s: why for s, (_, why, _) in _R1118C.items()})
+    RETRACTED.update({s: v[1] for s, v in _R1118C.items()})
 except Exception:  # noqa: BLE001
     pass
 # 2026-11-25: 15 pages titled and listed as a CRL whose own record said it was not one (apply_1125_currency.py).
 try:
     from apply_1125_currency import RETIRE as _R1125
-    RETRACTED.update({s: why for s, (_, why, _) in _R1125.items()})
+    RETRACTED.update({s: v[1] for s, v in _R1125.items()})
 except Exception:  # noqa: BLE001
     pass
 # 2026-11-26: six pages filed under a company that is not the applicant (apply_1126b_misfiled_decisions.py).
@@ -76,6 +76,12 @@ except Exception:  # noqa: BLE001
 try:
     from apply_1126d_held_real import RETIRE as _R1126D
     RETRACTED.update({s: v[1] for s, v in _R1126D.items()})
+except Exception:  # noqa: BLE001
+    pass
+# 2026-11-27: the Zynyz NSCLC CRL dated April 8, 2026 with no source; Incyte's 8-K dates it February 27 (apply_1127c_zynyz_crl.py).
+try:
+    from apply_1127c_zynyz_crl import RETIRE as _R1127C
+    RETRACTED.update({s: v[1] for s, v in _R1127C.items()})
 except Exception:  # noqa: BLE001
     pass
 # Pages allowed to mention a retracted slug, because their job is to document the retraction.
