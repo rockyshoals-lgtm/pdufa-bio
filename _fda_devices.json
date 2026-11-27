@@ -1,6 +1,6 @@
 {
  "count": 1335,
- "fetched": "2026-11-26T22:51:53Z",
+ "fetched": "2026-11-27T19:00:26Z",
  "rows": [
   {
    "advisory_committee": "Unknown",
@@ -3497,7 +3497,7 @@
    "supplement_number": null,
    "supplement_reason": null,
    "supplement_type": null,
-   "ticker": "NONE.",
+   "ticker": "EBRCZ",
    "ticker_match": "sec_name",
    "trade_name": "WiSE\u00ae (Wireless Stimulation of the Endocardium Technology) CRT System"
   },
