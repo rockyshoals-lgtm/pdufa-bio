@@ -1165,6 +1165,12 @@ jobs:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
         run: python gsc_index_status.py --max 150
 
+      # 2026-11-27 (OMW design pass): each company hub links its /earnings page and lists its FDA device decisions,
+      # from the same caches as those pages. After every generator that writes /ticker pages and after the earnings and
+      # device builders; before the site links. tests/test_ticker_crosslinks.py fails if a hub disagrees with the caches.
+      - name: "Company hubs link their earnings dates and FDA device decisions"
+        run: python inject_ticker_crosslinks.py
+
       - name: Internal links (site links, homepage hub, related, /sitemap)
         # /fda-approvals (months, companies) are built in the conferences step, before the weekdays page, so every
         # page that reads _fda_approvals_months.json reads the same refreshed cache (run 45131808182).
