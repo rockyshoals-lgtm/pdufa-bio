@@ -65,6 +65,9 @@ PARTNERS = {
     "ABBV": {1434265: "Genmab: EPKINLY's US applicant (co-developed with AbbVie), the goal date's source"},
     "ALNY": {1121404: "Sanofi: QFITLIA's applicant (Alnylam royalty), the goal date's source"},
     "TEVA": {1720893: "BioXcel: the goal date's source"},
+    # 2026-11-27: one FDA action, several tickers; each ticker's page names the goal date's source (Verified line)
+    "HALO": {1697862: "argenx: VYVGART Hytrulo's applicant (Halozyme ENHANZE royalty), the goal date's source"},
+    "AZN": {318154: "Amgen: TEZSPIRE's co-developer and BLA holder (with AstraZeneca), the goal date's source"},
     # 2026-11-26 (CRL task): Dr. Reddy's disclosure names the AVT03 maker's Reykjavik facility; Alvotech's 20-F states
     # the FDA's CRLs on AVT03, AVT05 and AVT06
     "RDY": {1898416: "Alvotech: AVT03's maker (Reykjavik facility named in Dr. Reddy's CRL disclosure)"},

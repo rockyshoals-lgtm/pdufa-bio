@@ -148,6 +148,18 @@ def match_page(idx, tickers, action):
     return f"/fda-decision/{tk}-{d}"
 
 
+def sibling_pages(idx, tickers, action):
+    """2026-11-27: every decision page for the same FDA action when one action carries several tickers (Padcev with
+    Keytruda: ALPMY, MRK and PFE each have a page dated the action day), so each page's Verified line names the
+    goal. Same rule as match_page: one candidate date across the row's tickers, else none."""
+    first = match_page(idx, tickers, action)
+    if not first:
+        return []
+    d = first.rsplit("-", 3)[-3:]
+    day = "-".join(d)
+    return sorted(f"/fda-decision/{tk.upper()}-{day}" for tk in tickers if day in idx.get(tk.upper(), []))
+
+
 def load_2024_2025():
     doc = json.load(io.open(DATA, encoding="utf-8"))
     pidx = _page_index()
@@ -170,6 +182,7 @@ def load_2024_2025():
             "action_url": a.get("action_url") or "", "action_basis": a.get("action_basis") or "",
             "extension_reason": a.get("extension_reason") or "", "scope_note": a.get("scope_note") or "",
             "red_team": a.get("red_team") or "", "page": match_page(pidx, a.get("tickers") or [], ad),
+            "pages": sibling_pages(pidx, a.get("tickers") or [], ad),
             "cid": a.get("cid") or "", "goal_source": a.get("goal_source_type") or "sponsor",
         })
     return doc, rows, dropped
@@ -192,11 +205,12 @@ def write_goal_ledger(rows):
         # an FDA review or letter is itself the source; it needs no separate dated sponsor document
         if not (x.get("page") and x.get("goal_url") and (x.get("goal_doc_date") or fda_doc)):
             continue
-        led[x["page"].rsplit("/", 1)[-1]] = {
-            "cid": x.get("cid") or "", "goal": x["goal"], "source_url": x["goal_url"], "doc_date": x["goal_doc_date"] or "",
-            "source_type": x.get("goal_source") or "sponsor",
-            "extended": x["extended"], "goal_original": x.get("goal_original") or None,
-            "action": x["action"], "outcome": x["outcome"]}
+        for pg in (x.get("pages") or [x["page"]]):
+            led[pg.rsplit("/", 1)[-1]] = {
+                "cid": x.get("cid") or "", "goal": x["goal"], "source_url": x["goal_url"], "doc_date": x["goal_doc_date"] or "",
+                "source_type": x.get("goal_source") or "sponsor",
+                "extended": x["extended"], "goal_original": x.get("goal_original") or None,
+                "action": x["action"], "outcome": x["outcome"]}
     io.open(GOAL_LEDGER, "w", encoding="utf-8", newline="\n").write(
         json.dumps(dict(sorted(led.items())), indent=1, ensure_ascii=False) + "\n")
 
