@@ -22,7 +22,9 @@
   "C006": "Heron said the FDA extended the date by three months to provide for a full review of the submission.",
   "CAPR|2026-11-22": "The FDA classified a submission during review as a major amendment, which extends the review by three months.",
   "PRAX|2026-12-27": "The FDA deemed the sponsor's submission of additional sensitivity analyses of existing clinical data a major amendment.",
-  "BLTE|2027-05-12": "The sponsor said the extension gives the FDA additional time to review information provided in support of the application."
+  "BLTE|2027-05-12": "The sponsor said the extension gives the FDA additional time to review information provided in support of the application.",
+  "LNTH|2026-06-29": "The sponsor said the extension gives the FDA additional time to review further manufacturing information it submitted, and that it was not related to the efficacy or safety data.",
+  "VRTX|2027-02-28": "The sponsor said the FDA classified its response to an information request near the end of the review cycle as a major amendment."
  },
  "rows": [
   {
@@ -73,6 +75,41 @@
    "goal_extended_url": "https://www.sec.gov/Archives/edgar/data/0001889109/000110465926130425/tm2630348d1_ex99-1.htm",
    "goal_extended_doc_date": "2026-11-20",
    "goal_extended_quote": "the extended Prescription Drug User Fee Act (PDUFA) action date being May 12, 2027",
+   "action_date": null,
+   "action_outcome": "pending",
+   "action_url": null
+  },
+  {
+   "ticker": "LNTH",
+   "name": "LNTH-2501 (Gallium-68 edotreotide)",
+   "company": "Lantheus Holdings Inc.",
+   "goal_date_original": "2026-03-29",
+   "goal_original_url": "https://investor.lantheus.com/node/16621",
+   "goal_original_doc_date": "2025-10-30",
+   "goal_original_quote": "The FDA has set a PDUFA target action date of March 29, 2026.",
+   "extended": true,
+   "goal_date_extended": "2026-06-29",
+   "goal_extended_url": "https://investor.lantheus.com/node/16896",
+   "goal_extended_doc_date": "2026-03-17",
+   "goal_extended_quote": "revised target Prescription Drug User Free Act (PDUFA) goal date of June 29, 2026",
+   "action_date": "2026-06-26",
+   "action_outcome": "crl",
+   "action_url": "https://lantheusholdings.gcs-web.com/node/17071/pdf",
+   "application": "NDA 216900"
+  },
+  {
+   "ticker": "VRTX",
+   "name": "Povetacicept (ALPN-303)",
+   "company": "Vertex Pharmaceuticals",
+   "goal_date_original": "2026-11-30",
+   "goal_original_url": "https://news.vrtx.com/node/35441",
+   "goal_original_doc_date": "2026-10-23",
+   "goal_original_quote": "The Prescription Drug User Fee Act (PDUFA) target action date is November 30, 2026.",
+   "extended": true,
+   "goal_date_extended": "2027-02-28",
+   "goal_extended_url": "https://news.vrtx.com/news-releases/news-release-details/vertex-announces-extension-pdufa-target-action-date-three-months",
+   "goal_extended_doc_date": "2026-11-25",
+   "goal_extended_quote": "The original PDUFA target action date was November 30, 2026, and the revised target action date for the FDA decision is no later than February 28, 2027.",
    "action_date": null,
    "action_outcome": "pending",
    "action_url": null
