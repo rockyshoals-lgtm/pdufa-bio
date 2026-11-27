@@ -223,10 +223,11 @@ export default async (req, res) => {
   const stopAt = armed.publish ? stopAt0 : nowMs;
   const doneChanged = JSON.stringify(done) !== JSON.stringify(done0);
   let pub = reconcile(pub0, armed, nowMs);
-  // The sponsor's own later release that corrects or withdraws what it said takes the post down at once (red team 6).
+  // A later release by the sponsor that may contradict a post pauses it: hidden until the full review confirms or
+  // withdraws it (red teams 6 to 9).
   for (const item of [...edgar, ...rssList]) for (const id of corrections(item, armed, pub))
-    pub = { ...pub, [id]: { ...pub[id], status: 'retracted', retracted_at: etIso(nowMs),
-      retract_reason: 'The sponsor issued a later release that may correct this, so it was withdrawn until the full review checks it.' } };
+    pub = { ...pub, [id]: { ...pub[id], status: 'paused', paused_at: etIso(nowMs),
+      paused_reason: `a later release by the sponsor (${item.url}) may change this` } };
   const held = [], shadow = [];
   for (const item of [...edgar, ...rssList]) {
     if (!item.title) continue;                       // read only for corrections (above)
@@ -245,7 +246,7 @@ export default async (req, res) => {
     // A later release by the sponsor in this same read that contradicts or retracts it: never posted (red team 8).
     const would = { ...pub, [rec.id]: rec };
     if ([...edgar, ...rssList].some(x => x !== item && corrections(x, armed, would).includes(rec.id))) {
-      held.push({ key: item.key, why: 'a later release by the sponsor contradicts or retracts it' });
+      held.push({ key: item.key, why: 'a release by the sponsor in the same read may contradict it' });
       continue;
     }
     if (armed.publish) { pub = { ...pub, [rec.id]: rec }; for (const k of [rec.id, item.url, item.key]) if (k) done[k] = nowMs; }

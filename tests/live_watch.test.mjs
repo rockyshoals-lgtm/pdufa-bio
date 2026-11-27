@@ -610,67 +610,6 @@ test('red team 6: the record may date the decision a few days before the release
       assert.equal(reconcile({ a: { ...rec, kind } }, st(oc, '2026-11-23'), at(1)).a.status, 'posted', `${oc} / ${kind}`);
 });
 
-test('red team 6: the sponsor\'s own correction withdraws a live post', () => {
-  const r = ARMED.rows[0];
-  const pub = { [r.id]: { kind: 'approval', status: 'posted', source: { url: 'https://www.sec.gov/a', published_at: etIso(ago(60)) } } };
-  const item = (title, o = {}) => ({ channel: 'edgar', cik: r.cik, title, atMs: ago(5), url: 'https://www.sec.gov/b', ...o });
-  for (const h of ['Mineralys Retracts Press Release Regarding FDA Approval of Lorundrostat; No FDA Decision Has Been Received',
-                   'Mineralys Issues Correction to Earlier Release Regarding FDA Decision', 'Mineralys Clarifies Status of Lorundrostat Application',
-                   'Mineralys Updates Previously Issued Press Release Regarding Lorundrostat', 'Mineralys Comments on False Report of FDA Approval',
-                   'Mineralys Issues Statement Regarding Inaccurate Report on Lorundrostat', 'Mineralys Amends Press Release Regarding FDA Approval',
-                   'FDA Approval of Lorundrostat Has Not Occurred; Mineralys Statement', 'Mineralys Notes Misstatement in Lorundrostat Release',
-                   'Mineralys Says FDA Has Not Yet Approved Lorundrostat'])
-    assert.deepEqual(corrections(item(h), ARMED, pub), [r.id], h);
-  assert.deepEqual(corrections(item('Mineralys Retracts Press Release', { atMs: ago(90) }), ARMED, pub), [], 'older than the post');
-  assert.deepEqual(corrections(item('Mineralys Retracts Press Release', { cik: 1088856 }), ARMED, pub), [], 'another sponsor');
-  assert.deepEqual(corrections(item('Mineralys to Present at Conference'), ARMED, pub), []);
-  const conf = { [r.id]: { ...pub[r.id], status: 'confirmed' } };
-  assert.deepEqual(corrections(item('Mineralys Issues Correction to Earlier Release Regarding FDA Decision'), ARMED, conf), [], 'a confirmed post needs the drug named');
-  // routine news that corrects a date, a call time or a media report about something else withdraws nothing (red team 7)
-  for (const h of ['CORRECTING and REPLACING Mineralys to Report Fourth Quarter Results; Updated Conference Call Release Time',
-                   'Mineralys Issues Statement Clarifying Timing of Phase 3 Readout', 'Mineralys Statement on Erroneous Media Report About Acquisition',
-                   'Mineralys Corrects Date of Investor Day Announcement', 'Mineralys Announces Withdrawal of European MAA for Lorundrostat; Statement'])
-    assert.deepEqual(corrections(item(h), ARMED, pub), [], h);
-  // a correction that strikes the old words through is read from its text above the dateline, struck text included
-  assert.deepEqual(corrections(item('', { ctitle: correctionHeadline('<p>CORRECTION: <del>FDA Approves</del> Lorundrostat Not Yet Approved</p><p>RADNOR, Pa., Dec. 1, 2026 -- x</p>') }), ARMED, pub), [r.id]);
-  // a feed item read in the feed's first read, or linking off-site, is not read for corrections
-  const fr = { channel: 'rss', feed: 'https://ir.mineralys.com/rss', url: 'https://ir.mineralys.com/news/2', atMs: ago(5), title: 'Mineralys Retracts Lorundrostat Release' };
-  assert.deepEqual(corrections({ ...fr, fresh: true }, ARMED, pub), [r.id]);
-  assert.deepEqual(corrections({ ...fr, fresh: false }, ARMED, pub), []);
-  assert.deepEqual(corrections({ ...fr, fresh: true, url: 'https://evil.example/news/2' }, ARMED, pub), []);
-  assert.deepEqual(corrections(item('Mineralys Corrects Lorundrostat Label Statement'), ARMED, conf), [r.id]);
-});
-
-test('red team 8: the sponsor\'s opposite decision or retraction withdraws; its routine news does not', () => {
-  const r = ARMED.rows[0];
-  const pub = (status, kind = 'approval') => ({ [r.id]: { kind, status, source: { url: 'https://www.sec.gov/a', published_at: etIso(ago(60)) } } });
-  const item = (title, o = {}) => ({ channel: 'edgar', cik: r.cik, title, atMs: ago(5), url: 'https://www.sec.gov/b', ...o });
-  const W = (h, p) => corrections(item(h), ARMED, p);
-  for (const h of ['Mineralys Receives Complete Response Letter from FDA for Lorundrostat for Hypertension',
-                   'CORRECTION -- Mineralys Announces Receipt of Complete Response Letter'])
-    for (const s of ['posted', 'confirmed']) assert.deepEqual(W(h, pub(s)), [r.id], `${h} / ${s}`);
-  assert.deepEqual(W('Mineralys Receives Complete Response Letter for MLS-999', pub('posted')), [], 'a letter on another drug of the sponsor');
-  assert.deepEqual(W('FDA Approves Lorundrostat for Hypertension', pub('posted', 'crl')), [r.id], 'an approval after a letter post');
-  for (const h of ['Mineralys Retracts Earlier Press Release', 'Mineralys Issues Correction to December 1 Press Release',
-                   'Mineralys Statement Regarding Fraudulent Press Release', 'Mineralys: Press Release Issued in Error',
-                   'Mineralys Amends Press Release Regarding FDA Approval', 'Mineralys Warns of Fake Press Release']) {
-    assert.deepEqual(W(h, pub('posted')), [r.id], h);
-    assert.deepEqual(W(h, pub('confirmed')), [], `${h}: a confirmed post needs its drug named`);
-  }
-  for (const h of ['Mineralys Announces Amended Term Loan Facility to Support U.S. Launch of Lorundrostat',
-                   'Mineralys Updates Previously Issued 2026 Financial Guidance to Reflect Lorundrostat Launch',
-                   'Mineralys Withdraws Canadian New Drug Submission for Lorundrostat',
-                   'Mineralys Amends Previously Announced Royalty Agreement Following FDA Approval',
-                   'Mineralys Statement on Erroneous Media Report About Acquisition',
-                   'Mineralys Reports Third Quarter Results and Highlights FDA Approval of Lorundrostat',
-                   'Mineralys Announces Launch of Lorundrostat Following FDA Approval'])
-    for (const s of ['posted', 'confirmed']) assert.deepEqual(W(h, pub(s)), [], `${h} / ${s}`);
-  // a feed correction on the feed's base host counts, as the feed's own posts do
-  const fr = { channel: 'rss', feed: 'https://investor.mineralys.com/rss', url: 'https://mineralys.com/news/2', atMs: ago(5), fresh: true, title: 'Mineralys Retracts Lorundrostat Release' };
-  const A2 = { ...ARMED, rows: ARMED.rows.map(x => x.id === r.id ? { ...x, feeds: ['https://investor.mineralys.com/rss'] } : x) };
-  assert.deepEqual(corrections(fr, A2, pub('posted')), [r.id]);
-});
-
 test('red team 8: more picture words and CSS generated text void the exhibit', () => {
   const D = '<p>RADNOR, Pa., Dec. 22, 2026 -- x</p>', H = '<p>Mineralys Announces FDA Approval of Lorundrostat for Hypertension</p>';
   for (const x of ['<img alt="ERRATUM">', '<img alt="OBSOLETE - REPLACED">', '<img alt="SAMPLE">', '<img alt="SPECIMEN">', '<img alt="Old version">',
@@ -678,4 +617,58 @@ test('red team 8: more picture words and CSS generated text void the exhibit', (
                    '<style>p::before{content:"RETRACTED: "}</style>'])
     assert.equal(exhibitHeadline(x + H + D, ['Mineralys Therapeutics, Inc.']), '', x);
   assert.notEqual(exhibitHeadline('<style>.c::after{content:""}</style>' + H + D), '', 'an empty clearfix is not text');
+});
+
+test('red teams 6 to 9: a later release by the sponsor that may change a post pauses it; routine news does not', () => {
+  const r = ARMED.rows[0];
+  const pub = (status, kind = 'approval') => ({ [r.id]: { kind, status, source: { url: 'https://www.sec.gov/a', published_at: etIso(ago(60)) } } });
+  const item = (title, o = {}) => ({ channel: 'edgar', cik: r.cik, title, atMs: ago(5), url: 'https://www.sec.gov/b', ...o });
+  const W = (h, p, o) => corrections(item(h, o), ARMED, p);
+  for (const h of ['Mineralys Retracts Press Release Regarding FDA Approval of Lorundrostat; No FDA Decision Has Been Received',
+                   'Mineralys Issues Correction to Earlier Release Regarding FDA Decision', 'Mineralys Clarifies Status of Lorundrostat Application',
+                   'Mineralys Updates Previously Issued Press Release Regarding Lorundrostat', 'Mineralys Comments on False Report of FDA Approval',
+                   'Mineralys Issues Statement Regarding Inaccurate Report on Lorundrostat', 'Mineralys Amends Press Release Regarding FDA Approval',
+                   'FDA Approval of Lorundrostat Has Not Occurred; Mineralys Statement', 'Mineralys Notes Misstatement in Lorundrostat Release',
+                   'Mineralys Says FDA Has Not Yet Approved Lorundrostat', 'Mineralys Receives Complete Response Letter from FDA for Lorundrostat for Hypertension',
+                   'CORRECTION -- Mineralys Announces Receipt of Complete Response Letter', 'Mineralys Retracts Earlier Press Release',
+                   'Mineralys Issues Correction to December 1 Press Release', 'Mineralys Statement Regarding Fraudulent Press Release',
+                   'Mineralys: Press Release Issued in Error', 'Mineralys Warns of Fake Press Release',
+                   'Mineralys: Previous Release Regarding Lorundrostat Was Incorrect', 'Mineralys Confirms FDA Review of Lorundrostat Is Ongoing; Earlier Announcement Was Premature',
+                   'Mineralys Provides Update: Lorundrostat NDA Remains Under FDA Review', 'Mineralys Did Not Issue Press Release Announcing FDA Approval of Lorundrostat',
+                   'Mineralys Says Press Release Was Inadvertently Released', 'Correction: Lorundrostat Approved in Japan, Not the U.S.',
+                   'Mineralys Statement: Release Is Not Authentic', 'Mineralys Warns of Fabricated Press Release']) {
+    assert.deepEqual(W(h, pub('posted')), [r.id], h);
+    assert.deepEqual(W(h, pub('confirmed')), [], `${h}: a confirmed post is left to the review`);
+  }
+  assert.deepEqual(W('FDA Approves Lorundrostat for Hypertension', pub('posted', 'crl')), [r.id], 'an approval after a letter post');
+  for (const h of ['Mineralys Receives Complete Response Letter for MLS-999',
+                   'Mineralys Announces Amended Term Loan Facility to Support U.S. Launch of Lorundrostat',
+                   'Mineralys Updates Previously Issued 2026 Financial Guidance to Reflect Lorundrostat Launch',
+                   'Mineralys Amends Previously Announced Royalty Agreement Following FDA Approval',
+                   'CORRECTING and REPLACING Mineralys to Report Fourth Quarter Results; Updated Conference Call Release Time'.replace('CORRECTING and REPLACING ', ''),
+                   'Mineralys Reports Third Quarter Results and Highlights FDA Approval of Lorundrostat',
+                   'Mineralys Announces Launch of Lorundrostat Following FDA Approval', 'Mineralys to Present at Conference'])
+    assert.deepEqual(W(h, pub('posted')), [], h);
+  assert.deepEqual(W('Mineralys Retracts Press Release', pub('posted'), { atMs: ago(90) }), [], 'older than the post');
+  assert.deepEqual(W('Mineralys Retracts Press Release', pub('posted'), { cik: 1088856 }), [], 'another sponsor');
+  assert.deepEqual(W('Mineralys Retracts Press Release on Relacorilant', pub('posted')), [], 'names another armed drug');
+  // a correction that strikes the old words through is read from its text above the dateline, struck text included
+  assert.deepEqual(corrections(item('', { ctitle: correctionHeadline('<p>CORRECTION: <del>FDA Approves</del> Lorundrostat Not Yet Approved</p><p>RADNOR, Pa., Dec. 1, 2026 -- x</p>') }), ARMED, pub('posted')), [r.id]);
+  // feed items: fresh, on the feed's own site (base host allowed)
+  const A2 = { ...ARMED, rows: ARMED.rows.map(x => x.id === r.id ? { ...x, feeds: ['https://investor.mineralys.com/rss'] } : x) };
+  const fr = { channel: 'rss', feed: 'https://investor.mineralys.com/rss', url: 'https://mineralys.com/news/2', atMs: ago(5), fresh: true, title: 'Mineralys Retracts Lorundrostat Release' };
+  assert.deepEqual(corrections(fr, A2, pub('posted')), [r.id]);
+  assert.deepEqual(corrections({ ...fr, fresh: false }, A2, pub('posted')), []);
+  assert.deepEqual(corrections({ ...fr, url: 'https://evil.example/news/2' }, A2, pub('posted')), []);
+});
+
+test('red team 9: a paused post is confirmed or withdrawn by the review, like a posted one', () => {
+  const rec = { id: 'a', kind: 'approval', status: 'paused', source: { published_at: '2026-11-23T08:00:00-05:00' } };
+  const at = h => Date.parse('2026-11-23T13:00:00Z') + h * 3600000;
+  const st = (oc, dcd) => ({ ...ARMED, status: { a: { st: 'Decided', oc, dcd } } });
+  assert.equal(reconcile({ a: rec }, st('Approved', '2026-11-23'), at(2)).a.status, 'confirmed');
+  assert.equal(reconcile({ a: rec }, st('CRL', '2026-11-23'), at(2)).a.status, 'retracted');
+  assert.equal(reconcile({ a: rec }, { ...ARMED, status: {} }, at(2)).a.status, 'paused');
+  assert.equal(reconcile({ a: rec }, { ...ARMED, status: {} }, at(80)).a.status, 'retracted', 'not confirmed in three days');
+  assert.equal(reconcile({ a: rec }, { ...ARMED, retract: { a: 'x' } }, at(2)).a.status, 'retracted');
 });

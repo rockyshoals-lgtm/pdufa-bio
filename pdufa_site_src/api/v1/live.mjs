@@ -9,6 +9,7 @@ import { READ_LUA } from '../_live_read.mjs';
  *    posted     read from the source by the automatic check; the full review of the page follows
  *    confirmed  the reviewed record shows the same outcome
  *    retracted  the reviewed record shows another outcome, or the post was withdrawn; the reason is given
+ *  (A post paused because a later release by the sponsor may change it is not shown until the review confirms it.)
  *  Also the watch's heartbeat (when it last ran and which sources it could read), so anyone can see it is alive.
  *  Served from the CDN for 15 seconds. Facts only. Guard: tests/test_live_watch.py. */
 let memo = { at: 0, state: null };          // one store read per instance per 5 s, whatever the query string
@@ -48,7 +49,8 @@ export default async (req, res) => {
   }
   const q = req.query || {};
   const plain = x => !!x && typeof x === 'object' && !Array.isArray(x);
-  let posts = Object.values(plain(state.pub) ? state.pub : {}).filter(plain).sort((a, b) => (Date.parse(b.posted_at) || 0) - (Date.parse(a.posted_at) || 0));
+  // A paused post (a later release by the sponsor may change it) is not shown until the review confirms it.
+  let posts = Object.values(plain(state.pub) ? state.pub : {}).filter(plain).filter(p => p.status !== 'paused').sort((a, b) => (Date.parse(b.posted_at) || 0) - (Date.parse(a.posted_at) || 0));
   if (q.id) posts = posts.filter(p => p.id === String(q.id));
   if (q.ticker) { const t = String(q.ticker).toUpperCase(); posts = posts.filter(p => p.ticker === t); }
   const b = plain(state.beat) ? state.beat : {};

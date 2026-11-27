@@ -479,48 +479,37 @@ export function onFeedSite(item) {
   return !!fh && !!ih && (ih === fh || ih === base || ih === 'www.' + base);
 }
 
-/** A sponsor's own later release that contradicts or withdraws what a live post said (red teams 6, 7, 8). Returns the
- *  ids of live posts to withdraw: posts of a row of the same sponsor (same SEC filer, or a fresh item of the same feed
- *  on its own site), sourced before this item, when the item's headline:
- *    * names the opposite decision on the drug (a complete response letter after an approval post, an approval after a
- *      letter), or names it as a correction;
- *    * says it retracts a release, that a release was issued in error, false or fraudulent, or tells readers to
- *      disregard one (a post not yet confirmed by the review is withdrawn on this alone, within 7 days);
- *    * or corrects, clarifies or denies something and names the drug or a decision word with an earlier release.
- *  Routine news (a loan amended, guidance updated, a call time corrected) names no decision and no retraction, and a
- *  headline about another country's regulator is not about the US post. Any wording at all: the headline need not
- *  parse, because withdrawing is always safe; the full review then puts back what was true. */
-const RETRACTS = /\b(?:retract\w*|withdr[ae]w\w* (?:(?:its|the|an?|this|that|earlier|previous|prior|today's)\s+)*(?:press |news )?(?:release|announcement|statement)|(?:issued|published|distributed|sent) (?:in error|erroneously|by mistake|without authori[sz]ation)|in error|(?:erroneous(?:ly)?|fraudulent|fake|false|unauthori[sz]ed|bogus|forged|spoofed) (?:issued |distributed |published )?(?:press |news )?(?:release|announcement|statement)s?|disregard\w*|correction to (?:\S+\s+){0,3}?(?:press |news )?release|(?:correct|amend|updat)(?:s|ed|es|ing|e)? (?:(?:its|the|an?|earlier|previous|previously issued|prior)\s+)*(?:press |news )?release)\b/i;
-export const CORRECTS = /\b(?:retract\w*|withdr[ae]w\w*|correct(?:s|ed|ion|ions|ing)?|clarif\w*|erroneous\w*|in error|mistaken\w*|misstat\w*|inaccura\w*|disregard\w*|rescind\w*|supersed\w*|updat(?:e|es|ed|ing) (?:to )?(?:its |the |an? )?(?:previously issued|earlier|previous|prior) (?:press |news )?(?:release|announcement|statement)|(?:false|untrue|fake|unfounded|incorrect|fraudulent) (?:media )?(?:report|reports|rumou?rs?|claims?|statements?|release|press release)|has not (?:occurred|been (?:received|issued|approved|granted))|did not (?:occur|receive|approve)|not (?:yet )?(?:received|approved|issued)|no (?:fda )?(?:decision|approval|action) (?:has|was|yet))\b/i;
-const DECISION_WORDS = /\b(?:FDA|approv(?!able)\w*|complete response|CRL|PDUFA)\b/i;
-const EARLIER_WORDS = /\b(?:press release|news release|release|announcement|statement|report|earlier|previous|previously|prior)\b/i;
+/** A sponsor's own later release that may contradict what a live post said (red teams 6 to 9). Returns the ids of
+ *  posts to PAUSE: hidden from the site until the full review confirms them (then shown as confirmed) or withdraws
+ *  them. A pause makes no public claim and writes no correction, so the signal can be generous; only a post the review
+ *  has not yet confirmed is paused. A post of a row of the same sponsor (same SEC filer, or a fresh item of the same
+ *  feed on its own site), sourced before this item, is paused when the item's headline:
+ *    * retracts, corrects, clarifies or denies something (any wording below), and names the drug or no other armed
+ *      drug ("Savara Retracts Earlier Press Release");
+ *    * or names the opposite decision ("complete response" after an approval post, an FDA approval after a letter
+ *      post) and names the drug.
+ *  Any wording at all: the headline need not parse. */
+const RETRACTS = /\b(?:retract\w*|withdr[ae]w\w*|correct(?:s|ed|ion|ions|ing)?|incorrect\w*|clarif\w*|erroneous\w*|in error|mistaken\w*|misstat\w*|inaccura\w*|disregard\w*|rescind\w*|supersed\w*|prematur\w*|inadvertent\w*|fabricat\w*|fraudulent\w*|fake|false|untrue|bogus|forged|spoofed|hoax\w*|unfounded|unauthori[sz]ed|not authentic|did not (?:issue|occur|receive|approve)|has not (?:occurred|been (?:received|issued|approved|granted))|not (?:yet )?(?:received|approved|issued)|no (?:fda |u\.s\. )?(?:decision|approval|action)|(?:remains|still|continues to be) under (?:fda |regulatory )?review|(?:amend|updat)(?:s|ed|es|ing|e)? (?:(?:its|the|an?|earlier|previous|previously issued|prior)\s+)*(?:press |news )?release)\b/i;
+export const CORRECTS = RETRACTS;
 const CRL_WORDS = /\b(?:complete response|CRL|not approvable)\b/i;
 const APPROVAL_WORDS = /\bFDA\b[^.;]*\bapprov(?:es|ed|al)\b(?!able)|\bapprov(?:es|ed|al)\b[^.;]*\bFDA\b/i;
-const OTHER_REGULATOR = /\b(?:EMA|CHMP|MAA|European|EU|Europe|PMDA|Japan\w*|MHRA|UK|Health Canada|Canad\w*|NMPA|China|Chinese|TGA|Australia\w*|Swissmedic|Swiss|Switzerland|ANVISA|Brazil\w*|Korea\w*|MFDS|India\w*|CDSCO|Taiwan\w*|Israel\w*|Mexic\w*|COFEPRIS|Saudi|SFDA)\b/;
 export function corrections(item, armed, pub) {
   const t = norm(clean(item.ctitle || item.title || ''));
   if (!t || !Number.isFinite(item.atMs)) return [];
-  if (OTHER_REGULATOR.test(t) && !/\bFDA\b|\b(?:US|U\.S\.)\b/.test(t)) return [];
   let rows = [];
   if (item.channel === 'edgar') rows = armed.rows.filter(r => r.cik && Number(r.cik) === Number(item.cik));
   else if (item.channel === 'rss' && item.fresh === true && onFeedSite(item)) rows = armed.rows.filter(r => (r.feeds || []).includes(item.feed));
   if (!rows.length) return [];
-  const retracts = RETRACTS.test(t), corrects = CORRECTS.test(t);
-  const aboutDecision = DECISION_WORDS.test(t) && EARLIER_WORDS.test(t);
+  const flags = RETRACTS.test(t);
   return rows.filter(r => {
     const p = (pub || {})[r.id];
-    if (!p || typeof p !== 'object' || (p.status !== 'posted' && p.status !== 'confirmed')) return false;
+    if (!p || typeof p !== 'object' || p.status !== 'posted') return false;      // confirmed: the review agreed
     const src = Date.parse((p.source || {}).published_at || '');
     if (!Number.isFinite(src) || item.atMs <= src || (p.source || {}).url === item.url) return false;
     const named = (r.terms || []).some(x => termIn(x, t));
-    // the opposite decision, from the sponsor itself, on this drug; or, said as a correction, with no other drug named
-    // (a large sponsor's decision on another drug of its own is not about this one)
-    const others = armed.rows.filter(o => o.id !== r.id && (o.terms || []).some(x => termIn(x, t)));
-    const opposite = p.kind === 'approval' ? CRL_WORDS.test(t) : APPROVAL_WORDS.test(t);
-    if (opposite && (named || ((retracts || corrects) && !others.length))) return true;
-    if (retracts && (named || (p.status === 'posted' && !others.length && item.atMs - src <= 7 * DAY))) return true;
-    // a confirmed post (the review agreed) is withdrawn only by a release that names its drug
-    return corrects && (named || (aboutDecision && p.status === 'posted' && !others.length));
+    const others = armed.rows.some(o => o.id !== r.id && (o.terms || []).some(x => termIn(x, t)));
+    const opposite = p.kind === 'crl' ? APPROVAL_WORDS.test(t) : CRL_WORDS.test(t);
+    return (flags && (named || !others)) || (opposite && named);
   }).map(r => r.id);
 }
 
@@ -548,7 +537,7 @@ export function reconcile(pub, armed, nowMs) {
       retract_reason: 'The full review had not confirmed this three days after the source, so it was withdrawn.' });
     if (man && r.status !== 'retracted') {
       Object.assign(r, { status: 'retracted', retracted_at: etIso(nowMs), retract_reason: String(man) });
-    } else if (r.status === 'posted' || r.status === 'confirmed') {
+    } else if (r.status === 'posted' || r.status === 'paused' || r.status === 'confirmed') {
       const s = String((st || {}).st || '').toLowerCase(), oc = String((st || {}).oc || '').toLowerCase();
       // The record's outcome, read only when it is plain: a letter, or an approval of some kind; anything else waits.
       // The outcome is what the text opens with ("Approved (after CRL)" is an approval, red team 6).
@@ -564,13 +553,13 @@ export function reconcile(pub, armed, nowMs) {
         // The FDA often acts a few days before the sponsor says so (a Friday action, a Monday release), never after.
         const near = Number.isFinite(dd) && Number.isFinite(srcDay) && dd - srcDay <= 1.5 * DAY && srcDay - dd <= 7 * DAY;
         const page = /^\/[^/\\]/.test(String(st.url || '')) ? st.url : r.page;
-        if (same && near) { if (r.status === 'posted') Object.assign(r, { status: 'confirmed', confirmed_at: etIso(nowMs), page }); }
-        else if (same) { if (r.status === 'posted' && late) unconfirmed(); }
+        if (same && near) { if (r.status !== 'confirmed') Object.assign(r, { status: 'confirmed', confirmed_at: etIso(nowMs), page }); }
+        else if (same) { if (r.status !== 'confirmed' && late) unconfirmed(); }
         else Object.assign(r, { status: 'retracted', retracted_at: etIso(nowMs),
           retract_reason: `The reviewed record says ${st.oc}, not ${r.kind === 'approval' ? 'an approval' : 'a complete response letter'}.` });
       } else if (s === 'withdrawn') {
         Object.assign(r, { status: 'retracted', retracted_at: etIso(nowMs), retract_reason: 'The reviewed record says the application was withdrawn.' });
-      } else if (r.status === 'posted' && late) unconfirmed();
+      } else if (r.status !== 'confirmed' && late) unconfirmed();
       // A confirmed post stays confirmed when the record is renamed, retired or reads as under review for a build:
       // only the opposite outcome, a withdrawal or a person retracts it (red team 5).
     }
