@@ -492,7 +492,7 @@ def main():
             if url and rid not in led.get("checks", {}):
                 rdc.record(led, rid, "CONFIRMED", url, f"red team {verdict} before apply", by="red_team_at_apply")
         rdc.save(led)
-        print(f"date checks recorded: {len(checked)}")
+        print(f"date checks recorded: {sum(1 for rid, _, _ in checked if led['checks'].get(rid, {}).get('by') == 'red_team_at_apply')}")
     print("written.")
     return 0
 

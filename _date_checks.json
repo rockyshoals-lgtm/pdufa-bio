@@ -2288,21 +2288,21 @@
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395437/0/en/autolus-therapeutics-to-present-clinical-data-updates-at-the-american-society-of-hematology-ash-annual-meeting-2026.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Autolus 11/04/2026 release: poster 'Initial results of the phase 1 UKMRA ALARIC trial assessing BCMA and BCMA/CD19 CAR-T' (D8 BCMA CAR, with CD19 CAR as "
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Autolus 11/04/2026 release: poster 'Initial results of the phase 1 UKMRA ALARIC trial assessing BCMA and BCMA/CD19 CAR-T' (D8 BCMA CAR, with CD19 CAR as AUTO8) in R/R AL amyloidosis, December 12, 2026, 5:30-7:30 PM (no zone given)."
   },
   "readout_iron_2026-12-31": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395409/0/en/disc-medicine-announces-multiple-presentations-across-portfolio-at-the-68th-american-society-of-hematology-ash-annual-meeting.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the GlobeNewswire Disc ASH release: Publication No. 1180 poster, title begins 'Preliminary results from DISC-3405-102: A phase 1b study of', date line 'D"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Disc Medicine 11/04/2026 release: oral Publication 242, 'RALLY-MF: Efficacy of a Phase 2 study of selcodebart (DISC-0974)' for anemia in MF, Saturday December 12, 2:15-2:30pm EST (release's zone label)."
   },
   "readout_iron_2026-12-15": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395409/0/en/disc-medicine-announces-multiple-presentations-across-portfolio-at-the-68th-american-society-of-hematology-ash-annual-meeting.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the GlobeNewswire Disc ASH release: Publication No. 1180 poster, title begins 'Preliminary results from DISC-3405-102: A phase 1b study of', date line 'D"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the GlobeNewswire Disc ASH release: Publication No. 1180 poster, title begins 'Preliminary results from DISC-3405-102: A phase 1b study of', date line 'Date / Time: Saturday, December 12, 5:30 – 7:30pm EST' (en dash with spaces, as in the quote). Fragments verbatim. Existing row readout_iron_2026-12-15 (DISC-340"
   },
   "readout_kura_2026-12-12": {
    "checked": "2026-11-26",
@@ -2323,14 +2323,14 @@
    "verdict": "CONFIRMED",
    "source": "https://www.prnewswire.com/news-releases/rigel-announces-oral-presentation-of-phase-1b-data-for-r289-in-patients-with-lower-risk-mds-at-the-68th-american-society-of-hematology-annual-meeting-and-exposition-302929341.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Rigel 11/04/2026 PR Newswire release: R289 Phase 1b dose escalation/expansion in R/R LR-MDS, Publication #251 oral, Saturday, December 12, 2026, 3:00-3:1"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Rigel 11/04/2026 PR Newswire release: R289 Phase 1b dose escalation/expansion in R/R LR-MDS, Publication #251 oral, Saturday, December 12, 2026, 3:00-3:15pm CT."
   },
   "readout_gern_2026-12-12": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://ir.geron.com/news-releases/news-release-details/geron-corporation-present-data-highlighting-clinical-and",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Geron IR 11/04/2026 release: poster #2013 'updated results from the IMproveMF trial' (imetelstat + ruxolitinib), Dec. 12, 2026 5:30-7:30pm (release label"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Geron IR 11/04/2026 release: poster #2013 'updated results from the IMproveMF trial' (imetelstat + ruxolitinib), Dec. 12, 2026 5:30-7:30pm (release labels ET)."
   },
   "readout_crbu_2026-12-12": {
    "checked": "2026-11-26",
@@ -2351,105 +2351,105 @@
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/19/3406454/0/en/regeneron-highlights-new-data-across-malignant-and-classical-hematology-programs-at-american-society-of-hematology-ash.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Regeneron release: abstract #261 oral, linvoseltamab in R/R AL amyloidosis, updated trial results from Phase 1/2 LINKER-AL2, Saturday December 12, 2:00-3:3"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Regeneron release: abstract #261 oral, linvoseltamab in R/R AL amyloidosis, updated trial results from Phase 1/2 LINKER-AL2, Saturday December 12, 2:00-3:30 PM CT."
   },
   "readout_cty_2026-12-12": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.sec.gov/Archives/edgar/data/2143850/000110465926130823/tm2630160d1_ex99-1.htm",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened City EX-99.1 (2026-11-23): '...in an oral presentation at the 68th American Society of Hematology (ASH) Annual Meeting on December 12, 2026.' verbatim, C"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened City EX-99.1 (2026-11-23): '...in an oral presentation at the 68th American Society of Hematology (ASH) Annual Meeting on December 12, 2026.' verbatim, CITY-FXI Phase 1 SAD data. City's 2026-11-04 release gives Abstract 189, presentation 2:30-2:45 p.m. CT (= 3:30-3:45 p.m. ET) on Dec 12 and discloses no data; no"
   },
   "readout_jnj_2026-12-12": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.jnj.com/innovativemedicine/download/ASH-2026-abstract-chart",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (FIX) before the row was applied: Opened J&J ASH 2026 abstract chart: the cell reads 'Dec. 12, 2026' / '9:45 – 10:00 AM' (en dash, no comma after 2026, line break) and '(CST)' appears only in th"
+   "note": "independent red team opened this source 2026-11-26 (FIX) before the row was applied: Opened J&J ASH 2026 abstract chart: the cell reads 'Dec. 12, 2026' / '9:45 – 10:00 AM' (en dash, no comma after 2026, line break) and '(CST)' appears only in the column header 'Presentation time (CST)', so the row's quote is not verbatim. Title is the Phase 2 MajesTEC-5 trial ('First results of a trispecific antibody i"
   },
   "readout_bmy_2026-12-12": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261118967070/en/Bristol-Myers-Squibb-Demonstrates-Breadth-and-Clinical-Momentum-Across-Blood-Cancers-and-Rare-Hematologic-Disorders-at-ASH-2026/",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same BMS release: 'Oral #165', title begins 'Golcadomide, a potential, first-in-class, oral CELMoD plus rituximab', 'Saturday, December 12', '12:30-12:45 PM', h"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the BusinessWire BMS ASH release (URL dated 20261118; page shows no explicit date, so source_date 2026-11-19 may be 2026-11-18): row 'Oral #116', title begins 'BMS-986453, a dual-targeting BCMA×GPRC5D autologous CAR T cell therapy', 'Saturday, December 12', '9:45-10 AM'; table header 'Date/Time (CST)'. Quote fra"
   },
   "readout_bmy_2026-12-12-iberdomide": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261118967070/en/Bristol-Myers-Squibb-Demonstrates-Breadth-and-Clinical-Momentum-Across-Blood-Cancers-and-Rare-Hematologic-Disorders-at-ASH-2026/",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same BMS release: 'Oral #165', title begins 'Golcadomide, a potential, first-in-class, oral CELMoD plus rituximab', 'Saturday, December 12', '12:30-12:45 PM', h"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same BMS release: 'Oral #114', title begins 'Progression-free survival (PFS) and minimal residual disease (MRD) outcomes with iberdomide' (Phase 3 EXCALIBER-RRMM), 'Saturday, December 12', '10:45-11 AM', header 'Date/Time (CST)'. Fragments verbatim. Page does not say topline was previously announced; whether the site c"
   },
   "readout_bmy_2026-12-12-golcadomid": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261118967070/en/Bristol-Myers-Squibb-Demonstrates-Breadth-and-Clinical-Momentum-Across-Blood-Cancers-and-Rare-Hematologic-Disorders-at-ASH-2026/",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same BMS release: 'Oral #165', title begins 'Golcadomide, a potential, first-in-class, oral CELMoD plus rituximab', 'Saturday, December 12', '12:30-12:45 PM', h"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same BMS release: 'Oral #165', title begins 'Golcadomide, a potential, first-in-class, oral CELMoD plus rituximab', 'Saturday, December 12', '12:30-12:45 PM', header 'Date/Time (CST)'. Fragments verbatim. No duplicate open row."
   },
   "readout_gild_2026-12-12": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261104303376/en/Gilead-and-Kite-Advance-Leadership-With-New-Data-Across-Pipeline-and-Portfolio-at-ASH-2026/",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Gilead release: under 'Oral Presentations', 'Abstract #6579', title begins 'Anitocabtagene Autoleucel Following Induction Therapy in Newly Diagnosed Multip"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the BusinessWire Gilead/Kite ASH release: under 'Oral Presentations', 'Abstract #273', title begins 'Updated Analysis of iMMagine-1, a Phase 2 Registrational Study', 'Saturday, December 12', '2:30 – 2:45 PM'; page says 'Dates and times are listed in CT'. Fragments verbatim (en dash with spaces). No GILD open row"
   },
   "readout_gild_2026-12-12-anitocabta": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261104303376/en/Gilead-and-Kite-Advance-Leadership-With-New-Data-Across-Pipeline-and-Portfolio-at-ASH-2026/",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Gilead release: under 'Oral Presentations', 'Abstract #6579', title begins 'Anitocabtagene Autoleucel Following Induction Therapy in Newly Diagnosed Multip"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Gilead release: under 'Oral Presentations', 'Abstract #6579', title begins 'Anitocabtagene Autoleucel Following Induction Therapy in Newly Diagnosed Multiple Myeloma', 'Saturday, December 12', '9:30 – 9:45 AM', times in CT. Fragments verbatim. Abstract number 6579 is as printed on the page (unusual for an oral, no"
   },
   "readout_incy_2026-12-12": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://investor.incyte.com/news-releases/news-release-details/incyte-present-new-data-highlighting-progress-across-its-0",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the Incyte investor ASH release (Nov 4, 2026): Publication 409 title 'In JAK-Inhibitor Naive Patients with Myelofibrosis, Mutant CALR-Specific Monoclonal"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the Incyte investor ASH release (Nov 4, 2026): Publication 409 title 'In JAK-Inhibitor Naive Patients with Myelofibrosis, Mutant CALR-Specific Monoclonal Antibody INCA033989 Was Well Tolerated and Achieved Robust Spleen, Symptom, and Anemia Responses in Phase 1 Studies', date line 'December 12, 2026; 4:00 – 4:15"
   },
   "readout_clrb_2026-12-12": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.cellectar.com/investors/news-events/press-releases/detail/401",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same page. Publication 1790, 'Duration of Response to Iopofosine I 131 in Patients with Relapsed/Refractory Waldenström Macroglobulinemia by Prior Lines of Ther"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same page. Publication 1790, 'Duration of Response to Iopofosine I 131 in Patients with Relapsed/Refractory Waldenström Macroglobulinemia by Prior Lines of Therapy: Results from the Pivotal Phase 2b CLOVER WaM Study'. Verbatim 'December 12, 2026, 5:30:00 PM - 7:30:00 PM', Hall F. No time zone stated. Poster 1799 (same "
   },
   "readout_lyel_2026-12-12": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://ir.lyell.com/news-releases/news-release-details/lyell-immunopharma-present-positive-updated-ronde-cel-data-more",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Read same Lyell page. Block: 'Poster Abstract 2402'; 'Session: Saturday, December 12, 2026, 5:30 CST'; title covers 'predominantly primary refractory, second-li"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Read same Lyell page. Block: 'Poster Abstract 2402'; 'Session: Saturday, December 12, 2026, 5:30 CST'; title covers 'predominantly primary refractory, second-line relapsed/refractory large B-cell lymphoma'. Body: 'Updated results, including longer follow-up, are expected to be presented at ASH 2026.' Day precision fine"
   },
   "readout_aapg_2026-12-13": {
    "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395961/0/en/ascentage-pharma-to-present-data-from-multiple-trials-including-an-oral-presentation-of-apg-5918-at-ash-2026.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-25 (FIX) before the row was applied: Same 2026-11-04 Ascentage release: abstract #3388 olverembatinib + lisaftoclax + azacitidine poster, 12/13/2026 6:00-8:00 PM CT (still 12/13 in ET); ASH dates s"
+   "note": "independent red team opened this source 2026-11-25 (FIX) before the row was applied: Opened the GlobeNewswire release (2026-11-04, Ascentage's own): lists APG-5918 oral presentation abstract #513, 12/13/2026 10:00-10:15 AM CT, first disclosure of its clinical data; ASH sentence present. No later change found (FMP releases to 11-25)."
   },
   "readout_aapg_2026-12-13-olverembat": {
    "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395961/0/en/ascentage-pharma-to-present-data-from-multiple-trials-including-an-oral-presentation-of-apg-5918-at-ash-2026.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-25 (FIX) before the row was applied: Same 2026-11-04 Ascentage release: abstract #3388 olverembatinib + lisaftoclax + azacitidine poster, 12/13/2026 6:00-8:00 PM CT (still 12/13 in ET); ASH dates s"
+   "note": "independent red team opened this source 2026-11-25 (FIX) before the row was applied: Same 2026-11-04 Ascentage release: abstract #3388 olverembatinib + lisaftoclax + azacitidine poster, 12/13/2026 6:00-8:00 PM CT (still 12/13 in ET); ASH dates sentence present."
   },
   "readout_crsp_2026-12-31-zugocabtag": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395391/0/en/crispr-therapeutics-to-present-clinical-data-from-zugo-cel-in-large-b-cell-lymphoma-at-the-68th-american-society-of-hematology-ash-annual-meeting-and-exposition.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened GlobeNewswire release dated 2026-11-04 09:01 ET: zugo-cel Phase 1/2 clinical data in highly refractory LBCL, Oral Presentation 'Sunday, December 13, 2026"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened GlobeNewswire release dated 2026-11-04 09:01 ET: zugo-cel Phase 1/2 clinical data in highly refractory LBCL, Oral Presentation 'Sunday, December 13, 2026, 5:15 p.m. CST' at ASH. No newer timing change found (FMP press releases through 11-26)."
   },
   "readout_kura_2026-12-13": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395401/35186/en/kura-oncology-and-kyowa-kirin-to-present-first-ziftomenib-flt3-inhibitor-clinical-data-at-ash-2026.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Kura release: first results of phase 1 ITCC-101/APAL2020K (NCT06376162), ziftomenib + fludarabine/cytarabine in pediatric R/R acute leukemia, oral #666, De"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Kura release: first results of phase 1 ITCC-101/APAL2020K (NCT06376162), ziftomenib + fludarabine/cytarabine in pediatric R/R acute leukemia, oral #666, December 13, 5:45 p.m. CST."
   },
   "readout_sndx_2026-12-13": {
    "checked": "2026-11-26",
@@ -2463,7 +2463,7 @@
    "verdict": "CONFIRMED",
    "source": "https://www.prnewswire.com/news-releases/actinium-pharmaceuticals-announces-three-ash-2026-abstracts-highlighting-iomab-act-clinical-results-in-car-t-cell-therapy-and-sickle-cell-disease-302929345.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Actinium 11/04/2026 release: poster 'First Preliminary Results of ... Iomab-ACT as Nonmyeloablative Conditioning for HLA-Matched Sibling Allogeneic SCT i"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Actinium 11/04/2026 release: poster 'First Preliminary Results of ... Iomab-ACT as Nonmyeloablative Conditioning for HLA-Matched Sibling Allogeneic SCT in Severe Sickle Cell Disease', Sunday Dec 13, 2026 6:00-8:00 PM; no trial name/NCT given."
   },
   "readout_gmab_2026-12-13": {
    "checked": "2026-11-26",
@@ -2491,84 +2491,84 @@
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/18/3405374/0/en/novartis-showcases-hematology-momentum-and-continued-breast-cancer-leadership-at-ash-and-sabcs.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Novartis 11/18/2026 release table: Abstract #525 oral, long-term (week-144) outcomes of pelabresib + ruxolitinib from Phase 3 MANIFEST-2, December 13, 10"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Novartis 11/18/2026 release table: Abstract #525 oral, long-term (week-144) outcomes of pelabresib + ruxolitinib from Phase 3 MANIFEST-2, December 13, 10:00-10:15 a.m. CT."
   },
   "readout_jnj_2026-12-13": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.jnj.com/innovativemedicine/download/ASH-2026-abstract-chart",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (FIX) before the row was applied: Same chart: abstract #0661 oral, 'Topline results from the Phase 2 cAMeLot-1 study'; cell reads 'Dec. 13, 2026' / '4:30 – 4:45 PM' with CST only in the column h"
+   "note": "independent red team opened this source 2026-11-26 (FIX) before the row was applied: Same chart: abstract #0661 oral, 'Topline results from the Phase 2 cAMeLot-1 study'; cell reads 'Dec. 13, 2026' / '4:30 – 4:45 PM' with CST only in the column header, so quote needs correcting. J&J's 2026-11-10 release calls it the 'First presentation of topline Phase 2 interim analysis from the cAMeLot-1 study'; no ea"
   },
   "readout_tcrx_2026-12-13": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.sec.gov/Archives/edgar/data/0001783328/000119312526456865/tcrx-ex99_1.htm",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Read sec.gov 8-K Ex.99.1 'TScan Therapeutics Reports Third Quarter 2026 Financial Results and Provides Corporate Update' (Nov 12, 2026). Block verbatim: title '"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Read sec.gov 8-K Ex.99.1 'TScan Therapeutics Reports Third Quarter 2026 Financial Results and Provides Corporate Update' (Nov 12, 2026). Block verbatim: title 'Phase 1 (ALLOHA) trial cohort C: TSC-101 eliminates recipient hematopoietic cells and demonstrates potential for improved outcomes in patients with AML, ALL, or"
   },
   "readout_clrb_2026-12-15": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.cellectar.com/investors/news-events/press-releases/detail/401",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Read cellectar.com detail/401 (release 2026-11-04). Publication 5325, 'Iopofosine I 131 in Waldenström macroglobulinemia: 12-month follow up data from the CLOVE"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Read cellectar.com detail/401 (release 2026-11-04). Publication 5325, 'Iopofosine I 131 in Waldenström macroglobulinemia: 12-month follow up data from the CLOVER-WaM trial'. Date line verbatim: 'December 14, 2026, 6:00:00 PM - 8:00:00 PM'. Location 'MCCNO - Hall F'. NO time zone is stated: do not publish the time as ET"
   },
   "readout_immx_2026-12-14": {
    "checked": "2026-11-25",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/12/3402248/0/en/immix-biopharma-reports-third-quarter-2026-financial-results-and-update-on-corporate-progress.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-25 (CONFIRMED) before the row was applied: Opened GlobeNewswire Immix Q3 release (Nov 12, 2026 16:15 ET, Nasdaq: IMMX): exact quote present; NEXICART-2 interim data at ASH Monday Dec 14, 2026. No later I"
+   "note": "independent red team opened this source 2026-11-25 (CONFIRMED) before the row was applied: Opened GlobeNewswire Immix Q3 release (Nov 12, 2026 16:15 ET, Nasdaq: IMMX): exact quote present; NEXICART-2 interim data at ASH Monday Dec 14, 2026. No later IMMX release."
   },
   "readout_iron_2026-12-31-disc3405": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395409/0/en/disc-medicine-announces-multiple-presentations-across-portfolio-at-the-68th-american-society-of-hematology-ash-annual-meeting.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Disc release: oral Publication 929, 'Results from RESTORE-PV, an ongoing Phase 2 open-label study evaluating ... DISC-3405' in PV, Monday December 14, 3:45"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Disc release: oral Publication 929, 'Results from RESTORE-PV, an ongoing Phase 2 open-label study evaluating ... DISC-3405' in PV, Monday December 14, 3:45-4:00pm EST. Drug DISC-3405 is named in the title (not inferred)."
   },
   "readout_kura_2026-12-15": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395401/35186/en/kura-oncology-and-kyowa-kirin-to-present-first-ziftomenib-flt3-inhibitor-clinical-data-at-ash-2026.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the GlobeNewswire Kura/Kyowa Kirin ASH release: table row reads 'Poster Presentation #5192' with cell 'Session 617 / December 14 / 6:00-8:00 p.m. CST / H"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Kura release: ziftomenib + 7+3 + quizartinib, preliminary results from KOMET-007, oral #902, December 14, 3:00 p.m. CST."
   },
   "readout_kura_2026-12-15-ziftomenib": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395401/35186/en/kura-oncology-and-kyowa-kirin-to-present-first-ziftomenib-flt3-inhibitor-clinical-data-at-ash-2026.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the GlobeNewswire Kura/Kyowa Kirin ASH release: table row reads 'Poster Presentation #5192' with cell 'Session 617 / December 14 / 6:00-8:00 p.m. CST / H"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the GlobeNewswire Kura/Kyowa Kirin ASH release: table row reads 'Poster Presentation #5192' with cell 'Session 617 / December 14 / 6:00-8:00 p.m. CST / Hall F' (plain hyphen, no spaces); title ends 'Long-term results from KOMET-007' (ziftomenib + venetoclax/azacitidine, newly diagnosed NPM1-m AML). All fragments"
   },
   "readout_sln_2026-12-15": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.businesswire.com/news/home/20261104792260/en/Silence-Therapeutics-Announces-Oral-Presentation-on-SANRECO-Phase-2-Study-of-Divesiran-in-Polycythemia-Vera-at-ASH-2026/",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the BusinessWire ASH release (URL dated 20261104): Presentation Details list 'Session Date: December 14, 2026' and 'Presentation Time: 3:30 PM-3:45 PM CT"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the BusinessWire ASH release (URL dated 20261104): Presentation Details list 'Session Date: December 14, 2026' and 'Presentation Time: 3:30 PM-3:45 PM CT' (hyphens as quoted), Publication Number 928, title 'Sanreco phase 2 randomized, double-blind trial of divesiran in patients with polycythemia vera'. Both quot"
   },
   "readout_rlay_2026-12-14": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395819/0/en/relay-therapeutics-reports-third-quarter-2026-financial-results-and-corporate-updates.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (FIX) before the row was applied: Opened Relay 11/04/2026 Q3 release: 'Updated data from ongoing Phase 1/2 ReInspire trial of zovegalisib in vascular anomalies to be featured in oral presentatio"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the Relay 11/4/2026 release: ReInspire ASH 2026 oral, 'Oral presentation date: Monday, December 14, 2026', Abstract 878; conference call planned Dec 14. RLAY on Nasdaq."
   },
   "readout_crvs_2026-12-31": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://investor.corvuspharma.com/news-releases/news-release-details/corvus-pharmaceuticals-announces-initial-data-soquelitinib",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Read the Corvus IR page (2026-11-04). Poster: 'Clinical assessment of soquelitinib, an interleukin-2-inducible T cell kinase (ITK) inhibitor, for treatment of a"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Read the Corvus IR page (2026-11-04). Poster: 'Clinical assessment of soquelitinib, an interleukin-2-inducible T cell kinase (ITK) inhibitor, for treatment of autoimmune lymphoproliferative syndrome (ALPS)-FAS'. Session 203, Poster III, publication 4743. 'Session Date: December 14, 2026' (the label is bolded in the sou"
   },
   "readout_sndx_2026-12-14": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395377/0/en/syndax-highlights-acceptance-of-19-revuforj-revumenib-and-niktimvo-axatilimab-csfr-abstracts-including-7-for-oral-presentation-at-ash-2026.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened the GlobeNewswire Syndax ASH release: listing 'Long-term efficacy and safety of axatilimab among patients with chronic graft-versus-host disease in AGAVE"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Same Syndax release: Publication 904, oral, update on phase II SAVE study (revumenib + decitabine/cedazuridine + venetoclax), Monday, December 14th, 2:45-4:15 PM. Title says phase II (record says Phase 1/2; acceptable)."
   },
   "readout_crbu_2026-12-14": {
    "checked": "2026-11-26",
@@ -2582,7 +2582,7 @@
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/19/3406454/0/en/regeneron-highlights-new-data-across-malignant-and-classical-hematology-programs-at-american-society-of-hematology-ash.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Regeneron 11/19/2026 release table: abstract #785 oral, odronextamab in R/R MZL, primary analysis from ELM-2, Monday December 14, 10:30 AM-12:00 PM CT se"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Regeneron 11/19/2026 release table: abstract #785 oral, odronextamab in R/R MZL, primary analysis from ELM-2, Monday December 14, 10:30 AM-12:00 PM CT session."
   },
   "readout_adct_2026-12-14-loncastuxi": {
    "checked": "2026-11-26",
@@ -2596,28 +2596,28 @@
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/4/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened SELLAS 11/04/2026 release: poster abstract 5155, tambiciclib (SLS009) + aza/ven in R/R AML after prior venetoclax, results from a Phase 2 study, Monday D"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened SELLAS 11/04/2026 release: poster abstract 5155, tambiciclib (SLS009) + aza/ven in R/R AML after prior venetoclax, results from a Phase 2 study, Monday Dec 14, 2026 6:00-8:00 PM CST."
   },
   "readout_jnj_2026-12-14": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://www.jnj.com/innovativemedicine/download/ASH-2026-abstract-chart",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (FIX) before the row was applied: Same chart: abstract #1033 oral, 'First data from Phase 1 study ... JNJ-88549968 ... essential thrombocythemia (ET)'; cell reads 'Dec. 14, 2026' / '4:30 – 4:45 "
+   "note": "independent red team opened this source 2026-11-26 (FIX) before the row was applied: Same chart: abstract #1033 oral, 'First data from Phase 1 study ... JNJ-88549968 ... essential thrombocythemia (ET)'; cell reads 'Dec. 14, 2026' / '4:30 – 4:45 PM' with CST only in the header. Quote correction only; 4:30 CST = 5:30 ET correct."
   },
   "readout_incy_2026-12-14": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://investor.incyte.com/news-releases/news-release-details/incyte-present-new-data-highlighting-progress-across-its-0",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (FIX) before the row was applied: Same Incyte ASH release: Publication 880 title 'Long-Term Efficacy and Safety of a Novel Protein S Antibody for Prophylaxis in Adolescents and Adults with Von W"
+   "note": "independent red team opened this source 2026-11-26 (FIX) before the row was applied: Same Incyte ASH release: Publication 880 title 'Long-Term Efficacy and Safety of a Novel Protein S Antibody for Prophylaxis in Adolescents and Adults with Von Willebrand Disease: Results from a Phase 1/2 Open-Label Extension Study of Latarcibart (VGA039)', date line 'December 14, 2026; 3:30 – 3:45 p.m. CT, 4:30 – 4:45 "
   },
   "readout_lyel_2026-12-14": {
    "checked": "2026-11-26",
    "verdict": "CONFIRMED",
    "source": "https://ir.lyell.com/news-releases/news-release-details/lyell-immunopharma-present-positive-updated-ronde-cel-data-more",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Read company IR page (Nov 4, 2026) 'Lyell Immunopharma to Present Positive Updated Ronde-Cel Data ... from PiNACLE Pivotal Trial in 3L+ ...'. Block: 'Oral Abstr"
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Read company IR page (Nov 4, 2026) 'Lyell Immunopharma to Present Positive Updated Ronde-Cel Data ... from PiNACLE Pivotal Trial in 3L+ ...'. Block: 'Oral Abstract 1028'; 'Session: Monday, December 14, 2026, 4:45 CST'. Body: 'Updated results, including additional patients and longer follow-up, are expected to be presen"
   },
   "readout_biib_2026-12-15-litifilima": {
    "checked": "2026-11-25",
@@ -2631,7 +2631,7 @@
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395620/0/en/moleculin-announces-acceptance-of-annamycin-data-for-presentation-at-the-2026-american-society-of-hematology-ash-annual-meeting.html",
    "by": "red_team_at_apply",
-   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Moleculin 11/04/2026 release: poster 'A Pivotal Phase 2/3 Study of Naxtarubicin as Second Line Therapy in Patients with AML' with first interim MIRACLE ("
+   "note": "independent red team opened this source 2026-11-26 (CONFIRMED) before the row was applied: Opened Moleculin 11/04/2026 release: poster 'A Pivotal Phase 2/3 Study of Naxtarubicin as Second Line Therapy in Patients with AML' with first interim MIRACLE (MB-108) results (CR rates by arm, first 45 randomized); no session date. hematology.org confirms ASH Dec 12-15, 2026; Moleculin's 11/23/2026 release repeats the"
   },
   "readout_gmab_2026-12-14": {
    "checked": "2026-11-27",
