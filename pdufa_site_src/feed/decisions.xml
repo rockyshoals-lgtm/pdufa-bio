@@ -5,9 +5,19 @@
 <id>https://www.pdufa.bio/feed/decisions.xml</id>
 <link rel="self" type="application/atom+xml" href="https://www.pdufa.bio/feed/decisions.xml"/>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/feed"/>
-<updated>2026-11-26T22:17:53Z</updated>
+<updated>2026-11-27T19:37:11Z</updated>
 <author><name>pdufa.bio</name><uri>https://www.pdufa.bio</uri></author>
 <rights>Facts from FDA and sponsor documents, each linked. Not investment advice.</rights>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/INCY-2026-03-06</id>
+<title>Zynyz (retifanlimab-dlwr) CRL Feb 27, 2026 | INCY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/INCY-2026-03-06"/>
+<published>2026-03-06T17:00:00Z</published>
+<updated>2026-11-27T19:37:11Z</updated>
+<category term="Complete Response Letter"/>
+<summary>Zynyz (retifanlimab-dlwr) - metastatic NSCLC, Incyte Corporation: Complete Response Letter. FDA action date: February 27, 2026. Announced: March 6, 2026.</summary>
+<content type="html">&lt;p&gt;Zynyz (retifanlimab-dlwr) - metastatic NSCLC, Incyte Corporation: Complete Response Letter. FDA action date: February 27, 2026. Announced: March 6, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.sec.gov/Archives/edgar/data/879169/000087916926000013/incy-20260227.htm"&gt;Incyte Form 8-K, date of report February 27, 2026, filed March 6, 2026&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Nov 27, 2026, 2:37 PM ET.&lt;/p&gt;</content>
+</entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/RDY-2025-12-31</id>
 <title>AVT03 (proposed denosumab biosimilar) CRL Dec 30, 2025 | RDY FDA Decision</title>
@@ -120,13 +130,13 @@
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/PYPD-2026-11-24</id>
-<title>Bacfenssi (doxycycline hyclate) Approval Announced Nov 24, 2026 | PYPD FDA Decision</title>
+<title>Bacfenssi (doxycycline hyclate) Approved Nov 24, 2026, 4 Days Early | PYPD FDA Decision</title>
 <link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/PYPD-2026-11-24"/>
 <published>2026-11-24T17:00:00Z</published>
 <updated>2026-11-25T04:14:14Z</updated>
 <category term="Approved"/>
-<summary>Bacfenssi (D-PLEX100, doxycycline hyclate), PolyPid: Approved. FDA action date: not on record. Announced: November 24, 2026.</summary>
-<content type="html">&lt;p&gt;Bacfenssi (D-PLEX100, doxycycline hyclate), PolyPid: Approved. FDA action date: not on record. Announced: November 24, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm"&gt;PolyPid 6-K Exhibit 99.1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1611842/000121390026082564/ea029964201ex99-1.htm"&gt;PolyPid 6-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Nov 24, 2026, 11:14 PM ET.&lt;/p&gt;</content>
+<summary>Bacfenssi (D-PLEX100, doxycycline hyclate), PolyPid: Approved. FDA action date: November 24, 2026.</summary>
+<content type="html">&lt;p&gt;Bacfenssi (D-PLEX100, doxycycline hyclate), PolyPid: Approved. FDA action date: November 24, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220740Orig1s000ltr.pdf"&gt;NDA 220740 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm"&gt;PolyPid 6-K Exhibit 99.1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1611842/000121390026082564/ea029964201ex99-1.htm"&gt;PolyPid 6-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Nov 24, 2026, 11:14 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/COGT-2026-11-24</id>
@@ -136,7 +146,7 @@
 <updated>2026-11-25T04:14:14Z</updated>
 <category term="Approved"/>
 <summary>Ekitna (bezuclastinib), Cogent Biosciences: Approved. FDA action date: November 24, 2026.</summary>
-<content type="html">&lt;p&gt;Ekitna (bezuclastinib), Cogent Biosciences: Approved. FDA action date: November 24, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors"&gt;FDA oncology approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm"&gt;Cogent Biosciences, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Nov 24, 2026, 11:14 PM ET.&lt;/p&gt;</content>
+<content type="html">&lt;p&gt;Ekitna (bezuclastinib), Cogent Biosciences: Approved. FDA action date: November 24, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221283Orig1s000ltr.pdf"&gt;NDA 221283 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors"&gt;FDA oncology approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm"&gt;Cogent Biosciences, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Nov 24, 2026, 11:14 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/RHHBY-2026-11-23</id>
@@ -296,7 +306,7 @@
 <updated>2026-11-17T21:05:18Z</updated>
 <category term="Approved"/>
 <summary>Nelkarmi (neladalkib), GSK plc: Approved. FDA action date: November 17, 2026.</summary>
-<content type="html">&lt;p&gt;Nelkarmi (neladalkib), GSK plc: Approved. FDA action date: November 17, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk"&gt;FDA accelerated approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.gsk.com/en-gb/media/press-releases/nelkarmi-neladalkib-approved-in-the-us-for-previously-treated-advanced-alk-positive-non-small-cell-lung-cancer/"&gt;GSK plc press release&lt;/a&gt; &amp;middot; &lt;a href="https://investors.nuvalent.com/2026-05-27-Nuvalent-Announces-Key-Program-and-Business-Updates,-Strengthening-Foundation-for-Global-Leadership-in-ROS1-and-ALK-positive-NSCLC"&gt;Nuvalent press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Nov 17, 2026, 4:05 PM ET.&lt;/p&gt;</content>
+<content type="html">&lt;p&gt;Nelkarmi (neladalkib), GSK plc: Approved. FDA action date: November 17, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220936Orig1s000ltr.pdf"&gt;NDA 220936 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.gsk.com/en-gb/media/press-releases/nelkarmi-neladalkib-approved-in-the-us-for-previously-treated-advanced-alk-positive-non-small-cell-lung-cancer/"&gt;GSK plc press release&lt;/a&gt; &amp;middot; &lt;a href="https://investors.nuvalent.com/2026-05-27-Nuvalent-Announces-Key-Program-and-Business-Updates,-Strengthening-Foundation-for-Global-Leadership-in-ROS1-and-ALK-positive-NSCLC"&gt;Nuvalent press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Nov 17, 2026, 4:05 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/TEVA-2026-11-16</id>
@@ -516,7 +526,7 @@
 <updated>2026-10-16T01:39:55Z</updated>
 <category term="Approved"/>
 <summary>Anktiva (nogapendekin alfa inbakicept-pmln) + BCG - papillary-only NMIBC, ImmunityBio: Approved. FDA action date: October 14, 2026.</summary>
-<content type="html">&lt;p&gt;Anktiva (nogapendekin alfa inbakicept-pmln) + BCG - papillary-only NMIBC, ImmunityBio: Approved. FDA action date: October 14, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle"&gt;FDA approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1326110/000119312526421820/d188887dex991.htm"&gt;ImmunityBio 8-K exhibit 99.1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1326110/000132611026000077/ibrx-202684x8kexhibit991.htm"&gt;ImmunityBio, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Oct 15, 2026, 9:39 PM ET.&lt;/p&gt;</content>
+<content type="html">&lt;p&gt;Anktiva (nogapendekin alfa inbakicept-pmln) + BCG - papillary-only NMIBC, ImmunityBio: Approved. FDA action date: October 14, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761336Orig1s002ltr.pdf"&gt;BLA 761336 S-002&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1326110/000119312526421820/d188887dex991.htm"&gt;ImmunityBio 8-K exhibit 99.1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1326110/000132611026000077/ibrx-202684x8kexhibit991.htm"&gt;ImmunityBio, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Oct 15, 2026, 9:39 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/AMGN-2026-10-09</id>
@@ -606,7 +616,7 @@
 <updated>2026-10-09T01:51:30Z</updated>
 <category term="Approved"/>
 <summary>Tecentriq (atezolizumab), Genentech, a Roche company: Approved. FDA action date: October 8, 2026.</summary>
-<content type="html">&lt;p&gt;Tecentriq (atezolizumab), Genentech, a Roche company: Approved. FDA action date: October 8, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-combination-chemotherapy-stage-iii-mismatch-repair-deficient-colon-cancer"&gt;FDA approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15135/2026-10-08/fda-approves-genentechs-tecentriq-in-com"&gt;Genentech press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15116/2026-06-10/fda-grants-priority-review-for-genentech"&gt;Genentech press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Oct 8, 2026, 9:51 PM ET.&lt;/p&gt;</content>
+<content type="html">&lt;p&gt;Tecentriq (atezolizumab), Genentech, a Roche company: Approved. FDA action date: October 8, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761034Orig1s065ltr.pdf"&gt;BLA 761034 S-065&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15135/2026-10-08/fda-approves-genentechs-tecentriq-in-com"&gt;Genentech press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15116/2026-06-10/fda-grants-priority-review-for-genentech"&gt;Genentech press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Oct 8, 2026, 9:51 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>https://www.pdufa.bio/fda-decision/LLY-2026-10-02</id>
@@ -617,16 +627,6 @@
 <category term="Approved"/>
 <summary>Jaypirca (pirtobrutinib), Eli Lilly and Company: Approved. FDA action date: October 2, 2026.</summary>
 <content type="html">&lt;p&gt;Jaypirca (pirtobrutinib), Eli Lilly and Company: Approved. FDA action date: October 2, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pirtobrutinib-previously-untreated-chronic-lymphocytic-leukemia-or-small-lymphocytic"&gt;FDA approval notification, NDA 216059&lt;/a&gt; &amp;middot; &lt;a href="https://lilly.mediaroom.com/2026-10-02-Lillys-Jaypirca-pirtobrutinib-,-the-first-and-only-approved-non-covalent-BTK-inhibitor,-receives-expanded-indication-from-U-S-FDA-for-certain-patients-with-previously-untreated-CLL-SLL"&gt;FDA approval notification&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Oct 4, 2026, 1:28 PM ET.&lt;/p&gt;</content>
-</entry>
-<entry>
-<id>https://www.pdufa.bio/fda-decision/RHHBY-2026-09-25</id>
-<title>Gazyva (obinutuzumab) Approved Sep 25, 2026 | RHHBY FDA Decision</title>
-<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RHHBY-2026-09-25"/>
-<published>2026-09-25T16:00:00Z</published>
-<updated>2026-10-03T22:53:14Z</updated>
-<category term="Approved"/>
-<summary>Gazyva (obinutuzumab), Roche Holding AG: Approved. FDA action date: September 25, 2026.</summary>
-<content type="html">&lt;p&gt;Gazyva (obinutuzumab), Roche Holding AG: Approved. FDA action date: September 25, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125486Orig1s043ltr.pdf"&gt;BLA 125486 SUPPL-43&lt;/a&gt; &amp;middot; &lt;a href="https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-drug-treat-idiopathic-nephrotic-syndrome-patients-2-years-and-older"&gt;FDA approval letter, BLA 125486 supplement 043&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Entered pdufa.bio's records on Oct 3, 2026, 6:53 PM ET.&lt;/p&gt;</content>
 </entry>
 <entry>
 <id>tag:pdufa.bio,2026:pdufa-date-change/CAPR/2026-08-22/2026-11-22</id>
