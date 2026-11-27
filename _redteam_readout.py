@@ -43,7 +43,7 @@ if n != 26:
 print("\n" + "=" * 96)
 print("  C3/C4 — HOW MANY DOCS ACTUALLY EXIST? (ask EDGAR, do not trust the comment)")
 print("=" * 96)
-UA = "David Moody rockyshoals@gmail.com"
+UA = "pdufa.bio research support@pdufa.bio"
 FTS = "https://efts.sec.gov/LATEST/search-index"
 import datetime
 until = datetime.date.today()

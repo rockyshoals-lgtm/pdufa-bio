@@ -14,7 +14,7 @@ import re
 import urllib.parse
 import urllib.request
 
-UA = "pdufa.bio builder rockyshoals@gmail.com"
+UA = "pdufa.bio builder support@pdufa.bio"
 
 CASES = [
     ("PHAR", "October 24, 2026", ['"leniolisib" "target action date"',

@@ -36,7 +36,7 @@ WORKDIR = Path("/sessions/confident-serene-ptolemy/mnt/9realms")
 CACHE_DIR = WORKDIR / "smart_money_cache"
 CACHE_DIR.mkdir(exist_ok=True)
 
-UA = "9realms-research rockyshoals@gmail.com"
+UA = "9realms-research support@pdufa.bio"
 HEADERS = {"User-Agent": UA, "Accept-Encoding": "gzip, deflate"}
 SEC_RATE_DELAY = 0.11  # ~9 req/sec, safe margin under 10/sec limit
 

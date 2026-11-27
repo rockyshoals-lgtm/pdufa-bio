@@ -24,7 +24,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "_fda_novel_approvals.json")
 YEAR = 2026
 URL = f"https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-{YEAR}"
-UA = {"User-Agent": "pdufa.bio watcher rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio watcher support@pdufa.bio"}
 
 
 def parse(doc):

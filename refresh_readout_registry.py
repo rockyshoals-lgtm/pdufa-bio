@@ -38,7 +38,7 @@ except Exception:
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATASET = os.path.join(HERE, "pdufa_site_src", "api", "v1", "dataset.mjs")
 API = "https://clinicaltrials.gov/api/v2/studies/{nct}?fields=ProtocolSection"
-UA = "pdufa.bio builder rockyshoals@gmail.com"
+UA = "pdufa.bio builder support@pdufa.bio"
 TODAY = dt.date.today().isoformat()
 
 

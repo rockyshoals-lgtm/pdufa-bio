@@ -52,7 +52,7 @@ def load_key():
 def fetch(key):
     req = urllib.request.Request(API, headers={
         "X-API-KEY": key, "Accept": "application/json",
-        "User-Agent": "pdufa.bio research rockyshoals@gmail.com"})
+        "User-Agent": "pdufa.bio research support@pdufa.bio"})
     with urllib.request.urlopen(req, timeout=30) as r:
         body = json.loads(r.read().decode("utf-8", "replace"))
     d = body.get("data", body)

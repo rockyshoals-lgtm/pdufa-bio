@@ -11,7 +11,7 @@ import urllib.parse
 import urllib.request
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 
 NINE = [
     ("ARQT", "2026-06-29", "ZORYVE roflumilast cream 0.3%", "roflumilast"),

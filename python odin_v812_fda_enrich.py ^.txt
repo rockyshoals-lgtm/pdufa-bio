@@ -1,7 +1,7 @@
 python odin_v812_fda_enrich.py ^
   --input .\ODIN_ENRICHED_PDUFA_1349_v2.csv ^
   --output .\ODIN_ENRICHED_PDUFA_1349_v2_v812_enriched.csv ^
-  --auth-user rockyshoals@gmail.com ^
+  --auth-user support@pdufa.bio ^
   --auth-key Xu7m6I0XS4kwTmiI ^
   --cache-dir .\fda_cache ^
   --lookback-days 730 ^

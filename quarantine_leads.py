@@ -53,7 +53,7 @@ STATE = os.path.join(HERE, "_held_state.json")
 LEADS = os.environ.get("WATCH_LEADS_JSONL") or os.path.join(HERE, "_watch_leads.jsonl")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 ESCALATE_AFTER = 2          # held runs before David is emailed
-DEFAULT_TO = "rockyshoals@gmail.com"
+DEFAULT_TO = "support@pdufa.bio"
 
 
 def utcnow():

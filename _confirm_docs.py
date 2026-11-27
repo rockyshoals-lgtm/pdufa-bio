@@ -2,7 +2,7 @@
 """Fetch candidate filings and print every PDUFA/target-date sentence mentioning the drug."""
 import re, sys, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 DOCS = {
     "NUVL neladalkib": ["https://www.sec.gov/Archives/edgar/data/1861560/000186156026000020/nuvl-ex99_1.htm",
                         "https://www.sec.gov/Archives/edgar/data/1861560/000186156026000021/nuvl-20260331.htm"],

@@ -35,7 +35,7 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATASET = os.path.join(HERE, "pdufa_site_src", "api", "v1", "dataset.mjs")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 FDA = ("https://www.fda.gov/drugs/resources-information-approved-drugs/"
        "fda-approves-imlunestrant-combination-abemaciclib-er-positive-her2-negative-esr1-mutated-advanced-or")
 ROW_ID = "pdufa_lly_2026-09-18"

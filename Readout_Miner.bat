@@ -12,7 +12,7 @@ REM ============================================================================
 cd /d "C:\Users\dcmoo\Documents\Python\9realms"
 
 REM SEC fair-use requires an identifying User-Agent on every request.
-set "SEC_USER_AGENT=David Moody rockyshoals@gmail.com"
+set "SEC_USER_AGENT=pdufa.bio research support@pdufa.bio"
 
 for /f %%i in ('powershell -NoProfile -Command "Get-Date -Format yyyyMMdd_HHmmss"') do set "TS=%%i"
 set "LOG=readout_miner_%TS%.log"

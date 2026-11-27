@@ -9,7 +9,7 @@ import csv, os, re, sys, time, urllib.request
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
-AGENT = os.environ.get("SEC_USER_AGENT", "David Moody rockyshoals@gmail.com")
+AGENT = os.environ.get("SEC_USER_AGENT", "pdufa.bio research support@pdufa.bio")
 
 CONFS = ["ESMO", "ASCO", "ASH", "AACR", "ESC", "AHA", "ACC", "EASD", "ADA", "AAN", "AAD",
          "EADV", "EULAR", "ACR", "ERS", "ATS", "WCLC", "SITC", "EHA", "ASTRO", "AASLD",

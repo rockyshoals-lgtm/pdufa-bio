@@ -57,7 +57,7 @@ if not defined PY ( where py >nul 2>&1 && set "PY=py" )
 if not defined PY ( echo [ERROR] Python not found on PATH. & pause & exit /b 1 )
 
 REM SEC REQUIRES an identifying User-Agent. Anonymous scrapers are blocked outright.
-set "SEC_USER_AGENT=David Moody rockyshoals@gmail.com"
+set "SEC_USER_AGENT=pdufa.bio research support@pdufa.bio"
 
 REM WIDENED 2026-08-18 (the AMLX lesson): 45d missed AMLX entirely -- its LUCIDITY guidance
 REM was in filings older than the window, and it ran +10 percent on the topline TODAY.

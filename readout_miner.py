@@ -37,7 +37,7 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-AGENT = os.environ.get("SEC_USER_AGENT", "David Moody rockyshoals@gmail.com")
+AGENT = os.environ.get("SEC_USER_AGENT", "pdufa.bio research support@pdufa.bio")
 TICKER_MAP_CACHE = os.path.join(HERE, "bpc_data", "_edgar_ticker_map.json")
 OUT = os.path.join(HERE, "readout_miner.csv")
 TODAY = dt.date.today()

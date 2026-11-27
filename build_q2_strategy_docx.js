@@ -133,7 +133,7 @@ children.push(
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 }, children: [new TextRun({ text: "Riding the Waves, Compounding the Gains", italics: true, size: 28, color: "555555" })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 1200 }, children: [new TextRun({ text: "Powered by ODIN v14 • Gungnir v46 • BIFROST v5.5 + v4 • Conference/Smart Money/UOA/IIS Overlays", size: 20, color: "777777" })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 100 }, children: [new TextRun({ text: "Dated: April 17, 2026", bold: true, size: 22 })] }),
-  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 1800 }, children: [new TextRun({ text: "Prepared for: David (rockyshoals@gmail.com)", size: 20, color: "555555" })] }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 1800 }, children: [new TextRun({ text: "Prepared for: David (support@pdufa.bio)", size: 20, color: "555555" })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 }, children: [new TextRun({ text: "Posture: AGGRESSIVE — Nano/Micro Concentration", bold: true, size: 22, color: "B82828" })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Max 6–8% per position • Max 5–6 concurrent • Target peak heat ~35%", size: 20 })] }),
   new Paragraph({ children: [new PageBreak()] })

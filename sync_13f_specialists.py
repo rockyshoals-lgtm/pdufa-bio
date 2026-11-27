@@ -33,7 +33,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "_13f_specialists.json")
 OLD = os.path.join(HERE, "Odin Perfection", "v382_checkpoints", "phase1_god_tier_holdings.json")
-UA = {"User-Agent": "pdufa.bio watcher rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio watcher support@pdufa.bio"}
 FUNDS = [("Baker Bros. Advisors", 1263508, "BAKER BROS"), ("RA Capital Management", 1346824, "RA CAPITAL"),
          ("Perceptive Advisors", 1224962, "PERCEPTIVE"), ("OrbiMed Advisors", 1055951, "ORBIMED"),
          ("Avoro Capital Advisors", 1633313, "AVORO"), ("RTW Investments", 1493215, "RTW"),

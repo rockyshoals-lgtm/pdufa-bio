@@ -43,7 +43,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 CACHE = os.path.join(HERE, "_ctgov_intervention_cache.json")
-UA = {"User-Agent": "pdufa.bio data-quality (rockyshoals@gmail.com)"}
+UA = {"User-Agent": "pdufa.bio data-quality (support@pdufa.bio)"}
 
 # Not drugs. A record whose asset is one of these is describing the control arm.
 NOT_A_DRUG = re.compile(

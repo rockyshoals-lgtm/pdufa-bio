@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import json, re, sys, urllib.parse, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 def efts(q, forms="8-K,10-Q,10-K,6-K", start="2026-01-01", end="2026-09-15"):
     u = f"https://efts.sec.gov/LATEST/search-index?q={urllib.parse.quote(q)}&forms={forms}&dateRange=custom&startdt={start}&enddt={end}"
     j = json.loads(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=40).read())

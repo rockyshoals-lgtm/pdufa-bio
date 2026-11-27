@@ -19,7 +19,7 @@ import re
 import urllib.parse
 import urllib.request
 
-UA = "pdufa.bio builder rockyshoals@gmail.com"
+UA = "pdufa.bio builder support@pdufa.bio"
 
 ROWS = [
     ("AZN", "2026-06-30", "Truqap", ["capivasertib", "Truqap"]),

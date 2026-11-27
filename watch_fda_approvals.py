@@ -195,7 +195,7 @@ def main():
     try:
         feed = urllib.request.urlopen(urllib.request.Request(
             "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
-            headers={"User-Agent": "pdufa.bio watcher rockyshoals@gmail.com"}), timeout=40).read().decode("utf-8", "replace")
+            headers={"User-Agent": "pdufa.bio watcher support@pdufa.bio"}), timeout=40).read().decode("utf-8", "replace")
         for it in re.findall(r"<item>(.*?)</item>", feed, re.S):
             ti = re.search(r"<title>(.*?)</title>", it, re.S)
             ds = re.search(r"<description>(.*?)</description>", it, re.S)
@@ -243,7 +243,7 @@ def main():
              f"&dateRange=custom&startdt={start}&enddt={today.isoformat()}")
         try:
             j = json.load(urllib.request.urlopen(urllib.request.Request(
-                u, headers={"User-Agent": "pdufa.bio watcher rockyshoals@gmail.com"}), timeout=30))
+                u, headers={"User-Agent": "pdufa.bio watcher support@pdufa.bio"}), timeout=30))
         except Exception:
             return []
         out = []
@@ -279,7 +279,7 @@ def main():
             # "<term> ... (has been|was|is) approved", or "approval of ... <term>".
             try:
                 body = urllib.request.urlopen(urllib.request.Request(
-                    url, headers={"User-Agent": "pdufa.bio watcher rockyshoals@gmail.com"}), timeout=40).read().decode("utf-8", "replace")
+                    url, headers={"User-Agent": "pdufa.bio watcher support@pdufa.bio"}), timeout=40).read().decode("utf-8", "replace")
                 body = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body))
             except Exception:
                 continue
