@@ -24801,6 +24801,31 @@ export default [
   }
  },
  {
+  "id": "pdufa_kpti_2027-06-28",
+  "t": "KPTI",
+  "company": "Karyopharm Therapeutics Inc.",
+  "d": "2027-06-28",
+  "dp": "day",
+  "name": "XPOVIO (selinexor) + ruxolitinib - myelofibrosis (sNDA)",
+  "type": "PDUFA",
+  "ta": "Hematology",
+  "cap": "Nano",
+  "st": "Upcoming",
+  "ua": "2026-11-27T18:08:07Z",
+  "url": "/pdufa/KPTI-xpovio-myelofibrosis",
+  "_d": {
+   "indication": "Myelofibrosis, in combination with ruxolitinib",
+   "event_slug": "KPTI-xpovio-myelofibrosis",
+   "application": "sNDA",
+   "pivotal_trial": "SENTRY (Phase 3)",
+   "source": "Karyopharm press release 2026-11-17 (PR Newswire)",
+   "source_url": "https://www.prnewswire.com/news-releases/karyopharm-announces-fda-acceptance-of-supplemental-new-drug-application-for-xpovio-selinexor-plus-ruxolitinib-for-the-treatment-of-patients-with-myelofibrosis-302941279.html",
+   "source_quote": "Prescription Drug User Fee Act Target Action Date of June 28, 2027",
+   "source_note": "Release: the FDA accepted Karyopharm's sNDA for XPOVIO (selinexor) in combination with ruxolitinib for patients with myelofibrosis, based primarily on the Phase 3 SENTRY trial. Found 2026-11-27 by the readout currency sweep; the date is the sponsor's own statement. The release gives the company's listing as OTC Pink: KPTIQ.",
+   "market_cap_usd": 419608.0
+  }
+ },
+ {
   "id": "readout_rcus_2027-12-31",
   "t": "RCUS",
   "company": "Arcus Biosciences, Inc.",
