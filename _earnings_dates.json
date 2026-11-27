@@ -1,5 +1,5 @@
 {
-"fetched": "2026-11-27T10:40:44Z",
+"fetched": "2026-11-27T18:03:49Z",
 "from": "2024-01-01",
 "parser_version": 5,
 "tickers": {
@@ -10725,8 +10725,9 @@
 "tracked": true
 },
 "BCTX": {
+"backfilled": "2026-11-27",
 "name": "BriaCell Therapeutics Corp.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
@@ -10849,9 +10850,20 @@
 "tracked": true
 },
 "BEAM": {
+"backfilled": "2026-11-27",
 "name": "Beam Therapeutics Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
+{
+"kind": "results",
+"period": "Fourth Quarter and Year-End 2023",
+"period_key": "2023Q4+FY",
+"published_et": "2024-02-27 06:30",
+"site": "globenewswire.com",
+"stem": "Beam",
+"title": "Beam Therapeutics Reports Fourth Quarter and Year-End 2023 Financial Results and Reiterates Anticipated Milestones",
+"url": "https://www.globenewswire.com/news-release/2024/02/27/2835800/0/en/Beam-Therapeutics-Reports-Fourth-Quarter-and-Year-End-2023-Financial-Results-and-Reiterates-Anticipated-Milestones.html"
+},
 {
 "kind": "results",
 "period": "First Quarter 2024",
@@ -10884,6 +10896,16 @@
 },
 {
 "kind": "results",
+"period": "Fourth Quarter and Year-End 2024",
+"period_key": "2024Q4+FY",
+"published_et": "2025-02-25 07:00",
+"site": "globenewswire.com",
+"stem": "Beam",
+"title": "Beam Therapeutics Reports Fourth Quarter and Year-End 2024 Financial Results and Reiterates Anticipated Catalysts",
+"url": "https://www.globenewswire.com/news-release/2025/02/25/3031842/0/en/Beam-Therapeutics-Reports-Fourth-Quarter-and-Year-End-2024-Financial-Results-and-Reiterates-Anticipated-Catalysts.html"
+},
+{
+"kind": "results",
 "period": "First Quarter 2025",
 "period_key": "2025Q1",
 "published_et": "2025-05-06 07:00",
@@ -10911,6 +10933,16 @@
 "stem": "Beam",
 "title": "Beam Therapeutics Reports Third Quarter 2025 Financial Results and Recent Business Updates",
 "url": "https://www.globenewswire.com/news-release/2025/11/04/3180146/0/en/Beam-Therapeutics-Reports-Third-Quarter-2025-Financial-Results-and-Recent-Business-Updates.html"
+},
+{
+"kind": "results",
+"period": "Fourth Quarter and Year-End 2025",
+"period_key": "2025Q4+FY",
+"published_et": "2026-02-24 07:01",
+"site": "globenewswire.com",
+"stem": "Beam",
+"title": "Beam Therapeutics Reports Fourth Quarter and Year-End 2025 Financial Results and Announces New Liver-Targeted Genetic Disease Program in Phenylketonuria (PKU)",
+"url": "https://www.globenewswire.com/news-release/2026/02/24/3243386/0/en/Beam-Therapeutics-Reports-Fourth-Quarter-and-Year-End-2025-Financial-Results-and-Announces-New-Liver-Targeted-Genetic-Disease-Program-in-Phenylketonuria-PKU.html"
 },
 {
 "kind": "results",
@@ -10946,8 +10978,9 @@
 "tracked": true
 },
 "BFRI": {
+"backfilled": "2026-11-27",
 "name": "Biofrontera Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "call_time": "10:00 a.m. ET",
@@ -10966,7 +10999,7 @@
 {
 "kind": "results",
 "period": "Fiscal Year 2023",
-"period_key": "2023FY",
+"period_key": "FY2023",
 "published_et": "2024-03-15 18:10",
 "site": "accesswire.com",
 "stem": "Biofrontera",
@@ -10998,6 +11031,20 @@
 "url": "https://www.accesswire.com/viewarticle.aspx?id=863507&lang=en"
 },
 {
+"call_time": "10:00 a.m. ET",
+"kind": "schedule",
+"period": "three and six months ended June 30, 2024",
+"period_key": "2024Q2",
+"published_et": "2024-08-09 10:00",
+"report_date": "2024-08-14",
+"site": "accesswire.com",
+"stem": "Biofrontera",
+"timing": "after_close",
+"timing_words": "after the market close",
+"title": "Biofrontera Inc. to Report Second Quarter Financial Results on August 14, 2024",
+"url": "https://www.accesswire.com/viewarticle.aspx?id=898526&lang=en"
+},
+{
 "kind": "results",
 "period": "Second Quarter 2024",
 "period_key": "2024Q2",
@@ -11006,6 +11053,30 @@
 "stem": "Biofrontera",
 "title": "Biofrontera Inc. Reports Second Quarter 2024 Financial Results and Provides a Business Update",
 "url": "https://www.globenewswire.com/news-release/2024/08/14/2930516/0/en/Biofrontera-Inc-Reports-Second-Quarter-2024-Financial-Results-and-Provides-a-Business-Update.html"
+},
+{
+"call_time": "10:00 a.m. ET",
+"kind": "schedule",
+"period": "three and nine months ended September 30, 2024",
+"period_key": "2024Q3",
+"published_et": "2024-11-01 11:55",
+"report_date": "2024-11-13",
+"site": "accesswire.com",
+"stem": "Biofrontera",
+"timing": "after_close",
+"timing_words": "after the market close",
+"title": "Biofrontera Inc. to Report Third Quarter Financial Results on November 13, 2024",
+"url": "https://www.accesswire.com/938009/biofrontera-inc-to-report-third-quarter-financial-results-on-november-13-2024"
+},
+{
+"kind": "results",
+"period": "three and nine months ended September 30, 2024",
+"period_key": "2024Q3",
+"published_et": "2024-11-13 17:15",
+"site": "globenewswire.com",
+"stem": "Biofrontera",
+"title": "Biofrontera Inc. Reports Third Quarter and Nine-Month 2024 Financial Results and Provides Business Update",
+"url": "https://www.globenewswire.com/news-release/2024/11/13/2980751/0/en/Biofrontera-Inc-Reports-Third-Quarter-and-Nine-Month-2024-Financial-Results-and-Provides-Business-Update.html"
 },
 {
 "call_time": "10:00 a.m. ET",
@@ -11020,6 +11091,54 @@
 "timing_words": "before the market opens",
 "title": "Biofrontera Inc. to Report Fourth Quarter and Full Year 2024 Financial Results on March 21, 2025",
 "url": "https://www.globenewswire.com/news-release/2025/03/11/3040741/0/en/Biofrontera-Inc-to-Report-Fourth-Quarter-and-Full-Year-2024-Financial-Results-on-March-21-2025.html"
+},
+{
+"kind": "results",
+"period": "Fiscal Year 2024",
+"period_key": "FY2024",
+"published_et": "2025-03-21 08:00",
+"site": "globenewswire.com",
+"stem": "Biofrontera",
+"title": "Biofrontera Inc. Reports Record Fiscal Year 2024 Financial Results and Provides a Business Update",
+"url": "https://www.globenewswire.com/news-release/2025/03/21/3047029/0/en/Biofrontera-Inc-Reports-Record-Fiscal-Year-2024-Financial-Results-and-Provides-a-Business-Update.html"
+},
+{
+"call_time": "10:00 a.m. ET",
+"kind": "schedule",
+"period": "three months ended March 31, 2025",
+"period_key": "2025Q1",
+"published_et": "2025-05-06 12:45",
+"report_date": "2025-05-15",
+"site": "accessnewswire.com",
+"stem": "Biofrontera",
+"timing": "after_close",
+"timing_words": "after the market close",
+"title": "Biofrontera Inc. to Report First Quarter FY 2025 Financial Results on May 15, 2025",
+"url": "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/biofrontera-inc.-to-report-first-quarter-fy-2025-financial-results-on-1024168"
+},
+{
+"kind": "results",
+"period": "First Quarter 2025",
+"period_key": "2025Q1",
+"published_et": "2025-05-15 17:09",
+"site": "globenewswire.com",
+"stem": "Biofrontera",
+"title": "Biofrontera Inc. Reports First Quarter 2025 Financial Results and Provides a Business Update",
+"url": "https://www.globenewswire.com/news-release/2025/05/15/3082736/0/en/Biofrontera-Inc-Reports-First-Quarter-2025-Financial-Results-and-Provides-a-Business-Update.html"
+},
+{
+"call_time": "10:00 a.m. ET",
+"kind": "schedule",
+"period": "three and six months ended June 30, 2025",
+"period_key": "2025Q2",
+"published_et": "2025-08-04 14:00",
+"report_date": "2025-08-13",
+"site": "globenewswire.com",
+"stem": "Biofrontera",
+"timing": "after_close",
+"timing_words": "after the market close",
+"title": "Biofrontera Inc. to Report Second Quarter FY 2025 Financial Results on August 13, 2025",
+"url": "https://www.globenewswire.com/news-release/2025/08/04/3126787/0/en/Biofrontera-Inc-to-Report-Second-Quarter-FY-2025-Financial-Results-on-August-13-2025.html"
 },
 {
 "kind": "results",
@@ -11155,8 +11274,9 @@
 "tracked": true
 },
 "BHVN": {
+"backfilled": "2026-11-27",
 "name": "Biohaven Ltd.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "kind": "results",
@@ -11282,14 +11402,16 @@
 "tracked": true
 },
 "BIIB": {
+"backfilled": "2026-11-27",
 "name": "Biogen Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "BIOA": {
+"backfilled": "2026-11-27",
 "name": "BioAge Labs, Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "kind": "results",
@@ -11365,8 +11487,9 @@
 "tracked": true
 },
 "BIVI": {
+"backfilled": "2026-11-27",
 "name": "Biovie Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
@@ -11399,8 +11522,9 @@
 "tracked": true
 },
 "BLTE": {
+"backfilled": "2026-11-27",
 "name": "Belite Bio, Inc",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "kind": "results",
@@ -11466,8 +11590,9 @@
 "tracked": true
 },
 "BMEA": {
+"backfilled": "2026-11-27",
 "name": "Biomea Fusion, Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "kind": "results",
@@ -11583,8 +11708,9 @@
 "tracked": true
 },
 "BMRN": {
+"backfilled": "2026-11-27",
 "name": "Biomarin Pharmaceutical Inc",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "kind": "results",
@@ -11680,9 +11806,20 @@
 "tracked": true
 },
 "BMY": {
+"backfilled": "2026-11-27",
 "name": "Bristol-Myers Squibb Company",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
+{
+"kind": "results",
+"period": "Fourth Quarter and Full-Year Financial Results for 2023",
+"period_key": "2023Q4",
+"published_et": "2024-02-02 06:59",
+"site": "businesswire.com",
+"stem": "Bristol-Myers Squibb",
+"title": "Bristol Myers Squibb Reports Fourth Quarter and Full-Year Financial Results for 2023",
+"url": "https://www.businesswire.com/news/home/20240202503029/en/Bristol-Myers-Squibb-Reports-Fourth-Quarter-and-Full-Year-Financial-Results-for-2023/"
+},
 {
 "call_time": null,
 "kind": "schedule",
@@ -11696,6 +11833,16 @@
 "timing_words": null,
 "title": "Bristol Myers Squibb to Report Results for First Quarter 2024 on April 25, 2024",
 "url": "https://www.businesswire.com/news/home/20240311116567/en/Bristol-Myers-Squibb-to-Report-Results-for-First-Quarter-2024-on-April-25-2024/"
+},
+{
+"kind": "results",
+"period": "First Quarter Financial Results for 2024",
+"period_key": "2024Q1",
+"published_et": "2024-04-25 06:59",
+"site": "businesswire.com",
+"stem": "Bristol-Myers Squibb",
+"title": "Bristol Myers Squibb Reports First Quarter Financial Results for 2024",
+"url": "https://www.businesswire.com/news/home/20240425548503/en/Bristol-Myers-Squibb-Reports-First-Quarter-Financial-Results-for-2024/"
 },
 {
 "call_time": null,
@@ -11712,6 +11859,16 @@
 "url": "https://www.businesswire.com/news/home/20240620721189/en/Bristol-Myers-Squibb-to-Report-Results-for-Second-Quarter-2024-on-July-26-2024/"
 },
 {
+"kind": "results",
+"period": "First Quarter Financial Results for 2025",
+"period_key": "2025Q1",
+"published_et": "2025-04-24 06:59",
+"site": "businesswire.com",
+"stem": "Bristol-Myers Squibb",
+"title": "Bristol Myers Squibb Reports First Quarter Financial Results for 2025",
+"url": "https://www.businesswire.com/news/home/20250424015046/en/Bristol-Myers-Squibb-Reports-First-Quarter-Financial-Results-for-2025/"
+},
+{
 "call_time": null,
 "kind": "schedule",
 "period": "Second Quarter 2025",
@@ -11724,6 +11881,16 @@
 "timing_words": null,
 "title": "Bristol Myers Squibb to Report Results for Second Quarter 2025 on July 31, 2025",
 "url": "https://www.businesswire.com/news/home/20250612792649/en/Bristol-Myers-Squibb-to-Report-Results-for-Second-Quarter-2025-on-July-31-2025/"
+},
+{
+"kind": "results",
+"period": "Second Quarter Financial Results for 2025",
+"period_key": "2025Q2",
+"published_et": "2025-07-31 06:59",
+"site": "businesswire.com",
+"stem": "Bristol-Myers Squibb",
+"title": "Bristol Myers Squibb Reports Second Quarter Financial Results for 2025",
+"url": "https://www.businesswire.com/news/home/20250731481376/en/Bristol-Myers-Squibb-Reports-Second-Quarter-Financial-Results-for-2025/"
 },
 {
 "call_time": null,
@@ -11740,6 +11907,16 @@
 "url": "https://www.businesswire.com/news/home/20250919662251/en/Bristol-Myers-Squibb-to-Report-Results-for-Third-Quarter-2025-on-October-30-2025/"
 },
 {
+"kind": "results",
+"period": "Third Quarter Financial Results for 2025",
+"period_key": "2025Q3",
+"published_et": "2025-10-30 06:59",
+"site": "businesswire.com",
+"stem": "Bristol-Myers Squibb",
+"title": "Bristol Myers Squibb Reports Third Quarter Financial Results for 2025",
+"url": "https://www.businesswire.com/news/home/20251030819705/en/Bristol-Myers-Squibb-Reports-Third-Quarter-Financial-Results-for-2025/"
+},
+{
 "call_time": null,
 "kind": "schedule",
 "period": "Fourth Quarter 2025",
@@ -11752,6 +11929,16 @@
 "timing_words": null,
 "title": "Bristol Myers Squibb to Report Results for Fourth Quarter 2025 on February 5, 2026",
 "url": "https://www.businesswire.com/news/home/20251218142122/en/Bristol-Myers-Squibb-to-Report-Results-for-Fourth-Quarter-2025-on-February-5-2026/"
+},
+{
+"kind": "results",
+"period": "Fourth Quarter and Full-Year Financial Results for 2025",
+"period_key": "2025Q4",
+"published_et": "2026-02-05 06:59",
+"site": "businesswire.com",
+"stem": "Bristol-Myers Squibb",
+"title": "Bristol Myers Squibb Reports Fourth Quarter and Full-Year Financial Results for 2025",
+"url": "https://www.businesswire.com/news/home/20260205453283/en/Bristol-Myers-Squibb-Reports-Fourth-Quarter-and-Full-Year-Financial-Results-for-2025/"
 },
 {
 "call_time": null,
@@ -11768,6 +11955,16 @@
 "url": "https://www.businesswire.com/news/home/20260319859081/en/Bristol-Myers-Squibb-to-Report-Results-for-First-Quarter-2026-on-April-30-2026/"
 },
 {
+"kind": "results",
+"period": "First Quarter Financial Results for 2026",
+"period_key": "2026Q1",
+"published_et": "2026-04-30 06:59",
+"site": "businesswire.com",
+"stem": "Bristol-Myers Squibb",
+"title": "Bristol Myers Squibb Reports First Quarter Financial Results for 2026",
+"url": "https://www.businesswire.com/news/home/20260430621474/en/Bristol-Myers-Squibb-Reports-First-Quarter-Financial-Results-for-2026/"
+},
+{
 "call_time": null,
 "kind": "schedule",
 "period": "Second Quarter 2026",
@@ -11782,6 +11979,16 @@
 "url": "https://www.businesswire.com/news/home/20260618405841/en/Bristol-Myers-Squibb-to-Report-Results-for-Second-Quarter-2026-on-July-30-2026/"
 },
 {
+"kind": "results",
+"period": "Second Quarter Financial Results for 2026",
+"period_key": "2026Q2",
+"published_et": "2026-07-30 06:59",
+"site": "businesswire.com",
+"stem": "Bristol-Myers Squibb",
+"title": "Bristol Myers Squibb Reports Second Quarter Financial Results for 2026",
+"url": "https://www.businesswire.com/news/home/20260730393540/en/Bristol-Myers-Squibb-Reports-Second-Quarter-Financial-Results-for-2026/"
+},
+{
 "call_time": null,
 "kind": "schedule",
 "period": "Third Quarter 2026",
@@ -11794,13 +12001,24 @@
 "timing_words": null,
 "title": "Bristol Myers Squibb to Report Results for Third Quarter 2026 on October 29, 2026",
 "url": "https://www.businesswire.com/news/home/20260918104518/en/Bristol-Myers-Squibb-to-Report-Results-for-Third-Quarter-2026-on-October-29-2026/"
+},
+{
+"kind": "results",
+"period": "Third Quarter Financial Results for 2026",
+"period_key": "2026Q3",
+"published_et": "2026-10-29 06:59",
+"site": "businesswire.com",
+"stem": "Bristol-Myers Squibb",
+"title": "Bristol Myers Squibb Reports Third Quarter Financial Results for 2026",
+"url": "https://www.businesswire.com/news/home/20261029429349/en/Bristol-Myers-Squibb-Reports-Third-Quarter-Financial-Results-for-2026/"
 }
 ],
 "tracked": true
 },
 "BNTX": {
+"backfilled": "2026-11-27",
 "name": "BioNTech SE",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "call_time": "8:00 a.m. ET",
@@ -12094,8 +12312,9 @@
 "tracked": true
 },
 "BOLT": {
+"backfilled": "2026-11-27",
 "name": "Bolt Biotherapeutics, Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "kind": "results",
@@ -12229,8 +12448,9 @@
 "tracked": true
 },
 "BSEM": {
+"backfilled": "2026-11-27",
 "name": "BioStem Technologies, Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "call_time": null,
@@ -12494,8 +12714,9 @@
 "tracked": true
 },
 "BTAI": {
+"backfilled": "2026-11-27",
 "name": "BioXcel Therapeutics, Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "call_time": "8:00 a.m. ET",
@@ -12623,8 +12844,9 @@
 "tracked": true
 },
 "BYSI": {
+"backfilled": "2026-11-27",
 "name": "BeyondSpring Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "kind": "results",
@@ -12768,8 +12990,9 @@
 "tracked": true
 },
 "CADL": {
+"backfilled": "2026-11-27",
 "name": "Candel Therapeutics, Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "kind": "results",
@@ -12875,8 +13098,9 @@
 "tracked": true
 },
 "CALC": {
+"backfilled": "2026-11-27",
 "name": "CalciMedica, Inc.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "kind": "results",
@@ -12962,8 +13186,9 @@
 "tracked": true
 },
 "CANF": {
+"backfilled": "2026-11-27",
 "name": "Can-Fite BioPharma Ltd.",
-"read": "2026-11-26",
+"read": "2026-11-27",
 "releases": [
 {
 "kind": "results",
