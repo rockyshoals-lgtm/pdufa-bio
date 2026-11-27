@@ -37,8 +37,13 @@ def main():
     for t in tests:
         rel = os.path.relpath(t, HERE).replace("\\", "/")
         print(f"::group::{rel}", flush=True)
-        r = subprocess.run([sys.executable, "-X", "utf8", t], capture_output=True, text=True, encoding="utf-8",
-                           errors="replace")
+        # 2026-11-27: tests/test_live_watch.py (#336) is a pytest module: run as a script it failed on
+        # "No module named 'pytest'" and blocked the 12:55 UTC rebuild, and even with pytest importable a bare
+        # script run would only define its tests, never call them. A guard written for pytest runs under pytest.
+        src = io.open(t, encoding="utf-8", errors="replace").read()
+        cmd = ([sys.executable, "-X", "utf8", "-m", "pytest", "-q", "-p", "no:cacheprovider", t]
+               if "import pytest" in src and "__main__" not in src else [sys.executable, "-X", "utf8", t])
+        r = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
         out = (r.stdout or "") + (r.stderr or "")
         print(out, end="" if out.endswith("\n") else "\n", flush=True)
         print("::endgroup::", flush=True)

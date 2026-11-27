@@ -81,7 +81,7 @@ jobs:
         # pillow: build_favicon.py (a42ec7940, 2026-09-06 20:55 PT) draws the PNG/ICO natively
         # with PIL; the first CI run after it (34142696590) died at that step with
         # ModuleNotFoundError and deployed nothing.
-        run: pip install --quiet requests pandas openpyxl python-dateutil pillow
+        run: pip install --quiet requests pandas openpyxl python-dateutil pillow pytest
              google-api-python-client google-auth
 
       # 2026-11-23 (audit 11-17, moat move 4): /changes, the changes to 12 fields of each row of the published dataset,
