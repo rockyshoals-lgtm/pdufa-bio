@@ -86,7 +86,10 @@ JUNK_SLUG = re.compile(
     r"^(?:american|european|eur|world|joint|san-antonio|digestive-disease|iaslc|idsa|obesityweek|"
     r"corticosteroids?|nct\d+|once-daily|twice-daily|autologous|allogeneic|helios-\d|r-chop|"
     r"international|annual|global|national)(?:-|$)"
-    r"|-(?:and|in|with|plus|or|for|vs)$")
+    r"|-(?:and|in|with|plus|or|for|vs)$"
+    # 2026-11-27: a drug CLASS is not a drug. Pfizer's unnamed "amylin analog" would have published
+    # /drug/amylin-analog, a page every amylin program would seem to belong to.
+    r"|-(?:analog|analogue|agonist|antagonist|inhibitor|antibody|vaccine|degrader|program|candidate)$")
 
 
 CORE = re.compile(r"^([A-Za-z0-9][A-Za-z0-9'\u2019./-]*(?:\s+[A-Za-z0-9][A-Za-z0-9'\u2019./-]*)?)"

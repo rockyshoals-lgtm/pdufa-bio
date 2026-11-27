@@ -3705,6 +3705,126 @@
    "basis": "Company release: indication stated as Crohn's disease",
    "source": "https://ir.abivax.com/news-releases/news-release-details/abivax-presents-business-updates-and-first-half-2026-financial",
    "tagged": "2026-11-27"
+  },
+  "readout_vtvt_2027-12-31": {
+   "ta": "Endocrinology",
+   "basis": "company-stated indication: type 1 diabetes",
+   "source": "https://www.sec.gov/Archives/edgar/data/1641489/000164148926000035/vtvt-20260930xexx991pressr.htm"
+  },
+  "readout_bbot_2026-12-31-bbo10203": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: KRAS-mutant cancers",
+   "source": "https://www.sec.gov/Archives/edgar/data/1869105/000119312526455506/bbot-ex99_1.htm"
+  },
+  "readout_ttrx_2027-12-31": {
+   "ta": "Dermatology",
+   "basis": "company-stated indication: hidradenitis suppurativa",
+   "source": "https://www.sec.gov/Archives/edgar/data/2023016/000121390026117781/ea031158701ex99-1.htm"
+  },
+  "readout_ttrx_2028-06-30": {
+   "ta": "Dermatology",
+   "basis": "company-stated indication: onychomycosis",
+   "source": "https://www.sec.gov/Archives/edgar/data/2023016/000121390026117781/ea031158701ex99-1.htm"
+  },
+  "readout_ttrx_2028-12-31": {
+   "ta": "Dermatology",
+   "basis": "company-stated indication: onychomycosis",
+   "source": "https://www.sec.gov/Archives/edgar/data/2023016/000121390026117781/ea031158701ex99-1.htm"
+  },
+  "readout_pfe_2027-03-31": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: metastatic castration-resistant prostate cancer",
+   "source": "https://s206.q4cdn.com/795948973/files/doc_financials/2026/q3/Q3-2026-Earnings-Conference-Call-Prepared-Remarks-FINAL.pdf"
+  },
+  "readout_pfe_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: metastatic castration-resistant prostate cancer",
+   "source": "https://s206.q4cdn.com/795948973/files/content_files/PFE-USQ_Transcript_2026-11-03.pdf"
+  },
+  "readout_pfe_2027-12-31-amylin": {
+   "ta": "Metabolic",
+   "basis": "company-stated indication: obesity",
+   "source": "https://s206.q4cdn.com/795948973/files/content_files/PFE-USQ_Transcript_2026-11-03.pdf"
+  },
+  "readout_regn_2027-12-31": {
+   "ta": "Ophthalmology",
+   "basis": "company-stated indication: geographic atrophy",
+   "source": "https://investor.regeneron.com/static-files/b9e581a3-65e6-4902-9afa-732fc8c6a92a"
+  },
+  "readout_regn_2027-12-31-linvoselta": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: multiple myeloma, at least one prior line of therapy",
+   "source": "https://investor.regeneron.com/static-files/b9e581a3-65e6-4902-9afa-732fc8c6a92a"
+  },
+  "readout_regn_2028-12-31": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: newly diagnosed multiple myeloma, transplant ineligible",
+   "source": "https://investor.regeneron.com/static-files/b9e581a3-65e6-4902-9afa-732fc8c6a92a"
+  },
+  "readout_regn_2028-12-31-linvoselta": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: multiple myeloma, at least one prior line of therapy",
+   "source": "https://investor.regeneron.com/static-files/b9e581a3-65e6-4902-9afa-732fc8c6a92a"
+  },
+  "readout_regn_2028-12-31-odronextam": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: first-line follicular lymphoma",
+   "source": "https://investor.regeneron.com/static-files/b9e581a3-65e6-4902-9afa-732fc8c6a92a"
+  },
+  "readout_gild_2027-12-31": {
+   "ta": "Infectious",
+   "basis": "company-stated indication: HIV-1 pre-exposure prophylaxis",
+   "source": "https://s29.q4cdn.com/585078350/files/doc_financials/2026/q3/GILD-Q326-Prepared-Remarks-29-October-2026.pdf"
+  },
+  "readout_incy_2027-03-31": {
+   "ta": "Immunology",
+   "basis": "company-stated indication: newly diagnosed chronic graft-versus-host disease",
+   "source": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/"
+  },
+  "readout_incy_2029-12-31-latarcibar": {
+   "ta": "Hematology",
+   "basis": "company-stated indication: von Willebrand disease",
+   "source": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/"
+  },
+  "readout_eikn_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: advanced melanoma",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html"
+  },
+  "readout_eikn_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: first-line stage 4 NSCLC",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html"
+  },
+  "readout_eikn_2027-12-31-eik1004": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: castrate-resistant prostate cancer",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html"
+  },
+  "readout_eikn_2027-06-30-eik1005": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: advanced solid tumors (MSI-high)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html"
+  },
+  "readout_eikn_2027-12-31-eik1005": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: advanced solid tumors (incl. MSI-H/dMMR)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html"
+  },
+  "readout_eikn_2027-12-31-eik1003": {
+   "ta": "Oncology",
+   "basis": "company-stated indication: advanced solid tumors (Cohort 1D; indication not stated)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html"
+  },
+  "readout_coag_2026-12-31": {
+   "ta": "Hematology",
+   "basis": "company-stated indication: Factor VII deficiency",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399342/0/en/hemab-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html"
+  },
+  "readout_coag_2027-02-28": {
+   "ta": "Hematology",
+   "basis": "company-stated indication: von Willebrand disease",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399342/0/en/hemab-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html"
   }
  },
  "nct_mismatch": [

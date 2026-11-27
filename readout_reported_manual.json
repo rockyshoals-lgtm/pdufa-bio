@@ -487,6 +487,39 @@
    "source_url": "https://www.globenewswire.com/news-release/2026/11/16/3403343/0/en/lexeo-therapeutics-announces-positive-interim-phase-i-ii-data-and-regulatory-update-for-lx2020-in-pkp2-arrhythmogenic-cardiomyopathy-and-reports-third-quarter-2026-financial-result.html",
    "guided_window": "",
    "note": "readout mine 2026-11-26, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_ivvd_2026-08-15",
+   "t": "IVVD",
+   "drug": "VYD2311 (ibramvibart)",
+   "reported_date": "2026-11-23",
+   "outcome": "reported",
+   "summary": "Invivyd, Inc. reported this readout on 2026-11-23: “Invivyd Announces Positive DECLARATION Trial Data for Monoclonal Antibody VYD2311, and Ushers in a New Era for Immunization” (press release).",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1832038/000119312526471002/ivvd-ex99_1.htm",
+   "guided_window": "",
+   "note": "readout mine 2026-11-26, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_akba_2026-08-15",
+   "t": "AKBA",
+   "drug": "vadadustat",
+   "reported_date": "2026-11-05",
+   "outcome": "reported",
+   "summary": "Akebia Therapeutics, Inc. reported this readout on 2026-11-05: “Akebia Therapeutics Reports Positive Topline Data from VOCAL Trial Showing Vadadustat Dosed TIW Met Primary Endpoint of Non-Inferiority to ESA in Maintaining Hemoglobin” (SEC filing).",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/05/3396265/37519/en/akebia-therapeutics-reports-positive-topline-data-from-vocal-trial-showing-vadadustat-dosed-tiw-met-primary-endpoint-of-non-inferiority-to-esa-in-maintaining-hemoglobin.html",
+   "guided_window": "",
+   "note": "readout mine 2026-11-26, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_eypt_2026-10-15",
+   "t": "EYPT",
+   "drug": "DURAVYU (vorolanib intravitreal insert, EYP-1901)",
+   "reported_date": "2026-10-19",
+   "outcome": "reported",
+   "summary": "EyePoint, Inc. reported this readout on 2026-10-19: “EyePoint Announces Topline Results from LUCIA, the Second Pivotal Phase 3 Clinical Trial of DURAVYU in Wet AMD” (company presentation).",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1314102/000119312526424644/eypt-ex99_1.htm",
+   "guided_window": "",
+   "note": "readout mine 2026-11-26, red-teamed against the company's release"
   }
  ]
 }
