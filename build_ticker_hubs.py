@@ -100,6 +100,8 @@ def _pastdue():
     return _PASTDUE
 
 
+_REG_STOP = {'TERMINATED': 'Trial terminated per ClinicalTrials.gov', 'WITHDRAWN': 'Trial withdrawn per ClinicalTrials.gov',
+             'SUSPENDED': 'Trial suspended per ClinicalTrials.gov'}
 _PAST_LABEL = {'no_topline': 'Window passed, no topline announced', 'company_stopped': 'Stopped by company',
                'sponsor_release': 'Results released', 'results_posted_registry': 'Results posted to registry'}
 
@@ -252,6 +254,7 @@ def load_data():
                                       label=(r.get('_d') or {}).get('guided_label'),
                                       status=r.get('st'),
                                       resolution=((r.get('_d') or {}).get('resolution') or {}).get('state'),
+                                      reg_status=str(((r.get('_d') or {}).get('registry') or {}).get('overall_status') or ''),
                                       drug_page=_drug_page(r)))
             nm = r.get('company')
             if nm and str(nm).strip() not in ('', tkr):
@@ -437,6 +440,11 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
                 # red team 2026-11-17: SRPT's Sep 2026 registry window was listed with no status, two
                 # months after it closed, reading like a catalyst still to come.
                 lab = _PAST_LABEL.get(r.get('resolution'), 'Date passed, no result yet')
+                # 2026-11-27: a registry-dated row whose trial ClinicalTrials.gov lists as terminated, withdrawn or
+                # suspended said "Date passed, no result yet" here while the API and /readouts said "Terminated per
+                # registry". With no sponsor finding on the row, the hub now states the registry's status too.
+                if not r.get('resolution') and r.get('reg_status') in _REG_STOP:
+                    lab = _REG_STOP[r['reg_status']]
                 if r.get('precision') == 'day' and r.get('resolution') == 'no_topline':
                     # 2026-11-27: a dated presentation is not a topline window (NTLA ISA e-poster, INBX CTOS talk).
                     lab = 'Scheduled date passed, no company results release found'

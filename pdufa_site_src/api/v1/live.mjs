@@ -6,7 +6,8 @@ import { READ_LUA } from '../_live_read.mjs';
 /** Free, keyless. What the every-minute news watch (api/cron/news-watch.mjs) has posted: each FDA decision it read
  *  from a primary source and posted within the minute, with the source's time, the time it was posted (Eastern, with
  *  the offset; RULE 1), and its status:
- *    posted     read from the source by the automatic check; the full review of the page follows
+ *    posted     read from the source by the automatic check; the source is read again about a minute later, then 30
+ *               minutes and 3 hours later (rechecked_at), and the full review of the page follows
  *    confirmed  the reviewed record shows the same outcome
  *    retracted  the reviewed record shows another outcome, or the post was withdrawn; the reason is given
  *  (A post paused because a later release by the sponsor may change it is not shown until the review confirms it.)
@@ -62,10 +63,11 @@ export default async (req, res) => {
       watch: { every: '1 minute', last_heartbeat: b.at || null, heartbeat_note: 'The watch runs every minute and records this heartbeat at least every 10 minutes.',
         posting: b.publish === true && !state.hidden, ...(state.hidden ? { posts_hidden: true } : {}), sources: { sec_edgar: b.edgar || null, sponsor_feeds: b.rss || null } },
       method: 'https://www.pdufa.bio/research/posting-speed',
-      note: 'Each post states what its primary source says, attributed to the source. A post is made only when an automatic check of the source headline passes; everything else waits for a full review. Times are US Eastern with their UTC offset.',
+      note: 'Each post states what its primary source says, attributed to the source. A post is made only when an automatic check of the source headline passes; everything else waits for a full review. The source of each post is read again about a minute after it posts, then 30 minutes and 3 hours later (rechecked_at is the last time it still said the same), and a post whose source no longer says it is taken down until the full review. Times are US Eastern with their UTC offset.',
     },
     data: posts.map(p => ({ id: p.id, ticker: p.ticker, kind: p.kind, text: p.text, status: p.status,
       source: p.source, posted_at: p.posted_at, minutes_after_source: p.minutes_after_source, page: p.page,
+      ...(p.rechecked_at ? { rechecked_at: p.rechecked_at } : {}),
       ...(p.confirmed_at ? { confirmed_at: p.confirmed_at } : {}),
       ...(p.status === 'retracted' ? { retracted_at: p.retracted_at, retract_reason: p.retract_reason } : {}) })),
   });
