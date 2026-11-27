@@ -12345,7 +12345,13 @@ export default [
    "source_quote": "preparing for the US launch of CagriSema in early 2027, subject to regulatory approval",
    "goal_date": "not announced",
    "runup_note": "Run-up is measured for day-dated goals and decided events only",
-   "red_team": "2026-11-17: date red team; source re-opened and checked against the company's newest disclosure. 6-K milestones table puts the US decision in Q4 2026; no Novo document states a month (sort key only, not a stated goal date)"
+   "red_team": "2026-11-17: date red team; source re-opened and checked against the company's newest disclosure. 6-K milestones table puts the US decision in Q4 2026; no Novo document states a month (sort key only, not a stated goal date)",
+   "expected_decision": {
+    "when": "Q4 2026",
+    "source": "Novo Nordisk 6-K 2026-11-04, Anticipated key R&D milestones table",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000162828026069805/caq32026.htm",
+    "checked": "2026-11-27"
+   }
   }
  },
  {
@@ -12398,6 +12404,12 @@ export default [
     "source_url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=917287",
     "text": "Earlier, on October 2, 2026, Novo Nordisk said the FDA had extended its review of the denecimig BLA, which Novo had expected to be decided in the third quarter of 2026. Novo said the FDA named the ongoing remediation at a manufacturing facility as the cause, and that the FDA has not given a new timeline.",
     "quote": "The FDA has not communicated a new timeline for expected regulatory action on the BLA.",
+    "checked": "2026-11-27"
+   },
+   "expected_decision": {
+    "when": "H1 2027",
+    "source": "Novo Nordisk 6-K 2026-11-04, Anticipated key R&D milestones table",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000162828026069805/caq32026.htm",
     "checked": "2026-11-27"
    }
   }

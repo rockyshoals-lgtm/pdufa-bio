@@ -24,6 +24,15 @@ def rows():
             if str((r.get("_d") or {}).get("goal_date") or "").lower() == "not announced"]
 
 
+def expected(d):
+    """The sponsor's own expected decision window, when its filing states one (company expectation, not a goal date)."""
+    e = d.get("expected_decision") or {}
+    if not (e.get("when") and e.get("source_url")):
+        return ""
+    return (f' That filing&#x27;s milestone table (<a href="{esc(e["source_url"])}" rel="noopener">source</a>) lists '
+            f'the US decision in {esc(e["when"])}; that is the company&#x27;s expectation, not an FDA goal date.')
+
+
 def review_update(d):
     """A sponsor's later word on the review (e.g. an extension with no new timeline), from _d.review_update."""
     u = d.get("review_update") or {}
@@ -80,7 +89,7 @@ def fix(doc, r):
             f'announced.</b> {esc(d.get("source") or "The sponsor")} (<a href="{esc(d.get("source_url"))}" rel="noopener">'
             f'source</a>) says: &ldquo;{esc(d.get("source_quote"))}&rdquo; That is not the FDA&#x27;s goal date, so this '
             f'application is not on the calendar. We add the date when the sponsor or the FDA states it.'
-            + review_update(d) + '</div><!--NOGOAL:END-->')
+            + expected(d) + review_update(d) + '</div><!--NOGOAL:END-->')
     if "<!--NOGOAL:BEGIN-->" in doc:
         doc = re.sub(r"<!--NOGOAL:BEGIN-->.*?<!--NOGOAL:END-->", lambda _: note, doc, flags=re.S)
     else:

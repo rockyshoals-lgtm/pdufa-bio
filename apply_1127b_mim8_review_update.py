@@ -27,6 +27,11 @@ UPD = {
     "checked": "2026-11-27",
 }
 
+# The same 6-K's "Anticipated key R&D milestones" table lists the US decision for each (company expectation, not an FDA
+# goal date): denecimig H1 2027, CagriSema Q4 2026. The rows' "d" is only a sort key, so the pages print this instead.
+SIXK = "https://www.sec.gov/Archives/edgar/data/353278/000162828026069805/caq32026.htm"
+EXP = {ID: "H1 2027", "pdufa_nvo_2026-12-31": "Q4 2026"}
+
 s = io.open(P, encoding="utf-8").read()
 i, j = s.index("["), s.rindex("]") + 1
 rows = json.loads(s[i:j])
@@ -36,6 +41,13 @@ for r in rows:
         d = r.setdefault("_d", {})
         if d.get("review_update") != UPD:
             d["review_update"] = UPD
+            n += 1
+    if r.get("id") in EXP:
+        d = r.setdefault("_d", {})
+        e = {"when": EXP[r["id"]], "source": "Novo Nordisk 6-K 2026-11-04, Anticipated key R&D milestones table",
+             "source_url": SIXK, "checked": "2026-11-27"}
+        if d.get("expected_decision") != e:
+            d["expected_decision"] = e
             n += 1
 if n:
     io.open(P, "w", encoding="utf-8").write(s[:i] + json.dumps(rows, indent=1, ensure_ascii=False) + s[j:])

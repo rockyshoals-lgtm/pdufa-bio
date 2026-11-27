@@ -85,7 +85,10 @@ def no_goal(r):
 
 
 def when(r):
-    return "Goal date not announced" if no_goal(r) else pretty(r["d"], r.get("dp") or "day")
+    if no_goal(r):
+        e = str((((r or {}).get("_d") or {}).get("expected_decision") or {}).get("when") or "")
+        return "Goal date not announced" + (f"; sponsor expects a decision in {e}" if e else "")
+    return pretty(r["d"], r.get("dp") or "day")
 
 
 def pretty(d, dp="day"):

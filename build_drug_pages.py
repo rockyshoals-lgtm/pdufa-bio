@@ -610,7 +610,8 @@ def main():
                     or (pretty(day, dp) if re.match(r"^\d{4}-\d{2}-\d{2}$", day) else day))
             # 2026-11-27: "not announced" rows (David's ruling 11-10) carry a sort key, not a date
             if str((r.get("_d") or {}).get("goal_date") or "").lower() == "not announced":
-                when = "goal date not announced"
+                _e = str(((r.get("_d") or {}).get("expected_decision") or {}).get("when") or "")
+                when = "goal date not announced" + (f"; sponsor expects a decision in {_e}" if _e else "")
             conf = confirmed.get(r.get("id"))
             if conf:
                 oc = str(conf.get("outcome", "")).lower()
