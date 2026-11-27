@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-"""inject_first_recorded.py -- every decision page says when pdufa.bio first recorded it, with the public commit
+"""inject_first_recorded.py -- every decision page says when pdufa.bio first recorded it
 (2026-11-17 currency audit, moat move 1: show our own latency, verifiably).
 
 Competitors publish a decision with no time on it. pdufa.bio's repository is public, so the moment a decision page
 first entered it is a checkable fact. Under the Verified-against line each /fda-decision page gets:
-    "This page was first committed to pdufa.bio's public repository on Nov 17, 2026, 1:24 AM ET (public commit ce46f16)."
+    "This page entered pdufa.bio's records on Nov 17, 2026, 1:24 AM ET."
+(2026-11-27: the repository went private, so the line no longer links or names the commit.)
 (written once in Eastern; RULE 1: commit timestamps carry their own offset and are converted with zoneinfo, never
 assumed). Pages that came in with the repository's first import (2026-07-25/26) predate the repository: their
 line says so and names the import commit, never claiming the import time as when we first recorded the decision
@@ -33,7 +34,6 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 LEDGER = os.path.join(HERE, "_decision_first_recorded.json")
 ET = ZoneInfo("America/New_York")
 IMPORT_CUTOFF = dt.datetime(2026, 7, 27, tzinfo=ET)      # the repository's first import ran 2026-07-25 21:07 PT
-REPO = "https://github.com/rockyshoals-lgtm/pdufa-bio/commit/"
 B, E = "<!--FIRSTREC:BEGIN-->", "<!--FIRSTREC:END-->"
 MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
@@ -64,24 +64,19 @@ def fmt_et(iso):
 
 def import_block(entry):
     """2026-11-18 (design red team, change 10: the line on every decision page). A page that came in with the
-    repository's first import has no first-recorded time of its own; it says that, and names the import commit."""
-    c = entry.get("commit") or ""
-    src = (f' (<a href="{REPO}{c}" rel="noopener" style="color:#94a9c9">public commit {c[:7]}</a>)' if c else "")
+    repository's first import has no first-recorded time of its own; it says that.
+    2026-11-27 (David: the repository goes private): no commit link and no "public repository"; the time stays."""
     return (f'{B}<p class="note" style="margin:0 0 10px;font-size:12px;color:#94a9c9">This page has been in pdufa.bio&#x27;s '
-            f"public repository since the repository&#x27;s first import on {fmt_et(entry['ts'])}{src}, so the "
-            f"repository does not show when we first recorded this decision. Dates on this page are the FDA&#x27;s and "
-            f"the sponsor&#x27;s; this line is ours.</p>{E}")
+            f"records since they began on {fmt_et(entry['ts'])}, so they do not show when we first recorded this "
+            f"decision. Dates on this page are the FDA&#x27;s and the sponsor&#x27;s; this line is ours.</p>{E}")
 
 
 def block(entry, now_run):
+    # 2026-11-27 (David: the repository goes private): the time stays, the commit link goes. "by" still marks an
+    # entry with no commit of its own, recorded as first seen in this run.
     when = fmt_et(entry["ts"])
-    if entry.get("commit"):
-        src = f' (<a href="{REPO}{entry["commit"]}" rel="noopener" style="color:#94a9c9">public commit {entry["commit"][:7]}</a>)'
-        lead = "This page was first committed to pdufa.bio&#x27;s public repository on"
-    else:
-        src = ""
-        lead = "This page was first committed to pdufa.bio&#x27;s public repository by"
-    return (f'{B}<p class="note" style="margin:0 0 10px;font-size:12px;color:#94a9c9">{lead} {when}{src}. '
+    lead = "This page entered pdufa.bio&#x27;s records " + ("on" if entry.get("commit") else "by")
+    return (f'{B}<p class="note" style="margin:0 0 10px;font-size:12px;color:#94a9c9">{lead} {when}. '
             f'Dates on this page are the FDA&#x27;s and the sponsor&#x27;s; this line is ours.</p>{E}')
 
 

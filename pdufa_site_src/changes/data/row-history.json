@@ -1,6 +1,5 @@
 {
- "about": "Changes to 12 fields (listed under fields) of each row of pdufa.bio's published dataset (/api/v1), read from the public repository's commits. Times are each commit's time in US Eastern. Changes to this site's records, not FDA or company actions. st_was and st_now are the row's status in the earlier and the later version.",
- "repository": "https://github.com/rockyshoals-lgtm/pdufa-bio",
+ "about": "Changes to 12 fields (listed under fields) of each row of pdufa.bio's published dataset (/api/v1), read from the site's recorded versions (commit and first_commit/last_commit are each version's id). Times are each version's time in US Eastern. Changes to this site's records, not FDA or company actions. st_was and st_now are the row's status in the earlier and the later version.",
  "first_commit": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
  "first_time_et": "2026-07-26 00:07 ET",
  "last_commit": "bb60d5b2ffcf873f566e6b4737ece914a744f3e6",

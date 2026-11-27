@@ -246,7 +246,7 @@ Full archive: https://www.pdufa.bio/decisions
 - /crl - every released FDA Complete Response Letter, by year, linking the FDA's PDF
 - /fda-approval-letters - the FDA's own record (approval letter, notice or CRL) behind every decision we date
 - /pdufa-date-changes - PDUFA dates the FDA or sponsor moved, with before and after
-- /changes - changes to 12 fields of each row of pdufa.bio's published dataset since July 2026 (dates, status, outcome, names, links and more), each linked to its public commit (CSV and JSON at /changes/data/)
+- /changes - changes to 12 fields of each row of pdufa.bio's published dataset since July 2026 (dates, status, outcome, names, links and more), each with its old value, new value and time (CSV and JSON at /changes/data/)
 - /crl/offices - which FDA division and office signed each released CRL, counted from the letters' signature blocks
 - /crl/review-clock - days from the date each released CRL says the FDA received the application (or a response to an earlier letter) to the letter, from the letters' own text; median and percentiles with n, every letter listed (CSV at /crl/data/crl-review-clock.csv)
 - /crl/phrases - how many released CRLs contain each of a fixed list of regulatory terms in their text, each letter listed at /crl/phrase/<term>

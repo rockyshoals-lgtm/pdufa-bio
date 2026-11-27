@@ -379,7 +379,7 @@ def main():
     B.append('<h2>How this page is made</h2><p class="sub">Inputs: the FDA\'s CRL release (openFDA '
              f'transparency/crl, snapshot {esc(snap)}), the section headings each PDF\'s text layer carries '
              '(_crl_headings.json), the Orange Book products file (_orange_book/products.txt), and this site\'s '
-             'decision pages. The script is build_crl_facts.py in the site\'s public repository; it runs on every '
+             'decision pages. The script that builds it runs on every '
              'rebuild. A letter the FDA released twice (same date, application numbers and text) is counted once. <a href="/crl/capricor-deramiocel">'
              'Capricor\'s two CRLs for deramiocel</a>, from the primary sources.</p>')
 

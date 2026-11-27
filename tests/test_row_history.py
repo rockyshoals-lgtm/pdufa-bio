@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""CI guard: /changes and _row_history.json (build_row_history.py) say what the public commits say.
+"""CI guard: /changes and _row_history.json (build_row_history.py) say what the recorded dataset versions say.
 
   * The ledger starts at the dataset's first commit (pinned here with its time and row count), is current (its last
     commit is the newest dataset commit on this branch's first-parent line; a short lag is a note, three days
@@ -34,7 +34,6 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, HERE)
 SITE = os.path.join(HERE, "pdufa_site_src")
 DATASET = "pdufa_site_src/api/v1/dataset.mjs"
-REPO = "https://github.com/rockyshoals-lgtm/pdufa-bio"
 FIRST = ("07d961e5090acccc097cb2ee38eb9c9af384c5ba", "2026-07-26 00:07 ET", 388)   # written by hand, from git
 TOP = ["t", "company", "d", "dp", "name", "type", "ta", "st", "oc", "dcd", "url"]
 ALL = TOP + ["source_url"]
@@ -224,7 +223,7 @@ def main():
     ld = json.loads(m.group(1)) if m else {}
     if not (ld.get("description", "").startswith(
             f"{len(full):,} changes to 12 fields of each row of pdufa.bio's published PDUFA dataset, read from "
-            f"{led['versions']:,} versions in the public repository between {led['first_ts']} and {led['last_ts']},")
+            f"{led['versions']:,} recorded versions between {led['first_ts']} and {led['last_ts']},")
             and ld.get("temporalCoverage") == f"{first_day}/{led['last_ts'][:10]}"
             # dateModified is restamped site-wide by build_date_modified.py from the page's own content-change
             # date (run 45128589624 failed when this pinned the ledger's day), so only its presence is ours.
@@ -234,7 +233,7 @@ def main():
         fails.append("/changes: the Dataset schema is missing or not the ledger's")
     lede = text_of((re.search(r'data-changes="lede">(.*?)</p>', doc, re.S) or [None, ""])[1])
     want_lede = (f"{len(full):,} changes to 12 fields across {n_ids:,} row ids of pdufa.bio's published dataset, "
-                 f"read from {led['versions']:,} versions committed to the public repository between "
+                 f"read from {led['versions']:,} recorded versions between "
                  f"{led['first_ts']} and {led['last_ts']}.")
     if lede != want_lede:
         fails.append(f"/changes: the lede {lede[:90]!r} is not the ledger's")
@@ -243,8 +242,8 @@ def main():
     fields = ", ".join(NAMES[f] for f in TOP) + " and source address"
     for need in (f"The fields compared are {fields}, plus a row entering or leaving the dataset;",
                  f"The first version ({led['first_ts']}) held {led['first_rows']:,} rows.", f"By field: {counts}.",
-                 "The time shown is when the commit was made; it is not when the FDA or a company acted.",
-                 "Times are each commit's own time in US Eastern Time."):
+                 "The time shown is when the version was recorded; it is not when the FDA or a company acted.",
+                 "Times are each version's own time in US Eastern Time."):
         if need not in method:
             fails.append(f"/changes: the method does not say {need[:70]!r}")
     for r in led.get("rebuilds", []):
@@ -257,7 +256,7 @@ def main():
     t = re.search(r'<table data-changes="recent" data-verbatim="record">(.*?)</table>', doc, re.S)
     trs = re.findall(r"<tr>(.*?)</tr>", t.group(1) if t else "", re.S)
     head = [text_of(x) for x in re.findall(r"<th>(.*?)</th>", trs[0] if trs else "", re.S)]
-    if head != ["Committed (ET)", "Row", "Field", "Was", "Now", "Commit"]:
+    if head != ["Recorded (ET)", "Row", "Field", "Was", "Now"]:
         fails.append(f"/changes: the table's header is {head}")
     rows = [r for r in trs if "<td" in r]
     if len(rows) != len(exp):
@@ -265,9 +264,9 @@ def main():
     for r, c in zip(rows, exp):
         cells = [text_of(x) for x in re.findall(r"<td[^>]*>(.*?)</td>", r, re.S)]
         who = f"{c['t']} · {c['name']}" if c["name"] else c["t"]
-        want = [c["ts"], f"{who} {c['id']}".strip(), NAMES[c["field"]], cell(c, "old"), cell(c, "new"), c["sha"][:10]]
+        want = [c["ts"], f"{who} {c['id']}".strip(), NAMES[c["field"]], cell(c, "old"), cell(c, "new")]
         hrefs = re.findall(r'href="([^"]*)"', r)
-        if cells != want or hrefs != [f"{REPO}/commit/{c['sha']}"]:
+        if cells != want or hrefs:   # 2026-11-27: the repository went private; the table links nothing
             fails.append(f"/changes: a table row reads {cells[:4]}, the ledger's entry is {want[:4]}")
             break
     own = doc[doc.find("<h1"):(doc.find('<div class="legal"') if '<div class="legal"' in doc else None)]
@@ -286,8 +285,8 @@ def main():
         fails.append(f"/changes CSV is not the ledger ({max(len(got_csv) - 1, 0)} rows, the ledger {len(full)})")
     j = json.load(io.open(jp, encoding="utf-8")) if os.path.exists(jp) else {}
     meta = {"first_commit": led["first_sha"], "first_time_et": led["first_ts"], "last_commit": led["last_sha"],
-            "last_time_et": led["last_ts"], "versions": led["versions"], "repository": REPO}
-    if j.get("changes") != full or any(j.get(k) != v for k, v in meta.items()) \
+            "last_time_et": led["last_ts"], "versions": led["versions"]}
+    if j.get("changes") != full or any(j.get(k) != v for k, v in meta.items()) or "repository" in j \
             or j.get("rebuilds", []) != led.get("rebuilds", []) or set(j.get("fields", {})) != set(ALL) | {"row"}:
         fails.append("/changes JSON is not the ledger")
 
