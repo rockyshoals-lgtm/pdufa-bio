@@ -136,10 +136,10 @@ def page_checks(plant=False):
     hub = os.path.join(SITE, "index.html")
     if not os.path.isfile(B.CACHE) or not os.path.isfile(hub):
         # in the site build the step before the guards writes the pages: missing pages there are a failed build
-        if os.environ.get("GITHUB_ACTIONS") and os.path.isfile(B.CACHE) and B.load(B.CACHE)[1]:
+        if os.environ.get("GITHUB_ACTIONS") and os.path.isfile(B.CACHE) and B.load(B.CACHE, B.SEC_CACHE)[1]:
             return ["/earnings was not built though the cache has releases"], ""
         return f, "no cache or no built /earnings (skipped page checks)"
-    c, T = B.load(B.CACHE)
+    c, T = B.load(B.CACHE, B.SEC_CACHE)
     doc = io.open(hub, encoding="utf-8").read()
     if plant:
         doc = doc.replace("</table>", '<tr data-earn-ahead="ZZZZ|2026Q3"><td>x</td></tr></table>', 1)
@@ -177,7 +177,7 @@ def page_checks(plant=False):
             f.append(f"/earnings recent row {tk} {k}: no results row in the cache")
             continue
         tds = re.findall(r"<td>(.*?)</td>", cells, re.S)
-        if not tds or tds[0] != B.esc(B.fmt_et(p["results"]["published_et"])):
+        if not tds or tds[0] != B.res_time(p["results"]):
             f.append(f"/earnings recent row {tk} {k}: release time does not match the cache")
         if not 0 <= (asof - B.d_of(p["results"]["published_et"])).days < B.RECENT_DAYS:
             f.append(f"/earnings recent row {tk} {k}: not within the last {B.RECENT_DAYS} days of {asof}")
@@ -214,7 +214,7 @@ def page_checks(plant=False):
             if len(tds) > 3 and tds[3] != ("" if n is None else str(n)):
                 f.append(f"/earnings/{d} row {k}: days cell {tds[3]!r}, the cache gives {n!r}")
             st = B.status_of(P[k], asof)[1]
-            want = (B.esc(B.fmt_et(P[k]["results"]["published_et"])) if P[k]["results"] else
+            want = (B.res_time(P[k]["results"]) if P[k]["results"] else
                     {"postponed": "postponed by the company", "ahead": "ahead"}.get(
                         st, "no results release read for this period"))
             if res != want:
@@ -224,7 +224,8 @@ def page_checks(plant=False):
         f.append("/earnings/data/earnings-dates.csv missing")
     else:
         rows = list(csv.DictReader(io.open(path, encoding="utf-8-sig")))
-        want = sum(1 for t in T.values() for r in t["rel"] if r.get("kind") in ("schedule", "results", "postponed"))
+        want = sum(1 for t in T.values() for r in t["rel"] if r.get("kind") in ("schedule", "results", "postponed")
+                   and (not B.is_8k(r) or any(p["results"] is r for p in t["P"].values())))
         if len(rows) != want:
             f.append(f"CSV has {len(rows)} rows, the cache {want}")
         keys = {(tk, r.get("published_et") or "", r.get("url")) for tk, t in T.items() for r in t["rel"]}

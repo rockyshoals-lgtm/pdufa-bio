@@ -12,10 +12,10 @@
 "verdict": "NEUTRAL"
 },
 "/adcomm": {
-"checked": "2026-11-20",
-"crawled": "2026-07-31",
-"state": "Crawled - currently not indexed",
-"verdict": "NEUTRAL"
+"checked": "2026-11-27",
+"crawled": "2026-11-20",
+"state": "Submitted and indexed",
+"verdict": "PASS"
 },
 "/adcomm/CAPR-2026-07-29": {
 "checked": "2026-11-20",
@@ -144,7 +144,7 @@
 "verdict": "PASS"
 },
 "/condition": {
-"checked": "2026-11-20",
+"checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -156,21 +156,21 @@
 "verdict": "PASS"
 },
 "/condition/cardiovascular": {
-"checked": "2026-11-20",
+"checked": "2026-11-27",
 "crawled": null,
-"state": "Discovered - currently not indexed",
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/condition/cns-neurology": {
-"checked": "2026-11-20",
+"checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/condition/hematology": {
-"checked": "2026-11-20",
+"checked": "2026-11-27",
 "crawled": null,
-"state": "URL is unknown to Google",
+"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/condition/immunology": {
@@ -522,9 +522,9 @@
 "verdict": "PASS"
 },
 "/corrections": {
-"checked": "2026-11-20",
+"checked": "2026-11-27",
 "crawled": null,
-"state": "Discovered - currently not indexed",
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/coverage": {
@@ -4272,9 +4272,9 @@
 "verdict": "NEUTRAL"
 },
 "/drug": {
-"checked": "2026-11-20",
+"checked": "2026-11-27",
 "crawled": null,
-"state": "URL is unknown to Google",
+"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/drug/177lu-tlx591": {
@@ -15390,7 +15390,7 @@
 "verdict": "PASS"
 },
 "/feed": {
-"checked": "2026-11-22",
+"checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -15402,7 +15402,7 @@
 "verdict": "NEUTRAL"
 },
 "/learn": {
-"checked": "2026-11-20",
+"checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -15714,9 +15714,9 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa-date-changes": {
-"checked": "2026-11-20",
+"checked": "2026-11-27",
 "crawled": null,
-"state": "Discovered - currently not indexed",
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/pdufa/ABBV": {

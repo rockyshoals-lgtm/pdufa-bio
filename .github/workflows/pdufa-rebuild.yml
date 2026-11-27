@@ -70,6 +70,20 @@ jobs:
 
       - uses: actions/checkout@v5
 
+      # 2026-11-27 (run 46051901417 built three merged fixes, passed every guard and shipped 5 files): a dispatched
+      # run checks out the commit main was at when it was DISPATCHED, not when it starts. That run waited behind
+      # another rebuild in the concurrency queue; meanwhile that rebuild pushed 3,323 regenerated pages. This run
+      # then built every page from the older tree, its push conflicted on nearly all of them, the push-race step
+      # kept main's copies, and the build was thrown away. A run on main now starts from the newest main, so it
+      # builds on top of whatever the previous run pushed. tests/test_rebuild_starts_from_newest_main.py keeps it.
+      - name: Start from the newest main (a queued run otherwise builds the tree it was dispatched on)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          before=$(git rev-parse --short=9 HEAD)
+          git fetch --depth=1 origin main
+          git reset --hard FETCH_HEAD
+          echo "checked out $before; building $(git rev-parse --short=9 HEAD), the newest main"
+
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
@@ -544,6 +558,16 @@ jobs:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python fetch_earnings_dates.py || echo "::warning::_earnings_dates.json not refreshed this run"
 
+      # 2026-11-27 (moat: earnings gaps). Where the newswire feed carried no results release, the company's own Form
+      # 8-K under Item 2.02 (Results of Operations and Financial Condition) from SEC EDGAR: its acceptance time (UTC in EDGAR's JSON,
+      # converted to Eastern) and the period its Item 2.02 text names. A filing is opened only when no newswire results
+      # release came within a day of it; preliminary updates are kept apart and never shown. A self-check of 8-K vs
+      # newswire times guards the time zone. Writes _earnings_sec.json only. Guard: tests/test_earnings_sec.py.
+      - name: "Earnings gaps: results dates from the companies' own 8-K filings (Item 2.02, cache only)"
+        timeout-minutes: 10
+        continue-on-error: true
+        run: python fetch_earnings_sec.py || echo "::warning::_earnings_sec.json not refreshed this run"
+
       # 2026-11-26 (moat: device decisions): PMA originals, panel-track PMA supplements and De Novo grants since
       # 2010 from the FDA's own device databases (openFDA pma.json / 510k.json), each with its FDA record link.
       # Ticker only from an exact one-company SEC name or device_applicant_aliases.json. A partial pull never
@@ -891,6 +915,10 @@ jobs:
           # released CRL and every 2025+ Drugs@FDA approval), from the CRL release and the same refreshed cache.
           # tests/test_crl_app_history.py recounts every block.
           python link_crl_app_history.py || echo "::warning::application history blocks not rebuilt"
+          # 2026-11-27 (AI citations on single-drug approvals): each approval page carries the FDA label record
+          # (application, action, products, approval letter, approved label, Drugs@FDA entry) from the same refreshed
+          # cache. tests/test_fda_label_record.py recomputes every block.
+          python link_fda_label_record.py || echo "::warning::FDA label record blocks not rebuilt"
           python add_amlx_avexitide.py
 
       # 2026-11-27 (David approved adding the red-teamed company-release conference rows): they go on the study page in
@@ -1321,6 +1349,12 @@ jobs:
       - name: "/llms.txt again, from the final dataset (after held rows are restored)"
         run: python build_llms_txt.py
 
+      # 2026-11-27: the FDA label record on each approval page matches its page to the dataset, which later steps
+      # (fix_dead_internal_links.py, the held-row quarantine) can still change. Write it once more from the final
+      # dataset so tests/test_fda_label_record.py, which recomputes it, sees the same files. Idempotent.
+      - name: "FDA label record again, from the final dataset"
+        run: python link_fda_label_record.py
+
       # 2026-11-18 (red team): tests/test_date_checks_current.py blocks a date due within 14 days that was not
       # re-read in the last 30. This keeps that true without a person: every open PDUFA goal and guided readout
       # due in the next 30 days is re-read (its own source, then the company's SEC filings since) and a
@@ -1487,7 +1521,7 @@ jobs:
           # moat caches (2026-11-26), one file per git add: a pathspec that does not exist aborts the whole add
           # chembl_synonyms_cache.json (2026-11-27): never staged, so every run re-asked ChEMBL for 568 names and spent
           # 15 of its 55 minutes in one step (run 578, 06:13-06:28 ET)
-          for f in _earnings_dates.json _fda_devices.json _conference_runup_additions.json _conference_runup_backfill.json chembl_synonyms_cache.json _conference_runup_mcap.json; do
+          for f in _earnings_dates.json _earnings_sec.json _fda_devices.json _conference_runup_additions.json _conference_runup_backfill.json chembl_synonyms_cache.json _conference_runup_mcap.json; do
             if [ -f "$f" ]; then git add "$f" || echo "::warning::could not stage $f"; fi
           done
           git add _google_indexed.json _google_index_status.json _google_search_stats.json 2>/dev/null || true   # gsc_index_status.py

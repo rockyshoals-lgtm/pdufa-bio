@@ -2,6 +2,7 @@
  "_note": "Paths Search Console reports as indexed (URL Inspection API verdict PASS), kept each rebuild by gsc_index_status.py from _google_index_status.json; a path Google later reports unindexed drops out.",
  "indexed": [
   "/",
+  "/adcomm",
   "/calendar",
   "/calendar/2026/august",
   "/calendar/2026/december",

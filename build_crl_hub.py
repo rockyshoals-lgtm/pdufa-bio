@@ -173,6 +173,22 @@ def main():
            "letter-spacing:.4px;padding:7px 6px;border-bottom:1px solid #294d80}"
            "td{padding:7px 6px;border-bottom:1px solid #14263f;color:#a7bcd9;"
            "vertical-align:top}td.dt{color:#f2f6fc;white-space:nowrap}"
+           # 2026-11-27 phone pass: at 375-500px the six-column letter table scrolled sideways and hid the
+           # sections each letter addresses (the column a reader came for) off the right edge. On phones each
+           # letter is now a small card: date and decision link on top, company, application and the letter's
+           # links, then its sections. Empty cells (no sections read, no decision page) are left out there.
+           # tests/test_crl_hub_phone_rows.py checks every row carries the cell classes this needs.
+           "@media(max-width:640px){table.crlt,table.crlt tbody{display:block}"
+           "table.crlt tr:first-child{display:none}"
+           "table.crlt tr{display:grid;grid-template-columns:minmax(0,1fr) auto;"
+           "grid-template-areas:'dt ds' 'co co' 'ap lk' 'sc sc';gap:3px 12px;padding:11px 0;"
+           "border-bottom:1px solid #14263f}"
+           "table.crlt td{display:block;border:0;padding:0}"
+           "table.crlt td.dt{grid-area:dt}table.crlt td.ds{grid-area:ds;text-align:right}"
+           "table.crlt td.co{grid-area:co;color:#f2f6fc;font-size:14.5px}"
+           "table.crlt td.ap{grid-area:ap}table.crlt td.lk{grid-area:lk;text-align:right}"
+           "table.crlt td.sc{grid-area:sc}table.crlt td.sc:before{content:'Sections: ';color:#94a9c9}"
+           "table.crlt td.nos,table.crlt td.noour{display:none}}"
            "footer{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;"
            "font-size:11.5px;color:#94a9c9;line-height:1.6}")
 
@@ -276,21 +292,22 @@ def main():
     for yr, yrows in by_year.items():
         body.append(f'<h2>{yr} &middot; {len(yrows)} letter'
                     f'{"s" if len(yrows) != 1 else ""}</h2>'
-                    '<table><tr><th>Date</th><th>Company</th><th>Application</th>'
+                    '<table class="crlt"><tr><th>Date</th><th>Company</th><th>Application</th>'
                     '<th>Letter</th><th>Sections addressed (from the PDF)</th><th>On this site</th></tr>')
         for r in yrows:
             d = dt.date.fromisoformat(r["iso"])
             our = ours.get(r["url"].rsplit("/", 1)[1])
+            secs = esc("; ".join(_secs(r["url"])))
             body.append(
                 f'<tr><td class="dt">{MON[d.month][:3]} {d.day}, {d.year}</td>'
-                f'<td>{esc(r["company"][:44])}</td><td>{esc(r["app"][:28])}</td>'
-                f'<td><a href="{esc(r["url"])}" rel="noopener">'
+                f'<td class="co">{esc(r["company"][:44])}</td><td class="ap">{esc(r["app"][:28])}</td>'
+                f'<td class="lk"><a href="{esc(r["url"])}" rel="noopener">'
                 + ("letter (PDF)" if r["cr"] else (f'{esc("rescission of earlier CRLs" if "RESCIND" in r["type"].upper() else r["type"].lower())}, not a CRL (PDF)' if r["type"]
                                                     else "no letter type given (PDF)")) + '</a>'
                 + (f' &middot; <a href="/crl/letter/{r["text_page"]}">its text</a>' if r.get("text_page") else '')
                 + '</td>'
-                f'<td style="font-size:12.5px">{esc("; ".join(_secs(r["url"]))) or "&middot;"}</td>'
-                f'<td>' + (f'<a href="{our}">decision page</a>' if our else "&mdash;")
+                f'<td class="sc{"" if secs else " nos"}" style="font-size:12.5px">{secs or "&middot;"}</td>'
+                f'<td class="ds{"" if our else " noour"}">' + (f'<a href="{our}">decision page</a>' if our else "&mdash;")
                 + '</td></tr>')
         body.append("</table>")
 
