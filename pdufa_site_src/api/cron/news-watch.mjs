@@ -64,20 +64,20 @@ async function getStatus(url, { ua = UA_SITE, ms = 6000, limit = 1500000, until 
 }
 
 /** The source's print for the right-after check, kept only for a headline that names a decision. */
-function printOf(html, channel, title, cos, finalUrl = '', key = 'print') {
+function printOf(html, channel, title, cos, rows, finalUrl = '', key = 'print') {
   const kind = headlineKind(title).kind;
-  const pr = kind ? sourcePrint(html, channel, title, cos, kind, finalUrl) : null;
+  const terms = rows.flatMap(r => r.terms || []);
+  const pr = kind ? sourcePrint(html, channel, title, cos, kind, terms, finalUrl) : null;
   return pr ? { [key]: pr } : {};
 }
 
 /** The right-after check (David, 2026-11-27, "Right after"): each post's source is read again about a minute after it
  *  posts, then 30 minutes and 3 hours after. The post is paused (hidden until the full review confirms it) when the
- *  source is gone or moved, now carries a notice of a correction or hidden text it did not carry when it posted, or its
- *  headline or opening changed and no longer says what the post says (red team 15: never for words it already held).
- *  A sponsor's page that cannot be read as the release is paused after four minutes of tries on the first re-read and
- *  ten on a later one. An SEC file never changes once filed, so its being unreadable (the SEC's rate limit, a slow
- *  minute) never pauses a post: after ten tries that re-read is skipped. At most two SEC files and six posts in all are
- *  read per run. */
+ *  source is gone or moved, or changed in a way that matters (compareSource: never for words it already held). A
+ *  sponsor's page that refuses, now sits at another address of the site, or no longer reads as the release is paused
+ *  after ten minutes of tries; timeouts and server errors after thirty. An SEC file never changes once filed, so its
+ *  being unreadable (the SEC's rate limit, a slow minute) never pauses a post: after ten tries that re-read is
+ *  skipped. At most two SEC files and six posts in all are read per run. */
 async function recheckPosts(pub, ua, until, nowMs) {
   const out = {};                                               // id -> fields to set, applied only to a post still up
   const pause = (id, why) => { out[id] = { status: 'paused', paused_at: etIso(nowMs),
@@ -170,7 +170,7 @@ async function edgarItems(ua, beat, seen, until, listed, nowMs) {
                                // what a correction is read from: the text above the dateline, struck-out text included
                                ctitle: ex ? correctionHeadline(doc) : text, ...(ex ? {} : { cbody: true }),
                                // the exhibit's print, for the right-after check
-                               ...(ex ? printOf(doc, 'edgar', exhibitHeadline(doc, cos), cos) : {}) };
+                               ...(ex ? printOf(doc, 'edgar', exhibitHeadline(doc, cos), cos, ARMED.rows.filter(r => Number(r.cik) === f.cik)) : {}) };
   }));
   beat.edgar = read ? 'read' : 'unreadable';
   return Object.entries(seen).filter(([k, v]) => k.startsWith('edgar|') && plain(v)
@@ -211,7 +211,7 @@ async function rssItems(beat, until, rss, nowMs) {
     const host = u => { try { return new URL(u).hostname.toLowerCase(); } catch { return ''; } };
     if (host(page.url) !== host(i.url) || !/^https:/i.test(page.url)) return;   // redirected elsewhere: no dateline
     rss.urls[i.url].d = pageDay(page.txt, i.title);
-    if (rss.urls[i.url].d) Object.assign(rss.urls[i.url], printOf(page.txt, 'rss', i.title, [], page.url, 'p'));
+    if (rss.urls[i.url].d) Object.assign(rss.urls[i.url], printOf(page.txt, 'rss', i.title, [], ARMED.rows.filter(r => (r.feeds || []).includes(i.feed)), page.url, 'p'));
   }));
   for (const i of items) { i.exDay = rss.urls[i.url].d || ''; i.print = plain(rss.urls[i.url].p) ? rss.urls[i.url].p : null; }
   return items;
@@ -220,7 +220,9 @@ async function rssItems(beat, until, rss, nowMs) {
 function trimRss(rss, nowMs) {
   const urls = Object.entries(rss.urls || {}).filter(([, v]) => v && typeof v === 'object')
     .filter(([, v]) => (v.seen || 0) > nowMs - 90 * 86400000)
-    .sort((a, b) => (b[1].seen || 0) - (a[1].seen || 0)).slice(0, 2000);
+    .sort((a, b) => (b[1].seen || 0) - (a[1].seen || 0)).slice(0, 2000)
+    // a page's print is needed only until its post is made: kept two days, so the state stays small
+    .map(([k, v]) => [k, v.p && !((Number(v.f) || 0) > nowMs - 2 * 86400000) ? (({ p, ...rest }) => rest)(v) : v]);
   return { feeds: rss.feeds || {}, urls: Object.fromEntries(urls) };
 }
 
