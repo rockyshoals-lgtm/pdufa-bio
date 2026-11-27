@@ -58,7 +58,7 @@ EARLY_DAYS, LATE_DAYS = 42, 1
 EARLY_DATE = "2026-06-05"   # the published study stops 2026-06-04
 WINDOWS = [("runup_30d", -30), ("runup_20d", -20), ("runup_10d", -10), ("runup_5d", -5)]
 
-RULES_VERSION = 3   # bump when a headline or attribution rule changes: stored rows are re-checked, every ticker re-read
+RULES_VERSION = 4   # bump when a headline or attribution rule changes: stored rows are re-checked, every ticker re-read
 
 # How each meeting is named in headlines. The code itself (word-bounded) always counts unless it is in NO_BARE;
 # these add the names companies actually print. Longest names are tried first, so "ESMO Asia" never lands on ESMO.
@@ -222,6 +222,27 @@ def own(tk, name, title, text):
     return FE.mentions(tk, name, title, text)
 
 
+def evidence(tk, name, text):
+    """The words in the release that tie it to the ticker (its own exchange tag, else its full name), with some
+    context, when they fall past the stored excerpt. Kept with the row so the guard can re-check attribution from
+    what is stored: 'Lyell Immunopharma, Inc. (Nasdaq: LYEL)' sits 700 characters into its EHA release."""
+    t = text                 # the very string the excerpt is cut from (clean() is not idempotent)
+    if len(t) <= EXCERPT:
+        return ""
+    span = next((m.span() for m in FE.TAG.finditer(t) if m.group(1).upper().rstrip(".") == tk.upper()), None)
+    if span is None:
+        ln = FE._norm_words(FE.long_name(name))
+        k = FE._norm_words(t).find(ln) if ln else -1
+        span = (k, k + len(ln)) if k >= 0 else None
+    if span is None or span[1] <= EXCERPT:      # none, or already whole inside the excerpt
+        return ""
+    return t[max(0, span[0] - 120):span[1] + 120]
+
+
+def stored_text(r):
+    return (r.get("release_excerpt", "") + " " + r.get("release_evidence", "")).strip()
+
+
 def study_code(code):
     return STUDY_CODE.get(code, code)
 
@@ -239,7 +260,7 @@ def passes(r, ms, name):
     hi = (dt.date.fromisoformat(m["end"]) + dt.timedelta(days=LATE_DAYS)).isoformat()
     t = r.get("release_title", "")
     return (lo <= r.get("anchor", "") <= hi and anchors(t, m, ms)
-            and own(r["ticker"], name, t, r.get("release_excerpt", "")))
+            and own(r["ticker"], name, t, stored_text(r)))
 
 
 def prices(tk, frm, key):
@@ -289,6 +310,7 @@ def published_keys():
         return set()
 
 
+EXCERPT = 600            # characters of the release kept with a row
 RANGE = (-95.0, 300.0)   # a window outside this is held as "check" (a late split adjustment looks like this)
 OVERLAP_DAYS = 10        # re-read this far before where a ticker's last read stopped (FMP backfills releases)
 
@@ -340,6 +362,7 @@ def main():
     scanned = {tk: v for tk, v in cache.get("scanned", {}).items() if isinstance(v, dict)}
     tried = cache.get("tried", {})
     fails = cache.get("fails", {})      # consecutive failed reads; a ticker failing 3+ times goes to the back
+    held = cache.get("held", {}) if cache.get("rules_version") == RULES_VERSION else {}   # key -> unstorable anchor
     frm_all = min(_mlo(m) for m in ms)
     to = (today + dt.timedelta(days=1)).isoformat()
     order = sorted(uni.items(), key=lambda kv: (fails.get(kv[0], 0) >= 3, scanned.get(kv[0], {}).get("to", ""),
@@ -349,10 +372,10 @@ def main():
         return {"about": "Conference run-up rows after the published study, from companies' own releases. Not in the "
                          "published study; folded in only after a red team. See extend_conference_runup.py.",
                 "built": today.isoformat(), "since": a.since, "rules_version": RULES_VERSION,
-                "meetings": sorted(mkey), "scanned": scanned, "tried": tried, "fails": fails,
+                "meetings": sorted(mkey), "scanned": scanned, "tried": tried, "fails": fails, "held": held,
                 "rows": sorted(rows.values(), key=lambda r: (r["anchor"], r["ticker"]))}
 
-    t0, read, failed, streak = time.time(), 0, 0, 0
+    t0, read, failed, streak, unstorable = time.time(), 0, 0, 0, 0
     for tk, name in order:
         if time.time() - t0 > a.budget_min * 60:
             print(f"conference additions: read budget reached after {read} tickers")
@@ -399,13 +422,21 @@ def main():
                 old = rows.get(k)
                 if old and old["anchor"] <= pub_et:
                     continue                      # keep the earliest data release
-                rows[k] = {"key": k, "ticker": tk, "company": name, "conf": code, "meeting_code": m["code"],
+                if held.get(k, "9999") <= pub_et:
+                    continue                      # an earlier release could not be stored: no later one stands in
+                row = {"key": k, "ticker": tk, "company": name, "conf": code, "meeting_code": m["code"],
                            "year": int(m["start"][:4]), "conf_full": f"{m['name']} {m['start'][:4]}",
                            "meeting_start": m["start"], "meeting_end": m["end"],
                            "meeting_source": m["source"], "anchor": pub_et,
                            "anchor_basis": "earliest company release found reporting data from the meeting",
-                           "release_title": title[:300], "release_url": url, "release_excerpt": text[:600],
+                           "release_title": title, "release_url": url, "release_excerpt": text[:EXCERPT],
+                           "release_evidence": evidence(tk, name, text),
                            "status": "pending", "found": today.isoformat()}
+                if not passes(row, ms, name):     # what is stored must pass on its own, as the guard re-checks it
+                    unstorable += 1
+                    held[k] = min(held.get(k, pub_et), pub_et)
+                    continue
+                rows[k] = row
         scanned[tk] = {"to": today.isoformat(), "m": sorted(mkey)}
         if read % 40 == 0:
             save(snapshot())
@@ -444,6 +475,9 @@ def main():
     print(f"conference additions: read {read} tickers ({failed} failed); {len(scanned)}/{len(uni)} scanned; "
           f"{len(out['rows'])} rows, {done} priced ({priced} this run), {dropped} dropped by the rules, "
           f"{len(ms)} meetings")
+    if unstorable:
+        print(f"::warning::conference additions: {unstorable} releases passed at fetch but not from their stored "
+              f"excerpt; not stored")
     return 0
 
 
