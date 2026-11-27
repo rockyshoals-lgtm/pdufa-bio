@@ -544,6 +544,16 @@ jobs:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python fetch_earnings_dates.py || echo "::warning::_earnings_dates.json not refreshed this run"
 
+      # 2026-11-27 (moat: earnings gaps). Where the newswire feed carried no results release, the company's own Form
+      # 8-K under Item 2.02 (Results of Operations and Financial Condition) from SEC EDGAR: its acceptance time (Eastern,
+      # as EDGAR prints it) and the period its Item 2.02 text names. A filing is opened only when no newswire results
+      # release came within a day of it; preliminary updates are kept apart and never shown. A self-check of 8-K vs
+      # newswire times guards the time zone. Writes _earnings_sec.json only. Guard: tests/test_earnings_sec.py.
+      - name: "Earnings gaps: results dates from the companies' own 8-K filings (Item 2.02, cache only)"
+        timeout-minutes: 10
+        continue-on-error: true
+        run: python fetch_earnings_sec.py || echo "::warning::_earnings_sec.json not refreshed this run"
+
       # 2026-11-26 (moat: device decisions): PMA originals, panel-track PMA supplements and De Novo grants since
       # 2010 from the FDA's own device databases (openFDA pma.json / 510k.json), each with its FDA record link.
       # Ticker only from an exact one-company SEC name or device_applicant_aliases.json. A partial pull never
@@ -1487,7 +1497,7 @@ jobs:
           # moat caches (2026-11-26), one file per git add: a pathspec that does not exist aborts the whole add
           # chembl_synonyms_cache.json (2026-11-27): never staged, so every run re-asked ChEMBL for 568 names and spent
           # 15 of its 55 minutes in one step (run 578, 06:13-06:28 ET)
-          for f in _earnings_dates.json _fda_devices.json _conference_runup_additions.json _conference_runup_backfill.json chembl_synonyms_cache.json _conference_runup_mcap.json; do
+          for f in _earnings_dates.json _earnings_sec.json _fda_devices.json _conference_runup_additions.json _conference_runup_backfill.json chembl_synonyms_cache.json _conference_runup_mcap.json; do
             if [ -f "$f" ]; then git add "$f" || echo "::warning::could not stage $f"; fi
           done
           git add _google_indexed.json _google_index_status.json _google_search_stats.json 2>/dev/null || true   # gsc_index_status.py
