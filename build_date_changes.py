@@ -187,7 +187,7 @@ def main():
         app = f' ({esc(am.group(0))})' if am else ""
         line = (f'Goal date extended from <b>{esc(pretty(x["old"]))}</b> to <b>{esc(pretty(x["new"]))}</b>, '
                 f'{x["days"]} days later' + (", as recorded in the FDA's own review" if x["fda_doc"] else
-                                             f', per {esc(x["sponsor_short"])}\'s document dated {esc(pretty(x["new_doc"]))}'
+                                             f', per {esc(x["sponsor_short"])}{"\'" if x["sponsor_short"].endswith("s") else "\'s"} document dated {esc(pretty(x["new_doc"]))}'
                                              if ISO.match(x["new_doc"]) else "") + ".")
         reason = (f' <span class="q">Reason stated: {esc(x["public_reason"])}</span>' if x["public_reason"]
                   else ' <span class="q">No reason stated in the documents read.</span>')
@@ -206,7 +206,8 @@ def main():
             res = " No FDA action on record yet."
         src = (f' Sources: <a class="lit" href="{esc(x["old_url"])}" rel="nofollow noopener">original date</a>'
                f' &middot; <a class="lit" href="{esc(x["new_url"])}" rel="nofollow noopener">extension</a>'
-               + (f' &middot; <a class="lit" href="{esc(x["act_url"])}" rel="nofollow noopener">FDA action</a>'
+               + (f' &middot; <a class="lit" href="{esc(x["act_url"])}" rel="nofollow noopener">'
+                  f'{"FDA action" if x["basis"] == "fda_record" else "action announcement"}</a>'
                   if x["act_url"].startswith("http") and res else "") + ".")
         return (f'<div class="row"><div class="t">{head}{app}</div><div class="d">{line}{reason}{res}{src}'
                 f'{dec_link(x)}</div></div>')
