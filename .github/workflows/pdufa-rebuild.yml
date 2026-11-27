@@ -408,6 +408,13 @@ jobs:
       - name: "/fda-approval-letters hub"
         run: python build_fda_letters_hub.py
 
+      # 2026-11-27 (David: "Ensure its down to minutes"): what the every-minute news watch on Vercel posted
+      # (api/cron/news-watch.mjs), read from /api/v1/live into _live_published.json; a post the review contradicted
+      # becomes a /corrections entry here, before /corrections is drawn. A feed that cannot be read changes nothing.
+      # tests/test_live_watch.py.
+      - name: "Every-minute news watch: record its posts; a retracted post gets a /corrections entry"
+        run: python sync_live_log.py || echo "::warning::live log not synced this run"
+
       - name: "/corrections from _corrections.json (append-only public record)"
         run: python build_corrections_page.py
 
@@ -1269,6 +1276,12 @@ jobs:
       - name: "Event and drug pages: how long after the source pdufa.bio posted it"
         run: python build_post_speed.py --only pages
 
+      # 2026-11-27: the every-minute news watch (Vercel cron, api/cron/news-watch.mjs) listens for the rows armed in
+      # this run's dataset (api/_watch_armed.mjs), and its "Just in" banner loads on the home page and every armed
+      # PDUFA page. After the last dataset and page writers. tests/test_live_watch.py.
+      - name: "Every-minute news watch: what to listen for, and the Just in banner"
+        run: python build_watch_armed.py && python inject_live_banner.py
+
       - name: Regenerate sitemap after normalisers (picks up newly indexable pages)
         run: python build_sitemap.py
 
@@ -1469,6 +1482,7 @@ jobs:
           git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json _readout_registry_cache.json _crl_capture_series.json _google_request_indexing.txt _fda_approvals_months.json 2>/dev/null || true
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
+          git add _live_published.json _corrections.json 2>/dev/null || true   # sync_live_log.py: the watch's posts, retractions
           git add _date_checks.json 2>/dev/null || true   # recheck_upcoming_dates.py's CONFIRMED re-reads
           # moat caches (2026-11-26), one file per git add: a pathspec that does not exist aborts the whole add
           # chembl_synonyms_cache.json (2026-11-27): never staged, so every run re-asked ChEMBL for 568 names and spent
