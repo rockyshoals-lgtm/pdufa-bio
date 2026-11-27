@@ -10680,15 +10680,15 @@ export default [
   "id": "readout_mnov_2026-12-15",
   "t": "MNOV",
   "company": "Medicinova Inc",
-  "d": "2026-12-15",
-  "dp": "month",
+  "d": "2026-09-28",
+  "dp": "day",
   "name": "MN-001 (tipelukast)",
   "type": "Readout",
   "ta": "Metabolic",
   "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05464784",
-  "ua": "2026-07-11T15:23:27Z",
+  "st": "Reported",
+  "url": "https://www.globenewswire.com/news-release/2026/09/28/3369686/7767/en/medicinova-announces-topline-results-from-mn-001-natg-202-clinical-trial-of-mn-001-tipelukast.html",
+  "ua": "2026-11-27T23:07:20Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05464784",
@@ -10699,17 +10699,35 @@ export default [
     "ongoing": true,
     "title": "A Phase 2, Double-Blind, Randomized, Placebo-Controlled Study to Evaluate the Safety, Tolerability and Efficacy of MN-001 in Patients Diagnosed With Non-alcoholic Fatty Liver Disease, Type 2 Diabetes Mellitus, and Hypertriglyceridemia"
    },
-   "indication": null,
+   "indication": "NAFLD with type 2 diabetes and hypertriglyceridemia",
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
+   "source": "company release (sponsor reported results before the registry window)",
    "source_url": "https://clinicaltrials.gov/study/NCT05464784",
    "name_fix": {
     "checked": "2026-11-17",
     "was": "MN-166",
     "why": "the linked ClinicalTrials.gov record tests MN-001 (tipelukast), not MN-166"
+   },
+   "date_history": [
+    {
+     "date": "2026-12-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-09-28",
+     "changed": "2026-11-27",
+     "why": "The sponsor's release of 2026-09-28 reports this trial's results (the release's trial design (Phase 2, randomized, double-blind, placebo-controlled, 40 patients with NAFLD and hypertriglyceridemia associated with T2DM, 24 weeks) matches the registry record, and it reports both registry co-primary measures at Week 24). A reported row carries the day it was reported. Was 2026-12-15 (month), the registry primary-completion estimate."
+    }
+   ],
+   "review": "Medicinova Inc reported this readout on 2026-09-28: \u201cMediciNova Announces Topline Results from MN-001-NATG-202 Clinical Trial of MN-001 (Tipelukast)\u201d (company press release).",
+   "reported_source_url": "https://www.globenewswire.com/news-release/2026/09/28/3369686/7767/en/medicinova-announces-topline-results-from-mn-001-natg-202-clinical-trial-of-mn-001-tipelukast.html",
+   "program": "MN-001 (tipelukast)",
+   "trial": "MN-001-NATG-202 (Phase 2)",
+   "early_readout_check": {
+    "checked": "2026-11-27",
+    "basis": "the release's trial design (Phase 2, randomized, double-blind, placebo-controlled, 40 patients with NAFLD and hypertriglyceridemia associated with T2DM, 24 weeks) matches the registry record, and it reports both registry co-primary measures at Week 24"
    }
-  },
-  "dm": "2026-12"
+  }
  },
  {
   "id": "readout_rnac_2026-12-15",
@@ -14803,15 +14821,15 @@ export default [
   "id": "readout_huma_2026-10-15",
   "t": "HUMA",
   "company": "Humacyte, Inc.",
-  "d": "2027-06-15",
-  "dp": "month",
+  "d": "2026-06-10",
+  "dp": "day",
   "name": "Human Acellular Vessel",
   "type": "Readout",
   "ta": "Nephrology",
   "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05908084",
-  "ua": "2026-07-11T15:23:27Z",
+  "st": "Reported",
+  "url": "https://www.globenewswire.com/news-release/2026/06/10/3310082/0/en/Humacyte-ATEV-Met-Superiority-Primary-Endpoint-Compared-to-Standard-of-Care-AV-Fistula-in-Interim-Analysis-of-V012-Phase-3-Study-in-Female-Dialysis-Access-Patients.html",
+  "ua": "2026-11-27T23:07:20Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05908084",
@@ -14822,9 +14840,9 @@ export default [
     "ongoing": true,
     "title": "A Phase 3 Randomized Study to Compare the Efficacy and Safety of the Humacyte Acellular Tissue Engineered Vessel (ATEV) With That of an Autogenous Arteriovenous Fistula (AVF) in Female Patients With End-Stage Renal Disease Requiring Hemodialysis"
    },
-   "indication": null,
+   "indication": "dialysis access in women with end-stage renal disease",
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
+   "source": "company release (sponsor reported results before the registry window)",
    "date_history": [
     {
      "date": "2026-10-15",
@@ -14834,12 +14852,24 @@ export default [
      "date": "2027-06-15",
      "changed": "2026-07-11",
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    },
+    {
+     "date": "2026-06-10",
+     "changed": "2026-11-27",
+     "why": "The sponsor's release of 2026-06-10 reports this trial's results (the registry record is the Phase 3 of the ATEV vs an autogenous AV fistula in female hemodialysis patients with catheter-free days to Month 12 as its primary measure; the release reports that measure from a prespecified interim analysis). A reported row carries the day it was reported. Was 2027-06-15 (month), the registry primary-completion estimate."
     }
    ],
    "source_url": "https://clinicaltrials.gov/study/NCT05908084",
-   "ta_basis": "ClinicalTrials.gov conditions: End Stage Renal Disease (ESRD)"
-  },
-  "dm": "2027-06"
+   "ta_basis": "ClinicalTrials.gov conditions: End Stage Renal Disease (ESRD)",
+   "review": "Humacyte, Inc. reported this readout on 2026-06-10: \u201cHumacyte ATEV Met Superiority Primary Endpoint Compared to Standard of Care AV Fistula in Interim Analysis of V012 Phase 3 Study in Female Dialysis Access Patients\u201d (company press release).",
+   "reported_source_url": "https://www.globenewswire.com/news-release/2026/06/10/3310082/0/en/Humacyte-ATEV-Met-Superiority-Primary-Endpoint-Compared-to-Standard-of-Care-AV-Fistula-in-Interim-Analysis-of-V012-Phase-3-Study-in-Female-Dialysis-Access-Patients.html",
+   "program": "ATEV (human acellular vessel)",
+   "trial": "V012 (Phase 3)",
+   "early_readout_check": {
+    "checked": "2026-11-27",
+    "basis": "the registry record is the Phase 3 of the ATEV vs an autogenous AV fistula in female hemodialysis patients with catheter-free days to Month 12 as its primary measure; the release reports that measure from a prespecified interim analysis"
+   }
+  }
  },
  {
   "id": "readout_ions_2027-06-15",

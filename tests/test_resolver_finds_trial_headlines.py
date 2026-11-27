@@ -89,6 +89,31 @@ def main():
     if len(seen) != 2 or "page=1" not in seen[-1] or len(out) != 103:
         bad.append(f"press-release fetch must page until a short page: {len(seen)} request(s), {len(out)} release(s)")
 
+    # 2026-11-27: a sponsor that reports BEFORE the registry window (Humacyte V012 at a prespecified interim, Jun 10,
+    # 2026; window Jun 2027) must surface as a lead, and the lead pass must never change the row itself.
+    import datetime as dt
+    huma = {"id": "readout_huma_x", "t": "HUMA", "name": "ATEV (human acellular vessel)", "type": "Readout",
+            "st": "Estimated", "d": "2099-06-15", "dm": "2099-06", "dp": "month",
+            "_d": {"nct_id": {"nct": "NCT05908084", "title": "A Phase 3 Randomized Study to Compare the Efficacy and "
+                              "Safety of the Humacyte Acellular Tissue Engineered Vessel (ATEV) With That of an "
+                              "Autogenous Arteriovenous Fistula (AVF) in Female Patients With End-Stage Renal Disease "
+                              "Requiring Hemodialysis"}}}
+    huma_prs = [("Humacyte ATEV Met Superiority Primary Endpoint Compared to Standard of Care AV Fistula in Interim "
+                 "Analysis of V012 Phase 3 Study in Female Dialysis Access Patients",
+                 "ATEV compared to autogenous arteriovenous fistula in female patients requiring hemodialysis",
+                 "2026-06-10", "h1")]
+    before = json.dumps(huma, sort_keys=True)
+    orig_out, R.EARLY_LEADS = R.EARLY_LEADS, os.devnull
+    orig_sleep, R.time.sleep = R.time.sleep, lambda *_: None
+    try:
+        leads = R.early_leads([huma], "k", {}, fetch=lambda *a, **k: huma_prs, today=dt.date(2026, 11, 27))
+    finally:
+        R.EARLY_LEADS, R.time.sleep = orig_out, orig_sleep
+    if [x.get("url") for x in leads] != ["h1"]:
+        bad.append(f"an early primary-endpoint release must be listed as a lead for its future-window row: {leads}")
+    if json.dumps(huma, sort_keys=True) != before:
+        bad.append("the early-lead pass must never change a row")
+
     if bad:
         print("FAIL -- the past-readout resolver would miss or mis-assign a sponsor's results release:")
         for b in bad:

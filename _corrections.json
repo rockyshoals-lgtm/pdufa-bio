@@ -1106,6 +1106,20 @@
    "was": "Karyopharm's selinexor maintenance trial in endometrial cancer (XPORT-EC-042, NCT05611931) was listed as \"window passed, no topline announced\".",
    "now": "Listed as read out. Karyopharm's Jul 30, 2026 release announced topline results and states the trial did not meet its primary endpoint of progression-free survival. Our results finder had looked at only the last few months of the company's releases and did not recognise a headline that names the trial but not the drug; both are fixed and covered by a new check.",
    "source": "Karyopharm Therapeutics press release, Jul 30, 2026 (PR Newswire)"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/ticker/MNOV",
+   "was": "MediciNova's MN-001 (tipelukast) Phase 2 trial in fatty liver disease with type 2 diabetes (NCT05464784) was listed as an upcoming readout, estimated December 2026.",
+   "now": "Listed as reported on Sep 28, 2026, when MediciNova announced topline results from the trial (MN-001-NATG-202). Our results finder only looked for a sponsor release after a registry window had passed; it now also flags results releases for windows still ahead, for us to check.",
+   "source": "MediciNova press release, Sep 28, 2026 (GlobeNewswire)"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/ticker/HUMA",
+   "was": "Humacyte's V012 Phase 3 trial of the ATEV in female dialysis patients (NCT05908084) was listed as an upcoming readout, estimated June 2027 from the registry.",
+   "now": "Listed as reported on Jun 10, 2026, when Humacyte announced that a prespecified interim analysis met the trial's primary endpoint. Our results finder only looked for a sponsor release after a registry window had passed; it now also flags results releases for windows still ahead, for us to check.",
+   "source": "Humacyte press release, Jun 10, 2026 (GlobeNewswire)"
   }
  ],
  "legacy": [
