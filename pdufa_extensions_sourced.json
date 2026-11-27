@@ -1,0 +1,25 @@
+{
+ "about": "PDUFA goal-date extensions for pdufa.bio's /pdufa-date-changes page (build_date_changes.py). 'rows' holds extensions found after the 2024-2025 decision-timing census (decision_timing_2024_2025.json), in the census's field names: goal_date_original / goal_original_url / goal_original_quote, goal_date_extended / goal_extended_url / goal_extended_quote, extension_reason, action_date / action_url / outcome. 'reasons' is the public sentence shown for each extension's stated reason, keyed by census cid or 'TICKER|extended-date', written from the quoted documents; an extension with no entry here shows 'No reason stated in the documents read'.",
+ "reasons": {
+  "C331": "Sanofi said the FDA determined that additional analyses submitted during the review were a major amendment, extending the target date by three months.",
+  "C330": "Omeros said the date was extended after its comprehensive response to an FDA information request; its release does not use the term major amendment.",
+  "C325": "Cytokinetics said the FDA requested a REMS during the review, which was a major amendment, and that no additional clinical data were requested.",
+  "C317": "BioCryst said its submission of additional final reports and formulation data was a major amendment.",
+  "C329": "Agios said the FDA requested a REMS for potential hepatocellular injury, that its REMS submission was a major amendment, and that the extension was not due to new efficacy or safety data.",
+  "C313": "Axogen said its response to an information request included substantial new manufacturing and facility data, which made it a major amendment.",
+  "L104": "The FDA's Complete Response Letter states that a major amendment extended the goal date by three months.",
+  "L102": "The FDA's Complete Response Letter states that a major amendment extended the goal date by three months.",
+  "C226": "Eton said the FDA applied a standard three-month extension to conduct a full review of supplemental information.",
+  "L087": "Stealth BioTherapeutics said the FDA advised that supplemental submissions made after the advisory committee meeting were major amendments.",
+  "C183": "The FDA's review states that a major amendment received on November 12, 2024 extended the review by three months.",
+  "C151": "Organon said the FDA requested final datasets and the clinical study report from the long-term extension study and deemed them a major amendment.",
+  "C165": "Amgen said the extension allows time to review recently submitted supplemental data.",
+  "C144": "Syndax said its submission was deemed a major amendment and the extension gives the FDA time for a full review of the supplemental information.",
+  "C098": "Ascendis said the FDA deemed information submitted during the review a major amendment.",
+  "C081": "Rocket said the FDA extended the review to assess clarifying manufacturing (CMC) information it submitted in response to FDA information requests.",
+  "C082": "The FDA's review records a major amendment.",
+  "C011": "Iovance said the FDA extended the date because of resource constraints, not a major amendment.",
+  "C006": "Heron said the FDA extended the date by three months to provide for a full review of the submission."
+ },
+ "rows": []
+}
