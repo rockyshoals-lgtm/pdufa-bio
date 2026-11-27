@@ -2,7 +2,7 @@ import ARMED from '../_watch_armed.mjs';
 import { kvReady, kv } from '../_stripe.mjs';
 import { READ_LUA, WRITE_LUA } from '../_live_read.mjs';
 import { check, etIso, sentence, sourceLabel, reconcile, corrections, correctionHeadline, itemText, parseFeed, exhibitHeadline, exhibitDate, headlineKind, pageDay,
-  readState, readControl }
+  readState, readControl, recheckSource, RECHECK_AT }
   from '../_live_check.mjs';
 
 /** The every-minute news watch (vercel.json cron "* * * * *"). David, 2026-11-27: "Ensure its down to minutes".
@@ -47,6 +47,56 @@ async function get(url, { ua = UA_SITE, ms = 6000, limit = 1500000, until = Infi
     const txt = (await r.text()).slice(0, limit);
     return finalUrl ? { txt, url: r.url || url } : txt;
   } catch { return null; } finally { clearTimeout(timer); }
+}
+
+/** A read that keeps the status: {status, txt, url}, or null when nothing came back (a timeout, a network error). */
+async function getStatus(url, { ua = UA_SITE, ms = 6000, limit = 1500000, until = Infinity } = {}) {
+  const left = until - Date.now();
+  if (left < 500) return null;
+  const ac = new AbortController();
+  const timer = setTimeout(() => ac.abort(), Math.min(ms, left));
+  try {
+    const r = await fetch(url, { headers: { 'User-Agent': ua, Accept: '*/*' }, signal: ac.signal, redirect: 'follow' });
+    return { status: r.status, txt: r.ok ? (await r.text()).slice(0, limit) : '', url: r.url || url };
+  } catch { return null; } finally { clearTimeout(timer); }
+}
+
+/** The right-after check (David, 2026-11-27, "Right after"): each post's source is read again in the minute after it
+ *  posts, then 30 minutes and 3 hours after, and the post is paused (hidden until the full review confirms it) when the
+ *  source no longer says it, is gone, moved to another site, or cannot be read again within five minutes of posting.
+ *  Later re-reads that cannot get through (the network, the SEC's rate limit) are tried again each minute for ten
+ *  minutes and then skipped; only what the source says, or a source that is gone, pauses a post after the first. */
+async function recheckPosts(pub, ua, until, nowMs) {
+  const out = {};                                               // id -> fields to set, applied only to a post still up
+  const pause = (id, why) => { out[id] = { status: 'paused', paused_at: etIso(nowMs),
+    paused_reason: `the right-after check of the source failed: ${why}` }; };
+  const due = Object.entries(pub).filter(([, p]) => p && p.status === 'posted' && Number.isFinite(Number(p.run_ms))
+    && (Number(p.checks) || 0) < RECHECK_AT.length && nowMs - Number(p.run_ms) >= RECHECK_AT[Number(p.checks) || 0]).slice(0, 6);
+  await Promise.all(due.map(async ([id, p]) => {
+    const n = Number(p.checks) || 0, src = p.source || {};
+    const row = ARMED.rows.find(r => r.id === id);
+    const host = u => { try { return new URL(u).hostname.toLowerCase(); } catch { return ''; } };
+    const edgar = src.channel === 'edgar';
+    if (!row || !/^https:\/\//i.test(String(src.url || '')) || (edgar && host(src.url) !== 'www.sec.gov'))
+      return pause(id, 'the post has no source this check can read');
+    if (edgar && !ua) return;                                   // the SEC is not read without its contact line
+    const got = await getStatus(src.url, { ua: edgar ? ua : UA_SITE, until });
+    const fail = why => {
+      const tries = (Number(p.tries) || 0) + 1;
+      if (n === 0 && nowMs - Number(p.run_ms) >= 5 * 60000) return pause(id, why);
+      if (n > 0 && tries >= 10) { out[id] = { checks: n + 1, tries: 0 }; return; }
+      out[id] = { tries };
+    };
+    if (!got) return fail('the source could not be read again');
+    if (got.status === 404 || got.status === 410) return pause(id, 'the source is no longer at its address');
+    if (got.status < 200 || got.status >= 300) return fail(`the source answered ${got.status}`);
+    if (host(got.url) !== host(src.url) || !/^https:/i.test(got.url)) return pause(id, 'the source now sends readers to another site');
+    const cos = [row.company, ...(row.aliases || [])].filter(Boolean);
+    const r = recheckSource(got.txt, p, row, cos);
+    if (!r.ok) return pause(id, r.why);
+    out[id] = { checks: n + 1, tries: 0, rechecked_at: etIso(nowMs) };
+  }));
+  return out;
 }
 
 /** EDGAR: the exhibit of each new filing by an armed sponsor is read ONCE and remembered in state.seen. */
@@ -229,9 +279,12 @@ export default async (req, res) => {
   const listed = [];
   const ua = (process.env.SEC_USER_AGENT || '').trim();
 
-  const [edgar, rssList] = await Promise.all([
+  // The right-after check of what is already up runs beside the reads (a post made in this run is first read again
+  // in the next); its results apply only to a post still up after the corrections below.
+  const [edgar, rssList, rechecked] = await Promise.all([
     ua ? edgarItems(ua, beat, seen, until, listed, nowMs) : (beat.edgar = 'SEC_USER_AGENT not set', []),
     rssItems(beat, until, rss, nowMs),
+    recheckPosts(reconcile(pub0, armed, nowMs), ua, until, nowMs),
   ]);
 
   // While posting is stopped, every source listed is remembered, read or not, passing or not, so none of them
@@ -245,6 +298,7 @@ export default async (req, res) => {
   for (const item of [...edgar, ...rssList]) for (const id of corrections(item, armed, pub))
     pub = { ...pub, [id]: { ...pub[id], status: 'paused', paused_at: etIso(nowMs),
       paused_reason: `a later release by the sponsor (${item.url}) may change this` } };
+  for (const [id, set] of Object.entries(rechecked)) if (pub[id] && pub[id].status === 'posted') pub = { ...pub, [id]: { ...pub[id], ...set } };
   const held = [], shadow = [];
   for (const item of [...edgar, ...rssList]) {
     if (!item.title) continue;                       // read only for corrections (above)

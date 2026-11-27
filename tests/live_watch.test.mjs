@@ -4,7 +4,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { headlineKind, check, bound, reconcile, etWallToMs, etIso, parseFeed, sentence, timeOk, clean, norm,
-         exhibitHeadline, exhibitDate, pickRow, readControl, readState, isRetracted, pageDay, corrections, correctionHeadline, itemText } from '../pdufa_site_src/api/_live_check.mjs';
+         exhibitHeadline, exhibitDate, pickRow, readControl, readState, isRetracted, pageDay, corrections, correctionHeadline, itemText, recheckSource, RECHECK_AT } from '../pdufa_site_src/api/_live_check.mjs';
 import REAL from '../pdufa_site_src/api/_watch_armed.mjs';
 
 const NOW = Date.parse('2026-12-01T21:10:00Z');           // Dec 1, 2026, 4:10 PM ET
@@ -782,4 +782,39 @@ test('red team 13: a headline that quotes the post with anything before it pause
   const items = parseFeed('<rss><item><title>⚠️ Mineralys Retracts Release Regarding Lorundrostat</title><link>https://investor.mineralys.com/n/3</link><pubDate>Tue, 01 Dec 2026 16:05:00 -0500</pubDate></item></rss>');
   assert.equal(items[0].title, '');
   assert.match(items[0].ctitle, /Retracts Release/);
+});
+
+test('the right-after check: the source read again must still say the same thing', () => {
+  const r = ARMED.rows[0];
+  const H = 'Mineralys Therapeutics Announces FDA Approval of Lorundrostat for Hypertension';
+  const rec = (o = {}) => ({ id: r.id, kind: 'approval', headline: H, status: 'posted',
+    source: { channel: 'edgar', url: 'https://www.sec.gov/Archives/x/ex99.htm', published_at: '2026-12-01T16:05:00-05:00' }, ...o });
+  const page = (head, open, more = '') => `<html><body><p>Exhibit 99.1</p><p><b>${head}</b></p><p>${open}</p>${more}</body></html>`;
+  const OK = 'RADNOR, Pa., Dec. 1, 2026 (GLOBE NEWSWIRE) -- Mineralys Therapeutics today announced that the U.S. Food and Drug Administration (FDA) has approved lorundrostat for adults with hypertension.';
+  const cos = [r.company];
+  assert.deepEqual(recheckSource(page(H, OK, '<p>About hypertension. Lorundrostat is not approved in Europe.</p>'), rec(), r, cos), { ok: true, why: '' },
+    'words past the opening (safe harbor, other regions) never count');
+  const bad = (html, re, o) => { const x = recheckSource(html, rec(o), r, cos); assert.equal(x.ok, false, html); assert.match(x.why, re); };
+  bad(page('Mineralys Therapeutics Announces Update on Lorundrostat', OK), /headline has changed/);
+  bad(page(H, OK.replace('Dec. 1', 'Dec. 3')), /now dated/);
+  bad(page(H, 'Mineralys Therapeutics today announced an update.'), /dateline/);
+  bad(page(H, OK.replace('has approved lorundrostat', 'has approved the drug')), /does not name the drug/);
+  bad(page(H, 'RADNOR, Pa., Dec. 1, 2026 -- Mineralys today announced news about lorundrostat for hypertension.'), /does not state an FDA approval/);
+  bad(page(H, OK + ' This press release was issued in error and should not be relied upon.'), /walk the outcome back/);
+  bad(page(H, OK + ' <s>approved</s>'), /hidden or struck|no longer reads cleanly/);
+  bad(page(H, OK + ' The FDA previously issued a complete response letter for lorundrostat.'), /complete response letter/);
+  assert.equal(recheckSource(page(H, 'RADNOR, Pa., Dec. 1, 2026 -- Mineralys today announced a regulatory milestone.', '<p>The FDA has approved lorundrostat for adults with hypertension.</p>'), rec(), r, cos).ok, true,
+    'the outcome may be stated in the paragraph after the dateline');
+  bad(page(H, OK), /no source/, { source: { channel: 'wire', url: 'x', published_at: '2026-12-01T16:05:00-05:00' } });
+  // a letter: the outcome must be a letter, and a mention of approval in a CRL release is ordinary
+  const C = 'Mineralys Therapeutics Receives Complete Response Letter from FDA for Lorundrostat';
+  const crl = rec({ kind: 'crl', headline: C });
+  assert.equal(recheckSource(page(C, 'RADNOR, Pa., Dec. 1, 2026 -- Mineralys today announced that the FDA issued a complete response letter for its New Drug Application seeking approval of lorundrostat for hypertension.'), crl, r, cos).ok, true);
+  assert.equal(recheckSource(page(C, OK), crl, r, cos).ok, false, 'an approval in place of a letter');
+  // a feed post: the feed title must still stand above the dateline on its own page
+  const fr = rec({ source: { channel: 'rss', url: 'https://ir.mineralys.com/news/1', published_at: '2026-12-01T16:05:00-05:00' } });
+  assert.equal(recheckSource(`<h1>${H}</h1><p>${OK}</p>`, fr, r, cos).ok, true);
+  assert.equal(recheckSource(`<h1>Mineralys Reports Third Quarter Results</h1><p>${OK}</p>`, fr, r, cos).ok, false);
+  assert.match(recheckSource(`<h1>${H}</h1><p>${OK} <s>approved</s></p>`, fr, r, cos).why, /hidden or struck/);
+  assert.deepEqual(RECHECK_AT, [60000, 1800000, 10800000]);
 });

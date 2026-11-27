@@ -785,3 +785,42 @@ export function parseFeed(xml) {
   }
   return out;
 }
+
+// ---------- the right-after check (David, 2026-11-27: "Right after") ----------
+
+/** A post goes up as soon as the automatic check of its headline passes; the source is then read again in the next
+ *  minute(s), and later, and the post is paused (hidden until the full review) unless the source still says it:
+ *  the same headline above the same day's dateline, an opening (the dateline paragraph and the one after it) that
+ *  names the drug and states the same outcome, and a dateline paragraph with nothing that walks it back. Returns {ok, why}.
+ *  html: the source page as read again; rec: the post; row: its armed row; companies: the sponsor's names. */
+export function recheckSource(html, rec, row, companies = []) {
+  const ch = (rec.source || {}).channel;
+  if (ch !== 'edgar' && ch !== 'rss') return { ok: false, why: 'the post has no source this check can read' };
+  const rb = rawBlocks(html);
+  const dl = dateline(rb.map(b => b.text));
+  if (!dl) return { ok: false, why: 'the source no longer carries a dateline' };
+  const day = ch === 'edgar' ? exhibitDate(html) : pageDay(html, rec.headline || '');
+  if (!day) return { ok: false, why: ch === 'edgar' ? 'the exhibit no longer reads cleanly' : 'the release page no longer shows the headline above its dateline' };
+  const srcDay = String((rec.source || {}).published_at || '').slice(0, 10);
+  const a = Date.parse(day + 'T12:00:00Z'), b = Date.parse(srcDay + 'T12:00:00Z');
+  if (!Number.isFinite(a) || !Number.isFinite(b) || Math.abs(a - b) > DAY) return { ok: false, why: `the source is now dated ${day}` };
+  if (ch === 'edgar' && canon(exhibitHeadline(html, companies)) !== canon(rec.headline || ''))
+    return { ok: false, why: 'the exhibit headline has changed' };
+  const open = rb.slice(dl.i, dl.i + 2);
+  // a struck-through or hidden word in the opening is an edit (red team 5)
+  if (open.some(x => hiddenMarks(x.raw)) || HIDDEN.test(open.map(x => x.raw).join(' '))) return { ok: false, why: 'the opening has hidden or struck-through text' };
+  const lead = open.map(x => x.text).join(' ').slice(0, 2400);
+  const nl = norm(lead);
+  if (!(row && (row.terms || []).some(x => termIn(x, nl)))) return { ok: false, why: 'the opening does not name the drug' };
+  if (!(rec.kind === 'approval' ? APPROVAL_WORDS : CRL_WORDS).test(lead))
+    return { ok: false, why: `the opening does not state ${rec.kind === 'approval' ? 'an FDA approval' : 'a complete response letter'}` };
+  // Walk-back words are read in the dateline paragraph alone: the next ones often say, rightly, that the drug is "not
+  // approved" elsewhere or for other uses.
+  const first = open[0].text.slice(0, 1600);
+  if (BODY_RETRACTS.test(first)) return { ok: false, why: 'the opening holds words that walk the outcome back' };
+  if (rec.kind === 'approval' && CRL_WORDS.test(first)) return { ok: false, why: 'the opening also mentions a complete response letter' };
+  return { ok: true, why: '' };
+}
+
+/** When each re-read is due, from the run that posted: the next minute, then 30 minutes and 3 hours after. */
+export const RECHECK_AT = [60000, 30 * 60000, 3 * 3600000];
