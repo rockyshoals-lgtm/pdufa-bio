@@ -5385,11 +5385,11 @@
    "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
   },
   "readout_bmy_2027-12-31-xanomeline": {
-   "checked": "2026-11-26",
+   "checked": "2026-11-27",
    "verdict": "CONFIRMED",
-   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
-   "by": "red team 2026-11-26",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "source": "https://www.businesswire.com/news/home/20261117573732/en/Bristol-Myers-Squibb-Presents-First-Clinical-Data-from-Two-Phase-3-Studies-in-the-ADEPT-Program-Evaluating-KarXT-for-Psychosis-Associated-with-Alzheimer%E2%80%99s-Disease/",
+   "by": "manual",
+   "note": "BMS CTAD release (Nov 17-18): only ADEPT-1 open-label lead-in and ADEPT-3 extension data; double-blind periods remain blinded, so the 2027 pivotal-data row stands"
   },
   "readout_bmy_2027-12-31-xanomeline-2": {
    "checked": "2026-11-26",
