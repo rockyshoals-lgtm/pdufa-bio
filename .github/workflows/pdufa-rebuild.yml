@@ -915,6 +915,10 @@ jobs:
           # released CRL and every 2025+ Drugs@FDA approval), from the CRL release and the same refreshed cache.
           # tests/test_crl_app_history.py recounts every block.
           python link_crl_app_history.py || echo "::warning::application history blocks not rebuilt"
+          # 2026-11-27 (AI citations on single-drug approvals): each approval page carries the FDA label record
+          # (application, action, products, approval letter, approved label, Drugs@FDA entry) from the same refreshed
+          # cache. tests/test_fda_label_record.py recomputes every block.
+          python link_fda_label_record.py || echo "::warning::FDA label record blocks not rebuilt"
           python add_amlx_avexitide.py
 
       # 2026-11-27 (David approved adding the red-teamed company-release conference rows): they go on the study page in
@@ -1344,6 +1348,12 @@ jobs:
       # Build it once more from the final dataset so the two always agree.
       - name: "/llms.txt again, from the final dataset (after held rows are restored)"
         run: python build_llms_txt.py
+
+      # 2026-11-27: the FDA label record on each approval page matches its page to the dataset, which later steps
+      # (fix_dead_internal_links.py, the held-row quarantine) can still change. Write it once more from the final
+      # dataset so tests/test_fda_label_record.py, which recomputes it, sees the same files. Idempotent.
+      - name: "FDA label record again, from the final dataset"
+        run: python link_fda_label_record.py
 
       # 2026-11-18 (red team): tests/test_date_checks_current.py blocks a date due within 14 days that was not
       # re-read in the last 30. This keeps that true without a person: every open PDUFA goal and guided readout
