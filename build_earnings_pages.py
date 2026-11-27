@@ -44,9 +44,17 @@ sys.path.insert(0, HERE)
 from build_crl_companies import BASE, page  # noqa: E402
 from build_crl_facts import esc, pretty  # noqa: E402
 from fetch_earnings_dates import period_end  # noqa: E402
+from fetch_earnings_sec import fresh  # noqa: E402
 from site_dates import eastern_today  # noqa: E402
 
 CACHE = os.path.join(HERE, "_earnings_dates.json")
+SEC_CACHE = os.path.join(HERE, "_earnings_sec.json")
+SEC_SITE = "SEC EDGAR (Form 8-K, Item 2.02)"
+# fetch_earnings_sec.py stores the median minutes from the newswire release to the 8-K accepted the same day; a few
+# minutes to a few hours is normal (filers furnish the release after it goes out). Outside this range the 8-K times
+# are being read in the wrong time zone, and no 8-K row is used.
+SEC_CHECK_MIN, SEC_CHECK_MAX = -30, 90
+SEC_CHECK_N = 10
 SITE = os.path.join(HERE, "pdufa_site_src")
 RECENT_DAYS = 30
 MIN_PERIODS = 2          # a ticker page needs this many periods read, or an announced day ahead or passed
@@ -93,6 +101,49 @@ def ok_url(u):
     return isinstance(u, str) and u.startswith("https://")
 
 
+def is_8k(r):
+    return (r or {}).get("site") == SEC_SITE
+
+
+def sec_rows(path, wire=None):
+    """ticker -> results rows from the companies' own 8-K filings under Item 2.02 (fetch_earnings_sec.py), only those
+    whose Item 2.02 text names the period and calls them results, and only while the cache's time self-check holds.
+    Returns ({}, reason) when the 8-K rows are not used."""
+    try:
+        c = json.load(io.open(path, encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return {}, "no 8-K cache"
+    chk = c.get("check") or {}
+    med, n = chk.get("median_min"), chk.get("n") or 0
+    # fail closed: too few pairs to check the time zone is no check at all
+    if n < SEC_CHECK_N or med is None or not SEC_CHECK_MIN <= med <= SEC_CHECK_MAX:
+        return {}, f"8-K times fail the self-check (median {med} min from the newswire release over {n})"
+    dn, db = chk.get("dated") or 0, chk.get("dated_bad") or 0
+    if dn < 20 or db > 0.05 * dn:
+        return {}, f"8-K times fail EDGAR's filing-date rule ({db} of {dn})"
+    wire = wire or {}
+    out = {}
+    for tk, ent in (c.get("tickers") or {}).items():
+        if not TICKER_OK.match(tk or "") or not isinstance(ent, dict):
+            continue
+        for acc, f in sorted((ent.get("filings") or {}).items()):
+            if not isinstance(f, dict) or f.get("status") != "results" or not f.get("period_key"):
+                continue
+            a = str(f.get("accepted_et") or "")
+            if not re.fullmatch(r"20\d\d-\d\d-\d\d \d\d:\d\d", a) or not ok_url(f.get("url")) or \
+                    not str(f["url"]).startswith("https://www.sec.gov/Archives/edgar/data/"):
+                continue
+            if not fresh(f["period_key"], d_of(a)):
+                continue                       # the period must have ended before the filing, within weeks
+            if any(x and abs((x - d_of(a)).days) <= 1 for x in wire.get(tk, [])):
+                continue                       # a newswire results release went out within a day: that is the record
+            out.setdefault(tk, []).append({
+                "kind": "results", "published_et": a, "period": f.get("period") or "", "period_key": f["period_key"],
+                "title": f"Form 8-K, Item 2.02 (Results of Operations and Financial Condition), accepted by EDGAR "
+                         f"{a[:10]} {a[11:]} ET", "url": f["url"], "site": SEC_SITE, "accession": acc})
+    return out, ""
+
+
 def norm_key(k):
     """One key per reporting period, however the releases print it: a calendar company's 'Fourth Quarter 2025',
     'Fourth Quarter and Year-End 2025' and 'Full Year 2025' releases are all about the period ending December 31, 2025
@@ -123,7 +174,7 @@ def periods(rel):
     published after the latest announcement of a period and no later than its report day."""
     out = collections.defaultdict(lambda: {"schedules": [], "results": None, "postponed": [], "keys": set()})
     loose = []
-    ks = {r.get("period_key") or "" for r in rel}
+    ks = {r.get("period_key") or "" for r in rel if not is_8k(r)}   # the company's own wording, not an 8-K's
     # a company that prints its quarters as calendar quarters ('Third Quarter 2026') and never as fiscal ones uses
     # 'fiscal year' for the calendar year ('Fourth Quarter and Fiscal Year 2025'): read those keys as calendar
     calendar_co = any(re.fullmatch(r"20\d\dQ[1-3]", k) for k in ks) and \
@@ -131,7 +182,7 @@ def periods(rel):
     for r in sorted(rel, key=lambda r: r.get("published_et") or ""):
         if not d_of(r.get("published_et")):
             continue
-        if calendar_co:
+        if calendar_co and not is_8k(r):
             m = re.fullmatch(r"FY(20\d\d)(Q4)?", r.get("period_key") or "")
             if m:
                 r = dict(r, period_key=f"{m.group(1)}Q4+FY" if m.group(2) else f"{m.group(1)}FY")
@@ -145,7 +196,8 @@ def periods(rel):
         if kind == "schedule" and d_of(r.get("report_date")):
             out[k]["schedules"].append(r)
             out[k]["keys"].add(k0)
-        elif kind == "results" and out[k]["results"] is None:
+        elif kind == "results" and (out[k]["results"] is None or (is_8k(out[k]["results"]) and not is_8k(r))):
+            # the company's newswire release is the record; its 8-K stands in only when no release was read
             out[k]["results"] = r
             out[k]["keys"].add(k0)
         elif kind == "postponed":
@@ -162,6 +214,15 @@ def periods(rel):
             out[hits[0]]["keys"] |= out[k]["keys"]
             out[hits[0]]["postponed"] += out[k]["postponed"]
             del out[k]
+    for k, p in out.items():
+        r = p["results"]
+        if is_8k(r):
+            n8 = sum(1 for x in rel if is_8k(x) and norm_key(x.get("period_key")) == k)
+            gap = (d_of(r["published_et"]) - d_of(p["schedules"][-1]["report_date"])).days if p["schedules"] else 0
+            if n8 > 1 or gap < 0 or gap > 3:
+                # two 8-Ks claim one period, or one came before the day the company announced or days after it (a
+                # correction, not the release): none is used
+                p["results"] = None
     for p in out.values():
         if p["schedules"] and not p["results"]:
             s = p["schedules"][-1]
@@ -184,6 +245,8 @@ def status_of(p, today):
 
 def days_after_end(k, r):
     """Calendar days from the end of the period the results release names to the release; None for fiscal periods."""
+    if is_8k(r):
+        return None                            # an 8-K's acceptance day need not be the release day
     end = period_end((r or {}).get("period_key") or k)
     d = d_of(r.get("published_et")) if r else None
     return (d - end).days if end and d else None
@@ -208,13 +271,18 @@ def display_name(n):
     return " ".join(one(w) for w in n.split(" "))
 
 
-def load(path):
+def load(path, sec_path=SEC_CACHE):
     c = json.load(io.open(path, encoding="utf-8"))
+    wire = {tk: [d_of(r.get("published_et")) for r in (v.get("releases") or [])
+                 if isinstance(r, dict) and r.get("kind") == "results"]
+            for tk, v in (c.get("tickers") or {}).items() if isinstance(v, dict)}
+    sec, why = sec_rows(sec_path, wire) if sec_path else ({}, "")
+    c["_sec_note"] = why
     T = {}
     for tk, v in (c.get("tickers") or {}).items():
         if not TICKER_OK.match(tk or "") or not isinstance(v, dict):
             continue
-        rel, seen = [], set()
+        rel, seen = list(sec.get(tk, [])), set()
         for r in (v.get("releases") or []):
             # the feed sometimes carries one release twice (same time, same headline): count it once
             key = (r.get("published_et"), (r.get("title") or "").strip().lower()) if isinstance(r, dict) else None
@@ -254,7 +322,14 @@ def label(k, p=None):
 
 
 def rel_link(r, text=None):
+    if is_8k(r) and text in (None, "release", "results"):
+        text = "8-K"
     return f'<a href="{esc(r["url"])}" rel="noopener nofollow">{esc(text or "release")}</a>'
+
+
+def res_time(r):
+    """When the results went out, as the source shows it: the newswire time, or the 8-K's acceptance time marked."""
+    return esc(fmt_et(r["published_et"])) + (" (8-K, accepted by EDGAR)" if is_8k(r) else "")
 
 
 def when(s):
@@ -286,7 +361,8 @@ def gather(T, today):
                 m = re.fullmatch(r"(20\d\d)Q([1-4])(\+FY)?", k)
                 # quarter stats count a release only when its own headline names the quarter: a full-year-only or
                 # half-year release (annual and semiannual filers) is not a quarterly report
-                if n is not None and m and re.fullmatch(r"20\d\dQ[1-4](\+FY)?", r.get("period_key") or ""):
+                # and the newswire time only: an 8-K's filing time is not the release time
+                if n is not None and m and not is_8k(r) and re.fullmatch(r"20\d\dQ[1-4](\+FY)?", r.get("period_key") or ""):
                     by_q[(int(m.group(1)), int(m.group(2)))].append((n, tk))
     ahead.sort(key=lambda x: (x[0], x[1]))
     recent.sort(key=lambda x: (x[0], x[1]), reverse=True)
@@ -303,10 +379,13 @@ def write_csv(T, path, pages):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     rows = []
     for tk, t in T.items():
+        used = {id(p["results"]) for p in t["P"].values() if p["results"]}
         for r in t["rel"]:
             if r.get("kind") not in ("schedule", "results", "postponed"):
                 continue
-            rows.append([tk, t["name"], r.get("kind"), r.get("period") or "", r.get("period_key") or "",
+            if is_8k(r) and id(r) not in used:
+                continue                       # an 8-K the page does not use is not published either
+            rows.append([tk, t["name"], "results_8k" if is_8k(r) else r.get("kind"), r.get("period") or "", r.get("period_key") or "",
                          r.get("published_et") or "", r.get("report_date") or "", r.get("timing_words") or "",
                          r.get("call_time") or "", r.get("title") or "", r.get("url"), r.get("site") or "",
                          f"{BASE}/earnings/{tk}" if tk in pages else ""])
@@ -323,14 +402,21 @@ def co(tk, T, pages):
     return (f'<a href="/earnings/{esc(tk)}">{nm} ({esc(tk)})</a>' if tk in pages else f'{nm} ({esc(tk)})')
 
 
-SOURCE = ('Every date on this page comes from the company\'s own press release as the newswires carried it (read '
+SOURCE = ('Every date on this page comes from the company\'s own press release as the newswires carried it, or, '
+          'where marked 8-K, from its own SEC filing (releases read '
           'through Financial Modeling Prep\'s press-release feed; times are US Eastern). A report day appears only when '
           'the company\'s release names it, such as &ldquo;will release financial results for the third quarter of '
           '2026 after the market close on Wednesday, October 28, 2026&rdquo;; a results date is the newswire time of '
           'the company\'s results release. No date here is estimated, and a vendor\'s projected earnings date is never '
           'used: where a company has not announced its next report day, this page shows none. A release is matched to '
           'a ticker only when it prints the ticker\'s exchange tag or its headline opens with the company\'s name; '
-          'law-firm and shareholder-alert releases are left out. Facts only, not investment advice.')
+          'law-firm and shareholder-alert releases are left out. Where no newswire results release was read for a '
+          'period, the company\'s own Form 8-K under Item 2.02 (Results of Operations and Financial Condition) can '
+          'stand in, marked &ldquo;8-K&rdquo;: its time is when the SEC\'s EDGAR system accepted it, which can be '
+          'minutes or hours after the release itself went out, so no day count is given for it. An 8-K is used only '
+          'when its Item 2.02 text says the company put out its results for one period that had ended, not before '
+          'the report day the company announced, and not when two 8-Ks claim the same period; a preliminary update '
+          'or a notice of the report date is never used. Facts only, not investment advice.')
 
 
 def hub(T, pages, today, fetched, n_csv):
@@ -367,7 +453,7 @@ def hub(T, pages, today, fetched, n_csv):
                  '<th>Release</th></tr>')
         for pub, tk, k, r in recent:
             n = days_after_end(k, r)
-            B.append(f'<tr data-earn-recent="{esc(tk)}|{esc(k)}"><td>{esc(fmt_et(pub))}</td><td>{co(tk, T, pages)}</td>'
+            B.append(f'<tr data-earn-recent="{esc(tk)}|{esc(k)}"><td>{res_time(r)}</td><td>{co(tk, T, pages)}</td>'
                      f'<td>{esc(label(k, T[tk]["P"][k]))}</td><td>{"" if n is None else n}</td><td>{rel_link(r)}</td></tr>')
         B.append('</table>')
     else:
@@ -390,9 +476,11 @@ def hub(T, pages, today, fetched, n_csv):
         B.append('</table>')
     if passed:
         passed.sort(key=lambda x: (x[0], x[1]), reverse=True)
+        sec_on = any(is_8k(p["results"]) for t in T.values() for p in t["P"].values())
         B += [f'<h2>Announced days that passed with no results release read ({len(passed)})</h2>',
-              '<p class="sub">The company announced a report day, the day has passed, and no results release for that '
-              'period is among the releases read. That can mean the release was not carried under the company\'s '
+              '<p class="sub">The company announced a report day, the day has passed, and no results release '
+              + ('(nor an 8-K under Item 2.02 that this page can use) ' if sec_on else '') +
+              'for that period is among the releases read. That can mean the release was not carried under the company\'s '
               'ticker, or its headline names the period in words this page does not read; it does not show that the '
               'company did not report.</p>',
               '<table><tr><th>Announced day</th><th>Company</th><th>Period</th><th>Announcement</th></tr>']
@@ -455,13 +543,21 @@ def ticker_page(tk, T, pages, today, fetched, site):
     done = [x for x in rows if x[5]]
     if done:
         _, k, _, _, _, r = done[0]
-        lede += f' Its latest results release, for {esc(label(k, t["P"][k]))}, went out on {esc(fmt_et(r["published_et"]))}.'
+        if is_8k(r):
+            lede += (f' Its latest results, for {esc(label(k, t["P"][k]))}, were furnished to the SEC on Form 8-K '
+                     f'(accepted by EDGAR {esc(fmt_et(r["published_et"]))}).')
+        else:
+            lede += f' Its latest results release, for {esc(label(k, t["P"][k]))}, went out on {esc(fmt_et(r["published_et"]))}.'
     title = f"{nm} ({tk}) Earnings Dates | pdufa.bio"
+    src = ("its own press releases and SEC filings" if any(is_8k(p["results"]) for p in t["P"].values())
+           else "its own press releases")
     desc = (f"{nm} ({tk}) earnings dates: the report days it announced and when each results release went out, "
-            f"from its own press releases.")
+            f"from {src}.")
     if len(desc) > 155:                     # search engines cut longer descriptions mid-word
-        desc = (f"{tk} earnings dates: the report days the company announced and when each results release went out, "
-                f"from its own press releases.")
+        desc = (f"{tk} earnings dates: the report days the company announced and when its results came out, "
+                f"from {src}.")
+    if len(desc) > 155:
+        desc = f"{tk} earnings dates: announced report days and results dates, from {src}."
     B = [f'<h1>{esc(nm)} ({esc(tk)}) <span class="g">earnings dates</span></h1>',
          f'<p class="sub" data-earn="lede">{lede}</p>',
          '<table><tr><th>Period</th><th>Report day announced</th><th>Results released</th>'
@@ -477,7 +573,7 @@ def ticker_page(tk, T, pages, today, fetched, site):
         else:
             ann = "no announcement read"
         if r:
-            res = esc(fmt_et(r["published_et"]))
+            res = res_time(r)
         elif st == "postponed":
             res = "postponed by the company"
         elif st == "ahead":
@@ -513,13 +609,16 @@ def ticker_page(tk, T, pages, today, fetched, site):
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--cache", default=CACHE)
+    ap.add_argument("--sec-cache", default=SEC_CACHE)
     ap.add_argument("--site", default=SITE)
     ap.add_argument("--today", default="")
     a = ap.parse_args(argv)
     if not os.path.isfile(a.cache):
         print(f"earnings pages: {os.path.basename(a.cache)} not found; nothing written")
         return 0
-    c, T = load(a.cache)
+    c, T = load(a.cache, a.sec_cache)
+    if c.get("_sec_note"):
+        print(f"earnings pages: 8-K rows not used: {c['_sec_note']}")
     today = d_of(a.today) or eastern_today()
     if not T:
         print("earnings pages: no ticker has a release with a link; nothing written")
@@ -538,8 +637,9 @@ def main(argv=None):
         io.open(os.path.join(root, tk, "index.html"), "w", encoding="utf-8").write(
             ticker_page(tk, T, pages, today, c.get("fetched") or "", a.site))
     ahead = gather(T, today)[0]
+    n8 = sum(1 for t in T.values() for p in t["P"].values() if is_8k(p["results"]))
     print(f"/earnings: {len(T)} tickers with releases, {len(pages)} pages, {len(ahead)} announced days ahead, "
-          f"{n_csv} CSV rows")
+          f"{len(gather(T, today)[2])} passed with no results read, {n8} periods from 8-K only, {n_csv} CSV rows")
     return 0
 
 

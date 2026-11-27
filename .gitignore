@@ -128,3 +128,22 @@ _blocked.json
 !pdufa_site_src/research/fda-decision-timing/*.csv
 # 2026-11-26: the since-2024 census CSV (same 404 risk as above: built and linked, but *.csv kept it out of git)
 !pdufa_site_src/research/fda-decision-timing/since-2024/*.csv
+
+# --- owner's private files: never commit (removed 2026-11-27) ---
+# Investor reports, trading summaries, model results and the personal sweepstakes app.
+H1_2026_ODIN_Investor_Report.pdf
+Investor Update July 2026.pdf
+ODIN_Investor_Thesis_2026.*
+Odin Catalyst LLC - *
+Odin_Capital_Biotech_Investor_Report_2026.pdf
+*Honest_Results.*
+*_honest_results.json
+Trading Summary*
+bifrost_options_v1.py
+bifrost_options_v1_deploy.json
+conference_trades_apr_may_2026.json
+report_trades_*.json
+pdufa_live_tracker/tracker_positions.png
+sweepstakes/
+SweepRunner.zip
+odin_conversation_bundle_*.zip

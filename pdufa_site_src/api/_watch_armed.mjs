@@ -12,9 +12,7 @@ export default {
    "cls": [],
    "company": "Apnimed, Inc.",
    "d": "2027-02-28",
-   "feeds": [
-    "https://ir.apnimed.com/rss/news-releases.xml"
-   ],
+   "feeds": [],
    "forms": [],
    "id": "pdufa_apmd_2027-02-28",
    "ind": [
@@ -54,9 +52,7 @@ export default {
    "cls": [],
    "company": "Aquestive Therapeutics, Inc.",
    "d": "2027-03-16",
-   "feeds": [
-    "https://investors.aquestive.com/rss/news-releases.xml"
-   ],
+   "feeds": [],
    "forms": [
     "sublingual",
     "film"
@@ -381,9 +377,7 @@ export default {
    "cls": [],
    "company": "Corcept Therapeutics Inc",
    "d": "2026-12-17",
-   "feeds": [
-    "https://ir.corcept.com/rss/news-releases.xml"
-   ],
+   "feeds": [],
    "forms": [],
    "id": "pdufa_cort_2026-12-17",
    "ind": [
@@ -497,9 +491,7 @@ export default {
    "cls": [],
    "company": "Exelixis",
    "d": "2027-03-03",
-   "feeds": [
-    "https://ir.exelixis.com/rss/news-releases.xml"
-   ],
+   "feeds": [],
    "forms": [],
    "id": "pdufa_exel_2026-12-03",
    "ind": [
@@ -835,9 +827,7 @@ export default {
    "cls": [],
    "company": "Pharvaris N.V.",
    "d": "2027-04-23",
-   "feeds": [
-    "https://ir.pharvaris.com/rss/news-releases.xml"
-   ],
+   "feeds": [],
    "forms": [],
    "id": "pdufa_phvs_2027-04-23",
    "ind": [
@@ -1188,9 +1178,7 @@ export default {
    "cls": [],
    "company": "Vertex",
    "d": "2027-02-28",
-   "feeds": [
-    "https://investors.vrtx.com/rss/news-releases.xml"
-   ],
+   "feeds": [],
    "forms": [],
    "id": "pdufa_vrtx_2026-11-30",
    "ind": [
@@ -1582,6 +1570,12 @@ export default {
    "oc": "",
    "st": "Upcoming",
    "url": "/pdufa/JAZZ-cannabidiol-capsule"
+  },
+  "pdufa_kpti_2027-06-28": {
+   "dcd": "",
+   "oc": "",
+   "st": "Upcoming",
+   "url": "/pdufa/KPTI-xpovio-myelofibrosis"
   },
   "pdufa_lly_2026-09-18": {
    "dcd": "2026-09-18",
