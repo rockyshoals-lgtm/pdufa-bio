@@ -80,6 +80,12 @@
    "ticker": "PYPD",
    "ap_date": "edgar:https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm",
    "reason": "REAL: published 2026-11-25 as /fda-decision/PYPD-2026-11-24 (Bacfenssi, D-PLEX100, approval announced in PolyPid's 6-K of Nov 24, 2026)."
+  },
+  {
+   "ticker": "COGT",
+   "ap_date": "2026-11-24",
+   "acked": "2026-11-27",
+   "reason": "Not the SUMMIT (NonAdvSM, Dec 30, 2026 goal) application: NDA 221283 ORIG-1, approved Nov 24, 2026, is Ekitna (bezuclastinib) with sunitinib for adults with advanced GIST after imatinib, per the FDA approval letter 221283Orig1s000ltr.pdf (Drugs@FDA). Already published as /fda-decision/COGT-2026-11-24. SUMMIT (Dec 30, 2026) and AdvSM (Jun 29, 2027) stay pending."
   }
  ]
 }

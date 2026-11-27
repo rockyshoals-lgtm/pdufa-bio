@@ -33,6 +33,12 @@ latest such date wins. Anything else is printed as a lead and nothing is written
 fda_action_date that disagrees (e.g. one read from a CRL letter) is never overwritten; the
 conflict is printed.
 
+LETTER POSTED LATER (2026-11-27). A row dated from the FDA's own approval notice before Drugs@FDA posts the letter
+carries a record ending "letter not yet on Drugs@FDA". Such a row used to count as sourced and was never looked at
+again, so GSK neladalkib, IBRX Anktiva and RHHBY Tecentriq kept saying the letter was missing weeks after the FDA
+posted it, beside a card that linked it. Those rows are now re-checked every run: when Drugs@FDA lists the approval
+on the same day with its letter, the record becomes that letter. A different day is a conflict and is not written.
+
     python sync_fda_action_dates.py [--dry-run] [--only TICKER]
 """
 import argparse
@@ -58,6 +64,7 @@ MANUAL = os.path.join(HERE, "_fda_action_manual.json")
 API = "https://api.fda.gov/drug/drugsfda.json"
 UA = {"User-Agent": "pdufa.bio builder (data@pdufa.bio)"}
 MAX_LAG = 10          # days an announcement may trail the FDA action
+NOT_YET = "letter not yet on Drugs@FDA"   # a record written from the FDA notice before the letter was posted
 STOP = {"TABLETS", "TABLET", "INJECTION", "CAPSULES", "CAPSULE", "ORAL", "SOLUTION", "LABEL",
         "UPDATE", "SNDA", "SBLA", "NDA", "BLA", "PLUS", "WITH", "AND", "FOR", "THE", "CREAM",
         "TYPE", "CKD", "T1D", "APDS", "PDUFA", "RESUBMISSION", "PEDIATRIC", "PAEDIATRIC",
@@ -222,12 +229,14 @@ def main():
         hi = dt.date.fromisoformat(dcd)
         lo = hi - dt.timedelta(days=MAX_LAG)
 
-        # already sourced to an FDA record and nothing to re-check
-        if d.get("fda_action_source_url") and not d.get("decision_date_unsourced"):
+        # already sourced to an FDA record and nothing to re-check (a record still waiting for its letter is
+        # re-checked until Drugs@FDA posts it)
+        waiting = NOT_YET in str(d.get("fda_action_record") or "")
+        if d.get("fda_action_source_url") and not d.get("decision_date_unsourced") and not waiting:
             n_found += 1
             continue
 
-        if rid in manual:
+        if rid in manual and not waiting:
             m = manual[rid]
             ch = [] if a.dry_run else apply_found(r, m["date"], m["url"], m["label"], m.get("how", "the FDA's approval notice"))
             print(f"  {rid}: FDA notice {m['date']} ({m['label']}) {'-> ' + ','.join(ch) if ch else ''}")
@@ -255,6 +264,19 @@ def main():
                 continue
             found += candidates(res, lo, hi)
         found = sorted(set(found), reverse=True)
+        # Two applications approved the same day (Tecentriq IV and Tecentriq Hybreza, 2026-10-08): the one whose
+        # product carries the row's own brand is the row's action.
+        brand = str(d.get("brand") or "").strip().upper()
+        if brand and len(found) > 1 and found[1][0] == found[0][0]:
+            own = {res.get("application_number", "") for rs in cache.values() for res in (rs or [])
+                   if any(str(p.get("brand_name") or "").strip().upper() == brand for p in res.get("products") or [])}
+            same_day = [f for f in found if f[0] == found[0][0]]
+            pick = [f for f in same_day if f[1] in own]
+            if len(pick) == 1:
+                found = pick + [f for f in found if f != pick[0]]
+        if waiting and found and not found[0][4]:
+            print(f"  {rid}: Drugs@FDA lists the approval but not its letter yet; the record still says so")
+            found = []
         if not found:
             state[rid] = {"checked": today.isoformat(), "result": "unknown" if unknown else "none",
                           "terms": terms_for(r)}

@@ -89,8 +89,25 @@ const NAMED = { nbsp: ' ', ndash: '-', mdash: '-', lsquo: "'", rsquo: "'", ldquo
 const W1252 = { 145: "'", 146: "'", 147: '"', 148: '"', 150: '-', 151: '-', 153: ' ' };
 const cp = n => (W1252[n] ?? (Number.isFinite(n) && n > 0 && n <= 0x10FFFF ? String.fromCodePoint(n) : ' '));
 
+/** Tags out, as a browser reads them: "<" starts a tag only before a letter, "/", "!" or "?", and the tag runs to the
+ *  next ">" ("FDA <approves<> ..." shows no "approves"); text like "p<0.05" stays. One pass, so a page full of stray
+ *  "<" never slows it down. */
+function stripTags(s) {
+  let out = '', i = 0;
+  for (;;) {
+    const j = s.indexOf('<', i);
+    if (j < 0) return out + s.slice(i);
+    out += s.slice(i, j);
+    if (/[A-Za-z\/!?]/.test(s[j + 1] || '')) {
+      const k = s.indexOf('>', j + 1);
+      if (k < 0) return out + s.slice(j);
+      out += ' '; i = k + 1;
+    } else { out += '<'; i = j + 1; }
+  }
+}
+
 function decode(s) {
-  return String(s || '').replace(/<[^>]+>/g, ' ')
+  return stripTags(String(s || ''))
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => cp(parseInt(h, 16)))
     .replace(/&#(\d+);/g, (_, d) => cp(parseInt(d, 10)))
     .replace(/&([a-z]+);/gi, (m, n) => (NAMED[n.toLowerCase()] ?? ' '));
@@ -655,9 +672,16 @@ function rawBlocks(html) {
     .replace(/<head\b[\s\S]*?(?:<\/head>|$)/gi, ' ').replace(/<title\b[\s\S]*?(?:<\/title>|$)/gi, ' ')
     .replace(/<(script|style)[\s\S]*?(?:<\/\1>|$)/gi, ' ')
     .replace(/\s+/g, ' ')                                              // a source line break is not a block break
-    .replace(/<br\b[^>]*>/gi, ' ')                                     // a headline broken over two lines stays whole
-    .replace(/<\/?(?:p|div|tr|td|th|h\d|li|table|center|section|article|header|ul|ol|blockquote)\b[^>]*>/gi, '\n');
-  return s.split(/\n+/).map(raw => ({ raw, text: clean(raw) })).filter(b => b.text);
+    .replace(/<br\b[^>]*>/gi, ' ');                                   // a headline broken over two lines stays whole
+  // Each block keeps where it sits in the prepared page (start, end), so the right-after check can read the block
+  // tags around it, whose styles the blocks themselves no longer carry.
+  const out = [], re = /<\/?(?:p|div|tr|td|th|h\d|li|table|center|section|article|header|ul|ol|blockquote)\b[^>]*>/gi;
+  let at = 0, m;
+  const push = (a, b) => { const raw = s.slice(a, b), text = clean(raw); if (text) out.push({ raw, text, start: a, end: b }); };
+  while ((m = re.exec(s))) { push(at, m.index); at = m.index + m[0].length; }
+  push(at, s.length);
+  out.src = s;
+  return out;
 }
 
 function blocks(html) { return rawBlocks(html).map(b => b.text); }
@@ -785,3 +809,181 @@ export function parseFeed(xml) {
   }
   return out;
 }
+
+// ---------- the right-after check (David, 2026-11-27: "Right after") ----------
+// The check pulls a post when its source CHANGED in a way that matters: never for words the page already held when
+// the post went up (red team 15), and never for a page that only moved its furniture (red team 16). So when the source
+// is read for posting, every sentence a reader can see on it is remembered (as a short hash), with the day of its
+// dateline and the sentence that states the outcome. On each re-read the post pauses when:
+//   - the headline is gone from above the dateline, or the dateline's day moved;
+//   - the sentence that stated the outcome is gone, changed, hidden or struck out;
+//   - any sentence a reader could see is now hidden or struck out (by a tag around it, or a hiding class);
+//   - a sentence that is NEW on the page reads as a correction, a withdrawal or a later status, or names the drug with
+//     the other outcome (red team 17: words are read only in what changed, so the lists can be broad).
+// A page that no longer reads as a release (no dateline) pauses at once when new text on it reads as a correction;
+// otherwise it is a failed read, tried again.
+const REL = String.raw`(?:(?:press |news )?(?:release|announcement)|(?:press|news|this|the|our|its|earlier|previous|prior|original) statement)`;
+const NEW_CORR = new RegExp(String.raw`\b(?:correct(?:ion|ions|ed|s|ing)\b|amend(?:s|ed|ing)? (?:\w+ ){0,3}${REL}|amended ${REL}|${REL} (?:was |has been |is |is being )?(?:amended|revised|removed|withdrawn|retracted|replaced|updated to)|revised ${REL}|retract\w*|withdr[ae]w\w* (?:\w+ ){0,3}${REL}|(?:is|was|are|were|has been|have been|hereby) (?:\w+ ){0,2}withdrawn\b|removed (?:\w+ ){0,3}${REL}|in error|errat(?:um|a)\b|contained an error|should have (?:read|stated|said)|updated to reflect|issued prematurely|prematurely (?:issued|released)|not be relied (?:up)?on(?! as\b)|incorrect\w*|inaccura\w*|erroneous\w*|misstat\w*|mistaken\w*|disregard\w*|supersed\w*|rescind\w*|replac(?:es|ed|ing) (?:\w+ ){0,3}${REL}|no longer (?:accurate|valid|correct|stands)|editor'?s note|clarif\w*|important notice)\b`, 'i');
+const NEW_PENDING = /\b(?:has not (?:yet )?(?:acted|taken action|approved|granted|decided)|did not (?:grant|approve)|not (?:yet )?(?:been )?(?:approved|granted)(?!\s+(?:for use\b|outside\b|in (?:Europe|the EU|the European|Japan|China|Canada|the UK|the United Kingdom|Australia|Switzerland|any (?:other|jurisdiction|country|market)|other countries|other markets|other regions|children|pediatric|adolescents|patients (?:under|younger|aged))\b))|not (?:yet )?received (?:FDA |US )?approval|has yet to (?:act|approve|take action|decide)|(?:remains|still|continues to be|is) under (?:FDA |regulatory |agency )?review|tentative(?:ly)? approv\w*|(?:extend\w*|delay\w*|postpon\w*|mov(?:ed|es|ing)) (?:the |its )?(?:PDUFA |goal |target |review |action )+(?:goal |action )?date|(?:PDUFA|goal|action|review) (?:goal |action )?date (?:has been |was |is )?(?:extended|delayed|postponed|moved|missed)|delay\w* (?:its |the |a )?(?:approval|decision|action)|no (?:FDA |US )?(?:decision|action|approval) (?:has been|was|yet))\b/i;
+const LABEL = /^\W*(?:updated?|revised|corrected|correction|correcting and replacing|retraction|retracted|withdrawn|important notice|notice|editor'?s note|erratum|clarification)\W*$/i;
+const OPP_FOR_APPROVAL = /\b(?:complete response|CRL|not approvable|refus\w* to file|declin\w* to approve)\b/i;
+const OPP_FOR_CRL = /\b(?:FDA|agency)\b[^.;]{0,60}\b(?:approved|granted (?:full |accelerated |traditional )?approval)\b|\bapproved by the (?:US )?FDA\b/i;
+const HIDE_CLASS = /\bclass\s*=\s*["'][^"']*(?<![\w:-])(?:d-none|hidden|hide|sr-only|visually-hidden|screen-reader-text|is-hidden|u-hidden)(?![\w-])/i;
+// a class that shows the element at some screen width: a copy laid out for phones or desktops is not hidden
+const SHOWN_SOMEWHERE = /\bclass\s*=\s*["'][^"']*(?:(?<![\w-])[a-z0-9]{2,3}:(?:block|flex|inline|inline-block|grid|table|contents)(?![\w-])|(?<![\w-])d-(?:sm|md|lg|xl|xxl)-(?:block|flex|inline|inline-block|grid|table)(?![\w-])|(?<![\w-])visible-(?:xs|sm|md|lg)\b)/i;
+// what hides everything inside a tag (font-size:0 is a layout trick there: the children set their own size)
+const HIDES_INSIDE = /display\s*:\s*none|visibility\s*:\s*hidden|<[^>]*\shidden(?:\s|=|\/?>)|text-decoration[^;"']*line-through/i;
+const hidesInside = (name, tag) => name === 'del' || name === 's' || name === 'strike'
+  || (name !== 'html' && name !== 'body' && (HIDES_INSIDE.test(tag) || HIDE_CLASS.test(tag)) && !SHOWN_SOMEWHERE.test(tag));
+const STRUCK = /<\s*(?:del|s|strike)\b|text-decoration[^;"']*line-through/i;
+const VOID = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']);
+const ABBR = /\b(U\.S|U\.K|Inc|Corp|Co|Ltd|L\.P|No|Nos|Dr|Mr|Ms|Mrs|St|vs|e\.g|i\.e|approx|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|Pa|Calif|Mass|N\.J|N\.Y|Fla|Ill|Md|Wash|Va)\./g;
+const PAGE_CAP = 700000;
+const G = re => new RegExp(re.source, 'gi');
+const NEW_CORR_G = G(NEW_CORR), NEW_PENDING_G = G(NEW_PENDING), OPP_FOR_APPROVAL_G = G(OPP_FOR_APPROVAL), OPP_FOR_CRL_G = G(OPP_FOR_CRL);
+/** The words in a sentence that could matter on a re-read, each with what it would mean: a correction, a later status,
+ *  or the other outcome. Counted over the page, so an edited sentence that already held a word is not news. */
+function marks(x, kind, terms) {
+  const out = [], lc = m => m.toLowerCase().replace(/\s+/g, ' ');
+  for (const m of x.match(NEW_CORR_G) || []) out.push('corr|' + lc(m));
+  if (LABEL.test(x)) out.push('corr|label ' + canon(x));
+  const named = terms.some(t => termIn(t, x));
+  if (kind !== 'crl') {
+    for (const m of x.match(NEW_PENDING_G) || []) out.push('pend|' + lc(m));
+    if (named) for (const m of x.match(OPP_FOR_APPROVAL_G) || []) out.push('opp|' + lc(m));
+  } else if (named && !/\bnot\b/i.test(x)) for (const m of x.match(OPP_FOR_CRL_G) || []) out.push('opp|' + lc(m));
+  return out;
+}
+function tally(vis, kind, terms) {
+  const t = {};
+  for (const v of vis) if (!v.furn) for (const k of marks(v.x, kind, terms)) t[k] = (t[k] || 0) + 1;
+  return t;
+}
+const us = x => norm(x).replace(/\bU\.\s?S\.(?=\s)/g, 'US').replace(/(\d)\.(\d)/g, '$1_$2');   // "the U.S. FDA", "2.5 mg"
+
+function hash(t) { let x = 0x811c9dc5; for (let i = 0; i < t.length; i++) { x ^= t.charCodeAt(i); x = Math.imul(x, 0x01000193) >>> 0; } return x.toString(36); }
+const sentences = t => us(t).replace(ABBR, (m, a) => a.replace(/\./g, '․') + '․')
+  .split(/(?<=[.!?;:])\s+(?=[A-Z0-9"(“])/).map(x => x.replace(/․/g, '.').trim()).filter(x => /[a-z]{2}/i.test(x));
+const key = x => hash(canon(x));
+
+/** Each block of the page with whether a reader can see it: hidden when a tag still open around it (anywhere above it
+ *  on the page) hides it by style, attribute or class, or when the block itself is struck out. One pass over the tags. */
+const BLOCK_START = new Set(['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'table', 'section', 'article', 'header', 'footer', 'nav', 'aside', 'blockquote', 'center', 'form', 'pre', 'hr', 'main', 'figure', 'dl']);
+const FURN = new Set(['nav', 'aside', 'footer']);
+function seenBlocks(rb) {
+  const src = rb.src, tags = [...src.matchAll(/<\s*(\/)?\s*([a-z][a-z0-9-]*)\b[^>]*>/gi)];
+  const stack = [], names = new Map();
+  let hid = 0, furn = 0, t = 0;
+  // page furniture counts only where the page closes every one it opens: a <nav> left open never turns the release
+  // that follows it into furniture (red team 19)
+  const bal = {};
+  for (const m of tags) { const n = m[2].toLowerCase(); if (FURN.has(n)) bal[n] = (bal[n] || 0) + (m[1] ? -1 : 1); }
+  const isFurn = n => FURN.has(n) && bal[n] === 0;
+  const pop = () => { const x = stack.pop(); names.set(x.name, names.get(x.name) - 1); if (x.hide) hid--; if (x.furn) furn--; };
+  const close = name => { if ((names.get(name) || 0) > 0) { while (stack.length && stack[stack.length - 1].name !== name) pop(); pop(); } };
+  return rb.map(b => {
+    // a nav, aside or footer tag before the block's first word counts for that block ("<nav><a>Home</a>" is a nav's
+    // block); other tags there (a screen-reader label's own span) count only from the next block, as before
+    const run = (b.raw.match(/^(?:\s*<[^<>]*>)*/) || [''])[0];
+    let lead = b.start;
+    for (const m of run.matchAll(/<\s*\/?\s*([a-z][a-z0-9-]*)\b[^<>]*>/gi)) if (FURN.has(m[1].toLowerCase())) lead = b.start + m.index + m[0].length;
+    for (; t < tags.length && tags[t].index < lead; t++) {
+      const m = tags[t], name = m[2].toLowerCase();
+      if (m[1]) close(name);
+      else {
+        if (BLOCK_START.has(name) && stack.length && stack[stack.length - 1].name === 'p') pop();   // a block start closes an open <p>, as in a browser
+        if (VOID.has(name) || /\/\s*>$/.test(m[0])) continue;
+        const hide = hidesInside(name, m[0]);
+        const fu = isFurn(name); stack.push({ name, hide, furn: fu }); names.set(name, (names.get(name) || 0) + 1); if (hide) hid++; if (fu) furn++;
+      }
+    }
+    // the block's own tag sits in the gap just before it, so it is on the stack; a struck-out block is struck by its own words
+    return { ...b, hidden: hid > 0 || STRUCK.test(b.raw), furn: furn > 0 };
+  });
+}
+
+/** The page as the right-after check reads it. */
+function readPage(html, channel, title, companies = []) {
+  const page = String(html || '').slice(0, PAGE_CAP);
+  const rb = rawBlocks(page);
+  const bl = seenBlocks(rb);
+  const dl = dateline(rb.map(b => b.text));
+  // what a reader can see, sentence by sentence; what sits in <nav>, <aside> and <footer> is page furniture
+  const vis = [], hid = [];
+  for (const b of bl) for (const x of sentences(b.text)) (b.hidden ? hid : vis).push({ x, furn: b.furn });
+  let head = '';
+  if (dl) {
+    if (channel === 'edgar') head = exhibitHeadline(page, companies);
+    // the feed title stands above the dateline in a copy a reader can see, outside page furniture (a breadcrumb or a
+    // news list never stands in for it; red team 19); a copy shown only on phones or only on desktops is enough
+    else { const want = canon(title); if (bl.slice(0, dl.i).some(b => canon(b.text) === want && !b.hidden && !b.furn && !hiddenMarks(b.raw))) head = title; }
+  }
+  return { rb, bl, dl, head, vis, hid };
+}
+
+/** The sentence of the opening (dateline paragraph and the next) that names the drug and states the outcome. */
+function outcomeSentence(r, kind, terms) {
+  if (!r.dl) return '';
+  for (const b of r.bl.slice(r.dl.i, r.dl.i + 2)) {
+    if (b.hidden) continue;
+    for (const x of sentences(b.text)) if (terms.some(t => termIn(t, x)) && (kind === 'crl' ? CRL_WORDS : APPROVAL_WORDS).test(x)) return x;
+  }
+  return '';
+}
+
+/** The print of a source for the right-after check, or null when the page does not read as the release. */
+export function sourcePrint(html, channel, title, companies = [], kind = 'approval', terms = [], finalUrl = '') {
+  const r = readPage(html, channel, title, companies);
+  if (!r.dl || (channel !== 'edgar' && !r.head)) return null;
+  let u = '';
+  try { u = finalUrl ? new URL(finalUrl).pathname : ''; } catch {}
+  const a = outcomeSentence(r, kind, terms);
+  const w = Object.entries(tally(r.vis, kind, terms)).map(([k, n]) => `${hash(k)}:${n}`).join(',');
+  return { d: r.dl.day, a: a ? key(a) : '', s: [...new Set(r.vis.map(v => key(v.x)))].slice(0, 800).join(','), w, ...(u ? { u } : {}) };
+}
+
+/** What a re-read means for a post: {ok}; {ok, print} for a post with no print yet (taken now, compared later);
+ *  {unread, hard} for a page that does not read as the release; or {ok:false, why}. */
+export function compareSource(html, rec, row, companies = [], finalUrl = '') {
+  const ch = (rec.source || {}).channel;
+  if (ch !== 'edgar' && ch !== 'rss') return { ok: false, why: 'the post has no source this check can read' };
+  const terms = (row && row.terms) || [];
+  const was = rec.source_print && typeof rec.source_print === 'object' && typeof rec.source_print.s === 'string' ? rec.source_print : null;
+  const r = readPage(html, ch, rec.headline || '', companies);
+  const old = new Set(was ? was.s.split(',') : []);
+  const fresh = was ? r.vis.filter(v => !old.has(key(v.x))) : [];
+  // A word in new text that the page now holds more often than when it posted: a correction pauses a post at once,
+  // whatever else the page shows (red team 17); a later status or the other outcome, below.
+  const wasW = new Map(String((was && was.w) || '').split(',').filter(Boolean).map(x => x.split(':')).map(([k, n]) => [k, Number(n) || 0]));
+  const nowW = tally(r.vis, rec.kind, terms);
+  const grew = new Set(fresh.filter(v => !v.furn).flatMap(v => marks(v.x, rec.kind, terms))
+    .filter(k => nowW[k] > (wasW.get(hash(k)) || 0)).map(k => k.split('|')[0]));
+  if (grew.has('corr')) return { ok: false, why: 'the page now carries a notice of a correction' };
+  let path = '';
+  try { path = finalUrl ? new URL(finalUrl).pathname : ''; } catch {}
+  if (was && was.u && path && path !== was.u) return { unread: true, hard: true };   // sent on to another page of the site
+  if (!r.dl) return { unread: true, hard: true };
+  if (!was && ch !== 'edgar' && !r.head) return { unread: true, hard: true };   // never printed: a failed read, not a pause
+  if (ch === 'edgar' ? canon(r.head) !== canon(rec.headline || '') : !r.head)
+    return { ok: false, why: ch === 'edgar' ? 'the exhibit headline has changed' : 'the page no longer shows the headline above its dateline' };
+  const srcDay = String((rec.source || {}).published_at || '').slice(0, 10);
+  const da = Date.parse(r.dl.day + 'T12:00:00Z'), db = Date.parse(srcDay + 'T12:00:00Z');
+  if (!Number.isFinite(da) || !Number.isFinite(db) || Math.abs(da - db) > DAY || (was && was.d && was.d !== r.dl.day))
+    return { ok: false, why: `the source is now dated ${r.dl.day}` };
+  if (!was) return { ok: true, print: sourcePrint(html, ch, rec.headline || '', companies, rec.kind, terms, finalUrl) };
+  const nowVis = new Set(r.vis.map(v => key(v.x)));
+  if (was.a && !nowVis.has(was.a)) return { ok: false, why: 'the sentence that stated the outcome was changed, removed or hidden' };
+  if (r.hid.some(v => !v.furn && old.has(key(v.x)) && !nowVis.has(key(v.x)))) return { ok: false, why: 'text a reader could see is now hidden or struck through' };
+  const named = v => terms.some(t => termIn(t, v.x));
+  if (grew.has('pend') || (rec.kind !== 'crl' && grew.has('opp')))
+    return { ok: false, why: 'new text on the page says the decision is not an approval or is still pending' };
+  if (grew.has('opp')) return { ok: false, why: 'new text on the page states an approval' };
+  if (!was.a && fresh.some(v => !v.furn && named(v))) {
+    // no single sentence stated the outcome when it posted: a changed opening must still state it
+    const lead = us(r.rb.slice(r.dl.i, r.dl.i + 2).map(x => x.text).join(' '));
+    if (!(terms.some(t => termIn(t, lead)) && (rec.kind === 'crl' ? CRL_WORDS : APPROVAL_WORDS).test(lead)))
+      return { ok: false, why: 'the opening no longer names the drug and states the outcome' };
+  }
+  return { ok: true };
+}
+export const RECHECK_AT = [45000, 30 * 60000, 3 * 3600000];

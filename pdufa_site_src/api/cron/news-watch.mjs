@@ -2,7 +2,7 @@ import ARMED from '../_watch_armed.mjs';
 import { kvReady, kv } from '../_stripe.mjs';
 import { READ_LUA, WRITE_LUA } from '../_live_read.mjs';
 import { check, etIso, sentence, sourceLabel, reconcile, corrections, correctionHeadline, itemText, parseFeed, exhibitHeadline, exhibitDate, headlineKind, pageDay,
-  readState, readControl }
+  readState, readControl, compareSource, sourcePrint, RECHECK_AT }
   from '../_live_check.mjs';
 
 /** The every-minute news watch (vercel.json cron "* * * * *"). David, 2026-11-27: "Ensure its down to minutes".
@@ -47,6 +47,80 @@ async function get(url, { ua = UA_SITE, ms = 6000, limit = 1500000, until = Infi
     const txt = (await r.text()).slice(0, limit);
     return finalUrl ? { txt, url: r.url || url } : txt;
   } catch { return null; } finally { clearTimeout(timer); }
+}
+
+/** A read that keeps the status: {status, txt, url}, or null when nothing came back (a timeout, a network error). */
+async function getStatus(url, { ua = UA_SITE, ms = 6000, limit = 1500000, until = Infinity, manual = false } = {}) {
+  const left = until - Date.now();
+  if (left < 500) return null;
+  const ac = new AbortController();
+  const timer = setTimeout(() => ac.abort(), Math.min(ms, left));
+  try {
+    // The SEC's contact line never follows a redirect (red team 14): a moved SEC file is answered as moved.
+    const r = await fetch(url, { headers: { 'User-Agent': ua, Accept: '*/*' }, signal: ac.signal, redirect: manual ? 'manual' : 'follow' });
+    if (!r.ok) { try { await r.body?.cancel(); } catch {} }
+    return { status: r.status, txt: r.ok ? (await r.text()).slice(0, limit) : '', url: r.url || url };
+  } catch { return null; } finally { clearTimeout(timer); }
+}
+
+/** The source's print for the right-after check, kept only for a headline that names a decision. */
+function printOf(html, channel, title, cos, rows, finalUrl = '', key = 'print') {
+  const kind = headlineKind(title).kind;
+  const terms = rows.flatMap(r => r.terms || []);
+  const pr = kind ? sourcePrint(html, channel, title, cos, kind, terms, finalUrl) : null;
+  return pr ? { [key]: pr } : {};
+}
+
+/** The right-after check (David, 2026-11-27, "Right after"): each post's source is read again about a minute after it
+ *  posts, then 30 minutes and 3 hours after. The post is paused (hidden until the full review confirms it) when the
+ *  source is gone or moved, or changed in a way that matters (compareSource: never for words it already held). A
+ *  sponsor's page that refuses, now sits at another address of the site, or no longer reads as the release is paused
+ *  after ten minutes of tries; timeouts and server errors after thirty. An SEC file never changes once filed, so its
+ *  being unreadable (the SEC's rate limit, a slow minute) never pauses a post: after ten tries that re-read is
+ *  skipped. At most two SEC files and six posts in all are read per run. */
+async function recheckPosts(pub, ua, until, nowMs) {
+  const out = {};                                               // id -> fields to set, applied only to a post still up
+  const pause = (id, why) => { out[id] = { status: 'paused', paused_at: etIso(nowMs), source_print: undefined,
+    paused_reason: `the right-after check of the source failed: ${why}` }; };
+  let sec = 0;
+  const due = Object.entries(pub).filter(([, p]) => p && p.status === 'posted' && Number.isFinite(Number(p.run_ms))
+    && (Number(p.checks) || 0) < RECHECK_AT.length && nowMs - Number(p.run_ms) >= RECHECK_AT[Number(p.checks) || 0])
+    .filter(([, p]) => (p.source || {}).channel !== 'edgar' || ++sec <= 2).slice(0, 6);
+  await Promise.all(due.map(async ([id, p]) => {
+    try {
+      const n = Number(p.checks) || 0, src = p.source || {};
+      const row = ARMED.rows.find(r => r.id === id);
+      const host = u => { try { return new URL(u).hostname.toLowerCase(); } catch { return ''; } };
+      const edgar = src.channel === 'edgar';
+      // A read that fails: an SEC file is skipped after ten tries and never paused (it cannot change once filed). A
+      // sponsor's page is paused after ten minutes of hard failures (refused, gone to another page, not a release: how a
+      // release is unpublished) or thirty of soft ones (timeouts, rate limits, server errors on a busy decision day).
+      const fail = (why, hard) => {
+        const tries = (Number(p.tries) || 0) + 1, first = Number(p.first_try) > 0 ? Number(p.first_try) : nowMs;
+        if (edgar) { out[id] = tries >= 10 ? { checks: n + 1, tries: 0, first_try: 0, ...(n + 1 >= RECHECK_AT.length ? { source_print: undefined } : {}) } : { tries, first_try: first }; return; }
+        if (nowMs - first >= (hard || p.hard ? 10 : 30) * 60000) return pause(id, why);
+        out[id] = { tries, first_try: first, ...(hard || p.hard ? { hard: true } : {}) };
+      };
+      if (!row) return pause(id, 'the drug is no longer on the list this check reads');
+      if (!/^https:\/\//i.test(String(src.url || '')) || (edgar && host(src.url) !== 'www.sec.gov'))
+        return pause(id, 'the post has no source this check can read');
+      if (edgar && !ua) return fail('the SEC is not read without its contact line');
+      const got = await getStatus(src.url, { ua: edgar ? ua : UA_SITE, until, manual: edgar });
+      if (!got) return fail('the source could not be read again');
+      if (got.status === 404 || got.status === 410) return pause(id, 'the source is no longer at its address');
+      if (edgar && got.status >= 300 && got.status < 400) return pause(id, 'the SEC now sends readers to another address');
+      if (got.status < 200 || got.status >= 300) return fail(`the source answered ${got.status}`, got.status === 401 || got.status === 403);
+      if (host(got.url) !== host(src.url) || !/^https:/i.test(got.url)) return pause(id, 'the source now sends readers to another site');
+      const cos = [row.company, ...(row.aliases || [])].filter(Boolean);
+      const r = compareSource(got.txt, p, row, edgar ? ARMED.rows.filter(x => x.cik && Number(x.cik) === Number(row.cik)).flatMap(x => [x.company, ...(x.aliases || [])]) : cos, edgar ? '' : got.url);
+      if (r.unread) return fail(r.hard ? 'the source now sends readers to another page' : 'the source no longer reads as the release', true);
+      if (!r.ok) return pause(id, r.why);
+      // the print is kept only while a re-read is still to come, so the state stays small
+      out[id] = { checks: n + 1, tries: 0, first_try: 0, hard: false, rechecked_at: etIso(nowMs),
+        ...(n + 1 >= RECHECK_AT.length ? { source_print: undefined } : r.print ? { source_print: r.print } : {}) };
+    } catch { /* one post's re-read never stops the run; it is tried again next minute */ }
+  }));
+  return out;
 }
 
 /** EDGAR: the exhibit of each new filing by an armed sponsor is read ONCE and remembered in state.seen. */
@@ -96,14 +170,16 @@ async function edgarItems(ua, beat, seen, until, listed, nowMs) {
     seen[`edgar|${f.acc}`] = { form: f.form, cik: f.cik, atMs: f.atMs, first: f.first, url: ex ? `${base}/${ex}` : base,
                                title: ex ? exhibitHeadline(doc, cos) : '', exDay: ex ? exhibitDate(doc) : '',
                                // what a correction is read from: the text above the dateline, struck-out text included
-                               ctitle: ex ? correctionHeadline(doc) : text, ...(ex ? {} : { cbody: true }) };
+                               ctitle: ex ? correctionHeadline(doc) : text, ...(ex ? {} : { cbody: true }),
+                               // the exhibit's print, for the right-after check
+                               ...(ex ? printOf(doc, 'edgar', exhibitHeadline(doc, cos), cos, ARMED.rows.filter(r => Number(r.cik) === f.cik)) : {}) };
   }));
   beat.edgar = read ? 'read' : 'unreadable';
   return Object.entries(seen).filter(([k, v]) => k.startsWith('edgar|') && plain(v)
       && ((typeof v.title === 'string' && v.title) || (typeof v.ctitle === 'string' && v.ctitle) || /\/A$/i.test(String(v.form || ''))))
     .map(([k, v]) => ({ channel: 'edgar', form: v.form, cik: v.cik, title: typeof v.title === 'string' ? v.title : '',
                         ctitle: typeof v.ctitle === 'string' ? v.ctitle : '', exDay: v.exDay, url: v.url, atMs: v.atMs, key: k,
-                        firstMs: Number(v.first) || 0, cbody: v.cbody === true }));
+                        firstMs: Number(v.first) || 0, cbody: v.cbody === true, print: plain(v.print) ? v.print : null }));
 }
 
 /** Sponsor feeds. A feed is first read as a baseline: nothing in it then is ever posted, so an old release the feed
@@ -137,15 +213,18 @@ async function rssItems(beat, until, rss, nowMs) {
     const host = u => { try { return new URL(u).hostname.toLowerCase(); } catch { return ''; } };
     if (host(page.url) !== host(i.url) || !/^https:/i.test(page.url)) return;   // redirected elsewhere: no dateline
     rss.urls[i.url].d = pageDay(page.txt, i.title);
+    if (rss.urls[i.url].d) Object.assign(rss.urls[i.url], printOf(page.txt, 'rss', i.title, [], ARMED.rows.filter(r => (r.feeds || []).includes(i.feed)), page.url, 'p'));
   }));
-  for (const i of items) i.exDay = rss.urls[i.url].d || '';
+  for (const i of items) { i.exDay = rss.urls[i.url].d || ''; i.print = plain(rss.urls[i.url].p) ? rss.urls[i.url].p : null; }
   return items;
 }
 
 function trimRss(rss, nowMs) {
   const urls = Object.entries(rss.urls || {}).filter(([, v]) => v && typeof v === 'object')
     .filter(([, v]) => (v.seen || 0) > nowMs - 90 * 86400000)
-    .sort((a, b) => (b[1].seen || 0) - (a[1].seen || 0)).slice(0, 2000);
+    .sort((a, b) => (b[1].seen || 0) - (a[1].seen || 0)).slice(0, 2000)
+    // a page's print is needed only until its post is made: kept two days, so the state stays small
+    .map(([k, v]) => [k, v.p && !((Number(v.f) || 0) > nowMs - 2 * 86400000) ? (({ p, ...rest }) => rest)(v) : v]);
   return { feeds: rss.feeds || {}, urls: Object.fromEntries(urls) };
 }
 
@@ -229,9 +308,12 @@ export default async (req, res) => {
   const listed = [];
   const ua = (process.env.SEC_USER_AGENT || '').trim();
 
-  const [edgar, rssList] = await Promise.all([
+  // The right-after check of what is already up runs beside the reads (a post made in this run is first read again
+  // in the next); its results apply only to a post still up after the corrections below.
+  const [edgar, rssList, rechecked] = await Promise.all([
     ua ? edgarItems(ua, beat, seen, until, listed, nowMs) : (beat.edgar = 'SEC_USER_AGENT not set', []),
     rssItems(beat, until, rss, nowMs),
+    recheckPosts(reconcile(pub0, armed, nowMs), ua, until, nowMs),
   ]);
 
   // While posting is stopped, every source listed is remembered, read or not, passing or not, so none of them
@@ -245,6 +327,7 @@ export default async (req, res) => {
   for (const item of [...edgar, ...rssList]) for (const id of corrections(item, armed, pub))
     pub = { ...pub, [id]: { ...pub[id], status: 'paused', paused_at: etIso(nowMs),
       paused_reason: `a later release by the sponsor (${item.url}) may change this` } };
+  for (const [id, set] of Object.entries(rechecked)) if (pub[id] && pub[id].status === 'posted') pub = { ...pub, [id]: { ...pub[id], ...set } };
   const held = [], shadow = [];
   for (const item of [...edgar, ...rssList]) {
     if (!item.title) continue;                       // read only for corrections (above)
@@ -254,10 +337,14 @@ export default async (req, res) => {
       held.push({ key: item.key, why: c.why });
       continue;
     }
+    // A sponsor's page posts only when the right-after check can read it the same way (red team 18): its print is
+    // what each re-read is compared with.
+    if (item.channel === 'rss' && !item.print) { held.push({ key: item.key, why: 'the release page could not be read for the right-after check' }); continue; }
     const rec = {
       id: c.row.id, ticker: c.row.t, kind: c.kind, text: sentence(item, c.row),
       source: { label: sourceLabel(item), url: item.url, published_at: etIso(item.atMs), channel: item.channel },
       posted_at: etIso(Date.now()), run_ms: nowMs, headline: item.title, minutes_after_source: Math.max(0, Math.floor((Date.now() - item.atMs) / 60000)),
+      ...(item.print ? { source_print: item.print } : {}),
       page: c.row.url, status: 'posted', check: `headline "${item.title.slice(0, 160)}" names ${c.term} and an FDA ${c.kind === 'approval' ? 'approval' : 'complete response letter'}`,
     };
     // A release by the sponsor in this same read that contradicts or retracts it, first seen in the last day (so one
@@ -268,7 +355,7 @@ export default async (req, res) => {
       continue;
     }
     if (armed.publish) { pub = { ...pub, [rec.id]: rec }; for (const k of [rec.id, item.url, item.key]) if (k) done[k] = nowMs; }
-    else { shadow.push(rec); stopped[item.key] = stopped[item.key] || nowMs; if (item.url) stopped[item.url] = stopped[item.url] || nowMs; }
+    else { const { source_print, ...shown } = rec; shadow.push(shown); stopped[item.key] = stopped[item.key] || nowMs; if (item.url) stopped[item.url] = stopped[item.url] || nowMs; }
   }
   beat.held = held.slice(0, 20);
   // Shadow mode (publish false): what WOULD have posted, kept for review, never public; each item once.

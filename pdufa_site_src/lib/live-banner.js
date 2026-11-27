@@ -24,7 +24,8 @@
     src.appendChild(link(p.source && p.source.url, (p.source && p.source.label) || 'source'));
     src.appendChild(document.createTextNode(', ' + et(p.source && p.source.published_at) + '. Posted on pdufa.bio ' +
       et(p.posted_at) + ', ' + gap(p.minutes_after_source) + ' after the source, by an automatic check of the source\'s headline. ' +
-      (retracted ? '' : p.status === 'confirmed' ? 'The full review shows the same outcome.' : 'The rest of this page is updated after a full review.')));
+      (retracted ? '' : (p.rechecked_at ? 'Source read again ' + et(p.rechecked_at) + ': it still says this. ' : '') +
+        (p.status === 'confirmed' ? 'The full review shows the same outcome.' : 'The rest of this page is updated after a full review.'))));
     box.appendChild(src);
     return box;
   }

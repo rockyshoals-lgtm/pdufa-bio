@@ -78,11 +78,18 @@ jobs:
       # builds on top of whatever the previous run pushed. tests/test_rebuild_starts_from_newest_main.py keeps it.
       - name: Start from the newest main (a queued run otherwise builds the tree it was dispatched on)
         if: github.ref == 'refs/heads/main'
+        # A run's step list is fixed from the commit it was dispatched on. If newer main changed this workflow, its
+        # scripts and tests may need steps this run does not have (run 46059511146 ran #361's label-record test
+        # without #361's label-record steps and blocked), so the run then builds the tree its steps belong to.
         run: |
           before=$(git rev-parse --short=9 HEAD)
           git fetch --depth=1 origin main
-          git reset --hard FETCH_HEAD
-          echo "checked out $before; building $(git rev-parse --short=9 HEAD), the newest main"
+          if git diff --quiet HEAD FETCH_HEAD -- .github/workflows/pdufa-rebuild.yml; then
+            git reset --hard FETCH_HEAD
+            echo "checked out $before; building $(git rev-parse --short=9 HEAD), the newest main"
+          else
+            echo "::warning::newest main $(git rev-parse --short=9 FETCH_HEAD) changes this workflow; building $before, the tree these steps belong to (the next run builds the newest)"
+          fi
 
       - uses: actions/setup-python@v6
         with:
@@ -915,6 +922,10 @@ jobs:
           # released CRL and every 2025+ Drugs@FDA approval), from the CRL release and the same refreshed cache.
           # tests/test_crl_app_history.py recounts every block.
           python link_crl_app_history.py || echo "::warning::application history blocks not rebuilt"
+          # 2026-11-27 (AI citations on single-drug approvals): each approval page carries the FDA label record
+          # (application, action, products, approval letter, approved label, Drugs@FDA entry) from the same refreshed
+          # cache. tests/test_fda_label_record.py recomputes every block.
+          python link_fda_label_record.py || echo "::warning::FDA label record blocks not rebuilt"
           python add_amlx_avexitide.py
 
       # 2026-11-27 (David approved adding the red-teamed company-release conference rows): they go on the study page in
@@ -1344,6 +1355,12 @@ jobs:
       # Build it once more from the final dataset so the two always agree.
       - name: "/llms.txt again, from the final dataset (after held rows are restored)"
         run: python build_llms_txt.py
+
+      # 2026-11-27: the FDA label record on each approval page matches its page to the dataset, which later steps
+      # (fix_dead_internal_links.py, the held-row quarantine) can still change. Write it once more from the final
+      # dataset so tests/test_fda_label_record.py, which recomputes it, sees the same files. Idempotent.
+      - name: "FDA label record again, from the final dataset"
+        run: python link_fda_label_record.py
 
       # 2026-11-18 (red team): tests/test_date_checks_current.py blocks a date due within 14 days that was not
       # re-read in the last 30. This keeps that true without a person: every open PDUFA goal and guided readout

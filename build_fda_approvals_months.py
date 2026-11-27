@@ -37,6 +37,7 @@ BASE = "https://www.pdufa.bio"
 MON = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november",
        "december"]
 SKIP_CAP = 25000
+LABEL_BACKFILL_PER_RUN = 4   # extra months a run re-read to pick up the label fields (2026-11-27)
 RECHECK_PER_RUN = 3   # older months cached before completeness was recorded, re-read a few a run
 UA = {"User-Agent": "pdufa.bio-research-script/1.0"}
 esc = lambda s: html.escape(str(s or ""), quote=True)
@@ -54,6 +55,20 @@ def get(url):
         except Exception:  # noqa: BLE001
             time.sleep(2 + 3 * i)
     return None
+
+
+def products(prods):
+    """Distinct (dosage form, route, strength) of the products Drugs@FDA lists as marketed on the application, in the
+    FDA's own words, at most eight. Discontinued products are left out."""
+    out = []
+    for p in prods:
+        if "discontinued" in str(p.get("marketing_status", "")).lower():
+            continue
+        st = "; ".join(f'{i.get("strength", "")}'.strip() for i in p.get("active_ingredients") or [] if i.get("strength"))
+        row = {"form": str(p.get("dosage_form") or "").strip(), "route": str(p.get("route") or "").strip(), "strength": st}
+        if (row["form"] or row["route"]) and row not in out:
+            out.append(row)
+    return out[:8]
 
 
 def fetch_month(y, m):
@@ -84,12 +99,20 @@ def fetch_month(y, m):
                     continue
                 letter = next((x.get("url") for x in s.get("application_docs") or []
                                if "letter" in str(x.get("type", "")).lower()), "")
+                # 2026-11-27 (label facts): the label the FDA approved with this submission, its review priority and
+                # the products Drugs@FDA lists on the application, for the "Drugs@FDA record" block on each
+                # /fda-decision page (link_fda_label_record.py). Copied from the FDA's own record, never inferred.
+                # only a PDF in the label folder: openFDA files some labels under appletter/ with no file type
+                label = next((x.get("url") for x in s.get("application_docs") or []
+                              if str(x.get("type", "")).lower() == "label"
+                              and re.search(r"/drugsatfda_docs/label/\d{4}/[^\s]+\.pdf$", str(x.get("url") or ""), re.I)), "")
                 out.append({"app": appno, "brand": str(brand).title() if str(brand).isupper() else brand,
                             "generic": str(generic).lower(), "sponsor": str(a.get("sponsor_name") or "").title(),
                             "kind": "new application" if orig else "efficacy supplement",
                             "sub": f"{s.get('submission_type')}-{s.get('submission_number')}",
                             "class": s.get("submission_class_code_description") or "",
-                            "date": f"{d[:4]}-{d[4:6]}-{d[6:8]}", "letter": letter})
+                            "date": f"{d[:4]}-{d[4:6]}-{d[6:8]}", "letter": letter, "label": label,
+                            "priority": str(s.get("review_priority") or ""), "products": products(prods)})
         skip += len(res)
         total = ((j.get("meta") or {}).get("results") or {}).get("total", 0)
         # 2026-11-23 red team: the query matches every application with any submission in the month (ANDAs too),
@@ -177,9 +200,11 @@ def main():
     for (y, m) in months:
         k = f"{y}-{m:02d}"
         unchecked = k in cache and "complete" not in cache[k]
+        # 2026-11-27: months cached before the label fields existed are re-read a few a run until all carry them.
+        old_fields = k in cache and any("label" not in x for x in cache[k].get("items") or [])
         if a.refetch_all or k not in cache or (y, m) >= months[-2] or cache[k].get("complete") is False or (
-                unchecked and recheck < RECHECK_PER_RUN):
-            recheck += unchecked
+                (unchecked or old_fields) and recheck < RECHECK_PER_RUN + LABEL_BACKFILL_PER_RUN):
+            recheck += unchecked or old_fields
             got = fetch_month(y, m)
             if got is None:
                 print(f"  {k}: openFDA unreachable; keeping cached copy ({len((cache.get(k) or {}).get('items', []))} items)")

@@ -59,6 +59,12 @@
   "label": "NDA 215960 ORIG-1",
   "result": "found"
  },
+ "pdufa_ibrx_2027-01-06": {
+  "checked": "2026-11-27",
+  "date": "2026-10-14",
+  "label": "BLA 761336 S-002",
+  "result": "found"
+ },
  "pdufa_incy_2026-09-26": {
   "checked": "2026-10-03",
   "date": "2026-09-25",
@@ -145,6 +151,12 @@
   "label": "NDA 220185 ORIG-1",
   "result": "found"
  },
+ "pdufa_nuvl_2026-11-27": {
+  "checked": "2026-11-27",
+  "date": "2026-11-17",
+  "label": "NDA 220936 ORIG-1",
+  "result": "found"
+ },
  "pdufa_nvcr_2026-11-15": {
   "checked": "2026-11-20",
   "result": "crl-no-letter"
@@ -209,6 +221,12 @@
   "checked": "2026-09-27",
   "date": "2026-08-06",
   "result": "manual"
+ },
+ "pdufa_rhhby_2026-10-09": {
+  "checked": "2026-11-27",
+  "date": "2026-10-08",
+  "label": "BLA 761034 S-065",
+  "result": "found"
  },
  "pdufa_rhhby_2026-10-15": {
   "checked": "2026-10-21",
