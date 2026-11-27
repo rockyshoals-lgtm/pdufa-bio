@@ -1,0 +1,443 @@
+{
+ "_note": "Verified times at which each catalyst's primary source was published, for the 'posted after' stamp (build_post_speed.py). Every 'at' was read by a person or session on the primary page itself: the newswire page's printed time, the sec.gov filing index's Accepted time (EDGAR prints Eastern time), or the FDA RSS item's pubDate with its zone. Never guessed, never inferred from a date. 'earlier_untimed' marks an event with an earlier disclosure that prints no time: such an event gets no stamp. Entries are append-only; a wrong time is fixed with a dated entry in _corrections.json naming the event (tests/test_post_speed.py).",
+ "events": {
+  "pdufa_agio_2026-11-01": {
+   "row": "pdufa_agio_2026-11-01",
+   "kind": "date_change",
+   "event": "PDUFA date change to 2027-02-01",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "Agios's release on GlobeNewswire",
+     "at": "2026-10-30T07:00:00-04:00",
+     "printed": "October 30, 2026 07:00 ET",
+     "url": "https://www.globenewswire.com/news-release/2026/10/30/3392151/31990/en/agios-announces-new-pdufa-goal-date-of-february-1-2027-for-mitapivat-sickle-cell-disease-snda-company-is-launch-ready-and-in-labeling-discussions-with-fda.html",
+     "checked": "2026-11-27"
+    }
+   ],
+   "new_date": "2027-02-01"
+  },
+  "pdufa_azn_2026-12-31": {
+   "row": "pdufa_azn_2026-12-31",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-10-21)",
+   "sources": [
+    {
+     "kind": "sec",
+     "label": "AstraZeneca's 6-K, accepted by the SEC",
+     "at": "2026-10-22T07:10:20-04:00",
+     "printed": "Accepted 2026-10-22 07:10:20 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426009093/0001654954-26-009093-index.htm",
+     "accession": "0001654954-26-009093",
+     "checked": "2026-11-27"
+    }
+   ],
+   "earlier_untimed": "AstraZeneca's own release (London) prints no time and likely came before its 6-K."
+  },
+  "pdufa_bayry_2026-11-09_asundexian": {
+   "row": "pdufa_bayry_2026-11-09_asundexian",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-11-09)",
+   "sources": [
+    {
+     "kind": "fda",
+     "label": "the FDA's press-release feed",
+     "at": "2026-11-09T17:15:46-05:00",
+     "printed": "Mon, 09 Nov 2026 17:15:46 EST",
+     "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+     "item_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-certain-adults-high-risk",
+     "checked": "2026-11-27"
+    }
+   ]
+  },
+  "pdufa_bbio_2026-11-27": {
+   "row": "pdufa_bbio_2026-11-27",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-11-23)",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "BridgeBio's release on GlobeNewswire",
+     "at": "2026-11-23T16:20:00-05:00",
+     "printed": "November 23, 2026 16:20 ET",
+     "url": "https://www.globenewswire.com/news-release/2026/11/23/3408902/0/en/welgemda-bbp-418-ribitol-receives-traditional-approval-as-the-first-and-only-treatment-for-individuals-living-with-lgmd2i-r9.html",
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "sec",
+     "label": "BridgeBio's 8-K, accepted by the SEC",
+     "at": "2026-11-23T16:49:59-05:00",
+     "printed": "Accepted 2026-11-23 16:49:59 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/0001743881-26-000050-index.htm",
+     "accession": "0001743881-26-000050",
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "fda",
+     "label": "the FDA's press-release feed",
+     "at": "2026-11-23T13:25:08-05:00",
+     "printed": "Mon, 23 Nov 2026 13:25:08 EST",
+     "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+     "item_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-limb-girdle-muscular-dystrophy-type-2ir9",
+     "note": "The FDA's drugs feed time-stamped the same announcement 13:34:32 EST; the earlier press-release feed time is used.",
+     "checked": "2026-11-27"
+    }
+   ]
+  },
+  "pdufa_blte_2027-02-12": {
+   "row": "pdufa_blte_2027-02-12",
+   "kind": "date_change",
+   "event": "PDUFA date change to 2027-05-12",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "Belite Bio's release on GlobeNewswire",
+     "at": "2026-11-20T08:00:00-05:00",
+     "printed": "November 20, 2026 08:00 ET",
+     "url": "https://www.globenewswire.com/news-release/2026/11/20/3407395/0/en/belite-bio-announces-extension-of-fda-review-timeline-for-tinlarebant-nda.html",
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "sec",
+     "label": "Belite Bio's 6-K, accepted by the SEC",
+     "at": "2026-11-20T08:05:16-05:00",
+     "printed": "Accepted 2026-11-20 08:05:16 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1889109/000110465926130425/0001104659-26-130425-index.htm",
+     "accession": "0001104659-26-130425",
+     "checked": "2026-11-27"
+    }
+   ],
+   "new_date": "2027-05-12"
+  },
+  "pdufa_capr_2026-08-22": {
+   "row": "pdufa_capr_2026-08-22",
+   "kind": "decision",
+   "event": "FDA decision: CRL (2026-11-20)",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "Capricor's release on GlobeNewswire",
+     "at": "2026-11-20T19:55:00-05:00",
+     "printed": "November 20, 2026 19:55 ET",
+     "url": "https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html",
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "sec",
+     "label": "Capricor's 8-K, accepted by the SEC",
+     "at": "2026-11-20T20:15:17-05:00",
+     "printed": "Accepted 2026-11-20 20:15:17 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1133869/000110465926130730/0001104659-26-130730-index.htm",
+     "accession": "0001104659-26-130730",
+     "checked": "2026-11-27"
+    }
+   ]
+  },
+  "pdufa_cytk_2026-11-14": {
+   "row": "pdufa_cytk_2026-11-14",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-11-16)",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "Cytokinetics's release on GlobeNewswire",
+     "at": "2026-11-16T04:00:00-05:00",
+     "printed": "November 16, 2026 04:00 ET",
+     "url": "https://www.globenewswire.com/news-release/2026/11/16/3403219/35409/en/cytokinetics-announces-prescribing-information-for-myqorzo-aficamten-expanded-to-include-data-from-phase-3-maple-hcm.html",
+     "checked": "2026-11-27"
+    }
+   ],
+   "earlier_untimed": "The FDA acted on November 13; its own record of the approval prints only a date and may have been public before Cytokinetics' release of November 16."
+  },
+  "pdufa_exel_2026-12-03": {
+   "row": "pdufa_exel_2026-12-03",
+   "kind": "date_change",
+   "event": "PDUFA date change to 2027-03-03",
+   "sources": [
+    {
+     "kind": "sec",
+     "label": "Exelixis's 8-K, accepted by the SEC",
+     "at": "2026-10-29T16:09:44-04:00",
+     "printed": "Accepted 2026-10-29 16:09:44 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/939767/000093976726000114/0000939767-26-000114-index.htm",
+     "accession": "0000939767-26-000114",
+     "checked": "2026-11-27"
+    }
+   ],
+   "earlier_untimed": "The extension was first announced in September 2026; the timed 8-K only restates it.",
+   "new_date": "2027-03-03"
+  },
+  "pdufa_gsk_2026-10-26": {
+   "row": "pdufa_gsk_2026-10-26",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-10-20)",
+   "sources": [
+    {
+     "kind": "sec",
+     "label": "GSK's 6-K, accepted by the SEC",
+     "at": "2026-10-21T06:14:05-04:00",
+     "printed": "Accepted 2026-10-21 06:14:05 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426009062/0001654954-26-009062-index.htm",
+     "accession": "0001654954-26-009062",
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "fda",
+     "label": "the FDA's press-release feed",
+     "at": "2026-10-20T15:40:38-04:00",
+     "printed": "Tue, 20 Oct 2026 15:40:38 EDT",
+     "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+     "item_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-its-kind-chronic-hepatitis-b-treatment",
+     "checked": "2026-11-27"
+    }
+   ],
+   "earlier_untimed": "GSK's own release says only that it was issued in London on October 20; it prints no time, so it may have come before the FDA's post."
+  },
+  "pdufa_gsk_2027-02-28": {
+   "row": "pdufa_gsk_2027-02-28",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-10-19)",
+   "sources": [
+    {
+     "kind": "sec",
+     "label": "GSK's 6-K, accepted by the SEC",
+     "at": "2026-10-19T13:06:46-04:00",
+     "printed": "Accepted 2026-10-19 13:06:46 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426009036/0001654954-26-009036-index.htm",
+     "accession": "0001654954-26-009036",
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "fda",
+     "label": "the FDA's press-release feed",
+     "at": "2026-10-19T12:19:38-04:00",
+     "printed": "Mon, 19 Oct 2026 12:19:38 EDT",
+     "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+     "item_url": "http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
+     "checked": "2026-11-27"
+    }
+   ],
+   "earlier_untimed": "GSK's own release is dated October 19 and prints no time, so it may have come before the FDA's 12:19 PM ET post."
+  },
+  "pdufa_ibrx_2027-01-06": {
+   "row": "pdufa_ibrx_2027-01-06",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-10-14)",
+   "sources": [
+    {
+     "kind": "sec",
+     "label": "ImmunityBio's 8-K, accepted by the SEC",
+     "at": "2026-10-14T17:19:04-04:00",
+     "printed": "Accepted 2026-10-14 17:19:04 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326110/000119312526421820/0001193125-26-421820-index.htm",
+     "accession": "0001193125-26-421820",
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "fda",
+     "label": "the FDA's press-release feed",
+     "at": "2026-10-14T11:14:51-04:00",
+     "printed": "Wed, 14 Oct 2026 11:14:51 EDT",
+     "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+     "item_url": "http://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-certain-people-bcg-unresponsive-bladder-cancer",
+     "checked": "2026-11-27"
+    }
+   ],
+   "earlier_untimed": "ImmunityBio's Business Wire release prints no time on its page and came before its 8-K."
+  },
+  "pdufa_ino_2026-10-30": {
+   "row": "pdufa_ino_2026-10-30",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-10-30)",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "Inovio's release on PR Newswire",
+     "at": "2026-10-30T18:01:00-04:00",
+     "printed": "Oct 30, 2026, 18:01 ET",
+     "url": "https://www.prnewswire.com/news-releases/inovio-announces-fda-accelerated-approval-of-voceryq-an-immunotherapy-to-reduce-the-frequency-of-surgery-in-adults-with-recurrent-respiratory-papillomatosis-rrp-302925406.html",
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "sec",
+     "label": "Inovio's 8-K, accepted by the SEC",
+     "at": "2026-11-02T07:15:10-05:00",
+     "printed": "Accepted 2026-11-02 07:15:10 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1055726/000119312526442648/0001193125-26-442648-index.htm",
+     "accession": "0001193125-26-442648",
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "fda",
+     "label": "the FDA's press-release feed",
+     "at": "2026-10-30T16:32:08-04:00",
+     "printed": "Fri, 30 Oct 2026 16:32:08 EDT",
+     "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+     "item_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
+     "checked": "2026-11-27"
+    }
+   ]
+  },
+  "pdufa_ird_2026-10-17": {
+   "row": "pdufa_ird_2026-10-17",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-10-16)",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "Opus Genetics's release on GlobeNewswire",
+     "at": "2026-10-16T12:00:00-04:00",
+     "printed": "October 16, 2026 12:00 ET",
+     "url": "https://www.globenewswire.com/news-release/2026/10/16/3382714/0/en/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia.html",
+     "checked": "2026-11-27"
+    }
+   ]
+  },
+  "pdufa_lly_2026-10-02": {
+   "row": "pdufa_lly_2026-10-02",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-10-02)",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "Lilly's release on PR Newswire",
+     "at": "2026-10-02T15:05:00-04:00",
+     "printed": "Oct 02, 2026, 15:05 ET",
+     "url": "https://www.prnewswire.com/news-releases/lillys-jaypirca-pirtobrutinib-the-first-and-only-approved-non-covalent-btk-inhibitor-receives-expanded-indication-from-us-fda-for-certain-patients-with-previously-untreated-cllsll-302897416.html",
+     "checked": "2026-11-27"
+    }
+   ],
+   "earlier_untimed": "The FDA posted its own approval notice the same day; that page prints no time, so it may have come before Lilly's release."
+  },
+  "pdufa_nuvl_2026-11-27": {
+   "row": "pdufa_nuvl_2026-11-27",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-11-17)",
+   "sources": [
+    {
+     "kind": "sec",
+     "label": "GSK's 6-K, accepted by the SEC",
+     "at": "2026-11-18T07:06:13-05:00",
+     "printed": "Accepted 2026-11-18 07:06:13 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426009959/0001654954-26-009959-index.htm",
+     "accession": "0001654954-26-009959",
+     "checked": "2026-11-27"
+    }
+   ],
+   "earlier_untimed": "The FDA's accelerated-approval notice and GSK's own release are dated November 17, a day before GSK's 6-K; neither prints a time."
+  },
+  "pdufa_nvcr_2026-11-15": {
+   "row": "pdufa_nvcr_2026-11-15",
+   "kind": "decision",
+   "event": "FDA decision: Not approvable letter (2026-11-09)",
+   "sources": [
+    {
+     "kind": "sec",
+     "label": "Novocure's 8-K, accepted by the SEC",
+     "at": "2026-11-09T06:59:49-05:00",
+     "printed": "Accepted 2026-11-09 06:59:49 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000085/0001645113-26-000085-index.htm",
+     "accession": "0001645113-26-000085",
+     "checked": "2026-11-27"
+    }
+   ]
+  },
+  "pdufa_pypd_2026-11-28": {
+   "row": "pdufa_pypd_2026-11-28",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-11-24)",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "PolyPid's release on GlobeNewswire",
+     "at": "2026-11-24T15:50:00-05:00",
+     "printed": "November 24, 2026 15:50 ET",
+     "url": "https://www.globenewswire.com/news-release/2026/11/24/3409851/0/en/polypid-announces-fda-approval-of-bacfenssi-d-plex-to-reduce-the-occurrence-of-surgical-site-infections-in-patients-undergoing-colorectal-surgery.html",
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "sec",
+     "label": "PolyPid's 6-K, accepted by the SEC",
+     "at": "2026-11-24T16:40:06-05:00",
+     "printed": "Accepted 2026-11-24 16:40:06 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/0001213900-26-123719-index.htm",
+     "accession": "0001213900-26-123719",
+     "checked": "2026-11-27"
+    }
+   ]
+  },
+  "pdufa_regn_2026-11-30": {
+   "row": "pdufa_regn_2026-11-30",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-11-18)",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "Regeneron's release on GlobeNewswire",
+     "at": "2026-11-18T18:03:00-05:00",
+     "printed": "November 18, 2026 18:03 ET",
+     "url": "https://www.globenewswire.com/news-release/2026/11/18/3406224/0/en/livsayis-cemdisiran-approved-by-the-fda-as-first-and-only-sirna-therapy-in-generalized-myasthenia-gravis-and-only-treatment-with-four-times-a-year-subcutaneous-dosing.html",
+     "checked": "2026-11-27"
+    }
+   ]
+  },
+  "pdufa_rhhby_2026-11-30": {
+   "row": "pdufa_rhhby_2026-11-30",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-11-23)",
+   "sources": [
+    {
+     "kind": "fda",
+     "label": "the FDA's What's New: Drugs feed",
+     "at": "2026-11-23T10:57:48-05:00",
+     "printed": "Mon, 23 Nov 2026 10:57:48 EST",
+     "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml",
+     "item_url": null,
+     "checked": "2026-11-27"
+    },
+    {
+     "kind": "fda",
+     "label": "the FDA's press-release feed",
+     "at": "2026-11-23T10:55:37-05:00",
+     "printed": "Mon, 23 Nov 2026 10:55:37 EST",
+     "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+     "note": "FDA press announcement 'FDA Approves First New Hormone Therapy for Early-Stage Breast Cancer in More Than 20 Years'.",
+     "checked": "2026-11-27"
+    }
+   ],
+   "earlier_untimed": "Roche's own release is dated November 23 and prints no time, and Genentech's prints only the date; either may have come before the FDA's 10:55 AM ET post."
+  },
+  "pdufa_smmt_2026-11-14": {
+   "row": "pdufa_smmt_2026-11-14",
+   "kind": "decision",
+   "event": "FDA decision: CRL (2026-11-15)",
+   "sources": [
+    {
+     "kind": "sec",
+     "label": "Summit Therapeutics's 8-K, accepted by the SEC",
+     "at": "2026-11-16T06:08:15-05:00",
+     "printed": "Accepted 2026-11-16 06:08:15 (EDGAR, Eastern time)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1599298/000159929826000092/0001599298-26-000092-index.htm",
+     "accession": "0001599298-26-000092",
+     "checked": "2026-11-27"
+    }
+   ],
+   "earlier_untimed": "Summit's release is dated Sunday, November 15; Business Wire's page prints no time, and the 8-K came the next morning."
+  },
+  "pdufa_vtrs_2026-10-17": {
+   "row": "pdufa_vtrs_2026-10-17",
+   "kind": "decision",
+   "event": "FDA decision: Approved (2026-10-16)",
+   "sources": [
+    {
+     "kind": "wire",
+     "label": "Opus Genetics's release on GlobeNewswire",
+     "at": "2026-10-16T12:00:00-04:00",
+     "printed": "October 16, 2026 12:00 ET",
+     "url": "https://www.globenewswire.com/news-release/2026/10/16/3382714/0/en/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia.html",
+     "checked": "2026-11-27"
+    }
+   ]
+  }
+ }
+}
