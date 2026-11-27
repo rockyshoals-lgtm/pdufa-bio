@@ -31,6 +31,12 @@ def test_learn_timing_matches_calendar():
     assert body, "learn page lost its body timing sentence"
     if tuple(int(x) for x in body.groups()) != (n, early, on, late):
         bad.append(f"body says {body.groups()}, calendar source says {(n, early, on, late)}")
+    faq = re.search(r'"name":"Does the FDA always decide by the PDUFA date\?","acceptedAnswer":\{"@type":"Answer",'
+                    r'"text":"No\. The PDUFA date is a goal, not a promise\. Of the (\d+) sourced 2026 decisions in the '
+                    r'pdufa\.bio decision-timing study, (\d+) came before the goal date, (\d+) landed on it and (\d+) ', doc)
+    assert faq, "learn page lost its FAQ answer on the timing split (sync_learn_timing.py owns it)"
+    if tuple(int(x) for x in faq.groups()) != (n, early, on, late):
+        bad.append(f"FAQ answer says {faq.groups()}, calendar source says {(n, early, on, late)}")
     assert not bad, "learn page timing numbers disagree with /calendar:\n  " + "\n  ".join(bad)
 
 
