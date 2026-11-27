@@ -3442,6 +3442,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/iva337",
+   "destination": "/drug/lanifibranor-nativ3",
+   "permanent": true
+  },
+  {
    "source": "/drug/iza-bren",
    "destination": "/drug/izalontamab-brengitecan",
    "permanent": true
@@ -3947,6 +3952,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/tambiciclib",
+   "destination": "/drug/sls009",
+   "permanent": true
+  },
+  {
    "source": "/drug/tau-lowering",
    "destination": "/drug/vy1706",
    "permanent": true
@@ -4304,6 +4314,11 @@
   {
    "source": "/drug/xrx",
    "destination": "/ticker/XRTX",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/KPTI",
+   "destination": "/pdufa/KPTI-xpovio-myelofibrosis",
    "permanent": true
   }
  ],

@@ -3130,3 +3130,11 @@ time_et,commit,row_id,ticker,name,field,old,new,status_was,status_now
 2026-11-26 22:06 ET,f3c158bcc9f0ad8866773f4e430321357b1b23e3,readout_nvs_2029-12-31-remibrutin,NVS,remibrutinib (Rhapsido) Phase 3 (food allergy) readout,row,,entered,,Guided
 2026-11-26 22:06 ET,f3c158bcc9f0ad8866773f4e430321357b1b23e3,readout_nvs_2029-12-31-remibrutin-2,NVS,"remibrutinib (Rhapsido) Phase 3 (chronic pruritus of unknown origin, two trials) readout",row,,entered,,Guided
 2026-11-27 01:04 ET,6aa42f3ac287e6bc4b4e0578dc7e6afecb697cfc,readout_rlay_2026-12-14-zovegalisi,RLAY,"zovegalisib ReInspire, Phase 1/2 updated ReInspire data, ASH oral",row,,left,Guided,
+2026-11-27 13:16 ET,af6bb4fa09eac38f22e41bbcff903c124df0eeb1,readout_ions_2026-12-15,IONS,Donidalorsen,d,2026-12-15,2027-12-15,Estimated,Estimated
+2026-11-27 13:23 ET,d1f7e168667eb36820b61344aa2ca6bcc9444549,pdufa_kpti_2027-06-28,KPTI,XPOVIO (selinexor) + ruxolitinib - myelofibrosis (sNDA),row,,entered,,Upcoming
+2026-11-27 13:23 ET,d1f7e168667eb36820b61344aa2ca6bcc9444549,readout_adct_2026-12-13-loncastuxi,ADCT,"loncastuximab tesirine + glofitamab LOTIS-7, Phase 1b updated results, ASH oral…",row,,left,Guided,
+2026-11-27 13:23 ET,d1f7e168667eb36820b61344aa2ca6bcc9444549,readout_adct_2026-12-14-loncastuxi,ADCT,"loncastuximab tesirine (ZYNLONTA) + rituximab vs R-GemOx LOTIS-5, Phase 3 results, ASH…",row,,left,Guided,
+2026-11-27 13:23 ET,d1f7e168667eb36820b61344aa2ca6bcc9444549,readout_iva_2027-09-15,IVA,IVA337,row,,left,Estimated,
+2026-11-27 13:23 ET,d1f7e168667eb36820b61344aa2ca6bcc9444549,readout_ivevf_2026-12-31,IVEVF,lanifibranor NATiV3 Phase 3 topline,row,,left,Guided,
+2026-11-27 13:23 ET,d1f7e168667eb36820b61344aa2ca6bcc9444549,readout_mdgl_2027-12-31-resmetirom,MDGL,resmetirom (Rezdiffra) MAESTRO-NASH OUTCOMES Phase 3 data,row,,left,Guided,
+2026-11-27 13:23 ET,d1f7e168667eb36820b61344aa2ca6bcc9444549,readout_sls_2026-12-14-tambicicli,SLS,"tambiciclib (SLS009) + azacitidine + venetoclax Phase 2 dose-ranging study Phase 2 data,…",row,,left,Guided,
