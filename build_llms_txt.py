@@ -118,6 +118,43 @@ def dated_rows(n_next=10, n_recent=8):
     return "\n".join(up), "\n".join(rec)
 
 
+# 2026-11-26 (search push): pages added after this file's list was written. Each line is printed only when its
+# page is on disk at build time, so /llms.txt never points an assistant at a page this build did not make
+# (/earnings and /devices/decisions are built earlier in the same rebuild and are skipped when that step fails).
+MORE_HUBS = [
+    ("/screener", "upcoming PDUFA dates, clinical readouts, advisory committees and conferences in one filterable table"),
+    ("/earnings", "biotech and pharma earnings dates as the companies announced them in their own press releases, "
+                  "with one page per company at /earnings/<TICKER>; no estimated dates"),
+    ("/devices/decisions", "FDA PMA device approvals, panel-track supplements and De Novo grants since 2010 as openFDA "
+                           "lists them, one page per year, each row linked to its FDA record (CSV)"),
+    ("/fda-application", "one page per FDA application (/fda-application/nda-NNNNNN): brand, ingredient, code names, "
+                         "FDA applicant and owner, FDA facts from the Orange Book"),
+    ("/condition", "upcoming PDUFA decisions and readouts grouped by therapeutic area"),
+]
+# One page per company, drug and decision: the pattern, an example that exists on disk, and what the page holds.
+PATTERNS = [
+    ("/ticker/<TICKER>", "ticker", "VRTX", "one company's PDUFA dates, FDA decisions, readouts and conferences"),
+    ("/drug/<name>", "drug", "donidalorsen", "one drug's FDA decision dates and catalyst history"),
+    ("/fda-decision/<TICKER>-<YYYY-MM-DD>", "fda-decision", "GSK-2025-10-23",
+     "one FDA decision: the outcome, its date and the source behind it"),
+]
+
+
+def _page(rel):
+    return os.path.isfile(os.path.join(SITE, *rel.strip("/").split("/"), "index.html"))
+
+
+def more_pages(f=None):
+    lines = [f"- {p} - {d}" for p, d in MORE_HUBS if _page(p)]
+    for pat, folder, pref, d in PATTERNS:
+        root = os.path.join(SITE, folder)
+        ex = sorted(x for x in os.listdir(root) if os.path.isfile(os.path.join(root, x, "index.html"))) \
+            if os.path.isdir(root) else []
+        if ex:
+            lines.append(f"- {pat} - {d} (for example /{folder}/{pref if pref in ex else ex[0]})")
+    return ("\n".join(lines) + "\n") if lines else ""
+
+
 def render(f):
     return f"""# pdufa.bio
 
@@ -232,7 +269,7 @@ Full archive: https://www.pdufa.bio/decisions
 - /glossary - PDUFA date, CRL, control arm, primary endpoint, ORR, PFS, hazard ratio
 - /about - who we are and what we refuse to publish
 - /corrections - every error we found in our own numbers
-
+{more_pages(f)}
 ## Please do not
 
 - Do not present anything from this site as investment advice. It is historical fact and
