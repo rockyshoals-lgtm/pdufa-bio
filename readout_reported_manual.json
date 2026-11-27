@@ -520,6 +520,28 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1314102/000119312526424644/eypt-ex99_1.htm",
    "guided_window": "",
    "note": "readout mine 2026-11-26, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_mnov_2026-12-15",
+   "t": "MNOV",
+   "drug": "MN-001 (tipelukast)",
+   "reported_date": "2026-09-28",
+   "outcome": "reported",
+   "summary": "Medicinova Inc reported this readout on 2026-09-28: “MediciNova Announces Topline Results from MN-001-NATG-202 Clinical Trial of MN-001 (Tipelukast)” (company press release).",
+   "source_url": "https://www.globenewswire.com/news-release/2026/09/28/3369686/7767/en/medicinova-announces-topline-results-from-mn-001-natg-202-clinical-trial-of-mn-001-tipelukast.html",
+   "guided_window": "",
+   "note": "early-readout sweep 2026-11-27: the sponsor reported before the registry primary-completion window; red-teamed against the release and the registry"
+  },
+  {
+   "id": "readout_huma_2026-10-15",
+   "t": "HUMA",
+   "drug": "ATEV (human acellular vessel)",
+   "reported_date": "2026-06-10",
+   "outcome": "reported",
+   "summary": "Humacyte, Inc. reported this readout on 2026-06-10: “Humacyte ATEV Met Superiority Primary Endpoint Compared to Standard of Care AV Fistula in Interim Analysis of V012 Phase 3 Study in Female Dialysis Access Patients” (company press release).",
+   "source_url": "https://www.globenewswire.com/news-release/2026/06/10/3310082/0/en/Humacyte-ATEV-Met-Superiority-Primary-Endpoint-Compared-to-Standard-of-Care-AV-Fistula-in-Interim-Analysis-of-V012-Phase-3-Study-in-Female-Dialysis-Access-Patients.html",
+   "guided_window": "",
+   "note": "early-readout sweep 2026-11-27: the sponsor reported before the registry primary-completion window; red-teamed against the release and the registry"
   }
  ]
 }

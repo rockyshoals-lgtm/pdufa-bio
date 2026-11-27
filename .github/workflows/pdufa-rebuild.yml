@@ -1506,6 +1506,7 @@ jobs:
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
           git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json _crl_first_seen.json _crl_letter_slugs.json _row_history.json
+          git add -f _readout_early_leads.json 2>/dev/null || true   # 2026-11-27: early sponsor results releases for future registry windows (leads to verify, never published)
           git add -f runup_study_excluded.csv   # .gitignore has *.csv; this one is the study's audit trail of removed rows
           git add -f pdufa_site_src/crl/data/crl-letters.csv 2>/dev/null || true   # *.csv is ignored; the CRL dataset download
           git add -f pdufa_site_src/crl/data/crl-review-clock.csv 2>/dev/null || true   # /crl/review-clock download

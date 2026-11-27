@@ -185,10 +185,67 @@ def match_release(row, prs, toks, start, multi):
     return hit
 
 
+EARLY_LEADS = os.path.join(HERE, "_readout_early_leads.json")
+
+
+def future_estimate(row):
+    """An Estimated readout whose registry window is still ahead and has no recorded outcome."""
+    if row.get("type") != "Readout" or str(row.get("st") or "") != "Estimated":
+        return False
+    if past_window(row) or ((row.get("_d") or {}).get("resolution") or {}).get("state"):
+        return False
+    blk = (row.get("_d") or {}).get("nct_id")
+    return isinstance(blk, dict) and str(blk.get("nct") or "").upper().startswith("NCT")
+
+
+def early_leads(rows, key, cache, fetch=None, today=None):
+    """2026-11-27: the pass above only looks for a sponsor release once a registry window has PASSED. Humacyte
+    reported V012's primary endpoint at a prespecified interim on Jun 10, 2026 and MediciNova reported MN-001's
+    topline on Sep 28, 2026, while /readouts still listed both as upcoming (windows Jun 2027 and Dec 2026). This pass
+    runs the same headline match over the last ~13 months of releases for every Estimated row whose window is still
+    ahead, and writes each hit to _readout_early_leads.json as a LEAD for a person to verify against the release and
+    the registry. It never changes a row: an early headline is as often an interim or a different part of the trial
+    (a Phase 1 stage, a dose-selection cut) as the readout itself. Guard: tests/test_resolver_finds_trial_headlines.py."""
+    fetch = fetch or fetch_prs
+    today = today or TODAY
+    since = (today - dt.timedelta(days=400)).isoformat()
+    todo = [r for r in rows if future_estimate(r)]
+    by_tk = {}
+    for r in todo:
+        by_tk.setdefault(r["t"], []).append(r)
+    leads = []
+    for r in todo:
+        ck = ("early", r["t"])
+        if ck not in cache:
+            cache[ck] = fetch(r["t"], key, since=since, pages=3)
+            time.sleep(0.2)
+        prs = cache[ck]
+        toks = drug_tokens(r)
+        if not prs or not toks:
+            continue
+        multi = len([x for x in by_tk[r["t"]] if drug_tokens(x)[:1] == toks[:1]]) > 1
+        hit = match_release(r, prs, toks, since, multi)
+        if hit:
+            blk = r["_d"]["nct_id"]
+            leads.append({"id": r["id"], "t": r["t"], "nct": blk.get("nct"), "window": r.get("dm") or str(r.get("d"))[:7],
+                          "headline": hit[0][:200], "date": hit[1], "url": hit[2], "found": today.isoformat()})
+    out = {"_note": "Leads only, never published: a sponsor headline with results language for a trial whose "
+                    "registry window is still ahead. Verify the release is this trial's readout (not an interim, "
+                    "a different stage or a different trial) before a row is changed. Written by "
+                    "resolve_past_readouts.py.", "checked": today.isoformat(), "rows_checked": len(todo),
+           "leads": leads}
+    io.open(EARLY_LEADS, "w", encoding="utf-8").write(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
+    print(f"early-release leads: {len(leads)} of {len(todo)} future-window estimated rows (see _readout_early_leads.json)")
+    for x in leads:
+        print(f"  LEAD {x['id']}: {x['date']} {x['headline'][:120]}")
+    return leads
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--limit", type=int, default=400)
+    ap.add_argument("--no-early", action="store_true", help="skip the early-release lead pass")
     a = ap.parse_args()
     key = os.environ.get("FMP_API_KEY", "").strip()
     src = io.open(DATASET, encoding="utf-8", errors="replace").read().replace("\x00", "")
@@ -253,6 +310,8 @@ def main():
             n_none += 1
     print(f"sponsor release found {n_rel}; no topline as of today {n_none}; registry results-posted only {n_reg}; "
           f"terminated/kept {n_skip}")
+    if key and not a.no_early:
+        early_leads(rows, key, cache)
     if a.dry_run:
         print("--dry-run: nothing written")
         return 0
