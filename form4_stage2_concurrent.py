@@ -24,7 +24,7 @@ INDEX_IN = BASE / 'form4_index_pruned.json'
 TXN_OUT = BASE / 'form4_transactions.json'
 LOG_OUT = BASE / 'form4_stage2.log'
 
-HEADERS = {'User-Agent': '9Realms Research rockyshoals@gmail.com'}
+HEADERS = {'User-Agent': '9Realms Research support@pdufa.bio'}
 MAX_WORKERS = 8
 RATE_LIMIT_PER_SEC = 9.0  # stay under SEC's 10/s ceiling
 

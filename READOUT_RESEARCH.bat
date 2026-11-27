@@ -34,7 +34,7 @@ if not defined PY ( where py >nul 2>&1 && set "PY=py" )
 if not defined PY ( echo [ERROR] Python not found on PATH. & pause & exit /b 1 )
 
 REM SEC requires an identifying User-Agent for the forward EDGAR scan.
-set "SEC_USER_AGENT=David Moody rockyshoals@gmail.com"
+set "SEC_USER_AGENT=pdufa.bio research support@pdufa.bio"
 
 if not exist "logs" mkdir "logs"
 for /f "tokens=2 delims==" %%I in ('wmic os get localdatetime /value 2^>nul') do set "DT=%%I"

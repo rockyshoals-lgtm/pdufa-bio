@@ -13,7 +13,7 @@ echo.
 echo Starting FULL-UNIVERSE crawl: screener (~960) + static list + SEC discovery across ALL filers.
 echo This takes ~2-4 hours. Leave this window open.
 echo ------------------------------------------------------------------
-python catalyst_crawler.py --tickers pdufa_universe.txt --auto-universe --discover --bpc fda_2026-07-09.xlsx --fmp --options --ua "pdufa.bio catalyst research rockyshoals@gmail.com"
+python catalyst_crawler.py --tickers pdufa_universe.txt --auto-universe --discover --bpc fda_2026-07-09.xlsx --fmp --options --ua "pdufa.bio catalyst research support@pdufa.bio"
 
 echo ------------------------------------------------------------------
 echo Post-processing (self-populating pipeline) ...

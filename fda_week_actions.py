@@ -23,7 +23,7 @@ import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CACHE = os.path.join(HERE, "_fda_week_actions.json")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 API = "https://api.fda.gov/drug/drugsfda.json"
 
 

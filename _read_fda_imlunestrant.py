@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, sys, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 U = ("https://www.fda.gov/drugs/resources-information-approved-drugs/"
      "fda-approves-imlunestrant-combination-abemaciclib-er-positive-her2-negative-esr1-mutated-advanced-or")
 t = urllib.request.urlopen(urllib.request.Request(U, headers=UA), timeout=60).read().decode("utf-8", "replace")

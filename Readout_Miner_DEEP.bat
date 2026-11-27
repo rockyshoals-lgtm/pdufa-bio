@@ -31,7 +31,7 @@ REM ============================================================================
 cd /d "C:\Users\dcmoo\Documents\Python\9realms"
 
 REM SEC fair-use requires an identifying User-Agent on every request.
-set "SEC_USER_AGENT=David Moody rockyshoals@gmail.com"
+set "SEC_USER_AGENT=pdufa.bio research support@pdufa.bio"
 
 if not exist "readout_runs" mkdir "readout_runs"
 

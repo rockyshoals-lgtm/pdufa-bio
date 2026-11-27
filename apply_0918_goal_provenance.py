@@ -40,7 +40,7 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATASET = os.path.join(HERE, "pdufa_site_src", "api", "v1", "dataset.mjs")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 
 # id -> (label, url, the date string that must appear near the drug name, drug token)
 SOURCED = {

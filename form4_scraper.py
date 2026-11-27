@@ -27,7 +27,7 @@ INDEX_OUT = BASE / 'form4_index.json'
 TXN_OUT = BASE / 'form4_transactions.json'
 LOG_OUT = BASE / 'form4_scraper.log'
 
-HEADERS = {'User-Agent': '9Realms Research rockyshoals@gmail.com'}
+HEADERS = {'User-Agent': '9Realms Research support@pdufa.bio'}
 BACKFILL_START = '2015-01-01'
 SLEEP_BETWEEN = 0.11  # ~9 req/sec (safety margin under 10 req/sec SEC limit)
 

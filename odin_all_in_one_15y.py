@@ -18,7 +18,7 @@ ODIN — All-in-One Miner + Scorer (15y)
 
 USAGE (PowerShell, Windows):
   Set-Location "C:\\Users\\dcmoo\\Documents\\Python"
-  $env:SEC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36; rockyshoals@gmail.com OdinBiotech/1.0"
+  $env:SEC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36; support@pdufa.bio OdinBiotech/1.0"
   $env:OPENFDA_API_KEY = "NO3JlhueCMr9TqwduPgnKJVuQMAvkltU7kNZBkfx"
 
   & "C:\\Program Files\\Python312\\python.exe" ".\\odin_all_in_one_15y.py" `
@@ -45,7 +45,7 @@ except Exception:
     requests = None
 
 TODAY = dt.date.today()
-DEFAULT_UA = os.environ.get("SEC_USER_AGENT", "rockyshoals@gmail.com OdinBiotech/1.0")
+DEFAULT_UA = os.environ.get("SEC_USER_AGENT", "support@pdufa.bio OdinBiotech/1.0")
 OPENFDA_API_KEY = os.environ.get("OPENFDA_API_KEY", "").strip()
 
 # ---------------- Console utils ----------------

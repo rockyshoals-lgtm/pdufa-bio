@@ -3,7 +3,7 @@
 Has Telix announced anything? Checked without asserting anything I cannot see."""
 import re, sys, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "Mozilla/5.0 pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "Mozilla/5.0 pdufa.bio builder support@pdufa.bio"}
 for u in ("https://telixpharma.com/news-views/",
           "https://telixpharma.com/investor-centre/asx-announcements/"):
     try:

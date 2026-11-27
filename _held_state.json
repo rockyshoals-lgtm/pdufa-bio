@@ -1,6 +1,6 @@
 {
  "held_since": "2026-11-27T06:08:08Z",
- "consecutive_held_runs": 3,
+ "consecutive_held_runs": 6,
  "emailed_at": "2026-11-27T08:26:54Z",
  "leads": [
   {
@@ -33,16 +33,16 @@
   },
   {
    "source": "drug_pages",
-   "row_id": "drug:budoprutug-global",
-   "key": "budoprutug-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
-   "text": "/drug/budoprutug-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
+   "row_id": "drug:escmid-global",
+   "key": "escmid-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+   "text": "/drug/escmid-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
    "first_seen": "2026-11-27T06:08:08Z"
   },
   {
    "source": "drug_pages",
-   "row_id": "drug:escmid-global",
-   "key": "escmid-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
-   "text": "/drug/escmid-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
+   "row_id": "drug:budoprutug-global",
+   "key": "budoprutug-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+   "text": "/drug/budoprutug-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
    "first_seen": "2026-11-27T06:08:08Z"
   },
   {
@@ -68,6 +68,13 @@
   },
   {
    "source": "drug_pages",
+   "row_id": "drug:sonesitatug-vedotin",
+   "key": "sonesitatug-vedotin|fda-oncology-notifications",
+   "text": "/drug/sonesitatug-vedotin fda-oncology-notifications 'vedotin' appears with approval language",
+   "first_seen": "2026-11-27T08:26:54Z"
+  },
+  {
+   "source": "drug_pages",
    "row_id": "drug:abs-201-headline",
    "key": "abs-201-headline|fda-oncology-notifications",
    "text": "/drug/abs-201-headline fda-oncology-notifications 'headline' appears with approval language",
@@ -75,9 +82,9 @@
   },
   {
    "source": "drug_pages",
-   "row_id": "drug:sonesitatug-vedotin",
-   "key": "sonesitatug-vedotin|fda-oncology-notifications",
-   "text": "/drug/sonesitatug-vedotin fda-oncology-notifications 'vedotin' appears with approval language",
+   "row_id": "drug:cabotegravir",
+   "key": "cabotegravir|openfda:20261116",
+   "text": "/drug/cabotegravir openfda:20261116 AP 20261116 (SUPPL-12, class EFFICACY)",
    "first_seen": "2026-11-27T08:26:54Z"
   },
   {
@@ -86,13 +93,6 @@
    "key": "phenylephrine-hydrochloride|openfda:20261116",
    "text": "/drug/phenylephrine-hydrochloride openfda:20261116 AP 20261116 (ORIG-1, class TYPE 5)",
    "first_seen": "2026-11-27T06:08:08Z"
-  },
-  {
-   "source": "drug_pages",
-   "row_id": "drug:cabotegravir",
-   "key": "cabotegravir|openfda:20261116",
-   "text": "/drug/cabotegravir openfda:20261116 AP 20261116 (SUPPL-10, class EFFICACY)",
-   "first_seen": "2026-11-27T08:26:54Z"
   }
  ],
  "issued_keys": [

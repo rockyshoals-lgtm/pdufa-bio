@@ -3,7 +3,7 @@
 reconciler reads."""
 import re, sys, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 
 
 def get(u, t=45):

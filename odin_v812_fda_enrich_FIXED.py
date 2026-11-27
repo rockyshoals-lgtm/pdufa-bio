@@ -26,7 +26,7 @@ import requests
 # ============================================
 # HARDCODED CREDENTIALS (verified working 2026-01-24)
 # ============================================
-DEFAULT_AUTH_USER = "rockyshoals@gmail.com"
+DEFAULT_AUTH_USER = os.environ.get("FDA_DASHBOARD_USER", "")  # your FDA Data Dashboard login email
 DEFAULT_AUTH_KEY = "XulnBCM9GXU6M8ea"
 
 

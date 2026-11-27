@@ -93,11 +93,11 @@
    "note": "8-K EX-99.1 (2026-10-28) contains the quote verbatim. Q3 release (2026-11-05, GlobeNewswire): 'accepted by the FDA with a February 28, 2027 PDUFA target action date.'"
   },
   "pdufa_svra_2026-11-22": {
-   "checked": "2026-11-17",
-   "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/1160308/000119312526219371/svra-20260331.htm",
-   "by": "red team 2026-11-17",
-   "note": "Q1 10-Q (2026-05-12) contains the major-amendment / three-month extension sentence with the November 22, 2026 date. Q3 10-Q (filed ~Nov 2026) financial notes say MOLBREEVI is 'under regulatory review"
+   "checked": "2026-11-27",
+   "verdict": "FIXED",
+   "source": "https://www.businesswire.com/news/home/20261120300122/en/Savara-Informed-That-FDA-Will-Not-Take-Action-on-the-Molgramostim-BLA-for-Autoimmune-Pulmonary-Alveolar-Proteinosis-Autoimmune-PAP-by-the-PDUFA-Date/",
+   "by": "manual",
+   "note": "Savara Nov 20: FDA will not act by the Nov 22 goal date; review ongoing; no revised date. Ticker hub, FAQs and search now say past goal date."
   },
   "pdufa_vstm_2027-02-07": {
    "checked": "2026-11-25",
@@ -576,11 +576,11 @@
    "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_mbrx_2026-09-30": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-27",
    "verdict": "CONFIRMED",
-   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403393/0/en/moleculin-biotech-reports-third-quarter-2026-financial-results-as-pivotal-miracle-trial-advances-toward-key-q1-2027-data-readout.html",
-   "by": "red team 2026-11-17",
-   "note": "Opened Moleculin 2026-11-16: top bullet 'Comprehensive Part A data readout remains on track for the first quarter of 2027' and milestone 'Q1 2027: MIRACLE - Comprehensive Part A data readout following"
+   "source": "https://www.globenewswire.com/news-release/2026/11/23/3408368/0/en/moleculin-reports-32-blinded-remission-rate-in-post-venetoclax-aml-subjects-in-pivotal-miracle-trial-randomized-results-on-track-for-first-quarter-of-2027.html",
+   "by": "manual",
+   "note": "Moleculin release Nov 23, 2026: preliminary blinded Part A results (all 90 subjects) reported; unblinding of subject-level Part A results 'on track for the first quarter of 2027'. Q1 2027 row stands."
   },
   "readout_mbrx_2028-12-31": {
    "checked": "2026-11-17",
@@ -653,11 +653,11 @@
    "note": "Opened Immunome 2026-11-09: 'expects to present an updated dataset at the 2026 American Society of Hematology (ASH) Annual Meeting on December 14, 2026' verbatim; ASH 2026 runs Dec 12-15 (hematology.o"
   },
   "readout_ivevf_2026-12-31": {
-   "checked": "2026-11-17",
-   "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/1756594/000117184326006471/exh_991.htm",
-   "by": "red team 2026-11-17",
-   "note": "Opened Inventiva 6-K EX-99.1 dated 2026-10-06: '...topline results expected in the fourth quarter of this year.' SEC filing list for CIK 1756594 shows nothing after the 10-27 SC 13G/A; inventivapharma"
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/23/3408877/0/en/inventiva-reports-unaudited-2026-third-quarter-financial-results.html",
+   "by": "manual",
+   "note": "Retired 2026-11-27: duplicate of readout_iva_2026-12-31 (same trial, OTC symbol)"
   },
   "readout_lxrx_2027-03-31": {
    "checked": "2026-11-17",
@@ -1808,11 +1808,11 @@
    "note": "re-read 2026-11-25 against the company's newest release (readout currency check); timing unchanged"
   },
   "readout_canf_2027-03-31": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-27",
    "verdict": "CONFIRMED",
-   "source": "https://www.globenewswire.com/news-release/2026/11/06/3397456/0/en/can-fite-to-pursue-global-licensing-and-strategic-partnerships-at-bio-europe-2026-following-recent-clinical-and-intellectual-property-milestones.html",
-   "by": "red team 2026-11-17",
-   "note": "Can-Fite GNW 2026-11-06: 'interim efficacy and safety data expected in the first quarter of 2027' (company description) and 'with results expected in the first quarter of 2027.' (bullet). Later Can-Fi"
+   "source": "https://www.globenewswire.com/news-release/2026/11/18/3405528/0/en/can-fite-pivotal-phase-iii-psoriasis-study-under-an-fda-and-ema-agreed-protocol-all-patients-completed-dosing-and-interim-analysis-expected-q1-2027.html",
+   "by": "manual",
+   "note": "Can-Fite release Nov 18, 2026: first 247 patients completed treatment; interim analysis expected Q1 2027. Row stands."
   },
   "readout_crdf_2026-12-13": {
    "checked": "2026-11-24",
@@ -2690,11 +2690,11 @@
    "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
   },
   "readout_iva_2026-12-31": {
-   "checked": "2026-11-25",
+   "checked": "2026-11-27",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/23/3408877/0/en/inventiva-reports-unaudited-2026-third-quarter-financial-results.html",
-   "by": "red team 2026-11-25",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "by": "manual",
+   "note": "Inventiva Q3 release Nov 23: NATiV3 topline expected Q4 2026; the one record after IVEVF and IVA337 duplicates retired"
   },
   "readout_janx_2027-06-30": {
    "checked": "2026-11-25",
@@ -3740,11 +3740,11 @@
    "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
   },
   "readout_mdgl_2027-12-31-resmetirom": {
-   "checked": "2026-11-26",
-   "verdict": "CONFIRMED",
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
    "source": "https://www.globenewswire.com/news-release/2026/11/03/3394036/0/en/madrigal-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
-   "by": "red team 2026-11-26",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "by": "manual",
+   "note": "Duplicate of readout_mdgl_2027-12-31 (same company release and session/statement, drug named in the other order); removed 2026-11-27, readout_mdgl_2027-12-31 is the one listing."
   },
   "readout_dnli_2027-06-30-biib122": {
    "checked": "2026-11-26",
@@ -3859,25 +3859,25 @@
    "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
   },
   "readout_adct_2026-12-14-loncastuxi": {
-   "checked": "2026-11-26",
-   "verdict": "CONFIRMED",
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
    "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "by": "red team 2026-11-26",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "by": "manual",
+   "note": "Duplicate of readout_adct_2026-12-14 (same company release and session/statement, drug named in the other order); removed 2026-11-27, readout_adct_2026-12-14 is the one listing."
   },
   "readout_adct_2026-12-13-loncastuxi": {
-   "checked": "2026-11-26",
-   "verdict": "CONFIRMED",
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
    "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "by": "red team 2026-11-26",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "by": "manual",
+   "note": "Duplicate of readout_adct_2026-12-13 (same company release and session/statement, drug named in the other order); removed 2026-11-27, readout_adct_2026-12-13 is the one listing."
   },
   "readout_sls_2026-12-14-tambicicli": {
-   "checked": "2026-11-26",
-   "verdict": "CONFIRMED",
-   "source": "https://www.globenewswire.com/news-release/2026/11/4/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
-   "by": "red team 2026-11-26",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
+   "by": "manual",
+   "note": "Duplicate of readout_sls_2026-12-14 (same company release and session/statement, drug named in the other order); removed 2026-11-27, readout_sls_2026-12-14 is the one listing."
   },
   "readout_clym_2026-12-13": {
    "checked": "2026-11-26",
@@ -5385,11 +5385,11 @@
    "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
   },
   "readout_bmy_2027-12-31-xanomeline": {
-   "checked": "2026-11-26",
+   "checked": "2026-11-27",
    "verdict": "CONFIRMED",
-   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
-   "by": "red team 2026-11-26",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "source": "https://www.businesswire.com/news/home/20261117573732/en/Bristol-Myers-Squibb-Presents-First-Clinical-Data-from-Two-Phase-3-Studies-in-the-ADEPT-Program-Evaluating-KarXT-for-Psychosis-Associated-with-Alzheimer%E2%80%99s-Disease/",
+   "by": "manual",
+   "note": "BMS CTAD release (Nov 17-18): only ADEPT-1 open-label lead-in and ADEPT-3 extension data; double-blind periods remain blinded, so the 2027 pivotal-data row stands"
   },
   "readout_bmy_2027-12-31-xanomeline-2": {
    "checked": "2026-11-26",
@@ -5740,6 +5740,20 @@
    "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
    "by": "red team 2026-11-26",
    "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_iva_2027-09-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/23/3408877/0/en/inventiva-reports-unaudited-2026-third-quarter-financial-results.html",
+   "by": "manual",
+   "note": "Retired 2026-11-27: registry row for NCT04849728 duplicated readout_iva_2026-12-31"
+  },
+  "readout_annx_2026-10-15": {
+   "checked": "2026-11-27",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398918/0/en/annexon-reports-third-quarter-2026-financial-results-business-updates-and-key-anticipated-milestones.html",
+   "by": "manual",
+   "note": "Annexon Q3 release Nov 9: ARCHER II Month 15 primary endpoint assessment on track for Q4 2026"
   }
  }
 }

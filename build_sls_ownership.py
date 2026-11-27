@@ -32,7 +32,7 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 PAGE = os.path.join(SITE, "sls", "index.html")
 OUT = os.path.join(HERE, "_sls_ownership.json")
 CIK = "1390478"
-UA = {"User-Agent": os.environ.get("SEC_USER_AGENT", "pdufa.bio (rockyshoals@gmail.com)")}
+UA = {"User-Agent": os.environ.get("SEC_USER_AGENT", "pdufa.bio (support@pdufa.bio)")}
 B, E = "<!--SLSOWN:BEGIN-->", "<!--SLSOWN:END-->"
 
 

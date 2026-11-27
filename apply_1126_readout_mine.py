@@ -145,6 +145,28 @@ def prog_token(s):
     return re.sub(r"[^a-z0-9]", "", s.split()[0]) if s.split() else ""
 
 
+def prog_names(s):
+    """Every name a drug goes by in one row: the first word, the first word in each parenthesis, and the first
+    word of each drug in a combination. Self-heal (2026-11-27): the mine keyed duplicates on prog_token alone, so
+    "tambiciclib (SLS009)" did not match "SLS009 (tambiciclib)", nor "resmetirom (Rezdiffra)" match
+    "Rezdiffra (resmetirom)", and four readouts went up twice. tests/test_readout_no_duplicates.py guards it."""
+    s = str(s or "").lower()
+    out = {prog_token(s)}
+    for inner in re.findall(r"\(([^)]*)\)", s):
+        if inner.split():
+            out.add(re.sub(r"[^a-z0-9]", "", inner.split()[0]))
+    for part in re.split(r"\s*(?:\+|/|\bplus\b|\bwith\b|,)\s*", re.sub(r"\([^)]*\)", " ", s)):
+        if part.split():
+            out.add(re.sub(r"[^a-z0-9]", "", part.split()[0]))
+    return {w for w in out if len(w) >= 4 and w not in _GENERIC_NAMES}
+
+
+_GENERIC_NAMES = {"sirna", "oral", "antibody", "partnered", "subcutaneous", "intravenous", "monotherapy",
+                  "combination", "inhaled", "topical", "vaccine", "program", "phase", "formerly", "standard",
+                  "placebo", "dexamethasone", "azacitidine", "venetoclax", "rituximab", "pembrolizumab",
+                  "chemotherapy"}
+
+
 def source_label(url):
     return "company guidance (SEC filing)" if "sec.gov" in str(url or "") else "company guidance (company release)"
 
@@ -400,8 +422,8 @@ def main():
     existing_keys = {}
     for row in rows:
         if row.get("type") == "Readout" and row.get("st") == "Guided" and row["id"] not in remove:
-            p = prog_token((row.get("_d") or {}).get("program") or row.get("name"))
-            existing_keys.setdefault((row["t"], p), []).append(row)
+            for p in prog_names((row.get("_d") or {}).get("program") or row.get("name")):
+                existing_keys.setdefault((row["t"], p), []).append(row)
     seen = set()
     for r in use:
         if r.get("existing_row_id") or r.get("status") != "new":
@@ -418,7 +440,8 @@ def main():
             log["dup"].append(f"{tk} {r.get('drug')} {d}: duplicate record")
             continue
         seen.add(k)
-        same = [e for e in existing_keys.get((tk, p), []) if e.get("d") == d]
+        same = list({e["id"]: e for q in (prog_names(r.get("drug")) | {p})
+                     for e in existing_keys.get((tk, q), []) if e.get("d") == d}.values())
         # 2026-11-26: the same drug can have two readouts due the same day in different trials (Incyte's povorcitinib:
         # prurigo nodularis Phase 3 and asthma Phase 2, both "Q4 2026"). A record that names the row it was checked
         # against in "distinct_from" is not a duplicate of that row.

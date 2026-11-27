@@ -29,7 +29,7 @@ from urllib3.util.retry import Retry
 # ============================================
 # HARDCODED CREDENTIALS (verified working)
 # ============================================
-DEFAULT_AUTH_USER = "rockyshoals@gmail.com"
+DEFAULT_AUTH_USER = os.environ.get("FDA_DASHBOARD_USER", "")  # your FDA Data Dashboard login email
 DEFAULT_AUTH_KEY = "XulnBCM9GXU6M8ea"
 
 # Performance settings

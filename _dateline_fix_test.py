@@ -7,7 +7,7 @@ import os, sys, csv
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-os.environ.setdefault("SEC_USER_AGENT", "David Moody rockyshoals@gmail.com")
+os.environ.setdefault("SEC_USER_AGENT", "pdufa.bio research support@pdufa.bio")
 import readout_scan as R
 
 ok_n = fail = 0

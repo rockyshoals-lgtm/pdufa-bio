@@ -41,7 +41,7 @@ DATE_RE = re.compile(r"(" + "|".join(MONTHS) + r") (\d{1,2})(?:,? (\d{4}))?")
 
 def get(url):
     try:
-        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "pdufa.bio rockyshoals@gmail.com"}),
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "pdufa.bio support@pdufa.bio"}),
                                     timeout=40) as r:
             return json.load(r)
     except Exception:

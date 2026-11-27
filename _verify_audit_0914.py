@@ -18,7 +18,7 @@ except Exception:
     pass
 
 BASE = "https://www.pdufa.bio"
-UA = "pdufa.bio builder rockyshoals@gmail.com"
+UA = "pdufa.bio builder support@pdufa.bio"
 
 
 def get(path):

@@ -30,7 +30,7 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATASET = os.path.join(HERE, "pdufa_site_src", "api", "v1", "dataset.mjs")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 MON = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September",
        "October", "November", "December"]
 QTR = {1: "first quarter", 2: "second quarter", 3: "third quarter", 4: "fourth quarter"}

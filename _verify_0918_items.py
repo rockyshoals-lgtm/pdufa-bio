@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import io, json, re, sys, urllib.parse, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 
 
 def get(u, t=45):

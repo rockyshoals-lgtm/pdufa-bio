@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, sys, json, urllib.parse, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 def raw(u):
     return urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60).read()
 def txt(u):

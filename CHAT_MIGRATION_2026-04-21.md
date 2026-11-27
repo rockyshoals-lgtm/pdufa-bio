@@ -75,7 +75,7 @@ tail -10 /sessions/confident-serene-ptolemy/form4_parse.log
 
 The parser is resume-safe: it builds the `todo` list as `tickers_needed - tickers_already_in_form4_parsed`. Relaunching is always safe.
 
-SEC rate-limit compliance locked in script: UA="9Realms Research rockyshoals@gmail.com", RATE_LIMIT_S=0.11 (~9 req/s under the 10 req/s cap).
+SEC rate-limit compliance locked in script: UA="9Realms Research support@pdufa.bio", RATE_LIMIT_S=0.11 (~9 req/s under the 10 req/s cap).
 
 ## Step C — Run Stages 5 → 6a → 6b → 6c (once `_summary.json` exists)
 

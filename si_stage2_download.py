@@ -38,7 +38,7 @@ MANIFEST_OUT = BASE / 'si_stage2_manifest.json'
 LOG_OUT = BASE / 'si_stage2.log'
 
 URL_TEMPLATE = 'https://cdn.finra.org/equity/otcmarket/biweekly/shrt{yyyymmdd}.csv'
-HEADERS = {'User-Agent': '9Realms Research rockyshoals@gmail.com'}
+HEADERS = {'User-Agent': '9Realms Research support@pdufa.bio'}
 MAX_WORKERS = 6  # polite with CDN
 RATE_LIMIT_PER_SEC = 4.0  # well under any CDN limit
 

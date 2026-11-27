@@ -47,6 +47,12 @@ MONTHS = {"january": "01", "february": "02", "march": "03", "april": "04", "may"
 def build_index():
     rows, seen = [], set()
 
+    # 2026-11-27 (Savara): a PDUFA past its goal date with no decision is "Awaiting" (the API's word), not "Upcoming".
+    try:
+        from build_home_past_due import keys as _pd_keys
+        _PD_KEYS = _pd_keys()
+    except Exception:  # noqa: BLE001
+        _PD_KEYS = set()
     if os.path.exists(DATASET):
         m = re.search(r"export default (\[.*\])",
                       open(DATASET, encoding="utf-8", errors="replace").read(), re.S)
@@ -72,7 +78,7 @@ def build_index():
                                         ((e.get("_d") or {}).get("indication") or "")) if x)
             rows.append({"t": t, "n": e.get("name") or "", "c": e.get("company") or "",
                          "a": area, "u": url, "d": d, "m": month,
-                         "y": e.get("type") or "", "s": e.get("st") or "",
+                         "y": e.get("type") or "", "s": ("Awaiting" if e.get("type") == "PDUFA" and (t, d[:10]) in _PD_KEYS else e.get("st") or ""),
                          "p": e.get("dp") or ""})
 
     # Ticker hubs, so a bare ticker always resolves even with no forward catalyst.

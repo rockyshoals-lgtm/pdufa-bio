@@ -2,7 +2,7 @@
 """RARE UX111 (ABO-102) goal date is TODAY 2026-09-19. Any FDA action or Ultragenyx 8-K yet?"""
 import json, re, sys, urllib.parse, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 
 
 def get(u):

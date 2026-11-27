@@ -27,7 +27,7 @@ print(f"    --max-docs 1500 -> quota {q1500}   (.bat claims 57)  {'OK' if q1500=
 print(f"    --max-docs 6000 -> quota {q6000}   (.bat claims 230) {'OK' if q6000==230 else 'MISMATCH'}")
 print(f"\n  -> the .bat's arithmetic is CORRECT. My v1 count of 9 was a regex bug in MY tool.")
 
-UA = "David Moody rockyshoals@gmail.com"
+UA = "pdufa.bio research support@pdufa.bio"
 FTS = "https://efts.sec.gov/LATEST/search-index"
 FORMS = "8-K,6-K,10-Q,10-K,S-1,424B4,424B5,20-F"
 until = datetime.date.today()

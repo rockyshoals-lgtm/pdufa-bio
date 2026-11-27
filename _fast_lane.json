@@ -1,0 +1,732 @@
+{
+ "_note": "The every-minute news watch (api/cron/news-watch.mjs). publish false stops all posting. retract: {row id: public reason} withdraws a post. fast_lane: the ONLY applications the watch may post about, reviewed by hand (red teams 2026-11-27): matched on the drug's own brand, code or full INN (terms), and only when the headline's closing clause names one of this application's exact indication phrases (phrases) and holds no word outside a closed vocabulary (generic patient words, tok, partners), the headline names a need word and the headline names nothing that marks another application (avoid). A row of the ticker whose name contains match is armed; two such rows arm neither. Everything else waits for the reviewed path. build_watch_armed.py reads this; tests/test_live_watch.py guards it. Emergency stop without a deploy: the store key live:control (see news-watch.mjs).",
+ "publish": true,
+ "retract": {},
+ "fast_lane": [
+  {
+   "t": "UNCY",
+   "match": "Oxylanthanum",
+   "terms": [
+    "Oxylanthanum"
+   ],
+   "need": [
+    "hyperphosphatemia",
+    "dialysis",
+    "phosphate",
+    "kidney"
+   ],
+   "phrases": [
+    "hyperphosphatemia"
+   ],
+   "tok": [
+    "chronic",
+    "kidney",
+    "disease",
+    "CKD",
+    "on",
+    "dialysis",
+    "serum",
+    "phosphorus",
+    "control"
+   ],
+   "forms": [
+    "carbonate"
+   ],
+   "paren": [
+    "OLC"
+   ]
+  },
+  {
+   "t": "SVRA",
+   "match": "MOLBREEVI",
+   "terms": [
+    "MOLBREEVI",
+    "molgramostim"
+   ],
+   "need": [
+    "aPAP",
+    "pulmonary alveolar proteinosis",
+    "alveolar proteinosis"
+   ],
+   "phrases": [
+    "autoimmune pulmonary alveolar proteinosis",
+    "pulmonary alveolar proteinosis",
+    "aPAP"
+   ],
+   "tok": [
+    "autoimmune"
+   ],
+   "forms": [
+    "inhalation",
+    "solution"
+   ]
+  },
+  {
+   "t": "VRTX",
+   "match": "Povetacicept",
+   "terms": [
+    "povetacicept",
+    "ALPN-303"
+   ],
+   "need": [
+    "IgA nephropathy",
+    "IgAN"
+   ],
+   "avoid": [
+    "membranous"
+   ],
+   "phrases": [
+    "IgA nephropathy",
+    "IgAN",
+    "immunoglobulin A nephropathy"
+   ],
+   "tok": [
+    "primary"
+   ],
+   "aliases": [
+    "Vertex Pharmaceuticals",
+    "Vertex"
+   ]
+  },
+  {
+   "t": "VNDA",
+   "match": "Imsidolimab",
+   "terms": [
+    "imsidolimab"
+   ],
+   "need": [
+    "pustular psoriasis",
+    "GPP"
+   ],
+   "phrases": [
+    "generalized pustular psoriasis",
+    "GPP"
+   ],
+   "tok": [
+    "flares",
+    "flare"
+   ]
+  },
+  {
+   "t": "CORT",
+   "match": "Relacorilant",
+   "terms": [
+    "relacorilant"
+   ],
+   "need": [
+    "Cushing",
+    "hypercortisolism"
+   ],
+   "avoid": [
+    "ovarian"
+   ],
+   "phrases": [
+    "Cushing's syndrome",
+    "Cushing syndrome",
+    "hypercortisolism",
+    "endogenous hypercortisolism"
+   ],
+   "tok": [
+    "endogenous",
+    "secondary",
+    "hyperglycemia",
+    "hypertension",
+    "glucose",
+    "intolerance",
+    "diabetes",
+    "mellitus",
+    "type",
+    "2"
+   ]
+  },
+  {
+   "t": "MLYS",
+   "match": "Lorundrostat",
+   "terms": [
+    "lorundrostat"
+   ],
+   "need": [
+    "hypertension",
+    "blood pressure"
+   ],
+   "phrases": [
+    "hypertension",
+    "uncontrolled hypertension",
+    "resistant hypertension",
+    "high blood pressure",
+    "blood pressure"
+   ],
+   "tok": [
+    "lower",
+    "lowering",
+    "high"
+   ],
+   "cls": [
+    "aldosterone",
+    "synthase",
+    "inhibitor"
+   ],
+   "paren": [
+    "MLS-101"
+   ]
+  },
+  {
+   "t": "GILD",
+   "match": "Anito-cel",
+   "terms": [
+    "anito-cel",
+    "anitocabtagene autoleucel"
+   ],
+   "need": [
+    "myeloma"
+   ],
+   "phrases": [
+    "multiple myeloma",
+    "relapsed or refractory multiple myeloma",
+    "RRMM",
+    "myeloma"
+   ],
+   "tok": [],
+   "aliases": [
+    "Gilead Sciences",
+    "Gilead",
+    "Kite",
+    "Kite Pharma",
+    "Arcellx"
+   ],
+   "cls": [
+    "CAR",
+    "T-cell",
+    "cell",
+    "therapy",
+    "BCMA",
+    "BCMA-directed"
+   ]
+  },
+  {
+   "t": "PRAX",
+   "match": "Relutrigine",
+   "terms": [
+    "relutrigine",
+    "PRAX-562"
+   ],
+   "need": [
+    "DEE",
+    "DEEs",
+    "epileptic",
+    "encephalopathy",
+    "encephalopathies",
+    "seizures",
+    "SCN2A",
+    "SCN8A"
+   ],
+   "phrases": [
+    "developmental and epileptic encephalopathy",
+    "developmental and epileptic encephalopathies",
+    "DEE",
+    "DEEs"
+   ],
+   "tok": [
+    "seizures",
+    "associated",
+    "SCN2A",
+    "SCN8A",
+    "or",
+    "mutations",
+    "variants"
+   ]
+  },
+  {
+   "t": "DYN",
+   "match": "Z-rostudirsen",
+   "terms": [
+    "Z-rostudirsen",
+    "zeleciment rostudirsen",
+    "DYNE-251"
+   ],
+   "need": [
+    "Duchenne",
+    "DMD"
+   ],
+   "phrases": [
+    "Duchenne muscular dystrophy",
+    "DMD"
+   ],
+   "tok": [
+    "amenable",
+    "exon",
+    "51",
+    "skipping",
+    "mutation",
+    "mutations",
+    "confirmed",
+    "boys",
+    "children"
+   ]
+  },
+  {
+   "t": "PRAX",
+   "match": "ulixacaltamide",
+   "terms": [
+    "ulixacaltamide"
+   ],
+   "need": [
+    "essential tremor"
+   ],
+   "phrases": [
+    "essential tremor"
+   ]
+  },
+  {
+   "t": "BBIO",
+   "match": "infigratinib",
+   "terms": [
+    "infigratinib"
+   ],
+   "need": [
+    "achondroplasia"
+   ],
+   "avoid": [
+    "hypochondroplasia",
+    "cholangiocarcinoma"
+   ],
+   "phrases": [
+    "achondroplasia"
+   ],
+   "tok": [
+    "open",
+    "growth",
+    "plates",
+    "children",
+    "child",
+    "pediatric"
+   ]
+  },
+  {
+   "t": "BLTE",
+   "match": "Tinlarebant",
+   "terms": [
+    "tinlarebant",
+    "LBS-008"
+   ],
+   "need": [
+    "Stargardt",
+    "STGD1"
+   ],
+   "avoid": [
+    "geographic atrophy"
+   ],
+   "phrases": [
+    "Stargardt disease",
+    "Stargardt disease type 1",
+    "STGD1"
+   ],
+   "tok": [
+    "adolescents"
+   ]
+  },
+  {
+   "t": "CGEM",
+   "match": "Zipalertinib",
+   "terms": [
+    "zipalertinib",
+    "CLN-081"
+   ],
+   "need": [
+    "EGFR",
+    "NSCLC",
+    "lung cancer",
+    "exon 20"
+   ],
+   "avoid": [
+    "uncommon",
+    "first-line",
+    "first line",
+    "chemotherapy",
+    "treatment-naive",
+    "treatment naive",
+    "untreated"
+   ],
+   "phrases": [
+    "EGFR exon 20 insertion",
+    "exon 20 insertion",
+    "exon 20 insertions",
+    "EGFR exon 20"
+   ],
+   "tok": [
+    "non-small",
+    "cell",
+    "lung",
+    "cancer",
+    "NSCLC",
+    "mutations",
+    "mutation",
+    "EGFR",
+    "locally",
+    "previously",
+    "treated",
+    "platinum-based"
+   ],
+   "aliases": [
+    "Cullinan Therapeutics",
+    "Cullinan",
+    "Taiho Oncology",
+    "Taiho"
+   ]
+  },
+  {
+   "t": "APMD",
+   "match": "AD109",
+   "terms": [
+    "AD109",
+    "AD-109",
+    "Oxnimbi"
+   ],
+   "need": [
+    "sleep apnea",
+    "OSA"
+   ],
+   "phrases": [
+    "obstructive sleep apnea",
+    "OSA"
+   ],
+   "paren": [
+    "aroxybutynin and atomoxetine",
+    "atomoxetine and aroxybutynin"
+   ]
+  },
+  {
+   "t": "PVLA",
+   "match": "QTORIN rapamycin",
+   "terms": [
+    "QTORIN rapamycin"
+   ],
+   "need": [
+    "microcystic",
+    "lymphatic malformation",
+    "lymphatic malformations"
+   ],
+   "phrases": [
+    "microcystic lymphatic malformations",
+    "microcystic lymphatic malformation"
+   ],
+   "tok": [
+    "cutaneous",
+    "children",
+    "pediatric"
+   ]
+  },
+  {
+   "t": "EXEL",
+   "match": "Zanzalintinib",
+   "terms": [
+    "zanzalintinib",
+    "XL092"
+   ],
+   "need": [
+    "colorectal",
+    "CRC"
+   ],
+   "avoid": [
+    "nivolumab",
+    "Opdivo",
+    "neuroendocrine",
+    "NET",
+    "NETs"
+   ],
+   "phrases": [
+    "colorectal cancer",
+    "CRC"
+   ],
+   "tok": [
+    "previously",
+    "treated"
+   ],
+   "partners": [
+    "atezolizumab",
+    "Tecentriq"
+   ]
+  },
+  {
+   "t": "NTLA",
+   "match": "Lonvoguran",
+   "terms": [
+    "lonvoguran ziclumeran",
+    "lonvo-z",
+    "NTLA-2002"
+   ],
+   "need": [
+    "hereditary angioedema",
+    "HAE"
+   ],
+   "phrases": [
+    "hereditary angioedema",
+    "HAE"
+   ],
+   "tok": [
+    "attacks",
+    "one-time",
+    "prevent",
+    "prevention",
+    "prophylaxis",
+    "prophylactic"
+   ],
+   "cls": [
+    "one-time",
+    "CRISPR",
+    "gene",
+    "editing",
+    "in",
+    "vivo",
+    "based",
+    "CRISPR-based"
+   ]
+  },
+  {
+   "t": "BMY",
+   "match": "Mezigdomide",
+   "terms": [
+    "mezigdomide"
+   ],
+   "need": [
+    "carfilzomib",
+    "Kyprolis"
+   ],
+   "avoid": [
+    "bortezomib",
+    "Velcade",
+    "pomalidomide",
+    "Pomalyst",
+    "daratumumab",
+    "newly diagnosed"
+   ],
+   "phrases": [
+    "multiple myeloma",
+    "relapsed or refractory multiple myeloma",
+    "RRMM",
+    "myeloma"
+   ],
+   "partners": [
+    "carfilzomib",
+    "Kyprolis",
+    "dexamethasone",
+    "carfilzomib and dexamethasone",
+    "Kyprolis and dexamethasone"
+   ]
+  },
+  {
+   "t": "AQST",
+   "match": "Anaphylm",
+   "terms": [
+    "Anaphylm",
+    "dibutepinephrine",
+    "AQST-109"
+   ],
+   "need": [
+    "anaphylaxis",
+    "allergic reactions",
+    "allergic reaction"
+   ],
+   "phrases": [
+    "anaphylaxis",
+    "allergic reactions",
+    "severe allergic reactions",
+    "allergic reactions including anaphylaxis",
+    "severe allergic reactions including anaphylaxis"
+   ],
+   "tok": [
+    "type",
+    "I",
+    "emergency",
+    "pediatric",
+    "children"
+   ],
+   "forms": [
+    "sublingual",
+    "film"
+   ]
+  },
+  {
+   "t": "MRK",
+   "match": "Sacituzumab tirumotecan",
+   "terms": [
+    "sacituzumab tirumotecan",
+    "sac-TMT",
+    "MK-2870"
+   ],
+   "need": [
+    "endometrial"
+   ],
+   "avoid": [
+    "breast",
+    "lung",
+    "NSCLC",
+    "gastric",
+    "cervical",
+    "Keytruda",
+    "pembrolizumab",
+    "first-line",
+    "first line"
+   ],
+   "phrases": [
+    "endometrial cancer",
+    "endometrial carcinoma"
+   ],
+   "tok": [
+    "previously",
+    "treated",
+    "recurrent"
+   ]
+  },
+  {
+   "t": "INBX",
+   "match": "Ozekibart",
+   "terms": [
+    "ozekibart",
+    "INBRX-109"
+   ],
+   "need": [
+    "chondrosarcoma"
+   ],
+   "avoid": [
+    "colorectal",
+    "Ewing"
+   ],
+   "phrases": [
+    "conventional chondrosarcoma",
+    "chondrosarcoma"
+   ]
+  },
+  {
+   "t": "PHVS",
+   "match": "Deucrictibant",
+   "terms": [
+    "deucrictibant",
+    "PHA-121",
+    "PHA121"
+   ],
+   "need": [
+    "hereditary angioedema",
+    "HAE",
+    "angioedema attacks"
+   ],
+   "avoid": [
+    "XR",
+    "extended-release",
+    "extended release",
+    "prophylaxis",
+    "prophylactic",
+    "prevention",
+    "preventive",
+    "prevent",
+    "once-daily",
+    "once daily",
+    "long-term",
+    "long term"
+   ],
+   "phrases": [
+    "hereditary angioedema",
+    "HAE",
+    "HAE attacks",
+    "attacks of hereditary angioedema"
+   ],
+   "tok": [
+    "acute",
+    "attacks",
+    "on-demand"
+   ]
+  },
+  {
+   "t": "IMNM",
+   "match": "Varegacestat",
+   "terms": [
+    "varegacestat",
+    "AL102"
+   ],
+   "need": [
+    "desmoid"
+   ],
+   "phrases": [
+    "desmoid tumors",
+    "desmoid tumor",
+    "desmoid tumours"
+   ],
+   "tok": [
+    "progressing"
+   ]
+  },
+  {
+   "t": "AXSM",
+   "match": "AXS-12",
+   "terms": [
+    "AXS-12"
+   ],
+   "need": [
+    "cataplexy",
+    "narcolepsy"
+   ],
+   "phrases": [
+    "cataplexy in narcolepsy",
+    "cataplexy"
+   ],
+   "paren": [
+    "reboxetine",
+    "esreboxetine"
+   ]
+  },
+  {
+   "t": "QURE",
+   "match": "AMT-130",
+   "terms": [
+    "AMT-130",
+    "ifezuntirgene inilparvovec"
+   ],
+   "need": [
+    "Huntington"
+   ],
+   "phrases": [
+    "Huntington's disease",
+    "Huntington disease"
+   ]
+  },
+  {
+   "t": "BBIO",
+   "match": "Encaleret",
+   "terms": [
+    "encaleret"
+   ],
+   "need": [
+    "ADH1",
+    "autosomal dominant hypocalcemia",
+    "hypocalcemia",
+    "hypoparathyroidism"
+   ],
+   "phrases": [
+    "autosomal dominant hypocalcemia type 1",
+    "autosomal dominant hypocalcemia",
+    "ADH1"
+   ],
+   "tok": []
+  },
+  {
+   "t": "ZBIO",
+   "match": "Obexelimab",
+   "terms": [
+    "obexelimab"
+   ],
+   "need": [
+    "IgG4"
+   ],
+   "avoid": [
+    "lupus",
+    "SLE",
+    "multiple sclerosis",
+    "warm autoimmune"
+   ],
+   "phrases": [
+    "IgG4-related disease",
+    "IgG4-RD"
+   ]
+  }
+ ]
+}

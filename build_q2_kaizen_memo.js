@@ -58,7 +58,7 @@ children.push(new Paragraph({
   alignment: AlignmentType.CENTER, spacing: { after: 240 }
 }));
 children.push(new Paragraph({
-  children: [new TextRun({ text: "April 19, 2026 · David (rockyshoals@gmail.com)", size: 18, color: "595959" })],
+  children: [new TextRun({ text: "April 19, 2026 · David (support@pdufa.bio)", size: 18, color: "595959" })],
   alignment: AlignmentType.CENTER, spacing: { after: 400 }
 }));
 
