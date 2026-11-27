@@ -126,7 +126,8 @@ def load_past_readouts():
         d = r.get("_d") or {}
         out.append({"id": r.get("id"), "t": r["t"], "ym": ym,
                     "name": r.get("name") or r["t"], "url": r.get("url") or "",
-                    "resolution": d.get("resolution") or {}, "registry": d.get("registry") or {}})
+                    "resolution": d.get("resolution") or {}, "registry": d.get("registry") or {},
+                    "dp": r.get("dp") or ""})
     out.sort(key=lambda x: x["ym"], reverse=True)
     return out
 
@@ -256,7 +257,9 @@ def build_section(readouts, key, limit):
         elif ros in ("TERMINATED", "WITHDRAWN", "SUSPENDED"):
             found = f'<span style="color:#ff7a72">{ros.title()} per ClinicalTrials.gov</span>'
         elif res.get("state") == "no_topline" and res.get("checked"):
-            found = (f'<span style="color:#a7bcd9">No topline found as of {esc(str(res["checked"])[:10])}</span>')
+            # 2026-11-27: a day-dated row is a scheduled presentation, not a topline window.
+            what = "Scheduled date passed; no company results release found" if r.get("dp") == "day" else "No topline found"
+            found = (f'<span style="color:#a7bcd9">{what} as of {esc(str(res["checked"])[:10])}</span>')
         elif res.get("state") == "results_posted_registry" and res.get("date"):
             found = f'<span style="color:#a7bcd9">Results posted on ClinicalTrials.gov {esc(str(res["date"])[:10])}</span>'
         elif ros == "COMPLETED":

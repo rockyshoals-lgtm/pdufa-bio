@@ -436,7 +436,11 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
             if not badge and r.get('status') != 'Reported' and _window_end(r['date'], r.get('precision')) < _ET_TODAY:
                 # red team 2026-11-17: SRPT's Sep 2026 registry window was listed with no status, two
                 # months after it closed, reading like a catalyst still to come.
-                badge = '<span class="badge past">' + _PAST_LABEL.get(r.get('resolution'), 'Date passed, no result yet') + '</span>'
+                lab = _PAST_LABEL.get(r.get('resolution'), 'Date passed, no result yet')
+                if r.get('precision') == 'day' and r.get('resolution') == 'no_topline':
+                    # 2026-11-27: a dated presentation is not a topline window (NTLA ISA e-poster, INBX CTOS talk).
+                    lab = 'Scheduled date passed, no company results release found'
+                badge = '<span class="badge past">' + lab + '</span>'
             when = (pretty(r['date']) if r.get('precision') == 'day' else esc(r['label']) if (r.get('precision') == 'year' and r.get('label')) else r['date'][:4] if r.get('precision') == 'year' else r['date'][:7])  # 2026-11-17: a year-precision window is not its December
             href = r.get('url') or '/readouts'
             ext = ' rel="nofollow"' if str(href).startswith('http') else ''
