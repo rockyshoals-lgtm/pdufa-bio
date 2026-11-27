@@ -795,93 +795,109 @@ export function parseFeed(xml) {
 
 // ---------- the right-after check (David, 2026-11-27: "Right after") ----------
 // The check pulls a post when its source CHANGED in a way that matters, never for words the source already held when
-// it posted (red team 15: a re-read that ran stricter tests than the posting check would pull correct posts). So the
-// source's print is taken when it is read for posting, and compared each time it is read again:
-//   o  the headline as read and the opening (dateline paragraph and the next), as words
-//   m  how many notices of a correction the page holds (anywhere; a banner just above the headline counts too)
-//   h  how many hidden or struck-through marks sit in the page from the block before the headline to the opening
-// A post pauses when m or h grows, or when the headline or opening changed and the new one fails the checks below.
-const STRONG = /\b(?:issued in error|in error\b[^.]{0,40}\brelease|should not be relied (?:up)?on(?! as\b)|retract(?:ed|ion|s|ing)\b|errat(?:um|a)\b|editor'?s note|(?:this|the|our) (?:press |news )?release (?:has been|was|is|is being|was being) (?:\w+ ){0,2}(?:withdrawn|retracted|corrected|replaced|updated)|correction to (?:the |a |our |an )?(?:earlier |previous |prior )?(?:press |news )?release|(?:FDA|agency) has not (?:yet )?(?:acted|taken action)|not (?:yet )?received (?:FDA |U\.?S\.? )?approval)/gi;
-const BANNER = /^\s*(?:correction|corrected|retraction|retracted|update|updated|notice|withdrawn|amended|revised|erratum|clarification|editor'?s note)\b/i;
-const HIDDEN_G = new RegExp(HIDDEN.source, 'gi');
-// For a headline or opening that changed: a correction in the paragraph after the dateline. Narrow on purpose
-// ("not approved in Europe", "3% withdrew", "replaces the previous dose" are ordinary news).
-const SECOND_RETRACTS = /\b(?:in error|not be relied (?:up)?on(?! as\b)|retract\w*|errat(?:um|a)\b|incorrect\w*|erroneous\w*|correction\s*:|^\s*(?:update|clarification|correction|editor'?s note)\s*:|has not (?:yet )?(?:acted|taken action)|tentative(?:ly)? approv\w*|extend\w* (?:the |its )?(?:PDUFA |goal |review |action )+(?:goal )?date)/i;
-// The walk-back words that also read a letter's own news ("did not approve the application") are left out of a
-// letter's check.
-const CRL_SAFE = /\b(?:did not approve|not (?:yet )?(?:been )?approved|has not (?:yet )?(?:been )?(?:approved|received)|no (?:FDA |US )?approval|has yet to approve)\b/gi;
-const SAYS_APPROVED = /\bFDA\b[^.;]{0,80}\b(?:has|have) (?:now )?approved\b|\bapproved by the FDA\b/i;
-const firstSentence = t => (t.match(/^.*?[.;](?=\s+[A-Z"(]|$)/) || [t])[0];
+// it posted (red team 15), and never for what changes around a release (a sidebar, a share bar; red team 16). The
+// release is read from its headline (for a feed post, the block that is the feed title; for an exhibit, the first block
+// that is not a label) down to the first "About ...", forward-looking or contacts block, with <nav>, <aside> and
+// <footer> left out. Its print, taken when the source is read for posting and compared on each re-read:
+//   d  the dateline day           o  the dateline paragraph, as words
+//   c  notices of a correction in the release, and correction banners in the two blocks above the headline
+//   x  words of the other outcome in the release (a letter in an approval's release, "has approved" in a letter's)
+//   n  blocks of the release a reader cannot see or sees struck out
+//   t  plain notices that a release was withdrawn or issued in error, anywhere after the release on the page
+//   u  the page's own address after redirects (a feed post)
+// A post pauses when c, x, n or t grows, the day moves, the headline is gone, the page now sits at another address
+// (a release unpublished to the newsroom), or the dateline paragraph changed and no longer names the drug and states
+// the outcome.
+const CORR = /\b(?:correct(?:ion|ions|ed|s)\b|amend(?:ed|ment to (?:the|this|our) (?:press )?release)|retract(?:s|ed|ing|ion)?\b|withdrawn|has been removed|was removed|in error|errat(?:um|a)\b|issued prematurely|should not be relied (?:up)?on(?! as\b)|incorrect(?:ly)? (?:stated|reported|referred|described|identified)|no longer (?:accurate|valid|correct)|editor'?s note|clarif(?:y|ies|ied|ication)\b|has not (?:yet )?(?:acted|taken action)|tentative(?:ly)? approv\w*|did not approve|(?:has|have) not (?:yet )?(?:been )?approved|not (?:yet )?received (?:FDA |US )?approval|has yet to (?:act|approve|take action)|(?:review|PDUFA|goal|action) date (?:has been |was )?extended|extend\w* (?:the |its )?(?:PDUFA |goal |review |action )+(?:goal )?date)/gi;
+// A letter's own news ("did not approve", "has not been approved", a later date) is its outcome, not a correction.
+const CORR_CRL = /\b(?:correct(?:ion|ions|ed|s)\b|amend(?:ed|ment to (?:the|this|our) (?:press )?release)|retract(?:s|ed|ing|ion)?\b|withdrawn|has been removed|was removed|in error|errat(?:um|a)\b|issued prematurely|should not be relied (?:up)?on(?! as\b)|incorrect(?:ly)? (?:stated|reported|referred|described|identified)|no longer (?:accurate|valid|correct)|editor'?s note|clarif(?:y|ies|ied|ication)\b)/gi;
+const OPP_APPROVAL = /\b(?:complete response|CRL|not approvable)\b/gi;
+const OPP_CRL = /\bFDA\b[^.;]{0,80}\b(?:has|have) (?:now )?(?:granted |fully )?approv(?:ed|al)\b|\bapproved by the FDA\b|\bFDA approval of\b/gi;
+const BANNER = /^\s*(?:correction|corrected|retraction|retracted|withdrawn|erratum|editor'?s note|clarification)\b/i;
+const TAIL = /\b(?:(?:this|the|our) (?:press |news )?release (?:has been|was|is) (?:\w+ ){0,2}(?:withdrawn|retracted|removed)|issued in error|should not be relied (?:up)?on(?! as\b)|editor'?s note|retract(?:s|ed|ing)? (?:the|this|its|our) (?:press |news )?release)\b/gi;
+const END = /^(?:about\s+\S|forward[- ]looking|safe harbor|cautionary (?:note|statement)|(?:media|investors?)(?: relations)?(?: and (?:media|investors?))? contacts?|contacts?\s*:?$|source\s*:)/i;
 const us = x => norm(x).replace(/\bU\.\s?S\.(?=\s)/g, 'US').replace(/(\d)\.(\d)/g, '$1_$2');   // "the U.S. FDA", "2.5 mg"
+const count = (re, t) => (String(t).match(re) || []).length;
 
 function hash(t) { let x = 0x811c9dc5; for (let i = 0; i < t.length; i++) { x ^= t.charCodeAt(i); x = Math.imul(x, 0x01000193) >>> 0; } return x.toString(16); }
 
-/** The source's print (above), or null when the page does not read as the release (no dateline, no headline). */
-export function sourcePrint(html, channel, title, companies = []) {
-  const rb = rawBlocks(html);
+/** Whether a block is hidden or struck out: by its own words, or by a tag opened just before it and not yet closed. */
+function blockHidden(src, prevEnd, b) {
+  const gap = src.slice(prevEnd, b.start), open = [];
+  for (const m of gap.matchAll(/<\s*(\/)?\s*([a-z][a-z0-9]*)\b[^>]*>/gi)) {
+    if (m[1]) { const k = open.map(x => x.name).lastIndexOf(m[2].toLowerCase()); if (k >= 0) open.splice(k); }
+    else if (!/\/>$/.test(m[0])) open.push({ name: m[2].toLowerCase(), tag: m[0] });
+  }
+  return open.some(x => HIDDEN.test(x.tag)) || HIDDEN.test(b.raw);
+}
+
+/** The release as read for the right-after check, or null when the page does not read as a release (no dateline). */
+function readRelease(html, channel, title, companies = []) {
+  const page = String(html || '').replace(/<(nav|aside|footer)\b[\s\S]*?(?:<\/\1>|$)/gi, ' ');
+  const rb = rawBlocks(page);
   const dl = dateline(rb.map(b => b.text));
   if (!dl) return null;
-  let head = '', h0 = -1;
+  let h0 = -1, head = '';
   if (channel === 'edgar') {
     head = exhibitHeadline(html, companies);
     for (let i = 0; i < dl.i; i++) if (!SKIP.some(r => r.test(rb[i].text))) { h0 = i; break; }
+    if (h0 < 0) h0 = dl.i;
   } else {
     const want = canon(title);
     for (let i = dl.i - 1; i >= 0; i--) if (canon(rb[i].text) === want) { h0 = i; break; }
-    head = h0 >= 0 ? title : '';
+    if (h0 >= 0 && !hiddenMarks(rb[h0].raw)) head = title;
   }
-  if (h0 < 0 && channel !== 'edgar') return null;
-  if (h0 < 0) h0 = dl.i;
-  const open = rb.slice(dl.i, dl.i + 2).map(x => x.text).join(' ');
-  const above = rb.slice(0, h0).filter(x => !SKIP.some(r => r.test(x.text))).slice(-2);
-  const all = rb.map(x => x.text).join('\n');
-  const from = h0 > 0 ? rb[h0 - 1].end : 0, to = rb[dl.i + 1] ? rb[dl.i + 1].end : rb[dl.i].end;
-  return {
-    o: hash(dl.day + '|' + canon(head) + '|' + canon(open)),
-    m: (all.match(STRONG) || []).length + above.filter(x => BANNER.test(x.text)).length,
-    h: (rb.src.slice(from, to).match(HIDDEN_G) || []).length + rb.slice(h0, dl.i + 2).filter(x => hiddenMarks(x.raw)).length,
-  };
+  let end = dl.i + 1;
+  while (end < rb.length && end < dl.i + 60 && !END.test(rb[end].text)) end++;
+  const rel = h0 >= 0 ? rb.slice(h0, end) : rb.slice(dl.i, end);
+  const relStart = h0 >= 0 ? h0 : dl.i;
+  const hid = rel.map((b, k) => blockHidden(rb.src, relStart + k > 0 ? rb[relStart + k - 1].end : 0, b));
+  const seen = rel.filter((b, k) => !hid[k]).map(b => us(b.text)).join('\n');
+  const above = h0 > 0 ? rb.slice(0, h0).filter(x => !SKIP.some(r => r.test(x.text))).slice(-2) : [];
+  return { rb, dl, h0, head, opening: rb.slice(dl.i, dl.i + 2).map(x => x.text).join(' '), seen, hidden: hid.filter(Boolean).length,
+    above, tail: rb.slice(end, end + 80).map(x => x.text).join('\n') };
 }
 
-/** A headline or opening that changed must still say what the post says. */
-export function recheckSource(html, rec, row, companies = []) {
+/** The print of a source (above), or null when the page does not read as a release. */
+export function sourcePrint(html, channel, title, companies = [], kind = 'approval', finalUrl = '') {
+  const r = readRelease(html, channel, title, companies);
+  if (!r) return null;
+  const corr = kind === 'crl' ? CORR_CRL : CORR;
+  let path = '';
+  try { path = finalUrl ? new URL(finalUrl).pathname : ''; } catch {}
+  return { d: r.dl.day, o: hash(canon(r.rb[r.dl.i].text)),
+    c: count(corr, r.seen) + r.above.filter(x => BANNER.test(x.text)).length,
+    x: count(kind === 'crl' ? OPP_CRL : OPP_APPROVAL, r.seen), n: r.hidden, t: count(TAIL, r.tail), ...(path ? { u: path } : {}) };
+}
+
+/** What a re-read means for a post: {ok}; {ok, print} for a post with no print yet (taken now, compared later);
+ *  {unread} for a page that does not read as a release; or {ok:false, why}. */
+export function compareSource(html, rec, row, companies = [], finalUrl = '') {
   const ch = (rec.source || {}).channel;
   if (ch !== 'edgar' && ch !== 'rss') return { ok: false, why: 'the post has no source this check can read' };
-  const rb = rawBlocks(html);
-  const dl = dateline(rb.map(b => b.text));
-  if (!dl) return { ok: false, why: 'the source no longer carries a dateline' };
-  const day = ch === 'edgar' ? exhibitDate(html) : pageDay(html, rec.headline || '');
-  if (!day) return { ok: false, why: ch === 'edgar' ? 'the exhibit no longer reads cleanly' : 'the release page no longer shows the headline above its dateline' };
+  const was = rec.source_print && typeof rec.source_print === 'object' ? rec.source_print : null;
+  let path = '';
+  try { path = finalUrl ? new URL(finalUrl).pathname : ''; } catch {}
+  if (was && was.u && path && path !== was.u) return { unread: true, hard: true };   // sent on to another page of the site
+  const r = readRelease(html, ch, rec.headline || '', companies);
+  if (!r) return { unread: true };
+  if (ch === 'edgar' ? canon(r.head) !== canon(rec.headline || '') : !r.head)
+    return { ok: false, why: ch === 'edgar' ? 'the exhibit headline has changed' : 'the page no longer shows the headline above its dateline' };
   const srcDay = String((rec.source || {}).published_at || '').slice(0, 10);
-  const a = Date.parse(day + 'T12:00:00Z'), b = Date.parse(srcDay + 'T12:00:00Z');
-  if (!Number.isFinite(a) || !Number.isFinite(b) || Math.abs(a - b) > DAY) return { ok: false, why: `the source is now dated ${day}` };
-  if (ch === 'edgar' && canon(exhibitHeadline(html, companies)) !== canon(rec.headline || ''))
-    return { ok: false, why: 'the exhibit headline has changed' };
-  const open = rb.slice(dl.i, dl.i + 2);
-  const lead = us(open.map(x => x.text).join(' ').slice(0, 4000));
-  if (!(row && (row.terms || []).some(x => termIn(x, lead)))) return { ok: false, why: 'the opening does not name the drug' };
-  if (!(rec.kind === 'approval' ? APPROVAL_WORDS : CRL_WORDS).test(lead))
-    return { ok: false, why: `the opening does not state ${rec.kind === 'approval' ? 'an FDA approval' : 'a complete response letter'}` };
-  const first = us(open[0].text.slice(0, 4000));
-  if (BODY_RETRACTS.test(rec.kind === 'crl' ? first.replace(CRL_SAFE, ' ') : first)) return { ok: false, why: 'the opening holds words that walk the outcome back' };
-  if (open[1] && SECOND_RETRACTS.test(us(open[1].text.slice(0, 4000)))) return { ok: false, why: 'the paragraph after the dateline corrects the release' };
-  if (rec.kind === 'approval' && /\btentative(?:ly)? approv/i.test(first)) return { ok: false, why: 'the opening now states a tentative approval' };
-  if (rec.kind === 'approval' && CRL_WORDS.test(firstSentence(first))) return { ok: false, why: 'the opening now mentions a complete response letter' };
-  if (rec.kind === 'crl' && SAYS_APPROVED.test(firstSentence(first))) return { ok: false, why: 'the opening now states an approval' };
-  return { ok: true, why: '' };
-}
-
-/** What a re-read means for a post: {ok}, {ok, print} for a post that has no print yet (it is taken now, and only
- *  later reads are compared), {unread} for a page that does not read as the release, or {ok:false, why}. */
-export function compareSource(html, rec, row, companies = []) {
-  const ch = (rec.source || {}).channel;
-  const now = sourcePrint(html, ch, rec.headline || '', companies);
-  if (!now) return { unread: true };
-  const was = rec.source_print;
-  if (!was || typeof was !== 'object') return { ok: true, print: now };
-  if (now.m > (Number(was.m) || 0)) return { ok: false, why: 'the page now carries a notice of a correction' };
-  if (now.h > (Number(was.h) || 0)) return { ok: false, why: 'the headline or opening now has hidden or struck-through text' };
-  if (now.o === was.o) return { ok: true };
-  return recheckSource(html, rec, row, companies);
+  const a = Date.parse(r.dl.day + 'T12:00:00Z'), b = Date.parse(srcDay + 'T12:00:00Z');
+  if (!Number.isFinite(a) || !Number.isFinite(b) || Math.abs(a - b) > DAY) return { ok: false, why: `the source is now dated ${r.dl.day}` };
+  const now = sourcePrint(html, ch, rec.headline || '', companies, rec.kind, finalUrl);
+  if (!was) return { ok: true, print: now };
+  if (now.d !== was.d) return { ok: false, why: `the source is now dated ${now.d}` };
+  if (now.n > (Number(was.n) || 0)) return { ok: false, why: 'part of the release is now hidden or struck through' };
+  if (now.c > (Number(was.c) || 0) || now.t > (Number(was.t) || 0)) return { ok: false, why: 'the page now carries a notice of a correction' };
+  if (now.x > (Number(was.x) || 0)) return { ok: false, why: `the release now mentions ${rec.kind === 'crl' ? 'an approval' : 'a complete response letter'}` };
+  if (now.o !== was.o) {
+    const lead = us(r.opening.slice(0, 4000));
+    if (!(row && (row.terms || []).some(x => termIn(x, lead)))) return { ok: false, why: 'the opening was changed and no longer names the drug' };
+    if (!(rec.kind === 'crl' ? CRL_WORDS : APPROVAL_WORDS).test(lead))
+      return { ok: false, why: `the opening was changed and no longer states ${rec.kind === 'crl' ? 'a complete response letter' : 'an FDA approval'}` };
+  }
+  return { ok: true };
 }
 export const RECHECK_AT = [45000, 30 * 60000, 3 * 3600000];
