@@ -211,6 +211,8 @@ def main():
                             m.get("action_source_url") or "", "" if f is None else ("yes" if f else "no")])
 
     title = f"FDA Advisory Committee Votes {span}: {n} Meetings, Every Question and the FDA's Decision | pdufa.bio"
+    if len(title) > 100:   # test_meta_lengths caps titles at 100 (rebuild 568: 102 chars)
+        title = f"FDA Advisory Committee Votes {span}: {n} Meetings and the FDA's Decision | pdufa.bio"
     desc = (f"{n} FDA advisory committee votes since {years[0] if years else ''}, each question's yes, no and abstain "
             f"count from the FDA's minutes, and whether the FDA's final action followed the vote.")
     if len(desc) > 158:
