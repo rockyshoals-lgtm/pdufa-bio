@@ -102,8 +102,11 @@ def parse_checks():
     seg = S.item_202(S.text_of(f"<html><body><p>{BODY}</p></body></html>"))
     if "third quarter ended September 30, 2026" not in seg or "Exhibits 99.1" in seg:
         f.append(f"item_202 did not cut the Item 2.02 paragraph: {seg[:120]!r}")
-    if S.accepted_et("2026-10-28T06:07:33.000Z") != "2026-10-28 06:07":
-        f.append("acceptance time not read as printed")
+    # EDGAR's acceptanceDateTime is UTC: 4 hours ahead of Eastern in summer (EDT), 5 in winter (EST)
+    for raw, want in (("2026-10-28T10:07:33.000Z", "2026-10-28 06:07"), ("2026-10-28T20:05:00.000Z", "2026-10-28 16:05"),
+                      ("2026-01-15T21:05:00.000Z", "2026-01-15 16:05"), ("2026-11-02T01:30:00.000Z", "2026-11-01 20:30")):
+        if S.accepted_et(raw) != want:
+            f.append(f"acceptance time {raw} read as {S.accepted_et(raw)!r}, want {want} Eastern")
     if S.accepted_et("garbage"):
         f.append("a bad acceptance time gave a value")
     if not S.covered("2026-10-29 07:00", [("2026-10-28 16:05", "2026Q3")]) or \
@@ -240,7 +243,15 @@ def cache_checks():
                          f"before {x.get('accepted_et')}")
     dn, db = S.filing_date_check(c)
     if dn >= 20 and db > 0.05 * dn:
-        f.append(f"{db} of {dn} stored 8-K times break EDGAR's filing-date rule: the time zone is being misread")
+        # A cache written before a fix still holds misread times until the next fetch rewrites them. That is safe
+        # only while the pages drop every 8-K row; it blocks the deploy only if a misread time would reach a page.
+        rows, why = B.sec_rows(S.CACHE)
+        if rows:
+            f.append(f"{db} of {dn} stored 8-K times break EDGAR's filing-date rule: the time zone is being misread, "
+                     f"and the earnings pages still use {len(rows)} tickers' 8-K rows")
+        else:
+            print(f"::warning::earnings 8-K: {db} of {dn} stored times break EDGAR's filing-date rule; "
+                  f"the pages use no 8-K rows until a fetch fixes them ({why})")
     return f, f"{n} stored filings, check {c.get('check')}"
 
 
