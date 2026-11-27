@@ -118,6 +118,20 @@ def row_name(r):
     rd = str(r.get("readout") or "").strip()
     parts = [drug]
     if trial and trial.lower() not in drug.lower():
+        # 2026-11-27: "divesiran SANRECO Phase 2" made build_drug_pages publish /drug/divesiran-sanreco (its core
+        # keeps two words) and drop /drug/divesiran, which /ticker/SLN linked: the rebuild's dead-link guard
+        # blocked. The phase goes right after the drug ("divesiran Phase 2 SANRECO"); with no phase, a comma
+        # ends the drug's name ("STX-1150, first-in-human study").
+        m = re.search(r"\bPhase\s*[0-9IV][0-9IVab/]*\b", trial)
+        if m and m.start() > 0:
+            trial = re.sub(r"\s+", " ", f"{m.group(0)} {trial[:m.start()]} {trial[m.end():]}")
+            trial = re.sub(r"\(\s*\)", "", re.sub(r"\(\s*,\s*", "(", re.sub(r"\s*,\s*\)", ")", trial)))
+            trial = re.sub(r"\s+", " ", trial).strip(" ,")
+            # the readout often repeats the phase ("Phase 2 results"): keep it once
+            if rd.lower().startswith(m.group(0).lower()):
+                rd = rd[len(m.group(0)):].strip() or rd
+        elif not m:
+            parts[0] = drug + ","
         parts.append(trial)
     if rd and rd.lower() not in " ".join(parts).lower():
         parts.append(rd)
@@ -358,6 +372,10 @@ def main():
             continue
         seen.add(k)
         same = [e for e in existing_keys.get((tk, p), []) if e.get("d") == d]
+        # 2026-11-26: the same drug can have two readouts due the same day in different trials (Incyte's povorcitinib:
+        # prurigo nodularis Phase 3 and asthma Phase 2, both "Q4 2026"). A record that names the row it was checked
+        # against in "distinct_from" is not a duplicate of that row.
+        same = [e for e in same if e["id"] != r.get("distinct_from")]
         if same:
             log["dup"].append(f"{tk} {r.get('drug')} {d}: already on site as {same[0]['id']}")
             sup = r.get("supersedes_id")
@@ -376,7 +394,7 @@ def main():
         while rid in by:
             rid = f"{base}-{n}"; n += 1
         row = {"id": rid, "t": tk, "company": (canon[tk].most_common(1)[0][0] if canon.get(tk)
-                                                       else r.get("company") or tk), "d": d, "dp": dp, "name": row_name(r),
+                                                       else re.sub(r"\s*\(\s*" + re.escape(tk) + r"\s*\)\s*$", "", r.get("company") or "") or tk), "d": d, "dp": dp, "name": row_name(r),
                "type": "Readout", "ta": "", "cap": "", "st": "Guided", "url": r.get("source_url"), "ua": NOW,
                "_d": {"nct_id": None, "indication": r.get("indication") or None, "market_cap_usd": None,
                       "program": r.get("drug"), "trial": r.get("trial")}}

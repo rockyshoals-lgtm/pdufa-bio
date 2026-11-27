@@ -29,8 +29,9 @@ import re
 MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september",
           "october", "november", "december"]
 ABBR = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
-ORD_Q = {1: "first", 2: "second", 3: "third", 4: "fourth"}
-ORD_H = {1: "first", 2: "second"}
+# 2026-11-26: numeric ordinals too ("in the 2nd half of 2027", Prelude Therapeutics Q3 2026 release).
+ORD_Q = {1: "(?:first|1st)", 2: "(?:second|2nd)", 3: "(?:third|3rd)", 4: "(?:fourth|4th)"}
+ORD_H = {1: "(?:first|1st)", 2: "(?:second|2nd)"}
 
 
 def norm(s):
@@ -106,6 +107,8 @@ def states_half(q, d):
     ]
     if n == 1:
         pats.append(rf"\bmid[- ]?(?:year[- ])?{y}\b|\bmid[- ]?year,? {y}\b")
+        # 2026-11-26: "efficacy data ... expected to follow in H1 and H2 2027" (Precision BioSciences) names both halves
+        pats.append(rf"\b(?:h1|1h) (?:and|&) (?:h2|2h)[ -]?(?:{y}|'?{yy})\b")
     if n == 2:
         pats.append(rf"\b(?:end|close) of {y}\b|\byear[- ]end {y}\b|\bby the end of (?:the year|{y})\b")
     return any(re.search(p, q) for p in pats)
