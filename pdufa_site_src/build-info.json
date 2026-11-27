@@ -1,8 +1,8 @@
 {
- "built": "2026-11-27T06:44:53+00:00",
- "data_built_at": "2026-11-27T06:44:53+00:00",
- "commit": "95dd1e5f9",
- "commit_at_build": "95dd1e5f9",
+ "built": "2026-11-27T09:32:32+00:00",
+ "data_built_at": "2026-11-27T09:32:32+00:00",
+ "commit": "7a816c59d",
+ "commit_at_build": "7a816c59d",
  "as_of_eastern": "2026-11-27",
  "next_date": "2026-11-22",
  "next_ticker": "SVRA",
@@ -218,11 +218,6 @@
    "first_seen": "2026-11-27T06:08:08Z"
   },
   {
-   "row_id": "drug:ov329-global",
-   "source": "drug_pages",
-   "first_seen": "2026-11-27T06:08:08Z"
-  },
-  {
    "row_id": "drug:budoprutug-global",
    "source": "drug_pages",
    "first_seen": "2026-11-27T06:08:08Z"
@@ -233,7 +228,7 @@
    "first_seen": "2026-11-27T06:08:08Z"
   },
   {
-   "row_id": "drug:abs-201-headline",
+   "row_id": "drug:ov329-global",
    "source": "drug_pages",
    "first_seen": "2026-11-27T06:08:08Z"
   },
@@ -246,11 +241,26 @@
    "row_id": "drug:abs-201-headline",
    "source": "drug_pages",
    "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "row_id": "drug:abs-201-headline",
+   "source": "drug_pages",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "row_id": "drug:sonesitatug-vedotin",
+   "source": "drug_pages",
+   "first_seen": "2026-11-27T08:26:54Z"
   },
   {
    "row_id": "drug:phenylephrine-hydrochloride",
    "source": "drug_pages",
    "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "row_id": "drug:cabotegravir",
+   "source": "drug_pages",
+   "first_seen": "2026-11-27T08:26:54Z"
   }
  ]
 }

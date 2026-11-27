@@ -1626,11 +1626,18 @@
    "note": "Re-read the HRMY 2026-11-24 release (AES OLE poster): it gives no timing for this item, so the row's 2026-11-04 source stands."
   },
   "readout_hrmy_2026-12-31": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-27",
    "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
-   "by": "red team 2026-11-17",
-   "note": "Harmony deck 2026-11-04 slide 15: 'Updated data to be presented at AES Annual Meeting in December 2026' verbatim (18-month ARGUS OLE). No newer Harmony release (no AES abstract release yet)."
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409238/0/en/harmony-biosciences-to-present-new-18-month-open-label-extension-data-from-the-epx-100-phase-3-dravet-syndrome-trial-at-the-2026-american-epilepsy-society-annual-meeting.html",
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
+    "by": "red team 2026-11-17",
+    "note": "Harmony deck 2026-11-04 slide 15: 'Updated data to be presented at AES Annual Meeting in December 2026' verbatim (18-month ARGUS OLE). No newer Harmony release (no AES abstract release yet)."
+   }
   },
   "readout_bhvn_2026-12-31": {
    "checked": "2026-11-17",

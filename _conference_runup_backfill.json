@@ -6,7 +6,9 @@
 "AAPG|ASCO|2025": "no qualifying release",
 "AAPG|ASCO|2026": "no organiser-dated meeting before the cut-off",
 "ABBV|AAD|2024": "no qualifying release",
+"ABOS|AAN|2025": "no qualifying release",
 "ABUS|AASLD|2025": "no qualifying release",
+"ACET|ASGCT|2024": "no qualifying release",
 "ACET|ASGCT|2025": "no qualifying release",
 "ACET|EHA|2024": "no qualifying release",
 "ACET|SITC|2025": "no qualifying release",
@@ -101,6 +103,7 @@
 "BRNS|AASLD|2024": "no company name for the ticker",
 "CABA|ASH|2025": "no qualifying release",
 "CADL|AACR|2024": "found",
+"CADL|ASCO|2025": "no qualifying release",
 "CADL|SITC|2024": "no qualifying release",
 "CATX|ASCO|2025": "found",
 "CBIO|ASCO|2026": "no organiser-dated meeting before the cut-off",
@@ -128,6 +131,7 @@
 "CLNN|AAN|2025": "no qualifying release",
 "CLRB|ASH|2024": "no qualifying release",
 "CLRB|ASH|2025": "no qualifying release",
+"CMMB|EASL|2025": "no qualifying release",
 "CMPX|ASCO|2024": "no qualifying release",
 "CMPX|SITC|2025": "found",
 "CNTB|AAD|2023": "no qualifying release",
@@ -296,8 +300,10 @@
 "MOLN|AACR|2025": "found",
 "MOLN|ASH|2025": "found",
 "MOLN|SITC|2024": "no qualifying release",
+"MRK|ASH|2024": "no qualifying release",
 "MRK|ASH|2025": "no qualifying release",
 "MRNA|AACR|2026": "no qualifying release",
+"MRNA|ESMO|2025": "no qualifying release",
 "MTVA|EASL|2025": "found",
 "MTVA|EASL|2026": "found",
 "NAMSW|AAIC|2025": "no qualifying release",
@@ -1304,7 +1310,7 @@
 {
 "anchor": "2024-09-14",
 "anchor_basis": "earliest company release found reporting data from the meeting",
-"company": "SUTRO BIOPHARMA, INC.",
+"company": "Sutro Biopharma, Inc.",
 "conf": "ESMO",
 "conf_full": "ESMO Congress 2024 2024",
 "d0": "2024-09-16",
@@ -1816,7 +1822,7 @@
 {
 "anchor": "2025-04-25",
 "anchor_basis": "earliest company release found reporting data from the meeting",
-"company": "MOLECULAR PARTNERS AG",
+"company": "Molecular Partners AG",
 "conf": "AACR",
 "conf_full": "AACR Annual Meeting 2025 2025",
 "d0": "2025-04-25",
@@ -3192,7 +3198,7 @@
 {
 "anchor": "2025-12-06",
 "anchor_basis": "earliest company release found reporting data from the meeting",
-"company": "Prelude Therapeutics Inc",
+"company": "Prelude Therapeutics Incorporated",
 "conf": "ASH",
 "conf_full": "67th ASH Annual Meeting and Exposition 2025",
 "d0": "2025-12-08",
@@ -3256,7 +3262,7 @@
 {
 "anchor": "2025-12-07",
 "anchor_basis": "earliest company release found reporting data from the meeting",
-"company": "MOLECULAR PARTNERS AG",
+"company": "Molecular Partners AG",
 "conf": "ASH",
 "conf_full": "67th ASH Annual Meeting and Exposition 2025",
 "d0": "2025-12-08",
@@ -3574,5 +3580,5 @@
 "year": 2026
 }
 ],
-"rules_version": 4
+"rules_version": 5
 }

@@ -41,6 +41,10 @@ ABBR = re.compile(r"\b(?:Eur|Assoc|Inc|Ltd|Co|Corp|St|Dr|No|vs|approx|Univ|Soc|A
                   r"|etc|e\.g|i\.e|U\.S|Fig|No)\.\s+[a-z]", re.I)
 
 
+sys.path.insert(0, HERE)
+from fix_meta_lengths import dangles  # noqa: E402  one word list, shared with the repair
+
+
 def main():
     try:
         state = json.load(open(STATE, encoding="utf-8"))
@@ -78,6 +82,11 @@ def main():
             bad.append((short, f"description only {len(s)} chars (min {DESC_MIN})"))
         elif not s.rstrip().endswith((".", "!", "?")):
             bad.append((short, f"ends mid-sentence: ...{s[-40:]!r}"))
+        elif dangles(s):
+            # 2026-11-27: a full stop pasted onto a cut passes the check above. 13 live pages ended
+            # "...followed the.", "...each linked to its.", and /adcomm/REPL "panel voted 10 for." (the
+            # cut had dropped "3 against", so the shortened text was no longer true).
+            bad.append((short, f"ends on a dangling word: ...{s[-40:]!r}"))
         elif s.count("(") != s.count(")"):
             bad.append((short, f"unbalanced parentheses: ...{s[-40:]!r}"))
         else:
