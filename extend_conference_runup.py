@@ -301,6 +301,24 @@ def window(series, anchor):
     return out
 
 
+def universe():
+    """Tickers to read: every ticker page, plus every company in a hand-verified presenter file (a presenter with no
+    ticker page yet was never read: 6 of 28 Aug-Nov 2026 verified presenters, TGTX at ECTRIMS among them)."""
+    import csv, glob
+    uni = FE.universe()
+    sec = None
+    for path in sorted(glob.glob(os.path.join(HERE, "catalysts_out", "conference_presenters_VERIFIED_*.csv"))):
+        for r in csv.DictReader(io.open(path, encoding="utf-8-sig", errors="replace")):
+            tk = (r.get("ticker") or "").strip().upper()
+            if not tk or not tk.isalpha() or tk in uni:
+                continue
+            sec = FE.sec_names() if sec is None else sec
+            nm = sec.get(tk) or (r.get("company") or "").strip()
+            if nm and nm != tk:
+                uni[tk] = nm
+    return uni
+
+
 def published_keys():
     import csv
     try:
@@ -345,7 +363,7 @@ def main():
     cache = json.load(io.open(CACHE, encoding="utf-8")) if os.path.exists(CACHE) else {}
     if cache.get("rules_version") != RULES_VERSION:
         cache["scanned"] = {}            # new rules: every ticker is read again in full
-    uni = FE.universe()
+    uni = universe()
     if a.tickers:
         uni = {t: uni.get(t, t) for t in a.tickers.split(",")}
     # Rows that no longer pass the current rules, or whose meeting left the list, are dropped (and found again
