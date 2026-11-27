@@ -16,7 +16,7 @@ submissions) and keeps the 8-Ks whose item list includes 2.02. A filing is opene
     "preliminary" and never shown as the period's results
   * a filing whose Item 2.02 text names no period, or no results, is kept with that status and never shown
 
-Times: EDGAR's acceptance time (UTC in the submissions file), converted to US Eastern (CLAUDE.md RULE 1). It is when the SEC accepted the
+Times: EDGAR's acceptance time, which EDGAR's filing list gives in UTC, converted to US Eastern (CLAUDE.md RULE 1). It is when the SEC accepted the
 filing, which can be minutes or hours after the release went out; the pages say so. A self-check compares 8-K times
 with newswire times where both exist and stores the median difference; build_earnings_pages.py ignores every 8-K row
 if that median is implausible (a time-zone error would show as a shift of hours).
@@ -47,6 +47,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from zoneinfo import ZoneInfo
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -63,25 +64,25 @@ TICKERS = os.path.join(HERE, "sec_company_tickers.json")
 UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio", "Accept-Encoding": "identity"}
 FROM = "2024-01-01"
 PAUSE = 0.15                       # SEC asks for no more than 10 requests a second
-RULES_VERSION = 4                  # bump when the parse rules change: every opened filing is re-read
+RULES_VERSION = 4                  # bump when the parse rules change: every opened filing is re-read (4: UTC times)
 ACC = re.compile(r"^\d{10}-\d{2}-\d{6}$")
+UTC, ET = dt.timezone.utc, ZoneInfo("America/New_York")
 
 
 def accepted_et(s):
-    """EDGAR's acceptanceDateTime ('2026-10-28T10:07:33.000Z', UTC) -> '2026-10-28 06:07' (US Eastern, as the filing
-    index page prints 'Accepted'). The first rebuild read the 'Z' as Eastern: both time checks caught it (8-K minus
-    newswire median 254 min over 2,884 pairs; 2,056 of 4,287 filings off EDGAR's 17:30 filing-date rule) and no row
-    was shown. They stay in place."""
-    m = re.match(r"(20\d\d-\d\d-\d\d)T(\d\d):(\d\d)(?::(\d\d))?", str(s or ""))
+    """EDGAR's acceptanceDateTime ('2026-10-28T20:07:33.000Z') -> '2026-10-28 16:07', the US Eastern clock time.
+    The 'Z' is meant: the value is UTC (CLAUDE.md RULE 1). 2026-11-27: read as Eastern, 2056 of 4287 stored 8-K
+    times broke EDGAR's filing-date rule (an after-close 16:05 filing read as 20:05 should carry the next day's date,
+    and none did) and the 8-K times ran a median 254 minutes after the companies' own newswire releases, the 4-hour
+    EDT offset plus the usual filing lag. zoneinfo handles the EDT/EST switch."""
+    m = re.match(r"(20\d\d-\d\d-\d\d)T(\d\d):(\d\d)", str(s or ""))
     if not m:
         return ""
     try:
-        t = dt.datetime(*map(int, m.group(1).split("-")), int(m.group(2)), int(m.group(3)), tzinfo=dt.timezone.utc)
+        u = dt.datetime.strptime(f"{m.group(1)} {m.group(2)}:{m.group(3)}", "%Y-%m-%d %H:%M").replace(tzinfo=UTC)
     except ValueError:
-        return ""                              # an impossible date: no time, rather than a crash
-    from zoneinfo import ZoneInfo              # main() stops first if the time-zone data is missing
-    t = t.astimezone(ZoneInfo("America/New_York"))
-    return t.strftime("%Y-%m-%d %H:%M")
+        return ""
+    return u.astimezone(ET).strftime("%Y-%m-%d %H:%M")
 
 
 def text_of(raw):
@@ -381,12 +382,6 @@ def main():
     except Exception as e:  # noqa: BLE001
         print(f"::warning::earnings 8-K: {os.path.basename(CACHE)} unreadable ({type(e).__name__}); starting it again")
         cache = {}
-    try:
-        from zoneinfo import ZoneInfo
-        ZoneInfo("America/New_York")
-    except Exception as e:  # noqa: BLE001
-        print(f"::warning::earnings 8-K: no US Eastern time-zone data ({type(e).__name__}); nothing read")
-        return 0
     before = json.dumps({k: v for k, v in cache.items() if k != "fetched"}, sort_keys=True)
     if cache.get("rules_version") != RULES_VERSION:
         for ent in (cache.get("tickers") or {}).values():
