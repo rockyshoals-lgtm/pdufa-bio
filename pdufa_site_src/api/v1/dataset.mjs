@@ -5593,59 +5593,6 @@ export default [
   "dm": "2026-09"
  },
  {
-  "id": "readout_iva_2027-09-15",
-  "t": "IVA",
-  "company": "Inventiva S.A.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "IVA337",
-  "type": "Readout",
-  "ta": "Infectious",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04849728",
-  "ua": "2026-11-02T20:15:29Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04849728",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09-29",
-    "pcd_type": "actual",
-    "updated": "2026-10-29",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04849728",
-   "date_history": [
-    {
-     "date": "2027-09-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-09-15",
-     "changed": "2026-11-02",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT04849728 is now 2026-09-29 (actual; registry status active_not_recruiting, record updated 2026-10-29); the row's window moved from 2027-09 to 2026-09 on 2026-11-02. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "ACTIVE_NOT_RECRUITING",
-    "primary_completion": "2026-09-29",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT04849728"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   }
-  },
-  "dm": "2026-09"
- },
- {
   "id": "readout_kpti_2026-09-15",
   "t": "KPTI",
   "company": "Karyopharm Therapeutics Inc.",
@@ -12482,39 +12429,6 @@ export default [
    "readout_described": "Initial safety and early efficacy data",
    "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Century GNW 2026-11-12; quote verbatim; 2H 2027 -> half; no newer release."
   }
- },
- {
-  "id": "readout_ivevf_2026-12-31",
-  "t": "IVEVF",
-  "company": "Inventiva S.A.",
-  "d": "2026-12-31",
-  "dp": "quarter",
-  "name": "lanifibranor NATiV3 Phase 3 topline",
-  "type": "Readout",
-  "ta": "Hepatology",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.sec.gov/Archives/edgar/data/1756594/000117184326006471/exh_991.htm",
-  "ua": "2026-11-17T19:57:31Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "MASH with moderate and advanced fibrosis",
-   "market_cap_usd": null,
-   "source": "company guidance (SEC filing)",
-   "guided_precision": "quarter",
-   "guided_form": "6-K EX-99.1",
-   "guided_filed": "2026-10-06",
-   "program": "lanifibranor",
-   "guided_window": "2026-Q4",
-   "guidance_text": "topline results expected in the fourth quarter of this year.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1756594/000117184326006471/exh_991.htm",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Inventiva 6-K EX-99.1 dated 2026-10-06 (sec.gov): lanifibranor in Phase 3 NATiV3 'for the treatment of patients with MASH with moderate and advanced fibrosis, with topline results expected in the fourth quarter of this year'. Page does not say F2-F3. No newer Inventiva release found (FMP press\u2026",
-   "ta_basis": "SEC filing sentence (Inventiva EX-99.2 2026-09-28): lanifibranor NATiV3 Phase 3 in non-cirrhotic MASH",
-   "guided_label": "fourth quarter of 2026",
-   "readout_described": "Phase 3 topline",
-   "nct_stated": "NCT04849728"
-  },
-  "dm": "2026-12"
  },
  {
   "id": "readout_kynb_2026-12-31",
@@ -27552,7 +27466,9 @@ export default [
      "note": "created 2026-11-25 from the company's own statement (press release 2026-11-23)"
     }
    ],
-   "ta_basis": "Company release: indication stated as MASH"
+   "ta_basis": "Company release: indication stated as MASH",
+   "nct_stated": "NCT04849728",
+   "dedupe_note": "2026-11-27: the one record of the NATiV3 topline. Retired as duplicates of this row: readout_ivevf_2026-12-31 (same trial, same company, filed under the OTC symbol IVEVF; Inventiva lists as IVA on Euronext Paris and Nasdaq) and readout_iva_2027-09-15 (\"IVA337\", the registry row for NCT04849728, the same trial)."
   },
   "dm": "2026-12"
  },

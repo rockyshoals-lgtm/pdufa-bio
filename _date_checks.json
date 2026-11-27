@@ -653,11 +653,11 @@
    "note": "Opened Immunome 2026-11-09: 'expects to present an updated dataset at the 2026 American Society of Hematology (ASH) Annual Meeting on December 14, 2026' verbatim; ASH 2026 runs Dec 12-15 (hematology.o"
   },
   "readout_ivevf_2026-12-31": {
-   "checked": "2026-11-17",
-   "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/1756594/000117184326006471/exh_991.htm",
-   "by": "red team 2026-11-17",
-   "note": "Opened Inventiva 6-K EX-99.1 dated 2026-10-06: '...topline results expected in the fourth quarter of this year.' SEC filing list for CIK 1756594 shows nothing after the 10-27 SC 13G/A; inventivapharma"
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/23/3408877/0/en/inventiva-reports-unaudited-2026-third-quarter-financial-results.html",
+   "by": "manual",
+   "note": "Retired 2026-11-27: duplicate of readout_iva_2026-12-31 (same trial, OTC symbol)"
   },
   "readout_lxrx_2027-03-31": {
    "checked": "2026-11-17",
@@ -2690,11 +2690,11 @@
    "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
   },
   "readout_iva_2026-12-31": {
-   "checked": "2026-11-25",
+   "checked": "2026-11-27",
    "verdict": "CONFIRMED",
    "source": "https://www.globenewswire.com/news-release/2026/11/23/3408877/0/en/inventiva-reports-unaudited-2026-third-quarter-financial-results.html",
-   "by": "red team 2026-11-25",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "by": "manual",
+   "note": "Inventiva Q3 release Nov 23: NATiV3 topline expected Q4 2026; the one record after IVEVF and IVA337 duplicates retired"
   },
   "readout_janx_2027-06-30": {
    "checked": "2026-11-25",
@@ -5740,6 +5740,13 @@
    "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
    "by": "red team 2026-11-26",
    "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_iva_2027-09-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/23/3408877/0/en/inventiva-reports-unaudited-2026-third-quarter-financial-results.html",
+   "by": "manual",
+   "note": "Retired 2026-11-27: registry row for NCT04849728 duplicated readout_iva_2026-12-31"
   }
  }
 }
