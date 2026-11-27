@@ -492,22 +492,28 @@ export function onFeedSite(item) {
  *    * or names the opposite decision ("complete response" after an approval post, an FDA approval after a letter
  *      post) and names the drug.
  *  Any wording at all: the headline need not parse. */
-const RETRACTS = /\b(?:retract\w*|withdr[ae]w\w*|correct(?:s|ed|ion|ions|ing)|wrong\w*|unauthori[sz]\w*|mislead\w*|impost\w*|imposter|invalid\w*|void\w*|incorrect\w*|clarif\w*|erroneous\w*|in error|mistaken\w*|misstat\w*|inaccura\w*|disregard\w*|rescind\w*|supersed\w*|prematur\w*|inadvertent\w*|fabricat\w*|fraudulent\w*|fake|false|untrue|bogus|forged|spoofed|hoax\w*|unfounded|unauthori[sz]ed|not authentic|did not (?:issue|occur|receive|approve)|(?:has|have) not (?:yet )?(?:acted|taken action|ruled|decided|completed)|yet to (?:act|take action|rule|decide|approve)|has not (?:occurred|been (?:received|issued|approved|granted))|not (?:yet )?(?:received|approved|issued)|no (?:fda |u\.s\. )?(?:decision|approval|action)|(?:remains|still|continues to be) under (?:fda |regulatory )?review|(?:amend|updat|revis|reissu|restat)(?:s|ed|es|ing|e)? (?:(?:its|the|an?|earlier|previous|previously issued|prior)\s+)*(?:press |news )?release|den(?:y|ies|ied|ying|ial)|misinformation|misleading|fictitious|fictional|impostor|imposter|not (?:issued|authori[sz]ed) by|regulatory update|update on (?:the )?(?:FDA|regulatory|PDUFA|NDA|BLA|sNDA|sBLA)|extend\w* (?:the |its )?(?:FDA |regulatory |PDUFA )?(?:review|goal|action)|(?:PDUFA|goal|action) (?:goal )?date (?:extension|extended|moved|chang\w*|delay\w*)|major amendment)\b/i;
+const RETRACTS = /\b(?:retract\w*|withdr[ae]w\w*|correct(?:s|ed|ion|ions|ing)|wrong\w*|disavow\w*|fraud\w*|forg(?:ed|ery|eries)|erratum|errata|phony|counterfeit\w*|debunk\w*|refut\w*|scam\w*|spoof\w*|unauthori[sz]\w*|mislead\w*|impost\w*|imposter|invalid\w*|void\w*|incorrect\w*|clarif\w*|erroneous\w*|in error|mistaken\w*|misstat\w*|inaccura\w*|disregard\w*|rescind\w*|supersed\w*|prematur\w*|inadvertent\w*|fabricat\w*|fraudulent\w*|fake|false|untrue|bogus|forged|spoofed|hoax\w*|unfounded|unauthori[sz]ed|not authentic|did not (?:issue|occur|receive|approve)|(?:has|have) not (?:yet )?(?:acted|taken action|ruled|decided|completed)|yet to (?:act|take action|rule|decide|approve)|has not (?:occurred|been (?:received|issued|approved|granted))|not (?:yet )?(?:received|approved|issued)|no (?:fda |u\.s\. )?(?:decision|approval|action)|(?:remains|still|continues to be) under (?:fda |regulatory )?review|(?:amend|updat|revis|reissu|restat)(?:s|ed|es|ing|e)? (?:(?:its|the|an?|earlier|previous|previously issued|prior)\s+)*(?:press |news )?release|den(?:y|ies|ied|ying|ial)|misinformation|misleading|fictitious|fictional|impostor|imposter|not (?:issued|authori[sz]ed) by|regulatory update|update on (?:the )?(?:FDA|regulatory|PDUFA|NDA|BLA|sNDA|sBLA)|extend\w* (?:the |its )?(?:FDA |regulatory |PDUFA )?(?:review|goal|action)|(?:PDUFA|goal|action) (?:goal )?date (?:extension|extended|moved|chang\w*|delay\w*)|major amendment)\b/i;
 export const CORRECTS = RETRACTS;
 const CRL_WORDS = /\b(?:complete response|CRL|not approvable)\b/i;
 const APPROVAL_WORDS = /\bFDA\b[^.;]*\bapprov(?:es|ed|al)\b(?!able)|\bapprov(?:es|ed|al)\b[^.;]*\bFDA\b/i;
 // A filing's own prose (Item 7.01 / 8.01, no press release exhibit) says many things in passing ("approved to correct
 // the underlying cause"), so only plain retraction phrases count there (red team 11).
-const BODY_RETRACTS = /\b(?:retract\w*|incorrect\w*|inaccura\w*|unauthori[sz]\w*|prematur\w*|misstat\w*|mistaken\w*|wrong\w*|supersed\w*|untrue|den(?:y|ies|ied|ying)|not be relied (?:up)?on|(?:is|was|are|were|been|hereby|being) (?:\w+ ){0,2}withdrawn|has yet to (?:take action|act|approve|decide)|review (?:is|remains) (?:still )?ongoing|rescind\w*|erroneous\w*|in error|inadvertent\w*|fabricat\w*|fraudulent|fictitious|fake|false|bogus|forged|hoax\w*|not authentic|did not (?:issue|approve)|not (?:issued|authori[sz]ed) by|has not (?:yet )?(?:been )?(?:approved|received|issued)|not (?:yet )?(?:been )?approved|no (?:FDA |U\.S\. )?(?:decision|approval)|(?:remains|still|continues to be) under (?:FDA |regulatory )?review|(?:correct\w*|withdr[ae]w\w*|amend\w*|revis\w*|supersed\w*|disregard\w*|clarif\w*) (?:\w+ ){0,5}(?:press |news )?release)\b/i;
-const TWIN_BREAK = /\b(?:statements?|says?|said|claim\w*|reports?|reported|rumou?r\w*|den(?:y|ies|ied|ial)|no|never|\w+n't|cannot|error\w*|mistak\w*|wrong\w*|inaccura\w*|incorrect\w*|untrue|unauthori[sz]\w*|supersed\w*|mislead\w*|misstat\w*|invalid\w*|void\w*|impost\w*|fictitious|correction\w*|corrected|correcting|retraction\w*|replac\w*|updat\w*|clarif\w*|amend\w*|revis\w*|withdr[ae]w\w*|rescind\w*|disregard\w*|false|fake|premature\w*|not)\b/i;
+const BODY_RETRACTS = /\b(?:retract\w*|disavow\w*|forg(?:ed|ery)|erratum|counterfeit|phony|refut\w*|incorrect\w*|inaccura\w*|unauthori[sz]\w*|prematur\w*|misstat\w*|mistaken\w*|wrong\w*|supersed\w*|untrue|den(?:y|ies|ied|ying)|not be relied (?:up)?on|(?:is|was|are|were|been|hereby|being) (?:\w+ ){0,2}withdrawn|has yet to (?:take action|act|approve|decide)|review (?:is|remains) (?:still )?ongoing|rescind\w*|erroneous\w*|in error|inadvertent\w*|fabricat\w*|fraudulent|fictitious|fake|false|bogus|forged|hoax\w*|not authentic|did not (?:issue|approve)|not (?:issued|authori[sz]ed) by|has not (?:yet )?(?:been )?(?:approved|received|issued)|not (?:yet )?(?:been )?approved|no (?:FDA |U\.S\. )?(?:decision|approval)|(?:remains|still|continues to be) under (?:FDA |regulatory )?review|(?:correct\w*|withdr[ae]w\w*|amend\w*|revis\w*|supersed\w*|disregard\w*|clarif\w*) (?:\w+ ){0,5}(?:press |news )?release)\b/i;
+const TWIN_BREAK = /\b(?:disavow\w*|fraud\w*|forg\w*|errat\w*|phony|counterfeit\w*|debunk\w*|refut\w*|scam\w*|spoof\w*|hoax\w*|alert\w*|warn\w*|statements?|says?|said|claim\w*|reports?|reported|rumou?r\w*|den(?:y|ies|ied|ial)|no|never|\w+n't|cannot|error\w*|mistak\w*|wrong\w*|inaccura\w*|incorrect\w*|untrue|unauthori[sz]\w*|supersed\w*|mislead\w*|misstat\w*|invalid\w*|void\w*|impost\w*|fictitious|correction\w*|corrected|correcting|retraction\w*|replac\w*|updat\w*|clarif\w*|amend\w*|revis\w*|withdr[ae]w\w*|rescind\w*|disregard\w*|false|fake|premature\w*|not)\b/i;
+// Headlines compared as words only: case, punctuation and "U.S." do not matter (red team 13).
+const canon = x => norm(clean(x || '')).toLowerCase().replace(/\bu\.?\s?s\.?(?=\s|$)/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
 function isTwin(item, p) {
-  const ph = norm(clean(typeof p.headline === 'string' ? p.headline : '')).toLowerCase();
+  const ph = canon(typeof p.headline === 'string' ? p.headline : '');
   if (ph.length < 20) return false;
-  const bad = x => RETRACTS.test(x) || BODY_RETRACTS.test(x) || (p.kind === 'crl' ? APPROVAL_WORDS : CRL_WORDS).test(x);
-  const rest = x => { const l = norm(clean(x || '')).toLowerCase(), i = l.indexOf(ph); return i < 0 ? null : l.slice(0, i) + ' ' + l.slice(i + ph.length); };
+  const rest = x => { const l = canon(x), i = l.indexOf(ph); return i < 0 ? null : [l.slice(0, i).trim(), l.slice(i + ph.length)]; };
+  // The headline: nothing before the post's headline (a denial puts its words there: "Fraud Alert:", "Kite Disavows
+  // Release Titled ..."), and nothing after it that says anything was wrong or states the other outcome.
   const rt = rest(item.title);
-  if (rt === null || bad(rt) || TWIN_BREAK.test(rt)) return false;
-  if (item.ctitle) { const rc = rest(item.ctitle); if (rc === null || bad(rc)) return false; }
+  if (rt === null || rt[0] || RETRACTS.test(rt[1]) || BODY_RETRACTS.test(rt[1]) || TWIN_BREAK.test(rt[1])
+      || (p.kind === 'crl' ? APPROVAL_WORDS : CRL_WORDS).test(rt[1])) return false;
+  // The text through the dateline paragraph: no plain correction phrase (ordinary words like "not received prior
+  // treatment" or a resubmission after a letter are allowed there).
+  if (item.ctitle) { const l = canon(item.ctitle); if (!l.includes(ph) || BODY_RETRACTS.test(l.replace(ph, ' '))) return false; }
   return true;
 }
 export function corrections(item, armed, pub) {
@@ -535,14 +541,19 @@ export function corrections(item, armed, pub) {
       && (item.channel === 'rss' || Number(item.firstMs) > 0);
     const later = !same && (known ? Number(item.firstMs) >= ran
       : Number.isFinite(item.atMs) && Number.isFinite(src) && item.atMs >= src);
-    const retitled = same && item.channel === 'rss' && typeof p.headline === 'string' && !!item.title
-      && norm(clean(item.title)) !== norm(clean(p.headline));
+    const nowTitle = item.title || item.ctitle || '';
+    const retitled = same && item.channel === 'rss' && typeof p.headline === 'string' && !!nowTitle
+      && canon(nowTitle) !== canon(p.headline);
     if (!later && !retitled) return false;
     // The same release again (the 8-K exhibit of a feed release, or the reverse) confirms the post rather than
     // contradicting it: its headline holds the post's own headline, and nothing beside it, in the headline or in the
     // text above and at the dateline, says anything was wrong or states the other outcome. An amended filing is never
     // a twin (red teams 11 and 12).
     if (!amended && isTwin(item, p)) return false;
+    // Any other headline that quotes the post's headline is talking about the post ("Spurious Release: ...",
+    // "... Was Never Issued"): it pauses, whatever its words (red team 13).
+    const ph = canon(typeof p.headline === 'string' ? p.headline : '');
+    if (ph.length >= 20 && canon(item.title || item.ctitle || '').includes(ph)) return true;
     const named = (r.terms || []).some(x => termIn(x, t));
     const others = armed.rows.some(o => o.id !== r.id && (o.terms || []).some(x => termIn(x, t)));
     let opposite = p.kind === 'crl' ? APPROVAL_WORDS.test(t) : CRL_WORDS.test(t);
@@ -767,7 +778,9 @@ export function parseFeed(xml) {
       && !/(?:^|[T\s])12:00(?::00(?:\.0+)?)?\s*(?:Z|GMT|UTC|[+-]00:?00)\s*$/i.test(when)
       && !/(?:^|[T\s])00:0\d(?::\d\d(?:\.\d+)?)?(?=\s*(?:[+-]\d|Z|GMT|UTC|[ECMP][SD]T|$))/i.test(when);
     const rawTitle = tag(it, 'title');
-    out.push({ title: hiddenMarks(rawTitle) || clean(rawTitle).length > 300 ? '' : clean(rawTitle), url: clean(link), atMs: zoned ? Date.parse(when) : NaN,
+    // A title with hidden marks or over 300 characters never posts, but is still read for corrections (red team 13).
+    const ct = clean(rawTitle).replace(/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180B-\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\u3164\uFE00-\uFE0F\uFEFF\uFFA0]/g, '').slice(0, 600);
+    out.push({ title: hiddenMarks(rawTitle) || clean(rawTitle).length > 300 ? '' : clean(rawTitle), ctitle: ct, url: clean(link), atMs: zoned ? Date.parse(when) : NaN,
                body: clean(tag(it, 'description') || tag(it, 'summary') || tag(it, 'content')) });
   }
   return out;

@@ -764,3 +764,22 @@ test('red team 12: a release that quotes the post and calls it wrong is never a 
                    'The release was unauthorized and premature; the FDA review is ongoing.'])
     assert.deepEqual(corrections(body(t), ARMED, pub), [r.id], t);
 });
+
+test('red team 13: a headline that quotes the post with anything before it pauses; hidden-mark feed titles still count', () => {
+  const r = ARMED.rows[0];
+  const run = ago(60);
+  const H = 'Mineralys Announces FDA Approval of Lorundrostat for Hypertension';
+  const pub = { [r.id]: { kind: 'approval', status: 'posted', run_ms: run, headline: H, source: { url: 'https://www.sec.gov/a', published_at: etIso(run) } } };
+  const ed = (title, o = {}) => ({ channel: 'edgar', cik: r.cik, title, atMs: ago(5), firstMs: ago(5), url: 'https://www.sec.gov/b', ...o });
+  for (const h of [`Mineralys Disavows Release Titled ${H}`, `Fraud Alert: ${H}`, `Erratum: ${H}`, `Spurious Release: ${H}`,
+                   `Mineralys Refutes ${H}`, `${H} Was Never Issued by the Company`, `Scam Warning Regarding ${H}`])
+    assert.deepEqual(corrections(ed(h), ARMED, pub), [r.id], h);
+  // the same release with "U.S." or other punctuation is still the same release
+  assert.deepEqual(corrections(ed('Mineralys Announces U.S. FDA Approval of Lorundrostat for Hypertension'), ARMED, pub), []);
+  // ordinary words in the twin's dateline paragraph
+  assert.deepEqual(corrections(ed(H, { ctitle: H + ' RADNOR -- for patients who have not received prior treatment, after a resubmission that addressed the complete response letter.' }), ARMED, pub), []);
+  // a feed title with a hidden mark never posts, but is read for corrections
+  const items = parseFeed('<rss><item><title>⚠️ Mineralys Retracts Release Regarding Lorundrostat</title><link>https://investor.mineralys.com/n/3</link><pubDate>Tue, 01 Dec 2026 16:05:00 -0500</pubDate></item></rss>');
+  assert.equal(items[0].title, '');
+  assert.match(items[0].ctitle, /Retracts Release/);
+});
