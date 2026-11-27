@@ -87,13 +87,20 @@ def trim(s, limit=DESC_MAX):
     # No sentence break in range: fall back to the last clause break and close it. Ending at a
     # word boundary alone leaves "...with dates, locations, and presenting", which reads as a
     # truncated page; ending at the comma gives "...with dates, locations." which reads finished.
+    # 2026-11-27: never close a clause on a dangling word. The comma fallback turned REPL's "panel
+    # voted 10 for, 3 against that ..." into "panel voted 10 for." -- shorter, and no longer true.
+    # Walk back over clause breaks until the kept part ends on a content word.
     com = max(cut.rfind(", "), cut.rfind("; "))
+    while com > limit * 0.5 and dangles(cut[:com]):
+        com = max(cut.rfind(", ", 0, com), cut.rfind("; ", 0, com))
     if com > limit * 0.5:
         return cut[:com] + "."
     sp = cut.rfind(" ")
     if sp > limit * 0.6:
         cut = cut[:sp]
     cut = cut.rstrip(" ,;:-\u00b7")
+    while dangles(cut) and cut.count(" ") > 6:
+        cut = cut[:cut.rfind(" ")].rstrip(" ,;:-\u00b7")
     # Close, or drop, a parenthesis the cut left hanging. "(Inoperable (unresectable) locally
     # advanced" reads as a broken string rather than a shortened one.
     return tidy(balance(cut)) or balance(cut)
@@ -113,11 +120,42 @@ def tidy(s):
     # sentences are deliberate and must stay ("Facts only.", "Facts, not advice.") -- the first
     # cut of this rule stripped those from 602 pages before the diff was read.
     m = re.search(r"(?<=[.!?]) ([A-Za-z][^.!?]{0,24})\.$", s)
-    if m and len(m.group(1).split()) <= 3 and m.group(1).split()[-1].lower() in (
-            "the", "a", "an", "and", "or", "of", "to", "for", "in", "on", "with", "its", "see",
-            "by", "at", "from", "is", "are", "was", "which", "that", "as"):
+    if m and len(m.group(1).split()) <= 3 and m.group(1).split()[-1].lower() in DANGLING:
         s = s[:m.start()].rstrip()
+    # 2026-11-27: the same defect in a longer last sentence ("Date, company and indication, each
+    # linked to its.", "...whether the FDA's final action followed the."). Fall back to the last
+    # whole sentence when that still leaves a usable description. With no whole sentence to keep,
+    # leave it: stripping words turned "panel voted 10 for." into "panel voted 10.", which is
+    # still wrong. test_meta_lengths.py flags it so the page's own builder writes a real one.
+    if dangles(s):
+        prev = max(s.rfind(". ", 0, len(s) - 1), s.rfind("! ", 0, len(s) - 1), s.rfind("? ", 0, len(s) - 1))
+        if prev + 1 >= DESC_MIN_KEEP:
+            s = s[:prev + 1]
+        else:
+            # Or the last clause that closes cleanly: "... A to Z (469 companies)." from "...; with each
+            # company's next FDA catalyst and how many FDA decisions we have on."
+            body = s.rstrip(".!? ")
+            for i in range(len(body) - 1, DESC_MIN_KEEP - 2, -1):
+                if body[i] in ",;" or (body[i] == ")" and i + 1 < len(body) and body[i + 1] in " ,;"):
+                    keep = body[:i + 1] if body[i] == ")" else body[:i]
+                    if len(keep) + 1 >= DESC_MIN_KEEP and not dangles(keep) and keep.count("(") == keep.count(")"):
+                        s = keep + "."
+                        break
     return s if s != o else None
+
+
+DANGLING = ("the", "a", "an", "and", "or", "nor", "but", "of", "to", "for", "in", "on", "with", "its", "their",
+            "his", "her", "see", "by", "at", "from", "is", "are", "was", "were", "which", "that", "as", "whether",
+            "than", "into", "onto", "per", "via", "plus", "versus", "vs", "if", "when", "while",
+            "about", "between", "toward", "towards", "including", "such")
+DESC_MIN_KEEP = 70
+
+
+def dangles(s):
+    """True when s (with or without its closing stop) ends on a word a sentence cannot end on."""
+    w = s.rstrip(" .!?,;:").split()
+    # Lower case only: "hemophilia A." and "Type B." end on a name, not on an article.
+    return bool(w) and w[-1].strip("()[]\"'") in DANGLING
 
 
 def balance(s):
@@ -391,6 +429,8 @@ def main():
                 # on the site untouched.
                 new = (trim(cur) if len(cur) > 160
                        else balance(cur) if cur.count("(") != cur.count(")") else tidy(cur))
+                if new:                      # 2026-11-27: a trim or a balance can itself end on "the."
+                    new = tidy(new) or new
             if new and new != cur:
                 esc = html.escape(new, quote=True)
                 doc = D_RE.sub(lambda m: m.group(1) + esc + m.group(3), doc, count=1)
