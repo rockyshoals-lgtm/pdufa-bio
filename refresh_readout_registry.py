@@ -50,6 +50,7 @@ def fetch(nct):
         return None
     ps = d.get("protocolSection", {})
     st = ps.get("statusModule", {})
+    idm = ps.get("identificationModule", {}) or {}
     pc = st.get("primaryCompletionDateStruct", {}) or {}
     return {
         "status": st.get("overallStatus"),
@@ -59,6 +60,10 @@ def fetch(nct):
                            or st.get("resultsFirstPostDateStruct", {}).get("date")),
         "updated": (st.get("lastUpdateSubmitDate")
                     or st.get("lastUpdatePostDateStruct", {}).get("date")),
+        # 2026-11-27: the registry's own titles, kept so tests/test_readout_not_extension.py can tell an
+        # open-label extension (a safety roll-over, not a topline readout) from the trial it extends.
+        "title": idm.get("officialTitle"),
+        "brief_title": idm.get("briefTitle"),
     }
 
 
@@ -123,6 +128,9 @@ def main():
                                 "NOT_YET_RECRUITING")})
         if info.get("results_posted"):
             blk["results_posted"] = info["results_posted"]
+        for _k in ("title", "brief_title"):
+            if info.get(_k):
+                blk[_k] = info[_k]
 
         pcd = str(info["pcd"])
         pcm = pcd[:7]

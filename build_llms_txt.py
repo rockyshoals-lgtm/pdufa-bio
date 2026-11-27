@@ -136,7 +136,7 @@ MORE_HUBS = [
 # One page per company, drug and decision: the pattern, an example that exists on disk, and what the page holds.
 PATTERNS = [
     ("/ticker/<TICKER>", "ticker", "VRTX", "one company's PDUFA dates, FDA decisions, readouts and conferences"),
-    ("/drug/<name>", "drug", "donidalorsen", "one drug's FDA decision dates and catalyst history"),
+    ("/drug/<name>", "drug", "olezarsen", "one drug's FDA decision dates and catalyst history"),
     ("/fda-decision/<TICKER>-<YYYY-MM-DD>", "fda-decision", "GSK-2025-10-23",
      "one FDA decision: the outcome, its date and the source behind it"),
 ]
