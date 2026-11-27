@@ -342,7 +342,9 @@ def main():
 
     # /adcomm
     # meeting pages only (TICKER-YYYY-MM-DD): /adcomm/votes is a directory too, and counting it made the FAQ say 3
-    # meetings beside 2 vote cards (run 568, test_adcomm_counts_agree)
+    # meetings beside 2 vote cards (run 568, test_adcomm_counts_agree). The FAQ takes the vote-card count from
+    # _adcomm_counts.json, the one count build_adcomm_history.py writes and the /adcomm title and lede use;
+    # n_ac is only the fallback when that file is missing.
     n_ac = sum(1 for x in os.scandir(os.path.join(SITE, "adcomm"))
                if x.is_dir() and re.fullmatch(r"[A-Z]{1,6}-\d{4}-\d{2}-\d{2}", x.name))
     ok &= inject("adcomm", [
@@ -353,7 +355,7 @@ def main():
          "No. The vote is advisory; the FDA usually follows it but is free not to.", ""),
         ("How many meetings are on record here?",
          (lambda c: (f"{c['notices']} FDA advisory committee meetings announced in the Federal Register since "
-                     f"January 2020 are listed, each linked to its notice; {n_ac} of them are documented with "
+                     f"January 2020 are listed, each linked to its notice; {c.get('voted', n_ac)} of them are documented with "
                      f"their votes and outcomes as of {tstr}.") if c.get("notices") else
                     f"{n_ac} advisory committee meetings are documented with their votes and outcomes as of {tstr}.")(
              json.load(io.open(os.path.join(HERE, "_adcomm_counts.json"), encoding="utf-8"))
