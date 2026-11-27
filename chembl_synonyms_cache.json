@@ -5865,5 +5865,925 @@
  "pm647": {
   "name": "PM647",
   "synonyms": []
+ },
+ "pmn310-precise-ad": {
+  "name": "PMN310 PRECISE-AD",
+  "synonyms": []
+ },
+ "pra-216": {
+  "name": "PRA-216",
+  "synonyms": []
+ },
+ "prax-215": {
+  "name": "PRAX-215",
+  "synonyms": []
+ },
+ "prednisolone-acetate": {
+  "name": "Prednisolone acetate",
+  "synonyms": []
+ },
+ "prexasertib": {
+  "name": "prexasertib",
+  "synonyms": [
+   "LY-2606368",
+   "LY2606368"
+  ]
+ },
+ "protect-registry": {
+  "name": "PROTECT registry",
+  "synonyms": []
+ },
+ "prt13722": {
+  "name": "PRT13722",
+  "synonyms": []
+ },
+ "prula-cel": {
+  "name": "prula-cel",
+  "synonyms": []
+ },
+ "prx-115": {
+  "name": "PRX-115",
+  "synonyms": []
+ },
+ "pt00114": {
+  "name": "PT00114",
+  "synonyms": []
+ },
+ "pumitamig": {
+  "name": "pumitamig",
+  "synonyms": []
+ },
+ "puxitatug-samrotecan": {
+  "name": "puxitatug samrotecan",
+  "synonyms": [
+   "AZD-8205",
+   "AZD8205"
+  ]
+ },
+ "qtorin-rapamycin": {
+  "name": "QTORIN rapamycin",
+  "synonyms": []
+ },
+ "r289": {
+  "name": "R289",
+  "synonyms": []
+ },
+ "ramantamig": {
+  "name": "ramantamig",
+  "synonyms": []
+ },
+ "ranibizumab": {
+  "name": "ranibizumab",
+  "synonyms": [
+   "BCD-300",
+   "Byooviz",
+   "Cimerli",
+   "FAB-12 VARIANT Y0317",
+   "FYB-201",
+   "FYB201",
+   "Lucentis",
+   "PF-582"
+  ]
+ },
+ "rap-219-long-acting": {
+  "name": "RAP-219 long-acting",
+  "synonyms": []
+ },
+ "rap-641": {
+  "name": "RAP-641",
+  "synonyms": []
+ },
+ "reblozyl": {
+  "name": "Reblozyl",
+  "synonyms": [
+   "ACE-536",
+   "Luspatercept",
+   "Luspatercept aamt",
+   "Luspatercept-aamt"
+  ]
+ },
+ "rec-1245": {
+  "name": "REC-1245",
+  "synonyms": []
+ },
+ "relutrigine-emerald": {
+  "name": "Relutrigine EMERALD",
+  "synonyms": []
+ },
+ "remlifanserin": {
+  "name": "Remlifanserin",
+  "synonyms": [
+   "Remlifanserina",
+   "Remlifanserine"
+  ]
+ },
+ "repatha": {
+  "name": "Repatha",
+  "synonyms": [
+   "AMG-145",
+   "Evolocumab",
+   "Repatha sureclick"
+  ]
+ },
+ "reproxalap-ophthalmic": {
+  "name": "Reproxalap ophthalmic",
+  "synonyms": []
+ },
+ "rese-cel": {
+  "name": "rese-cel",
+  "synonyms": []
+ },
+ "revita": {
+  "name": "Revita",
+  "synonyms": []
+ },
+ "revumenib": {
+  "name": "revumenib",
+  "synonyms": [
+   "SNDX-50613 FREE BASE",
+   "SNDX50613 FREE BASE",
+   "SNDX-5613 Free Base",
+   "SNDX5613 FREE BASE"
+  ]
+ },
+ "revumenib-publication": {
+  "name": "revumenib Publication",
+  "synonyms": []
+ },
+ "rexlemestrocel-l-expanded": {
+  "name": "rexlemestrocel-L expanded",
+  "synonyms": []
+ },
+ "rezpegaldesleukin-zenith": {
+  "name": "rezpegaldesleukin ZENITH",
+  "synonyms": []
+ },
+ "ribupatide-injection": {
+  "name": "ribupatide injection",
+  "synonyms": []
+ },
+ "rilparencel-proact": {
+  "name": "rilparencel PROACT",
+  "synonyms": []
+ },
+ "rilvegostomig": {
+  "name": "rilvegostomig",
+  "synonyms": [
+   "Azd 2936",
+   "AZD-2936",
+   "AZD2936"
+  ]
+ },
+ "rinvatercept": {
+  "name": "rinvatercept",
+  "synonyms": []
+ },
+ "risto-cel": {
+  "name": "risto-cel",
+  "synonyms": []
+ },
+ "ristoglogene-autogetemcel": {
+  "name": "Ristoglogene autogetemcel",
+  "synonyms": []
+ },
+ "risvutatug-rezetecan": {
+  "name": "risvutatug rezetecan",
+  "synonyms": []
+ },
+ "rmc-5127": {
+  "name": "RMC-5127",
+  "synonyms": []
+ },
+ "roluperidone": {
+  "name": "roluperidone",
+  "synonyms": [
+   "FMI",
+   "MIN-101 FREE BASE",
+   "Roluperidona"
+  ]
+ },
+ "ronde-cel": {
+  "name": "Ronde-cel",
+  "synonyms": []
+ },
+ "rozanolixizumab": {
+  "name": "rozanolixizumab",
+  "synonyms": [
+   "Rozanolixizumab-noli",
+   "Rystiggo",
+   "UCB-7665",
+   "UCB7665"
+  ]
+ },
+ "rp-a501-pivotal": {
+  "name": "RP-A501 Pivotal",
+  "synonyms": []
+ },
+ "rtn-001": {
+  "name": "RTN-001",
+  "synonyms": []
+ },
+ "ruxolitinib-cream": {
+  "name": "ruxolitinib cream",
+  "synonyms": []
+ },
+ "ryzumvi": {
+  "name": "RYZUMVI",
+  "synonyms": [
+   "Mesylate phentolamine",
+   "NV-101",
+   "Oraverse",
+   "Phentolamine mesilate",
+   "Phentolamine mesylate",
+   "Phentolamine methanesulfonate",
+   "Regitine",
+   "Rogitine"
+  ]
+ },
+ "sab-142": {
+  "name": "SAB-142",
+  "synonyms": []
+ },
+ "sacituzumab-tirumotecan": {
+  "name": "Sacituzumab tirumotecan",
+  "synonyms": [
+   "Mk-2870",
+   "MK2870",
+   "SKB-264",
+   "Skb264"
+  ]
+ },
+ "safiglipron": {
+  "name": "safiglipron",
+  "synonyms": []
+ },
+ "saruparib": {
+  "name": "saruparib",
+  "synonyms": [
+   "AZD 5305",
+   "AZD-5305",
+   "AZD5305"
+  ]
+ },
+ "satralizumab": {
+  "name": "satralizumab",
+  "synonyms": [
+   "Enspryng",
+   "RG6168",
+   "SA-237",
+   "SA237",
+   "Sapelizumab",
+   "Satralizumab mwge",
+   "Satralizumab-mwge"
+  ]
+ },
+ "sc451": {
+  "name": "SC451",
+  "synonyms": []
+ },
+ "scy-770": {
+  "name": "SCY-770",
+  "synonyms": []
+ },
+ "second-wholly": {
+  "name": "Second wholly",
+  "synonyms": []
+ },
+ "selatogrel": {
+  "name": "selatogrel",
+  "synonyms": [
+   "ACT-246475"
+  ]
+ },
+ "selcodebart": {
+  "name": "selcodebart",
+  "synonyms": []
+ },
+ "sep-479": {
+  "name": "SEP-479",
+  "synonyms": []
+ },
+ "ser-252": {
+  "name": "SER-252",
+  "synonyms": []
+ },
+ "sg293-first-in-human": {
+  "name": "SG293 first-in-human",
+  "synonyms": []
+ },
+ "sgt-212-falcon": {
+  "name": "SGT-212 FALCON",
+  "synonyms": []
+ },
+ "sgt-501-artemis": {
+  "name": "SGT-501 ARTEMIS",
+  "synonyms": []
+ },
+ "silevertinib": {
+  "name": "silevertinib",
+  "synonyms": []
+ },
+ "sl-325": {
+  "name": "SL-325",
+  "synonyms": []
+ },
+ "snv4818-first-in-human": {
+  "name": "SNV4818 first-in-human",
+  "synonyms": []
+ },
+ "solriamfetol-engage": {
+  "name": "solriamfetol ENGAGE",
+  "synonyms": []
+ },
+ "solriamfetol-focus-2": {
+  "name": "solriamfetol FOCUS-2",
+  "synonyms": []
+ },
+ "solriamfetol-sustain": {
+  "name": "solriamfetol SUSTAIN",
+  "synonyms": []
+ },
+ "sonelokimab-vela-teen": {
+  "name": "sonelokimab VELA-TEEN",
+  "synonyms": []
+ },
+ "sonesitatug-vedotin": {
+  "name": "sonesitatug vedotin",
+  "synonyms": [
+   "Sonesitatug vedotina",
+   "Sonesitatug vedotine"
+  ]
+ },
+ "soquelitinib": {
+  "name": "soquelitinib",
+  "synonyms": [
+   "CP-000596",
+   "CP-596",
+   "CPI-000818",
+   "CPI-596",
+   "CPI596",
+   "CPI-818",
+   "CPI818"
+  ]
+ },
+ "sotagliflozin-sonata-hcm": {
+  "name": "sotagliflozin SONATA-HCM",
+  "synonyms": []
+ },
+ "spikevax": {
+  "name": "Spikevax",
+  "synonyms": []
+ },
+ "spy072": {
+  "name": "SPY072",
+  "synonyms": []
+ },
+ "spy120": {
+  "name": "SPY120",
+  "synonyms": []
+ },
+ "srk-439": {
+  "name": "SRK-439",
+  "synonyms": []
+ },
+ "srp-1001": {
+  "name": "SRP-1001",
+  "synonyms": []
+ },
+ "srp-1003": {
+  "name": "SRP-1003",
+  "synonyms": []
+ },
+ "stj331": {
+  "name": "STJ331",
+  "synonyms": []
+ },
+ "stk-002": {
+  "name": "STK-002",
+  "synonyms": []
+ },
+ "stro-004": {
+  "name": "STRO-004",
+  "synonyms": []
+ },
+ "stro-006": {
+  "name": "STRO-006",
+  "synonyms": []
+ },
+ "stx-1150": {
+  "name": "STX-1150",
+  "synonyms": []
+ },
+ "surabgene-lomparvovec": {
+  "name": "surabgene lomparvovec",
+  "synonyms": [
+   "Surabgen lomparvovec"
+  ]
+ },
+ "surovatamig": {
+  "name": "surovatamig",
+  "synonyms": [
+   "AZD-0486",
+   "Azd0486",
+   "TNB-486"
+  ]
+ },
+ "sutacimig": {
+  "name": "sutacimig",
+  "synonyms": []
+ },
+ "sutantatug-envedotin": {
+  "name": "sutantatug envedotin",
+  "synonyms": []
+ },
+ "suzetrigine-two": {
+  "name": "suzetrigine Two",
+  "synonyms": []
+ },
+ "szn-8141": {
+  "name": "SZN-8141",
+  "synonyms": []
+ },
+ "talzenna": {
+  "name": "Talzenna",
+  "synonyms": [
+   "BMN 673ts",
+   "BMN-673TS",
+   "Talazoparib tosilate",
+   "Talazoparib tosylate"
+  ]
+ },
+ "tambiciclib": {
+  "name": "tambiciclib",
+  "synonyms": []
+ },
+ "tapinarof": {
+  "name": "Tapinarof",
+  "synonyms": [
+   "Benvitimod",
+   "GSK-2894512",
+   "GSK2894512",
+   "Vtama",
+   "WBI-1001"
+  ]
+ },
+ "telitacicept-upstream": {
+  "name": "telitacicept UPSTREAM",
+  "synonyms": []
+ },
+ "tividenofusp-alfa": {
+  "name": "Tividenofusp alfa",
+  "synonyms": [
+   "DNL-310",
+   "DNL310",
+   "Etv:ids"
+  ]
+ },
+ "tl1a-p40-bispecific": {
+  "name": "TL1A/p40 bispecific",
+  "synonyms": []
+ },
+ "tlx597-tx": {
+  "name": "TLX597-Tx",
+  "synonyms": []
+ },
+ "tng456": {
+  "name": "TNG456",
+  "synonyms": []
+ },
+ "tonlamarsen": {
+  "name": "tonlamarsen",
+  "synonyms": [
+   "ION-904",
+   "ION904",
+   "ION-904 FREE ACID",
+   "ION904 FREE ACID"
+  ]
+ },
+ "tp-04-kore": {
+  "name": "TP-04 Kore",
+  "synonyms": []
+ },
+ "tp-05-calliope": {
+  "name": "TP-05 Calliope",
+  "synonyms": []
+ },
+ "trastuzumab-deruxtecan": {
+  "name": "trastuzumab deruxtecan",
+  "synonyms": [
+   "DS-8201",
+   "DS-8201a",
+   "Enhertu",
+   "Fam-trastuzumab deruxtecan-nxki",
+   "Trastuzumab deruxtecan nxki",
+   "Trastuzumab deruxtecan-nxki"
+  ]
+ },
+ "trb-061": {
+  "name": "TRB-061",
+  "synonyms": []
+ },
+ "troriluzole": {
+  "name": "Troriluzole",
+  "synonyms": [
+   "BHV-4157a",
+   "Trigriluzole"
+  ]
+ },
+ "trx-100": {
+  "name": "TRX-100",
+  "synonyms": []
+ },
+ "tsc-101": {
+  "name": "TSC-101",
+  "synonyms": []
+ },
+ "tsha-102-reveal": {
+  "name": "TSHA-102 REVEAL",
+  "synonyms": []
+ },
+ "ttfields": {
+  "name": "TTFields",
+  "synonyms": []
+ },
+ "tti-101": {
+  "name": "TTI-101",
+  "synonyms": [
+   "C-188-9",
+   "Stat3 inhibitor c188-9",
+   "Stat3 inhibitor tti-101",
+   "Tti 101",
+   "TTI101"
+  ]
+ },
+ "tukysa": {
+  "name": "Tukysa",
+  "synonyms": [
+   "ARRY-380",
+   "Irbinitinib",
+   "MK-7119",
+   "ONT-380",
+   "Tucatinib"
+  ]
+ },
+ "tunlucabtagene-autoleucel": {
+  "name": "tunlucabtagene autoleucel",
+  "synonyms": []
+ },
+ "tx45": {
+  "name": "TX45",
+  "synonyms": []
+ },
+ "tyvaso": {
+  "name": "Tyvaso",
+  "synonyms": [
+   "15-AU-81",
+   "15AU81",
+   "L-606",
+   "L606",
+   "LRX -15",
+   "LRX-15",
+   "Remodulin",
+   "Rumodolin"
+  ]
+ },
+ "ubamatamab": {
+  "name": "Ubamatamab",
+  "synonyms": [
+   "REGN-4018",
+   "REGN4018"
+  ]
+ },
+ "ubt251": {
+  "name": "UBT251",
+  "synonyms": []
+ },
+ "ugn-103": {
+  "name": "UGN-103",
+  "synonyms": []
+ },
+ "varegacestat": {
+  "name": "Varegacestat",
+  "synonyms": [
+   "Bms 986115",
+   "Bms-986115"
+  ]
+ },
+ "varlilumab": {
+  "name": "varlilumab",
+  "synonyms": [
+   "CDX-1127"
+  ]
+ },
+ "varseta-m": {
+  "name": "Varseta-M",
+  "synonyms": []
+ },
+ "vatiquinone": {
+  "name": "Vatiquinone",
+  "synonyms": [
+   ".alpha.-tocotrienol quinone",
+   "Alpha tocotrienol quinone",
+   "Alpha-tocotrienol quinone",
+   "EPI-743",
+   "PTC-743",
+   "PTC743",
+   "(r)-alpha-tocotrienol quinone",
+   "Vatiquinona"
+  ]
+ },
+ "vax-31": {
+  "name": "VAX-31",
+  "synonyms": []
+ },
+ "vax-a1": {
+  "name": "VAX-A1",
+  "synonyms": []
+ },
+ "velzatinib": {
+  "name": "velzatinib",
+  "synonyms": []
+ },
+ "venclexta": {
+  "name": "VENCLEXTA",
+  "synonyms": [
+   "ABBVIE",
+   "ABT 199",
+   "ABT-199",
+   "ABT199",
+   "C45H50CLN7O7S",
+   "CHRONIC LYMPHOCYTIC LEUKAEMIA THERAPY",
+   "GDC-0199",
+   "RG-7601"
+  ]
+ },
+ "vensobafusp-alfa": {
+  "name": "Vensobafusp alfa",
+  "synonyms": [
+   "KP-104"
+  ]
+ },
+ "vepdegestrant-veritac": {
+  "name": "vepdegestrant VERITAC",
+  "synonyms": []
+ },
+ "verekitug-valour": {
+  "name": "Verekitug VALOUR",
+  "synonyms": []
+ },
+ "verekitug-venture": {
+  "name": "Verekitug VENTURE",
+  "synonyms": []
+ },
+ "vidofludimus-calcium": {
+  "name": "vidofludimus calcium",
+  "synonyms": []
+ },
+ "vispa-cel": {
+  "name": "vispa-cel",
+  "synonyms": []
+ },
+ "voceryq": {
+  "name": "VOCERYQ",
+  "synonyms": []
+ },
+ "volixibat-vantage": {
+  "name": "volixibat VANTAGE",
+  "synonyms": []
+ },
+ "volrustomig": {
+  "name": "volrustomig",
+  "synonyms": [
+   "Medi 5752",
+   "MEDI-5752",
+   "MEDI5752"
+  ]
+ },
+ "vonaprument": {
+  "name": "Vonaprument",
+  "synonyms": []
+ },
+ "vonvendi": {
+  "name": "VONVENDI",
+  "synonyms": [
+   "BAX 111",
+   "BAX-111",
+   "Veyvondi",
+   "Vonicog alfa",
+   "Von willebrand factor (recombinant)"
+  ]
+ },
+ "vopimetostat": {
+  "name": "vopimetostat",
+  "synonyms": []
+ },
+ "vx-670": {
+  "name": "VX-670",
+  "synonyms": []
+ },
+ "vx-993": {
+  "name": "VX-993",
+  "synonyms": []
+ },
+ "vy1706": {
+  "name": "VY1706",
+  "synonyms": []
+ },
+ "vyjuvek": {
+  "name": "VYJUVEK",
+  "synonyms": [
+   "Beremagene geperpavec",
+   "Beremagene geperpavec-svdt",
+   "KB-103",
+   "KB103"
+  ]
+ },
+ "welgemda": {
+  "name": "Welgemda",
+  "synonyms": []
+ },
+ "weltruza": {
+  "name": "Weltruza",
+  "synonyms": []
+ },
+ "wve-006": {
+  "name": "WVE-006",
+  "synonyms": []
+ },
+ "wve-007": {
+  "name": "WVE-007",
+  "synonyms": []
+ },
+ "wve-n531": {
+  "name": "WVE-N531",
+  "synonyms": []
+ },
+ "xanomeline-trospium": {
+  "name": "xanomeline-trospium",
+  "synonyms": []
+ },
+ "xmab412": {
+  "name": "XmAb412",
+  "synonyms": []
+ },
+ "xmab819": {
+  "name": "XmAb819",
+  "synonyms": []
+ },
+ "xmab942": {
+  "name": "XmAb942",
+  "synonyms": []
+ },
+ "xp-8121-pivotal": {
+  "name": "XP-8121 Pivotal",
+  "synonyms": []
+ },
+ "yb-101": {
+  "name": "YB-101",
+  "synonyms": []
+ },
+ "ymi024": {
+  "name": "YMI024",
+  "synonyms": []
+ },
+ "z-basivarsen": {
+  "name": "z-basivarsen",
+  "synonyms": []
+ },
+ "z-rostudirsen": {
+  "name": "Z-rostudirsen",
+  "synonyms": []
+ },
+ "zafinofusp-alfa": {
+  "name": "Zafinofusp alfa",
+  "synonyms": []
+ },
+ "zelicapavir-lotus": {
+  "name": "zelicapavir LOTUS",
+  "synonyms": []
+ },
+ "zelicapavir-resolve": {
+  "name": "zelicapavir RESOLVE",
+  "synonyms": []
+ },
+ "zemocimig": {
+  "name": "zemocimig",
+  "synonyms": []
+ },
+ "zenagamtide": {
+  "name": "zenagamtide",
+  "synonyms": []
+ },
+ "zervimesine": {
+  "name": "Zervimesine",
+  "synonyms": []
+ },
+ "ziftomenib": {
+  "name": "ziftomenib",
+  "synonyms": [
+   "Ko 539",
+   "KO-539",
+   "KO539"
+  ]
+ },
+ "ziftomenib-komet-017": {
+  "name": "Ziftomenib KOMET-017",
+  "synonyms": []
+ },
+ "zigakibart": {
+  "name": "zigakibart",
+  "synonyms": [
+   "Bion 1301",
+   "BION-1301",
+   "BION1301",
+   "C-90401",
+   "C90401"
+  ]
+ },
+ "ziltivekimab": {
+  "name": "ziltivekimab",
+  "synonyms": [
+   "COR-001",
+   "COR001",
+   "Medi 5117",
+   "MEDI-5117",
+   "MEDI5117",
+   "NN-6018",
+   "NN6018",
+   "WBP-216"
+  ]
+ },
+ "zipalertinib": {
+  "name": "Zipalertinib",
+  "synonyms": [
+   "Cln 081",
+   "Cln-081",
+   "CLN081",
+   "TAS-6417",
+   "TAS6417",
+   "TPC-064",
+   "TPC064"
+  ]
+ },
+ "zircaix": {
+  "name": "Zircaix",
+  "synonyms": []
+ },
+ "zl-1503": {
+  "name": "ZL-1503",
+  "synonyms": []
+ },
+ "zl-6201": {
+  "name": "ZL-6201",
+  "synonyms": []
+ },
+ "zocilurtatug-pelitecan": {
+  "name": "zocilurtatug pelitecan",
+  "synonyms": []
+ },
+ "zolaripcabtagene": {
+  "name": "zolaripcabtagene",
+  "synonyms": []
+ },
+ "zoldonrasib": {
+  "name": "zoldonrasib",
+  "synonyms": []
+ },
+ "zolucatetide": {
+  "name": "zolucatetide",
+  "synonyms": []
+ },
+ "zorevunersen": {
+  "name": "zorevunersen",
+  "synonyms": [
+   "STK-001"
+  ]
+ },
+ "zorevunersen-emperor": {
+  "name": "zorevunersen EMPEROR",
+  "synonyms": []
+ },
+ "zovegalisib-reinspire": {
+  "name": "zovegalisib ReInspire",
+  "synonyms": []
+ },
+ "zovegalisib-triplet": {
+  "name": "zovegalisib triplet",
+  "synonyms": []
+ },
+ "zugocabtagene-geleucel": {
+  "name": "Zugocabtagene geleucel",
+  "synonyms": []
+ },
+ "zynlonta": {
+  "name": "ZYNLONTA",
+  "synonyms": [
+   "ADCT-402",
+   "ADCT-402 TESIRINE",
+   "Loncastuximab tesirina",
+   "Loncastuximab tesirine",
+   "Loncastuximab tesirine lpyl",
+   "Loncastuximab tesirine-lpyl"
+  ]
  }
 }
