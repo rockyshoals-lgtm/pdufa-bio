@@ -4122,6 +4122,16 @@
    "permanent": true
   },
   {
+   "source": "/drug/18f-mfbg",
+   "destination": "/readouts",
+   "permanent": true
+  },
+  {
+   "source": "/drug/a-101",
+   "destination": "/ticker/ACRS",
+   "permanent": true
+  },
+  {
    "source": "/drug/ab-101",
    "destination": "/ticker/ARTV",
    "permanent": true
@@ -4144,6 +4154,11 @@
   {
    "source": "/drug/atumelnant",
    "destination": "/ticker/CRNX",
+   "permanent": true
+  },
+  {
+   "source": "/drug/axs-14",
+   "destination": "/ticker/AXSM",
    "permanent": true
   },
   {
@@ -4187,6 +4202,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/cln-081",
+   "destination": "/ticker/CGEM",
+   "permanent": true
+  },
+  {
    "source": "/drug/comp360-psilocybin",
    "destination": "/ticker/CMPS",
    "permanent": true
@@ -4227,6 +4247,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/lcar-b38m-car-t",
+   "destination": "/ticker/LEGN",
+   "permanent": true
+  },
+  {
    "source": "/drug/losartan",
    "destination": "/ticker/ACTU",
    "permanent": true
@@ -4252,6 +4277,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/mk-7240",
+   "destination": "/ticker/MRK",
+   "permanent": true
+  },
+  {
    "source": "/drug/naporafenib",
    "destination": "/ticker/ERAS",
    "permanent": true
@@ -4264,6 +4294,11 @@
   {
    "source": "/drug/nivisnebart",
    "destination": "/ticker/ALEC",
+   "permanent": true
+  },
+  {
+   "source": "/drug/nov-002",
+   "destination": "/ticker/CLRB",
    "permanent": true
   },
   {
@@ -4327,6 +4362,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/tavocept",
+   "destination": "/ticker/LTRN",
+   "permanent": true
+  },
+  {
    "source": "/drug/temozolomide",
    "destination": "/ticker/NVCR",
    "permanent": true
@@ -4372,7 +4412,17 @@
    "permanent": true
   },
   {
+   "source": "/drug/wtx-330",
+   "destination": "/ticker/HOWL",
+   "permanent": true
+  },
+  {
    "source": "/drug/wve",
+   "destination": "/ticker/WVE",
+   "permanent": true
+  },
+  {
+   "source": "/drug/wve-210201",
    "destination": "/ticker/WVE",
    "permanent": true
   },

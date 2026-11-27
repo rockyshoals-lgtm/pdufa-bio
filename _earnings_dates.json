@@ -1,5 +1,5 @@
 {
-"fetched": "2026-11-27T22:29:40Z",
+"fetched": "2026-11-27T23:42:38Z",
 "from": "2024-01-01",
 "parser_version": 6,
 "tickers": {
@@ -22713,6 +22713,7 @@
 "tracked": true
 },
 "GLUE": {
+"backfilled": "2026-11-27",
 "name": "Monte Rosa Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -22844,6 +22845,7 @@
 "tracked": true
 },
 "GMAB": {
+"backfilled": "2026-11-27",
 "name": "Genmab A/S",
 "read": "2026-11-27",
 "releases": [
@@ -22901,6 +22903,7 @@
 "tracked": true
 },
 "GOSS": {
+"backfilled": "2026-11-27",
 "name": "Gossamer Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23012,6 +23015,7 @@
 "tracked": true
 },
 "GPCR": {
+"backfilled": "2026-11-27",
 "name": "Structure Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23079,24 +23083,28 @@
 "tracked": true
 },
 "GRCE": {
+"backfilled": "2026-11-27",
 "name": "Grace Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "GRFS": {
+"backfilled": "2026-11-27",
 "name": "Grifols SA",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "GSK": {
+"backfilled": "2026-11-27",
 "name": "GSK plc",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "GUTS": {
+"backfilled": "2026-11-27",
 "name": "Fractyl Health, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23358,6 +23366,7 @@
 "tracked": true
 },
 "HALO": {
+"backfilled": "2026-11-27",
 "name": "Halozyme Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23633,6 +23642,7 @@
 "tracked": true
 },
 "HCWB": {
+"backfilled": "2026-11-27",
 "name": "HCW Biologics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23642,7 +23652,7 @@
 "period_key": "2023Q4",
 "published_et": "2024-04-01 16:10",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports Fourth Quarter 2023 and Fiscal Year End Financial Results And Business Highlights",
 "url": "https://www.globenewswire.com/news-release/2024/04/01/2855451/0/en/HCW-Biologics-Reports-Fourth-Quarter-2023-and-Fiscal-Year-End-Financial-Results-And-Business-Highlights.html"
 },
@@ -23652,7 +23662,7 @@
 "period_key": "2024Q1",
 "published_et": "2024-05-15 16:39",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports First Quarter 2024 Financial Results and Business Highlights",
 "url": "https://www.globenewswire.com/news-release/2024/05/15/2882943/0/en/HCW-Biologics-Reports-First-Quarter-2024-Financial-Results-and-Business-Highlights.html"
 },
@@ -23662,7 +23672,7 @@
 "period_key": "2024Q2",
 "published_et": "2024-08-14 16:35",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports Second Quarter 2024 Financial Results and Business Highlights",
 "url": "https://www.globenewswire.com/news-release/2024/08/14/2930527/0/en/HCW-Biologics-Reports-Second-Quarter-2024-Financial-Results-and-Business-Highlights.html"
 },
@@ -23672,7 +23682,7 @@
 "period_key": "2024Q2",
 "published_et": "2024-08-23 16:30",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports Second Quarter 2024 Financial Results and Business Highlights - Correction",
 "url": "https://www.globenewswire.com/news-release/2024/08/23/2935090/0/en/HCW-Biologics-Reports-Second-Quarter-2024-Financial-Results-and-Business-Highlights-Correction.html"
 },
@@ -23682,7 +23692,7 @@
 "period_key": "2024Q3",
 "published_et": "2024-11-14 16:40",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports Third Quarter 2024 Financial Results and Business Highlights",
 "url": "https://www.globenewswire.com/news-release/2024/11/14/2981674/0/en/HCW-Biologics-Reports-Third-Quarter-2024-Financial-Results-and-Business-Highlights.html"
 },
@@ -23692,7 +23702,7 @@
 "period_key": "FY2024Q4",
 "published_et": "2025-03-28 15:30",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports Fourth Quarter and Fiscal Year 2024 Business Highlights and Financial Results",
 "url": "https://www.globenewswire.com/news-release/2025/03/28/3051601/0/en/HCW-Biologics-Reports-Fourth-Quarter-and-Fiscal-Year-2024-Business-Highlights-and-Financial-Results.html"
 },
@@ -23702,7 +23712,7 @@
 "period_key": "2025Q1",
 "published_et": "2025-05-15 18:14",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports First Quarter 2025 Business Highlights and Financial Results",
 "url": "https://www.globenewswire.com/news-release/2025/05/15/3082758/0/en/HCW-Biologics-Reports-First-Quarter-2025-Business-Highlights-and-Financial-Results.html"
 },
@@ -23712,7 +23722,7 @@
 "period_key": "2025Q2",
 "published_et": "2025-08-18 14:44",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports Second Quarter 2025 Business Highlights and Financial Results",
 "url": "https://www.globenewswire.com/news-release/2025/08/18/3135246/0/en/HCW-Biologics-Reports-Second-Quarter-2025-Business-Highlights-and-Financial-Results.html"
 },
@@ -23722,7 +23732,7 @@
 "period_key": "2025Q3",
 "published_et": "2025-11-14 16:44",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports Third Quarter 2025 Business Highlights and Financial Results",
 "url": "https://www.globenewswire.com/news-release/2025/11/14/3188638/0/en/HCW-Biologics-Reports-Third-Quarter-2025-Business-Highlights-and-Financial-Results.html"
 },
@@ -23732,7 +23742,7 @@
 "period_key": "2025Q4",
 "published_et": "2026-03-31 17:05",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports Fourth Quarter 2025 and Fiscal Year 2025 Business Highlights and Financial Results",
 "url": "https://www.globenewswire.com/news-release/2026/03/31/3266126/0/en/HCW-Biologics-Reports-Fourth-Quarter-2025-and-Fiscal-Year-2025-Business-Highlights-and-Financial-Results.html"
 },
@@ -23742,7 +23752,7 @@
 "period_key": "2026Q1",
 "published_et": "2026-05-14 16:25",
 "site": "globenewswire.com",
-"stem": "HCW Biologics",
+"stem": "HCW",
 "title": "HCW Biologics Reports First Quarter 2026 Business Highlights and Financial Results",
 "url": "https://www.globenewswire.com/news-release/2026/05/14/3295416/0/en/HCW-Biologics-Reports-First-Quarter-2026-Business-Highlights-and-Financial-Results.html"
 }
@@ -23750,6 +23760,7 @@
 "tracked": true
 },
 "HELP": {
+"backfilled": "2026-11-27",
 "name": "Helus Pharma Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23797,12 +23808,14 @@
 "tracked": true
 },
 "HOTH": {
+"backfilled": "2026-11-27",
 "name": "Hoth Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "HOWL": {
+"backfilled": "2026-11-27",
 "name": "Werewolf Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23910,6 +23923,7 @@
 "tracked": true
 },
 "HRMY": {
+"backfilled": "2026-11-27",
 "name": "Harmony Biosciences Holdings, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24087,9 +24101,66 @@
 "tracked": true
 },
 "HUMA": {
+"backfilled": "2026-11-27",
 "name": "Humacyte, Inc.",
 "read": "2026-11-27",
 "releases": [
+{
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "fourth quarter and year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"published_et": "2024-03-18 08:00",
+"report_date": "2024-03-22",
+"site": "globenewswire.com",
+"stem": "Humacyte",
+"timing": null,
+"timing_words": null,
+"title": "Humacyte to Present 2023 Fourth Quarter and Year-End Financial Results and Provide Corporate Update on March 22, 2024",
+"url": "https://www.globenewswire.com/news-release/2024/03/18/2847721/0/en/Humacyte-to-Present-2023-Fourth-Quarter-and-Year-End-Financial-Results-and-Provide-Corporate-Update-on-March-22-2024.html"
+},
+{
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "first quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"published_et": "2024-05-06 08:00",
+"report_date": "2024-05-10",
+"site": "globenewswire.com",
+"stem": "Humacyte",
+"timing": null,
+"timing_words": null,
+"title": "Humacyte to Present First Quarter Financial Results and Provide Corporate Update on May 10, 2024",
+"url": "https://www.globenewswire.com/news-release/2024/05/06/2875762/0/en/Humacyte-to-Present-First-Quarter-Financial-Results-and-Provide-Corporate-Update-on-May-10-2024.html"
+},
+{
+"call_time": "8:30 a.m. ET",
+"kind": "schedule",
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"published_et": "2024-11-06 08:00",
+"report_date": "2024-11-08",
+"site": "globenewswire.com",
+"stem": "Humacyte",
+"timing": null,
+"timing_words": null,
+"title": "Humacyte to Present Third Quarter Financial Results and Provide Corporate Update on November 8, 2024",
+"url": "https://www.globenewswire.com/news-release/2024/11/06/2975644/0/en/Humacyte-to-Present-Third-Quarter-Financial-Results-and-Provide-Corporate-Update-on-November-8-2024.html"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "fourth quarter and year ended December 31, 2024",
+"period_key": "2024Q4+FY",
+"published_et": "2025-03-26 08:00",
+"report_date": "2025-03-28",
+"site": "globenewswire.com",
+"stem": "Humacyte",
+"timing": null,
+"timing_words": null,
+"title": "Humacyte to Present Fourth Quarter and Full Year Financial Results and Provide Corporate Update on March 28, 2025",
+"url": "https://www.globenewswire.com/news-release/2025/03/26/3049651/0/en/Humacyte-to-Present-Fourth-Quarter-and-Full-Year-Financial-Results-and-Provide-Corporate-Update-on-March-28-2025.html"
+},
 {
 "kind": "results",
 "period": "Fourth Quarter and Year End 2024",
@@ -24188,6 +24259,7 @@
 "tracked": true
 },
 "IBIO": {
+"backfilled": "2026-11-27",
 "name": "iBio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24265,6 +24337,7 @@
 "tracked": true
 },
 "IBRX": {
+"backfilled": "2026-11-27",
 "name": "ImmunityBio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24292,6 +24365,7 @@
 "tracked": true
 },
 "IDYA": {
+"backfilled": "2026-11-27",
 "name": "IDEAYA Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24419,6 +24493,7 @@
 "tracked": true
 },
 "IKT": {
+"backfilled": "2026-11-27",
 "name": "Inhibikase Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24445,6 +24520,16 @@
 "timing_words": "after the close",
 "title": "Inhibikase Therapeutics to Report Second Quarter 2024 Financial Results on August 14, 2024",
 "url": "https://www.globenewswire.com/news-release/2024/08/07/2925910/0/en/Inhibikase-Therapeutics-to-Report-Second-Quarter-2024-Financial-Results-on-August-14-2024.html"
+},
+{
+"kind": "results",
+"period": "second quarter ended June 30, 2024",
+"period_key": "2024Q2",
+"published_et": "2024-08-14 16:25",
+"site": "globenewswire.com",
+"stem": "Inhibikase",
+"title": "Inhibikase Therapeutics Reports Second Quarter Financial Results and Highlights Recent Period Activity",
+"url": "https://www.globenewswire.com/news-release/2024/08/14/2930514/0/en/Inhibikase-Therapeutics-Reports-Second-Quarter-Financial-Results-and-Highlights-Recent-Period-Activity.html"
 },
 {
 "kind": "results",
@@ -24520,6 +24605,7 @@
 "tracked": true
 },
 "ILMN": {
+"backfilled": "2026-11-27",
 "name": "Illumina, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24805,6 +24891,7 @@
 "tracked": true
 },
 "IMA": {
+"backfilled": "2026-11-27",
 "name": "ImageneBio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24862,12 +24949,14 @@
 "tracked": true
 },
 "IMMP": {
+"backfilled": "2026-11-27",
 "name": "IMMUTEP Ltd",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "IMMX": {
+"backfilled": "2026-11-27",
 "name": "Immix Biopharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24885,6 +24974,7 @@
 "tracked": true
 },
 "IMNM": {
+"backfilled": "2026-11-27",
 "name": "Immunome, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24972,6 +25062,7 @@
 "tracked": true
 },
 "IMRX": {
+"backfilled": "2026-11-27",
 "name": "Immuneering Corporation",
 "read": "2026-11-27",
 "releases": [
@@ -25099,6 +25190,7 @@
 "tracked": true
 },
 "IMTX": {
+"backfilled": "2026-11-27",
 "name": "Immatics N.V.",
 "read": "2026-11-27",
 "releases": [
@@ -25216,6 +25308,7 @@
 "tracked": true
 },
 "IMUX": {
+"backfilled": "2026-11-27",
 "name": "Immunic, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -25234,6 +25327,20 @@
 "url": "https://www.prnewswire.com/news-releases/immunic-inc-to-announce-financial-results-for-the-year-ended-december-31-2023-and-provide-corporate-update-302061844.html"
 },
 {
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "First Quarter Ended March 31, 2024",
+"period_key": "2024Q1",
+"published_et": "2024-05-01 06:30",
+"report_date": "2024-05-08",
+"site": "prnewswire.com",
+"stem": "Immunic",
+"timing": "before_open",
+"timing_words": "before the opening",
+"title": "Immunic, Inc. to Announce Financial Results for the First Quarter Ended March 31, 2024, and Provide Corporate Update",
+"url": "https://www.prnewswire.com/news-releases/immunic-inc-to-announce-financial-results-for-the-first-quarter-ended-march-31-2024-and-provide-corporate-update-302132743.html"
+},
+{
 "kind": "results",
 "period": "First Quarter 2024",
 "period_key": "2024Q1",
@@ -25244,6 +25351,20 @@
 "url": "https://www.prnewswire.com/news-releases/immunic-inc-reports-first-quarter-2024-financial-results-and-provides-corporate-update-302139444.html"
 },
 {
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "Second Quarter Ended June 30, 2024",
+"period_key": "2024Q2",
+"published_et": "2024-08-01 06:30",
+"report_date": "2024-08-08",
+"site": "prnewswire.com",
+"stem": "Immunic",
+"timing": "before_open",
+"timing_words": "before the opening",
+"title": "Immunic, Inc. to Announce Financial Results for the Second Quarter Ended June 30, 2024, and Provide Corporate Update",
+"url": "https://www.prnewswire.com/news-releases/immunic-inc-to-announce-financial-results-for-the-second-quarter-ended-june-30-2024-and-provide-corporate-update-302207315.html"
+},
+{
 "kind": "results",
 "period": "Second Quarter 2024",
 "period_key": "2024Q2",
@@ -25252,6 +25373,20 @@
 "stem": "Immunic",
 "title": "Immunic, Inc. Reports Second Quarter 2024 Financial Results and Provides Corporate Update",
 "url": "https://www.prnewswire.com/news-releases/immunic-inc-reports-second-quarter-2024-financial-results-and-provides-corporate-update-302216567.html"
+},
+{
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "Third Quarter Ended September 30, 2024",
+"period_key": "2024Q3",
+"published_et": "2024-10-31 06:30",
+"report_date": "2024-11-07",
+"site": "prnewswire.com",
+"stem": "Immunic",
+"timing": "before_open",
+"timing_words": "before the opening",
+"title": "Immunic, Inc. to Announce Financial Results for the Third Quarter Ended September 30, 2024, and Provide Corporate Update",
+"url": "https://www.prnewswire.com/news-releases/immunic-inc-to-announce-financial-results-for-the-third-quarter-ended-september-30-2024-and-provide-corporate-update-302288247.html"
 },
 {
 "kind": "results",
@@ -25317,12 +25452,59 @@
 "tracked": true
 },
 "IMVT": {
+"backfilled": "2026-11-27",
 "name": "Immunovant, Inc.",
 "read": "2026-11-27",
-"releases": [],
+"releases": [
+{
+"kind": "results",
+"period": "Fourth Quarter and Fiscal Year Ended March 31, 2024",
+"period_key": "FY2024Q4",
+"published_et": "2024-05-29 16:01",
+"site": "globenewswire.com",
+"stem": "Immunovant",
+"title": "Immunovant Provides Corporate Updates and Reports Financial Results for the Fourth Quarter and Fiscal Year Ended March 31, 2024",
+"url": "https://www.globenewswire.com/news-release/2024/05/29/2890254/0/en/Immunovant-Provides-Corporate-Updates-and-Reports-Financial-Results-for-the-Fourth-Quarter-and-Fiscal-Year-Ended-March-31-2024.html"
+},
+{
+"kind": "results",
+"period": "Fourth Quarter and Fiscal Year Ended March 31, 2025",
+"period_key": "FY2025Q4",
+"published_et": "2025-05-29 07:00",
+"site": "globenewswire.com",
+"stem": "Immunovant",
+"title": "Immunovant Provides Corporate Updates and Reports Financial Results for the Fourth Quarter and Fiscal Year Ended March 31, 2025",
+"url": "https://www.globenewswire.com/news-release/2025/05/29/3090173/0/en/Immunovant-Provides-Corporate-Updates-and-Reports-Financial-Results-for-the-Fourth-Quarter-and-Fiscal-Year-Ended-March-31-2025.html"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "Fourth Quarter and Fiscal Year Ended March 31, 2026",
+"period_key": "FY2026Q4",
+"published_et": "2026-05-11 16:05",
+"report_date": "2026-05-20",
+"site": "globenewswire.com",
+"stem": "Immunovant",
+"timing": null,
+"timing_words": null,
+"title": "Immunovant to Report Financial Results for the Fourth Quarter and Fiscal Year Ended March 31, 2026, and Provide Business Update on Wednesday, May 20, 2026",
+"url": "https://www.globenewswire.com/news-release/2026/05/11/3292331/0/en/immunovant-to-report-financial-results-for-the-fourth-quarter-and-fiscal-year-ended-march-31-2026-and-provide-business-update-on-wednesday-may-20-2026.html"
+},
+{
+"kind": "results",
+"period": "Fourth Quarter and Fiscal Year Ended March 31, 2026",
+"period_key": "FY2026Q4",
+"published_et": "2026-05-20 07:00",
+"site": "globenewswire.com",
+"stem": "Immunovant",
+"title": "Immunovant Provides Corporate Updates and Reports Financial Results for the Fourth Quarter and Fiscal Year Ended March 31, 2026",
+"url": "https://www.globenewswire.com/news-release/2026/05/20/3298332/0/en/Immunovant-Provides-Corporate-Updates-and-Reports-Financial-Results-for-the-Fourth-Quarter-and-Fiscal-Year-Ended-March-31-2026.html"
+}
+],
 "tracked": true
 },
 "INBX": {
+"backfilled": "2026-11-27",
 "name": "Inhibrx Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -25440,6 +25622,7 @@
 "tracked": true
 },
 "INCY": {
+"backfilled": "2026-11-27",
 "name": "Incyte Corp",
 "read": "2026-11-27",
 "releases": [
@@ -25511,6 +25694,7 @@
 "tracked": true
 },
 "INDP": {
+"backfilled": "2026-11-27",
 "name": "Indaptus Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -25608,6 +25792,7 @@
 "tracked": true
 },
 "INDV": {
+"backfilled": "2026-11-27",
 "name": "Indivior Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -25769,6 +25954,7 @@
 "tracked": true
 },
 "INO": {
+"backfilled": "2026-11-27",
 "name": "Inovio Pharmaceuticals",
 "read": "2026-11-27",
 "releases": [
@@ -26064,6 +26250,7 @@
 "tracked": true
 },
 "INSM": {
+"backfilled": "2026-11-27",
 "name": "INSMED Inc",
 "read": "2026-11-27",
 "releases": [
@@ -26345,12 +26532,14 @@
 "tracked": true
 },
 "INTE": {
+"backfilled": "2026-11-27",
 "name": "Integral Acquisition Corporation 1",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "INTS": {
+"backfilled": "2026-11-27",
 "name": "Intensity Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26486,6 +26675,7 @@
 "tracked": true
 },
 "INVA": {
+"backfilled": "2026-11-27",
 "name": "Innoviva, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26573,6 +26763,7 @@
 "tracked": true
 },
 "IONI": {
+"backfilled": "2026-11-27",
 "name": "I-ON Digital Corp.",
 "read": "2026-11-27",
 "releases": [
@@ -26590,6 +26781,7 @@
 "tracked": true
 },
 "IONS": {
+"backfilled": "2026-11-27",
 "name": "Ionis Pharmaceuticals Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26721,6 +26913,7 @@
 "tracked": true
 },
 "IOVA": {
+"backfilled": "2026-11-27",
 "name": "Iovance Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26920,6 +27113,7 @@
 "tracked": true
 },
 "IPHA": {
+"backfilled": "2026-11-27",
 "name": "Innate Pharma SA",
 "read": "2026-11-27",
 "releases": [
@@ -27037,6 +27231,7 @@
 "tracked": true
 },
 "IPSC": {
+"backfilled": "2026-11-27",
 "name": "Century Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27122,6 +27317,16 @@
 },
 {
 "kind": "results",
+"period": "first quarter ended March 31, 2026",
+"period_key": "2026Q1",
+"published_et": "2026-05-13 08:00",
+"site": "globenewswire.com",
+"stem": "Century",
+"title": "Century Therapeutics Reports First Quarter Financial Results and Business Updates",
+"url": "https://www.globenewswire.com/news-release/2026/05/13/3293915/0/en/Century-Therapeutics-Reports-First-Quarter-Financial-Results-and-Business-Updates.html"
+},
+{
+"kind": "results",
 "period": "Second Quarter 2026",
 "period_key": "2026Q2",
 "published_et": "2026-08-12 08:00",
@@ -27144,12 +27349,14 @@
 "tracked": true
 },
 "IPSEY": {
+"backfilled": "2026-11-27",
 "name": "Ipsen S.A.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "IRD": {
+"backfilled": "2026-11-27",
 "name": "Opus Genetics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27227,6 +27434,7 @@
 "tracked": true
 },
 "IRLA": {
+"backfilled": "2026-11-27",
 "name": "IRulya Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27244,6 +27452,7 @@
 "tracked": true
 },
 "IRON": {
+"backfilled": "2026-11-27",
 "name": "Disc Medicine, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27331,6 +27540,7 @@
 "tracked": true
 },
 "IRWD": {
+"backfilled": "2026-11-27",
 "name": "Ironwood Pharmaceuticals Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27398,6 +27608,7 @@
 "tracked": true
 },
 "IVA": {
+"backfilled": "2026-11-27",
 "name": "Inventiva S.A.",
 "read": "2026-11-27",
 "releases": [
@@ -27475,12 +27686,14 @@
 "tracked": true
 },
 "IVEVF": {
+"backfilled": "2026-11-27",
 "name": "Inventiva S.A.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "IVVD": {
+"backfilled": "2026-11-27",
 "name": "Invivyd, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27608,12 +27821,14 @@
 "tracked": true
 },
 "IXHL": {
+"backfilled": "2026-11-27",
 "name": "Incannex Healthcare Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "JAGX": {
+"backfilled": "2026-11-27",
 "name": "Jaguar Health, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27651,6 +27866,7 @@
 "tracked": true
 },
 "JANX": {
+"backfilled": "2026-11-27",
 "name": "Janux Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27738,6 +27954,7 @@
 "tracked": true
 },
 "JAZZ": {
+"backfilled": "2026-11-27",
 "name": "Jazz Pharmaceuticals plc",
 "read": "2026-11-27",
 "releases": [
@@ -27879,6 +28096,7 @@
 "tracked": true
 },
 "JBIO": {
+"backfilled": "2026-11-27",
 "name": "Jade Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27956,6 +28174,7 @@
 "tracked": true
 },
 "JNJ": {
+"backfilled": "2026-11-27",
 "name": "Johnson & Johnson",
 "read": "2026-11-27",
 "releases": [
@@ -28073,6 +28292,7 @@
 "tracked": true
 },
 "JSPR": {
+"backfilled": "2026-11-27",
 "name": "Jasper Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28200,6 +28420,7 @@
 "tracked": true
 },
 "KALV": {
+"backfilled": "2026-11-27",
 "name": "KalVista Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28212,6 +28433,16 @@
 "stem": "KalVista",
 "title": "KalVista Pharmaceuticals Provides Operational Update and Fiscal Year 2025 Financial Results",
 "url": "https://www.businesswire.com/news/home/20250710831184/en/KalVista-Pharmaceuticals-Provides-Operational-Update-and-Fiscal-Year-2025-Financial-Results/"
+},
+{
+"kind": "results",
+"period": "third quarter ended September 30, 2025",
+"period_key": "2025Q3",
+"published_et": "2025-11-10 16:30",
+"site": "businesswire.com",
+"stem": "KalVista",
+"title": "KalVista Pharmaceuticals Provides Operational Update and Reports Third Quarter Financial Results",
+"url": "https://www.businesswire.com/news/home/20251110740627/en/KalVista-Pharmaceuticals-Provides-Operational-Update-and-Reports-Third-Quarter-Financial-Results/"
 },
 {
 "call_time": "8:30 a.m. ET",
@@ -28241,6 +28472,7 @@
 "tracked": true
 },
 "KARD": {
+"backfilled": "2026-11-27",
 "name": "Kardigan, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28268,6 +28500,7 @@
 "tracked": true
 },
 "KLRA": {
+"backfilled": "2026-11-27",
 "name": "Kailera Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28305,6 +28538,7 @@
 "tracked": true
 },
 "KLRS": {
+"backfilled": "2026-11-27",
 "name": "Kalaris Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28382,6 +28616,7 @@
 "tracked": true
 },
 "KOD": {
+"backfilled": "2026-11-27",
 "name": "Kodiak Sciences Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28523,6 +28758,7 @@
 "tracked": true
 },
 "KPTI": {
+"backfilled": "2026-11-27",
 "name": "Karyopharm Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28794,6 +29030,7 @@
 "tracked": true
 },
 "KROS": {
+"backfilled": "2026-11-27",
 "name": "Keros Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28911,6 +29148,7 @@
 "tracked": true
 },
 "KRRO": {
+"backfilled": "2026-11-27",
 "name": "Korro Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29018,6 +29256,7 @@
 "tracked": true
 },
 "KRYS": {
+"backfilled": "2026-11-27",
 "name": "Krystal Biotech, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29207,6 +29446,7 @@
 "tracked": true
 },
 "KURA": {
+"backfilled": "2026-11-27",
 "name": "Kura Oncology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29482,6 +29722,7 @@
 "tracked": true
 },
 "KYMR": {
+"backfilled": "2026-11-27",
 "name": "Kymera Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29681,6 +29922,7 @@
 "tracked": true
 },
 "KYNB": {
+"backfilled": "2026-11-27",
 "name": "Kyntra Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29770,6 +30012,7 @@
 "tracked": true
 },
 "KYTX": {
+"backfilled": "2026-11-27",
 "name": "Kyverna Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29897,12 +30140,14 @@
 "tracked": true
 },
 "KZIA": {
+"backfilled": "2026-11-27",
 "name": "Kazia Therapeutics LTD",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "LBRX": {
+"backfilled": "2026-11-27",
 "name": "LB Pharmaceuticals Inc",
 "read": "2026-11-27",
 "releases": [
@@ -29960,6 +30205,7 @@
 "tracked": true
 },
 "LEGN": {
+"backfilled": "2026-11-27",
 "name": "Legend Biotech Corp",
 "read": "2026-11-27",
 "releases": [
@@ -30057,6 +30303,7 @@
 "tracked": true
 },
 "LENZ": {
+"backfilled": "2026-11-27",
 "name": "LENZ Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -30266,12 +30513,14 @@
 "tracked": true
 },
 "LEXX": {
+"backfilled": "2026-11-27",
 "name": "Lexaria Bioscience Corp.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "LGND": {
+"backfilled": "2026-11-27",
 "name": "Ligand Pharmaceuticals INC",
 "read": "2026-11-27",
 "releases": [
@@ -30513,6 +30762,7 @@
 "tracked": true
 },
 "LLY": {
+"backfilled": "2026-11-27",
 "name": "Eli Lilly and Company",
 "read": "2026-11-27",
 "releases": [
@@ -30630,6 +30880,7 @@
 "tracked": true
 },
 "LNTH": {
+"backfilled": "2026-11-27",
 "name": "Lantheus Holdings Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -30717,6 +30968,7 @@
 "tracked": true
 },
 "LONA": {
+"backfilled": "2026-11-27",
 "name": "LeonaBio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -30764,6 +31016,7 @@
 "tracked": true
 },
 "LPCN": {
+"backfilled": "2026-11-27",
 "name": "Lipocine",
 "read": "2026-11-27",
 "releases": [
@@ -30779,6 +31032,36 @@
 },
 {
 "kind": "results",
+"period": "First Quarter Ended March 31, 2024",
+"period_key": "2024Q1",
+"published_et": "2024-05-09 08:00",
+"site": "prnewswire.com",
+"stem": "Lipocine",
+"title": "Lipocine Announces Financial Results for the First Quarter Ended March 31, 2024",
+"url": "https://www.prnewswire.com/news-releases/lipocine-announces-financial-results-for-the-first-quarter-ended-march-31-2024-302140431.html"
+},
+{
+"kind": "results",
+"period": "Second Quarter Ended June 30, 2024",
+"period_key": "2024Q2",
+"published_et": "2024-08-08 08:00",
+"site": "prnewswire.com",
+"stem": "Lipocine",
+"title": "Lipocine Announces Financial Results for the Second Quarter Ended June 30, 2024",
+"url": "https://www.prnewswire.com/news-releases/lipocine-announces-financial-results-for-the-second-quarter-ended-june-30-2024-302217256.html"
+},
+{
+"kind": "results",
+"period": "Third Quarter Ended September 30, 2024",
+"period_key": "2024Q3",
+"published_et": "2024-11-07 08:00",
+"site": "prnewswire.com",
+"stem": "Lipocine",
+"title": "Lipocine Announces Financial Results for the Third Quarter Ended September 30, 2024",
+"url": "https://www.prnewswire.com/news-releases/lipocine-announces-financial-results-for-the-third-quarter-ended-september-30-2024-302298180.html"
+},
+{
+"kind": "results",
 "period": "Year Ended December 31, 2024",
 "period_key": "2024FY",
 "published_et": "2025-03-13 08:00",
@@ -30789,6 +31072,36 @@
 },
 {
 "kind": "results",
+"period": "First Quarter Ended March 31, 2025",
+"period_key": "2025Q1",
+"published_et": "2025-05-08 08:00",
+"site": "prnewswire.com",
+"stem": "Lipocine",
+"title": "Lipocine Announces Financial Results for the First Quarter Ended March 31, 2025",
+"url": "https://www.prnewswire.com/news-releases/lipocine-announces-financial-results-for-the-first-quarter-ended-march-31-2025-302449462.html"
+},
+{
+"kind": "results",
+"period": "Second Quarter Ended June 30, 2025",
+"period_key": "2025Q2",
+"published_et": "2025-08-05 08:00",
+"site": "prnewswire.com",
+"stem": "Lipocine",
+"title": "Lipocine Announces Financial Results for the Second Quarter Ended June 30, 2025",
+"url": "https://www.prnewswire.com/news-releases/lipocine-announces-financial-results-for-the-second-quarter-ended-june-30-2025-302521416.html"
+},
+{
+"kind": "results",
+"period": "Third Quarter Ended September 30, 2025",
+"period_key": "2025Q3",
+"published_et": "2025-11-06 08:00",
+"site": "prnewswire.com",
+"stem": "Lipocine",
+"title": "Lipocine Announces Financial Results for the Third Quarter Ended September 30, 2025",
+"url": "https://www.prnewswire.com/news-releases/lipocine-announces-financial-results-for-the-third-quarter-ended-september-30-2025-302606486.html"
+},
+{
+"kind": "results",
 "period": "Year Ended December 31, 2025",
 "period_key": "2025FY",
 "published_et": "2026-03-10 08:00",
@@ -30796,6 +31109,26 @@
 "stem": "Lipocine",
 "title": "Lipocine Announces Financial Results for the Full Year Ended December 31, 2025",
 "url": "https://www.prnewswire.com/news-releases/lipocine-announces-financial-results-for-the-full-year-ended-december-31-2025-302709002.html"
+},
+{
+"kind": "results",
+"period": "First Quarter Ended March 31, 2026",
+"period_key": "2026Q1",
+"published_et": "2026-05-07 16:05",
+"site": "prnewswire.com",
+"stem": "Lipocine",
+"title": "Lipocine Announces Financial Results for the First Quarter Ended March 31, 2026",
+"url": "https://www.prnewswire.com/news-releases/lipocine-announces-financial-results-for-the-first-quarter-ended-march-31-2026-302766140.html"
+},
+{
+"kind": "results",
+"period": "Second Quarter Ended June 30, 2026",
+"period_key": "2026Q2",
+"published_et": "2026-08-04 08:00",
+"site": "prnewswire.com",
+"stem": "Lipocine",
+"title": "Lipocine Announces Financial Results for the Second Quarter Ended June 30, 2026",
+"url": "https://www.prnewswire.com/news-releases/lipocine-announces-financial-results-for-the-second-quarter-ended-june-30-2026-302841817.html"
 },
 {
 "kind": "results",
@@ -30811,6 +31144,7 @@
 "tracked": true
 },
 "LQDA": {
+"backfilled": "2026-11-27",
 "name": "Liquidia Corp",
 "read": "2026-11-27",
 "releases": [
@@ -31030,6 +31364,7 @@
 "tracked": true
 },
 "LSTA": {
+"backfilled": "2026-11-27",
 "name": "Lisata Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31191,6 +31526,7 @@
 "tracked": true
 },
 "LTGO": {
+"backfilled": "2026-11-27",
 "name": "Latigo Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31218,6 +31554,7 @@
 "tracked": true
 },
 "LTRN": {
+"backfilled": "2026-11-27",
 "name": "Lantern Pharma Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31461,6 +31798,7 @@
 "tracked": true
 },
 "LXEO": {
+"backfilled": "2026-11-27",
 "name": "Lexeo Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31602,6 +31940,7 @@
 "tracked": true
 },
 "LXRX": {
+"backfilled": "2026-11-27",
 "name": "Lexicon Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31845,6 +32184,7 @@
 "tracked": true
 },
 "LYEL": {
+"backfilled": "2026-11-27",
 "name": "Lyell Immunopharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31952,12 +32292,14 @@
 "tracked": true
 },
 "MAIA": {
+"backfilled": "2026-11-27",
 "name": "MAIA Biotechnology, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "MANE": {
+"backfilled": "2026-11-27",
 "name": "Veradermics, Inc",
 "read": "2026-11-27",
 "releases": [
@@ -32005,6 +32347,7 @@
 "tracked": true
 },
 "MAZE": {
+"backfilled": "2026-11-27",
 "name": "Maze Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
