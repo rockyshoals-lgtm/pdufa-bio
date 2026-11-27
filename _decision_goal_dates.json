@@ -109,17 +109,6 @@
   "action": "2025-02-12",
   "outcome": "Approved"
  },
- "ALPMY-2025-11-21": {
-  "cid": "C308",
-  "goal": "2026-04-07",
-  "source_url": "https://www.merck.com/news/fda-grants-priority-review-for-keytruda-pembrolizumab-and-keytruda-qlex-pembrolizumab-and-berahyaluronidase-alfa-pmph-each-in-combination-with-padcev-enfortumab-vedotin-ejfv/",
-  "doc_date": "2025-10-23",
-  "source_type": "sponsor",
-  "extended": false,
-  "goal_original": null,
-  "action": "2025-11-21",
-  "outcome": "Approved"
- },
  "AMGN-2025-01-17": {
   "cid": "C165",
   "goal": "2025-01-17",
@@ -922,17 +911,6 @@
   "goal_original": null,
   "action": "2025-12-30",
   "outcome": "CRL"
- },
- "PFE-2025-11-21": {
-  "cid": "C308",
-  "goal": "2026-04-07",
-  "source_url": "https://www.merck.com/news/fda-grants-priority-review-for-keytruda-pembrolizumab-and-keytruda-qlex-pembrolizumab-and-berahyaluronidase-alfa-pmph-each-in-combination-with-padcev-enfortumab-vedotin-ejfv/",
-  "doc_date": "2025-10-23",
-  "source_type": "sponsor",
-  "extended": false,
-  "goal_original": null,
-  "action": "2025-11-21",
-  "outcome": "Approved"
  },
  "PGEN-2025-08-15": {
   "cid": "C258",

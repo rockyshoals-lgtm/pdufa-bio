@@ -52,6 +52,16 @@ RT_C086 = ("Pass 5 (2026-11-27): goal and action dates re-read at source by a se
 ORDER = ["C044", "C090", "C209", "L042", "C077", "C132", "C086", "C161", "C136", "C179", "C308", "L050", "C027"]
 MEMBERS = {"C077": ["C077", "L035"]}
 TICKER_FIX = {"C209": [], "L042": ["ORX.ST"], "L050": ["CSLLY"]}
+# C308 is Keytruda's approval in the Padcev combination: its goal date is Merck's, so it
+# belongs on Merck's decision page only, not on the Astellas and Pfizer Padcev pages.
+DECISION_PAGES = {"C308": ["MRK-2025-11-21"]}
+ARCHIVE = os.path.join(HERE, "_fda_action_archive.json")
+# C179 (Evrysdi tablets) is NDA 219285; the RHHBY page held the oral-solution NDA 213535 record.
+ARCHIVE_ADD = {"RHHBY-2025-02-12": {
+    "basis": "decision-timing census 2026-11-27 (pass 5): FDA record read", "checked": "2026-11-27",
+    "cid": "C179", "date": "2025-02-11", "name": "EVRYSDI (risdiplam) 5 mg tablets, original NDA",
+    "oc": "Approved", "record": "NDA 219285 ORIG-1",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219285"}}
 FIX = {
     "L042": {"extended": None},   # no document states it; the CRL coming on the goal day is not proof
     "C086": {"goal_date_original": None, "goal_original_url": None, "goal_original_doc_date": None,
@@ -153,11 +163,19 @@ def main():
         gone = set(row["members"])
         doc["excluded_rows"] = [x for x in doc["excluded_rows"] if x["cid"] not in gone]
         added += 1
+    for x in doc["actions"]:
+        if x["cid"] in DECISION_PAGES and x.get("decision_pages") != DECISION_PAGES[x["cid"]]:
+            x["decision_pages"] = DECISION_PAGES[x["cid"]]
     doc["about"] = doc["about"].replace("(four research passes)", "(five research passes)")
     print(f"census: +{added} actions -> {len(doc['actions'])} actions, {len(doc['excluded_rows'])} excluded")
     if a.dry_run:
         return
     io.open(DATA, "w", encoding="utf-8", newline="\n").write(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
+    arc = json.load(io.open(ARCHIVE, encoding="utf-8"))
+    if any(arc.get(k) != v for k, v in ARCHIVE_ADD.items()):
+        arc.update(ARCHIVE_ADD)
+        io.open(ARCHIVE, "w", encoding="utf-8", newline="\n").write(
+            json.dumps(dict(sorted(arc.items())), indent=1, ensure_ascii=False, sort_keys=True) + "\n")
 
 
 if __name__ == "__main__":

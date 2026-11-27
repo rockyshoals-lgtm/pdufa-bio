@@ -8997,7 +8997,10 @@
    "origin": "tracked",
    "excluded": null,
    "scope_note": null,
-   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed."
+   "red_team": "Pass 5 (2026-11-27): goal and action dates re-read at source by a separate check; confirmed.",
+   "decision_pages": [
+    "MRK-2025-11-21"
+   ]
   },
   {
    "cid": "L050",
