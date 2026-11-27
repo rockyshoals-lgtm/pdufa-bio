@@ -341,7 +341,10 @@ def main():
         a.dry_run)
 
     # /adcomm
-    n_ac = sum(1 for x in os.scandir(os.path.join(SITE, "adcomm")) if x.is_dir())
+    # Only per-meeting pages (TICKER-YYYY-MM-DD) are documented meetings; /adcomm/votes is a listing, not a meeting
+    # (counting every directory made the FAQ say 3 against 2 vote cards once /adcomm/votes shipped, run 568).
+    n_ac = sum(1 for x in os.scandir(os.path.join(SITE, "adcomm"))
+               if x.is_dir() and re.match(r"^[A-Z]{1,6}-\d{4}-\d{2}-\d{2}$", x.name))
     ok &= inject("adcomm", [
         ("What is an FDA advisory committee?",
          "A panel of outside experts convened to review an application's evidence and vote on "
