@@ -224,7 +224,8 @@ def page_checks(plant=False):
         f.append("/earnings/data/earnings-dates.csv missing")
     else:
         rows = list(csv.DictReader(io.open(path, encoding="utf-8-sig")))
-        want = sum(1 for t in T.values() for r in t["rel"] if r.get("kind") in ("schedule", "results", "postponed"))
+        want = sum(1 for t in T.values() for r in t["rel"] if r.get("kind") in ("schedule", "results", "postponed")
+                   and (not B.is_8k(r) or any(p["results"] is r for p in t["P"].values())))
         if len(rows) != want:
             f.append(f"CSV has {len(rows)} rows, the cache {want}")
         keys = {(tk, r.get("published_et") or "", r.get("url")) for tk, t in T.items() for r in t["rel"]}

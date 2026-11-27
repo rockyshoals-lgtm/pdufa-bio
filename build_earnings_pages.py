@@ -139,8 +139,8 @@ def sec_rows(path, wire=None):
                 continue                       # a newswire results release went out within a day: that is the record
             out.setdefault(tk, []).append({
                 "kind": "results", "published_et": a, "period": f.get("period") or "", "period_key": f["period_key"],
-                "title": f"Form 8-K, Item 2.02 (Results of Operations and Financial Condition), filed "
-                         f"{pretty(d_of(a))}", "url": f["url"], "site": SEC_SITE, "accession": acc})
+                "title": f"Form 8-K, Item 2.02 (Results of Operations and Financial Condition), accepted by EDGAR "
+                         f"{a[:10]} {a[11:]} ET", "url": f["url"], "site": SEC_SITE, "accession": acc})
     return out, ""
 
 
@@ -182,7 +182,7 @@ def periods(rel):
     for r in sorted(rel, key=lambda r: r.get("published_et") or ""):
         if not d_of(r.get("published_et")):
             continue
-        if calendar_co:
+        if calendar_co and not is_8k(r):
             m = re.fullmatch(r"FY(20\d\d)(Q4)?", r.get("period_key") or "")
             if m:
                 r = dict(r, period_key=f"{m.group(1)}Q4+FY" if m.group(2) else f"{m.group(1)}FY")
@@ -218,9 +218,10 @@ def periods(rel):
         r = p["results"]
         if is_8k(r):
             n8 = sum(1 for x in rel if is_8k(x) and norm_key(x.get("period_key")) == k)
-            early = p["schedules"] and d_of(r["published_et"]) < d_of(p["schedules"][-1]["report_date"])
-            if n8 > 1 or early:
-                # two 8-Ks claim one period, or one came before the day the company announced: neither is used
+            gap = (d_of(r["published_et"]) - d_of(p["schedules"][-1]["report_date"])).days if p["schedules"] else 0
+            if n8 > 1 or gap < 0 or gap > 3:
+                # two 8-Ks claim one period, or one came before the day the company announced or days after it (a
+                # correction, not the release): none is used
                 p["results"] = None
     for p in out.values():
         if p["schedules"] and not p["results"]:
@@ -378,9 +379,12 @@ def write_csv(T, path, pages):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     rows = []
     for tk, t in T.items():
+        used = {id(p["results"]) for p in t["P"].values() if p["results"]}
         for r in t["rel"]:
             if r.get("kind") not in ("schedule", "results", "postponed"):
                 continue
+            if is_8k(r) and id(r) not in used:
+                continue                       # an 8-K the page does not use is not published either
             rows.append([tk, t["name"], "results_8k" if is_8k(r) else r.get("kind"), r.get("period") or "", r.get("period_key") or "",
                          r.get("published_et") or "", r.get("report_date") or "", r.get("timing_words") or "",
                          r.get("call_time") or "", r.get("title") or "", r.get("url"), r.get("site") or "",
@@ -398,7 +402,8 @@ def co(tk, T, pages):
     return (f'<a href="/earnings/{esc(tk)}">{nm} ({esc(tk)})</a>' if tk in pages else f'{nm} ({esc(tk)})')
 
 
-SOURCE = ('Every date on this page comes from the company\'s own press release as the newswires carried it (read '
+SOURCE = ('Every date on this page comes from the company\'s own press release as the newswires carried it, or, '
+          'where marked 8-K, from its own SEC filing (releases read '
           'through Financial Modeling Prep\'s press-release feed; times are US Eastern). A report day appears only when '
           'the company\'s release names it, such as &ldquo;will release financial results for the third quarter of '
           '2026 after the market close on Wednesday, October 28, 2026&rdquo;; a results date is the newswire time of '
@@ -549,7 +554,7 @@ def ticker_page(tk, T, pages, today, fetched, site):
     desc = (f"{nm} ({tk}) earnings dates: the report days it announced and when each results release went out, "
             f"from {src}.")
     if len(desc) > 155:                     # search engines cut longer descriptions mid-word
-        desc = (f"{tk} earnings dates: the report days the company announced and when each results came out, "
+        desc = (f"{tk} earnings dates: the report days the company announced and when its results came out, "
                 f"from {src}.")
     if len(desc) > 155:
         desc = f"{tk} earnings dates: announced report days and results dates, from {src}."

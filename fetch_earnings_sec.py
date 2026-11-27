@@ -63,7 +63,7 @@ TICKERS = os.path.join(HERE, "sec_company_tickers.json")
 UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio", "Accept-Encoding": "identity"}
 FROM = "2024-01-01"
 PAUSE = 0.15                       # SEC asks for no more than 10 requests a second
-RULES_VERSION = 2                  # bump when the parse rules change: every opened filing is re-read
+RULES_VERSION = 3                  # bump when the parse rules change: every opened filing is re-read
 ACC = re.compile(r"^\d{10}-\d{2}-\d{6}$")
 
 
@@ -96,7 +96,9 @@ P_PRELIM = re.compile(r"\bpreliminary\b|\bestimated\s+(?:unaudited\s+)?(?:revenu
 # or late-filing notice
 P_NOT = re.compile(r"\bwill\b|\bto\s+(?:report|release|announce|host|present)\b|\bdate\s+of\b|\bconference\s+call\b|"
                    r"\bwebcast\b|\bscheduled?\b|\bplans?\s+to\b|\bpresentation\b|\bslides?\b|\bpreviously\s+issued\b|"
-                   r"\bnon-?reliance\b|\brestate|\b12b-25\b|\blate\s+fil|\bunable\s+to\s+file\b", re.I)
+                   r"\bnon-?reliance\b|\brestate|\b12b-25\b|\blate\s+fil|\bunable\s+to\s+file\b|\bpreviously\s+reported\b|\berrors?\b|"
+                   r"\brevised\b|\bcorrect(?:ed|ion|s)?\b|\bamend(?:ed|ment)\b|\bupdated\b|\bForm\s+10-[QK]\b|"
+                   r"\b(?:quarterly|annual)\s+report\b|\brecast\b|\bsupplement(?:al|ary)?\b|\bdiffer\b|\breported\s+on\b", re.I)
 P_ABOUT = re.compile(r"\bresults\b|\bfinancial\s+information\b|\brevenues?\b|\bcash\b", re.I)
 P_BOILER = re.compile(r"\bsubject\s+to\s+the\s+liabilit\w*|\bin\s+connection\s+with\s+(?:this|the)\s+(?:item|filing|report)",
                       re.I)
@@ -156,15 +158,10 @@ def period_202(s, pub):
 
 
 def fresh(k, pub):
-    """The period ended before the filing and no more than MAX_DAYS before it. A fiscal key (no calendar end) only
-    when its fiscal year is the filing's year or the next."""
-    if not k or not pub:
-        return False
-    end = period_end(k)
-    if end:
-        return end < pub and (pub - end).days <= MAX_DAYS
-    m = re.match(r"FY(20\d\d)", k)
-    return bool(m) and int(m.group(1)) in (pub.year, pub.year + 1)
+    """A calendar period (quarter, half or calendar year) that ended before the filing and no more than MAX_DAYS
+    before it. A fiscal key is never used from an 8-K: its end is the company's own and cannot be checked."""
+    end = period_end(k) if k and pub else None
+    return bool(end) and end < pub and (pub - end).days <= MAX_DAYS
 
 
 def one_period(s):
@@ -182,7 +179,9 @@ def classify(seg, accepted):
     pub = dt.date.fromisoformat(accepted[:10]) if accepted else None
     sent = [P_BOILER.sub(" ", x) for x in re.split(r"(?<=[a-z0-9\)])\.\s+(?=[A-Z])", seg)]
     for x in sent[:3]:
-        if P_ABOUT.search(x) and P_PRELIM.search(x):
+        # a sentence about the figures themselves (not forward-looking boilerplate or a non-GAAP note)
+        if (P_DID.search(x) or re.search(r"\bfinancial\s+information\b|\brevenues?\b|\bcash\b", x, re.I)) and \
+                not re.search(r"\bnon-GAAP\b|\bforward-looking\b", x, re.I) and P_PRELIM.search(x):
             p, k = period_202(x, pub)
             return "preliminary", p, k
     if not P_RESULTS.search(seg):

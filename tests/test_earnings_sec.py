@@ -40,6 +40,18 @@ PARSE = [
      "June 30, 2025.", "2025-08-07 16:05", "results", "2025Q2"),
     ("On November 12, 2026, the Company announced its financial results for the year ended December 31, 2025 and the "
      "six months ended June 30, 2026.", "2026-11-12 08:00", "no_period", None),
+    ("On November 19, 2026, the Company issued a press release announcing that its previously reported financial "
+     "results for the third quarter ended September 30, 2026 contained an error.", "2026-11-19 08:00", "not_results",
+     None),
+    ("On November 12, 2026, the Company filed its Quarterly Report on Form 10-Q, which reported financial results for "
+     "the third quarter ended September 30, 2026.", "2026-11-12 16:30", "not_results", None),
+    ("On November 18, 2026, the Company issued a press release announcing revised financial results for the third "
+     "quarter ended September 30, 2026.", "2026-11-18 08:00", "not_results", None),
+    ("On August 25, 2026, the Company issued a press release announcing its financial results for the fiscal year "
+     "ended June 30, 2026.", "2026-08-25 16:05", "no_period", None),
+    ("On November 5, 2026, the Company issued a press release announcing its financial results for the third quarter "
+     "ended September 30, 2026. The press release contains forward-looking statements that are subject to risks, and "
+     "actual results may differ.", "2026-11-05 16:05", "results", "2026Q3"),
     # red team, 2026-11-27: wording that only mentions results, or results of another time, is never results
     ("On October 20, 2026, the Company issued a press release announcing that it will release financial results for "
      "the third quarter ended September 30, 2026 after the market close on November 12, 2026.", "2026-10-20 08:00",
@@ -49,7 +61,7 @@ PARSE = [
     ("On January 12, 2026, the Company announced certain unaudited financial results for the fourth quarter and full "
      "year ended December 31, 2025.", "2026-01-12 07:00", "preliminary", "2025Q4+FY"),
     ("In connection with the proposed public offering, the Company is disclosing certain financial results for the "
-     "quarter ended September 30, 2026.", "2026-10-25 07:00", "preliminary", "2026Q3"),
+     "quarter ended September 30, 2026.", "2026-10-25 07:00", "not_results", None),
     ("On September 8, 2026, the Company posted an updated corporate presentation, which includes financial results "
      "for the quarter ended June 30, 2026.", "2026-09-08 08:00", "not_results", None),
     ("On November 10, 2026, the Company announced financial results for the quarter ended December 31, 2026.",
@@ -63,7 +75,7 @@ PARSE = [
      "2.02 shall not be deemed filed or otherwise subject to the liabilities of that section.", "2026-11-05 16:05",
      "results", "2026Q3"),
     ("On February 4, 2026, the Company issued a press release announcing its financial results for its first quarter "
-     "of fiscal 2026 ended December 31, 2025.", "2026-02-04 16:10", "results", "FY2026Q1"),
+     "of fiscal 2026 ended December 31, 2025.", "2026-02-04 16:10", "no_period", None),   # fiscal: never from an 8-K
     ("On November 3, 2026, Roivant Sciences Ltd. issued a press release announcing its financial results for the "
      "second fiscal quarter ended September 30, 2026.", "2026-11-03 07:30", "no_period", None),
     ("On January 12, 2026, the Company announced certain preliminary unaudited financial information for the fourth "
@@ -126,6 +138,8 @@ def build_checks(plant=False):
             R("schedule", "2026-11-10 08:00", "2026Q4", report_date="2027-02-20")]},
         "CCC": {"name": "Gamma Inc.", "releases": []},
         "DDD": {"name": "Delta Inc.", "releases": []},
+        "EEE": {"name": "Epsilon Inc.", "releases": [
+            R("schedule", "2026-10-20 08:00", "2026Q3", report_date="2026-11-05")]},
         "FYC": {"name": "Fiscal Co.", "releases": [
             R("results", "2026-08-20 16:05", "FY2026Q4"), R("results", "2025-08-21 16:05", "FY2025Q4")]},
     }}
@@ -139,6 +153,8 @@ def build_checks(plant=False):
                             **F("0000000002-26-000002", "preliminary", "2026Q2", "2026-07-08 07:00"),
                             # before the announced day of February 20: never used
                             **F("0000000002-26-000003", "results", "2026Q4", "2027-02-10 07:00")}},
+        # two weeks after the announced day (a correction, not the release): never used, and not in the CSV
+        "EEE": {"filings": F("0000000006-26-000001", "results", "2026Q3", "2026-11-19 08:00")},
         "CCC": {"filings": {**F("0000000003-26-000001", "results", "2026Q3", "2026-11-05 07:00"),
                             **F("0000000003-26-000002", "results", "2026Q2", "2026-08-06 07:00"),
                             **F("0000000003-26-000003", "no_period", None, "2026-05-07 07:00"),
@@ -181,6 +197,12 @@ def build_checks(plant=False):
         f.append("CCC: two 8-K periods but no page")
     if any(p["results"] for p in T.get("DDD", {}).get("P", {}).values()):
         f.append("DDD: two 8-Ks for one period, and one was used")
+    if T["EEE"]["P"]["2026Q3"]["results"]:
+        f.append("EEE: an 8-K two weeks after the announced day was used as the release")
+    csv_path = os.path.join(d, "e.csv")
+    B.write_csv(T, csv_path, set())
+    if "0000000006-26-000001" in io.open(csv_path, encoding="utf-8-sig").read():
+        f.append("the CSV publishes an 8-K the page does not use")
     fy = T["FYC"]["P"]
     if "FY2026Q4" not in fy or any(k.endswith("+FY") for k in fy):
         f.append(f"FYC: a fiscal company's releases were relabeled calendar: {sorted(fy)}")
