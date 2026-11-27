@@ -14804,40 +14804,6 @@ export default [
   "dm": "2027-04"
  },
  {
-  "id": "readout_nvs_2027-04-15",
-  "t": "NVS",
-  "company": "Novartis Ag",
-  "d": "2027-04-15",
-  "dp": "month",
-  "name": "Iptacopan",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06517758",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06517758",
-    "status": "active_not_recruiting",
-    "pcd": "2027-04-30",
-    "pcd_type": "estimated",
-    "updated": "2026-08-10",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06517758",
-   "registry_match": {
-    "checked": "2026-11-17",
-    "sponsor": "Novartis Pharmaceuticals",
-    "basis": "Only interventional iptacopan trial with PCD 2027-04: Ph3 gMG (NCT06517758), PCD 2027-04-30 ESTIMATED, Novartis-led. (Other Apr-2027 record NCT06931691 is an observational China PNH cohort.)"
-   }
-  },
-  "dm": "2027-04"
- },
- {
   "id": "pdufa_jazz_2027-04-16",
   "t": "JAZZ",
   "company": "Jazz Pharmaceuticals plc",
@@ -15524,40 +15490,6 @@ export default [
     "source": "FMP split-adjusted daily closes"
    }
   }
- },
- {
-  "id": "readout_nvs_2027-06-15",
-  "t": "NVS",
-  "company": "Novartis Ag",
-  "d": "2027-06-15",
-  "dp": "month",
-  "name": "Remibrutinib",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06840392",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06840392",
-    "status": "active_not_recruiting",
-    "pcd": "2027-06-03",
-    "pcd_type": "estimated",
-    "updated": "2026-10-14",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06840392",
-   "registry_match": {
-    "checked": "2026-11-17",
-    "sponsor": "Novartis Pharmaceuticals",
-    "basis": "Only remibrutinib trial with PCD 2027-06: Ph3 RECHARGE-2 in hidradenitis suppurativa, PCD 2027-06-03 ESTIMATED."
-   }
-  },
-  "dm": "2027-06"
  },
  {
   "id": "readout_svra_2027-06-15",
@@ -43315,6 +43247,1253 @@ export default [
     }
    ],
    "ta_basis": "indication named in company source: Hidradenitis suppurativa"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-06-30",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "inclisiran (Leqvio) Phase 3 ORION-4 full results",
+  "type": "Readout",
+  "ta": "Cardiovascular",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/news/media-releases/twice-yearly-leqvio-inclisiran-reduced-cardiovascular-event-risk-first-outcomes-study-sirna-therapy-ascvd",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "ASCVD secondary prevention (CV outcomes)",
+   "market_cap_usd": null,
+   "program": "inclisiran (Leqvio)",
+   "trial": "Phase 3 ORION-4",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "first half of 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-23",
+   "guidance_text": "Full results from ORION-4 are planned for publication in the first half of 2027",
+   "source_url": "https://www.novartis.com/news/media-releases/twice-yearly-leqvio-inclisiran-reduced-cardiovascular-event-risk-first-outcomes-study-sirna-therapy-ascvd",
+   "source": "company guidance (company release)",
+   "readout_described": "full results",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 23, 2026 Novartis release; it says verbatim 'Full results from ORION-4 are planned for publication in the first half of 2027'. Not an existing site row.",
+   "nct_stated": "NCT03705234",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-23)"
+    }
+   ],
+   "ta_basis": "indication named in company source: ASCVD secondary prevention"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-12-31",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "inclisiran (Leqvio) Phase 3 VICTORION-2P (VICTORION-2 PREVENT) topline results",
+  "type": "Readout",
+  "ta": "Cardiovascular",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/news/media-releases/twice-yearly-leqvio-inclisiran-reduced-cardiovascular-event-risk-first-outcomes-study-sirna-therapy-ascvd",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "ASCVD secondary prevention (CV outcomes)",
+   "market_cap_usd": null,
+   "program": "inclisiran (Leqvio)",
+   "trial": "Phase 3 VICTORION-2P (VICTORION-2 PREVENT)",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "expected in 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-23",
+   "guidance_text": "with VICTORION-2 PREVENT also expected in 2027",
+   "source_url": "https://www.novartis.com/news/media-releases/twice-yearly-leqvio-inclisiran-reduced-cardiovascular-event-risk-first-outcomes-study-sirna-therapy-ascvd",
+   "source": "company guidance (company release)",
+   "readout_described": "topline results",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Nov 23, 2026 release says 'with VICTORION-2 PREVENT also expected in 2027'; Q3 deck lists NCT05030428 VICTORION-2P 'Readout Milestone(s) 2027 (event-driven)'. Year precision.",
+   "nct_stated": "NCT05030428",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-23)"
+    }
+   ],
+   "ta_basis": "indication named in company source: ASCVD secondary prevention"
+  }
+ },
+ {
+  "id": "readout_nvs_2026-12-31",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2026-12-31",
+  "dp": "year",
+  "name": "ianalumab (VAY736) Phase 3 VAYHIT-1 readout",
+  "type": "Readout",
+  "ta": "Hematology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Immune thrombocytopenia, first line",
+   "market_cap_usd": null,
+   "program": "ianalumab (VAY736)",
+   "trial": "Phase 3 VAYHIT-1",
+   "guided_precision": "half",
+   "guided_window": "2026-H2",
+   "guided_label": "1L ITP readout in H2 2026",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "1L ITP readout in H2 2026",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 29 '1L ITP readout in H2 2026'; slide 17 lists 'ianalumab 1L ITP' under 'Readouts 2026'. Filled nct_id NCT05653349 (VAYHIT1, 1L ITP, CT.gov). Novartis newsroom checked through Nov 27, 2026 (latest release Nov 23, ORION-4):…",
+   "nct_stated": "NCT05653349",
+   "date_history": [
+    {
+     "date": "2026-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Immune thrombocytopenia, first line"
+  }
+ },
+ {
+  "id": "readout_nvs_2026-12-31-remibrutin",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2026-12-31",
+  "dp": "quarter",
+  "name": "remibrutinib (Rhapsido) Phase 3 RECHARGE 1 and RECHARGE 2 readout",
+  "type": "Readout",
+  "ta": "Dermatology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Hidradenitis suppurativa",
+   "market_cap_usd": null,
+   "program": "remibrutinib (Rhapsido)",
+   "trial": "Phase 3 RECHARGE 1 and RECHARGE 2",
+   "guided_precision": "quarter",
+   "guided_window": "2026-Q4",
+   "guided_label": "readout Q4 '26",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Rhapsido (HS) Readout H2 2026 … HS Ph III readout Q4 ’26",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 22 'Rhapsido (HS) Readout H2 2026', slide 24 'HS Ph III readout Q4 ’26'; Q3 deck RECHARGE2/RECHARGE1 'H2 2026'. Set supersedes_id: site row readout_nvs_2027-06-15 is NCT06840392 RECHARGE-2 (HS), the same trial. Novartis…",
+   "nct_stated": "NCT06840392",
+   "date_history": [
+    {
+     "date": "2026-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "supersedes_estimate": "readout_nvs_2027-06-15",
+   "ta_basis": "indication named in company source: Hidradenitis suppurativa"
+  },
+  "dm": "2026-12"
+ },
+ {
+  "id": "readout_nvs_2026-12-31-remibrutin-2",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2026-12-31",
+  "dp": "quarter",
+  "name": "remibrutinib (Rhapsido) Phase 3 (CSU adolescents) readout",
+  "type": "Readout",
+  "ta": "Immunology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Chronic spontaneous urticaria, adolescents",
+   "market_cap_usd": null,
+   "program": "remibrutinib (Rhapsido)",
+   "trial": "Phase 3 (CSU adolescents)",
+   "guided_precision": "quarter",
+   "guided_window": "2026-Q4",
+   "guided_label": "readout Q4 '26",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "CSU adolescent Ph III readout Q4 ’26",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 24 'CSU adolescent Ph III readout Q4 ’26'. Filled nct_id NCT05677451 (Ph3 remibrutinib CSU adolescents 12-<18, CT.gov). Novartis newsroom checked through Nov 27, 2026 (latest release Nov 23, ORION-4): no result announced.",
+   "nct_stated": "NCT05677451",
+   "date_history": [
+    {
+     "date": "2026-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Chronic spontaneous urticaria, adolescents"
+  },
+  "dm": "2026-12"
+ },
+ {
+  "id": "readout_nvs_2027-12-31-remibrutin",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "remibrutinib (Rhapsido) Phase 2a (papulopustular rosacea) readout",
+  "type": "Readout",
+  "ta": "Dermatology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Papulopustular rosacea",
+   "market_cap_usd": null,
+   "program": "remibrutinib (Rhapsido)",
+   "trial": "Phase 2a (papulopustular rosacea)",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "readout H2 2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "PPR Ph IIa started Jul ’26; readout H2 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 24 'PPR Ph IIa started Jul ’26; readout H2 2027'. PPR is papulopustular rosacea (CT.gov NCT07681271, Ph2 remibrutinib, start 2026-07-30): fixed indication and nct_id. Site row readout_nvs_2027-06-15 is RECHARGE-2 HS, a…",
+   "nct_stated": "NCT07681271",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Papulopustular rosacea"
+  }
+ },
+ {
+  "id": "readout_nvs_2029-12-31",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2029-12-31",
+  "dp": "year",
+  "name": "remibrutinib (Rhapsido) Phase 3 (secondary progressive MS) readout",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Secondary progressive multiple sclerosis",
+   "market_cap_usd": null,
+   "program": "remibrutinib (Rhapsido)",
+   "trial": "Phase 3 (secondary progressive MS)",
+   "guided_precision": "year",
+   "guided_window": "2029",
+   "guided_label": "Readout 2029 (event-driven)",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Remibrutinib (SPMS) Readout 2029 (event-driven)",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 26 'Remibrutinib (SPMS) Readout 2029 (event-driven)' (slide 24 also 'SPMS Ph III readout 2029 (event-driven)').",
+   "date_history": [
+    {
+     "date": "2029-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Secondary progressive multiple sclerosis"
+  }
+ },
+ {
+  "id": "readout_nvs_2029-12-31-remibrutin",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2029-12-31",
+  "dp": "year",
+  "name": "remibrutinib (Rhapsido) Phase 3 (food allergy) readout",
+  "type": "Readout",
+  "ta": "Immunology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Food allergy (peanut, milk or egg)",
+   "market_cap_usd": null,
+   "program": "remibrutinib (Rhapsido)",
+   "trial": "Phase 3 (food allergy)",
+   "guided_precision": "year",
+   "guided_window": "2029",
+   "guided_label": "readout 2029",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Food Allergy Ph III started Aug ’26; readout 2029",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 24 'Food Allergy Ph III started Aug ’26; readout 2029'; Q3 deck NCT07768371 'Readout Milestone(s) 2029'.",
+   "nct_stated": "NCT07768371",
+   "date_history": [
+    {
+     "date": "2029-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Food allergy (peanut, milk or egg)"
+  }
+ },
+ {
+  "id": "readout_nvs_2029-12-31-remibrutin-2",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2029-12-31",
+  "dp": "year",
+  "name": "remibrutinib (Rhapsido) Phase 3 (chronic pruritus of unknown origin, two trials) readout",
+  "type": "Readout",
+  "ta": "Dermatology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Chronic pruritus of unknown origin",
+   "market_cap_usd": null,
+   "program": "remibrutinib (Rhapsido)",
+   "trial": "Phase 3 (chronic pruritus of unknown origin, two trials)",
+   "guided_precision": "year",
+   "guided_window": "2029",
+   "guided_label": "readout 2029",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "CPUO Ph III started Aug ’26; readout 2029",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 24 'CPUO Ph III started Aug ’26; readout 2029'; Q3 deck NCT07811869 '2029'.",
+   "nct_stated": "NCT07811869",
+   "date_history": [
+    {
+     "date": "2029-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Chronic pruritus of unknown origin"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-06-30-ianalumab",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "ianalumab (VAY736) Phase 3 SIRIUS-SLE 1 and SIRIUS-SLE 2 readout",
+  "type": "Readout",
+  "ta": "Immunology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Systemic lupus erythematosus",
+   "market_cap_usd": null,
+   "program": "ianalumab (VAY736)",
+   "trial": "Phase 3 SIRIUS-SLE 1 and SIRIUS-SLE 2",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "Readout H1 2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Ianalumab (SLE) Readout H1 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 22 'Ianalumab (SLE) Readout H1 2027' (also slide 25); Q3 deck SIRIUS-SLE 1 '2027'. Newer deck's H1 2027 used.",
+   "nct_stated": "NCT05639114",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Systemic lupus erythematosus"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-12-31-ianalumab",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "ianalumab (VAY736) Phase 3 SIRIUS-LN readout",
+  "type": "Readout",
+  "ta": "Nephrology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Lupus nephritis",
+   "market_cap_usd": null,
+   "program": "ianalumab (VAY736)",
+   "trial": "Phase 3 SIRIUS-LN",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "Readout H2 2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Ianalumab (LN) Readout H2 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 22 'Ianalumab (LN) Readout H2 2027'; Q3 deck SIRIUS-LN 'Primary 2027'.",
+   "nct_stated": "NCT05126277",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Lupus nephritis"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-12-31-ianalumab-2",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "ianalumab (VAY736) Phase 2 VENUSS readout",
+  "type": "Readout",
+  "ta": "Immunology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Diffuse cutaneous systemic sclerosis",
+   "market_cap_usd": null,
+   "program": "ianalumab (VAY736)",
+   "trial": "Phase 2 VENUSS",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "Readout H2 2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Ianalumab (SSc) Readout H2 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 22 'Ianalumab (SSc) Readout H2 2027'; Q3 deck VENUSS '2027'.",
+   "nct_stated": "NCT06470048",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Diffuse cutaneous systemic sclerosis"
+  }
+ },
+ {
+  "id": "readout_nvs_2029-12-31-ianalumab",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2029-12-31",
+  "dp": "year",
+  "name": "ianalumab (VAY736) Phase 3 THALASSA readout",
+  "type": "Readout",
+  "ta": "Immunology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Sjögren's disease (high symptom burden)",
+   "market_cap_usd": null,
+   "program": "ianalumab (VAY736)",
+   "trial": "Phase 3 THALASSA",
+   "guided_precision": "year",
+   "guided_window": "2029",
+   "guided_label": "2029",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-10-27",
+   "guidance_text": "NCT07621809 THALASSA (CVAY736A22301) … Readout Milestone(s) 2029",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Oct 27, 2026 Q3 investor deck (novartis.com) appendix table: NCT07621809 THALASSA (CVAY736A22301), Sjögren's (high symptom burden), 'Readout Milestone(s)' 2029. Not mentioned in the newer MNM deck (no conflicting statement).",
+   "nct_stated": "NCT07621809",
+   "date_history": [
+    {
+     "date": "2029-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-10-27)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Sjogren's disease"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-12-31-abelacimab",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "abelacimab Phase 3 LILAC-TIMI 76 readout",
+  "type": "Readout",
+  "ta": "Cardiovascular",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Stroke prevention in atrial fibrillation",
+   "market_cap_usd": null,
+   "program": "abelacimab",
+   "trial": "Phase 3 LILAC-TIMI 76",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "Readout mid-2027 (event-driven)",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Abelacimab (FXI/FXIa inhibitor; SPAF) Readout mid-2027 (event-driven)",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 19 'Abelacimab (FXI/FXIa inhibitor; SPAF) Readout mid-2027 (event-driven)'; slide 20 adds submission late 2027 (separate). Year precision correct.",
+   "nct_stated": "NCT05712200",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Stroke prevention in atrial fibrillation"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-06-30-zigakibart",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "zigakibart (BION-1301) Phase 3 BEYOND readout",
+  "type": "Readout",
+  "ta": "Nephrology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "IgA nephropathy",
+   "market_cap_usd": null,
+   "program": "zigakibart (BION-1301)",
+   "trial": "Phase 3 BEYOND",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "Readout H1 2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Zigakibart (anti-APRIL; IgAN) Readout H1 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 19 'Zigakibart (anti-APRIL; IgAN) Readout H1 2027'; Q3 deck BEYOND 'H1 2027'.",
+   "nct_stated": "NCT05852938",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: IgA nephropathy"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-12-31-dii235",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "DII235 Phase 2b (cardiovascular risk reduction) readout",
+  "type": "Readout",
+  "ta": "Cardiovascular",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Cardiovascular risk reduction, elevated Lp(a)",
+   "market_cap_usd": null,
+   "program": "DII235",
+   "trial": "Phase 2b (cardiovascular risk reduction)",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "Phase II readout 2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "DII235 (Lp(a) siRNA; CVRR-Lp(a)) Phase II readout 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 19 'DII235 (Lp(a) siRNA; CVRR-Lp(a)) Phase II readout 2027'; Q3 deck NCT07235046 '2027'.",
+   "nct_stated": "NCT07235046",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Cardiovascular risk reduction, elevated Lp(a)"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-12-31-ymi024",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "YMI024 Phase 2b (cardiovascular risk reduction) readout",
+  "type": "Readout",
+  "ta": "Cardiovascular",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Cardiovascular disease risk reduction",
+   "market_cap_usd": null,
+   "program": "YMI024",
+   "trial": "Phase 2b (cardiovascular risk reduction)",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-10-27",
+   "guidance_text": "NCT07830719 (CYMI024A12202) … Readout Milestone(s) 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Oct 27, 2026 Q3 investor deck (novartis.com) appendix table: NCT07830719 (CYMI024A12202), CV risk reduction, '2027'. Newer MNM slide 19 only says 'Trial recruiting (started Q3 2026)', no conflicting date.",
+   "nct_stated": "NCT07830719",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-10-27)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Cardiovascular disease risk reduction"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-12-31-iptacopan",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "iptacopan (Fabhalta) Phase 3 APPRAISE readout",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Generalized myasthenia gravis",
+   "market_cap_usd": null,
+   "program": "iptacopan (Fabhalta)",
+   "trial": "Phase 3 APPRAISE",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "Readout 2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Fabhalta (CFB inhibitor; gMG) Readout 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 26 'Fabhalta (CFB inhibitor; gMG) Readout 2027'; Q3 deck APPRAISE NCT06517758 '2027'. Set supersedes_id: site row readout_nvs_2027-04-15 is CT.gov NCT06517758 (Ph3 gMG), the same trial.",
+   "nct_stated": "NCT06517758",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "supersedes_estimate": "readout_nvs_2027-04-15",
+   "ta_basis": "indication named in company source: Generalized myasthenia gravis"
+  }
+ },
+ {
+  "id": "readout_nvs_2028-12-31",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2028-12-31",
+  "dp": "year",
+  "name": "iptacopan (Fabhalta) Phase 3 APPARENT (IC-MPGN) and aHUS trial readout",
+  "type": "Readout",
+  "ta": "Nephrology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "IC-MPGN and aHUS",
+   "market_cap_usd": null,
+   "program": "iptacopan (Fabhalta)",
+   "trial": "Phase 3 APPARENT (IC-MPGN) and aHUS trial",
+   "guided_precision": "year",
+   "guided_window": "2028",
+   "guided_label": "Readout 2028",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Iptacopan (CFB inhibitor; IC-MPGN, aHUS) Readout 2028",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 19 'Iptacopan (CFB inhibitor; IC-MPGN, aHUS) Readout 2028'; Q3 deck APPARENT NCT05755386 (IC-MPGN) '2028'.",
+   "nct_stated": "NCT05755386",
+   "date_history": [
+    {
+     "date": "2028-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: IC-MPGN and aHUS"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-12-31-ofatumumab",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "ofatumumab (Kesimpta) Phase 3 FILIOS readout",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Multiple sclerosis, every-2-month (Q2M) dosing",
+   "market_cap_usd": null,
+   "program": "ofatumumab (Kesimpta)",
+   "trial": "Phase 3 FILIOS",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "Readout 2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Kesimpta (anti-CD20; Q2M dosing) Readout 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 26 'Kesimpta (anti-CD20; Q2M dosing) Readout 2027'; Q3 deck FILIOS '2027'.",
+   "nct_stated": "NCT06869785",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Multiple sclerosis, every-2-month (Q2M) dosing"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-06-30-stj331",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "STJ331, study (food allergy) readout",
+  "type": "Readout",
+  "ta": "Immunology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Food allergy",
+   "market_cap_usd": null,
+   "program": "STJ331",
+   "trial": "study (food allergy)",
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "Readout H1 2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "STJ331 (anti-IgE, FA) Readout H1 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 22 'STJ331 (anti-IgE, FA) Readout H1 2027'. drug field set to the code name only (mechanism is not a brand).",
+   "date_history": [
+    {
+     "date": "2027-06-30",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Food allergy"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-12-31-gia632",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "GIA632 Phase 2 (atopic dermatitis) readout",
+  "type": "Readout",
+  "ta": "Dermatology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Atopic dermatitis",
+   "market_cap_usd": null,
+   "program": "GIA632",
+   "trial": "Phase 2 (atopic dermatitis)",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-10-27",
+   "guidance_text": "NCT07220577 (CGIA632A12201) … Readout Milestone(s) 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Oct 27, 2026 Q3 investor deck (novartis.com) appendix table: NCT07220577 (CGIA632A12201), atopic dermatitis, '2027'. Note: newer MNM slide 22 lists GIA632 only for vitiligo and lichen planus (AD not shown) but states nothing that moves or drops it.",
+   "nct_stated": "NCT07220577",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-10-27)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Atopic dermatitis"
+  }
+ },
+ {
+  "id": "readout_nvs_2028-12-31-gia632",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2028-12-31",
+  "dp": "year",
+  "name": "GIA632 Phase 2b ELIPSI readout",
+  "type": "Readout",
+  "ta": "Dermatology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Lichen planus",
+   "market_cap_usd": null,
+   "program": "GIA632",
+   "trial": "Phase 2b ELIPSI",
+   "guided_precision": "year",
+   "guided_window": "2028",
+   "guided_label": "2028",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-10-27",
+   "guidance_text": "NCT07775924 ELIPSI (CGIA632C12201) … Readout Milestone(s) 2028",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Oct 27, 2026 Q3 investor deck (novartis.com) appendix table: NCT07775924 ELIPSI (CGIA632C12201), lichen planus, '2028'; MNM slide 25 'Cutaneous lichen planus Ph IIb recruiting; readout 2028'.",
+   "nct_stated": "NCT07775924",
+   "date_history": [
+    {
+     "date": "2028-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-10-27)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Lichen planus"
+  }
+ },
+ {
+  "id": "readout_nvs_2028-12-31-ddy391",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2028-12-31",
+  "dp": "year",
+  "name": "DDY391 Phase 2 (psoriatic arthritis) readout",
+  "type": "Readout",
+  "ta": "Immunology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Psoriatic arthritis",
+   "market_cap_usd": null,
+   "program": "DDY391",
+   "trial": "Phase 2 (psoriatic arthritis)",
+   "guided_precision": "year",
+   "guided_window": "2028",
+   "guided_label": "2028",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-10-27",
+   "guidance_text": "NCT07801495 (CDDY391A12201) … Readout Milestone(s) 2028",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Oct 27, 2026 Q3 investor deck (novartis.com) appendix table: NCT07801495 (CDDY391A12201), psoriatic arthritis, '2028'; MNM slide 22 'DDY391 ... Readouts 2028+' consistent.",
+   "nct_stated": "NCT07801495",
+   "date_history": [
+    {
+     "date": "2028-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-10-27)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Psoriatic arthritis"
+  }
+ },
+ {
+  "id": "readout_nvs_2029-12-31-ddy391",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2029-12-31",
+  "dp": "year",
+  "name": "DDY391 Phase 2 (Sjogren's disease) readout",
+  "type": "Readout",
+  "ta": "Immunology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Sjögren's disease",
+   "market_cap_usd": null,
+   "program": "DDY391",
+   "trial": "Phase 2 (Sjogren's disease)",
+   "guided_precision": "year",
+   "guided_window": "2029",
+   "guided_label": "2029",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-10-27",
+   "guidance_text": "NCT07737743 (CDDY391B12201) … Readout Milestone(s) 2029",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Oct 27, 2026 Q3 investor deck (novartis.com) appendix table: NCT07737743 (CDDY391B12201), Sjögren's, '2029'; MNM 'Readouts 2028+' consistent.",
+   "nct_stated": "NCT07737743",
+   "date_history": [
+    {
+     "date": "2029-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-10-27)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Sjogren's disease"
+  }
+ },
+ {
+  "id": "readout_nvs_2028-12-31-ltp001",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2028-12-31",
+  "dp": "year",
+  "name": "LTP001 Phase 2 (pulmonary arterial hypertension) readout",
+  "type": "Readout",
+  "ta": "Respiratory",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Pulmonary arterial hypertension",
+   "market_cap_usd": null,
+   "program": "LTP001",
+   "trial": "Phase 2 (pulmonary arterial hypertension)",
+   "guided_precision": "year",
+   "guided_window": "2028",
+   "guided_label": "2028",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-10-27",
+   "guidance_text": "NCT06649110 (CLTP001A12202) … Readout Milestone(s) 2028",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Oct 27, 2026 Q3 investor deck (novartis.com) appendix table: NCT06649110 (CLTP001A12202), PAH, '2028'. MNM slide 21 names LTP001 without a date.",
+   "nct_stated": "NCT06649110",
+   "date_history": [
+    {
+     "date": "2028-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-10-27)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Pulmonary arterial hypertension"
+  }
+ },
+ {
+  "id": "readout_nvs_2029-12-31-inclisiran",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2029-12-31",
+  "dp": "year",
+  "name": "inclisiran (Leqvio) Phase 3 VICTORION-1P readout",
+  "type": "Readout",
+  "ta": "Cardiovascular",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "ASCVD primary prevention (CV outcomes)",
+   "market_cap_usd": null,
+   "program": "inclisiran (Leqvio)",
+   "trial": "Phase 3 VICTORION-1P",
+   "guided_precision": "year",
+   "guided_window": "2029",
+   "guided_label": "2029",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-10-27",
+   "guidance_text": "NCT05739383 VICTORION-1P (CKJX839D12302) … Readout Milestone(s) 2029",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Oct 27, 2026 Q3 investor deck (novartis.com) appendix table: NCT05739383 VICTORION-1P (CKJX839D12302), CVRR primary prevention, '2029'.",
+   "nct_stated": "NCT05739383",
+   "date_history": [
+    {
+     "date": "2029-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-10-27)"
+    }
+   ],
+   "ta_basis": "indication named in company source: ASCVD primary prevention (CV outcomes)"
+  }
+ },
+ {
+  "id": "readout_nvs_2027-12-31-delpacibar",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "delpacibart zotadirsen (del-zota) Phase 2 EXPLORE44OLE readout",
+  "type": "Readout",
+  "ta": "Rare disease",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Duchenne muscular dystrophy (exon 44)",
+   "market_cap_usd": null,
+   "program": "delpacibart zotadirsen (del-zota)",
+   "trial": "Phase 2 EXPLORE44OLE",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "2027",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-10-27",
+   "guidance_text": "NCT06244082 EXPLORE44OLE (CKPE179A12201) … Readout Milestone(s) 2027",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Oct 27, 2026 Q3 investor deck (novartis.com) appendix table: NCT06244082 EXPLORE44OLE (CKPE179A12201), DMD, '2027'. drug field reordered to generic name with short name in parentheses.",
+   "nct_stated": "NCT06244082",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-10-27)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Duchenne muscular dystrophy (exon 44)"
+  }
+ },
+ {
+  "id": "readout_nvs_2029-12-31-delpacibar",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2029-12-31",
+  "dp": "year",
+  "name": "delpacibart zotadirsen (del-zota) Phase 3 SAFARI44 readout",
+  "type": "Readout",
+  "ta": "Rare disease",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Duchenne muscular dystrophy (exon 44)",
+   "market_cap_usd": null,
+   "program": "delpacibart zotadirsen (del-zota)",
+   "trial": "Phase 3 SAFARI44",
+   "guided_precision": "year",
+   "guided_window": "2029",
+   "guided_label": "2029",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-10-27",
+   "guidance_text": "NCT07587242 SAFARI44 (CKPE179A12301) … Readout Milestone(s) 2029",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Oct 27, 2026 Q3 investor deck (novartis.com) appendix table: NCT07587242 SAFARI44 (CKPE179A12301), DMD, '2029'. drug field reordered to generic name with short name in parentheses.",
+   "nct_stated": "NCT07587242",
+   "date_history": [
+    {
+     "date": "2029-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-10-27)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Duchenne muscular dystrophy (exon 44)"
+  }
+ },
+ {
+  "id": "readout_nvs_2028-12-31-pluvicto",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2028-12-31",
+  "dp": "year",
+  "name": "Pluvicto (lutetium Lu 177 vipivotide tetraxetan) Phase 3 (oligometastatic prostate…",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Oligometastatic prostate cancer",
+   "market_cap_usd": null,
+   "program": "Pluvicto (lutetium Lu 177 vipivotide tetraxetan)",
+   "trial": "Phase 3 (oligometastatic prostate cancer)",
+   "guided_precision": "year",
+   "guided_window": "2028",
+   "guided_label": "Readout in 2028",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Pluvicto (Lu-PSMA RLT; in oligometastatic PC) Readout in 2028",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 29 'Pluvicto (Lu-PSMA RLT; in oligometastatic PC) Readout in 2028'; slide 17 lists it under 2028 readouts. drug field changed to generic name with brand in parentheses.",
+   "date_history": [
+    {
+     "date": "2028-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Oligometastatic prostate cancer"
+  }
+ },
+ {
+  "id": "readout_nvs_2028-12-31-aaa817",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2028-12-31",
+  "dp": "year",
+  "name": "AAA817 (Ac-PSMA-617) Phase 3 AcTFIRST and PSMAcTION readouts",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Metastatic castration-resistant prostate cancer",
+   "market_cap_usd": null,
+   "program": "AAA817 (Ac-PSMA-617)",
+   "trial": "Phase 3 AcTFIRST and PSMAcTION",
+   "guided_precision": "year",
+   "guided_window": "2028",
+   "guided_label": "Readouts in 2028",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "AAA817 (Ac-PSMA RLT) Readouts in 2028",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readouts",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 29 'AAA817 (Ac-PSMA RLT) Readouts in 2028'; slide 31 says two Phase III readouts in 2028; slide 17 lists Ac-PSMA-617 under 2028 readouts.",
+   "date_history": [
+    {
+     "date": "2028-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Metastatic castration-resistant prostate cancer"
+  }
+ },
+ {
+  "id": "readout_nvs_2028-12-31-pelabresib",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2028-12-31",
+  "dp": "year",
+  "name": "pelabresib Phase 3 MANIFEST-3 readout",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+  "ua": "2026-11-27T03:05:10Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Myelofibrosis",
+   "market_cap_usd": null,
+   "program": "pelabresib",
+   "trial": "Phase 3 MANIFEST-3",
+   "guided_precision": "year",
+   "guided_window": "2028",
+   "guided_label": "readout expected 2028",
+   "guided_form": "company presentation",
+   "guided_filed": "2026-11-19",
+   "guidance_text": "Global Phase III MANIFEST-3 trial underway to support global submissions; readout expected 2028",
+   "source_url": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "source": "company guidance (company release)",
+   "readout_described": "readout",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened the Nov 19, 2026 Meet Novartis Management deck (novartis.com): slide 30 'Global Phase III MANIFEST-3 trial underway to support global submissions; readout expected 2028'.",
+   "date_history": [
+    {
+     "date": "2028-12-31",
+     "note": "created 2026-11-26 from the company's own statement (company presentation 2026-11-19)"
+    }
+   ],
+   "ta_basis": "indication named in company source: Myelofibrosis"
   }
  }
 ];

@@ -4,8 +4,8 @@ import crypto from 'node:crypto';
 
 /** Free, keyless. How long after its primary source pdufa.bio published each FDA decision or goal-date change.
  *  One row per event that has BOTH a verified source time (the earliest public SEC filing, wire release or FDA
- *  notice we could time to the minute) and a verified site time (the first public commit to main that carried
- *  the fact). Built by build_post_speed.py from _source_times.json; tests/test_post_speed.py guards it.
+ *  notice we could time to the minute) and a verified site time (when the change that carried the fact reached
+ *  the version of the site that goes live, from pdufa.bio's own change records). Built by build_post_speed.py from _source_times.json; tests/test_post_speed.py guards it.
  *  Times carry their UTC offset (RULE 1). minutes_after_source is floored to whole minutes. Facts only. */
 export default async (req, res) => {
   const rid = 'req_' + crypto.randomUUID().slice(0, 18);
@@ -34,7 +34,7 @@ export default async (req, res) => {
       method: 'https://www.pdufa.bio/research/posting-speed',
       conventions: {
         source_published_at: 'earliest verified public time of the primary source (SEC acceptance, wire release or FDA feed), with its UTC offset',
-        site_published_at: 'commit time of the first public commit to main that carried the fact; the live site updates a few minutes after it deploys',
+        site_published_at: 'when the change that first carried the fact reached the version of pdufa.bio that goes live, from our own change records; the site deploys within minutes of it',
         minutes_after_source: 'site_published_at minus source_published_at, floored to whole minutes',
       },
       note: 'Measured times only. Events whose source we could not time, or that were disclosed earlier somewhere we could not time, are left out.',

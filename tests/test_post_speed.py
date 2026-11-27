@@ -108,8 +108,8 @@ def check_stamp(doc, rec):
         bad.append(f"site time: want {_et(rec['site_at'])} ({_utc(rec['site_at'])})")
     if f'href="{html.escape(rec["source"]["url"], quote=True)}"' not in raw and f'href="{rec["source"]["url"]}"' not in raw:
         bad.append("does not link the earliest source")
-    if f"/commit/{rec['commit']}" not in raw:
-        bad.append("does not link the commit")
+    if "github.com" in raw or "/commit/" in raw or rec["commit"][:7] in raw:
+        bad.append("names or links a commit (the repository is going private)")
     if CLAIM.search(txt):
         bad.append("claims priority over others")
     return bad
@@ -220,7 +220,9 @@ def test_research_page_and_api_agree():
         r = by_row[d["id"]]
         assert d["minutes_after_source"] == r["gap"], d["id"]
         assert _t(d["source_published_at"]) == r["source_at"] and _t(d["site_published_at"]) == r["site_at"], d["id"]
-        assert d["site_commit"] == r["commit"] and d["source_url"] == r["source"]["url"], d["id"]
+        assert d["source_url"] == r["source"]["url"], d["id"]
+        assert "site_commit" not in d, "the API must not expose commit ids (the repository is going private)"
+    assert "github.com" not in page and "github.com" not in api, "a GitHub link on the posting-speed page or data"
     assert os.path.exists(os.path.join(SITE, "api", "v1", "post-speed.mjs"))
 
 

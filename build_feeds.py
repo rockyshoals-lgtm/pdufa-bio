@@ -6,8 +6,8 @@ No FDA tracker publishes a feed, and the FDA's own CRL release has none. Two fee
   /feed/decisions.xml  every FDA decision page with an outcome the FDA or the sponsor stated (approval, Complete
                        Response Letter, not approvable letter), plus every PDUFA goal-date change on
                        /pdufa-date-changes. Pages whose outcome is inferred from a price move, and noindex pages, are
-                       left out. Newest 60 by the time the page first entered pdufa.bio's public repository
-                       (_decision_first_recorded.json, the same ledger as each page's "first committed" line).
+                       left out. Newest 60 by the time the page first entered pdufa.bio's records
+                       (_decision_first_recorded.json, the same ledger as each page's "entered pdufa.bio's records" line).
   /feed/crl.xml        every Complete Response Letter in the FDA's CRL release (openFDA transparency/crl), the same
                        letters as /crl: a repeat counted once, letters the FDA rescinded as issued in error left out.
                        Newest 50. Ledger _crl_first_seen.json records the run date a letter first appeared in the
@@ -157,7 +157,7 @@ def decision_entries():
             lines.append("<p>Sources: " + " &middot; ".join(
                 f'<a href="{xesc(h, {chr(34): "&quot;"})}">{xesc(lab or h)}</a>' for h, lab in srcs[:4]) + "</p>")
         if first:
-            lines.append(f"<p>First committed to pdufa.bio's public repository {'by' if by else 'on'} "
+            lines.append(f"<p>Entered pdufa.bio's records {'by' if by else 'on'} "
                          f"{xesc(fmt_et(first))}.</p>")
         out.append({"id": f"{BASE}/fda-decision/{slug}", "title": title or f"{drug}: {word}",
                     "link": f"{BASE}/fda-decision/{slug}", "published": day_et(ev),
@@ -424,9 +424,9 @@ def page(dec, n_dec, n_ch, crl, n_crl, last_updated, n_resc, started):
          f'are in the feed.</td><td>{span("newest_crl", c["newest_crl"])}</td></tr></table>',
          '<h2>How the entries are dated</h2>',
          '<p class="sub">A decision entry is published on its announcement date (or the FDA\'s action date when no '
-         'announcement is on record). It is updated at the time the page first entered pdufa.bio\'s public '
-         'repository, the time its "first committed" line states; pages that came in with the repository\'s first '
-         'import (July 2026) have no such time and are dated by the announcement alone. A goal-date change is dated by '
+         'announcement is on record). It is updated at the time the page first entered pdufa.bio\'s records, '
+         'the time its "entered pdufa.bio\'s records" line states; pages that were in the records when they began '
+         '(July 2026) have no such time and are dated by the announcement alone. A goal-date change is dated by '
          'the date of the change in the row\'s goal-date history: the day the sponsor or the FDA announced it, or the '
          'day pdufa.bio corrected the record. A CRL entry is published on the letter\'s date; a letter that '
          f'first appears in the FDA\'s release after {span("started", c["started"])} is updated on the day pdufa.bio '
