@@ -36,6 +36,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 CACHE = os.path.join(HERE, "chembl_synonyms_cache.json")
 API = "https://www.ebi.ac.uk/chembl/api/data/molecule/search.json"
+# A slow ChEMBL must not hold the whole rebuild: at 25 s a timeout, 568 names could run for hours. Stop after this
+# many seconds with what is cached; the rest is fetched next run (the cache is committed since 2026-11-27).
+BUDGET_S = float(os.environ.get("CHEMBL_BUDGET_S", "360"))
 
 
 def page_names():
@@ -55,7 +58,7 @@ def page_names():
 def fetch(name):
     url = f"{API}?q={urllib.parse.quote(name)}&limit=3"
     try:
-        with urllib.request.urlopen(url, timeout=25) as r:
+        with urllib.request.urlopen(url, timeout=15) as r:
             mols = json.load(r).get("molecules", [])
     except Exception:
         return None                                  # transient -- do not cache a miss
@@ -88,8 +91,11 @@ def main():
     names = page_names()
     todo = {slug: n for slug, n in names.items() if slug not in cache}
     print(f"{len(names)} drug pages; {len(todo)} to fetch ({len(cache)} cached)")
-    hits = 0
+    hits, t0 = 0, time.time()
     for i, (slug, name) in enumerate(sorted(todo.items())):
+        if time.time() - t0 > BUDGET_S:
+            print(f"  time budget reached after {i} of {len(todo)}; the rest next run")
+            break
         syns = fetch(name)
         if syns is None:
             continue                                 # retry next run
