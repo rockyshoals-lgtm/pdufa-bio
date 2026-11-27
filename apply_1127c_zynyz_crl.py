@@ -49,7 +49,7 @@ EVENTS = [{
     "date": PAGE_DATE,
     "fda_action_date": LETTER,
     "outcome": "CRL",
-    "drug": "Zynyz (retifanlimab-dlwr) - metastatic NSCLC with platinum chemotherapy (POD1UM-304)",
+    "drug": "Zynyz (retifanlimab-dlwr) - metastatic NSCLC",
     "indication": ("Adults with metastatic non-small cell lung cancer (NSCLC), in combination with platinum-based "
                    "chemotherapy (supplemental BLA)"),
     "company": "Incyte Corporation",
