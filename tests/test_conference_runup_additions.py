@@ -126,6 +126,19 @@ for tag, body in [("tag", _lead + "CITY, Oct. 24, 2026 -- Zorvexa Therapeutics, 
     row.update({"meeting_code": "ESMO", "conf": "ESMO", "meeting_start": esmo["start"], "meeting_end": esmo["end"],
                 "meeting_source": esmo["source"], "anchor": "2026-10-24", "release_title": tt})
     check(X.passes(row, [esmo, esmo_asia], nm), f"evidence case {tag}: stored row fails passes()")
+# the evidence is cut from the same string as the excerpt: FMP sends double-escaped entities ("&amp;amp;"), and
+# a second clean() would shift a tag that straddles character 600 back inside it, so no evidence would be kept
+_raw = ("Data from the partner&amp;amp;rsquo;s study &amp;amp; ours, " * 20)[:661] + \
+    " CITY -- Zorvexa (Nasdaq: ZZQA), a clinical company, today announced data."
+_once = X.FE.clean(_raw)
+_nm, _tt = "Zorvexa Therapeutics, Inc.", "Zorvexa Presents Updated Data at ESMO 2026"
+_at = _once.find("(Nasdaq")
+check(_at < X.EXCERPT < _at + 14 and X.FE.clean(_once).find("(Nasdaq") < X.EXCERPT - 14,
+      "double-escape case no longer puts the tag across the excerpt's end (and inside it after a second clean)")
+check(X.own("ZZQA", _nm, _tt, _once) and not X.own("ZZQA", _nm, _tt, _once[:X.EXCERPT]),
+      "double-escape case: attribution should need the words past the excerpt")
+_row = {"ticker": "ZZQA", "release_excerpt": _once[:X.EXCERPT], "release_evidence": X.evidence("ZZQA", _nm, _once)}
+check(X.own("ZZQA", _nm, _tt, X.stored_text(_row)), "evidence lost when the release carries double-escaped entities")
 check(X.evidence("ZZQA", "Zorvexa Therapeutics, Inc.", "Zorvexa Therapeutics, Inc. (Nasdaq: ZZQA)" + " x" * 400) == "",
       "evidence kept although the tag is inside the excerpt")
 check(X.evidence("ZZQA", "Zorvexa Therapeutics, Inc.", _lead + " (NYSE: PRTN) partner of Zorvexa") == "",

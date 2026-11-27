@@ -226,7 +226,7 @@ def evidence(tk, name, text):
     """The words in the release that tie it to the ticker (its own exchange tag, else its full name), with some
     context, when they fall past the stored excerpt. Kept with the row so the guard can re-check attribution from
     what is stored: 'Lyell Immunopharma, Inc. (Nasdaq: LYEL)' sits 700 characters into its EHA release."""
-    t = FE.clean(text)
+    t = text                 # the very string the excerpt is cut from (clean() is not idempotent)
     if len(t) <= EXCERPT:
         return ""
     span = next((m.span() for m in FE.TAG.finditer(t) if m.group(1).upper().rstrip(".") == tk.upper()), None)
@@ -362,6 +362,7 @@ def main():
     scanned = {tk: v for tk, v in cache.get("scanned", {}).items() if isinstance(v, dict)}
     tried = cache.get("tried", {})
     fails = cache.get("fails", {})      # consecutive failed reads; a ticker failing 3+ times goes to the back
+    held = cache.get("held", {}) if cache.get("rules_version") == RULES_VERSION else {}   # key -> unstorable anchor
     frm_all = min(_mlo(m) for m in ms)
     to = (today + dt.timedelta(days=1)).isoformat()
     order = sorted(uni.items(), key=lambda kv: (fails.get(kv[0], 0) >= 3, scanned.get(kv[0], {}).get("to", ""),
@@ -371,7 +372,7 @@ def main():
         return {"about": "Conference run-up rows after the published study, from companies' own releases. Not in the "
                          "published study; folded in only after a red team. See extend_conference_runup.py.",
                 "built": today.isoformat(), "since": a.since, "rules_version": RULES_VERSION,
-                "meetings": sorted(mkey), "scanned": scanned, "tried": tried, "fails": fails,
+                "meetings": sorted(mkey), "scanned": scanned, "tried": tried, "fails": fails, "held": held,
                 "rows": sorted(rows.values(), key=lambda r: (r["anchor"], r["ticker"]))}
 
     t0, read, failed, streak, unstorable = time.time(), 0, 0, 0, 0
@@ -421,16 +422,19 @@ def main():
                 old = rows.get(k)
                 if old and old["anchor"] <= pub_et:
                     continue                      # keep the earliest data release
+                if held.get(k, "9999") <= pub_et:
+                    continue                      # an earlier release could not be stored: no later one stands in
                 row = {"key": k, "ticker": tk, "company": name, "conf": code, "meeting_code": m["code"],
                            "year": int(m["start"][:4]), "conf_full": f"{m['name']} {m['start'][:4]}",
                            "meeting_start": m["start"], "meeting_end": m["end"],
                            "meeting_source": m["source"], "anchor": pub_et,
                            "anchor_basis": "earliest company release found reporting data from the meeting",
-                           "release_title": title[:300], "release_url": url, "release_excerpt": text[:EXCERPT],
+                           "release_title": title, "release_url": url, "release_excerpt": text[:EXCERPT],
                            "release_evidence": evidence(tk, name, text),
                            "status": "pending", "found": today.isoformat()}
                 if not passes(row, ms, name):     # what is stored must pass on its own, as the guard re-checks it
                     unstorable += 1
+                    held[k] = min(held.get(k, pub_et), pub_et)
                     continue
                 rows[k] = row
         scanned[tk] = {"to": today.isoformat(), "m": sorted(mkey)}
