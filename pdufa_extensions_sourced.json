@@ -19,7 +19,63 @@
   "C081": "Rocket said the FDA extended the review to assess clarifying manufacturing (CMC) information it submitted in response to FDA information requests.",
   "C082": "The FDA's review records a major amendment.",
   "C011": "Iovance said the FDA extended the date because of resource constraints, not a major amendment.",
-  "C006": "Heron said the FDA extended the date by three months to provide for a full review of the submission."
+  "C006": "Heron said the FDA extended the date by three months to provide for a full review of the submission.",
+  "CAPR|2026-11-22": "The FDA classified a submission during review as a major amendment, which extends the review by three months.",
+  "PRAX|2026-12-27": "The FDA deemed the sponsor's submission of additional sensitivity analyses of existing clinical data a major amendment.",
+  "BLTE|2027-05-12": "The sponsor said the extension gives the FDA additional time to review information provided in support of the application."
  },
- "rows": []
+ "rows": [
+  {
+   "ticker": "CAPR",
+   "name": "Deramiocel (CAP-1002) - (HOPE-3)",
+   "company": "Capricor Therapeutics Inc.",
+   "goal_date_original": "2026-08-22",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/0001133869/000110465926100071/capr-20260824x8k.htm",
+   "goal_original_doc_date": "2026-08-24",
+   "goal_original_quote": "from August 22, 2026 to November 22, 2026",
+   "extended": true,
+   "goal_date_extended": "2026-11-22",
+   "goal_extended_url": "https://www.sec.gov/Archives/edgar/data/0001133869/000110465926100071/capr-20260824x8k.htm",
+   "goal_extended_doc_date": "2026-08-24",
+   "goal_extended_quote": "The FDA has classified the submission as a major amendment, which extends the review period by three months.",
+   "action_date": "2026-11-20",
+   "action_outcome": "crl",
+   "action_url": "https://download.open.fda.gov/crl/CRL_BLA125842_20261120.pdf",
+   "application": "BLA 125842"
+  },
+  {
+   "ticker": "PRAX",
+   "name": "Relutrigine (PRAX-562) - (EMBOLD)",
+   "company": "Praxis Precision Medicines Inc.",
+   "goal_date_original": "2026-09-27",
+   "goal_original_url": "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-extension-period",
+   "goal_original_doc_date": "2026-06-29",
+   "goal_original_quote": "setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026",
+   "extended": true,
+   "goal_date_extended": "2026-12-27",
+   "goal_extended_url": "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-extension-period",
+   "goal_extended_doc_date": "2026-06-29",
+   "goal_extended_quote": "setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026",
+   "action_date": null,
+   "action_outcome": "pending",
+   "action_url": null
+  },
+  {
+   "ticker": "BLTE",
+   "name": "Tinlarebant - Stargardt disease type 1",
+   "company": "Belite Bio, Inc",
+   "goal_date_original": "2027-02-12",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/0001889109/000110465926125573/tm2629321d1_ex99-1.htm",
+   "goal_original_doc_date": "2026-11-12",
+   "goal_original_quote": "As we advance toward our PDUFA target action date of February 12, 2027, we remain focused on commercial readiness",
+   "extended": true,
+   "goal_date_extended": "2027-05-12",
+   "goal_extended_url": "https://www.sec.gov/Archives/edgar/data/0001889109/000110465926130425/tm2630348d1_ex99-1.htm",
+   "goal_extended_doc_date": "2026-11-20",
+   "goal_extended_quote": "the extended Prescription Drug User Fee Act (PDUFA) action date being May 12, 2027",
+   "action_date": null,
+   "action_outcome": "pending",
+   "action_url": null
+  }
+ ]
 }
