@@ -81,7 +81,10 @@ export function liveStatus(e, today = easternToday()) {
     }
     const ended = e.dp === 'month' ? (String(e.dm || e.d).slice(0, 7) < today.slice(0, 7))
                                    : (String(e.d).slice(0, 10) < today);
-    if (ended && res && res.state === 'no_topline' && res.checked) return 'No topline as of ' + String(res.checked).slice(0, 10);
+    /* 2026-11-27: a day-dated row is a scheduled presentation or announcement, not a topline window. Once that
+       day passes with no company results release, say exactly that; "no topline" misdescribed an ISA e-poster
+       of long-term follow-up (NTLA) and a CTOS subgroup talk (INBX). */
+    if (ended && res && res.state === 'no_topline' && res.checked) return (e.dp === 'day' ? 'Scheduled date passed, no company results release as of ' : 'No topline as of ') + String(res.checked).slice(0, 10);
     if (ended && res && res.state === 'results_posted_registry' && res.date) return 'Results posted on ClinicalTrials.gov ' + String(res.date).slice(0, 10);
     if (ended) return 'Window passed';
   }

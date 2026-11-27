@@ -27,7 +27,9 @@
   "VRTX|2027-02-28": "The sponsor said the FDA classified its response to an information request near the end of the review cycle as a major amendment.",
   "SVRA|2026-11-22": "Savara said the FDA determined that its responses to recent information requests were a major amendment, and that the FDA raised no safety, efficacy or manufacturing concerns.",
   "AGIO|2027-02-01": "Agios said the FDA asked whether a REMS was needed, and that its reply with updated safety data was classified as a major amendment, adding three months.",
-  "EXEL|2027-03-03": "Exelixis said updated safety and efficacy data it submitted in response to an FDA information request was deemed a major amendment, extending the review by three months."
+  "EXEL|2027-03-03": "Exelixis said updated safety and efficacy data it submitted in response to an FDA information request was deemed a major amendment, extending the review by three months.",
+  "TVTX|2026-04-13": "Travere said the FDA classified responses it had requested during the review as a major amendment, and that no additional safety or manufacturing information was requested.",
+  "BIIB|2026-08-24": "Biogen and Eisai said the FDA requested additional information during the review and determined that it was a major amendment, extending the review by three months."
  },
  "rows": [
   {
@@ -133,8 +135,8 @@
    "action_date": null,
    "action_outcome": "pending",
    "action_url": null,
-   "after_note": "Savara later said the FDA would not meet the extended date and had not given a revised action date.",
-   "after_url": "https://www.businesswire.com/news/home/20261120300122/en/",
+   "after_note": "Savara said on November 20, 2026 that the FDA would not act by the extended goal date, that the review is ongoing and that the FDA had given no revised action date.",
+   "after_url": "https://investors.savarapharma.com/news/news-details/2026/Savara-Informed-That-FDA-Will-Not-Take-Action-on-the-Molgramostim-BLA-for-Autoimmune-Pulmonary-Alveolar-Proteinosis-Autoimmune-PAP-by-the-PDUFA-Date/default.aspx",
    "after_quote": "will not meet the Prescription Drug User Fee Act (PDUFA) target action date of November 22, 2026 ... no revised action date has been provided by the agency."
   },
   {
@@ -170,6 +172,44 @@
    "action_date": null,
    "action_outcome": "pending",
    "action_url": null
+  },
+  {
+   "ticker": "TVTX",
+   "name": "FILSPARI (sparsentan) sNDA - focal segmental glomerulosclerosis (FSGS)",
+   "company": "Travere Therapeutics, Inc.",
+   "goal_date_original": "2026-01-13",
+   "goal_original_url": "https://www.sec.gov/Archives/edgar/data/1438533/000143853326000003/aex991_2025q4xearningsprex.htm",
+   "goal_original_doc_date": "2026-01-12",
+   "goal_original_quote": "The Company’s PDUFA target action date for its sNDA seeking full approval for FILSPARI in FSGS is January 13, 2026.",
+   "extended": true,
+   "goal_date_extended": "2026-04-13",
+   "goal_extended_url": "https://www.sec.gov/Archives/edgar/data/1438533/000143853326000005/tvtx-20260113.htm",
+   "goal_extended_doc_date": "2026-01-13",
+   "goal_extended_quote": "The new Prescription Drug User Fee Act (“PDUFA”) target action date is April 13, 2026.",
+   "action_date": "2026-04-13",
+   "action_outcome": "approved",
+   "action_url": "https://www.sec.gov/Archives/edgar/data/1438533/000143853326000032/tvtx-20260413.htm",
+   "application": null,
+   "action_basis": "sponsor"
+  },
+  {
+   "ticker": "BIIB",
+   "name": "LEQEMBI IQLIK (lecanemab-irmb) subcutaneous sBLA - initiation dose, early Alzheimer's disease",
+   "company": "Biogen Inc. (with Eisai Co., Ltd.)",
+   "goal_date_original": "2026-05-24",
+   "goal_original_url": "https://investors.biogen.com/news-releases/news-release-details/fda-accepts-leqembir-iqliktm-lecanemab-irmb-supplemental",
+   "goal_original_doc_date": "2026-01-25",
+   "goal_original_quote": "a Prescription Drug User Fee Act (PDUFA) action date of May 24, 2026",
+   "extended": true,
+   "goal_date_extended": "2026-08-24",
+   "goal_extended_url": "https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb",
+   "goal_extended_doc_date": "2026-05-08",
+   "goal_extended_quote": "The new Prescription Drug User Fee Act (PDUFA) action date is August 24, 2026.",
+   "action_date": "2026-07-13",
+   "action_outcome": "approved",
+   "action_url": "https://investors.biogen.com/news-releases/news-release-details/fda-approves-leqembi-iqlikr-lecanemab-irmb-subcutaneous",
+   "application": null,
+   "action_basis": "sponsor"
   }
  ]
 }

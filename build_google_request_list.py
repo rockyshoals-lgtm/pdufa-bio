@@ -6,7 +6,8 @@ day three times out of three (Nov 10-11). This writes `_google_request_indexing.
 
   1. decision pages for FDA actions in the last 7 days (Eastern);
   2. event pages for goal dates in the next 30 days, soonest first;
-  3. the studies and hubs (calendar, decisions/2026, CRL, timing study, run-up study).
+  3. the studies and hubs (calendar, decisions/2026, CRL, timing study, run-up study);
+  4. every other page in sitemap-hubs.xml, most recently changed and shallowest first.
 
 URLs known to be indexed (`_google_indexed.json`, list of paths, kept by whoever reads the console) and URLs requested
 in the last 7 days (`_google_requested.json`, {path: "YYYY-MM-DD"}) are skipped, so the list moves on each day. Mark a
@@ -64,6 +65,14 @@ def main():
                 and today.isoformat() <= str(r.get("d") or "") <= soon):
             cand.append((u, f"goal date {r['d']}: {r['t']} {str(r.get('name') or '')[:50]}"))
     cand += [(u, "hub / study") for u in HUBS]
+    # 4. (2026-11-27) any other hub in the hubs sitemap, most recently changed and shallowest first, so the list never
+    #    runs dry while hubs Google has not indexed remain (on 11-27 tiers 1-3 left 2 URLs and 10 slots).
+    sm = os.path.join(SITE, "sitemap-hubs.xml")
+    if os.path.exists(sm):
+        pairs = re.findall(r"<loc>https://www\.pdufa\.bio([^<]*)</loc>\s*<lastmod>([^<]*)</lastmod>",
+                           io.open(sm, encoding="utf-8").read())
+        pairs.sort(key=lambda p: (-int(re.sub(r"\D", "", p[1][:10]) or 0), p[0].count("/"), p[0]))
+        cand += [(u or "/", f"hub, changed {lm[:10]}") for u, lm in pairs]
     out, seen = [], set()
     for u, why in cand:
         if u in seen or u in indexed or u in recent or not exists(u):

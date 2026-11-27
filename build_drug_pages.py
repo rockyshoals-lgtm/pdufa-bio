@@ -99,6 +99,14 @@ CORE = re.compile(r"^([A-Za-z0-9][A-Za-z0-9'\u2019./-]*(?:\s+[A-Za-z0-9][A-Za-z0
                   r"(\s*\([^()]{2,45}\))?")
 
 
+
+# Disease names that begin with a person's or place's name, so a lede keeps their capital mid-sentence
+# (2026-11-27, from every first word in the drug ledes). Possessives ("Crohn's") are kept by the rule itself.
+_EPONYMS = {"Alexander", "Angelman", "Danon", "Dravet", "Duchenne", "Fabry", "Friedreich", "Hailey", "Hodgkin",
+            "Hunter", "Lyme", "Netherton", "Rett", "Sanfilippo", "Stargardt", "Wilson", "Waldenström", "Graves",
+            "Cushing", "Parkinson", "Alzheimer", "Huntington", "Crohn", "Sjögren", "Gaucher", "Pompe", "Niemann",
+            "Batten", "Kawasaki", "Behçet", "Castleman", "Barth", "Leigh", "Menkes", "Prader", "Usher", "Wolfram"}
+
 def paren_rescue(raw):
     """The drug hiding inside a rejected string's parenthetical, if there is one.
 
@@ -684,8 +692,17 @@ def main():
         if comps:
             lede += f"is {_art(comps[0])} {esc(', '.join(comps[:2]))} program"
             if inds:
-                _i0 = (pend_inds or ap_inds or inds)[0]
-                _i0 = _i0[:1].lower() + _i0[1:] if _i0[:2] != _i0[:2].upper() else _i0
+                # 2026-11-27 (OMW round 2): name the indication of the catalyst the next sentence dates. Taking the
+                # alphabetically first pending one, /drug/bezuclastinib said "a program in advanced systemic
+                # mastocytosis. Its PDUFA date is Dec 30, 2026": Dec 30 is the NonAdvSM (SUMMIT) goal; AdvSM is 2027.
+                _nx = (up[0].get("_d") or {}).get("indication") if up else None
+                _i0 = _nx if _nx and _nx in (pend_inds or inds) else (pend_inds or ap_inds or inds)[0]
+                # lower-case a plain first word only: "IgA nephropathy", "Graves' disease", "Crohn's disease" and
+                # "Duchenne muscular dystrophy" read "igA", "graves'", "crohn's" and "duchenne" under the old
+                # first-letter rule. Possessives and names (_EPONYMS) keep their capital.
+                if (re.match(r"[A-Z][a-z]+(?![^\W\d_]|['\u2019])", _i0)
+                        and re.match(r"[^\s/(-]+", _i0).group(0) not in _EPONYMS):
+                    _i0 = _i0[:1].lower() + _i0[1:]
                 # 2026-11-20: Tecentriq's indication begins "In combination with ...", and the template's own
                 # " in " made "program in in combination". Don't write the preposition twice.
                 lede += f" {esc(_i0)}" if _i0.lower().startswith("in ") else f" in {esc(_i0)}"

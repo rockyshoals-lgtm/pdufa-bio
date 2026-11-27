@@ -9,6 +9,12 @@
    "why": "Vertex 8-K, Aug 3 2026: BLA for accelerated approval in IgAN, PDUFA November 30, 2026. Not lupus nephritis."},
   {"href": "/pdufa/MLYS-lorundrostat", "label": "Lorundrostat: Hypertension",
    "source": "https://www.globenewswire.com/news-release/2026/11/04/3395833/0/en/mineralys-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
-   "why": "Mineralys Q3 release, Nov 4 2026: PDUFA target date December 22, 2026. The month page read 'lorundrostat Dose 1'."}
+   "why": "Mineralys Q3 release, Nov 4 2026: PDUFA target date December 22, 2026. The month page read 'lorundrostat Dose 1'."},
+  {"href": "/pdufa/CORT-relacorilant", "label": "Relacorilant: Cushing's syndrome (hypercortisolism)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1088856/000162828026050607/cort072926ex991pressrelease.htm",
+   "why": "Corcept release, Jul 29 2026: NDA for relacorilant in Cushing's syndrome resubmitted, PDUFA December 17, 2026. The row read 'Relacorilant - (GRACE resubmission)' with no indication."},
+  {"href": "/pdufa/GILD-anito-cel", "label": "Anito-cel (anitocabtagene autoleucel): Relapsed or refractory multiple myeloma",
+   "source": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
+   "why": "Gilead release, Feb 23 2026: BLA for anito-cel as fourth-line treatment of relapsed or refractory multiple myeloma, PDUFA action date December 23, 2026. The row gave no indication."}
  ]
 }
