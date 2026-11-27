@@ -15,6 +15,14 @@ Drug pages are checked for internal agreement only: an unchanged drug page keeps
 content-change date on purpose (build_freshness_stamp.py), so it need not equal today.
 
 Proved 0 -> 1 -> 0 on 2026-09-07 by planting "Updated Sep 8, 2026" on /runup-by-year.
+
+Rebuild 45940203634 (2026-11-27, built 00:01 ET after the midnight guard waited) failed this guard on a
+TRUE page: /fda-this-month said "Page updated November 26" because nothing on it had changed since the
+Nov 26 build (November had 0 decisions left, December's preview unchanged). "Page updated" is the
+content-change date (build_freshness_stamp.py; tests/test_datemodified_honest.py checks it), so stamping
+Nov 27 there would have been the false claim. A daily page now passes when its one stamp is today OR its
+own content-change date from _sitemap_lastmod.json, and never later than today Eastern -- a UTC clock
+after 7 PM ET still lands on tomorrow and still fails.
 """
 import datetime as dt
 import glob
@@ -60,6 +68,32 @@ def stamps(doc):
     return out
 
 
+LASTMOD = os.path.join(HERE, "_sitemap_lastmod.json")
+
+
+def content_date(page_path):
+    """The content-change date the sitemap state holds for this page, or None."""
+    try:
+        import json
+        st = json.load(io.open(LASTMOD, encoding="utf-8"))
+    except Exception:
+        return None
+    rel = os.path.relpath(page_path, HERE).replace("\\", "/")
+    d = (st.get(rel) or {}).get("date")
+    try:
+        return dt.date.fromisoformat(d) if d else None
+    except ValueError:
+        return None
+
+
+def daily_ok(found, today, changed):
+    """A daily page's one stamp is today, or its own content-change date; never after today Eastern."""
+    (d,) = found
+    if d > today:
+        return False
+    return d == today or (changed is not None and d == changed)
+
+
 def test_one_date_per_page():
     today = eastern_today()
     bad = []
@@ -75,12 +109,23 @@ def test_one_date_per_page():
             bad.append(f"{rel}: {len(found)} different stamp dates on one page: "
                        + ", ".join(sorted(d.isoformat() for d in found)))
         elif found and p.endswith(tuple(d.replace("/", os.sep) for d in DAILY)) \
-                and found != {today}:
+                and not daily_ok(found, today, content_date(p)):
             bad.append(f"{rel}: stamped {next(iter(found))}, Eastern build date is {today}")
     assert not bad, "page(s) stamped with more than one date, or the wrong clock:\n  " \
         + "\n  ".join(bad)
 
 
+def test_daily_ok_self_check():
+    t = dt.date(2026, 11, 27)
+    y = dt.date(2026, 11, 26)
+    assert daily_ok({t}, t, None)
+    assert daily_ok({y}, t, y)                        # unchanged since yesterday: the honest stamp
+    assert not daily_ok({y}, t, None)                 # stale with no content date behind it
+    assert not daily_ok({y}, t, dt.date(2026, 11, 20))  # stamp disagrees with its content date
+    assert not daily_ok({dt.date(2026, 11, 28)}, t, dt.date(2026, 11, 28))  # UTC clock ahead of Eastern
+
+
 if __name__ == "__main__":
+    test_daily_ok_self_check()
     test_one_date_per_page()
     print("OK")
