@@ -6,6 +6,10 @@ waited in the pdufa-rebuild concurrency queue while the run ahead of it pushed 3
 every page from the older tree, its push conflicted on nearly all of them, the push-race step kept main's copies, and
 a build that had passed every guard shipped 5 files. The workflow now fetches and resets to origin/main right after
 checkout. This fails if that step goes missing, moves after the first build step, or stops resetting to main.
+
+Run 46059511146: a run's step list is fixed at dispatch, so a reset onto a main that changed this workflow ran a new
+test without the steps it checks. The reset now happens only when the workflow file is the same on both; this also
+fails if that condition goes missing.
 """
 import io
 import os
@@ -28,9 +32,11 @@ def check(text):
     after_co = [p for p in steps if p > co]
     if not after_co or not (after_co[0] < st < (after_co[1] if len(after_co) > 1 else len(text))):
         bad.append("'Start from the newest main' is not the step right after checkout")
-    block = text[st:st + 900]
+    block = text[st:st + 1800]
     if "git fetch" not in block or "origin main" not in block or "reset --hard FETCH_HEAD" not in block:
         bad.append("'Start from the newest main' no longer fetches origin main and resets to it")
+    if "git diff --quiet HEAD FETCH_HEAD -- .github/workflows/pdufa-rebuild.yml" not in block:
+        bad.append("'Start from the newest main' resets even when newest main changed this workflow's steps")
     if "refs/heads/main" not in block:
         bad.append("'Start from the newest main' is not limited to runs on main")
     return bad
@@ -45,6 +51,9 @@ def main():
     planted = text.replace("git reset --hard FETCH_HEAD", "true")
     if not check(planted):
         bad.append("a step that no longer resets was not caught")
+    planted = text.replace("if git diff --quiet HEAD FETCH_HEAD -- .github/workflows/pdufa-rebuild.yml; then", "if true; then")
+    if not check(planted):
+        bad.append("a reset without the workflow-file check was not caught")
     if bad:
         print("FAIL test_rebuild_starts_from_newest_main:")
         for b in bad:
