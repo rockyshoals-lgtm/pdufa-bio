@@ -6,15 +6,16 @@ after the July 2026 revert: "never change the sampling frame and the published n
 universe changes, publish old and new side by side with the recall figure, and say why they differ." These rows come
 from a different frame (companies' own releases for tickers we track, and older presentations named in SEC filings,
 which skew small-cap), so they go on the study page in their own section, with the curated headline unchanged, the
-two samples side by side, and the combined figure shown as a third column. No recall figure exists for this frame
-yet, and the section says so.
+two samples side by side. No combined figure is shown: the page says a new frame does not feed the study until a
+recall figure exists, and none exists for this frame yet; the section says so.
 
 ROWS: _conference_runup_additions.json (meetings from 2026-06-05) and _conference_runup_backfill.json (earlier
 meetings the study left out). Each is anchored on the presenting company's own release reporting data from the
 meeting (anchor_basis) and re-checked against the current rules on every rebuild by the scripts that write them.
 Only rows whose windows have closed ("complete") with all seven windows numeric are shown; a pending row joins when
 its window closes, and a row held as "check" never joins. A row whose (ticker, meeting code, year) the study already
-holds is left out, so no presentation is counted twice.
+holds is left out, and so is a row whose ticker has a study row labelled UNKNOWN (meeting not verified) within
+NEAR_DAYS of its anchor, since that may be the same presentation; no presentation is counted twice.
 
 TIER: point-in-time FMP market cap on the trading day before the anchor (d_minus_1), the study's thresholds, cached in
 _conference_runup_mcap.json so each row is priced once. Without an FMP key a tier stays blank and is counted as
@@ -27,6 +28,7 @@ Guard: tests/test_conference_runup_added.py.
     python conference_runup_added.py
 """
 import csv
+import datetime as dt
 import io
 import json
 import os
@@ -57,6 +59,7 @@ PUBLIC_COLS = ["ticker", "company", "conf", "conf_full", "year", "anchor", "anch
                "cap_tier_pit"] + list(WINDOWS)
 B, E = "<!--CSTUDYADD:BEGIN-->", "<!--CSTUDYADD:END-->"
 AFTER = "<!--CSTUDYX:END-->"
+NEAR_DAYS = 45
 
 
 def tier(m):
@@ -83,11 +86,19 @@ def fmt(x):
 def cache_rows(path):
     try:
         d = json.load(io.open(path, encoding="utf-8"))
+        rows = d.get("rows") or {}
+        rows = list(rows.values()) if isinstance(rows, dict) else list(rows)
+        return [r for r in rows if isinstance(r, dict)]
     except Exception as e:  # noqa: BLE001
         print(f"  {os.path.basename(path)}: not read ({type(e).__name__}); no rows from it")
         return []
-    rows = d.get("rows") or {}
-    return list(rows.values()) if isinstance(rows, dict) else list(rows)
+
+
+def day(s):
+    try:
+        return dt.date.fromisoformat(str(s)[:10])
+    except ValueError:
+        return None
 
 
 def study_rows():
@@ -97,6 +108,10 @@ def study_rows():
 def added_rows(study, lookup=None, mcap=None):
     """The rows to show, each with its tier; returns (rows, counts of what was left out, mcap cache)."""
     have = {(r["ticker"], r["conf"], str(r["year"])[:4]) for r in study}
+    unknown = {}
+    for r in study:
+        if str(r.get("conf", "")).upper() == "UNKNOWN" and day(r.get("anchor")):
+            unknown.setdefault(r["ticker"], []).append(day(r["anchor"]))
     mcap = dict(mcap or {})
     out, left, seen = [], {"window not closed or held": 0, "already in the study": 0, "duplicate": 0}, set()
     for path in CACHES:
@@ -106,7 +121,8 @@ def added_rows(study, lookup=None, mcap=None):
                 left["window not closed or held"] += 1
                 continue
             tcy = (r["ticker"], r["conf"], str(r.get("year", ""))[:4])
-            if tcy in have:
+            a = day(r["anchor"])
+            if tcy in have or (a and any(abs((a - u).days) <= NEAR_DAYS for u in unknown.get(r["ticker"], []))):
                 left["already in the study"] += 1
                 continue
             if tcy in seen:
@@ -153,7 +169,7 @@ def facts(study, added):
             "by_source": {"additions": sum(1 for r in added if r.get("_from") == "additions"),
                           "backfill": sum(1 for r in added if r.get("_from") == "backfill")},
             "years": sorted({r["year"] for r in added}),
-            "study": medians(study), "added": medians(added), "combined": medians(study + added),
+            "study": medians(study), "added": medians(added),
             "mix_study": mix(study), "mix_added": mix(added)}
 
 
@@ -177,8 +193,7 @@ def block(f):
 
     trs = "".join(
         f"<tr><td>{label}</td><td>{f['study'][w]['n']:,}</td><td>{fmt(f['study'][w]['median'])}</td>"
-        f"<td>{f['added'][w]['n']:,}</td><td>{fmt(f['added'][w]['median'])}</td>"
-        f"<td>{f['combined'][w]['n']:,}</td><td>{fmt(f['combined'][w]['median'])}</td></tr>"
+        f"<td>{f['added'][w]['n']:,}</td><td>{fmt(f['added'][w]['median'])}</td></tr>"
         for w, label in SHOWN)
     ms, ma = f["mix_study"], f["mix_added"]
     mix_rows = "".join(f"<tr><td>{t.capitalize()}</td><td>{pct(ms, t)}</td><td>{pct(ma, t)}</td></tr>" for t in TIERS)
@@ -188,18 +203,18 @@ def block(f):
         f"{B}"
         f"<h2>Company-release rows, kept apart from the study</h2>"
         f"<p>{f['added_n']:,} more presentations ({span}) are measured here, each anchored on the presenting "
-        f"company's own release that reported data from the meeting. {f['by_source']['additions']:,} are from "
-        f"meetings since June 5, 2026, after the study's last row; {f['by_source']['backfill']:,} are earlier "
+        f"company's own release that reported data from the meeting, not on the date the study's rows use. {f['by_source']['additions']:,} are from "
+        f"meetings ending on or after June 5, 2026 (the study's last row is June 4); {f['by_source']['backfill']:,} are earlier "
         f"presentations named in SEC filings that the study did not hold, each re-dated from the company's release. "
-        f"A presentation the study already holds is not repeated.</p>"
+        f"A presentation the study already holds, or may hold under an unverified meeting label, is left out.</p>"
         f"<p>They are not in the {f['study_n']:,}-row figures above. This page's rule, written after the July 2026 "
         f"revert, is that a change of sampling frame is published beside the old figures, never folded into them in "
         f"the same step. These rows come from a different frame (releases for companies we track, and filings, which "
         f"skew to smaller companies), and no recall figure for that frame exists yet.</p>"
-        f"<table><caption>Median share-price move: the study, the company-release rows, and both together. "
-        f"n is the number of rows with that window.</caption>"
-        f"<tr><th>Window</th><th>Study n</th><th>Study median</th><th>Added n</th><th>Added median</th>"
-        f"<th>Together n</th><th>Together median</th></tr>{trs}</table>"
+        f"<table><caption>Median share-price move, side by side: the study's rows and the company-release rows. "
+        f"n is the number of rows with that window. No combined figure is given until a recall figure exists."
+        f"</caption><tr><th>Window</th><th>Study n</th><th>Study median</th><th>Added n</th><th>Added median</th>"
+        f"</tr>{trs}</table>"
         f"<table><caption>Point-in-time market-cap mix: share of rows with a known tier in each sample "
         f"(study {ms['known']:,} known, {ms['unknown']:,} unknown; added {ma['known']:,} known, "
         f"{ma['unknown']:,} unknown).</caption>"
@@ -211,8 +226,10 @@ def block(f):
 
 
 def render(doc, html):
+    if B in doc and E in doc.split(B, 1)[1]:
+        return doc.split(B, 1)[0] + html + doc.split(B, 1)[1].split(E, 1)[1]
     if B in doc:
-        return doc.split(B, 1)[0] + html + doc.split(E, 1)[1]
+        return None
     if AFTER in doc:
         i = doc.index(AFTER) + len(AFTER)
         return doc[:i] + html + doc[i:]
@@ -221,7 +238,11 @@ def render(doc, html):
 
 def main(lookup=None):
     study = study_rows()
-    mcap = json.load(io.open(MCAP, encoding="utf-8")) if os.path.exists(MCAP) else {}
+    try:
+        mcap = json.load(io.open(MCAP, encoding="utf-8")) if os.path.exists(MCAP) else {}
+        mcap = mcap if isinstance(mcap, dict) else {}
+    except Exception:  # noqa: BLE001
+        mcap = {}
     if lookup is None:
         try:
             from fmp_mcap import key, mcap_on  # noqa: E402
@@ -232,14 +253,21 @@ def main(lookup=None):
     if lookup:
         io.open(MCAP, "w", encoding="utf-8").write(json.dumps(mcap, indent=0, sort_keys=True))
     if not added:
-        print("conference_runup_added: no complete company-release rows; study page left as it is")
+        doc = io.open(PAGE, encoding="utf-8", errors="replace").read()
+        new = render(doc, "")
+        if new is not None and new != doc:
+            io.open(PAGE, "w", encoding="utf-8").write(new)
+        if os.path.exists(CSV_OUT):
+            os.remove(CSV_OUT)
+        print("conference_runup_added: no complete company-release rows; section and CSV removed")
         return 0
     f = facts(study, added)
     write_csv(added)
     doc = io.open(PAGE, encoding="utf-8", errors="replace").read()
     new = render(doc, block(f))
     if new is None:
-        print("conference_runup_added: the study page has no CSTUDYX block to follow; nothing rendered")
+        print("conference_runup_added: the study page has no CSTUDYX block to follow (or a broken CSTUDYADD); "
+              "nothing rendered")
         return 1
     if new != doc:
         io.open(PAGE, "w", encoding="utf-8").write(new)

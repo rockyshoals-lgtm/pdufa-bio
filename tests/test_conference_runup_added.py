@@ -8,6 +8,7 @@ side by side, never folded into the headline in the same step. So:
   1. conf_study/conference_runup_PUBLISHED.csv holds no company-release row (the headline sample is unchanged).
   2. added_rows on SYNTHETIC cache rows: a pending, held or window-missing row is left out; a row the study already
      holds is left out; the same presentation from both caches is shown once; the tier follows the study thresholds.
+     A row near a study row labelled UNKNOWN for the same ticker is left out (it may be the same presentation).
   3. When the page is built: the CSTUDYADD block follows CSTUDYX, and its counts and medians equal a recomputation
      from the published CSV of added rows; every row there has an https release link and a closed window.
 
@@ -33,14 +34,15 @@ def check(ok, msg):
         fails.append(msg)
 
 
-# 1. the headline sample is untouched
+# 1. the headline sample is untouched (a tripwire: a fold would add the release_url column or company_release rows)
 study = A.study_rows()
-check(not any(r.get("src") == "company_release" or r.get("release_url") for r in study),
+check("release_url" not in (study[0] if study else {}) and not any(r.get("src") == "company_release" for r in study),
       "a company-release row is inside conference_runup_PUBLISHED.csv; it must stay beside the study")
 
 # 2. synthetic rows (tickers invented)
 W = {w: "1.0" for w in A.WINDOWS}
-fake_study = [{"ticker": "ZZQA", "conf": "ASCO", "year": "2025"}]
+fake_study = [{"ticker": "ZZQA", "conf": "ASCO", "year": "2025", "anchor": "2025-06-01"},
+              {"ticker": "ZZQG", "conf": "UNKNOWN", "year": "2025", "anchor": "2025-05-19"}]
 caches = {
     "add": {"rows": {
         "OK1": dict(W, ticker="ZZQB", conf="ESMO", year="2026", anchor="2026-10-18", status="complete",
@@ -49,6 +51,7 @@ caches = {
         "HELD": dict(W, ticker="ZZQD", conf="ASH", year="2026", anchor="2026-12-06", status="check"),
         "GAP": dict(W, ticker="ZZQE", conf="ESMO", year="2026", anchor="2026-10-18", status="complete", post_10d=""),
         "IN": dict(W, ticker="ZZQA", conf="ASCO", year="2025", anchor="2025-06-01", status="complete"),
+        "NEARUNK": dict(W, ticker="ZZQG", conf="ASCO", year="2025", anchor="2025-05-30", status="complete"),
     }},
     "backfill": {"rows": {
         "DUP": dict(W, ticker="ZZQB", conf="ESMO", year="2026", anchor="2026-10-19", status="complete"),
@@ -67,7 +70,7 @@ rows, left, mc = A.added_rows(fake_study, lookup=lambda t, d: {"ZZQB": 120e6, "Z
 A.CACHES = saved
 got = sorted(r["ticker"] for r in rows)
 check(got == ["ZZQB", "ZZQF"], f"synthetic: expected ZZQB and ZZQF only, got {got}")
-check(left == {"window not closed or held": 3, "already in the study": 1, "duplicate": 1}, f"synthetic left-out {left}")
+check(left == {"window not closed or held": 3, "already in the study": 2, "duplicate": 1}, f"synthetic left-out {left}")
 tiers = {r["ticker"]: r["cap_tier_pit"] for r in rows}
 check(tiers == {"ZZQB": "micro", "ZZQF": "mid"}, f"synthetic tiers {tiers}")
 check(all(r["conf_full"] != "AACR Annual Meeting 2024 2024" for r in rows), "a doubled year in conf_full was kept")
@@ -88,10 +91,12 @@ if A.B in page and os.path.exists(A.CSV_OUT):
     check(f"{len(pub):,} more presentations" in blk, f"the block does not state the {len(pub)} published rows")
     check(f"not in the {len(study):,}-row figures" in blk, "the block does not say the study figures exclude these rows")
     for w, label in A.SHOWN:
-        for name, rs in (("added", pub), ("together", study + pub)):
-            m = A.medians(rs)[w]
-            cell = f"<td>{m['n']:,}</td><td>{A.fmt(m['median'])}</td>"
-            check(cell in blk, f"{label}: {name} n/median {m['n']}/{A.fmt(m['median'])} not on the page")
+        ms, ma = A.medians(study)[w], A.medians(pub)[w]
+        cell = (f"<td>{label}</td><td>{ms['n']:,}</td><td>{A.fmt(ms['median'])}</td>"
+                f"<td>{ma['n']:,}</td><td>{A.fmt(ma['median'])}</td></tr>")
+        check(cell in blk, f"{label}: study/added n and medians not on the page as computed")
+    check("Together" not in blk and "combined median" not in blk.lower(), "the block shows a combined figure")
+    check("Every study figure on this page" in page, "the Read-this-first caveat still covers every figure")
 else:
     print("  (study page not built with the company-release block here; page checks skipped)")
 

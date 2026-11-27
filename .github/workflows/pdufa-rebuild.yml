@@ -893,7 +893,7 @@ jobs:
       - name: "Conference study: company-release rows beside the study (side by side, own CSV)"
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
-        run: python conference_runup_added.py
+        run: python conference_runup_added.py || echo "::warning::conference company-release section not rebuilt"
 
       - name: Explain what a PDUFA date is (plain English + FAQ schema)
         run: python build_explainer.py
@@ -1462,6 +1462,7 @@ jobs:
           git add -f pdufa_site_src/fda-approvals/data/approvals-by-type.csv 2>/dev/null || true   # /fda-approvals/types download (*.csv is ignored)
           git add -f pdufa_site_src/earnings/data/earnings-dates.csv 2>/dev/null || true   # /earnings download (*.csv is ignored)
           git add -f pdufa_site_src/devices/decisions/data/device-decisions.csv 2>/dev/null || true   # /devices/decisions download (*.csv is ignored)
+          git add -f pdufa_site_src/research/conference-runup/conference-runup-company-releases.csv 2>/dev/null || true   # study page's company-release rows download (*.csv is ignored)
           # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot
           # reach openFDA reads the newest release, not the August 2026 file (red team of /crl/data, Nov 22)
           git add CRL_corpus_openFDA_*.json 2>/dev/null || true
