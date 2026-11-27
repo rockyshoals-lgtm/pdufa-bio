@@ -90,22 +90,99 @@ def past_window(row):
     return ym
 
 
-def fetch_prs(tk, key, limit=60):
-    url = FMP_PR + "?" + urllib.parse.urlencode({"symbols": tk, "limit": limit, "apikey": key})
-    req = urllib.request.Request(url, headers={"User-Agent": "pdufa.bio builder"})
-    try:
-        rows = json.loads(urllib.request.urlopen(req, timeout=25).read().decode("utf-8"))
-    except Exception:  # noqa: BLE001
-        return None
+def fetch_prs(tk, key, since=None, limit=100, pages=6):
+    # 2026-11-27: without from/to, FMP's press-release search returns only the last few months (Karyopharm: 7
+    # releases, ending Aug 27), so a topline announced earlier in the year (XPORT-EC-042, Jul 30 2026) was never
+    # seen and the row was marked "no topline". Ask for the whole span back to the earliest window, page by page.
     out = []
-    for x in rows if isinstance(rows, list) else []:
-        if not isinstance(x, dict):
-            continue
-        title = str(x.get("title") or "")
-        body = re.sub(r"<[^>]+>", " ", str(x.get("text") or x.get("content") or ""))[:3000]
-        pub = str(x.get("publishedDate") or x.get("date") or "")[:10]
-        out.append((title, body, pub, x.get("url") or x.get("link") or ""))
+    for page in range(pages):
+        q = {"symbols": tk, "limit": limit, "page": page, "apikey": key, "to": TODAY.isoformat()}
+        if since:
+            q["from"] = since
+        req = urllib.request.Request(FMP_PR + "?" + urllib.parse.urlencode(q), headers={"User-Agent": "pdufa.bio builder"})
+        try:
+            rows = json.loads(urllib.request.urlopen(req, timeout=25).read().decode("utf-8"))
+        except Exception:  # noqa: BLE001
+            return out or None
+        got = [x for x in (rows if isinstance(rows, list) else []) if isinstance(x, dict)]
+        for x in got:
+            title = str(x.get("title") or "")
+            body = re.sub(r"<[^>]+>", " ", str(x.get("text") or x.get("content") or ""))[:3000]
+            pub = str(x.get("publishedDate") or x.get("date") or "")[:10]
+            out.append((title, body, pub, x.get("url") or x.get("link") or ""))
+        if len(got) < limit:
+            break
+        time.sleep(0.2)
+    seen, uniq = set(), []
+    for t in out:
+        if (t[0], t[2]) not in seen:
+            seen.add((t[0], t[2]))
+            uniq.append(t)
+    return uniq
+
+
+# words of a registry title that say nothing about which disease the trial is in
+GENERIC = set("""randomized randomised placebo controlled multicenter multicentre multi center double blind blinded
+open label single arm patients participants subjects adults adult pediatric evaluate evaluating assess assessing
+efficacy safety tolerability pharmacokinetics pharmacodynamics study trial phase versus compared combination therapy
+treatment treated previously advanced recurrent relapsed refractory maintenance systemic standard physician physicians
+choice agent single after before first second line moderate severe moderately severely active chronic acute
+investigate investigating determine dose escalation expansion cohort monotherapy alone global international
+cancer cancers carcinoma tumors tumours tumor tumour solid disease diseases syndrome disorder metastatic malignant
+malignancies malignancy neoplasms positive negative results primary endpoint topline announces wildtype""".split())
+
+
+def phases(text):
+    out = set()
+    for a, b in re.findall(r"phase\s*(\d)(?:\s*/\s*(\d))?", str(text or ""), re.I):
+        out.add(int(a))
+        if b:
+            out.add(int(b))
     return out
+
+
+def disease_words(row):
+    blk = (row.get("_d") or {}).get("nct_id")
+    blk = blk if isinstance(blk, dict) else {}
+    t = " ".join(str(blk.get(k) or "") for k in ("title", "brief_title"))
+    return {w for w in re.findall(r"[a-z]{6,}", t.lower()) if w not in GENERIC}
+
+
+def match_release(row, prs, toks, start, multi):
+    """The first release (newest first) in prs that reports this row's results, as (title, date, url), or None."""
+    d = row.get("_d") or {}
+    hit = None
+    dz = disease_words(row) - {t.lower() for t in toks}
+    tph = phases(((d.get("nct_id") or {}) if isinstance(d.get("nct_id"), dict) else {}).get("title"))
+    for title, body, pub, url in prs:
+        if pub and pub < start:
+            continue
+        if not RESULTS.search(title) or FUTURE.search(title) or FOLLOWUP.search(title):
+            continue
+        if not any(re.search(r"\b" + re.escape(t) + r"\b", title, re.I) for t in toks):
+            # 2026-11-27: a topline headline often names the trial and the disease, not the drug ("Topline
+            # Results from Phase 3 XPORT-EC-042 Trial in Endometrial Cancer"). Accept it only when the release
+            # body names the drug, the headline names the disease of this row's registry trial, and any phase
+            # the headline states is this trial's phase.
+            if not any(re.search(r"\b" + re.escape(t) + r"\b", body, re.I) for t in toks):
+                continue
+            if not dz or not (dz & set(re.findall(r"[a-z]{6,}", title.lower()))):
+                continue
+            hph = phases(title)
+            if hph and tph and not (hph & tph):
+                continue
+        elif dz and not (dz & set(re.findall(r"[a-z]{6,}", (title + " " + body).lower()))):
+            # 2026-11-27 replay on 45 sponsors: "Positive Results from its ... Phase 2 Trial of Onvansertib in
+            # First-Line RAS-Mutated mCRC" must not resolve an onvansertib PANCREATIC trial. A headline that names
+            # the drug still has to share a disease word with this trial's registry title in its headline or text.
+            continue
+        if multi:
+            tn = re.search(r"\b([A-Z][A-Za-z0-9-]{3,}(?:-\d+)?)\b", str(row.get("name") or ""))
+            if not (tn and tn.group(1).lower() in body.lower()):
+                continue
+        hit = (title, pub, url)
+        break
+    return hit
 
 
 def main():
@@ -146,7 +223,9 @@ def main():
                 n_reg += 1
             continue
         if r["t"] not in cache:
-            cache[r["t"]] = fetch_prs(r["t"], key)
+            first = min(x for x in (past_window(z) for z in by_tk[r["t"]]) if x)
+            since = (dt.date(int(first[:4]), int(first[5:7]), 1) - dt.timedelta(days=45)).isoformat()
+            cache[r["t"]] = fetch_prs(r["t"], key, since=since)
             time.sleep(0.2)
         prs = cache[r["t"]]
         if prs is None:
@@ -157,26 +236,13 @@ def main():
         y, m = int(ym[:4]), int(ym[5:7])
         start = (dt.date(y, m, 1) - dt.timedelta(days=45)).isoformat()
         multi = len([x for x in by_tk[r["t"]] if drug_tokens(x)[:1] == toks[:1]]) > 1
-        hit = None
-        for title, body, pub, url in prs:
-            if pub and pub < start:
-                continue
-            if not any(re.search(r"\b" + re.escape(t) + r"\b", title, re.I) for t in toks):
-                continue
-            if not RESULTS.search(title) or FUTURE.search(title) or FOLLOWUP.search(title):
-                continue
-            if multi:
-                trial = str(d.get("program") or "")
-                tn = re.search(r"\b([A-Z][A-Za-z0-9-]{3,}(?:-\d+)?)\b", str(r.get("name") or ""))
-                if not (tn and tn.group(1).lower() in body.lower()):
-                    continue
-            hit = (title, pub, url)
-            break
+        hit = match_release(r, prs, toks, start, multi)
         if hit:
             d["resolution"] = {"state": "sponsor_release", "date": hit[1], "headline": hit[0][:200], "url": hit[2],
                                "checked": TODAY.isoformat(),
-                               "basis": "sponsor press-release headline naming the drug with results language; "
-                                        "outcome not summarised here"}
+                               "basis": "sponsor press-release headline with results language that names the drug, or "
+                                        "names this trial's disease while its text names the drug; outcome not "
+                                        "summarised here"}
             n_rel += 1
         else:
             d["resolution"] = {"state": "no_topline", "checked": TODAY.isoformat(),

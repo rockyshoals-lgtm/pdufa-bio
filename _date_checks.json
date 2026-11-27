@@ -5852,6 +5852,13 @@
    "source": "https://www.globenewswire.com/news-release/2026/10/23/3387158/0/en/aardvark-therapeutics-reports-exploratory-data-from-the-terminated-hero-and-open-label-extension-trials.html",
    "by": "manual",
    "note": "Company release Oct 23 2026: HERO terminated early after 67 of 90 planned participants; exploratory data only. Q3 release Nov 13 2026 repeats it."
+  },
+  "readout_kpti_2026-08-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://www.prnewswire.com/news-releases/karyopharm-announces-topline-results-from-phase-3-xport-ec-042-trial-in-endometrial-cancer-302839314.html",
+   "by": "manual",
+   "note": "Karyopharm release Jul 30 2026: XPORT-EC-042 (NCT05611931) topline; did not meet its PFS primary endpoint."
   }
  }
 }

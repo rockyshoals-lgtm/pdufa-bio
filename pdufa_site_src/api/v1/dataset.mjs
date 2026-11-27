@@ -435,9 +435,14 @@ export default [
     }
    ],
    "resolution": {
-    "state": "no_topline",
+    "state": "sponsor_release",
+    "date": "2026-07-30",
+    "headline": "Karyopharm Announces Topline Results from Phase 3 XPORT-EC-042 Trial in Endometrial Cancer",
+    "url": "https://www.prnewswire.com/news-releases/karyopharm-announces-topline-results-from-phase-3-xport-ec-042-trial-in-endometrial-cancer-302839314.html",
+    "quote": "The Trial Did Not Meet the Primary Endpoint of Progression-Free Survival (PFS)",
     "checked": "2026-11-27",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "reviewed": "2026-11-27",
+    "basis": "sponsor's own topline release for this trial (XPORT-EC-042 = NCT05611931), read by hand"
    }
   },
   "dm": "2026-05"
