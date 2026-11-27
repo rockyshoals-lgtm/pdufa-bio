@@ -286,6 +286,7 @@ def main():
     remove = set()
 
     use = [eff(x) for x in recs if x.get("rt_verdict") in USE]
+    checked = []  # (row id, source url, verdict): the red team opened each source before this apply
     # ---------------------------------------------------------------- existing rows
     for r in use:
         rid = r.get("existing_row_id")
@@ -459,6 +460,7 @@ def main():
             log["removed"].append(f"{sup}: registry estimate replaced by the company's own timing ({rid})")
         rows.append(row)
         by[rid] = row
+        checked.append((rid, r.get("source_url"), r.get("rt_verdict")))
         log["added"].append(f"{rid}: {row['name']} | {short(r.get('timing_stated'), 40)}")
 
     rows = [x for x in rows if x["id"] not in remove]
@@ -479,6 +481,18 @@ def main():
     io.open(DATASET, "w", encoding="utf-8", newline="").write(splice(src, rows, orig_ids, remove))
     io.open(MANUAL, "w", encoding="utf-8").write(json.dumps(man, indent=1, ensure_ascii=False))
     io.open(ACK, "w", encoding="utf-8").write(json.dumps(ack, indent=1, ensure_ascii=False))
+    # Self-heal 2026-11-27 (rebuild 45940203634): two rows from batch I-L (OLMA, BCTX, Dec 11) crossed into the
+    # 14-day window the morning after they were added and blocked the rebuild as "checked: never", though the red
+    # team had opened both sources the day before. A row this script adds was just read against its source, so its
+    # first entry in the date-check ledger is written here (tests/test_date_checks_current.py reads it).
+    if checked:
+        import record_date_check as rdc
+        led = rdc.load()
+        for rid, url, verdict in checked:
+            if url and rid not in led.get("checks", {}):
+                rdc.record(led, rid, "CONFIRMED", url, f"red team {verdict} before apply", by="red_team_at_apply")
+        rdc.save(led)
+        print(f"date checks recorded: {sum(1 for rid, _, _ in checked if led['checks'].get(rid, {}).get('by') == 'red_team_at_apply')}")
     print("written.")
     return 0
 

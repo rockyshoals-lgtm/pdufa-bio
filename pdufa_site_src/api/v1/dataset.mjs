@@ -34319,44 +34319,6 @@ export default [
   }
  },
  {
-  "id": "readout_rlay_2026-12-14-zovegalisi",
-  "t": "RLAY",
-  "company": "Relay Therapeutics, Inc.",
-  "d": "2026-12-14",
-  "dp": "day",
-  "name": "zovegalisib ReInspire, Phase 1/2 updated ReInspire data, ASH oral",
-  "type": "Readout",
-  "ta": "",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.globenewswire.com/news-release/2026/11/04/3395819/0/en/relay-therapeutics-reports-third-quarter-2026-financial-results-and-corporate-updates.html",
-  "ua": "2026-11-26T21:03:06Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "vascular anomalies",
-   "market_cap_usd": null,
-   "program": "zovegalisib",
-   "trial": "ReInspire, Phase 1/2",
-   "guided_precision": "day",
-   "guided_window": "2026-12-14",
-   "guided_label": "Oral presentation date: Monday, December 14, 2026 (ASH)",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-04",
-   "guidance_text": "Oral presentation date: Monday, December 14, 2026",
-   "source_url": "https://www.globenewswire.com/news-release/2026/11/04/3395819/0/en/relay-therapeutics-reports-third-quarter-2026-financial-results-and-corporate-updates.html",
-   "source": "company guidance (company release)",
-   "readout_described": "updated ReInspire data, ASH oral",
-   "date_quote": "Oral presentation date: Monday, December 14, 2026",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened Relay 11/04/2026 Q3 release: 'Updated data from ongoing Phase 1/2 ReInspire trial of zovegalisib in vascular anomalies to be featured in oral presentation' at ASH; 'Oral presentation date: Monday, December 14, 2026'. 'RLY-2608' appears nowhere on the page; drug fixed to zovegalisib.",
-   "date_history": [
-    {
-     "date": "2026-12-14",
-     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
-    }
-   ]
-  }
- },
- {
   "id": "readout_mbrx_2026-12-15",
   "t": "MBRX",
   "company": "Moleculin Biotech, Inc.",
