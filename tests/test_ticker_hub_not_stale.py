@@ -41,8 +41,20 @@ def decided_events():
     return out
 
 
+def past_due_events():
+    """2026-11-27 (Savara): a goal date that passed with no decision is not upcoming either (build_home_past_due rule)."""
+    sys.path.insert(0, os.path.dirname(HERE))
+    try:
+        from build_home_past_due import keys
+        return {k: "past its goal date with no decision on record" for k in keys()}
+    except Exception as ex:  # noqa: BLE001
+        print(f"  WARN: past-due list unavailable ({ex}); checking decided events only")
+        return {}
+
+
 def main():
     decided = decided_events()
+    decided.update(past_due_events())
     hubs = sorted(glob.glob(os.path.join(SITE, "ticker", "*", "index.html")))
     if not hubs:
         print("FAIL: no ticker hubs found -- the glob or the layout changed")

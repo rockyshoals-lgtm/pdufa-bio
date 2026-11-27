@@ -1057,6 +1057,13 @@
    "was": "The line under the sources gave Nov 17, 2026, 10:25 PM ET as when this page entered pdufa.bio's records.",
    "now": "It entered them earlier, on Nov 17, 2026, 9:59 PM ET: pdufa.bio's own change history shows the earlier commit adding the page.",
    "source": "pdufa.bio change history, commit 2ac2351"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/ticker/SVRA",
+   "was": "Savara's MOLBREEVI (molgramostim) BLA listed under \"Upcoming FDA catalysts\" with its November 22, 2026 goal date, and the page FAQs gave that date in the present tense, five days after it passed.",
+   "now": "Listed as past its goal date with no decision on record. On November 20, 2026 Savara said the FDA told it the agency would not act by November 22; the review is ongoing and no revised action date was given. The home page, event page and calendar already said so; the ticker page, its FAQ, the event page FAQ and site search now do too, and a test fails the build if a past-due goal is ever listed as upcoming.",
+   "source": "Savara release, November 20, 2026 (Business Wire)"
   }
  ],
  "legacy": [

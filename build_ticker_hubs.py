@@ -38,6 +38,38 @@ try:
     _ET_TODAY = _et().isoformat()
 except Exception:
     _ET_TODAY = (dt.datetime.utcnow() - dt.timedelta(hours=5)).date().isoformat()
+# 2026-11-27 (Savara): a PDUFA goal date that has passed with no decision is not an "upcoming FDA catalyst".
+# /ticker/SVRA listed MOLBREEVI under Upcoming with "1 upcoming" five days after its Nov 22 goal date, though Savara
+# said on Nov 20 that the FDA would not act by that date. The home box (build_home_past_due.py) owns the one rule for
+# "past due"; the hub uses the same list so the two can never disagree.
+try:
+    from build_home_past_due import past_due as _past_due
+except Exception:  # noqa: BLE001
+    _past_due = None
+
+
+def _past_due_by_ticker():
+    out = {}
+    if _past_due is None:
+        return out
+    try:
+        for x in _past_due():
+            out.setdefault(x['t'], {})[x['goal']] = x
+    except Exception as ex:  # noqa: BLE001
+        print(f'  past-due list unavailable: {ex}')
+    return out
+
+
+_PASTDUE = None
+
+
+def _pastdue():
+    global _PASTDUE
+    if _PASTDUE is None:
+        _PASTDUE = _past_due_by_ticker()
+    return _PASTDUE
+
+
 _PAST_LABEL = {'no_topline': 'Window passed, no topline announced', 'company_stopped': 'Stopped by company',
                'sponsor_release': 'Results released', 'results_posted_registry': 'Results posted to registry'}
 
@@ -259,7 +291,9 @@ def load_data():
 def render(tk, fwd, past, name, slugs, readouts, confs):
     company = name.get(tk, '')
     disp = f'{tk} — {esc(company)}' if company else tk
-    n_up, n_past = len(fwd.get(tk, [])), len(past.get(tk, []))
+    pdue = _pastdue().get(tk, {})
+    overdue = [c for c in fwd.get(tk, []) if str(c.get('date') or '') in pdue]
+    n_up, n_past = len(fwd.get(tk, [])) - len(overdue), len(past.get(tk, []))
     title = f'{tk} FDA Calendar: PDUFA Dates & Decision History | pdufa.bio'
     desc = (f'{tk}{" (" + esc(company) + ")" if company else ""} FDA catalyst hub: '
             f'{n_up} upcoming PDUFA/decision page(s) and {n_past} past FDA decision(s) with dates '
@@ -297,6 +331,8 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
     sub = []
     if company:
         sub.append(esc(company))
+    if overdue:
+        sub.append(f'{len(overdue)} past {"its" if len(overdue) == 1 else "their"} goal date')
     sub.append(f'{n_up} upcoming' if n_up else 'no upcoming catalyst on file')
     sub.append(f'{n_past} past FDA decision{"s" if n_past != 1 else ""}')
     out.append(f'<div class="sub">{" · ".join(sub)}</div>')
@@ -307,7 +343,29 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
     # resurrect exactly the decided-as-pending phantoms we spent sessions removing. The slate is
     # the authoritative forward calendar; link each slate row to a matching detail page by drug
     # token when one exists, else to the month calendar. Never link a swept page back onto a hub.
-    up = sorted(fwd.get(tk, []), key=lambda x: x.get('date') or '9999')
+    def _href(drug):
+        dtoks = {w.lower() for w in re.findall(r'[A-Za-z]{4,}', drug)}
+        for s in slugs.get(tk, []):
+            if dtoks & set(s.lower().replace('-', ' ').split()):
+                return f'/pdufa/{s}'
+        return '/calendar'
+
+    if overdue:
+        out.append('<h2>Past the goal date, no decision yet</h2>')
+        for c in sorted(overdue, key=lambda x: x.get('date') or ''):
+            x = pdue[str(c.get('date'))]
+            drug = c.get('drug') or x.get('drug') or ''
+            href = x.get('url') if str(x.get('url') or '').startswith('/pdufa/') else _href(drug)
+            if x.get('miss_date') and x.get('miss_text'):
+                st = (f'On {pretty(x["miss_date"])} the sponsor said the FDA would not act by the goal date'
+                      + ('; the review is ongoing' if 'ongoing' in x['miss_text'].lower() else '')
+                      + f'. No decision on record as of {pretty(_ET_TODAY)}.')
+            else:
+                st = f'No FDA decision or sponsor announcement on record as of {pretty(_ET_TODAY)}.'
+            out.append(f'<a class="row" href="{esc(href)}"><span class="t">{tk} · goal {esc(x["goal_words"])} passed'
+                       f'</span><span class="d">{esc(drug) or "FDA decision"}: {esc(st)}</span></a>')
+
+    up = sorted((c for c in fwd.get(tk, []) if c not in overdue), key=lambda x: x.get('date') or '9999')
     if up:
         out.append('<h2>Upcoming FDA catalysts</h2>')
         for c in up:
