@@ -221,6 +221,50 @@ def splice(src, rows, orig_ids, remove):
     return out
 
 
+def publish_gate(orig_rows, new_rows, recs):
+    """Self-heal guard (2026-11-27). Two rebuilds were blocked by rows this script wrote:
+    a company named "X (TICKER)" printed the ticker twice (test_no_repeated_phrases), and a name
+    starting "drug TRIAL ..." moved /drug/<drug> to /drug/<drug-trial> and left a dead link
+    (test_internal_links_resolve). Refuse to write either, so the CI guards never see them."""
+    import build_drug_pages as bdp
+    probs = []
+    for r in new_rows:
+        t = str(r.get("t") or "")
+        if t and re.search(r"\(\s*" + re.escape(t) + r"\s*\)", str(r.get("company") or "")):
+            probs.append(f"{r['id']}: company carries its own ticker: {r.get('company')!r}")
+
+    def slugs(rows):
+        out = {}
+        for r in rows:
+            n = bdp.clean_name(r.get("name"))
+            if not n:
+                continue
+            sl = bdp.slugify(re.split(r"\s*\(", n)[0])
+            if sl and not bdp.JUNK_SLUG.search(sl):
+                out.setdefault(sl, r["id"])
+        return out
+
+    before, after = slugs(orig_rows), slugs(new_rows)
+    known = set()
+    for fn, key in (("_drug_pages_retired.json", "pages"), ("_drug_slug_folds.json", "folds")):
+        try:
+            known |= set(json.load(io.open(os.path.join(HERE, fn), encoding="utf-8")).get(key, {}))
+        except Exception:
+            pass
+    for sl in sorted(set(before) - set(after) - known):
+        probs.append(f"/drug/{sl} would stop being built (was from {before[sl]}): rename the row so the drug "
+                     f"name comes first, or add a redirect to _drug_pages_retired.json / _drug_slug_folds.json")
+    words = set()
+    for x in recs:
+        for w in re.findall(r"[A-Z][A-Z0-9-]{3,}", str(x.get("trial") or "")):
+            words.add(w.lower())
+    words -= {"phase", "part", "study", "trial"}
+    for sl in sorted(set(after) - set(before)):
+        if any(w in sl.split("-") for w in words):
+            probs.append(f"/drug/{sl} (from {after[sl]}) is named for a trial, not a drug")
+    return probs
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -420,6 +464,13 @@ def main():
         print(f"{k}: {len(v)}")
         for x in v:
             print("   " + x)
+    orig_rows = json.loads(src[i:j])
+    probs = publish_gate(orig_rows, rows, use)
+    if probs:
+        print("REFUSED: these rows would break the site build:")
+        for x in probs:
+            print("   " + x)
+        return 2
     if a.dry_run:
         print("dry run: nothing written")
         return 0
