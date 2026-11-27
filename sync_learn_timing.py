@@ -11,6 +11,9 @@ This script owns those numbers on that page. It rewrites, in place and idempoten
   - the meta description / og:description sentence "In 2026, N of M sourced decisions came early."
   - the body sentence "of the M sourced 2026 decisions in <a ...>our decision-timing study</a>,
     N came before the goal date, O landed on it and L came after it"
+  - (2026-11-27) the FAQPage answer to "Does the FDA always decide by the PDUFA date?", inserting the question
+    if the page lacks it. Copilot grounds "what is a PDUFA date" answers on a competitor's "FDA meets its goals"
+    line; this puts our own sourced split in the structured answer it reads.
 from timing_split(), the same function /calendar renders from. tests/test_learn_timing_matches_calendar.py
 asserts the two pages agree.
 """
@@ -29,6 +32,10 @@ sys.path.insert(0, HERE)
 PAGE = os.path.join(HERE, "pdufa_site_src", "learn", "what-is-a-pdufa-date", "index.html")
 
 META_RE = re.compile(r"In 2026, \d+ of \d+ sourced decisions came early\.")
+FAQ_Q = "Does the FDA always decide by the PDUFA date?"
+FAQ_RE = re.compile(r'\{"@type":"Question","name":"Does the FDA always decide by the PDUFA date\?",'
+                    r'"acceptedAnswer":\{"@type":"Answer","text":"[^"]*"\}\}')
+FAQ_ANCHOR = '{"@type":"FAQPage","mainEntity":['
 BODY_RE = re.compile(r"of the \d+ sourced 2026 decisions in (<a [^>]*>our decision-timing study</a>), "
                      r"\d+ came before the goal date, \d+ landed on it and \d+ [^.<]*")
 
@@ -42,6 +49,15 @@ def main():
     new = BODY_RE.sub(lambda m: (f"of the {n} sourced 2026 decisions in {m.group(1)}, {early} came "
                                  f"before the goal date, {on} landed on it and {late} came after it"),
                       new)
+    faq = ('{"@type":"Question","name":"' + FAQ_Q + '","acceptedAnswer":{"@type":"Answer","text":"No. The PDUFA '
+           f'date is a goal, not a promise. Of the {n} sourced 2026 decisions in the pdufa.bio decision-timing study, '
+           f'{early} came before the goal date, {on} landed on it and {late} came after it."}}}}')
+    if FAQ_RE.search(new):
+        new = FAQ_RE.sub(lambda _: faq, new)
+    elif FAQ_ANCHOR in new:
+        new = new.replace(FAQ_ANCHOR, FAQ_ANCHOR + faq + ",", 1)
+    else:
+        print("WARN: no FAQPage on the learn page; timing question not added")
     if new != doc:
         io.open(PAGE, "w", encoding="utf-8").write(new)
         print(f"learn timing: rewritten to {early} of {n} early, {on} on, {late} late")
