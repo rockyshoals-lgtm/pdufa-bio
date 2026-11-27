@@ -177,6 +177,39 @@ def main():
         io.open(ARCHIVE, "w", encoding="utf-8", newline="\n").write(
             json.dumps(dict(sorted(arc.items())), indent=1, ensure_ascii=False, sort_keys=True) + "\n")
 
+    fix_validation_cell()
+
+
+# The page's Validation cell also cited the oral-solution NDA 213535; the tablets are NDA 219285
+# (Drugs@FDA: ORIG-1, Type 3 New Dosage Form, approved 2025-02-11, letter 219285Orig1s000ltr.pdf).
+VERIFY = os.path.join(HERE, "_decision_verification.json")
+VFIX = {"RHHBY-2025-02-12": ("NDA219285", "2025-02-11")}
+
+
+def fix_validation_cell():
+    import re
+    ver = json.load(io.open(VERIFY, encoding="utf-8"))
+    changed = False
+    for slug, (appl, day) in VFIX.items():
+        url = ("https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo="
+               + appl[3:])
+        label = f"Drugs@FDA, application {appl}, action date {day}"
+        ev = ver["results"][slug]["evidence"]
+        if ev.get("appl_no") != appl:
+            ev.update({"appl_no": appl, "approval_date": day, "source_url": url, "source_label": label})
+            changed = True
+        page = os.path.join(HERE, "pdufa_site_src", "fda-decision", slug, "index.html")
+        doc = io.open(page, encoding="utf-8").read()
+        if appl in doc.split('<span>Validation</span>', 1)[-1][:600]:
+            continue
+        new = re.sub(r'(<div class="kv"><span>Validation</span><b>)Verified \d{4}-\d{2}-\d{2}: <a [^>]*>.*?</a>(</b></div>)',
+                     lambda m: m.group(1) + "Verified 2026-11-27: <a href=\"" + url.replace("&", "&amp;")
+                     + "\" rel=\"nofollow noopener\">" + label + "</a>" + m.group(2), doc, count=1, flags=re.S)
+        assert new != doc, slug
+        io.open(page, "w", encoding="utf-8", newline="\n").write(new)
+    if changed:
+        io.open(VERIFY, "w", encoding="utf-8", newline="\n").write(json.dumps(ver, indent=1) + "\n")
+
 
 if __name__ == "__main__":
     main()
