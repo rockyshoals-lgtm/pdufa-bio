@@ -47,6 +47,12 @@
   "decoy20": "/ticker/INDP",
   "fcx-007": "/drug",
   "nivisnebart": "/ticker/ALEC",
-  "sabirnetug": "/ticker/ABOS"
+  "sabirnetug": "/ticker/ABOS",
+  "seralutinib": "/ticker/GOSS",
+  "mbx-2109": "/ticker/MBX",
+  "treprostinil-palmitil": "/ticker/INSM",
+  "donidalorsen": "/ticker/IONS",
+  "ptc923": "/ticker/PTCT",
+  "spn-812": "/ticker/SUPN"
  }
 }

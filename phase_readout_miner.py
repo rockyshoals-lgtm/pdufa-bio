@@ -688,6 +688,25 @@ NON_READOUT_TYPE = re.compile(
     r'expanded access|compassionate use|managed access|early access)',   # access, not a readout
     re.I)
 
+# 2026-11-27: extension studies on their own, so tests/test_readout_not_extension.py and is_catalyst() share one rule.
+# A long-term safety study of an approved drug (PTC923 Phase 3 open-label, donidalorsen) is the same kind of study
+# as an extension. An extension PERIOD inside a randomized trial ("followed by an open-label extension period",
+# "study with open-label extension", "monotherapy extension") is part of a real readout, so it is cut out first:
+# NON_READOUT_TYPE alone was dropping ZURA's TibuSHIELD and BHVN's taldefgrobep Phase 2b for that phrase.
+EXTENSION_STUDY = re.compile(
+    r'(?:\bextension study\b|open-?label extension|\bOLE\b|long-?term extension|'
+    r'continuation (?:study|treatment|phase)|roll-?over|'
+    r'long[- ]term safety (?:and (?:efficacy|tolerability) )?study)', re.I)
+_EMBEDDED_EXT = re.compile(
+    r'(?:\b(?:with|followed by)\s+(?:an?\s+)?(?:optional\s+)?open-?label extension(?:\s+(?:period|phase|part))?|'
+    r'open-?label extension\s+(?:period|phase|part)\b|monotherapy extension\b)', re.I)
+
+
+def is_extension_study(title):
+    """True for a standalone extension / roll-over / long-term safety study (not a topline readout)."""
+    return bool(EXTENSION_STUDY.search(_EMBEDDED_EXT.sub(' ', str(title or ''))))
+
+
 # Early-dose studies (dose-escalation / -finding / -ranging) are dropped ONLY when there is no
 # efficacy/expansion signal. This keeps a small-cap Phase 2 dose-ranging study that IS the topline
 # catalyst, while dropping a pure Phase 1 dose-escalation. The efficacy words are the discriminator.
@@ -715,7 +734,8 @@ def is_catalyst(title, phase='', enrollment=None, sponsor_class='INDUSTRY'):
     pediatric EFFICACY, both survive). R5 (2026-10-11): a Phase 1-only trial counts only when it
     is industry-sponsored AND enrols 20 or more (a company guidance match re-admits it upstream)."""
     t = str(title or '')
-    if NON_CATALYST.search(t) or NON_READOUT_TYPE.search(t) or _EQUIVALENCE.search(t):
+    if (NON_CATALYST.search(t) or NON_READOUT_TYPE.search(_EMBEDDED_EXT.sub(' ', t)) or is_extension_study(t)
+            or _EQUIVALENCE.search(t)):
         return False
     if _PHASE1_ONLY.match(str(phase or '').strip()):
         try:

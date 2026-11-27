@@ -1078,6 +1078,13 @@
    "was": "A MacroGenics FDA decision page dated 2026-04-08 saying Zynyz (retifanlimab-dlwr) received a Complete Response Letter that day, with no source cited.",
    "now": "A second page, under MacroGenics, for the Zynyz NSCLC Complete Response Letter. Incyte is the applicant (MacroGenics licensed retifanlimab to Incyte and is owed milestones), and Incyte's 8-K dates the letter February 27, 2026; nothing happened on April 8. The decision has one page, under Incyte. The page is retired and redirects to /fda-decision/INCY-2026-03-06.",
    "source": "Incyte Form 8-K, date of report February 27, 2026"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/readouts",
+   "was": "13 estimated readout dates (Gossamer seralutinib Dec 2026, Corcept relacorilant, Insmed TPIP, BeOne zanubrutinib, Ionis olezarsen and donidalorsen, MBX 2109, Supernus SPN-812, Madrigal resmetirom, Sanofi rilzabrutinib, PTC923, and two terminated Gossamer and Jasper trials) were taken from open-label extension or long-term safety studies.",
+   "now": "Removed. An extension or long-term safety study's registry completion date is not a topline readout; seralutinib's extension runs until approval. The trials those studies extend, and every company-guided date, are unchanged.",
+   "source": "ClinicalTrials.gov records NCT06274801, NCT04816604, NCT06736262, NCT03604198, NCT05649748, NCT04170283, NCT05681351, NCT05392114, NCT06531941, NCT02736656, NCT04951219, NCT07216079, NCT05166161 (titles read Nov 27, 2026)"
   }
  ],
  "legacy": [
