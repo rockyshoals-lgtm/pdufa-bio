@@ -45,7 +45,12 @@ def routes():
 
 def _static(rel):
     p = os.path.join(SITE, rel.replace("/", os.sep))
-    return os.path.isfile(p) or os.path.isfile(os.path.join(p, "index.html"))
+    if os.path.isfile(p) or os.path.isfile(os.path.join(p, "index.html")):
+        return True
+    # Vercel serves api/<path>.js|.mjs as the function at /api/<path> (files starting with _ are private helpers)
+    if rel.startswith("api/") and not os.path.basename(rel).startswith("_"):
+        return any(os.path.isfile(p + ext) for ext in (".js", ".mjs"))
+    return False
 
 
 def resolves(path, _depth=0):

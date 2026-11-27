@@ -844,6 +844,10 @@ jobs:
           # the 2026 rows build_early_decisions counts), its /research card and its line on the 2026 page. After
           # build_early_decisions, which redraws the 2026 page. tests/test_decision_timing_since_2024.py.
           python build_decision_timing_since_2024.py || echo "::warning::/research/fda-decision-timing/since-2024 not rebuilt this run; tests/test_decision_timing_since_2024.py checks it"
+          # 2026-11-27 (David: "can we show how fast we posted it?"): /research/posting-speed, its /research card and the
+          # /api/v1/post-speed data, from the verified source times in _source_times.json and the first-parent commit that
+          # carried each fact (cached in _post_speed.json; a shallow checkout reads the cache). tests/test_post_speed.py.
+          python build_post_speed.py --only research || echo "::warning::/research/posting-speed not rebuilt this run; tests/test_post_speed.py checks it"
           # 2026-11-23 (audit move 8): weekday of every dated NDA first approval in the Orange Book, and the 2026
           # decisions with a weekend or holiday goal date. Reads build_early_decisions' rows, so it runs after it.
           # 2026-11-23: refresh the Drugs@FDA month cache FIRST. Run 45131808182 built the weekdays page here and
@@ -1237,6 +1241,12 @@ jobs:
 
       - name: "Phone and tablet layout (tables scroll in place, closed menu hidden, no zoom-on-focus)"
         run: python inject_mobile_polish.py
+
+      # 2026-11-27: "Posted N min after the source" on each event page with a verified source time, plus a line on the
+      # /drug pages that link it. After every writer of decision, event and drug pages and after inject_site_links (the
+      # drug line sits before RELATED). Fails closed: no verified time, no stamp. tests/test_post_speed.py.
+      - name: "Event and drug pages: how long after the source pdufa.bio posted it"
+        run: python build_post_speed.py --only pages
 
       - name: Regenerate sitemap after normalisers (picks up newly indexable pages)
         run: python build_sitemap.py
