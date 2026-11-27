@@ -42,6 +42,15 @@ ACTION_WORD = {"approved": "approved the application", "crl": "issued a Complete
 B, E = "<!--ADCV:BEGIN-->", "<!--ADCV:END-->"
 
 
+
+def use_phrase(ind):
+    """'for <indication>', unless the label wording already starts with its own preposition.
+    2026-11-27: "for to reduce the risk of ..." and "for in combination with ..." were live on 8 rows."""
+    ind = ind[:1].lower() + ind[1:]
+    if re.match(r"(to|in|as|for)\b", ind):
+        return "indication: " + ind
+    return "for " + ind
+
 def esc(s):
     return html.escape(str(s or ""), quote=True)
 
@@ -108,7 +117,7 @@ def card(m, today):
             + (f' &middot; <a href="/ticker/{esc(t)}">{esc(t)}</a>' if t and os.path.isdir(os.path.join(SITE, "ticker", t))
                else (f' &middot; {esc(t)}' if t else "")))
     sub = (f'{esc(pretty(m["meeting_date"]))} &middot; {esc(committee_short(m.get("committee")))}'
-           + (f' &middot; for {esc(m["indication"][:1].lower() + m["indication"][1:])}' if m.get("indication") else ""))
+           + (f' &middot; {esc(use_phrase(m["indication"]))}' if m.get("indication") else ""))
     qrows = []
     for q in sorted(m["questions"], key=lambda q: q.get("n") or 0):
         mark = ' <span class="ov">overall question</span>' if q.get("is_overall") else ""
