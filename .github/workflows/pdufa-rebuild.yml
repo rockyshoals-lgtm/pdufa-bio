@@ -1189,6 +1189,12 @@ jobs:
       - name: "Company hubs link their earnings dates and FDA device decisions"
         run: python inject_ticker_crosslinks.py
 
+      # 2026-11-27 (OMW): each month's PDUFA page (/calendar/<y>/<m>) and readout page (/readouts/<y>/<m>) link each
+      # other, only when the twin exists and is indexable. After every generator that writes either kind of month page
+      # (build_readout_months.py, retitle_calendar_months.py); before the site links. tests/test_month_crosslinks.py.
+      - name: "Month pages link the same month's PDUFA dates and readouts"
+        run: python inject_month_crosslinks.py
+
       - name: Internal links (site links, homepage hub, related, /sitemap)
         # /fda-approvals (months, companies) are built in the conferences step, before the weekdays page, so every
         # page that reads _fda_approvals_months.json reads the same refreshed cache (run 45131808182).

@@ -48,6 +48,7 @@ MONTHS = ["January", "February", "March", "April", "May", "June", "July", "Augus
           "November", "December"]
 SUB_START = '<div class="sub">'
 CALLOUT = '<div class="callout">'
+NOTE = '<p class="note" style="color:#94a9c9;font-size:13px;line-height:1.5;margin:4px 0 10px">'  # the page has no .note rule
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -178,9 +179,9 @@ def render(rows, ym, today, site):
         out.append("</div>")
     if est:
         out.append(f'<div class="mhead">ClinicalTrials.gov estimates ({len(est)})</div>'
-                   + (f'<p class="note">Trials whose registry primary-completion estimate fell in {name}, each with '
+                   + (NOTE + f'Trials whose registry primary-completion estimate fell in {name}, each with '
                       f'what was found since.</p>' if past else
-                      f'<p class="note">Trials whose registry primary-completion estimate falls in {name}: when the trial '
+                      NOTE + f'Trials whose registry primary-completion estimate falls in {name}: when the trial '
                       f'is expected to finish collecting its main data, not an announced readout date. Sponsors move '
                       f'it.</p>') + '<div class="grid">')
         for r in est:
@@ -192,10 +193,10 @@ def render(rows, ym, today, site):
             out.append(row(r["t"], f"{mon(r['d'])} (est.)", bits, site))
         out.append("</div>")
     if not n:
-        out.append(f'<p class="note">No readout on file for {name} at day or month precision. '
+        out.append(NOTE + f'No readout on file for {name} at day or month precision. '
                    f'<a href="/readouts">Every upcoming readout</a>.</p>')
     if loose:
-        out.append(f'<p class="note" style="margin-top:12px">{loose} more company-guided date{"s" if loose != 1 else ""} '
+        out.append(NOTE.replace("margin:4px", "margin:12px") + f'{loose} more company-guided date{"s" if loose != 1 else ""} '
                    f'give{"" if loose != 1 else "s"} only a quarter or a looser window ending in {name}. They are on '
                    f'<a href="/readouts">/readouts</a> at the precision the company gave, not listed under one month.</p>')
     out.append(E)

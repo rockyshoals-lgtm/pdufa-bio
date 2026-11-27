@@ -77,7 +77,7 @@ def block(doc, site):
     if not links:
         return ""
     links.sort(key=lambda t: (t[0], t[1], t[2]))
-    return (B + '<p class="note" style="margin:8px 0 14px">Other catalysts the same month: '
+    return (B + '<p class="note" style="margin:8px 0 14px;color:#94a9c9;font-size:13px;line-height:1.5">Other catalysts the same month: '
             + " &middot; ".join(t[3] for t in links) + "</p>" + E)
 
 
