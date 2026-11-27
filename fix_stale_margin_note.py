@@ -43,6 +43,14 @@ GOAL = re.compile(r"Goal date (" + LONG + r")")
 APOS = r"(?:'|&#x27;|&#39;|’)"
 STALE = re.compile(r"(?P<who>[A-Z][\w.&\- ]{0,40}?)" + APOS + r"s? release(?:, dated [^,<]{3,40},)? does not state the FDA"
                    + APOS + r"s action day, so no (?:early or late )?margin is (?:stated|computed)\.")
+# 2026-11-27, PYPD-2026-11-24 (run 46065678522): the page written before Drugs@FDA posted the letter said "The FDA's
+# own record of the action day had not been read when this page was published, so no early or late margin is given
+# yet." and "pdufa.bio publishes a margin only from the FDA's own record of the action day, which had not been read
+# when this page was published." (the FAQ and its schema too). Once the Verified line names the FDA day, both go.
+UNREAD = re.compile(r"(?:The FDA" + APOS + r"s own record of the action day had not been read when this page was published, "
+                    r"so no (?:early or late )?margin is (?:given|stated)(?: yet)?\.|pdufa\.bio publishes a margin only from "
+                    r"the FDA" + APOS + r"s own record of the action day, which had not been read when this page was "
+                    r"published\.)")
 NOTE_STALE = re.compile(r"(?:the|[A-Z][\w.&\- ]{0,40}?" + APOS + r"s?) release does not state the FDA" + APOS
                         + r"s action day, so no (?:early or late )?margin is (?:stated|computed)")
 
@@ -75,7 +83,8 @@ def fix_page(doc):
         who = m.group("who").strip()
         tail = f"; {who} announced it on {n.group(1)}" if n else ""
         return f"The FDA's own record dates the action {long_(action)}, {margin(action, goal)}{tail}."
-    return STALE.sub(rep, doc)
+    doc = STALE.sub(rep, doc)
+    return UNREAD.sub(lambda m: f"The FDA's own record dates the action {long_(action)}, {margin(action, goal)}.", doc)
 
 
 def fix_dataset(text):
