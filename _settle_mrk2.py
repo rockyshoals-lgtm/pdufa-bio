@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import json, re, sys, urllib.parse, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 def http(u, t=60): return urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t).read()
 def clean(b): return re.sub(r"\s+", " ", re.sub(r"&#?\w+;", " ", re.sub(r"<[^>]+>", " ", b.decode("utf-8", "replace"))))
 def efts(q, forms="8-K,10-Q,10-K", start="2025-06-01", end="2026-09-18"):

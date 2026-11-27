@@ -19,7 +19,7 @@ python3 catalyst_crawler.py \
   --auto-universe --discover \
   --bpc fda_2026-06-19.xlsx \
   --fmp --options \
-  --ua "pdufa.bio catalyst research rockyshoals@gmail.com"
+  --ua "pdufa.bio catalyst research support@pdufa.bio"
 
 # 4) self-populating post-processing (each step is non-fatal so the others still run)
 echo "Post-processing (self-populating pipeline) ..."

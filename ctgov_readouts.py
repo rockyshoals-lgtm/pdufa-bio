@@ -39,7 +39,7 @@ import re
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
-AGENT = os.environ.get("SEC_USER_AGENT", "David Moody rockyshoals@gmail.com")
+AGENT = os.environ.get("SEC_USER_AGENT", "pdufa.bio research support@pdufa.bio")
 FWD_MONTHS = 12          # keep PCDs from ~now out to +12 months
 OVERDUE_DAYS = 180       # ...and recently-overdue ones, back to -180 days. Was 120: AMLX's LUCIDITY (PCD est. 2026-03) reported positive 2026-08-18, ~140d after its estimated PCD -- the 120-day cutoff had silently dropped the exact trial we needed. Deep-overdue rows sort to the bottom as STALE, so keeping them is cheap.
 TICKER_MAP_CACHE = os.path.join(HERE, "bpc_data", "_edgar_ticker_map.json")

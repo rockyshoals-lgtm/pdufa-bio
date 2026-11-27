@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, sys, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 for url in ["https://www.sec.gov/Archives/edgar/data/1689548/000168954826000082/praxisq22026pr.htm",
             "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm"]:
     t = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30).read().decode("utf-8", "replace")

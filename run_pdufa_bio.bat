@@ -29,7 +29,7 @@ echo(
 echo ============================================================
 echo  [1/5] FULL MINE — primary sources, ~2-4 hrs. Leave this open.
 echo ============================================================
-%PY% catalyst_crawler.py --tickers pdufa_universe.txt --auto-universe --discover --bpc fda_2026-07-09.xlsx --fmp --options --ua "pdufa.bio catalyst research rockyshoals@gmail.com"
+%PY% catalyst_crawler.py --tickers pdufa_universe.txt --auto-universe --discover --bpc fda_2026-07-09.xlsx --fmp --options --ua "pdufa.bio catalyst research support@pdufa.bio"
 
 echo(
 echo ============================================================

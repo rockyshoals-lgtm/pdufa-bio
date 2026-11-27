@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import io, json, re, sys, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 src = io.open("pdufa_site_src/api/v1/dataset.mjs", encoding="utf-8", errors="replace").read().replace("\x00", "")
 rows, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
 for r in rows:

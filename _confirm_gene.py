@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, sys, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "Mozilla/5.0 pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "Mozilla/5.0 pdufa.bio builder support@pdufa.bio"}
 for u in sys.argv[1:]:
     try:
         t = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60).read().decode("utf-8", "replace")

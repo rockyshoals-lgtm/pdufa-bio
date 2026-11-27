@@ -15,7 +15,7 @@ import json
 import urllib.parse
 import urllib.request
 
-UA = "pdufa.bio builder rockyshoals@gmail.com"
+UA = "pdufa.bio builder support@pdufa.bio"
 BASE = "https://api.fda.gov/drug/drugsfda.json"
 
 QUERIES = [

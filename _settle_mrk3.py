@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, sys, time, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 DOCS = [
     ("Merck 8-K 2026-02-03 EX-99.1", "https://www.sec.gov/Archives/edgar/data/310158/000110465926009495/tm264564d1_ex99-1.htm"),
     ("Merck 10-Q Q2 2026-08-07", "https://www.sec.gov/Archives/edgar/data/310158/000031015826000212/mrk-20260630.htm"),

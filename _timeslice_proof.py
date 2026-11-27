@@ -14,7 +14,7 @@ Read-only. SEC etiquette: identifying UA, <10 req/s.
 import collections, datetime, json, os, re, sys, time, urllib.parse, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
-UA = "David Moody rockyshoals@gmail.com"
+UA = "pdufa.bio research support@pdufa.bio"
 FTS = "https://efts.sec.gov/LATEST/search-index"
 FORMS = "8-K,6-K"
 

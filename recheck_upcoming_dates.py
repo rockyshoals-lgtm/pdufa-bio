@@ -53,7 +53,7 @@ from date_quote_match import norm  # noqa: E402
 
 DATASET = os.path.join(HERE, "pdufa_site_src", "api", "v1", "dataset.mjs")
 LEDGER = os.path.join(HERE, "_date_checks.json")
-UA = {"User-Agent": "pdufa.bio research rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio research support@pdufa.bio"}
 WINDOW_DAYS = 30          # re-check rows due within this many days
 FRESH_DAYS = 6            # a row checked this recently is left alone
 MAX_FILINGS = 12          # more EDGAR documents than this naming the drug: a human reads them

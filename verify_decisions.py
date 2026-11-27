@@ -39,7 +39,7 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 CACHE_P = os.path.join(HERE, "_decision_verification_cache.json")
 OUT_P = os.path.join(HERE, "_decision_verification.json")
 ODIN_CSV = os.path.join(HERE, "ODIN_MODEL_READY_v1071_T1_2015on_ENRICHED.csv")
-UA = {"User-Agent": "pdufa.bio research rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio research support@pdufa.bio"}
 
 CACHE = json.load(open(CACHE_P, encoding="utf-8")) if os.path.exists(CACHE_P) else {}
 

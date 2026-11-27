@@ -45,7 +45,7 @@ import watch_sponsor_newswire as W  # noqa: E402  (one matcher, one set of decis
 FEED = "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml"
 DATASET = os.path.join(HERE, "pdufa_site_src", "api", "v1", "dataset.mjs")
 ACK = os.path.join(HERE, "_fda_drugs_feed_ack.json")
-UA = {"User-Agent": "pdufa.bio watcher rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio watcher support@pdufa.bio"}
 
 
 def load_feed(src):

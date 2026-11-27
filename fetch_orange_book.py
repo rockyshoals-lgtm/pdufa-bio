@@ -29,7 +29,7 @@ def main():
             print(f"orange book: files of {checked[0]}, checked {checked[1]}; next check within 7 days")
             return 0
     try:
-        data = urllib.request.urlopen(urllib.request.Request(URL, headers={"User-Agent": "pdufa.bio watcher rockyshoals@gmail.com"}),
+        data = urllib.request.urlopen(urllib.request.Request(URL, headers={"User-Agent": "pdufa.bio watcher support@pdufa.bio"}),
                                       timeout=90).read()
         z = zipfile.ZipFile(io.BytesIO(data))
     except Exception as e:  # noqa: BLE001

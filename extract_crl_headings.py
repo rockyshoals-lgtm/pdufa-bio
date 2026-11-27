@@ -127,7 +127,7 @@ def main():
         url = "https://download.open.fda.gov/crl/" + urllib.parse.quote(fn)
         rec = {"application_number": L.get("application_number"), "letter_date": L.get("letter_date"), "v": VERSION}
         try:
-            data = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "pdufa.bio rockyshoals@gmail.com"}),
+            data = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "pdufa.bio support@pdufa.bio"}),
                                           timeout=60).read()
             with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tf:
                 tf.write(data)

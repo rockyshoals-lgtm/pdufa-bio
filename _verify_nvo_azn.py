@@ -24,7 +24,7 @@ import re
 import urllib.parse
 import urllib.request
 
-UA = "pdufa.bio builder rockyshoals@gmail.com"
+UA = "pdufa.bio builder support@pdufa.bio"
 
 NVO_DOCS = [("353278", "0001104659-26-090086"), ("353278", "0001104659-26-000000")]
 

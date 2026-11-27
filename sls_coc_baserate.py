@@ -31,7 +31,7 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-AGENT = os.environ.get("SEC_USER_AGENT", "David Moody rockyshoals@gmail.com")
+AGENT = os.environ.get("SEC_USER_AGENT", "pdufa.bio research support@pdufa.bio")
 FTS = "https://efts.sec.gov/LATEST/search-index"
 TODAY = dt.date.today()
 BIO_SIC = {"2834", "2836", "8731"}

@@ -5,7 +5,7 @@ import json
 import re
 import urllib.request
 
-UA = "pdufa.bio builder rockyshoals@gmail.com"
+UA = "pdufa.bio builder support@pdufa.bio"
 LETTER = ("https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/"
           "219972Orig1s001ltr.pdf")
 

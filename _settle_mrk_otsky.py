@@ -4,7 +4,7 @@ The earlier sweep's proximity matcher is unreliable on a multi-product release, 
 sentences around each drug name directly."""
 import json, re, sys, time, urllib.parse, urllib.request
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-UA = {"User-Agent": "pdufa.bio builder rockyshoals@gmail.com"}
+UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio"}
 
 
 def http(u, t=50):

@@ -63,7 +63,7 @@ logger = logging.getLogger(__name__)
 CONFIG = {
     "user_agent": "ODIN-CatalystMiner/4.0 (biotech-research-tool; Academic/Research Use)",
     # SEC requires real email - UPDATE THIS
-    "sec_user_agent": "ODIN-CatalystMiner/4.0 (rockyshoals@gmail.com)",
+    "sec_user_agent": "ODIN-CatalystMiner/4.0 (support@pdufa.bio)",
     "request_delay": 0.5,
     "max_retries": 5,
     "timeout": 60,

@@ -13,7 +13,7 @@ EXPECT = {
 }
 
 req = urllib.request.Request(URL, headers={
-    "User-Agent": "pdufa.bio builder rockyshoals@gmail.com",
+    "User-Agent": "pdufa.bio builder support@pdufa.bio",
     "Cache-Control": "no-cache", "Pragma": "no-cache"})
 d = json.loads(urllib.request.urlopen(req, timeout=60).read().decode("utf-8"))
 ev = d.get("data") or []
