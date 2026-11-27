@@ -1,5 +1,13 @@
 # Google Search Console: request indexing for these, in order (2026-11-27 Eastern).
 # About 10 requests a day per property. Then run: python build_google_request_list.py --requested <paths>
-# Skipped: 93 known indexed (_google_indexed.json), 30 requested in the last 7 days.
-https://www.pdufa.bio/pdufa/PRAX-relutrigine	# goal date 2026-12-27: PRAX Relutrigine (PRAX-562) - (EMBOLD)
-https://www.pdufa.bio/pdufa/VTRS-mr-107a-02	# goal date 2026-12-27: VTRS MR-107A-02 (fast-acting meloxicam)
+# Skipped: 93 known indexed (_google_indexed.json), 39 requested in the last 7 days.
+https://www.pdufa.bio/adcomm	# hub, changed 2026-11-27
+https://www.pdufa.bio/condition	# hub, changed 2026-11-27
+https://www.pdufa.bio/corrections	# hub, changed 2026-11-27
+https://www.pdufa.bio/drug	# hub, changed 2026-11-27
+https://www.pdufa.bio/feed	# hub, changed 2026-11-27
+https://www.pdufa.bio/learn	# hub, changed 2026-11-27
+https://www.pdufa.bio/pdufa-date-changes	# hub, changed 2026-11-27
+https://www.pdufa.bio/condition/cardiovascular	# hub, changed 2026-11-27
+https://www.pdufa.bio/condition/cns-neurology	# hub, changed 2026-11-27
+https://www.pdufa.bio/condition/hematology	# hub, changed 2026-11-27
