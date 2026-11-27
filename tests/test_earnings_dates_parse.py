@@ -39,6 +39,50 @@ CASES = [
      {"publishedDate": "2026-07-29 07:05:00", "title": "Axogen, Inc. Reports Second Quarter 2026 Financial Results",
       "text": "ALACHUA, Fla. and TAMPA, Fla.", "url": "u-axgn"},
      {"kind": "results", "period_key": "2026Q2", "published_et": "2026-07-29 07:05"}),
+    # real, 2026-11-27 (David: "use the info in drive and see what you can verify by linked sources"): results
+    # releases FMP carried that the parser missed, found by checking Drive earnings watchlists against the companies'
+    # own releases. The year sat in the end date, not beside the quarter; "Unaudited" blocked the headline; and
+    # "AbCellera Biologics" never matched the headline brand "AbCellera".
+    ("SMMT", "Summit Therapeutics Inc.",
+     {"publishedDate": "2026-11-04 16:36:00", "title": "Summit Therapeutics Reports Financial Results and Operational "
+      "Progress for the Third Quarter and Nine Months Ended September 30, 2026", "text": "MIAMI--(BUSINESS WIRE)---- "
+      "$SMMT--Summit Therapeutics Inc. (NASDAQ: SMMT) today reported its financial results for the third quarter and "
+      "nine months ended September 30, 2026", "url": "u-smmt"},
+     {"kind": "results", "period_key": "2026Q3", "published_et": "2026-11-04 16:36"}),
+    ("IMVT", "Immunovant, Inc.",
+     {"publishedDate": "2026-11-09 07:00:00", "title": "Immunovant Provides Corporate Updates and Reports Financial "
+      "Results for the Quarter Ended September 30, 2026", "text": "IMVT-1402 600 mg met the primary endpoint of ACR20 "
+      "response at Week 28 ... Roivant will host a live conference call and webcast at 8:00 a.m.", "url": "u-imvt"},
+     {"kind": "results", "period_key": "2026Q3", "published_et": "2026-11-09 07:00"}),
+    ("ENTA", "Enanta Pharmaceuticals Inc",
+     {"publishedDate": "2026-11-16 16:01:00", "title": "Enanta Pharmaceuticals Reports Financial Results for its "
+      "Fiscal Fourth Quarter and Year-Ended September 30, 2026", "text": "WATERTOWN, Mass.--(BUSINESS WIRE)--Enanta "
+      "Pharmaceuticals, Inc. (NASDAQ:ENTA), ... today reported financial results for its fiscal fourth quarter and "
+      "year-ended September 30, 2026.", "url": "u-enta"},
+     {"kind": "results", "period_key": "FY2026Q4", "published_et": "2026-11-16 16:01"}),
+    ("BLTE", "Belite Bio, Inc",
+     {"publishedDate": "2026-11-12 06:00:00", "title": "Belite Bio Reports Unaudited Third Quarter 2026 Financial "
+      "Results and Provides a Corporate Update", "text": "SAN DIEGO, Nov. 12, 2026 (GLOBE NEWSWIRE) -- Belite Bio, Inc "
+      "(NASDAQ: BLTE) ... today announced its financial results for the third quarter ended September 30, 2026",
+      "url": "u-blte"},
+     {"kind": "results", "period_key": "2026Q3", "published_et": "2026-11-12 06:00"}),
+    ("ABCL", "AbCellera Biologics Inc.",
+     {"publishedDate": "2026-11-09 16:05:00", "title": "AbCellera Reports Q3 2026 Business Results", "text":
+      "VANCOUVER, British Columbia--(BUSINESS WIRE)---- $ABCL--AbCellera Reports Q3 2026 Business Results.",
+      "url": "u-abcl"},
+     {"kind": "results", "period_key": "2026Q3", "published_et": "2026-11-09 16:05"}),
+    # Roivant's fiscal year ends March 31: its "Second Quarter Ended September 30" names a fiscal quarter whose fiscal
+    # year label would be a guess, so it is not read (no row rather than a wrong period)
+    ("ROIV", "Roivant Sciences Ltd.",
+     {"publishedDate": "2026-11-09 07:00:00", "title": "Roivant Reports Financial Results for the Second Quarter Ended "
+      "September 30, 2026, and Provides Business Update", "text": "LISRAYA (brepocitinib) generated net product "
+      "revenue of $31.0 million in its first 5 weeks of launch", "url": "u-roiv"},
+     None),
+    # constructed: preliminary figures stay out even with 'unaudited' now allowed in the headline
+    ("BLTE", "Belite Bio, Inc",
+     {"publishedDate": "2026-01-12 06:00:00", "title": "Belite Bio Announces Unaudited Preliminary Fourth Quarter "
+      "2025 Financial Results", "text": "Belite Bio, Inc (NASDAQ: BLTE) today announced preliminary", "url": "u-blte-p"},
+     None),
     # (ticker, name, item, expected subset or None)
     ("VKTX", "Viking Therapeutics, Inc.",
      {"publishedDate": "2026-10-21 16:05:00", "title": "Viking Therapeutics to Report Financial Results for Third "
