@@ -102,8 +102,12 @@ def parse_checks():
     seg = S.item_202(S.text_of(f"<html><body><p>{BODY}</p></body></html>"))
     if "third quarter ended September 30, 2026" not in seg or "Exhibits 99.1" in seg:
         f.append(f"item_202 did not cut the Item 2.02 paragraph: {seg[:120]!r}")
-    if S.accepted_et("2026-10-28T06:07:33.000Z") != "2026-10-28 06:07":
-        f.append("acceptance time not read as printed")
+    # EDGAR's submissions file gives UTC: Biogen's 8-K accepted 06:07:33 ET on 2026-10-28 (its index page) is 10:07Z
+    # (summer time); a November 16:10 ET filing is 21:10Z; a 01:30Z time belongs to the evening before, Eastern
+    for z, want in (("2026-10-28T10:07:33.000Z", "2026-10-28 06:07"), ("2026-11-05T21:10:09.000Z", "2026-11-05 16:10"),
+                    ("2026-11-06T01:30:00.000Z", "2026-11-05 20:30")):
+        if S.accepted_et(z) != want:
+            f.append(f"acceptance time {z} read as {S.accepted_et(z)!r}, want {want} Eastern")
     if S.accepted_et("garbage"):
         f.append("a bad acceptance time gave a value")
     if not S.covered("2026-10-29 07:00", [("2026-10-28 16:05", "2026Q3")]) or \
@@ -239,9 +243,14 @@ def cache_checks():
                 f.append(f"{tk} {acc}: results for {x.get('period_key')} not ended within {S.MAX_DAYS} days "
                          f"before {x.get('accepted_et')}")
     dn, db = S.filing_date_check(c)
+    note = ""
     if dn >= 20 and db > 0.05 * dn:
-        f.append(f"{db} of {dn} stored 8-K times break EDGAR's filing-date rule: the time zone is being misread")
-    return f, f"{n} stored filings, check {c.get('check')}"
+        # the pages must then use no 8-K row; the cache alone is not a reason to block the whole rebuild
+        rows, why = B.sec_rows(S.CACHE)
+        if rows:
+            f.append(f"{db} of {dn} stored 8-K times break EDGAR's filing-date rule, yet the pages would use 8-K rows")
+        note = f"; cache times off EDGAR's filing-date rule ({db} of {dn}), so no 8-K row is used ({why})"
+    return f, f"{n} stored filings, check {c.get('check')}{note}"
 
 
 def main():
