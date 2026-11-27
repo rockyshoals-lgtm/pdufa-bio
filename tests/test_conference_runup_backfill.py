@@ -93,6 +93,9 @@ check(row is not None and row["anchor"] == "2022-04-09" and row["release_url"] =
 check(row is not None and row.get("lead_source") == "https://example.org/lead", "find_row: lead source not kept")
 row, why = B.find_row(tk, nm, m, ms, [partner, notice, early, lead_day], "", "2026-11-27")
 check(row is None, f"find_row: a notice, partner release, out-of-window release or results release anchored ({why})")
+# a meeting that runs to the cut-off belongs to the additions (EULAR 2026, Jun 3-6, run 576)
+check(B.owns({"end": "2026-06-04"}) and not B.owns({"end": "2026-06-06"}) and not B.owns({}),
+      "owns: a meeting ending on or after the cut-off must be left to the additions")
 
 # 3. committed cache ----------------------------------------------------------------------------------------
 cache = json.load(io.open(B.CACHE, encoding="utf-8")) if os.path.exists(B.CACHE) else {"rows": []}
@@ -112,6 +115,8 @@ for r in rows:
     keys.add(k)
     check(str(r.get("release_url", "")).startswith("https://"), f"cache {k}: release link not https")
     check(r.get("anchor", "9999") < B.CUTOFF, f"cache {k}: anchor {r.get('anchor')} after the published study")
+    check(B.owns(r, "meeting_end"), f"cache {k}: meeting ends {r.get('meeting_end')}, on or after the cut-off "
+                                    f"(the additions read it)")
     check(k in lead_keys, f"cache {k}: not from a lead")
     check((r.get("ticker"), r.get("conf"), str(r.get("year"))) not in pub, f"cache {k}: already in the published study")
     check(X.passes(r, allm, r.get("company") or r.get("ticker")), f"cache {k}: does not re-check from what is stored")
