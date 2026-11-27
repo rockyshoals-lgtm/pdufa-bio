@@ -100,6 +100,16 @@ def test_fda_label_record():
                 for hit in re.findall(rx, grp):
                     if hit not in {L.https(x.get(key)) for x in near}:
                         bad.append(f"{slug}: {kind} link {hit} is not the one Drugs@FDA attaches to {appno}'s approval")
+    # a label link is only ever a PDF in Drugs@FDA's label folder (openFDA files some under appletter/, no .pdf)
+    for slug, doc in pages().items():
+        for blk in RE_BLOCK.findall(doc):
+            for hit in re.findall(r'href="([^"]+)"[^>]*>approved label', blk):
+                if not L.LABEL_URL.match(hit):
+                    bad.append(f"{slug}: approved-label link {hit} is not a PDF in the Drugs@FDA label folder")
+    for u, ok in (("http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761304Orig1s008lbl", False),
+                  ("http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761304s008lbl.pdf", True)):
+        if bool(L.label_url({"label": u})) != ok:
+            bad.append(f"label_url() {'dropped' if ok else 'kept'} {u}")
     assert n >= 50, f"only {n} approval pages carry the FDA label record; expected 50 or more"
     assert not bad, "FDA label record blocks disagree with Drugs@FDA:\n  " + "\n  ".join(bad[:40])
 
