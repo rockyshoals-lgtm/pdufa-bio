@@ -107,6 +107,16 @@ def norm_key(k):
     return k
 
 
+def same_period(a, b):
+    """Two period keys for one quarter: the same year and quarter with and without the 'FY' prefix, or two calendar
+    keys that end on the same day (a first half and its second quarter)."""
+    qa, qb = re.fullmatch(r"(?:FY)?(20\d\dQ[1-4])", a or ""), re.fullmatch(r"(?:FY)?(20\d\dQ[1-4])", b or "")
+    if qa and qb:
+        return qa.group(1) == qb.group(1)
+    ea, eb = period_end(a), period_end(b)
+    return bool(ea and ea == eb)
+
+
 def periods(rel):
     """period -> {"schedules": [...] oldest first, "results": earliest results row, "postponed": [...], "keys": set of
     the period keys as parsed}. A postponement that names no period voids the pending announcement it follows: one
@@ -140,6 +150,18 @@ def periods(rel):
             out[k]["keys"].add(k0)
         elif kind == "postponed":
             out[k]["postponed"].append(r)
+    # one period, two wordings: a schedule read as '2024Q3' and its results read as 'FY2024Q3' (a company whose fiscal
+    # quarters are calendar ones), or as '2026H1' and '2026Q2'. When the results release came out on the announced day
+    # or the next one and names the same quarter, it is that announcement's results: file it under the schedule's key
+    for k in [k for k, p in out.items() if p["results"] and not p["schedules"]]:
+        r, rd = out[k]["results"], d_of(out[k]["results"].get("published_et"))
+        hits = [k2 for k2, p2 in out.items() if k2 != k and p2["schedules"] and not p2["results"]
+                and same_period(k, k2) and 0 <= (rd - d_of(p2["schedules"][-1]["report_date"])).days <= 1]
+        if len(hits) == 1:
+            out[hits[0]]["results"] = r
+            out[hits[0]]["keys"] |= out[k]["keys"]
+            out[hits[0]]["postponed"] += out[k]["postponed"]
+            del out[k]
     for p in out.values():
         if p["schedules"] and not p["results"]:
             s = p["schedules"][-1]

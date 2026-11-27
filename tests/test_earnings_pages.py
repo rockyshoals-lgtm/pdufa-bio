@@ -94,6 +94,21 @@ def rule_checks():
     P = B.periods([R("results", "2025-11-05 16:05", "FY2026Q1"), R("results", "2026-03-05 16:05", "FY2025Q4")])
     if "FY2025Q4" not in P:
         f.append("a fiscal-quarter company's fiscal Q4 was turned into a calendar quarter")
+    # red team 2026-11-27: a schedule read as '2024Q3' and its results read as 'FY2024Q3' on the announced day are one
+    # period (Illumina); a half-year announcement and its second-quarter results the same (Humacyte); a results release
+    # for the same quarter a week later, or a different quarter on the day, stays its own period
+    P = B.periods([R("schedule", "2024-10-15 16:05", "2024Q3", report_date="2024-11-04"),
+                   R("results", "2024-11-04 16:05", "FY2024Q3")])
+    if list(P) != ["2024Q3"] or B.status_of(P["2024Q3"], today)[1] != "reported":
+        f.append("a 'FY' results key on the announced day is not that announcement's results")
+    P = B.periods([R("schedule", "2026-07-29 08:00", "2026H1", report_date="2026-08-12"),
+                   R("results", "2026-08-12 07:00", "2026Q2")])
+    if list(P) != ["2026H1"] or B.status_of(P["2026H1"], today)[1] != "reported":
+        f.append("a half-year announcement's second-quarter results on the day are not its results")
+    P = B.periods([R("schedule", "2024-10-15 16:05", "2024Q3", report_date="2024-11-04"),
+                   R("results", "2024-11-12 16:05", "FY2024Q3"), R("results", "2024-11-04 16:05", "2024Q2")])
+    if B.status_of(P["2024Q3"], today)[1] != "passed" or "FY2024Q3" not in P:
+        f.append("a results release a week late, or for another quarter, was filed as the announcement's results")
     # red team round 2: a period whose releases name only the year is labelled as the year, not as a fourth quarter
     P = B.periods([R("results", "2026-04-23 08:00", "2025FY")])
     if B.label("2025Q4", P["2025Q4"]) != "Full year 2025":
