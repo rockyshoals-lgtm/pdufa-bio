@@ -120,7 +120,8 @@ def found(r):
     if ros in ("TERMINATED", "WITHDRAWN", "SUSPENDED"):
         return f"{ros.lower()} per ClinicalTrials.gov", None
     if res.get("state") == "no_topline" and res.get("checked"):
-        return f"no topline found as of {day(res['checked'])}", None
+        what = "scheduled date passed; no company results release found" if r.get("dp") == "day" else "no topline found"
+        return f"{what} as of {day(res['checked'])}", None  # 2026-11-27: a dated presentation is not a topline window
     if res.get("state") == "results_posted_registry" and res.get("date"):
         return f"results posted on ClinicalTrials.gov {day(res['date'])}", None
     if ros == "COMPLETED":

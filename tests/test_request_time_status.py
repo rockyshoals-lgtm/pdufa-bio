@@ -62,7 +62,7 @@ def expected(typ, st, dp, d, end, today, reg=None, res=None):
                     return "Completed per registry, no topline as of " + str(res["checked"])[:10]
                 return "Completed per registry"
         if ended and res.get("state") == "no_topline" and res.get("checked"):
-            return "No topline as of " + str(res["checked"])[:10]
+            return ("Scheduled date passed, no company results release as of " if dp == "day" else "No topline as of ") + str(res["checked"])[:10]
         if ended and res.get("state") == "results_posted_registry" and res.get("date"):
             return "Results posted on ClinicalTrials.gov " + str(res["date"])[:10]
         return "Window passed" if ended else st
