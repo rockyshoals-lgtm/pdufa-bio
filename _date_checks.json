@@ -2261,6 +2261,13 @@
    "source": "https://www.prnewswire.com/news-releases/lilly-highlights-strength-of-breast-cancer-portfolio-with-new-data-across-validated-drivers-of-hormone-receptor-positive-disease-at-the-2026-san-antonio-breast-cancer-symposium-302948353.html",
    "by": "auto re-check (recheck_upcoming_dates.py)",
    "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial"
+  },
+  "readout_moln_2026-12-05": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396020/0/en/molecular-partners-to-present-on-dll3-targeting-radio-darpin-mp0712-at-2026-snmmi-theranostics-conference-and-naclc-2026.html",
+   "by": "manual",
+   "note": "Re-opened Molecular Partners' 2026-11-05 release by an independent red-team pass on 2026-11-26: NACLC poster Saturday, December 5, 2026, 4:15 - 5:45 pm MST."
   }
  }
 }

@@ -232,6 +232,9 @@ def self_test():
         {"id": "g7", "t": "Y", "type": "Readout", "st": "Guided", "d": "2027-06-30", "dp": "half",
          "_d": {"source_url": "https://x", "guidance_text": "efficacy data expected to follow in H1 and H2 2027.",
                 "guided_precision": "half", "guided_window": "2027-H1"}},
+        {"id": "g8", "t": "Y", "type": "Readout", "st": "Guided", "d": "2027-12-31", "dp": "half",
+         "_d": {"source_url": "https://x", "guidance_text": "initial data in the 2nd half of 2027.",
+                "guided_precision": "half", "guided_window": "2027-H2"}},
     ]
     f_bad = check(base + bad, t, {})
     f_good = check(base + good, t, {})

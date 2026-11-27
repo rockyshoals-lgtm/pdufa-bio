@@ -3597,6 +3597,108 @@
    "basis": "Sponsor SEC filing: indication stated as Duchenne muscular dystrophy (DMD)",
    "source": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
    "tagged": "2026-11-26 readout mine F; hand decision from the company's stated indication"
+  },
+  "readout_kros_2027-06-30": {
+   "ta": "Rare disease",
+   "basis": "Sponsor SEC filing: indication stated as Duchenne muscular dystrophy (DMD)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1664710/000166471026000065/exhibit991q32026.htm",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_aciu_2027-06-30": {
+   "ta": "Cardiovascular",
+   "basis": "Sponsor SEC filing: indication stated as cardiovascular disease risk (elevated hsCRP)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1651625/000165162526000027/aciu-ex99d1.htm",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_arct_2027-06-30": {
+   "ta": "Respiratory",
+   "basis": "Company release: indication stated as cystic fibrosis (CF)",
+   "source": "https://ir.arcturusrx.com/news-releases/news-release-details/arcturus-therapeutics-announces-third-quarter-2026-financial",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_arct_2027-12-31": {
+   "ta": "Rare disease",
+   "basis": "Company release: indication stated as ornithine transcarbamylase (OTC) deficiency",
+   "source": "https://ir.arcturusrx.com/news-releases/news-release-details/arcturus-therapeutics-announces-third-quarter-2026-financial",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_bdtx_2028-06-30": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as newly diagnosed EGFRvIII+ glioblastoma",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001701541/000170154126000030/bdtx-exhibit991_q32026.htm",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_moln_2026-12-05": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as small cell lung cancer (SCLC) and other Delta-like ligand 3 (DLL3) expressing solid tumors",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396020/0/en/molecular-partners-to-present-on-dll3-targeting-radio-darpin-mp0712-at-2026-snmmi-theranostics-conference-and-naclc-2026.html",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_moln_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as small cell lung cancer and other neuroendocrine cancers (per release program description)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1745114/000174511426000033/pr_molecularpartnersxq3202.htm",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_moln_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as AML",
+   "source": "https://www.sec.gov/Archives/edgar/data/1745114/000174511426000033/pr_molecularpartnersxq3202.htm",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_tcrx_2026-12-13": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as AML, ALL, or MDS post-allogeneic RIC HCT",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001783328/000119312526456865/tcrx-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_tcrx_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: indication stated as heme malignancies in patients undergoing allogeneic hematopoietic cell transplantation (HCT)",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001783328/000119312526456865/tcrx-ex99_1.htm",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_stro_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as advanced solid tumors",
+   "source": "https://ir.sutrobio.com/press-releases/detail/239/sutro-biopharma-reports-third-quarter-2026-financial-results-and-business-highlights",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_stro_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as advanced or metastatic solid tumors",
+   "source": "https://ir.sutrobio.com/press-releases/detail/239/sutro-biopharma-reports-third-quarter-2026-financial-results-and-business-highlights",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_prld_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as HR+/HER2- breast cancer",
+   "source": "https://investors.preludetx.com/news-releases/news-release-details/prelude-therapeutics-reports-third-quarter-2026-financial",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_bbot_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as KRAS-mutant cancers (pan-KRAS inhibitor)",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400239/0/en/bbot-reports-third-quarter-2026-financial-results-and-update-on-corporate-progress.html",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_lyel_2026-12-14": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as 3L+ relapsed/refractory large B-cell lymphoma",
+   "source": "https://ir.lyell.com/news-releases/news-release-details/lyell-immunopharma-present-positive-updated-ronde-cel-data-more",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_lyel_2026-12-12": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as 2L relapsed/refractory large B-cell lymphoma",
+   "source": "https://ir.lyell.com/news-releases/news-release-details/lyell-immunopharma-present-positive-updated-ronde-cel-data-more",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_lpcn_2027-12-31": {
+   "ta": "CNS",
+   "basis": "Sponsor SEC filing: indication stated as postpartum depression",
+   "source": "https://www.sec.gov/Archives/edgar/data/1535955/000149315226050842/ex99-1.htm",
+   "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
   }
  },
  "nct_mismatch": [
