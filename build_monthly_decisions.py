@@ -27,6 +27,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # the build, from one shared function (site_dates.py), never the runner's UTC clock.
 import sys as _sys; _sys.path.insert(0, HERE)
 from site_dates import eastern_today as _eastern_today
+from site_dates import eastern_stamp as _eastern_stamp
 from site_windows import is_day, window_label_long   # one owner for how a non-day date is written
 
 SITE = os.path.join(HERE, "pdufa_site_src")
@@ -286,7 +287,10 @@ def main():
              f"{len(dec)} {mon} decision{'s have' if len(dec) != 1 else ' has'} already "
              f"been made. Every date below comes from a company filing or FDA notice "
              f"and links its event record. The FDA publishes no forward calendar of "
-             f"these dates.")
+             f"these dates. Rebuilt from the dataset and updated {_eastern_stamp()}.")
+    # 2026-11-27 (run 577): late in a month nothing on this page changed from one day to the next, so its
+    # content-change date stayed on the day before and tests/test_one_date_per_page.py blocked the deploy. The
+    # page is rebuilt daily and says so; the build's Eastern date is now in its own text, as on /calendar.
 
     dec_html = "".join(ev_sentence(r, decided=True) for r in dec) or \
         f"<p>No {mon} decision is in the record yet.</p>"
