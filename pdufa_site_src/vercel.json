@@ -19,8 +19,17 @@
   {
    "path": "/api/data",
    "schedule": "0 23 * * *"
+  },
+  {
+   "path": "/api/cron/news-watch",
+   "schedule": "* * * * *"
   }
  ],
+ "functions": {
+  "api/cron/news-watch.mjs": {
+   "maxDuration": 55
+  }
+ },
  "redirects": [
   {
    "source": "/pdufa/COGT-bezuclastinib-summit/summit_bak",

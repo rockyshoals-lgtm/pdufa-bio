@@ -53,6 +53,10 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 SOURCES = os.path.join(HERE, "_source_times.json")
 CACHE = os.path.join(HERE, "_post_speed.json")
+# Posts the every-minute news watch made (api/cron/news-watch.mjs), synced by sync_live_log.py. A CONFIRMED post
+# (the reviewed record shows the same outcome) is when the fact first went live on pdufa.bio, so it is the site time
+# when it came before the commit that carried the reviewed page.
+LIVE = os.path.join(HERE, "_live_published.json")
 ROWHIST = os.path.join(HERE, "_row_history.json")
 API_DATA = os.path.join(SITE, "api", "v1", "post_speed_data.mjs")
 PAGE_REL = "research/posting-speed"
@@ -110,6 +114,8 @@ def landing_change(ev, changes):
 def dur(minutes):
     """Whole minutes, floored by the caller, as a reader says it."""
     m = int(minutes)
+    if m < 1:
+        return "under 1 min"
     if m < 60:
         return f"{m} min"
     h, mm = divmod(m, 60)
@@ -139,9 +145,22 @@ def floor_minutes(a, b):
     return int((b - a).total_seconds() // 60)
 
 
-def compute(rows, src_led, cache, changes, now_iso):
+def live_posts():
+    """{row id: confirmed post} from _live_published.json."""
+    if not os.path.exists(LIVE):
+        return {}
+    out = {}
+    for p in json.load(io.open(LIVE, encoding="utf-8")).get("posts") or []:
+        if p.get("status") == "confirmed" and parse_iso(p.get("posted_at")):
+            if p["id"] not in out or parse_iso(p["posted_at"]) < parse_iso(out[p["id"]]["posted_at"]):
+                out[p["id"]] = p                       # the earliest confirmed post of a row
+    return out
+
+
+def compute(rows, src_led, cache, changes, now_iso, live=None):
     """[(event_key, record)] for every timed event, stamped or not, plus the cache additions."""
     out, added = [], 0
+    live = live or {}
     for key, ev in sorted((src_led.get("events") or {}).items()):
         r = rows.get(ev.get("row"))
         rec = {"key": key, "row": ev.get("row"), "kind": ev.get("kind"), "event": ev.get("event")}
@@ -168,7 +187,16 @@ def compute(rows, src_led, cache, changes, now_iso):
                 if c and t:
                     hit = cache[key] = {"site_at": t.isoformat(), "commit": c["sha"], "cached": now_iso}
                     added += 1
-            if not hit:
+            lp = live.get(ev.get("row")) if ev.get("kind") == "decision" else None
+            lt = parse_iso(lp["posted_at"]) if lp else None
+            if lt and (not hit or lt < parse_iso(hit["site_at"])):
+                rec.update({"site_at": lt, "commit": None, "via": "news_watch"})
+                gap = floor_minutes(rec["source_at"], lt)
+                if lt < rec["source_at"]:              # the watch posts within the minute: 0 is a real gap
+                    rec["skip"] = "pdufa.bio's record came before this source's time"
+                else:
+                    rec["gap_min"] = gap
+            elif not hit:
                 rec["skip"] = "the commit that published it could not be read to the second yet"
             else:
                 st = parse_iso(hit["site_at"])
@@ -188,8 +216,9 @@ def stamp_html(rec):
             f'<b style="color:#cfe0f5">Posted {esc(dur(rec["gap_min"]))} after the source.</b> '
             f'Source: <a href="{esc(s["url"])}" rel="noopener" style="color:#e3ba5e">{esc(s["label"])}</a>, '
             f'{esc(fmt_et(sa))} ({esc(fmt_utc(sa, sa))}). '
-            f'Published on pdufa.bio: {esc(fmt_et(st))} ({esc(fmt_utc(st, st))}), when the change reached the '
-            f'version of the site that goes live. '
+            f'Published on pdufa.bio: {esc(fmt_et(st))} ({esc(fmt_utc(st, st))}), '
+            + ('when the every-minute news watch posted it from the source. ' if rec.get("via") == "news_watch" else
+               'when the change reached the version of the site that goes live. ') +
             f'<a href="/{PAGE_REL}" style="color:#94a9c9">How we time this</a>.</p>{E}')
 
 
@@ -294,10 +323,11 @@ def api_rows(stamped):
         out.append({"id": rec["row"], "ticker": rec["t"], "name": rec["name"], "event": rec["event"],
                     "kind": rec["kind"], "page": "https://www.pdufa.bio" + rec["page"] if rec["page"] else None,
                     "source_label": s["label"], "source_kind": s["kind"], "source_url": s["url"],
-                    "source_printed": s.get("printed"), "source_published_at": rec["source_at"].isoformat(),
+                    "source_printed": s.get("printed"), "source_published_at": rec["source_at"].astimezone(ET).isoformat(),
                     "source_published_at_utc": rec["source_at"].astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                    "site_published_at": rec["site_at"].isoformat(),
+                    "site_published_at": rec["site_at"].astimezone(ET).isoformat(),
                     "site_published_at_utc": rec["site_at"].astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                    "site_published_by": "news_watch" if rec.get("via") == "news_watch" else "site_build",
                     "minutes_after_source": rec["gap_min"]})
     return out
 
@@ -441,7 +471,7 @@ def main():
     cache = json.load(io.open(CACHE, encoding="utf-8")) if os.path.exists(CACHE) else {}
     changes = (json.load(io.open(ROWHIST, encoding="utf-8")).get("changes") or []) if os.path.exists(ROWHIST) else []
     now_iso = dt.datetime.now(ET).replace(microsecond=0).isoformat()
-    recs, added = compute(rows, src_led, cache, changes, now_iso)
+    recs, added = compute(rows, src_led, cache, changes, now_iso, live_posts())
     stamped = [r for r in recs if "gap_min" in r and "skip" not in r]
     skipped = [r for r in recs if "skip" in r]
     if added and not a.dry_run:
