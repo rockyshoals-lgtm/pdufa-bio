@@ -15,6 +15,15 @@ Drug pages are checked for internal agreement only: an unchanged drug page keeps
 content-change date on purpose (build_freshness_stamp.py), so it need not equal today.
 
 Proved 0 -> 1 -> 0 on 2026-09-07 by planting "Updated Sep 8, 2026" on /runup-by-year.
+
+2026-11-27 (run 577, the first build of Thanksgiving Day at 00:00 ET): /fda-this-month had nothing new since
+the day before, so its "Page updated" stamp kept November 26, the content-change date build_sitemap.py records
+in _sitemap_lastmod.json, exactly as build_freshness_stamp.py intends ("a page whose data has not moved since
+Tuesday should say Tuesday"). This check then demanded today's date and blocked the deploy. A daily page's stamp
+is now right when it is the Eastern build date OR the content-change date the state file holds for that page,
+and never after the Eastern build date: the UTC-ahead stamp this guard was written for still fails. A recorded date
+more than STALE_DAYS old also fails, so a daily page that silently stopped being rebuilt cannot pass on its own
+old state.
 """
 import datetime as dt
 import glob
@@ -60,8 +69,35 @@ def stamps(doc):
     return out
 
 
+LASTMOD_STATE = os.path.join(HERE, "_sitemap_lastmod.json")
+STALE_DAYS = 7
+
+
+def content_change_dates():
+    """page path relative to the repo ('pdufa_site_src/...') -> its recorded content-change date."""
+    try:
+        import json
+        st = json.load(io.open(LASTMOD_STATE, encoding="utf-8"))
+        return {k.replace("\\", "/"): dt.date.fromisoformat(v["date"]) for k, v in st.items()
+                if isinstance(v, dict) and re.match(r"^\d{4}-\d{2}-\d{2}$", str(v.get("date") or ""))}
+    except Exception:  # noqa: BLE001
+        return {}
+
+
+def daily_ok(stamp, today, recorded):
+    """A daily page may say today, or the day its content last changed; never a day after the Eastern build date."""
+    return stamp <= today and (stamp == today or (recorded is not None and stamp == recorded
+                                                  and (today - recorded).days <= STALE_DAYS))
+
+
 def test_one_date_per_page():
     today = eastern_today()
+    cc = content_change_dates()
+    assert not daily_ok(today + dt.timedelta(days=1), today, today + dt.timedelta(days=1)), "planted UTC-ahead stamp passed"
+    assert not daily_ok(today - dt.timedelta(days=2), today, today - dt.timedelta(days=1)), "planted stale stamp passed"
+    assert daily_ok(today - dt.timedelta(days=1), today, today - dt.timedelta(days=1)), "unchanged page's own date failed"
+    old = today - dt.timedelta(days=STALE_DAYS + 1)
+    assert not daily_ok(old, today, old), "planted long-unrebuilt daily page passed"
     bad = []
     pages = [os.path.join(SITE, p) for p in DAILY]
     pages += sorted(glob.glob(os.path.join(SITE, "drug", "*", "index.html")))
@@ -74,9 +110,11 @@ def test_one_date_per_page():
         if len(found) > 1:
             bad.append(f"{rel}: {len(found)} different stamp dates on one page: "
                        + ", ".join(sorted(d.isoformat() for d in found)))
-        elif found and p.endswith(tuple(d.replace("/", os.sep) for d in DAILY)) \
-                and found != {today}:
-            bad.append(f"{rel}: stamped {next(iter(found))}, Eastern build date is {today}")
+        elif found and p.endswith(tuple(d.replace("/", os.sep) for d in DAILY)):
+            stamp = next(iter(found))
+            rec = cc.get(os.path.relpath(p, HERE).replace("\\", "/"))
+            if not daily_ok(stamp, today, rec):
+                bad.append(f"{rel}: stamped {stamp}, Eastern build date is {today}, recorded content change {rec}")
     assert not bad, "page(s) stamped with more than one date, or the wrong clock:\n  " \
         + "\n  ".join(bad)
 

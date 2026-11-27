@@ -2268,6 +2268,20 @@
    "source": "https://www.globenewswire.com/news-release/2026/11/05/3396020/0/en/molecular-partners-to-present-on-dll3-targeting-radio-darpin-mp0712-at-2026-snmmi-theranostics-conference-and-naclc-2026.html",
    "by": "manual",
    "note": "Re-opened Molecular Partners' 2026-11-05 release by an independent red-team pass on 2026-11-26: NACLC poster Saturday, December 5, 2026, 4:15 - 5:45 pm MST."
+  },
+  "readout_olma_2026-12-11": {
+   "checked": "2026-11-27",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.olema.com/news-releases/news-release-details/olema-oncology-present-combination-data-palazestrant-and-op-3136",
+   "by": "manual",
+   "note": "Re-opened the Nov 4 release: PS10-11, abstract 811, Friday December 11, 2026, 7:00-8:30 AM CT. Olema's release list did not load for a newer-release check."
+  },
+  "readout_bctx_2026-12-11-briaimt": {
+   "checked": "2026-11-27",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/24/3409117/0/en/briacell-to-present-five-clinical-posters-including-late-breaking-phase-3-biomarker-and-safety-findings-at-sabcs-2026.html",
+   "by": "manual",
+   "note": "Re-opened the Nov 24 release: P5-13-20, abstract 3082, Friday December 11, 2026, 12:30-2:00 PM CST; no later BriaCell release found."
   }
  }
 }
