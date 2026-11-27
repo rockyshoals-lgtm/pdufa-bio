@@ -3825,6 +3825,246 @@
    "ta": "Hematology",
    "basis": "company-stated indication: von Willebrand disease",
    "source": "https://www.globenewswire.com/news-release/2026/11/10/3399342/0/en/hemab-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html"
+  },
+  "readout_azn_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-datopotama": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-datopotama-2": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-datopotama-3": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-trastuzuma": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-sonesitatu": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-datopotama": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-datopotama-2": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-trastuzuma": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-camizestra": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-durvalumab": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-durvalumab-2": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-capivasert": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-puxitatug": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-saruparib": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-volrustomi": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-volrustomi-2": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-rilvegosto": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-surovatami": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-saruparib-2": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-laroprovst": {
+   "ta": "Cardiovascular",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-acalabruti": {
+   "ta": "Hematology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-06-30": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31-cagrilinti": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-06-30-ziltivekim": {
+   "ta": "Cardiovascular",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31-efruxiferm": {
+   "ta": "Hepatology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31-amylin": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31-ubt251": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-06-30-ubt251": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31-cagrilinti-2": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2028-06-30": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2028-12-31": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2028-06-30-denecimig": {
+   "ta": "Hematology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_gsk_2027-06-30": {
+   "ta": "Infectious",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_gsk_2027-06-30-gsk116": {
+   "ta": "Infectious",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_gsk_2027-12-31-cabotegrav": {
+   "ta": "Infectious",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2027-06-30": {
+   "ta": "Dermatology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2027-12-31": {
+   "ta": "Dermatology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2028-12-31": {
+   "ta": "Immunology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2027-12-31-rozanolixi": {
+   "ta": "CNS",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2029-12-31": {
+   "ta": "CNS",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2028-12-31-galvokimig": {
+   "ta": "Dermatology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2029-12-31-galvokimig": {
+   "ta": "Respiratory",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2029-12-31-fenflurami": {
+   "ta": "CNS",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_gsk_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_gsk_2027-12-31-velzatinib": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
   }
  },
  "nct_mismatch": [
