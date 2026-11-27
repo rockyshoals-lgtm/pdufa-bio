@@ -388,6 +388,7 @@ def main():
             for f in (ent.get("filings") or {}).values():
                 if f.get("status") != "covered":
                     f.pop("status", None)          # re-open under the new rules
+                f.pop("accepted_et", None)         # times read under older rules are dropped, not kept
         cache["rules_version"] = RULES_VERSION
     tks = cache.setdefault("tickers", {})
     want = sorted(a.tickers.split(",")) if a.tickers else sorted(names)

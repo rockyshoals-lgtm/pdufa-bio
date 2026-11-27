@@ -559,8 +559,8 @@ jobs:
         run: python fetch_earnings_dates.py || echo "::warning::_earnings_dates.json not refreshed this run"
 
       # 2026-11-27 (moat: earnings gaps). Where the newswire feed carried no results release, the company's own Form
-      # 8-K under Item 2.02 (Results of Operations and Financial Condition) from SEC EDGAR: its acceptance time (Eastern,
-      # as EDGAR prints it) and the period its Item 2.02 text names. A filing is opened only when no newswire results
+      # 8-K under Item 2.02 (Results of Operations and Financial Condition) from SEC EDGAR: its acceptance time (UTC in EDGAR's JSON,
+      # converted to Eastern) and the period its Item 2.02 text names. A filing is opened only when no newswire results
       # release came within a day of it; preliminary updates are kept apart and never shown. A self-check of 8-K vs
       # newswire times guards the time zone. Writes _earnings_sec.json only. Guard: tests/test_earnings_sec.py.
       - name: "Earnings gaps: results dates from the companies' own 8-K filings (Item 2.02, cache only)"
