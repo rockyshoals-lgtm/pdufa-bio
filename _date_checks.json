@@ -2282,6 +2282,3450 @@
    "source": "https://www.globenewswire.com/news-release/2026/11/24/3409117/0/en/briacell-to-present-five-clinical-posters-including-late-breaking-phase-3-biomarker-and-safety-findings-at-sabcs-2026.html",
    "by": "manual",
    "note": "Re-opened BriaCell's Nov 24, 2026 release: poster P5-13-20, Friday Dec 11, 2026, 12:30-2:00 PM CST."
+  },
+  "readout_aapg_2026-12-13": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395961/0/en/ascentage-pharma-to-present-data-from-multiple-trials-including-an-oral-presentation-of-apg-5918-at-ash-2026.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_aapg_2026-12-13-olverembat": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395961/0/en/ascentage-pharma-to-present-data-from-multiple-trials-including-an-oral-presentation-of-apg-5918-at-ash-2026.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_acad_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261104772757/en/Acadia-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_acad_2027-12-31-remlifanse": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261104772757/en/Acadia-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_allo_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397016/0/en/allogene-therapeutics-reports-third-quarter-2026-financial-results-and-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_allo_2027-12-31-allo329": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398329/0/en/allogene-therapeutics-reports-first-clinical-data-from-phase-1-resolution-study-of-allo-329-in-autoimmune-disease.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_alms_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402170/0/en/alumis-reports-third-quarter-2026-financial-results-and-highlights-recent-business-updates.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_alxo_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403470/0/en/alx-oncology-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_alxo_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403470/0/en/alx-oncology-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_anab_2028-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402246/0/en/anaptys-reports-fiscal-first-quarter-2027-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_anab_2028-12-31-jemperli": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402246/0/en/anaptys-reports-fiscal-first-quarter-2027-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ardx_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394744/0/en/ardelyx-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_argx_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/22/3386023/0/en/argenx-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_argx_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/22/3386023/0/en/argenx-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_argx_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/22/3386023/0/en/argenx-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_aura_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398237/0/en/aura-biosciences-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_autl_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395437/0/en/autolus-therapeutics-to-present-clinical-data-updates-at-the-american-society-of-hematology-ash-annual-meeting-2026.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_autl_2027-10-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399322/0/en/autolus-therapeutics-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_autl_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399322/0/en/autolus-therapeutics-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_autl_2028-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399322/0/en/autolus-therapeutics-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_avbp_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398921/0/en/arrivent-biopharma-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_avbp_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398921/0/en/arrivent-biopharma-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bcrx_2027-09-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395167/29446/en/biocryst-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bcrx_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395167/29446/en/biocryst-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_beam_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399328/0/en/beam-therapeutics-announces-positive-topline-pivotal-data-from-beacon-phase-1-2-trial-of-risto-cel-in-patients-with-sickle-cell-disease.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_biib_2026-12-15-litifilima": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000875045/000087504526000094/exhibit991-q32026pressrele.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_biib_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000875045/000087504526000094/exhibit991-q32026pressrele.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_biib_2027-09-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000875045/000087504526000094/exhibit991-q32026pressrele.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bivi_2027-03-20": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399434/0/en/biovie-invited-to-present-data-on-bezisterim-in-parkinson-s-disease-at-the-ad-pd2027-international-conference-on-alzheimer-s-parkinson-s-diseases.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bntx_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394017/0/en/biontech-announces-third-quarter-2026-financial-results-and-corporate-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_calc_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399306/0/en/calcimedica-reports-third-quarter-2026-financial-results-and-provides-clinical-corporate-updates.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_cccc_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396251/0/en/c4-therapeutics-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_cccc_2027-12-31-cemsidomid": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396251/0/en/c4-therapeutics-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_clls_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402347/0/en/cellectis-reports-third-quarter-2026-financial-results-and-provides-a-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_clls_2028-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402347/0/en/cellectis-reports-third-quarter-2026-financial-results-and-provides-a-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_clrb_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399351/29076/en/cellectar-biosciences-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_clrb_2026-12-15": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.cellectar.com/investors/news-events/press-releases/detail/401",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_cocp_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/15/3403093/0/en/cocrystal-pharma-provides-business-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_crsp_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/2/3393703/0/en/crispr-therapeutics-provides-business-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_crsp_2026-12-31-zugocabtag": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395391/0/en/crispr-therapeutics-to-present-clinical-data-from-zugo-cel-in-large-b-cell-lymphoma-at-the-68th-american-society-of-hematology-ash-annual-meeting-and-exposition.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dftx_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261106929797/en/Definium-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Highlights/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_eq_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402196/0/en/equillium-reports-third-quarter-2026-financial-results-and-recent-corporate-and-clinical-highlights.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_evmn_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261112392424/en/Evommune-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Highlights/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_evmn_2027-12-31-evo570": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261112392424/en/Evommune-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Highlights/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_evmn_2027-12-31-evo646": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261112392424/en/Evommune-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Highlights/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_evmn_2028-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261112392424/en/Evommune-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Highlights/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_exel_2027-03-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261029052392/en/Exelixis-Announces-Third-Quarter-2026-Financial-Results-and-Provides-Corporate-Update/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_fbio_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402542/28889/en/fortress-biotech-reports-third-quarter-2026-financial-results-and-recent-corporate-highlights.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_fth_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261103631868/en/Faeth-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Operational-Updates/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gmab_2026-12-14": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395343/0/en/genmab-to-present-results-from-comprehensive-epcoritamab-development-program-highlighting-potential-across-b-cell-malignancies-at-the-2026-american-society-of-hematology-ash-annual.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_immp_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/19/3406250/0/en/immutep-reports-encouraging-disease-free-survival-from-eftisarc-neo-phase-ii-trial-in-soft-tissue-sarcoma.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_immx_2026-12-14": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402248/0/en/immix-biopharma-reports-third-quarter-2026-financial-results-and-update-on-corporate-progress.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_iron_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395409/0/en/disc-medicine-announces-multiple-presentations-across-portfolio-at-the-68th-american-society-of-hematology-ash-annual-meeting.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_iron_2026-12-31-disc3405": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395409/0/en/disc-medicine-announces-multiple-presentations-across-portfolio-at-the-68th-american-society-of-hematology-ash-annual-meeting.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_iron_2026-12-15": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395409/0/en/disc-medicine-announces-multiple-presentations-across-portfolio-at-the-68th-american-society-of-hematology-ash-annual-meeting.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_iron_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396436/0/en/disc-medicine-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_iva_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/23/3408877/0/en/inventiva-reports-unaudited-2026-third-quarter-financial-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_janx_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261105303093/en/Janux-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Business-Highlights/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jspr_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403434/0/en/jasper-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jspr_2027-03-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403434/0/en/jasper-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jspr_2026-12-31-briquilima": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403434/0/en/jasper-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kod_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/kodiak-sciences-announces-recent-business-highlights-and-third-quarter-2026-financial-results-302938390.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kod_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/kodiak-sciences-announces-recent-business-highlights-and-third-quarter-2026-financial-results-302938390.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_krys_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392990/0/en/krystal-biotech-announces-third-quarter-2026-financial-and-operating-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_krys_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392990/0/en/krystal-biotech-announces-third-quarter-2026-financial-and-operating-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_krys_2027-12-31-kb801": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392990/0/en/krystal-biotech-announces-third-quarter-2026-financial-and-operating-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_krys_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392990/0/en/krystal-biotech-announces-third-quarter-2026-financial-and-operating-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_krys_2027-12-31-kb408": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392990/0/en/krystal-biotech-announces-third-quarter-2026-financial-and-operating-results.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kura_2028-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400190/35186/en/kura-oncology-reports-third-quarter-2026-financial-results-and-corporate-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kura_2026-12-15": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395401/35186/en/kura-oncology-and-kyowa-kirin-to-present-first-ziftomenib-flt3-inhibitor-clinical-data-at-ash-2026.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kura_2026-12-15-ziftomenib": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395401/35186/en/kura-oncology-and-kyowa-kirin-to-present-first-ziftomenib-flt3-inhibitor-clinical-data-at-ash-2026.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kura_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400190/35186/en/kura-oncology-reports-third-quarter-2026-financial-results-and-corporate-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kura_2027-12-31-darlifarni": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400190/35186/en/kura-oncology-reports-third-quarter-2026-financial-results-and-corporate-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_lyel_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395800/0/en/lyell-immunopharma-reports-business-highlights-and-financial-results-for-the-third-quarter-2026.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_lyel_2027-12-31-lyl273": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395800/0/en/lyell-immunopharma-reports-business-highlights-and-financial-results-for-the-third-quarter-2026.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_mgnx_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402151/0/en/macrogenics-reports-third-quarter-2026-financial-results-and-highlights-recent-corporate-progress.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_mgnx_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402151/0/en/macrogenics-reports-third-quarter-2026-financial-results-and-highlights-recent-corporate-progress.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_mgnx_2027-06-30-lorigerlim": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402151/0/en/macrogenics-reports-third-quarter-2026-financial-results-and-highlights-recent-corporate-progress.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_mist_2028-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402500/0/en/milestone-pharmaceuticals-reports-third-quarter-2026-financial-results-and-announces-cost-efficiency-measures-designed-to-extend-cash-runway-through-afib-rvr-phase-3-data.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_mplt_2028-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403378/0/en/maplight-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_mplt_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403378/0/en/maplight-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_mrkr_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/19/3406436/0/en/marker-therapeutics-awarded-16-2-million-cprit-grant-to-advance-mt-601-in-phase-2-apollo-study.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_prax_2027-12-31-prax215": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-company.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vygr_2027-03-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1640266/000119312526467226/d184454dex991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pbyi_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1401667/000143774926035279/ex_1011140.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pbyi_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1401667/000143774926035279/ex_1011140.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_phat_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391109/0/en/phathom-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_phat_2028-03-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391109/0/en/phathom-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_plrx_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1746473/000174647326000127/plrx-20261112xexx991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_prta_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001559053/000155905326000030/exhibit991q32026earningsre.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sptx_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261102054810/en/Seaport-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Corporate-and-Clinical-Progress/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sptx_2028-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261102054810/en/Seaport-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Corporate-and-Clinical-Progress/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sptx_2028-12-31-glyphago": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261102054810/en/Seaport-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Corporate-and-Clinical-Progress/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rckt_2028-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001281895/000114036126043434/ef20085455_ex99-1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rvmd_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-reports-third-quarter-2026-financial",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rvmd_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-reports-third-quarter-2026-financial",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rvmd_2027-12-31-rmc5127": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-reports-third-quarter-2026-financial",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sln_2026-12-15": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261104792260/en/Silence-Therapeutics-Announces-Oral-Presentation-on-SANRECO-Phase-2-Study-of-Divesiran-in-Polycythemia-Vera-at-ASH-2026/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_spry_2027-03-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001671858/000119312526449748/spry-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_spry_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001671858/000119312526449748/spry-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_srpt_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000873303/000119312526449822/srpt-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_srpt_2026-12-31-srp1001": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000873303/000119312526449822/srpt-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tara_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1359931/000121390026116607/ea030956701ex99-1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tecx_2027-01-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1681087/000119312526449965/tecx-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tecx_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1681087/000119312526449965/tecx-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tecx_2027-12-31-tx2100": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1681087/000119312526449965/tecx-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_trvi_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1563880/000119312526453670/trvi-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_trvi_2028-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1563880/000119312526453670/trvi-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_trvi_2028-06-30-haduvio": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1563880/000119312526453670/trvi-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_trvi_2027-12-31-haduvio": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1563880/000119312526453670/trvi-ex99_1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tvtx_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001438533/000143853326000074/a2026q3_8-kxex991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tvtx_2027-12-31-filspari": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001438533/000143853326000074/a2026q3_8-kxex991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vrtx_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vrtx_2027-12-31-vx993": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vrtx_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vrtx_2027-12-31-inaxaplin": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vrtx_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_wve_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.wavelifesciences.com/news-releases/news-release-details/wave-life-sciences-highlights-wve-007-inhbe-sirna-progress",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_wve_2026-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.wavelifesciences.com/news-releases/news-release-details/wave-life-sciences-reports-third-quarter-2026-financial-results",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_xers_2028-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1867096/000186709626000114/exh991q32026earningsrelease.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_xncr_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326732/000132673226000062/xncr-20261104xexx991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_xncr_2027-06-30-xmab819": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326732/000132673226000062/xncr-20261104xexx991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_xncr_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326732/000132673226000062/xncr-20261104xexx991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_xncr_2027-06-30-xmab412": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326732/000132673226000062/xncr-20261104xexx991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_zlab_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.zailaboratory.com/news-releases/news-release-details/zai-lab-presents-positive-first-human-data-zl-1503-novel-il-13il",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_zlab_2027-12-31": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261105430679/en/Zai-Lab-Presents-Updated-Clinical-Data-Demonstrating-Zocilurtatug-Pelitecan-Zoci-Induces-Clinically-Meaningful-Responses-and-a-Manageable-Safety-Profile-in-Previously-Treated-Extrapulmonary-Neuroendocrine-Carcinomas/",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_zlab_2027-12-31-zocilurtat": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1704292/000162828026070517/zlab-2026115x8kex991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_zlab_2027-06-30-zl6201": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1704292/000162828026070517/zlab-2026115x8kex991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_zlab_2027-12-31-elegrobart": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1704292/000162828026070517/zlab-2026115x8kex991.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_zura_2027-06-30": {
+   "checked": "2026-11-25",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1855644/000110465926124149/tm2629310d1_ex99-1.htm",
+   "by": "red team 2026-11-25",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_zntl_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398958/0/en/zentalis-pharmaceuticals-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sabs_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396298/0/en/sab-bio-reports-q3-2026-financial-results-and-provides-business-highlights.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_anro_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261110590023/en/Alto-Neuroscience-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_anro_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261110590023/en/Alto-Neuroscience-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_anro_2027-12-31-alto207": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261110590023/en/Alto-Neuroscience-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ngne_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261109901272/en/Neurogene-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Updates/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_help_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403358/0/en/helus-pharma-announces-positive-topline-results-from-phase-3-approach-study-evaluating-hlp003-as-adjunctive-treatment-in-major-depressive-disorder.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_imtx_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399294/0/en/immatics-announces-third-quarter-2026-financial-results-and-business-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_imtx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399294/0/en/immatics-announces-third-quarter-2026-financial-results-and-business-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_lbrx_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397076/0/en/lb-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_lbrx_2028-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397076/0/en/lb-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_lbrx_2029-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397076/0/en/lb-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vor_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/30/3392178/0/en/vor-bio-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jbio_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402493/0/en/jade-biosciences-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jbio_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402493/0/en/jade-biosciences-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jbio_2027-12-31-jade301": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402493/0/en/jade-biosciences-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_mgtx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401528/0/en/meiragtx-reports-third-quarter-2026-financial-and-operational-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_imrx_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391832/0/en/immuneering-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_imrx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391832/0/en/immuneering-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_imrx_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391832/0/en/immuneering-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_orka_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398930/0/en/oruka-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_orka_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398930/0/en/oruka-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_orka_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398930/0/en/oruka-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rlay_2026-12-14": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395819/0/en/relay-therapeutics-reports-third-quarter-2026-financial-results-and-corporate-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rlay_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395819/0/en/relay-therapeutics-reports-third-quarter-2026-financial-results-and-corporate-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_oric_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3404112/0/en/oric-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-operational-and-rinzimetostat-program-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_glue_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396213/0/en/monte-rosa-therapeutics-announces-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_glue_2027-12-31-mrt2359": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396213/0/en/monte-rosa-therapeutics-announces-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_glue_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396213/0/en/monte-rosa-therapeutics-announces-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bcax_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398297/0/en/bicara-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bcax_2027-01-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398297/0/en/bicara-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nktr_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/nektar-therapeutics-announces-third-quarter-2026-financial-results-302938396.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ocs_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394805/0/en/oculis-reports-q3-2026-financial-results-and-builds-momentum-toward-multiple-upcoming-pipeline-catalysts.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_maze_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398948/0/en/maze-therapeutics-reports-third-quarter-2026-financial-results-and-recent-highlights.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_maze_2027-12-31-mze782": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398948/0/en/maze-therapeutics-reports-third-quarter-2026-financial-results-and-recent-highlights.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sepn_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398924/0/en/septerna-highlights-business-progress-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dnth_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395769/0/en/dianthus-therapeutics-highlights-recent-business-achievements-and-reports-q3-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dnth_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395769/0/en/dianthus-therapeutics-highlights-recent-business-achievements-and-reports-q3-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dnth_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395769/0/en/dianthus-therapeutics-highlights-recent-business-achievements-and-reports-q3-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dnth_2028-12-31-clasepruba": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395769/0/en/dianthus-therapeutics-highlights-recent-business-achievements-and-reports-q3-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dnth_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395769/0/en/dianthus-therapeutics-highlights-recent-business-achievements-and-reports-q3-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dnth_2027-12-31-dnth212": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395769/0/en/dianthus-therapeutics-highlights-recent-business-achievements-and-reports-q3-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_crvs_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396993/0/en/corvus-pharmaceuticals-provides-business-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_crvs_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396993/0/en/corvus-pharmaceuticals-provides-business-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_crvs_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.corvuspharma.com/news-releases/news-release-details/corvus-pharmaceuticals-announces-initial-data-soquelitinib",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ctmx_2027-01-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397134/37704/en/cytomx-therapeutics-announces-q3-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ctmx_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397134/37704/en/cytomx-therapeutics-announces-q3-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ctmx_2027-06-30-cx801": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397134/37704/en/cytomx-therapeutics-announces-q3-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sgmt_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401448/0/en/sagimet-biosciences-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nams_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395208/0/en/newamsterdam-pharma-provides-corporate-update-and-reports-third-quarter-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nams_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395208/0/en/newamsterdam-pharma-provides-corporate-update-and-reports-third-quarter-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sana_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397063/0/en/sana-biotechnology-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sana_2027-12-31-sg293": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397063/0/en/sana-biotechnology-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_clym_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396239/0/en/climb-bio-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_clym_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396239/0/en/climb-bio-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_clym_2027-12-31-budoprutug": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396239/0/en/climb-bio-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_clym_2027-12-31-budoprutug-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396239/0/en/climb-bio-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dsgn_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395772/0/en/design-therapeutics-announces-third-quarter-2026-financial-results-and-recent-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dsgn_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395772/0/en/design-therapeutics-announces-third-quarter-2026-financial-results-and-recent-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dsgn_2027-12-31-dt168": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395772/0/en/design-therapeutics-announces-third-quarter-2026-financial-results-and-recent-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_klra_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395791/0/en/kailera-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_klra_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395791/0/en/kailera-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_klra_2027-12-31-safiglipro": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395791/0/en/kailera-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_klra_2027-12-31-kai4729": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395791/0/en/kailera-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_odtx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395169/0/en/odyssey-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_odtx_2027-12-31-od002": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395169/0/en/odyssey-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ovid_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399333/0/en/ovid-therapeutics-reports-business-updates-and-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ovid_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399333/0/en/ovid-therapeutics-reports-business-updates-and-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ovid_2027-03-31-ov4071": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399333/0/en/ovid-therapeutics-reports-business-updates-and-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ovid_2027-03-31-ov4071-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399333/0/en/ovid-therapeutics-reports-business-updates-and-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_prme_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402154/0/en/prime-medicine-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_prme_2027-12-31-pm647": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402154/0/en/prime-medicine-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_absi_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401436/0/en/absci-reports-business-updates-and-third-quarter-2026-financial-and-operating-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_absi_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401436/0/en/absci-reports-business-updates-and-third-quarter-2026-financial-and-operating-results.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_qttb_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/q32-bio-reports-third-quarter-2026-financial-results-and-provides-corporate-update-302928475.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_howl_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1785530/000119312526360059/d102535dex991.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_mdgl_2027-12-31-resmetirom": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394036/0/en/madrigal-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dnli_2027-06-30-biib122": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investors.denalitherapeutics.com/news-releases/news-release-details/denali-therapeutics-reports-third-quarter-2026-financial-results",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vxrt_2027-12-31-oral": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investors.vaxart.com/news-releases/news-release-details/vaxart-provides-business-update-and-reports-third-quarter-2026",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kura_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395401/35186/en/kura-oncology-and-kyowa-kirin-to-present-first-ziftomenib-flt3-inhibitor-clinical-data-at-ash-2026.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kura_2026-12-13": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395401/35186/en/kura-oncology-and-kyowa-kirin-to-present-first-ziftomenib-flt3-inhibitor-clinical-data-at-ash-2026.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sndx_2026-12-13": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395377/0/en/syndax-highlights-acceptance-of-19-revuforj-revumenib-and-niktimvo-axatilimab-csfr-abstracts-including-7-for-oral-presentation-at-ash-2026.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sndx_2026-12-14": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395377/0/en/syndax-highlights-acceptance-of-19-revuforj-revumenib-and-niktimvo-axatilimab-csfr-abstracts-including-7-for-oral-presentation-at-ash-2026.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sndx_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395377/0/en/syndax-highlights-acceptance-of-19-revuforj-revumenib-and-niktimvo-axatilimab-csfr-abstracts-including-7-for-oral-presentation-at-ash-2026.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rigl_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/rigel-announces-oral-presentation-of-phase-1b-data-for-r289-in-patients-with-lower-risk-mds-at-the-68th-american-society-of-hematology-annual-meeting-and-exposition-302929341.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gern_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.geron.com/news-releases/news-release-details/geron-corporation-present-data-highlighting-clinical-and",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_crbu_2026-12-14": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395356/0/en/caribou-biosciences-announces-presentations-at-the-2026-american-society-of-hematology-ash-annual-meeting.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_crbu_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395356/0/en/caribou-biosciences-announces-presentations-at-the-2026-american-society-of-hematology-ash-annual-meeting.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_atnm_2026-12-13": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/actinium-pharmaceuticals-announces-three-ash-2026-abstracts-highlighting-iomab-act-clinical-results-in-car-t-cell-therapy-and-sickle-cell-disease-302929345.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gmab_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.genmab.com/news-releases/news-release-details/genmab-present-results-comprehensive-epcoritamab-development/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gmab_2026-12-13": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.genmab.com/news-releases/news-release-details/genmab-present-results-comprehensive-epcoritamab-development/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_regn_2026-12-14": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/19/3406454/0/en/regeneron-highlights-new-data-across-malignant-and-classical-hematology-programs-at-american-society-of-hematology-ash.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_regn_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/19/3406454/0/en/regeneron-highlights-new-data-across-malignant-and-classical-hematology-programs-at-american-society-of-hematology-ash.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_adct_2026-12-14-loncastuxi": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_adct_2026-12-13-loncastuxi": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sls_2026-12-14-tambicicli": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/4/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_clym_2026-12-13": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395354/0/en/climb-bio-to-present-new-data-for-budoprutug-in-immune-thrombocytopenia-at-the-68th-american-society-of-hematology-annual-meeting-and-exposition.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2026-12-13": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/18/3405374/0/en/novartis-showcases-hematology-momentum-and-continued-breast-cancer-leadership-at-ash-and-sabcs.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rlay_2026-12-14-zovegalisi": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395819/0/en/relay-therapeutics-reports-third-quarter-2026-financial-results-and-corporate-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_mbrx_2026-12-15": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395620/0/en/moleculin-announces-acceptance-of-annamycin-data-for-presentation-at-the-2026-american-society-of-hematology-ash-annual-meeting.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_xfor_2028-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395871/0/en/x4-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_xfor_2028-03-31-mavorixafo": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395871/0/en/x4-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_obx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261112501893/en/Obsidian-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Business-Updates",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_obx_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261112501893/en/Obsidian-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Business-Updates",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pepg_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1835597/000119312526454469/pepg-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pepg_2027-01-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1835597/000119312526454469/pepg-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rtsn_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2002988/000110465926129354/rtsn-ex99d1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_cbio_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1253689/000162828026073409/pressrelease-livefile.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_cbio_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1253689/000162828026073409/pressrelease-livefile.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_cbio_2027-03-31-cr003": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1253689/000162828026073409/pressrelease-livefile.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kard_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2123613/000119312526456885/ck0002123613-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kard_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2123613/000119312526456885/ck0002123613-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kard_2027-12-31-tonlamarse": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2123613/000119312526456885/ck0002123613-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pali_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1357459/000135745926000025/pali-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pali_2028-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1357459/000135745926000025/pali-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_trda_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1689375/000168937526000063/entradatherapeuticsq32026e.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_trda_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1689375/000168937526000063/entradatherapeuticsq32026e.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_algs_2027-09-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1799448/000117184326007214/exh_991.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_hcwb_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1828673/000149315226052053/ex99-1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_hcwb_2027-03-31-hcw9302": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1828673/000149315226052053/ex99-1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_plx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1006281/000110465926124761/plx-ex99d1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nerv_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1598646/000119312526450877/d192598dex991.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nerv_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1598646/000119312526450877/d192598dex991.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_sctx_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1853921/000119312526458486/sctx-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_cntx_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1842952/000162828026072768/contexttherapeuticsq326ear.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_cntx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1842952/000162828026072768/contexttherapeuticsq326ear.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_prqr_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1612940/000110465926125795/prqr-ex99d2.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_prqr_2027-01-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1612940/000110465926125795/prqr-ex99d2.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_prqr_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1612940/000110465926125795/prqr-ex99d2.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_cty_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2143850/000110465926130823/tm2630160d1_ex99-1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vogx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1903784/000118518526005214/vogenxex99-1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jnj_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.jnj.com/innovativemedicine/download/ASH-2026-abstract-chart",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jnj_2026-12-13": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.jnj.com/innovativemedicine/download/ASH-2026-abstract-chart",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jnj_2026-12-14": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.jnj.com/innovativemedicine/download/ASH-2026-abstract-chart",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ltgo_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2056611/000119312526448537/ltgo-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ltgo_2027-12-31-ltg321": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2056611/000119312526448537/ltgo-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_yarw_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1566044/000156604426000017/yarw-q32026earningsrelease.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_yarw_2027-12-31-yb101": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1566044/000156604426000017/yarw-q32026earningsrelease.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_srzn_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1824893/000119312526453641/srzn-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_srzn_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1824893/000119312526453641/srzn-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_caba_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1759138/000175913826000046/caba-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_edit_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1650664/000165066426000100/editasmedicinepressrelease.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_edit_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1650664/000165066426000100/editasmedicinepressrelease.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_brve_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2131524/000162828026072702/brve-q3268xkex991xearnings.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_brve_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2131524/000162828026072702/brve-q3268xkex991xearnings.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_brve_2027-06-30-bhb1893": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2131524/000162828026072702/brve-q3268xkex991xearnings.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_alt_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326190/000132619026000067/alt-ex99d1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_alt_2029-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1326190/000132619026000067/alt-ex99d1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_atto_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2058707/000119312526453592/atto-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_coya_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1835022/000119312526454473/coya-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_antx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1880438/000119312526452660/antx-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rxrx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000144/exhibit991-q0326.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tvrd_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1346830/000110465926126507/tvrd-ex99d1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_acrv_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1781174/000119312526463444/acrv-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_blsm_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1839970/000119312526458447/d389211dex991.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_blsm_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1839970/000119312526458447/d389211dex991.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_blsm_2027-06-30-bh30236": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1839970/000119312526458447/d389211dex991.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_acet_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1720580/000172058026000065/acet-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_acet_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1720580/000172058026000065/acet-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_crvo_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1053691/000143774926037172/ex_1046609.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261118967070/en/Bristol-Myers-Squibb-Demonstrates-Breadth-and-Clinical-Momentum-Across-Blood-Cancers-and-Rare-Hematologic-Disorders-at-ASH-2026/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2026-12-12-iberdomide": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261118967070/en/Bristol-Myers-Squibb-Demonstrates-Breadth-and-Clinical-Momentum-Across-Blood-Cancers-and-Rare-Hematologic-Disorders-at-ASH-2026/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2026-12-12-golcadomid": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261118967070/en/Bristol-Myers-Squibb-Demonstrates-Breadth-and-Clinical-Momentum-Across-Blood-Cancers-and-Rare-Hematologic-Disorders-at-ASH-2026/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gild_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261104303376/en/Gilead-and-Kite-Advance-Leadership-With-New-Data-Across-Pipeline-and-Portfolio-at-ASH-2026/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gild_2026-12-12-anitocabta": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261104303376/en/Gilead-and-Kite-Advance-Leadership-With-New-Data-Across-Pipeline-and-Portfolio-at-ASH-2026/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jazz_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/jazz-pharmaceuticals-announces-third-quarter-2026-financial-results-302926800.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_stok_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001623526/000119312526437775/stok-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_incy_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_incy_2026-12-31-ruxolitini": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_incy_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.incyte.com/news-releases/news-release-details/incyte-present-new-data-highlighting-progress-across-its-0",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_incy_2026-12-14": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.incyte.com/news-releases/news-release-details/incyte-present-new-data-highlighting-progress-across-its-0",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_incy_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_incy_2029-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ser_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001708599/000170859926000069/ser-20261112xex991_earning.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ikt_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001750149/000119312526455560/d95716dex991.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ibio_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.ibioinc.com/news-events/press-releases/detail/268/ibio-reports-q1-fiscal-year-2027-financial-results-and-provides-corporate-update",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pbls_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pbls_2027-03-31-zolucateti": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pbls_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pbls_2027-03-31-zolucateti-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pbls_2029-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001657677/000119312526456892/ck0001657677-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pyxs_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pyxs_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pyxs_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001782223/000119312526448604/pyxs-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_clrb_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.cellectar.com/investors/news-events/press-releases/detail/401",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ptix_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1022899/000149315226052871/ex99-1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ptix_2028-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1022899/000149315226052871/ex99-1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rnxt_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1574094/000119312526449890/rnxt-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dtil_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dtil_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_dtil_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1357874/000162828026069115/q32026earningsrelease_final.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_kros_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1664710/000166471026000065/exhibit991q32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_aciu_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1651625/000165162526000027/aciu-ex99d1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_arct_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.arcturusrx.com/news-releases/news-release-details/arcturus-therapeutics-announces-third-quarter-2026-financial",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_arct_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.arcturusrx.com/news-releases/news-release-details/arcturus-therapeutics-announces-third-quarter-2026-financial",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bdtx_2028-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001701541/000170154126000030/bdtx-exhibit991_q32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_moln_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1745114/000174511426000033/pr_molecularpartnersxq3202.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_moln_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1745114/000174511426000033/pr_molecularpartnersxq3202.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tcrx_2026-12-13": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001783328/000119312526456865/tcrx-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tcrx_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001783328/000119312526456865/tcrx-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_stro_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.sutrobio.com/press-releases/detail/239/sutro-biopharma-reports-third-quarter-2026-financial-results-and-business-highlights",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_stro_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.sutrobio.com/press-releases/detail/239/sutro-biopharma-reports-third-quarter-2026-financial-results-and-business-highlights",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_prld_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investors.preludetx.com/news-releases/news-release-details/prelude-therapeutics-reports-third-quarter-2026-financial",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bbot_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400239/0/en/bbot-reports-third-quarter-2026-financial-results-and-update-on-corporate-progress.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_lyel_2026-12-14": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.lyell.com/news-releases/news-release-details/lyell-immunopharma-present-positive-updated-ronde-cel-data-more",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_lyel_2026-12-12": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.lyell.com/news-releases/news-release-details/lyell-immunopharma-present-positive-updated-ronde-cel-data-more",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_lpcn_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1535955/000149315226050842/ex99-1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nsrx_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.nasuspharma.com/press_releases/nasus-pharma-presents-data-at-acaai-2026-demonstrating-ns002-reached-the-therapeutic-epinephrine-threshold-faster-than-an-autoinjector-after-repeat-dosing-and-under-severe-nasal-congestion/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_cgen_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/il/news-releases/compugen-reports-third-quarter-2026-results-302933203.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_abvx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.abivax.com/news-releases/news-release-details/abivax-presents-business-updates-and-first-half-2026-financial",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vtvt_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1641489/000164148926000035/vtvt-20260930xexx991pressr.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bbot_2026-12-31-bbo10203": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1869105/000119312526455506/bbot-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ttrx_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2023016/000121390026117781/ea031158701ex99-1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ttrx_2028-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2023016/000121390026117781/ea031158701ex99-1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ttrx_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2023016/000121390026117781/ea031158701ex99-1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pfe_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://s206.q4cdn.com/795948973/files/doc_financials/2026/q3/Q3-2026-Earnings-Conference-Call-Prepared-Remarks-FINAL.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pfe_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://s206.q4cdn.com/795948973/files/content_files/PFE-USQ_Transcript_2026-11-03.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_pfe_2027-12-31-amylin": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://s206.q4cdn.com/795948973/files/content_files/PFE-USQ_Transcript_2026-11-03.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_regn_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.regeneron.com/static-files/b9e581a3-65e6-4902-9afa-732fc8c6a92a",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_regn_2027-12-31-linvoselta": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.regeneron.com/static-files/b9e581a3-65e6-4902-9afa-732fc8c6a92a",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_regn_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.regeneron.com/static-files/b9e581a3-65e6-4902-9afa-732fc8c6a92a",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_regn_2028-12-31-linvoselta": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.regeneron.com/static-files/b9e581a3-65e6-4902-9afa-732fc8c6a92a",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_regn_2028-12-31-odronextam": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.regeneron.com/static-files/b9e581a3-65e6-4902-9afa-732fc8c6a92a",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gild_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://s29.q4cdn.com/585078350/files/doc_financials/2026/q3/GILD-Q326-Prepared-Remarks-29-October-2026.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_incy_2027-03-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_incy_2029-12-31-latarcibar": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_eikn_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_eikn_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_eikn_2027-12-31-eik1003": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_eikn_2027-12-31-eik1004": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_eikn_2027-06-30-eik1005": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_eikn_2027-12-31-eik1005": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401358/0/en/eikon-therapeutics-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_coag_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399342/0/en/hemab-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_coag_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399342/0/en/hemab-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_coag_2027-02-28": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399342/0/en/hemab-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-06-30-datopotama": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-06-30-datopotama-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-06-30-datopotama-3": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-06-30-trastuzuma": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-06-30-sonesitatu": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-datopotama": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-datopotama-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-trastuzuma": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-camizestra": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-durvalumab": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-durvalumab-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-capivasert": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-puxitatug": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-saruparib": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-volrustomi": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-volrustomi-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-rilvegosto": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-surovatami": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-12-31-saruparib-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-06-30-laroprovst": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_azn_2027-06-30-acalabruti": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.astrazeneca.com/content/dam/az/PDF/2026/9mq3/9M-and-Q3-2026-results-clinical-trials-appendix.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2027-12-31-cagrilinti": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2027-06-30-ziltivekim": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2027-12-31-efruxiferm": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2027-12-31-amylin": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2027-12-31-ubt251": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2027-06-30-ubt251": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2027-12-31-cagrilinti-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2028-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvo_2028-06-30-denecimig": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gsk_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.gsk.com/media/nw0az1nj/q3-2026-results-announcement.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gsk_2027-06-30-gsk116": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.gsk.com/media/nw0az1nj/q3-2026-results-announcement.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gsk_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.gsk.com/media/nw0az1nj/q3-2026-results-announcement.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gsk_2027-12-31-velzatinib": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.gsk.com/media/nw0az1nj/q3-2026-results-announcement.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_gsk_2027-12-31-cabotegrav": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.gsk.com/media/nw0az1nj/q3-2026-results-announcement.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ucbjy_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ucbjy_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ucbjy_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ucbjy_2027-12-31-rozanolixi": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ucbjy_2029-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ucbjy_2028-12-31-galvokimig": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ucbjy_2029-12-31-galvokimig": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_ucbjy_2029-12-31-fenflurami": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rcus_2027-12-31-casdatifan": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://s202.q4cdn.com/599190870/files/doc_news/Arcus-Biosciences-Reports-Third-Quarter-2026-Financial-Results-and-Provides-a-Pipeline-Update-2026.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tcrx_2028-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001783328/000119312526456865/tcrx-ex99_1.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tyra_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/tyra-biosciences-reports-third-quarter-2026-financial-results-and-recent-highlights-302934907.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_tyra_2027-12-31-dabogratin": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/tyra-biosciences-reports-third-quarter-2026-financial-results-and-recent-highlights-302934907.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vktx_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.vikingtherapeutics.com/2026-10-28-Viking-Therapeutics-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Corporate-Update",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_uthr_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.unither.com/~/media/Files/U/United-Therapeutics-IR/documents/events-and-presentations/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vcre_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://storage.mfn.se/3098414f-1509-4dbc-ab9e-37cdd131c2fc/interim-report-q3-2026.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvct_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395165/0/en/nuvectis-pharma-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_jazz_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000056/a3q26earningsrelease.htm",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vtrs_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.viatris.com/static-files/c3d9702b-a84e-47fb-8c01-6a4ad4cafe90",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_vtrs_2027-06-30-mr130a01": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://investor.viatris.com/static-files/c3d9702b-a84e-47fb-8c01-6a4ad4cafe90",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_scnlf_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://scancell.co.uk/wp-content/uploads/2026/11/19_Nov_2026-Scancell-Provides-Corporate-and-Clinical-Update-FINAL.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rhhby_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://assets.roche.com/f/176343/x/214d9ddfff/irp261022.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rhhby_2027-12-31-zemocimig": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://assets.roche.com/f/176343/x/214d9ddfff/irp261022.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rhhby_2027-12-31-emicizumab": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://assets.roche.com/f/176343/x/214d9ddfff/irp261022.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rhhby_2027-12-31-satralizum": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://assets.roche.com/f/176343/x/214d9ddfff/irp261022.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rhhby_2027-12-31-afimkibart": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://assets.roche.com/f/176343/x/214d9ddfff/irp261022.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rhhby_2027-12-31-ranibizuma": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://assets.roche.com/f/176343/x/214d9ddfff/irp261022.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rhhby_2027-12-31-nivegaceto": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://assets.roche.com/f/176343/x/214d9ddfff/irp261022.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rhhby_2027-12-31-afimkibart-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://assets.roche.com/f/176343/x/214d9ddfff/irp261022.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rhhby_2027-12-31-tl1ap40": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://assets.roche.com/f/176343/x/214d9ddfff/irp261022.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_rhhby_2027-12-31-ocrelizuma": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://assets.roche.com/f/176343/x/214d9ddfff/irp261022.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2026-12-31-delocamten": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31-golcadomid": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31-milvexian": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31-admilparan": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31-xanomeline": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31-xanomeline-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31-mezigdomid": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31-deucravaci": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31-moponetug": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31-irafamdast": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2027-12-31-irafamdast-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31-pumitamig": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31-zolaripcab": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31-arlocabtag": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31-xanomeline": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31-xanomeline-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31-xanomeline-3": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31-golcadomid": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31-adagrasib": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31-adagrasib-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_bmy_2028-12-31-luspaterce": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.bms.com/assets/bms/us/en-us/pdf/investor-info/doc_presentations/2026/BMY-2026-Q3-Results-Investor-Presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_abbv_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://news.abbvie.com/2026-10-22-AbbVie-Announces-Topline-Results-from-the-Phase-3-INTREPID-Trial-Showing-Lutikizumab-Significantly-Improved-Signs-and-Symptoms-of-Disease-in-Patients-with-Hidradenitis-Suppurativa",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-06-30": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/news/media-releases/twice-yearly-leqvio-inclisiran-reduced-cardiovascular-event-risk-first-outcomes-study-sirna-therapy-ascvd",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/news/media-releases/twice-yearly-leqvio-inclisiran-reduced-cardiovascular-event-risk-first-outcomes-study-sirna-therapy-ascvd",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2026-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2026-12-31-remibrutin": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2026-12-31-remibrutin-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31-remibrutin": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2029-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2029-12-31-remibrutin": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2029-12-31-remibrutin-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-06-30-ianalumab": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31-ianalumab": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31-ianalumab-2": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2029-12-31-ianalumab": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31-abelacimab": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-06-30-zigakibart": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31-dii235": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31-ymi024": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31-iptacopan": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2028-12-31": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31-ofatumumab": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-06-30-stj331": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31-gia632": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2028-12-31-gia632": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2028-12-31-ddy391": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2029-12-31-ddy391": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2028-12-31-ltp001": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2029-12-31-inclisiran": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2027-12-31-delpacibar": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2029-12-31-delpacibar": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/q3-2026-investor-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2028-12-31-pluvicto": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2028-12-31-aaa817": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+  },
+  "readout_nvs_2028-12-31-pelabresib": {
+   "checked": "2026-11-26",
+   "verdict": "CONFIRMED",
+   "source": "https://www.novartis.com/sites/novartis_com/files/meet-novartis-management-2026-presentation.pdf",
+   "by": "red team 2026-11-26",
+   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
   }
  }
 }
