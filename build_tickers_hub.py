@@ -130,7 +130,7 @@ def main():
 
     html = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="index,follow,max-image-preview:large">
 <title>All Biotech Tickers We Track (A-Z): FDA Catalysts by Company | pdufa.bio</title>
-<meta name="description" content="Every biotech and pharma ticker tracked by pdufa.bio, A to Z ({len(tickers)} companies), with each company's next FDA catalyst and how many FDA decisions we have on record. Free, no login.">
+<meta name="description" content="Every biotech and pharma ticker pdufa.bio tracks, A to Z ({len(tickers)} companies), with each one's next FDA catalyst and how many FDA decisions we have on record.">
 <link rel="canonical" href="https://www.pdufa.bio/tickers"><meta name="theme-color" content="#060b14">
 <meta property="og:type" content="website"><meta property="og:title" content="All biotech tickers we track (A-Z)"><meta property="og:url" content="https://www.pdufa.bio/tickers">
 <style>*{{box-sizing:border-box}}

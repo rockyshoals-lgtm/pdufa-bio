@@ -211,8 +211,10 @@ def main():
                             m.get("action_source_url") or "", "" if f is None else ("yes" if f else "no")])
 
     title = f"FDA Advisory Committee Votes {span}: {n} Meetings and the FDA's Decisions | pdufa.bio"  # room for growth (max 100)
-    desc = (f"{n} FDA advisory committee votes since {years[0] if years else ''}, each question's yes, no and abstain "
-            f"count from the FDA's minutes, and whether the FDA's final action followed the vote.")
+    # 2026-11-27: the old wording ran to 161 characters at 54 meetings and the cut below left
+    # "...whether the FDA's final action followed the." on the live page. This one is 155 at 100 meetings.
+    desc = (f"{n} FDA advisory committee meetings since {years[0] if years else ''}: each question's yes, no and abstain "
+            f"count from the minutes, and whether the FDA's action followed the vote.")
     if len(desc) > 158:
         desc = desc[:158].rsplit(" ", 1)[0].rstrip(",;:") + "."
     qa = [("Does the FDA have to follow an advisory committee vote?",
