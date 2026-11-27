@@ -5845,6 +5845,13 @@
    "source": "https://clinicaltrials.gov/study/NCT05392114",
    "by": "manual",
    "note": "Retired 2026-11-27: NCT05392114 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_aard_2026-09-30": {
+   "checked": "2026-11-27",
+   "verdict": "STOPPED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/23/3387158/0/en/aardvark-therapeutics-reports-exploratory-data-from-the-terminated-hero-and-open-label-extension-trials.html",
+   "by": "manual",
+   "note": "Company release Oct 23 2026: HERO terminated early after 67 of 90 planned participants; exploratory data only. Q3 release Nov 13 2026 repeats it."
   }
  }
 }

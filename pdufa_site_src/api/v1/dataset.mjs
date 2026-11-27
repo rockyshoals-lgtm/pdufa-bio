@@ -7173,10 +7173,13 @@ export default [
    "guidance_text": "d patient-focused group of individuals at such a defining inflection point,&#x201d; said Mr. Li. &#x201c;The opportunity to help advance the company&#x2019;s lead asset, ARD-101, with topline Phase 3 data expected in the third quarter of 2026, and to expand the company&#x2019;s portfolio is energizi",
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001774857/000119312526047757/ck0001774857-ex99_2.htm",
    "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-26",
-    "reviewed": "2026-11-26",
-    "searched": "Company's newest release (SEC filing (8-K Ex. 99.1, Q3 2026 press release) 2026-11-13) read 2026-11-26: no results and no timing for this readout. Site row src (Feb 12, 2026 Ex. 99.2) guided 'topline Phase 3 data expected in the third quarter of 2026' from the Phase 3 HERO trial. Q3 release\u2026"
+    "state": "company_stopped",
+    "date": "2026-10-23",
+    "url": "https://www.globenewswire.com/news-release/2026/10/23/3387158/0/en/aardvark-therapeutics-reports-exploratory-data-from-the-terminated-hero-and-open-label-extension-trials.html",
+    "quote": "The HERO trial randomized 67 of the planned 90 participants and was terminated early.",
+    "note": "Exploratory data only, per the company: \u201call efficacy data are considered exploratory.\u201d",
+    "checked": "2026-11-27",
+    "reviewed": "2026-11-27"
    }
   },
   "dm": "2026-09"
