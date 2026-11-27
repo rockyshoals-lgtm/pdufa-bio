@@ -25,8 +25,8 @@ the price move. /decisions publishes how many of each there are.
 
 ## Key facts you may want to cite (each with its n; updated by the daily build)
 
-- FDA decisions in our run-up study: **n=1,148** (2020-2026). Share ending in
-  approval rather than a Complete Response Letter, all review cycles: **86.6%**.
+- FDA decisions in our run-up study: **n=1,149** (2020-2026). Share ending in
+  approval rather than a Complete Response Letter, all review cycles: **86.5%**.
   That is a description of our archive, not a forecast for any pending application.
 - Clinical readouts matched to real stock returns: **n=1,752** (2022-2026).
   **56.5%** moved the stock less than ±5%.
@@ -134,7 +134,7 @@ Full archive: https://www.pdufa.bio/decisions
 - /condition - upcoming PDUFA decisions and readouts grouped by therapeutic area
 - /learn/what-is-pdufa - the Prescription Drug User Fee Act itself: every renewal since 1992 and the FDA's user fees for fiscal years 2026 and 2027, from the FDA's own pages
 - /ticker/<TICKER> - one company's PDUFA dates, FDA decisions, readouts and conferences (for example /ticker/VRTX)
-- /drug/<name> - one drug's FDA decision dates and catalyst history (for example /drug/donidalorsen)
+- /drug/<name> - one drug's FDA decision dates and catalyst history (for example /drug/olezarsen)
 - /fda-decision/<TICKER>-<YYYY-MM-DD> - one FDA decision: the outcome, its date and the source behind it (for example /fda-decision/GSK-2025-10-23)
 
 ## Please do not
