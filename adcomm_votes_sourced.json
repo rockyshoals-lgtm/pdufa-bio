@@ -1776,6 +1776,167 @@
    "action_source_type": "sponsor",
    "action_quote": "September 20, 2025: 'Otsuka has received a Complete Response Letter (CRL) from the U.S. Food and Drug Administration (FDA)'",
    "public_note": "The only vote was on effectiveness. The action date is the day the sponsor announced the Complete Response Letter."
+  },
+  {
+   "meeting_date": "2026-04-30",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2026/03/09/2026-04497/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Etcamah (camizestrant)",
+   "application": "NDA 220359",
+   "sponsor": "AstraZeneca Pharmaceuticals LP",
+   "ticker": "AZN",
+   "indication": "With a CDK4/6 inhibitor (palbociclib, ribociclib, or abemaciclib) for adults with HR-positive, HER2-negative, locally advanced or metastatic breast cancer with an ESR1 mutation arising during first-line endocrine-based therapy, as detected by an FDA-approved test",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/april-30-2026-meeting-oncologic-drugs-advisory-committee-meeting-announcement-04302026",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Based on the results of SERENA-6, has clinically meaningful benefit for camizestrant been demonstrated for the treatment of patients with HR+/HER2- metastatic breast cancer with a tumor ESR1 mutation detected while on aromatase inhibitor and CDK4/6 inhibitor treatment, prior to radiographic progression?",
+     "yes": 3,
+     "no": 6,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/192813/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 3 No: 6 Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2026-09-04",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220359",
+   "action_source_type": "fda",
+   "action_quote": "09/04/2026 ORIG-1 Approval (Type 1 - New Molecular Entity, standard review), ETCAMAH (camizestrant) 75 mg tablet",
+   "public_note": "The FDA approved the application after the committee voted 6 to 3 that clinically meaningful benefit had not been shown."
+  },
+  {
+   "meeting_date": "2026-04-30",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2026/03/09/2026-04497/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Truqap (capivasertib) with abiraterone",
+   "application": "sNDA 218197/S-004",
+   "sponsor": "AstraZeneca Pharmaceuticals LP",
+   "ticker": "AZN",
+   "indication": "With abiraterone for adults with PTEN-deficient metastatic hormone-sensitive prostate cancer, as detected by an FDA-approved test",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/april-30-2026-meeting-oncologic-drugs-advisory-committee-meeting-announcement-04302026",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Based on the CAPItello-281 results, does the benefit of adding capivasertib to abiraterone and prednisone outweigh the risk for the proposed indication?",
+     "yes": 7,
+     "no": 1,
+     "abstain": 1,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/192813/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Vote Result: Yes: 7 No: 1 Abstain: 1",
+   "fda_action": "approved",
+   "fda_action_date": "2026-06-12",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218197",
+   "action_source_type": "fda",
+   "action_quote": "06/12/2026 SUPPL-4 Efficacy-New Indication (approval)"
+  },
+  {
+   "meeting_date": "2026-06-18",
+   "committee": "Vaccines and Related Biological Products Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2026/05/22/2026-10321/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "mFlusiva (Influenza Vaccine, mRNA)",
+   "application": "BLA STN 125869/0",
+   "sponsor": "ModernaTX, Inc.",
+   "ticker": "MRNA",
+   "indication": "Prevention of influenza caused by influenza A and B virus subtypes in people 50 years of age and older",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-18-2026-meeting-announcement",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Do the benefits of mFlusiva outweigh its risks for the prevention of influenza disease in adults 50 through 64 years of age?",
+     "yes": 9,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 2,
+     "text": "Do the benefits of mFlusiva outweigh its risks for the prevention of influenza disease in adults 65 years of age and older?",
+     "yes": 9,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/194955/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Q1 Yes: 9, No: 0, Abstain: 0; Q2 Yes: 9, No: 0, Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2026-08-05",
+   "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2026-biological-license-application-approvals",
+   "action_source_type": "fda",
+   "action_quote": "MFLUSIVA (Influenza Vaccine, mRNA), ModernaTX, Inc., 8/5/2026: active immunization to prevent influenza (A and B) in persons 50 years and older; 65+ indication under accelerated approval",
+   "public_note": "Separate benefit-risk votes for two age groups. The FDA approved the vaccine for people 50 and older, with the 65-and-older indication under accelerated approval."
+  },
+  {
+   "meeting_date": "2026-07-29",
+   "committee": "Cellular, Tissue, and Gene Therapies Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2026/06/29/2026-13096/cellular-tissue-and-gene-therapies-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "deramiocel (human allogeneic cardiosphere-derived cells)",
+   "application": "BLA 125842",
+   "sponsor": "Capricor, Inc.",
+   "ticker": "CAPR",
+   "indication": "Treatment of cardiomyopathy in Duchenne muscular dystrophy",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/cellular-tissue-and-gene-therapies-advisory-committee-july-29-2026-meeting-announcement-07292026",
+   "questions": [
+    {
+     "n": 3,
+     "text": "Does the available evidence provide substantial evidence of effectiveness of deramiocel for the treatment of cardiomyopathy in patients with DMD?",
+     "yes": 3,
+     "no": 9,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/197053/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 3, No: 9, Abstain: 0",
+   "fda_action": "crl",
+   "fda_action_date": "2026-11-20",
+   "action_source_url": "https://download.open.fda.gov/crl/CRL_BLA125842_20261120.pdf",
+   "action_source_type": "fda",
+   "action_quote": "COMPLETE RESPONSE November 20, 2026"
+  },
+  {
+   "meeting_date": "2026-07-30",
+   "committee": "Cellular, Tissue, and Gene Therapies Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2026/07/08/2026-13810/cellular-tissue-and-gene-therapies-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "Tudriqev (vusolimogene oderparepvec-wtpg; RP1) with nivolumab",
+   "application": "BLA 125827",
+   "sponsor": "Replimune, Inc.",
+   "ticker": "REPL",
+   "indication": "In combination with nivolumab for adults with advanced melanoma who previously received an anti-PD-1-containing regimen",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/cellular-tissue-and-gene-therapies-advisory-committee-july-30-2026-meeting-announcement-07302026",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Are the efficacy results from IGNYTE evaluable and clinically meaningful?",
+     "yes": 10,
+     "no": 3,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/197054/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 10, No: 3, Abstain: 0",
+   "fda_action": "approved",
+   "fda_action_date": "2026-08-06",
+   "action_source_url": "https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/2026-biological-license-application-approvals",
+   "action_source_type": "fda",
+   "action_quote": "TUDRIQEV (vusolimogene oderparepvec-wtpg), 125827/0, Replimune, Inc., 8/6/2026: with nivolumab for adults with unresectable advanced cutaneous melanoma that progressed on a PD-1 blocking antibody regimen",
+   "public_note": "The only vote asked whether the trial's efficacy results were evaluable and clinically meaningful. The approved indication is narrower in wording than proposed: unresectable advanced cutaneous melanoma that progressed on a PD-1 blocking antibody regimen."
   }
  ]
 }
