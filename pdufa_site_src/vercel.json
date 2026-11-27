@@ -2973,6 +2973,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/antisense-oligonucleotide",
+   "destination": "/drug/tonlamarsen",
+   "permanent": true
+  },
+  {
    "source": "/drug/ap03-phase",
    "destination": "/drug/ap03",
    "permanent": true
@@ -2985,6 +2990,11 @@
   {
    "source": "/drug/apomorphine-hydrochloride",
    "destination": "/drug/onapgo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/arlo-cel",
+   "destination": "/drug/arlocabtagene-autoleucel",
    "permanent": true
   },
   {
@@ -3143,8 +3153,8 @@
    "permanent": true
   },
   {
-   "source": "/drug/denecimig",
-   "destination": "/drug/mim8",
+   "source": "/drug/del-zota",
+   "destination": "/drug/delpacibart-zotadirsen",
    "permanent": true
   },
   {
@@ -3165,11 +3175,6 @@
   {
    "source": "/drug/desmopressin-acetate",
    "destination": "/drug/desmoda",
-   "permanent": true
-  },
-  {
-   "source": "/drug/deucravacitinib",
-   "destination": "/drug/sotyktu",
    "permanent": true
   },
   {
@@ -3203,6 +3208,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/dnl151",
+   "destination": "/drug/biib122",
+   "permanent": true
+  },
+  {
    "source": "/drug/doravirine-and-islatravir",
    "destination": "/drug/idvynso",
    "permanent": true
@@ -3215,11 +3225,6 @@
   {
    "source": "/drug/dupilumab",
    "destination": "/drug/dupixent",
-   "permanent": true
-  },
-  {
-   "source": "/drug/durvalumab",
-   "destination": "/drug/imfinzi",
    "permanent": true
   },
   {
@@ -3398,6 +3403,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/inhaled-treprostinil",
+   "destination": "/drug/tyvaso",
+   "permanent": true
+  },
+  {
    "source": "/drug/insulin-efsitora-alfa-gobe",
    "destination": "/drug/onswik",
    "permanent": true
@@ -3415,6 +3425,16 @@
   {
    "source": "/drug/interim-analysis",
    "destination": "/drug/protect-registry",
+   "permanent": true
+  },
+  {
+   "source": "/drug/intranasal-epinephrine-powder",
+   "destination": "/drug/ns002",
+   "permanent": true
+  },
+  {
+   "source": "/drug/iza-bren",
+   "destination": "/drug/izalontamab-brengitecan",
    "permanent": true
   },
   {
@@ -3443,11 +3463,6 @@
    "permanent": true
   },
   {
-   "source": "/drug/lenacapavir",
-   "destination": "/drug/yeztugo",
-   "permanent": true
-  },
-  {
    "source": "/drug/lifileucel-plus",
    "destination": "/drug/lifileucel",
    "permanent": true
@@ -3468,6 +3483,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/long-acting-anti-myostatin-antibody",
+   "destination": "/drug/ibio-600",
+   "permanent": true
+  },
+  {
    "source": "/drug/long-term-extension",
    "destination": "/drug/zanubrutinib",
    "permanent": true
@@ -3485,11 +3505,6 @@
   {
    "source": "/drug/lunsotogene-parvec-cwha",
    "destination": "/drug/otarmeni",
-   "permanent": true
-  },
-  {
-   "source": "/drug/luspatercept",
-   "destination": "/drug/reblozyl",
    "permanent": true
   },
   {
@@ -3520,6 +3535,11 @@
   {
    "source": "/drug/meloxicam-and-rizatriptan",
    "destination": "/drug/symbravo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/menin-inhibitor",
+   "destination": "/drug/bleximenib",
    "permanent": true
   },
   {
@@ -3568,6 +3588,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/myosin-activator",
+   "destination": "/drug/danicamtiv",
+   "permanent": true
+  },
+  {
    "source": "/drug/navepegritide",
    "destination": "/drug/transcon-cnp",
    "permanent": true
@@ -3575,6 +3600,11 @@
   {
    "source": "/drug/neldaleucel",
    "destination": "/drug/mt-601",
+   "permanent": true
+  },
+  {
+   "source": "/drug/norelgestromin-weekly-patch",
+   "destination": "/drug/mr-130a-01",
    "permanent": true
   },
   {
@@ -3618,6 +3648,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/once-yearly-intramuscular",
+   "destination": "/drug/lenacapavir",
+   "permanent": true
+  },
+  {
    "source": "/drug/opdivo-in",
    "destination": "/drug/opdivo",
    "permanent": true
@@ -3625,6 +3660,11 @@
   {
    "source": "/drug/opgx-best1-phase",
    "destination": "/drug/opgx-best1",
+   "permanent": true
+  },
+  {
+   "source": "/drug/oral-brexanolone",
+   "destination": "/drug/lpcn-1154",
    "permanent": true
   },
   {
@@ -3680,6 +3720,11 @@
   {
    "source": "/drug/pegvaliase-pqpz",
    "destination": "/drug/palynziq",
+   "permanent": true
+  },
+  {
+   "source": "/drug/peptide-plasmin-inhibitor",
+   "destination": "/drug/hmb-003",
    "permanent": true
   },
   {
@@ -3745,6 +3790,11 @@
   {
    "source": "/drug/proposed-golimumab-biosimilar",
    "destination": "/drug/avt05",
+   "permanent": true
+  },
+  {
+   "source": "/drug/puxi-sam",
+   "destination": "/drug/puxitatug-samrotecan",
    "permanent": true
   },
   {
@@ -3843,6 +3893,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/soquelitinib-alps",
+   "destination": "/drug/soquelitinib",
+   "permanent": true
+  },
+  {
    "source": "/drug/sotatercept-csrk",
    "destination": "/drug/winrevair",
    "permanent": true
@@ -3923,6 +3978,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/trispecific-antibody",
+   "destination": "/drug/ramantamig",
+   "permanent": true
+  },
+  {
    "source": "/drug/trofinetide",
    "destination": "/drug/daybue-stix",
    "permanent": true
@@ -3935,6 +3995,11 @@
   {
    "source": "/drug/ustekinumab-aekn",
    "destination": "/drug/selarsdi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/varicella-vaccine",
+   "destination": "/drug/gsk-116",
    "permanent": true
   },
   {
@@ -3980,6 +4045,11 @@
   {
    "source": "/drug/zilurgisertib",
    "destination": "/drug/atebrioz",
+   "permanent": true
+  },
+  {
+   "source": "/drug/zola-cel",
+   "destination": "/drug/zolaripcabtagene",
    "permanent": true
   },
   {
@@ -4128,6 +4198,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/nivisnebart",
+   "destination": "/ticker/ALEC",
+   "permanent": true
+  },
+  {
    "source": "/drug/pi-2620",
    "destination": "/ticker/LNTH",
    "permanent": true
@@ -4145,6 +4220,11 @@
   {
    "source": "/drug/rigosertib",
    "destination": "/ticker/TRAW",
+   "permanent": true
+  },
+  {
+   "source": "/drug/sabirnetug",
+   "destination": "/ticker/ABOS",
    "permanent": true
   },
   {

@@ -1,22 +1,22 @@
 {
- "n_events": 1147,
+ "n_events": 1148,
  "date_min": "2020-01-08",
  "date_max": "2026-11-24",
  "n_approval": 994,
- "n_crl": 153,
- "approval_rate": 86.7,
- "t120_coverage_n": 1113,
+ "n_crl": 154,
+ "approval_rate": 86.6,
+ "t120_coverage_n": 1114,
  "t120_coverage_pct": 97.0,
- "T-120_T-1_median_pct": 4.17,
- "T-120_T-1_mean_pct": 9.61,
- "T-120_T-7_median_pct": 4.35,
- "T-120_T-7_mean_pct": 9.48,
- "T-120_T-3_median_pct": 4.71,
- "T-120_T-3_mean_pct": 10.01,
+ "T-120_T-1_median_pct": 4.12,
+ "T-120_T-1_mean_pct": 9.6,
+ "T-120_T-7_median_pct": 4.34,
+ "T-120_T-7_mean_pct": 9.47,
+ "T-120_T-3_median_pct": 4.7,
+ "T-120_T-3_mean_pct": 10.0,
  "T-120_peak_median_pct": 17.08,
- "T-120_peak_mean_pct": 28.68,
- "runup_30d_median": 0.79,
- "runup_21d_median": 0.43,
+ "T-120_peak_mean_pct": 28.66,
+ "runup_30d_median": 0.81,
+ "runup_21d_median": 0.42,
  "runup_14d_median": 0.2,
  "runup_7d_median": 0.0,
  "runup_5d_median": 0.0,
@@ -24,12 +24,12 @@
  "post_1d_median": -0.04,
  "post_1d_median_approval": 0.1,
  "post_1d_median_crl": -2.17,
- "post_2d_median": 0.11,
+ "post_2d_median": 0.1,
  "post_2d_median_approval": 0.46,
- "post_2d_median_crl": -6.67,
- "post_5d_median": -0.01,
+ "post_2d_median_crl": -6.31,
+ "post_5d_median": -0.02,
  "post_5d_median_approval": 0.41,
- "post_5d_median_crl": -6.35,
+ "post_5d_median_crl": -6.28,
  "cohort_abs_move": {
   "Nano (<$50M)": {
    "median_abs_pct": 9.0909,
@@ -48,8 +48,8 @@
    "n": 163
   },
   "Large (>$10B)": {
-   "median_abs_pct": 0.9877,
-   "n": 663
+   "median_abs_pct": 0.9871,
+   "n": 664
   }
  },
  "by_year": {
@@ -99,13 +99,13 @@
    "approval_rate": 89.7
   },
   "2025": {
-   "n": 198,
-   "t120_median_pct": 1.42,
-   "t120_peak_median_pct": 17.36,
-   "t120_n": 196,
-   "runup_30d_median": 3.31,
-   "post_1d_median": 0.05,
-   "approval_rate": 89.4
+   "n": 199,
+   "t120_median_pct": 1.41,
+   "t120_peak_median_pct": 17.27,
+   "t120_n": 197,
+   "runup_30d_median": 3.12,
+   "post_1d_median": 0.04,
+   "approval_rate": 88.9
   },
   "2026": {
    "n": 170,

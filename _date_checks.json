@@ -142,11 +142,18 @@
    "note": "Same Nov 2, 2026 Q3 release states FDA 'has set a PDUFA target action date of May 30, 2027 for its supplemental NDA' for HCH. No newer action found."
   },
   "pdufa_prax_2026-12-27": {
-   "checked": "2026-11-17",
+   "checked": "2026-11-27",
    "verdict": "CONFIRMED",
    "source": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm",
-   "by": "red team 2026-11-17",
-   "note": "June 29, 2026 8-K contains 'setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026.' Praxis Q3 2026 release (8-K EX-99.1, Nov 9, 2026): 'The NDA for relutrigine for t"
+   "by": "auto re-check (recheck_upcoming_dates.py)",
+   "note": "source still carries the quoted date, and no SEC filing since names this drug, its code or its trial",
+   "prior": {
+    "checked": "2026-11-17",
+    "verdict": "CONFIRMED",
+    "source": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm",
+    "by": "red team 2026-11-17",
+    "note": "June 29, 2026 8-K contains 'setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026.' Praxis Q3 2026 release (8-K EX-99.1, Nov 9, 2026): 'The NDA for relutrigine for t"
+   }
   },
   "pdufa_prax_2027-01-29": {
    "checked": "2026-11-17",

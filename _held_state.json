@@ -1,19 +1,108 @@
 {
- "held_since": null,
- "consecutive_held_runs": 0,
+ "held_since": "2026-11-27T06:08:08Z",
+ "consecutive_held_runs": 1,
  "emailed_at": null,
- "leads": [],
+ "leads": [
+  {
+   "source": "drug_pages",
+   "row_id": "drug:abs-201-headline",
+   "key": "abs-201-headline|fda-press:fda-approves-first-treatment-limb-girdle-muscular-dystrophy-",
+   "text": "/drug/abs-201-headline fda-press:fda-approves-first-treatment-limb-girdle-muscular-dystrophy- 'headline' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:abs-201-headline",
+   "key": "abs-201-headline|fda-press:fda-approves-first-new-hormone-therapy-early-stage-breast-ca",
+   "text": "/drug/abs-201-headline fda-press:fda-approves-first-new-hormone-therapy-early-stage-breast-ca 'headline' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:abs-201-headline",
+   "key": "abs-201-headline|fda-press:fda-approves-first-drug-treat-neurological-symptoms-type-3-g",
+   "text": "/drug/abs-201-headline fda-press:fda-approves-first-drug-treat-neurological-symptoms-type-3-g 'headline' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:pm577a-global",
+   "key": "pm577a-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+   "text": "/drug/pm577a-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:ov329-global",
+   "key": "ov329-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+   "text": "/drug/ov329-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:budoprutug-global",
+   "key": "budoprutug-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+   "text": "/drug/budoprutug-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:escmid-global",
+   "key": "escmid-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+   "text": "/drug/escmid-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:abs-201-headline",
+   "key": "abs-201-headline|fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset-",
+   "text": "/drug/abs-201-headline fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset- 'headline' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:abs-201-headline",
+   "key": "abs-201-headline|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
+   "text": "/drug/abs-201-headline fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke- 'headline' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:abs-201-headline",
+   "key": "abs-201-headline|fda-oncology-notifications",
+   "text": "/drug/abs-201-headline fda-oncology-notifications 'headline' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:phenylephrine-hydrochloride",
+   "key": "phenylephrine-hydrochloride|openfda:20261116",
+   "text": "/drug/phenylephrine-hydrochloride openfda:20261116 AP 20261116 (ORIG-1, class TYPE 5)",
+   "first_seen": "2026-11-27T06:08:08Z"
+  }
+ ],
  "issued_keys": [
+  "drug_pages|abs-201-headline|fda-oncology-notifications",
+  "drug_pages|abs-201-headline|fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset-",
+  "drug_pages|abs-201-headline|fda-press:fda-approves-first-drug-treat-neurological-symptoms-type-3-g",
+  "drug_pages|abs-201-headline|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
+  "drug_pages|abs-201-headline|fda-press:fda-approves-first-new-hormone-therapy-early-stage-breast-ca",
+  "drug_pages|abs-201-headline|fda-press:fda-approves-first-treatment-limb-girdle-muscular-dystrophy-",
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
   "drug_pages|bezuclastinib-summit|fda-oncology-notifications",
   "drug_pages|bezuclastinib|fda-oncology-notifications",
+  "drug_pages|budoprutug-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
   "drug_pages|enflonsia|openfda:20261014",
+  "drug_pages|escmid-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
   "drug_pages|european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
   "drug_pages|european-respiratory|sponsor:INO:2026-10-30",
   "drug_pages|neladalkib|fda-oncology-notifications",
   "drug_pages|neladalkib|sponsor:GSK:2026-11-17",
+  "drug_pages|ov329-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
+  "drug_pages|phenylephrine-hydrochloride|openfda:20261116",
+  "drug_pages|pm577a-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
   "drug_pages|rap-219-long-acting|fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset-",
   "drug_pages|rap-219-long-acting|fda-press:fda-approves-first-treatment-limb-girdle-muscular-dystrophy-",
   "drug_pages|remibrutinib|openfda:20261006",

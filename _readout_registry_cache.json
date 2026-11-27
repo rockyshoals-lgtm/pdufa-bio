@@ -1,6 +1,6 @@
 {
  "_note": "ClinicalTrials.gov registry facts for the trial records that forward Estimated readout rows link to: overall status, primary completion date, conditions and interventions, exactly as the registry gives them. Read by build_readout_forward.py, which renders the estimated table on /readouts and refreshes these entries from the registry API on each run (a failed fetch keeps the last good entry and its checked date). Never used to set an outcome.",
- "checked": "2026-11-26",
+ "checked": "2026-11-27",
  "trials": {
   "NCT02343042": {
    "status": "RECRUITING",
@@ -14,7 +14,7 @@
     "Lenalidomide",
     "Pomalidomide"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT02736656": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -25,7 +25,7 @@
    "interventions": [
     "SPN-812"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT03152318": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -40,7 +40,7 @@
     "Cyclophosphamide",
     "Stereotactic biopsy"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT03368742": {
    "status": "COMPLETED",
@@ -64,7 +64,7 @@
     "vinblastine",
     "dacarbazine"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT03449108": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -80,7 +80,7 @@
     "Autologous Tumor Infiltrating Lymphocytes LN-145-S1",
     "Cyclophosphamide"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT03474770": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -91,7 +91,7 @@
    "interventions": [
     "BIS-001ER"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT03564340": {
    "status": "RECRUITING",
@@ -107,7 +107,7 @@
     "Sarilumab",
     "Tocilizumab"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT03589339": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -123,7 +123,7 @@
     "Nivolumab",
     "Pembrolizumab"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT03604198": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -134,7 +134,7 @@
    "interventions": [
     "relacorilant"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT03688178": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -148,7 +148,7 @@
     "Varlilumab",
     "Td"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT03897127": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -161,7 +161,7 @@
     "Daunorubicin",
     "CPX-351"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT03899987": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -177,7 +177,7 @@
     "Recombinant Interferon Alfa-2b",
     "Rintatolimod"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT04057898": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -201,7 +201,7 @@
     "Zanubrutinib",
     "Tislelizumab"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT04198766": {
    "status": "RECRUITING",
@@ -217,7 +217,7 @@
     "pembrolizumab 400 mg",
     "Carboplatin AUC-5"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT04442022": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -231,7 +231,7 @@
     "Selinexor (combination therapy)",
     "Placebo matching for Selinexor (combination therapy)"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT04483440": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -242,7 +242,7 @@
    "interventions": [
     "4D-110"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT04529772": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -268,7 +268,7 @@
     "APL-101",
     "Osimertinib"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT04791839": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -283,7 +283,7 @@
     "Domvanalimab",
     "Etrumadenant"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT04798235": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -316,7 +316,7 @@
    "interventions": [
     "Resmetirom"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT04957485": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -329,7 +329,7 @@
     "Smallpox and Mpox Vaccine",
     "Placebo"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05025605": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -345,7 +345,7 @@
     "BXCL501 120 Micrograms",
     "BXCL501 60 Micrograms"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05077800": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -359,7 +359,7 @@
     "Losartan",
     "9-ING-41"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05081609": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -388,7 +388,7 @@
    "interventions": [
     "bevacizumab"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05130827": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -399,7 +399,7 @@
    "interventions": [
     "Plinabulin"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05134441": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -424,7 +424,7 @@
    "interventions": [
     "IPH5301 ALONE OR IN COMBINATION WITH CHEMOTHERAPY AND TRASTUZUMAB"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05185843": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -435,7 +435,7 @@
    "interventions": [
     "Olezarsen"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05186974": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -449,7 +449,7 @@
     "Carboplatin",
     "Cisplatin"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05205330": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -463,7 +463,7 @@
     "CR6086",
     "AGEN2034"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05208944": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -475,7 +475,7 @@
     "6-Thio-2'-Deoxyguanosine",
     "Cemiplimab"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05275777": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -490,7 +490,7 @@
     "Cyclophosphamide",
     "Paclitaxel"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05349890": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -503,7 +503,7 @@
     "CDX-1140",
     "Pembrolizumab"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05383196": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -517,7 +517,7 @@
     "Onvansertib",
     "Paclitaxel"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05392114": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -528,7 +528,7 @@
    "interventions": [
     "Donidalorsen"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05464784": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -542,7 +542,7 @@
     "MN-001",
     "MN-001 placebo"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05500222": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -566,7 +566,7 @@
    "interventions": [
     "Mirikizumab"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05531656": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -591,7 +591,7 @@
    "interventions": [
     "LB1908"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05548127": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -603,7 +603,7 @@
     "ARV-471",
     "Abemaciclib"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05556512": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -616,7 +616,7 @@
     "Tirzepatide",
     "Placebo"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05607004": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -642,7 +642,7 @@
     "SD-101",
     "anti-PD-1"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05608044": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -655,7 +655,7 @@
     "Balstilimab",
     "Standard of Care"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05640193": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -666,7 +666,7 @@
    "interventions": [
     "Lifileucel (LN-144)"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05649748": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -678,7 +678,7 @@
     "Treprostinil Palmitil",
     "Placebo"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05651022": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -703,7 +703,7 @@
    "interventions": [
     "Olezarsen"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05707377": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -715,7 +715,7 @@
     "Zanubrutinib",
     "Tacrolimus"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05764954": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -726,7 +726,7 @@
    "interventions": [
     "NovoTTF-200T System"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05879744": {
    "status": "TERMINATED",
@@ -750,7 +750,7 @@
    "interventions": [
     "BEAM-201"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05907954": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -761,7 +761,7 @@
    "interventions": [
     "Darovasertib"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05908084": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -773,7 +773,7 @@
     "Acellular Tissue Engineered Vessel (ATEV)",
     "AVF"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05909397": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -787,7 +787,7 @@
     "Letrozole",
     "Palbociclib"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05925608": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -799,7 +799,7 @@
     "CardiALLO™ Human Allogenic Culture-expanded Bone marrow-derived Mesenchymal Stem Cells (hMSCs)",
     "Diagnostic Catheterization"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05933200": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -811,7 +811,7 @@
     "Triheptanoin",
     "MCT Oil"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05949593": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -823,7 +823,7 @@
     "Tinlarebant",
     "Placebo"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05971251": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -834,7 +834,7 @@
    "interventions": [
     "Loncastuximab Tesirine and Acalabrutinib"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT05987332": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -859,7 +859,7 @@
    "interventions": [
     "Descartes-08"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06106308": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -875,7 +875,7 @@
     "Bevacizumab",
     "FOLFOX"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06109181": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -899,7 +899,7 @@
    "interventions": [
     "Tradipitant"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06152172": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -914,7 +914,7 @@
     "Cyclophosphamide",
     "Fludarabine"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06188702": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -926,7 +926,7 @@
     "S095035",
     "TNG462"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06263231": {
    "status": "RECRUITING",
@@ -940,7 +940,7 @@
     "Trabectedin",
     "Pazopanib"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06265220": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -968,7 +968,7 @@
     "Seralutinib",
     "Gereic Dry Powder Inhaler"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06325566": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -996,7 +996,7 @@
     "5-Fluorouracil",
     "Oxaliplatin"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06329401": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1023,7 +1023,7 @@
    "interventions": [
     "NUV-1511"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06384976": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1038,7 +1038,7 @@
     "Standard lymphodepletion regimen",
     "Anti-CD20 mAB"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06395948": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1061,7 +1061,7 @@
    "interventions": [
     "Molgramostim"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06475495": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1073,7 +1073,7 @@
     "KYV101",
     "Rituximab (active comparator)"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06481891": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1101,7 +1101,7 @@
     "rilzabrutinib",
     "placebo"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06517758": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1127,7 +1127,7 @@
     "Abiraterone",
     "Docetaxel"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06531941": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1139,7 +1139,7 @@
     "400 µg of MBX 2109 once-weekly by subcutaneous injection",
     "200-1600 µg of MBX 2109 once-weekly by subcutaneous injection"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06548360": {
    "status": "RECRUITING",
@@ -1151,7 +1151,7 @@
     "Ruxolitinib Cream",
     "Vehicle Cream"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06585774": {
    "status": "RECRUITING",
@@ -1164,7 +1164,7 @@
     "Placebo",
     "Corticosteroids"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06602193": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1187,7 +1187,7 @@
    "interventions": [
     "setrusumab"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06672055": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1238,7 +1238,7 @@
     "buntanetap/posiphen",
     "Placebo"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06726265": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1277,7 +1277,7 @@
    "interventions": [
     "Setmelanotide"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06840392": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1338,7 +1338,7 @@
     "Felzartamab",
     "Placebo"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06966479": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1375,7 +1375,7 @@
    "interventions": [
     "BHV-1300"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT06983028": {
    "status": "RECRUITING",
@@ -1388,7 +1388,7 @@
    "interventions": [
     "Atacicept"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT07023731": {
    "status": "COMPLETED",
@@ -1424,7 +1424,7 @@
    "interventions": [
     "Mitapivat"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT07071623": {
    "status": "RECRUITING",
@@ -1439,7 +1439,7 @@
     "Placebo matched to MK-8527",
     "Placebo matched to FTC/TDF"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT07086755": {
    "status": "RECRUITING",
@@ -1453,7 +1453,7 @@
     "Vadadustat 1200mg",
     "Placebo"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT07104500": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1464,7 +1464,7 @@
    "interventions": [
     "VK2735"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT07142811": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1488,7 +1488,7 @@
    "interventions": [
     "rilzabrutinib"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT07280377": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1516,7 +1516,7 @@
     "TRX-100",
     "Standard of Care (SOC)"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   },
   "NCT07562087": {
    "status": "ACTIVE_NOT_RECRUITING",
@@ -1542,7 +1542,7 @@
     "ABP 938 8 mg",
     "Aflibercept (US) 8 mg"
    ],
-   "checked": "2026-11-26"
+   "checked": "2026-11-27"
   }
  }
 }
