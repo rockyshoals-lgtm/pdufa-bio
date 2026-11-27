@@ -2,7 +2,7 @@ import ARMED from '../_watch_armed.mjs';
 import { kvReady, kv } from '../_stripe.mjs';
 import { READ_LUA, WRITE_LUA } from '../_live_read.mjs';
 import { check, etIso, sentence, sourceLabel, reconcile, corrections, correctionHeadline, itemText, parseFeed, exhibitHeadline, exhibitDate, headlineKind, pageDay,
-  readState, readControl, recheckSource, RECHECK_AT }
+  readState, readControl, compareSource, sourcePrint, RECHECK_AT }
   from '../_live_check.mjs';
 
 /** The every-minute news watch (vercel.json cron "* * * * *"). David, 2026-11-27: "Ensure its down to minutes".
@@ -63,12 +63,14 @@ async function getStatus(url, { ua = UA_SITE, ms = 6000, limit = 1500000, until 
   } catch { return null; } finally { clearTimeout(timer); }
 }
 
-/** The right-after check (David, 2026-11-27, "Right after"): each post's source is read again in the minute after it
- *  posts, then 30 minutes and 3 hours after, and the post is paused (hidden until the full review confirms it) when the
- *  source no longer says it, is gone or moved, or (a sponsor's page) cannot be read again within four minutes of the
- *  first try. An SEC file never changes once filed, so only its removal or what it says pauses a post: the SEC's rate
- *  limit or a slow minute never does (red team 14). Re-reads that cannot get through are tried each minute for ten
- *  minutes and then skipped. At most two SEC files and six posts in all are read per run. */
+/** The right-after check (David, 2026-11-27, "Right after"): each post's source is read again about a minute after it
+ *  posts, then 30 minutes and 3 hours after. The post is paused (hidden until the full review confirms it) when the
+ *  source is gone or moved, now carries a notice of a correction or hidden text it did not carry when it posted, or its
+ *  headline or opening changed and no longer says what the post says (red team 15: never for words it already held).
+ *  A sponsor's page that cannot be read as the release is paused after four minutes of tries on the first re-read and
+ *  ten on a later one. An SEC file never changes once filed, so its being unreadable (the SEC's rate limit, a slow
+ *  minute) never pauses a post: after ten tries that re-read is skipped. At most two SEC files and six posts in all are
+ *  read per run. */
 async function recheckPosts(pub, ua, until, nowMs) {
   const out = {};                                               // id -> fields to set, applied only to a post still up
   const pause = (id, why) => { out[id] = { status: 'paused', paused_at: etIso(nowMs),
@@ -86,7 +88,8 @@ async function recheckPosts(pub, ua, until, nowMs) {
       const fail = why => {
         const tries = (Number(p.tries) || 0) + 1, first = Number(p.first_try) > 0 ? Number(p.first_try) : nowMs;
         if (!edgar && n === 0 && nowMs - first >= 4 * 60000) return pause(id, why);
-        if ((edgar || n > 0) && tries >= 10) { out[id] = { checks: n + 1, tries: 0, first_try: 0 }; return; }
+        if (!edgar && n > 0 && tries >= 10) return pause(id, why);
+        if (edgar && tries >= 10) { out[id] = { checks: n + 1, tries: 0, first_try: 0 }; return; }
         out[id] = { tries, first_try: first };
       };
       if (!row) return pause(id, 'the drug is no longer on the list this check reads');
@@ -100,9 +103,10 @@ async function recheckPosts(pub, ua, until, nowMs) {
       if (got.status < 200 || got.status >= 300) return fail(`the source answered ${got.status}`);
       if (host(got.url) !== host(src.url) || !/^https:/i.test(got.url)) return pause(id, 'the source now sends readers to another site');
       const cos = [row.company, ...(row.aliases || [])].filter(Boolean);
-      const r = recheckSource(got.txt, p, row, cos);
+      const r = compareSource(got.txt, p, row, edgar ? ARMED.rows.filter(x => x.cik && Number(x.cik) === Number(row.cik)).flatMap(x => [x.company, ...(x.aliases || [])]) : cos);
+      if (r.unread) return fail('the source no longer reads as the release');
       if (!r.ok) return pause(id, r.why);
-      out[id] = { checks: n + 1, tries: 0, first_try: 0, rechecked_at: etIso(nowMs) };
+      out[id] = { checks: n + 1, tries: 0, first_try: 0, rechecked_at: etIso(nowMs), ...(r.print ? { source_print: r.print } : {}) };
     } catch { /* one post's re-read never stops the run; it is tried again next minute */ }
   }));
   return out;
@@ -155,14 +159,16 @@ async function edgarItems(ua, beat, seen, until, listed, nowMs) {
     seen[`edgar|${f.acc}`] = { form: f.form, cik: f.cik, atMs: f.atMs, first: f.first, url: ex ? `${base}/${ex}` : base,
                                title: ex ? exhibitHeadline(doc, cos) : '', exDay: ex ? exhibitDate(doc) : '',
                                // what a correction is read from: the text above the dateline, struck-out text included
-                               ctitle: ex ? correctionHeadline(doc) : text, ...(ex ? {} : { cbody: true }) };
+                               ctitle: ex ? correctionHeadline(doc) : text, ...(ex ? {} : { cbody: true }),
+                               // the exhibit's print, for the right-after check
+                               ...(ex && sourcePrint(doc, 'edgar', '', cos) ? { print: sourcePrint(doc, 'edgar', '', cos) } : {}) };
   }));
   beat.edgar = read ? 'read' : 'unreadable';
   return Object.entries(seen).filter(([k, v]) => k.startsWith('edgar|') && plain(v)
       && ((typeof v.title === 'string' && v.title) || (typeof v.ctitle === 'string' && v.ctitle) || /\/A$/i.test(String(v.form || ''))))
     .map(([k, v]) => ({ channel: 'edgar', form: v.form, cik: v.cik, title: typeof v.title === 'string' ? v.title : '',
                         ctitle: typeof v.ctitle === 'string' ? v.ctitle : '', exDay: v.exDay, url: v.url, atMs: v.atMs, key: k,
-                        firstMs: Number(v.first) || 0, cbody: v.cbody === true }));
+                        firstMs: Number(v.first) || 0, cbody: v.cbody === true, print: plain(v.print) ? v.print : null }));
 }
 
 /** Sponsor feeds. A feed is first read as a baseline: nothing in it then is ever posted, so an old release the feed
@@ -196,8 +202,10 @@ async function rssItems(beat, until, rss, nowMs) {
     const host = u => { try { return new URL(u).hostname.toLowerCase(); } catch { return ''; } };
     if (host(page.url) !== host(i.url) || !/^https:/i.test(page.url)) return;   // redirected elsewhere: no dateline
     rss.urls[i.url].d = pageDay(page.txt, i.title);
+    const pr = rss.urls[i.url].d ? sourcePrint(page.txt, 'rss', i.title) : null;   // for the right-after check
+    if (pr) rss.urls[i.url].p = pr;
   }));
-  for (const i of items) i.exDay = rss.urls[i.url].d || '';
+  for (const i of items) { i.exDay = rss.urls[i.url].d || ''; i.print = plain(rss.urls[i.url].p) ? rss.urls[i.url].p : null; }
   return items;
 }
 
@@ -321,6 +329,7 @@ export default async (req, res) => {
       id: c.row.id, ticker: c.row.t, kind: c.kind, text: sentence(item, c.row),
       source: { label: sourceLabel(item), url: item.url, published_at: etIso(item.atMs), channel: item.channel },
       posted_at: etIso(Date.now()), run_ms: nowMs, headline: item.title, minutes_after_source: Math.max(0, Math.floor((Date.now() - item.atMs) / 60000)),
+      ...(item.print ? { source_print: item.print } : {}),
       page: c.row.url, status: 'posted', check: `headline "${item.title.slice(0, 160)}" names ${c.term} and an FDA ${c.kind === 'approval' ? 'approval' : 'complete response letter'}`,
     };
     // A release by the sponsor in this same read that contradicts or retracts it, first seen in the last day (so one
