@@ -36,6 +36,9 @@ PLANTED = [  # (raw slate/dataset name, event href, what the card must show)
     ("MR-107A-02 (fast-acting meloxicam)", "", "MR-107A-02 (fast-acting meloxicam)"),
     ("mRNA-1283", "", "mRNA-1283"),
     ("Imsidolimab", "", "Imsidolimab"),
+    # a hand-verified label's name part is shortened too ("Anito-cel (anitocabtagene autoleucel): ...")
+    ("Anito-cel (anitocabtagene autoleucel)", "/pdufa/GILD-anito-cel", "Anito-cel"),
+    ("Relacorilant - (GRACE resubmission)", "/pdufa/CORT-relacorilant", "Relacorilant"),
 ]
 QUALIFIED = [  # the sponsor also has a decided card or a second card: the trial tag stays
     ("Bezuclastinib (CGT9486) - (SUMMIT)", "Bezuclastinib (SUMMIT)"),
