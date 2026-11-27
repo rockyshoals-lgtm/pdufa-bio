@@ -265,6 +265,9 @@ def main():
         cells = [text_of(x) for x in re.findall(r"<td[^>]*>(.*?)</td>", r, re.S)]
         who = f"{c['t']} · {c['name']}" if c["name"] else c["t"]
         want = [c["ts"], f"{who} {c['id']}".strip(), NAMES[c["field"]], cell(c, "old"), cell(c, "new")]
+        # 2026-11-27: HTML shows any run of spaces as one, and text_of() reads the cell that way; a ledger name
+        # with a doubled or trailing space (LTRN "...with cisplatin ") is the same text, not a mismatch.
+        want = [re.sub(r"\s+", " ", str(w)).strip() for w in want]
         hrefs = re.findall(r'href="([^"]*)"', r)
         if cells != want or hrefs:   # 2026-11-27: the repository is to go private; the table links nothing
             fails.append(f"/changes: a table row reads {cells[:4]}, the ledger's entry is {want[:4]}")
