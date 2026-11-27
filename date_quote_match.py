@@ -102,8 +102,9 @@ def states_half(q, d):
         rf"\b{ORD_H[n]}[- ]half(?: of)?(?: (?:calendar|fiscal) year)?(?: of)?,? (?:of )?{y}\b",
         rf"\b{ORD_H[n]}[- ]half\b[^.;]{{0,40}}\b{y}\b",
         rf"\bin {y}:[^.;]{{0,240}}\b{ORD_H[n]}[- ]half\b",
-        rf"\bh{n}[ -]?(?:of )?(?:{y}|'?{yy})\b",
-        rf"\b{n}h[ -]?(?:{y}|'?{yy})\b",
+        # 2026-11-27: "TETON-PPF data expected 2H/27" (United Therapeutics Q3 2026 investor presentation)
+        rf"\bh{n}[ /-]?(?:of )?(?:{y}|'?{yy})\b",
+        rf"\b{n}h[ /-]?(?:{y}|'?{yy})\b",
     ]
     if n == 1:
         pats.append(rf"\bmid[- ]?(?:year[- ])?{y}\b|\bmid[- ]?year,? {y}\b")
