@@ -929,3 +929,24 @@ test('the right-after check, red team 19: a nav left open, a headline only in fu
     assert.equal(cmp(base, base.replace('<p>About', `<p>${x}</p><p>About`)).ok, false, x);
   assert.deepEqual(cmp(base, base.replace('<p>About', '<p>Lorundrostat is not approved in Europe.</p><p>About')), { ok: true });
 });
+
+test('the right-after check, red team 20: screen-reader labels, responsive copies, layout tricks', () => {
+  const r = ARMED.rows[0];
+  const H = 'Mineralys Therapeutics Announces FDA Approval of Lorundrostat for Hypertension';
+  const OK = 'RADNOR, Pa., Dec. 1, 2026 -- Mineralys Therapeutics today announced that the FDA has approved lorundrostat for adults with hypertension.';
+  const URL0 = 'https://ir.mineralys.com/news/1';
+  const src = { channel: 'rss', url: URL0, published_at: '2026-12-01T16:05:00-05:00' };
+  const pr = page => sourcePrint(page, 'rss', H, [r.company], 'approval', r.terms, URL0);
+  const cmp = (base, now) => compareSource(now, { id: r.id, kind: 'approval', headline: H, source: src, source_print: pr(base) }, r, [r.company], URL0);
+  const base = `<h1>${H}</h1><p>${OK}</p><p>About Mineralys</p>`;
+  for (const alert of ['<span class="sr-only">Notice:</span> This press release was issued in error.', '<span class="visually-hidden">Alert</span> Editor\'s note: the FDA has not acted.'])
+    assert.equal(cmp(base, base.replace(`<h1>`, `<div class="alert">${alert}</div><h1>`)).ok, false, alert);
+  for (const page of [`<h1 class="hidden md:block">${H}</h1><h1 class="block md:hidden">${H}</h1><p>${OK}</p>`,
+    `<div style="font-size:0"><h1 style="font-size:32px">${H}</h1></div><p>${OK}</p>`, `<body class="invisible"><h1>${H}</h1><p>${OK}</p></body>`,
+    `<h1 class="hidden-xs visible-md">${H}</h1><p>${OK}</p>`]) {
+    assert.ok(pr(page), page); assert.deepEqual(cmp(page, page), { ok: true }, page);
+  }
+  for (const x of ['Mineralys filed an amended registration statement.', 'Apnimed Files Amended Proxy Statement', 'Mineralys removed its paywall from the news release archive.',
+    'Lorundrostat has not been approved in any jurisdiction for other uses.', 'It is not approved in children.'])
+    assert.deepEqual(cmp(base, base.replace('<p>About', `<p>${x}</p><p>About`)), { ok: true }, x);
+});

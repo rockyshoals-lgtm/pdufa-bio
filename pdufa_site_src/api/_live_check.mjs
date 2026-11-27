@@ -822,13 +822,19 @@ export function parseFeed(xml) {
 //     the other outcome (red team 17: words are read only in what changed, so the lists can be broad).
 // A page that no longer reads as a release (no dateline) pauses at once when new text on it reads as a correction;
 // otherwise it is a failed read, tried again.
-const REL = String.raw`(?:press |news )?(?:release|statement|announcement)`;
-const NEW_CORR = new RegExp(String.raw`\b(?:correct(?:ion|ions|ed|s|ing)\b|amend(?:s|ed|ing)? (?:\w+ ){0,4}${REL}|amended ${REL}|${REL} (?:was |has been |is |is being )?(?:amended|revised|removed|withdrawn|retracted|replaced|updated to)|revised ${REL}|retract\w*|withdr[ae]w\w* (?:\w+ ){0,4}${REL}|(?:is|was|are|were|has been|have been|hereby) (?:\w+ ){0,2}withdrawn\b|removed (?:\w+ ){0,4}${REL}|in error|errat(?:um|a)\b|contained an error|should have (?:read|stated|said)|updated to reflect|issued prematurely|prematurely (?:issued|released)|not be relied (?:up)?on(?! as\b)|incorrect\w*|inaccura\w*|erroneous\w*|misstat\w*|mistaken\w*|disregard\w*|supersed\w*|rescind\w*|replac(?:es|ed|ing) (?:\w+ ){0,4}${REL}|no longer (?:accurate|valid|correct|stands)|editor'?s note|clarif\w*|important notice)\b`, 'i');
-const NEW_PENDING = /\b(?:has not (?:yet )?(?:acted|taken action|approved|granted|decided)|did not (?:grant|approve)|not (?:yet )?(?:been )?(?:approved|granted)(?!\s+(?:for use\b|outside\b|in (?:Europe|the EU|the European|Japan|China|Canada|the UK|the United Kingdom|Australia|Switzerland|any other|other countries|other markets|other regions)\b))|not (?:yet )?received (?:FDA |US )?approval|has yet to (?:act|approve|take action|decide)|(?:remains|still|continues to be|is) under (?:FDA |regulatory |agency )?review|tentative(?:ly)? approv\w*|(?:extend\w*|delay\w*|postpon\w*|mov(?:ed|es|ing)) (?:the |its )?(?:PDUFA |goal |target |review |action )+(?:goal |action )?date|(?:PDUFA|goal|action|review) (?:goal |action )?date (?:has been |was |is )?(?:extended|delayed|postponed|moved|missed)|delay\w* (?:its |the |a )?(?:approval|decision|action)|no (?:FDA |US )?(?:decision|action|approval) (?:has been|was|yet))\b/i;
+const REL = String.raw`(?:(?:press |news )?(?:release|announcement)|(?:press|news|this|the|our|its|earlier|previous|prior|original) statement)`;
+const NEW_CORR = new RegExp(String.raw`\b(?:correct(?:ion|ions|ed|s|ing)\b|amend(?:s|ed|ing)? (?:\w+ ){0,3}${REL}|amended ${REL}|${REL} (?:was |has been |is |is being )?(?:amended|revised|removed|withdrawn|retracted|replaced|updated to)|revised ${REL}|retract\w*|withdr[ae]w\w* (?:\w+ ){0,3}${REL}|(?:is|was|are|were|has been|have been|hereby) (?:\w+ ){0,2}withdrawn\b|removed (?:\w+ ){0,3}${REL}|in error|errat(?:um|a)\b|contained an error|should have (?:read|stated|said)|updated to reflect|issued prematurely|prematurely (?:issued|released)|not be relied (?:up)?on(?! as\b)|incorrect\w*|inaccura\w*|erroneous\w*|misstat\w*|mistaken\w*|disregard\w*|supersed\w*|rescind\w*|replac(?:es|ed|ing) (?:\w+ ){0,3}${REL}|no longer (?:accurate|valid|correct|stands)|editor'?s note|clarif\w*|important notice)\b`, 'i');
+const NEW_PENDING = /\b(?:has not (?:yet )?(?:acted|taken action|approved|granted|decided)|did not (?:grant|approve)|not (?:yet )?(?:been )?(?:approved|granted)(?!\s+(?:for use\b|outside\b|in (?:Europe|the EU|the European|Japan|China|Canada|the UK|the United Kingdom|Australia|Switzerland|any (?:other|jurisdiction|country|market)|other countries|other markets|other regions|children|pediatric|adolescents|patients (?:under|younger|aged))\b))|not (?:yet )?received (?:FDA |US )?approval|has yet to (?:act|approve|take action|decide)|(?:remains|still|continues to be|is) under (?:FDA |regulatory |agency )?review|tentative(?:ly)? approv\w*|(?:extend\w*|delay\w*|postpon\w*|mov(?:ed|es|ing)) (?:the |its )?(?:PDUFA |goal |target |review |action )+(?:goal |action )?date|(?:PDUFA|goal|action|review) (?:goal |action )?date (?:has been |was |is )?(?:extended|delayed|postponed|moved|missed)|delay\w* (?:its |the |a )?(?:approval|decision|action)|no (?:FDA |US )?(?:decision|action|approval) (?:has been|was|yet))\b/i;
 const LABEL = /^\W*(?:updated?|revised|corrected|correction|correcting and replacing|retraction|retracted|withdrawn|important notice|notice|editor'?s note|erratum|clarification)\W*$/i;
 const OPP_FOR_APPROVAL = /\b(?:complete response|CRL|not approvable|refus\w* to file|declin\w* to approve)\b/i;
 const OPP_FOR_CRL = /\b(?:FDA|agency)\b[^.;]{0,60}\b(?:approved|granted (?:full |accelerated |traditional )?approval)\b|\bapproved by the (?:US )?FDA\b/i;
-const HIDE_CLASS = /\bclass\s*=\s*["'][^"']*(?<![\w-])(?:d-none|hidden|hide|sr-only|visually-hidden|screen-reader-text|invisible|is-hidden|u-hidden)(?![\w-])/i;
+const HIDE_CLASS = /\bclass\s*=\s*["'][^"']*(?<![\w:-])(?:d-none|hidden|hide|sr-only|visually-hidden|screen-reader-text|is-hidden|u-hidden)(?![\w-])/i;
+// a class that shows the element at some screen width: a copy laid out for phones or desktops is not hidden
+const SHOWN_SOMEWHERE = /\bclass\s*=\s*["'][^"']*(?:(?<![\w-])[a-z0-9]{2,3}:(?:block|flex|inline|inline-block|grid|table|contents)(?![\w-])|(?<![\w-])d-(?:sm|md|lg|xl|xxl)-(?:block|flex|inline|inline-block|grid|table)(?![\w-])|(?<![\w-])visible-(?:xs|sm|md|lg)\b)/i;
+// what hides everything inside a tag (font-size:0 is a layout trick there: the children set their own size)
+const HIDES_INSIDE = /display\s*:\s*none|visibility\s*:\s*hidden|<[^>]*\shidden(?:\s|=|\/?>)|text-decoration[^;"']*line-through/i;
+const hidesInside = (name, tag) => name === 'del' || name === 's' || name === 'strike'
+  || (name !== 'html' && name !== 'body' && (HIDES_INSIDE.test(tag) || HIDE_CLASS.test(tag)) && !SHOWN_SOMEWHERE.test(tag));
 const STRUCK = /<\s*(?:del|s|strike)\b|text-decoration[^;"']*line-through/i;
 const VOID = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']);
 const ABBR = /\b(U\.S|U\.K|Inc|Corp|Co|Ltd|L\.P|No|Nos|Dr|Mr|Ms|Mrs|St|vs|e\.g|i\.e|approx|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|Pa|Calif|Mass|N\.J|N\.Y|Fla|Ill|Md|Wash|Va)\./g;
@@ -876,15 +882,18 @@ function seenBlocks(rb) {
   const pop = () => { const x = stack.pop(); names.set(x.name, names.get(x.name) - 1); if (x.hide) hid--; if (x.furn) furn--; };
   const close = name => { if ((names.get(name) || 0) > 0) { while (stack.length && stack[stack.length - 1].name !== name) pop(); pop(); } };
   return rb.map(b => {
-    // the tags before the block's first word count too ("<nav><a>Home</a>" is a nav's block)
-    const lead = b.start + (b.raw.match(/^(?:\s*<[^<>]*>)*/) || [''])[0].length;
+    // a nav, aside or footer tag before the block's first word counts for that block ("<nav><a>Home</a>" is a nav's
+    // block); other tags there (a screen-reader label's own span) count only from the next block, as before
+    const run = (b.raw.match(/^(?:\s*<[^<>]*>)*/) || [''])[0];
+    let lead = b.start;
+    for (const m of run.matchAll(/<\s*\/?\s*([a-z][a-z0-9-]*)\b[^<>]*>/gi)) if (FURN.has(m[1].toLowerCase())) lead = b.start + m.index + m[0].length;
     for (; t < tags.length && tags[t].index < lead; t++) {
       const m = tags[t], name = m[2].toLowerCase();
       if (m[1]) close(name);
       else {
         if (BLOCK_START.has(name) && stack.length && stack[stack.length - 1].name === 'p') pop();   // a block start closes an open <p>, as in a browser
         if (VOID.has(name) || /\/\s*>$/.test(m[0])) continue;
-        const hide = HIDDEN.test(m[0]) || HIDE_CLASS.test(m[0]);
+        const hide = hidesInside(name, m[0]);
         const fu = isFurn(name); stack.push({ name, hide, furn: fu }); names.set(name, (names.get(name) || 0) + 1); if (hide) hid++; if (fu) furn++;
       }
     }
