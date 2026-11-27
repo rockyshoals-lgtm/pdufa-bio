@@ -118,6 +118,20 @@ def row_name(r):
     rd = str(r.get("readout") or "").strip()
     parts = [drug]
     if trial and trial.lower() not in drug.lower():
+        # 2026-11-27: "divesiran SANRECO Phase 2" made build_drug_pages publish /drug/divesiran-sanreco (its core
+        # keeps two words) and drop /drug/divesiran, which /ticker/SLN linked: the rebuild's dead-link guard
+        # blocked. The phase goes right after the drug ("divesiran Phase 2 SANRECO"); with no phase, a comma
+        # ends the drug's name ("STX-1150, first-in-human study").
+        m = re.search(r"\bPhase\s*[0-9IV][0-9IVab/]*\b", trial)
+        if m and m.start() > 0:
+            trial = re.sub(r"\s+", " ", f"{m.group(0)} {trial[:m.start()]} {trial[m.end():]}")
+            trial = re.sub(r"\(\s*\)", "", re.sub(r"\(\s*,\s*", "(", re.sub(r"\s*,\s*\)", ")", trial)))
+            trial = re.sub(r"\s+", " ", trial).strip(" ,")
+            # the readout often repeats the phase ("Phase 2 results"): keep it once
+            if rd.lower().startswith(m.group(0).lower()):
+                rd = rd[len(m.group(0)):].strip() or rd
+        elif not m:
+            parts[0] = drug + ","
         parts.append(trial)
     if rd and rd.lower() not in " ".join(parts).lower():
         parts.append(rd)
