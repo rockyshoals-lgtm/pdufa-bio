@@ -187,6 +187,9 @@ def load_events():
         if typ == "PDUFA":
             if st.lower() in ("decided", "withdrawn"):   # the FDA acted, or the sponsor withdrew; never "upcoming"
                 continue
+            # 2026-11-27: no goal date stated (David's ruling 11-10): off the dated lists, like the calendar
+            if str((r.get("_d") or {}).get("goal_date") or "").lower() == "not announced":
+                continue
             cat = "drug"
         elif typ == "Readout":
             if st.lower() == "reported":      # the result is out; never "upcoming"
