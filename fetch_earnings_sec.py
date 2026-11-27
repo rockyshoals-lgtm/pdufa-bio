@@ -75,12 +75,12 @@ def accepted_et(s):
     m = re.match(r"(20\d\d-\d\d-\d\d)T(\d\d):(\d\d)(?::(\d\d))?", str(s or ""))
     if not m:
         return ""
-    t = dt.datetime(*map(int, m.group(1).split("-")), int(m.group(2)), int(m.group(3)), tzinfo=dt.timezone.utc)
     try:
-        from zoneinfo import ZoneInfo
-        t = t.astimezone(ZoneInfo("America/New_York"))
-    except Exception:  # noqa: BLE001
-        return ""                              # no time-zone data: no time, rather than a wrong one
+        t = dt.datetime(*map(int, m.group(1).split("-")), int(m.group(2)), int(m.group(3)), tzinfo=dt.timezone.utc)
+    except ValueError:
+        return ""                              # an impossible date: no time, rather than a crash
+    from zoneinfo import ZoneInfo              # main() stops first if the time-zone data is missing
+    t = t.astimezone(ZoneInfo("America/New_York"))
     return t.strftime("%Y-%m-%d %H:%M")
 
 
@@ -381,12 +381,19 @@ def main():
     except Exception as e:  # noqa: BLE001
         print(f"::warning::earnings 8-K: {os.path.basename(CACHE)} unreadable ({type(e).__name__}); starting it again")
         cache = {}
+    try:
+        from zoneinfo import ZoneInfo
+        ZoneInfo("America/New_York")
+    except Exception as e:  # noqa: BLE001
+        print(f"::warning::earnings 8-K: no US Eastern time-zone data ({type(e).__name__}); nothing read")
+        return 0
     before = json.dumps({k: v for k, v in cache.items() if k != "fetched"}, sort_keys=True)
     if cache.get("rules_version") != RULES_VERSION:
         for ent in (cache.get("tickers") or {}).values():
             for f in (ent.get("filings") or {}).values():
                 if f.get("status") != "covered":
                     f.pop("status", None)          # re-open under the new rules
+                f.pop("accepted_et", None)         # times read under older rules are dropped, not kept
         cache["rules_version"] = RULES_VERSION
     tks = cache.setdefault("tickers", {})
     want = sorted(a.tickers.split(",")) if a.tickers else sorted(names)
