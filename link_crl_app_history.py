@@ -19,7 +19,9 @@ that line, listing in date order:
   * the page's own action, marked "this page".
 
 A block is written only where the application has at least one released CRL and at least one action besides the
-page's own. A page whose record names no application, or names one with no released CRL, gets no block (and any old
+page's own, or where the page's own action is a released CRL whose text page (/crl/letter/<slug>) exists, so the
+reader can reach the letter's text from the decision (2026-11-27: 20 CRL decision pages had no way to it). A page
+whose record names no application, or names one with no released CRL, gets no block (and any old
 block is removed). Matching is by the six-digit application number, which the FDA does not reuse between NDAs and
 BLAs. Facts only: dates, record names and links. No reading of why, no rate, no view on any application.
 
@@ -155,6 +157,12 @@ def pages():
     return out
 
 
+def own_text(crls, rec):
+    """True when the page's own record is a released CRL whose /crl/letter text page exists."""
+    return any(c["pdf"] == rec and c["slug"]
+               and os.path.isfile(os.path.join(SITE, "crl", "letter", c["slug"], "index.html")) for c in crls)
+
+
 def block(slug, num, rec, crls, apprs, cites):
     rows = []
     for c in crls:
@@ -223,7 +231,9 @@ def main():
             crls = sorted(one.values(), key=lambda c: c["action"])
             apprs = sorted(g["appr"], key=lambda a: a["date"])
             others = [c for c in crls if c["pdf"] != pg["rec"]] + [a for a in apprs if a["letter"] != pg["rec"]]
-            if others:
+            # 2026-11-27: a page whose only action on the application is its own CRL still gets the block when that
+            # letter has a text page (/crl/letter/<slug>); 14 CRL decision pages could not reach their letter's text
+            if others or own_text(crls, pg["rec"]):
                 blk = block(slug, pg["num"], pg["rec"], crls, apprs, cites)
                 for tag in ("FDAREC", "CRLSRC", "VERIFIED"):
                     end = f"<!--{tag}:END-->"

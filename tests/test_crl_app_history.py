@@ -4,7 +4,8 @@
 2026-11-25 (David: "mine for more ... past CRLs ... red team everything, check for currency"). A CRL decision page
 and the later approval of the same application did not know about each other (Saphnelo for subcutaneous use, BLA
 761451: CRL October 10, 2025, approval April 24, 2026). link_crl_app_history.py writes an <!--APPHIST--> block on
-every /fda-decision page whose own FDA record names an application that has a released CRL and another action.
+every /fda-decision page whose own FDA record names an application that has a released CRL and another action,
+or whose own action is a released CRL with a /crl/letter text page (2026-11-27).
 This fails if:
   * the workflow does not run link_crl_app_history.py
   * a page that should carry the block does not, or a page carries one it should not
@@ -53,14 +54,14 @@ def main():
         crls = crl_by.get(num, []) if num else []
         apprs = appr_by.get(num, []) if crls else []
         others = [c for c in crls if c["pdf"] != rec] + [a for a in apprs if a["letter"] != rec]
-        want = bool(crls and others)
+        want = bool(crls and (others or h.own_text(crls, rec)))
         if want and not m:
-            fails.append(f"/fda-decision/{slug}: application {num} has a released CRL and another FDA action, "
+            fails.append(f"/fda-decision/{slug}: application {num} has a released CRL and another FDA action (or its own CRL has a text page), "
                          f"but the page does not list them")
             continue
         if m and not want:
             fails.append(f"/fda-decision/{slug}: lists FDA actions on application {num}, which has no released CRL "
-                         f"and another action")
+                         f"and another action, nor a CRL of its own with a text page")
             continue
         if not m:
             continue
