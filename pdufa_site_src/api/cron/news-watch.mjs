@@ -80,7 +80,7 @@ function printOf(html, channel, title, cos, rows, finalUrl = '', key = 'print') 
  *  skipped. At most two SEC files and six posts in all are read per run. */
 async function recheckPosts(pub, ua, until, nowMs) {
   const out = {};                                               // id -> fields to set, applied only to a post still up
-  const pause = (id, why) => { out[id] = { status: 'paused', paused_at: etIso(nowMs),
+  const pause = (id, why) => { out[id] = { status: 'paused', paused_at: etIso(nowMs), source_print: undefined,
     paused_reason: `the right-after check of the source failed: ${why}` }; };
   let sec = 0;
   const due = Object.entries(pub).filter(([, p]) => p && p.status === 'posted' && Number.isFinite(Number(p.run_ms))
@@ -97,7 +97,7 @@ async function recheckPosts(pub, ua, until, nowMs) {
       // release is unpublished) or thirty of soft ones (timeouts, rate limits, server errors on a busy decision day).
       const fail = (why, hard) => {
         const tries = (Number(p.tries) || 0) + 1, first = Number(p.first_try) > 0 ? Number(p.first_try) : nowMs;
-        if (edgar) { out[id] = tries >= 10 ? { checks: n + 1, tries: 0, first_try: 0 } : { tries, first_try: first }; return; }
+        if (edgar) { out[id] = tries >= 10 ? { checks: n + 1, tries: 0, first_try: 0, ...(n + 1 >= RECHECK_AT.length ? { source_print: undefined } : {}) } : { tries, first_try: first }; return; }
         if (nowMs - first >= (hard || p.hard ? 10 : 30) * 60000) return pause(id, why);
         out[id] = { tries, first_try: first, ...(hard || p.hard ? { hard: true } : {}) };
       };
@@ -115,7 +115,9 @@ async function recheckPosts(pub, ua, until, nowMs) {
       const r = compareSource(got.txt, p, row, edgar ? ARMED.rows.filter(x => x.cik && Number(x.cik) === Number(row.cik)).flatMap(x => [x.company, ...(x.aliases || [])]) : cos, edgar ? '' : got.url);
       if (r.unread) return fail(r.hard ? 'the source now sends readers to another page' : 'the source no longer reads as the release', true);
       if (!r.ok) return pause(id, r.why);
-      out[id] = { checks: n + 1, tries: 0, first_try: 0, hard: false, rechecked_at: etIso(nowMs), ...(r.print ? { source_print: r.print } : {}) };
+      // the print is kept only while a re-read is still to come, so the state stays small
+      out[id] = { checks: n + 1, tries: 0, first_try: 0, hard: false, rechecked_at: etIso(nowMs),
+        ...(n + 1 >= RECHECK_AT.length ? { source_print: undefined } : r.print ? { source_print: r.print } : {}) };
     } catch { /* one post's re-read never stops the run; it is tried again next minute */ }
   }));
   return out;
@@ -350,7 +352,7 @@ export default async (req, res) => {
       continue;
     }
     if (armed.publish) { pub = { ...pub, [rec.id]: rec }; for (const k of [rec.id, item.url, item.key]) if (k) done[k] = nowMs; }
-    else { shadow.push(rec); stopped[item.key] = stopped[item.key] || nowMs; if (item.url) stopped[item.url] = stopped[item.url] || nowMs; }
+    else { const { source_print, ...shown } = rec; shadow.push(shown); stopped[item.key] = stopped[item.key] || nowMs; if (item.url) stopped[item.url] = stopped[item.url] || nowMs; }
   }
   beat.held = held.slice(0, 20);
   // Shadow mode (publish false): what WOULD have posted, kept for review, never public; each item once.

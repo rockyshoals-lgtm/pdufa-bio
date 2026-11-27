@@ -881,3 +881,31 @@ test('the right-after check reads a large or malformed page quickly', () => {
     assert.ok(Date.now() - t0 < 4000, `took ${Date.now() - t0} ms`);
   }
 });
+
+test('the right-after check, red team 18: page layouts that are not changes, and broad words in new text', () => {
+  const r = ARMED.rows[0];
+  const H = 'Mineralys Therapeutics Announces FDA Approval of Lorundrostat for Hypertension';
+  const OK = 'RADNOR, Pa., Dec. 1, 2026 -- Mineralys Therapeutics today announced that the FDA has approved lorundrostat for adults with hypertension.';
+  const URL0 = 'https://ir.mineralys.com/news/1';
+  const src = { channel: 'rss', url: URL0, published_at: '2026-12-01T16:05:00-05:00' };
+  const cmp = (base, now) => compareSource(now, { id: r.id, kind: 'approval', headline: H, source: src,
+    source_print: sourcePrint(base, 'rss', H, [r.company], 'approval', r.terms, URL0) }, r, [r.company], URL0);
+  // a headline copy hidden on phones, an unclosed screen-reader paragraph, a hidden body class: the page is printed and unchanged
+  for (const page of [`<h1 class="d-none d-md-block">${H}</h1><h1 class="d-md-none">${H}</h1><p>${OK}</p>`,
+    `<p class="sr-only">Skip to content<div><h1>${H}</h1><p>${OK}</p></div>`, `<h1>${H}</h1><p>${OK}</p>`]) {
+    assert.ok(sourcePrint(page, 'rss', H, [r.company], 'approval', r.terms, URL0), page);
+    assert.deepEqual(cmp(page, page), { ok: true }, page);
+  }
+  const base = `<h1>${H}</h1><p>${OK}</p><p>About Mineralys</p><div class="news"><p>Mineralys Reports Third Quarter Results</p></div>`;
+  for (const x of ['We use cookies. You can withdraw your consent at any time.', 'Lorundrostat is not approved for use in children.',
+    'Mineralys Announces Amended Loan Agreement', 'Lorundrostat is not approved in Europe.'])
+    assert.deepEqual(cmp(base, base.replace('<p>About', `<p>${x}</p><p>About`)), { ok: true }, x);
+  for (const x of ['The earlier version contained an error.', 'The headline should have read complete response letter.', 'This release was updated to reflect the FDA action.'])
+    assert.equal(cmp(base, base.replace('<p>About', `<p>${x}</p><p>About`)).ok, false, x);
+  // many unclosed <nav> tags never slow the run down
+  const junk = `<h1>${H}</h1><p>${OK}</p>` + '<nav>'.repeat(120000);
+  const t0 = Date.now(); cmp(junk, junk); assert.ok(Date.now() - t0 < 4000, `took ${Date.now() - t0} ms`);
+  // a tag a browser reads ("<approves<>") hides its word, so the headline names no decision and never posts
+  assert.equal(headlineKind("FDA <approves<>Apnimed's AD109 for Obstructive Sleep Apnea (OSA)").kind, null);
+  assert.equal(clean('p<0.05 and <b>bold</b> a < b'), 'p 0.05 and bold a b');
+});

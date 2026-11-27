@@ -89,8 +89,25 @@ const NAMED = { nbsp: ' ', ndash: '-', mdash: '-', lsquo: "'", rsquo: "'", ldquo
 const W1252 = { 145: "'", 146: "'", 147: '"', 148: '"', 150: '-', 151: '-', 153: ' ' };
 const cp = n => (W1252[n] ?? (Number.isFinite(n) && n > 0 && n <= 0x10FFFF ? String.fromCodePoint(n) : ' '));
 
+/** Tags out, as a browser reads them: "<" starts a tag only before a letter, "/", "!" or "?", and the tag runs to the
+ *  next ">" ("FDA <approves<> ..." shows no "approves"); text like "p<0.05" stays. One pass, so a page full of stray
+ *  "<" never slows it down. */
+function stripTags(s) {
+  let out = '', i = 0;
+  for (;;) {
+    const j = s.indexOf('<', i);
+    if (j < 0) return out + s.slice(i);
+    out += s.slice(i, j);
+    if (/[A-Za-z\/!?]/.test(s[j + 1] || '')) {
+      const k = s.indexOf('>', j + 1);
+      if (k < 0) return out + s.slice(j);
+      out += ' '; i = k + 1;
+    } else { out += '<'; i = j + 1; }
+  }
+}
+
 function decode(s) {
-  return String(s || '').replace(/<[^<>]+>/g, ' ')
+  return stripTags(String(s || ''))
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => cp(parseInt(h, 16)))
     .replace(/&#(\d+);/g, (_, d) => cp(parseInt(d, 10)))
     .replace(/&([a-z]+);/gi, (m, n) => (NAMED[n.toLowerCase()] ?? ' '));
@@ -805,8 +822,9 @@ export function parseFeed(xml) {
 //     the other outcome (red team 17: words are read only in what changed, so the lists can be broad).
 // A page that no longer reads as a release (no dateline) pauses at once when new text on it reads as a correction;
 // otherwise it is a failed read, tried again.
-const NEW_CORR = /\b(?:correct(?:ion|ions|ed|s|ing)\b|amend\w*|revis(?:ed|ion|ions)\b|retract\w*|withdr[ae]w\w*|remov(?:ed|al)\b|in error|errat(?:um|a)\b|issued prematurely|prematurely (?:issued|released)|not be relied (?:up)?on(?! as\b)|incorrect\w*|inaccura\w*|erroneous\w*|misstat\w*|mistaken\w*|disregard\w*|supersed\w*|rescind\w*|replac(?:es|ed|ing) (?:the |an? |our )?(?:earlier |previous |prior )?(?:press |news )?release|no longer (?:accurate|valid|correct|stands)|editor'?s note|clarif\w*|important notice)\b/i;
-const NEW_PENDING = /\b(?:has not (?:yet )?(?:acted|taken action|approved|granted|decided)|did not (?:grant|approve)|not (?:yet )?(?:been )?(?:approved|granted)|not (?:yet )?received (?:FDA |US )?approval|has yet to (?:act|approve|take action|decide)|(?:remains|still|continues to be|is) under (?:FDA |regulatory |agency )?review|tentative(?:ly)? approv\w*|(?:extend\w*|delay\w*|postpon\w*|mov(?:ed|es|ing)) (?:the |its )?(?:PDUFA |goal |target |review |action )+(?:goal |action )?date|(?:PDUFA|goal|action|review) (?:goal |action )?date (?:has been |was |is )?(?:extended|delayed|postponed|moved|missed)|delay\w* (?:its |the |a )?(?:approval|decision|action)|no (?:FDA |US )?(?:decision|action|approval) (?:has been|was|yet))\b/i;
+const REL = String.raw`(?:press |news )?(?:release|statement|announcement)`;
+const NEW_CORR = new RegExp(String.raw`\b(?:correct(?:ion|ions|ed|s|ing)\b|amend(?:s|ed|ing)? (?:the |this |its |our |an? )?(?:earlier |previous |prior )?${REL}|amended ${REL}|${REL} (?:was |has been |is |is being )?(?:amended|revised|removed|withdrawn|retracted|replaced|updated to)|revised ${REL}|retract\w*|withdr[ae]w\w* (?:the |this |its |our |an? )?(?:earlier |previous |prior )?${REL}|(?:is|was|are|were|has been|have been|hereby) (?:\w+ ){0,2}withdrawn\b|removed (?:the |this |its |our )?${REL}|in error|errat(?:um|a)\b|contained an error|should have (?:read|stated|said)|updated to reflect|issued prematurely|prematurely (?:issued|released)|not be relied (?:up)?on(?! as\b)|incorrect\w*|inaccura\w*|erroneous\w*|misstat\w*|mistaken\w*|disregard\w*|supersed\w*|rescind\w*|replac(?:es|ed|ing) (?:the |an? |our )?(?:earlier |previous |prior )?${REL}|no longer (?:accurate|valid|correct|stands)|editor'?s note|clarif\w*|important notice)\b`, 'i');
+const NEW_PENDING = /\b(?:has not (?:yet )?(?:acted|taken action|approved|granted|decided)|did not (?:grant|approve)|not (?:yet )?(?:been )?(?:approved|granted)(?!\s+(?:for use|in|outside)\b)|not (?:yet )?received (?:FDA |US )?approval|has yet to (?:act|approve|take action|decide)|(?:remains|still|continues to be|is) under (?:FDA |regulatory |agency )?review|tentative(?:ly)? approv\w*|(?:extend\w*|delay\w*|postpon\w*|mov(?:ed|es|ing)) (?:the |its )?(?:PDUFA |goal |target |review |action )+(?:goal |action )?date|(?:PDUFA|goal|action|review) (?:goal |action )?date (?:has been |was |is )?(?:extended|delayed|postponed|moved|missed)|delay\w* (?:its |the |a )?(?:approval|decision|action)|no (?:FDA |US )?(?:decision|action|approval) (?:has been|was|yet))\b/i;
 const LABEL = /^\W*(?:updated?|revised|corrected|correction|correcting and replacing|retraction|retracted|withdrawn|important notice|notice|editor'?s note|erratum|clarification)\W*$/i;
 const OPP_FOR_APPROVAL = /\b(?:complete response|CRL|not approvable|refus\w* to file|declin\w* to approve)\b/i;
 const OPP_FOR_CRL = /\b(?:FDA|agency)\b[^.;]{0,60}\b(?:approved|granted (?:full |accelerated |traditional )?approval)\b|\bapproved by the (?:US )?FDA\b/i;
@@ -844,22 +862,27 @@ const key = x => hash(canon(x));
 
 /** Each block of the page with whether a reader can see it: hidden when a tag still open around it (anywhere above it
  *  on the page) hides it by style, attribute or class, or when the block itself is struck out. One pass over the tags. */
+const BLOCK_START = new Set(['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'table', 'section', 'article', 'header', 'footer', 'nav', 'aside', 'blockquote', 'center', 'form', 'pre', 'hr', 'main', 'figure', 'dl']);
+const FURN = new Set(['nav', 'aside', 'footer']);
 function seenBlocks(rb) {
   const src = rb.src, tags = [...src.matchAll(/<\s*(\/)?\s*([a-z][a-z0-9-]*)\b[^>]*>/gi)];
   const stack = [], names = new Map();
-  let hid = 0, t = 0;
-  const pop = () => { const x = stack.pop(); names.set(x.name, names.get(x.name) - 1); if (x.hide) hid--; };
+  let hid = 0, furn = 0, t = 0;
+  const pop = () => { const x = stack.pop(); names.set(x.name, names.get(x.name) - 1); if (x.hide) hid--; if (FURN.has(x.name)) furn--; };
+  const close = name => { if ((names.get(name) || 0) > 0) { while (stack.length && stack[stack.length - 1].name !== name) pop(); pop(); } };
   return rb.map(b => {
     for (; t < tags.length && tags[t].index < b.start; t++) {
       const m = tags[t], name = m[2].toLowerCase();
-      if (m[1]) { if ((names.get(name) || 0) > 0) { while (stack.length && stack[stack.length - 1].name !== name) pop(); pop(); } }
-      else if (!VOID.has(name) && !/\/\s*>$/.test(m[0])) {
+      if (m[1]) close(name);
+      else {
+        if (BLOCK_START.has(name) && stack.length && stack[stack.length - 1].name === 'p') pop();   // a block start closes an open <p>, as in a browser
+        if (VOID.has(name) || /\/\s*>$/.test(m[0])) continue;
         const hide = HIDDEN.test(m[0]) || HIDE_CLASS.test(m[0]);
-        stack.push({ name, hide }); names.set(name, (names.get(name) || 0) + 1); if (hide) hid++;
+        stack.push({ name, hide }); names.set(name, (names.get(name) || 0) + 1); if (hide) hid++; if (FURN.has(name)) furn++;
       }
     }
     // the block's own tag sits in the gap just before it, so it is on the stack; a struck-out block is struck by its own words
-    return { ...b, hidden: hid > 0 || STRUCK.test(b.raw) };
+    return { ...b, hidden: hid > 0 || STRUCK.test(b.raw), furn: furn > 0 };
   });
 }
 
@@ -869,15 +892,15 @@ function readPage(html, channel, title, companies = []) {
   const rb = rawBlocks(page);
   const bl = seenBlocks(rb);
   const dl = dateline(rb.map(b => b.text));
-  // what a reader can see, sentence by sentence; matched <nav>, <aside> and <footer> are page furniture
-  const furn = [...rb.src.matchAll(/<(nav|aside|footer)(?=[\s>\/])[^>]*>[\s\S]*?<\/\1\s*>/gi)].map(m => [m.index, m.index + m[0].length]);
-  const inFurn = b => furn.some(([a, z]) => b.start >= a && b.end <= z);
+  // what a reader can see, sentence by sentence; what sits in <nav>, <aside> and <footer> is page furniture
   const vis = [], hid = [];
-  for (const b of bl) for (const x of sentences(b.text)) (b.hidden ? hid : vis).push({ x, furn: inFurn(b) });
+  for (const b of bl) for (const x of sentences(b.text)) (b.hidden ? hid : vis).push({ x, furn: b.furn });
   let head = '';
   if (dl) {
     if (channel === 'edgar') head = exhibitHeadline(page, companies);
-    else { const want = canon(title); for (let i = dl.i - 1; i >= 0; i--) if (canon(rb[i].text) === want) { if (!bl[i].hidden && !hiddenMarks(rb[i].raw)) head = title; break; } }
+    // as the posting check reads it (pageDay): the feed title stands as a block above the dateline; a copy hidden on
+    // phones or desktops is the page's own layout (red team 18), and text that WAS seen and is now hidden pauses below
+    else { const want = canon(title); if (rb.slice(0, dl.i).some(b => canon(b.text) === want && !hiddenMarks(b.raw))) head = title; }
   }
   return { rb, bl, dl, head, vis, hid };
 }
@@ -900,7 +923,7 @@ export function sourcePrint(html, channel, title, companies = [], kind = 'approv
   try { u = finalUrl ? new URL(finalUrl).pathname : ''; } catch {}
   const a = outcomeSentence(r, kind, terms);
   const w = Object.entries(tally(r.vis, kind, terms)).map(([k, n]) => `${hash(k)}:${n}`).join(',');
-  return { d: r.dl.day, a: a ? key(a) : '', s: [...new Set(r.vis.map(v => key(v.x)))].slice(0, 1500).join(','), w, ...(u ? { u } : {}) };
+  return { d: r.dl.day, a: a ? key(a) : '', s: [...new Set(r.vis.map(v => key(v.x)))].slice(0, 800).join(','), w, ...(u ? { u } : {}) };
 }
 
 /** What a re-read means for a post: {ok}; {ok, print} for a post with no print yet (taken now, compared later);
@@ -924,6 +947,7 @@ export function compareSource(html, rec, row, companies = [], finalUrl = '') {
   try { path = finalUrl ? new URL(finalUrl).pathname : ''; } catch {}
   if (was && was.u && path && path !== was.u) return { unread: true, hard: true };   // sent on to another page of the site
   if (!r.dl) return { unread: true, hard: true };
+  if (!was && ch !== 'edgar' && !r.head) return { unread: true, hard: true };   // never printed: a failed read, not a pause
   if (ch === 'edgar' ? canon(r.head) !== canon(rec.headline || '') : !r.head)
     return { ok: false, why: ch === 'edgar' ? 'the exhibit headline has changed' : 'the page no longer shows the headline above its dateline' };
   const srcDay = String((rec.source || {}).published_at || '').slice(0, 10);
@@ -933,7 +957,7 @@ export function compareSource(html, rec, row, companies = [], finalUrl = '') {
   if (!was) return { ok: true, print: sourcePrint(html, ch, rec.headline || '', companies, rec.kind, terms, finalUrl) };
   const nowVis = new Set(r.vis.map(v => key(v.x)));
   if (was.a && !nowVis.has(was.a)) return { ok: false, why: 'the sentence that stated the outcome was changed, removed or hidden' };
-  if (r.hid.some(v => old.has(key(v.x)) && !nowVis.has(key(v.x)))) return { ok: false, why: 'text a reader could see is now hidden or struck through' };
+  if (r.hid.some(v => !v.furn && old.has(key(v.x)) && !nowVis.has(key(v.x)))) return { ok: false, why: 'text a reader could see is now hidden or struck through' };
   const named = v => terms.some(t => termIn(t, v.x));
   if (grew.has('pend') || (rec.kind !== 'crl' && grew.has('opp')))
     return { ok: false, why: 'new text on the page says the decision is not an approval or is still pending' };
