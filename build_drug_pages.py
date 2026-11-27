@@ -89,7 +89,10 @@ JUNK_SLUG = re.compile(
     r"|-(?:and|in|with|plus|or|for|vs)$"
     # 2026-11-27: a drug CLASS is not a drug. Pfizer's unnamed "amylin analog" would have published
     # /drug/amylin-analog, a page every amylin program would seem to belong to.
-    r"|-(?:analog|analogue|agonist|antagonist|inhibitor|antibody|vaccine|degrader|program|candidate)$")
+    r"|-(?:analog|analogue|agonist|antagonist|inhibitor|antibody|vaccine|degrader|program|candidate)$"
+    # 2026-11-27: a radioligand's isotope is not the drug. "lutetium Lu 177 vipivotide tetraxetan" slugged to
+    # /drug/lutetium-lu, a page Pluvicto and Lutathera would both seem to belong to.
+    r"|^(?:lutetium|actinium|yttrium|iodine|radium|copper|lead|thorium|astatine|terbium)-[a-z]{1,2}(?:-\d+)?$")
 
 
 CORE = re.compile(r"^([A-Za-z0-9][A-Za-z0-9'\u2019./-]*(?:\s+[A-Za-z0-9][A-Za-z0-9'\u2019./-]*)?)"
