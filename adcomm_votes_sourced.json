@@ -18,7 +18,7 @@
      "text": "Does CYRAMZA plus erlotinib demonstrate a favorable benefit/risk profile for first-line treatment of metastatic EGFR-mutated NSCLC? (paraphrased from sponsor release)",
      "yes": 6,
      "no": 5,
-     "abstain": 0,
+     "abstain": null,
      "is_overall": true
     }
    ],
@@ -30,7 +30,7 @@
    "action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2020/125477Orig1s034ltr.pdf",
    "action_source_type": "fda",
    "action_quote": "It is approved, effective on the date of this letter, for use as recommended in the enclosed agreed-upon labeling.",
-   "public_note": "Counts from the sponsor's release, which reported 6 yes and 5 no and did not mention abstentions."
+   "public_note": "Counts from the sponsor's release."
   },
   {
    "meeting_date": "2020-07-14",
@@ -49,7 +49,7 @@
      "text": "Benefit of belantamab mafodotin monotherapy in relapsed/refractory multiple myeloma outweighs risks (paraphrased from sponsor release)",
      "yes": 12,
      "no": 0,
-     "abstain": 0,
+     "abstain": null,
      "is_overall": true
     }
    ],
@@ -111,7 +111,7 @@
      "text": "Do the available data support the efficacy of remestemcel-L in pediatric patients with steroid-refractory acute GVHD? (paraphrased from sponsor release)",
      "yes": 9,
      "no": 1,
-     "abstain": 0,
+     "abstain": null,
      "is_overall": true
     }
    ],
@@ -251,7 +251,7 @@
      "text": "Do the data presented support the use of Entresto in the treatment of patients with HFpEF? (paraphrased from sponsor release)",
      "yes": 12,
      "no": 1,
-     "abstain": 0,
+     "abstain": null,
      "is_overall": true
     }
    ],
@@ -298,6 +298,37 @@
    "action_label": "The FDA authorized the vaccine for emergency use"
   },
   {
+   "meeting_date": "2021-02-09",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2020/12/28/2020-28558/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Keytruda (pembrolizumab) + chemotherapy",
+   "application": "sBLA 125514/S-089",
+   "sponsor": "Merck Sharp & Dohme Corp. (Merck & Co.)",
+   "ticker": "MRK",
+   "indication": "High-risk, early-stage triple-negative breast cancer: neoadjuvant with chemotherapy, then adjuvant single agent after surgery",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Should a regulatory decision on the sBLA (pembrolizumab with chemotherapy as neoadjuvant, then single-agent adjuvant, high-risk early-stage TNBC) be deferred until further data are available from KEYNOTE-522? (paraphrased from Merck's release; FDA question text not read)",
+     "yes": 10,
+     "no": 0,
+     "abstain": null,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://www.merck.com/news/merck-announces-outcome-of-oncologic-drugs-advisory-committee-odac-for-keytruda-pembrolizumab-for-treatment-of-patients-with-high-risk-early-stage-triple-negative-breast-cancer-tnbc/",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "The committee voted 10-0 that a regulatory decision should be deferred until further data are available from the Phase 3 KEYNOTE-522 trial.",
+   "fda_action": "crl",
+   "fda_action_date": "2021-03-26",
+   "action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2021/125514Orig1s089s114ltr_.pdf",
+   "action_source_type": "fda",
+   "action_quote": "We acknowledge receipt of your amendment dated June 29, 2021, which constituted a complete response to our March 26, 2021, action letter for S-089.",
+   "public_note": "A yes vote was a vote to defer the regulatory decision until more trial data were available, so this question is not counted as a vote for or against approval."
+  },
+  {
    "meeting_date": "2021-02-26",
    "committee": "Vaccines and Related Biological Products Advisory Committee",
    "fr_url": "https://www.federalregister.gov/documents/2021/02/11/2021-02845/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
@@ -327,6 +358,364 @@
    "action_source_type": "fda",
    "action_quote": "EUA Review Memorandum, review completed February 27, 2021",
    "action_label": "The FDA authorized the vaccine for emergency use"
+  },
+  {
+   "meeting_date": "2021-03-24",
+   "committee": "Arthritis Advisory Committee + Drug Safety and Risk Management Advisory Committee (joint)",
+   "fr_url": "https://www.federalregister.gov/documents/2021/02/16/2021-03068/joint-meeting-of-the-arthritis-advisory-committee-and-the-drug-safety-and-risk-management-advisory",
+   "kind": "product_vote",
+   "product": "tanezumab",
+   "application": "BLA 761130",
+   "sponsor": "Pfizer Inc. and Eli Lilly and Company",
+   "ticker": "PFE",
+   "indication": "Moderate-to-severe chronic pain due to osteoarthritis",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Will the proposed risk evaluation and mitigation strategy (REMS) for tanezumab ensure its benefits outweigh its risks? (as described in Pfizer's release; the single voting question)",
+     "yes": 1,
+     "no": 19,
+     "abstain": null,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.pfizer.com/news/press-release/press-release-detail/joint-fda-advisory-committee-votes-application-tanezumab",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "There was a single voting question ... and the Committee voted 1 in favor and 19 against.",
+   "fda_action": "crl",
+   "fda_action_date": null,
+   "action_source_url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-reports-third-quarter-2021-results",
+   "action_source_type": "sponsor",
+   "action_quote": "In October 2021, Pfizer and Eli Lilly and Company discontinued the global clinical development program for tanezumab ... following receipt of a Complete Response Letter (CRL) from the FDA",
+   "fda_action_date_note": "Pfizer's report of the letter, in its third-quarter 2021 results, did not give the letter's date"
+  },
+  {
+   "meeting_date": "2021-04-27",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/03/12/2021-05202/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Tecentriq (atezolizumab) + paclitaxel protein-bound",
+   "application": "sBLA 761034/S-018",
+   "sponsor": "Genentech, Inc. (Roche)",
+   "ticker": null,
+   "indication": "Unresectable locally advanced or metastatic PD-L1-positive (IC >=1%) triple-negative breast cancer (accelerated approval 2019)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Should the accelerated approval of Tecentriq with paclitaxel protein-bound for PD-L1-positive unresectable locally advanced or metastatic TNBC be maintained? (as described in Genentech's release)",
+     "yes": 7,
+     "no": 2,
+     "abstain": null,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://gene.com/media/press-releases/14907/2021-04-27/fda-advisory-committee-votes-in-favor-of",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "voted 7 to 2 in favor of maintaining accelerated approval of Tecentriq® (atezolizumab) in combination with chemotherapy",
+   "fda_action": "withdrawn",
+   "fda_action_date": "2021-10-06",
+   "action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/withdrawn-cancer-accelerated-approvals",
+   "action_source_type": "fda",
+   "action_quote": "Tecentriq ... Triple-negative breast cancer ... AA 3/8/2019, withdrawal 10/6/2021"
+  },
+  {
+   "meeting_date": "2021-04-28",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/03/12/2021-05202/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Keytruda (pembrolizumab)",
+   "application": "sBLA 125514/S-017",
+   "sponsor": "Merck Sharp & Dohme Corp. (Merck & Co.)",
+   "ticker": "MRK",
+   "indication": "Locally advanced or metastatic urothelial carcinoma, not eligible for cisplatin-containing chemotherapy (accelerated approval 2017)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Should the accelerated approval of Keytruda for locally advanced or metastatic urothelial carcinoma in patients not eligible for cisplatin-containing chemotherapy be maintained? (as described in Merck's release)",
+     "yes": 5,
+     "no": 3,
+     "abstain": null,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.merck.com/news/fdas-oncologic-drugs-advisory-committee-to-discuss-three-indications-for-keytruda-pembrolizumab-during-meetings-focused-on-accelerated-approvals-2/",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "On April 28, the ODAC voted 5-3 in favor of maintaining accelerated approval of KEYTRUDA",
+   "fda_action": "other",
+   "fda_action_date": "2021-08-31",
+   "action_source_url": "https://www.merck.com/news/fda-approves-updated-indication-for-mercks-keytruda-pembrolizumab-for-treatment-of-certain-patients-with-urothelial-carcinoma-bladder-cancer/",
+   "action_source_type": "sponsor",
+   "action_quote": "converted this indication from an accelerated to a full (regular) approval",
+   "action_label": "Merck said the FDA narrowed the indication to patients not eligible for any platinum-containing chemotherapy and converted it to full approval"
+  },
+  {
+   "meeting_date": "2021-04-28",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/03/12/2021-05202/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Tecentriq (atezolizumab)",
+   "application": "sBLA 761034/S-001",
+   "sponsor": "Genentech, Inc. (Roche)",
+   "ticker": null,
+   "indication": "Locally advanced or metastatic urothelial carcinoma, not eligible for cisplatin-containing chemotherapy (accelerated approval 2017)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Should the accelerated approval of Tecentriq for locally advanced or metastatic urothelial carcinoma in patients not eligible for cisplatin-containing chemotherapy be maintained? (as described in Genentech's release)",
+     "yes": 10,
+     "no": 1,
+     "abstain": null,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.gene.com/media/press-releases/14908/2021-04-28/fda-advisory-committee-votes-in-favor-of",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "voted 10 to 1 in favor of maintaining accelerated approval of Tecentriq®",
+   "fda_action": "withdrawn",
+   "fda_action_date": "2022-12-02",
+   "action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/withdrawn-cancer-accelerated-approvals",
+   "action_source_type": "fda",
+   "action_quote": "Tecentriq ... urothelial carcinoma ... not eligible for cisplatin-containing chemotherapy ... AA 4/17/2017, withdrawal 12/2/2022"
+  },
+  {
+   "meeting_date": "2021-04-29",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/03/12/2021-05202/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Keytruda (pembrolizumab)",
+   "application": "sBLA 125514/S-024",
+   "sponsor": "Merck Sharp & Dohme Corp. (Merck & Co.)",
+   "ticker": "MRK",
+   "indication": "Recurrent locally advanced or metastatic gastric/GEJ adenocarcinoma, PD-L1 CPS >=1, after two or more prior lines (accelerated approval 2017)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Should the accelerated approval of Keytruda for third-line PD-L1-positive (CPS>=1) gastric/GEJ adenocarcinoma be maintained? (as described in Merck's release)",
+     "yes": 2,
+     "no": 6,
+     "abstain": null,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.merck.com/news/fdas-oncologic-drugs-advisory-committee-to-discuss-three-indications-for-keytruda-pembrolizumab-during-meetings-focused-on-accelerated-approvals-2/",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "The ODAC also voted 6-2 against maintaining accelerated approval of KEYTRUDA",
+   "fda_action": "withdrawn",
+   "fda_action_date": "2022-02-04",
+   "action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/withdrawn-cancer-accelerated-approvals",
+   "action_source_type": "fda",
+   "action_quote": "Keytruda ... Gastric or GEJ adenocarcinoma, PD-L1 CPS >=1, after two or more prior lines ... AA 9/22/2017, withdrawal 2/4/2022"
+  },
+  {
+   "meeting_date": "2021-04-29",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/03/12/2021-05202/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Keytruda (pembrolizumab)",
+   "application": "sBLA 125514/S-042",
+   "sponsor": "Merck Sharp & Dohme Corp. (Merck & Co.)",
+   "ticker": "MRK",
+   "indication": "Hepatocellular carcinoma previously treated with sorafenib (accelerated approval 2018)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Should the accelerated approval of Keytruda for hepatocellular carcinoma previously treated with sorafenib be maintained? (as described in Merck's release)",
+     "yes": 8,
+     "no": 0,
+     "abstain": null,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.merck.com/news/fdas-oncologic-drugs-advisory-committee-to-discuss-three-indications-for-keytruda-pembrolizumab-during-meetings-focused-on-accelerated-approvals-2/",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "On April 29, ODAC voted 8-0 in favor of maintaining accelerated approval of KEYTRUDA",
+   "fda_action": "other",
+   "fda_action_date": null,
+   "action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/withdrawn-cancer-accelerated-approvals",
+   "action_source_type": "fda",
+   "action_quote": null,
+   "action_label": "No FDA action on this accelerated approval after the meeting was found"
+  },
+  {
+   "meeting_date": "2021-04-29",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/03/12/2021-05202/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "Opdivo (nivolumab)",
+   "application": "sBLA 125554/S-041",
+   "sponsor": "Bristol-Myers Squibb Company",
+   "ticker": "BMY",
+   "indication": "Single agent for hepatocellular carcinoma previously treated with sorafenib (accelerated approval 2017)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Should the accelerated approval of Opdivo as a single agent for hepatocellular carcinoma previously treated with sorafenib be maintained while awaiting results of potential alternate confirmatory trials? (as described in BMS's release)",
+     "yes": 4,
+     "no": 5,
+     "abstain": null,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://news.bms.com/news/details/2021/Bristol-Myers-Squibb-Statement-on-FDA-Advisory-Committee-Meeting-on-Opdivo-Post-Sorafenib-Hepatocellular-Carcinoma-U.S.-Indication-/default.aspx",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "Four Committee members voted in favor and five voted against maintaining the accelerated approval",
+   "fda_action": "withdrawn",
+   "fda_action_date": "2021-07-23",
+   "action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/withdrawn-cancer-accelerated-approvals",
+   "action_source_type": "fda",
+   "action_quote": "Opdivo ... Hepatocellular carcinoma previously treated with sorafenib ... AA 9/22/2017, withdrawal 7/23/2021"
+  },
+  {
+   "meeting_date": "2021-05-06",
+   "committee": "Arthritis Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/03/26/2021-06265/arthritis-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for-comments",
+   "kind": "product_vote",
+   "product": "Tavneos (avacopan)",
+   "application": "NDA 214487",
+   "sponsor": "ChemoCentryx, Inc.",
+   "ticker": "CCXI",
+   "indication": "ANCA-associated vasculitis (granulomatosis with polyangiitis and microscopic polyangiitis), adjunctive treatment",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Do the efficacy data support approval of avacopan for the treatment of adult patients with AAV (GPA and MPA)?",
+     "yes": 9,
+     "no": 9,
+     "abstain": null,
+     "is_overall": false
+    },
+    {
+     "n": 2,
+     "text": "Is the safety profile of avacopan adequate to support approval of avacopan...?",
+     "yes": 10,
+     "no": 8,
+     "abstain": null,
+     "is_overall": false
+    },
+    {
+     "n": 3,
+     "text": "Is the benefit-risk profile adequate to support approval of avacopan at the proposed dose of 30 mg twice daily?",
+     "yes": 10,
+     "no": 8,
+     "abstain": null,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.globenewswire.com/news-release/2021/05/07/2225199/19219/en/ChemoCentryx-Announces-Results-of-FDA-Advisory-Committee-Meeting-on-Avacopan-in-ANCA-Associated-Vasculitis.html",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "The Committee vote split 9-9 on the first question ... voted 10-8 that the safety profile of avacopan is adequate to support approval ... voted 10-8 that the benefit-risk profile is adequate to support approval",
+   "fda_action": "approved",
+   "fda_action_date": "2021-10-07",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=214487",
+   "action_source_type": "fda",
+   "action_quote": "10/07/2021 ORIG-1 Approval"
+  },
+  {
+   "meeting_date": "2021-05-27",
+   "committee": "Endocrinologic and Metabolic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/04/01/2021-06708/endocrinologic-and-metabolic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public",
+   "kind": "product_vote",
+   "product": "teplizumab (Tzield)",
+   "application": "BLA 761183",
+   "sponsor": "Provention Bio, Inc.",
+   "ticker": "PRVB",
+   "indication": "Delay of clinical type 1 diabetes in at-risk individuals (Stage 2)",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Does the information provided in the background documents and presentations by the Applicant and FDA show that the benefits of teplizumab outweigh the risks in support of approval to delay clinical type 1 diabetes mellitus?",
+     "yes": 10,
+     "no": 7,
+     "abstain": null,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.sec.gov/Archives/edgar/data/1695357/000149315221013131/ex99-1.htm",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "voted 10 yes and 7 no on the question",
+   "fda_action": "crl",
+   "fda_action_date": "2021-07-02",
+   "action_source_url": "https://download.open.fda.gov/crl/761183_2023_Orig1s000OtherActionLtrs.pdf",
+   "action_source_type": "fda",
+   "action_quote": "COMPLETE RESPONSE ... failed to show PK comparability between the PRV-031 product used in TN-102 and the planned commercial product"
+  },
+  {
+   "meeting_date": "2021-06-24",
+   "committee": "Oncologic Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/05/14/2021-10181/oncologic-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request-for",
+   "kind": "product_vote",
+   "product": "retifanlimab",
+   "application": "BLA 761209",
+   "sponsor": "Incyte Corporation",
+   "ticker": "INCY",
+   "indication": "Locally advanced or metastatic squamous cell carcinoma of the anal canal after (or intolerant of) platinum-based chemotherapy",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 2,
+     "text": "Should a regulatory decision on retifanlimab for the treatment of advanced or metastatic SCAC be deferred until results of POD1UM-303 are available? (FDA draft question, trimmed)",
+     "yes": 13,
+     "no": 4,
+     "abstain": null,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://investor.incyte.com/node/16506/pdf",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "The Committee voted 13-4 that a regulatory decision on retifanlimab for the treatment of advanced or metastatic SCAC",
+   "fda_action": "crl",
+   "fda_action_date": "2021-07-23",
+   "action_source_url": "https://www.businesswire.com/news/home/20210723005449/en/Incyte-Provides-Regulatory-Update-on-Retifanlimab-for-the-Treatment-of-Certain-Patients-with-Squamous-Cell-Carcinoma-of-the-Anal-Canal-SCAC",
+   "action_source_type": "sponsor",
+   "action_quote": "The complete response letter states that the FDA cannot approve the application in its present form.",
+   "public_note": "A yes vote was a vote to defer the regulatory decision until more trial data were available, so this question is not counted as a vote for or against approval."
+  },
+  {
+   "meeting_date": "2021-07-15",
+   "committee": "Cardiovascular and Renal Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/05/21/2021-10751/cardiovascular-and-renal-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
+   "kind": "product_vote",
+   "product": "roxadustat",
+   "application": "NDA 213805",
+   "sponsor": "FibroGen, Inc. (partner AstraZeneca)",
+   "ticker": "FGEN",
+   "indication": "Anemia due to chronic kidney disease in adults not on dialysis and on dialysis",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 1,
+     "text": "Does the benefit-risk profile of roxadustat support approval for the treatment of anaemia of CKD in non-dialysis-dependent (NDD) adult patients? (as described in AstraZeneca's release)",
+     "yes": 1,
+     "no": 13,
+     "abstain": null,
+     "is_overall": false
+    },
+    {
+     "n": 2,
+     "text": "Does the benefit-risk profile of roxadustat support approval for the treatment of anaemia of CKD in dialysis-dependent (DD) adult patients? (as described in AstraZeneca's release)",
+     "yes": 2,
+     "no": 12,
+     "abstain": null,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://www.astrazeneca.com/media-centre/press-releases/2021/status-on-us-fda-advisory-committee-for-roxadustat.html",
+   "vote_source_type": "sponsor",
+   "vote_source_quote": "voted 13 to 1 that the benefit-risk profile of roxadustat does not support approval ... in non-dialysis dependent (NDD) adult patients ... 12 to 2 ... dialysis-dependent (DD) adult patients",
+   "fda_action": "crl",
+   "fda_action_date": "2021-08-11",
+   "action_source_url": "https://www.sec.gov/Archives/edgar/data/921299/000156459021043233/fgen-ex991_6.htm",
+   "action_source_type": "sponsor",
+   "action_quote": "the U.S. Food and Drug Administration (FDA) has issued a complete response letter regarding the New Drug Application (NDA)"
   },
   {
    "meeting_date": "2021-09-17",
@@ -367,6 +756,168 @@
    "action_quote": "EUA 27034 Amendment 305 ... review completed September 22, 2021",
    "action_label": "The FDA did not approve the application for ages 16 and up; it authorized a booster dose under emergency use for a narrower group, people 65 and older and adults at high risk",
    "follow_not_counted": true
+  },
+  {
+   "meeting_date": "2021-10-07",
+   "committee": "Antimicrobial Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/08/02/2021-16356/antimicrobial-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request",
+   "kind": "product_vote",
+   "product": "Livtencity (maribavir)",
+   "application": "NDA 215596",
+   "sponsor": "Takeda Pharmaceuticals USA, Inc.",
+   "ticker": "TAK",
+   "indication": "Post-transplant cytomegalovirus infection/disease refractory (with or without resistance) to ganciclovir, valganciclovir, cidofovir or foscarnet",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 2,
+     "text": "Is the overall benefit-risk assessment favorable for the use of maribavir for the treatment of transplant recipients with CMV infection and disease that is refractory to treatment with genotypic resistance to ganciclovir, valganciclovir, foscarnet, or cidofovir? (trimmed)",
+     "yes": 17,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    },
+    {
+     "n": 3,
+     "text": "Is the overall benefit-risk assessment favorable for the use of maribavir for the treatment of transplant recipients with CMV infection and disease that is refractory to treatment without genotypic resistance to ganciclovir, valganciclovir, foscarnet, or cidofovir? (trimmed)",
+     "yes": 17,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": false
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/154321/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 17 No: 0 Abstain: 0 (Vote 2); Yes: 17 No: 0 Abstain: 0 (Vote 3)",
+   "fda_action": "approved",
+   "fda_action_date": "2021-11-23",
+   "action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215596",
+   "action_source_type": "fda",
+   "action_quote": "11/23/2021 ORIG-1 Approval"
+  },
+  {
+   "meeting_date": "2021-10-14",
+   "committee": "Vaccines and Related Biological Products Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/10/07/2021-22037/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Moderna COVID-19 Vaccine booster dose",
+   "application": "Emergency Use Authorization request",
+   "sponsor": "ModernaTX, Inc.",
+   "ticker": "MRNA",
+   "indication": "Booster dose in individuals 18 years and older",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-october-14-15-2021-meeting-announcement",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Do available data support the safety and effectiveness of Moderna COVID-19 Vaccine for use under EUA as a booster dose (50 mcg mRNA-1273) at least 6 months after completion of a primary series in the following populations: individuals 65 years of age and older, individuals 18 through 64 years of age at high risk of severe COVID-19, and individuals 18 through 64 years of age whose frequent institutional or occupational exposure to SARS-CoV-2 puts them at high risk of serious complications of COVID-19 including severe COVID-19?",
+     "yes": 19,
+     "no": 0,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/153705/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes = 19, No = 0, Abstain = 0",
+   "fda_action": "other",
+   "fda_action_date": "2021-10-20",
+   "action_source_url": "https://www.fda.gov/news-events/congressional-testimony/next-steps-road-ahead-covid-19-response-11042021",
+   "action_source_type": "fda",
+   "action_quote": "On October 20, 2021, FDA also amended the Moderna COVID-19 Vaccine EUA to include use of a single booster dose",
+   "action_label": "The FDA authorized the vaccine for emergency use"
+  },
+  {
+   "meeting_date": "2021-10-15",
+   "committee": "Vaccines and Related Biological Products Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/10/07/2021-22037/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Janssen COVID-19 Vaccine booster dose",
+   "application": "Emergency Use Authorization request",
+   "sponsor": "Janssen Biotech, Inc. (Johnson & Johnson)",
+   "ticker": "JNJ",
+   "indication": "Booster dose in individuals 18 years and older",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-october-14-15-2021-meeting-announcement",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Do available data support the safety and effectiveness of Janssen COVID-19 Vaccine for use under EUA as a booster dose in individuals 18 years and older at least 2 months after a single dose primary vaccination?",
+     "yes": 19,
+     "no": 0,
+     "abstain": null,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/153705/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes = 19, No = 0",
+   "fda_action": "other",
+   "fda_action_date": "2021-10-20",
+   "action_source_url": "https://www.fda.gov/media/153439/download",
+   "action_source_type": "fda",
+   "action_quote": "EUA 27205 Amendment 194 ... Review completion date: October 20, 2021",
+   "action_label": "The FDA authorized the vaccine for emergency use"
+  },
+  {
+   "meeting_date": "2021-10-26",
+   "committee": "Vaccines and Related Biological Products Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/10/13/2021-22452/vaccines-and-related-biological-products-advisory-committee-notice-of-meeting-establishment-of-a",
+   "kind": "product_vote",
+   "product": "Pfizer-BioNTech COVID-19 Vaccine, children 5-11 years",
+   "application": "Emergency Use Authorization request",
+   "sponsor": "Pfizer Inc. / BioNTech",
+   "ticker": "PFE",
+   "indication": "Prevention of COVID-19 in children 5 through 11 years (10 microgram dose)",
+   "meeting_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-october-26-2021-meeting-announcement",
+   "questions": [
+    {
+     "n": 1,
+     "text": "Based on the totality of scientific evidence available, do the benefits of the Pfizer-BioNTech COVID-19 Vaccine when administered as a 2-dose series (10 µg each dose, 3 weeks apart) outweigh its risks for use in children 5-11 years of age?",
+     "yes": 17,
+     "no": 0,
+     "abstain": 1,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://www.fda.gov/media/154192/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes = 17, No = 0, Abstain = 1.",
+   "fda_action": "other",
+   "fda_action_date": "2021-10-29",
+   "action_source_url": "https://www.fda.gov/news-events/congressional-testimony/next-steps-road-ahead-covid-19-response-11042021",
+   "action_source_type": "fda",
+   "action_quote": "On October 29, 2021, the FDA authorized the emergency use of the Pfizer-BioNTech COVID-19 Vaccine",
+   "action_label": "The FDA authorized the vaccine for emergency use"
+  },
+  {
+   "meeting_date": "2021-11-30",
+   "committee": "Antimicrobial Drugs Advisory Committee",
+   "fr_url": "https://www.federalregister.gov/documents/2021/10/27/2021-23384/antimicrobial-drugs-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request",
+   "kind": "product_vote",
+   "product": "molnupiravir (Lagevrio)",
+   "application": "EUA 000108",
+   "sponsor": "Merck Sharp & Dohme Corp. (with Ridgeback Biotherapeutics)",
+   "ticker": "MRK",
+   "indication": "Treatment of mild-to-moderate COVID-19 in adults at high risk of progression",
+   "meeting_url": null,
+   "questions": [
+    {
+     "n": 3,
+     "text": "Do the known and potential benefits of molnupiravir outweigh the known and potential risks of molnupiravir when used for the treatment of mild-moderate COVID-19 in adult patients who are within 5 days of symptom onset and are at high risk of severe COVID-19, including hospitalization or death?",
+     "yes": 13,
+     "no": 10,
+     "abstain": 0,
+     "is_overall": true
+    }
+   ],
+   "vote_source_url": "https://fda.gov/media/154970/download",
+   "vote_source_type": "fda",
+   "vote_source_quote": "Yes: 13 No: 10 Abstain: 0",
+   "fda_action": "other",
+   "fda_action_date": "2021-12-23",
+   "action_source_url": "https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-fda-authorizes-additional-oral-antiviral-treatment-covid-19-certain",
+   "action_source_type": "fda",
+   "action_quote": "Today, the U.S. Food and Drug Administration issued an emergency use authorization (EUA) for Merck's molnupiravir",
+   "action_label": "The FDA authorized molnupiravir for emergency use, limited to patients for whom other authorized COVID-19 treatments are not accessible or clinically appropriate"
   },
   {
    "meeting_date": "2022-02-15",
