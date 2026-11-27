@@ -23,8 +23,12 @@ def main():
     cache = json.load(io.open(os.path.join(HERE, "_crl_headings.json"), encoding="utf-8"))
     fails, n = [], 0
     hub = io.open(os.path.join(SITE, "crl", "index.html"), encoding="utf-8").read()
-    for m in re.finditer(r'download\.open\.fda\.gov/crl/([^"]+)" rel="noopener">letter \(PDF\)</a></td>'
-                         r'<td style="font-size:12\.5px">(.*?)</td>', hub):
+    # 2026-11-27: this pattern stopped matching when the hub added an "its text" link after the PDF link (Nov 23),
+    # and the guard went on passing with "0 /crl letters show sections". It now allows that link and the cell
+    # classes the phone layout added, and the floor below fails the guard if it ever matches nothing again.
+    for m in re.finditer(r'download\.open\.fda\.gov/crl/([^"]+)" rel="noopener">letter \(PDF\)</a>'
+                         r'(?: &middot; <a href="/crl/letter/[^"]+">its text</a>)?</td>'
+                         r'<td(?: class="sc(?: nos)?")? style="font-size:12\.5px">(.*?)</td>', hub):
         fn, cell = unquote(m.group(1)), html.unescape(m.group(2))
         if cell in ("", "·", "no text layer (scanned PDF)"):
             continue
@@ -47,6 +51,9 @@ def main():
         for sec in html.unescape(m.group(2)).split("; "):
             if sec.lower() not in heads:
                 fails.append(f"{os.path.relpath(p, SITE)}: '{sec}' is not a heading read from the PDF")
+    if n < 100:
+        fails.append(f"/crl: only {n} letters with sections matched; the hub's row markup changed and this guard "
+                     f"no longer reads it")
     if fails:
         print(f"FAIL: {len(fails)} CRL section failure(s):")
         for f in fails[:20]:
