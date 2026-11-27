@@ -8,6 +8,6 @@ https://www.pdufa.bio/feed	# hub, changed 2026-11-27
 https://www.pdufa.bio/learn	# hub, changed 2026-11-27
 https://www.pdufa.bio/patent-cliff	# hub, changed 2026-11-27
 https://www.pdufa.bio/pdufa-date-changes	# hub, changed 2026-11-27
+https://www.pdufa.bio/sls	# hub, changed 2026-11-27
 https://www.pdufa.bio/condition/cardiovascular	# hub, changed 2026-11-27
 https://www.pdufa.bio/condition/cns-neurology	# hub, changed 2026-11-27
-https://www.pdufa.bio/condition/hematology	# hub, changed 2026-11-27

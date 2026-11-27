@@ -1,6 +1,6 @@
 {
  "held_since": "2026-11-27T06:08:08Z",
- "consecutive_held_runs": 7,
+ "consecutive_held_runs": 8,
  "emailed_at": "2026-11-27T08:26:54Z",
  "leads": [
   {
@@ -84,8 +84,15 @@
    "source": "drug_pages",
    "row_id": "drug:cabotegravir",
    "key": "cabotegravir|openfda:20261116",
-   "text": "/drug/cabotegravir openfda:20261116 AP 20261116 (SUPPL-12, class EFFICACY)",
+   "text": "/drug/cabotegravir openfda:20261116 AP 20261116 (SUPPL-10, class EFFICACY)",
    "first_seen": "2026-11-27T08:26:54Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:bezuclastinib-summit",
+   "key": "bezuclastinib-summit|openfda:20261124",
+   "text": "/drug/bezuclastinib-summit openfda:20261124 AP 20261124 (ORIG-1, class TYPE 1)",
+   "first_seen": "2026-11-27T22:10:13Z"
   },
   {
    "source": "drug_pages",
@@ -105,6 +112,7 @@
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
   "drug_pages|bezuclastinib-summit|fda-oncology-notifications",
+  "drug_pages|bezuclastinib-summit|openfda:20261124",
   "drug_pages|bezuclastinib|fda-oncology-notifications",
   "drug_pages|budoprutug-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
   "drug_pages|cabotegravir|openfda:20261116",

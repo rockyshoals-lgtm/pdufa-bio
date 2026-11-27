@@ -2902,6 +2902,21 @@
    "permanent": true
   },
   {
+   "source": "/pdufa/KPTI",
+   "destination": "/pdufa/KPTI-xpovio-myelofibrosis",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/INCY-2026-04-08",
+   "destination": "/fda-decision/INCY-2026-03-06",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/MGNX-2026-04-08",
+   "destination": "/fda-decision/INCY-2026-03-06",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -3072,6 +3087,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/belantamab-mafodotin",
+   "destination": "/drug/blenrep",
+   "permanent": true
+  },
+  {
    "source": "/drug/belimumab",
    "destination": "/drug/benlysta",
    "permanent": true
@@ -3152,6 +3172,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/cyclobenzaprine-hydrochloride",
+   "destination": "/drug/tonmya",
+   "permanent": true
+  },
+  {
    "source": "/drug/daratumumab-and-hyaluronidase-fihj",
    "destination": "/drug/darzalex-faspro",
    "permanent": true
@@ -3229,6 +3254,11 @@
   {
    "source": "/drug/dostarlimab-gxly",
    "destination": "/drug/jemperli",
+   "permanent": true
+  },
+  {
+   "source": "/drug/doxycycline-hyclate",
+   "destination": "/drug/bacfenssi",
    "permanent": true
   },
   {
@@ -3349,6 +3379,11 @@
   {
    "source": "/drug/glofitamab-gxbm",
    "destination": "/drug/columvi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/gozetotide",
+   "destination": "/drug/gozellix",
    "permanent": true
   },
   {
@@ -3474,6 +3509,11 @@
   {
    "source": "/drug/lecanemab-irmb",
    "destination": "/drug/leqembi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/lenacapavir-sodium",
+   "destination": "/drug/yeztugo",
    "permanent": true
   },
   {
@@ -4314,21 +4354,6 @@
   {
    "source": "/drug/xrx",
    "destination": "/ticker/XRTX",
-   "permanent": true
-  },
-  {
-   "source": "/pdufa/KPTI",
-   "destination": "/pdufa/KPTI-xpovio-myelofibrosis",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/INCY-2026-04-08",
-   "destination": "/fda-decision/INCY-2026-03-06",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/MGNX-2026-04-08",
-   "destination": "/fda-decision/INCY-2026-03-06",
    "permanent": true
   }
  ],

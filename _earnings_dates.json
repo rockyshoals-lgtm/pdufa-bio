@@ -1,7 +1,7 @@
 {
-"fetched": "2026-11-27T18:32:07Z",
+"fetched": "2026-11-27T21:59:22Z",
 "from": "2024-01-01",
-"parser_version": 5,
+"parser_version": 6,
 "tickers": {
 "AAPG": {
 "backfilled": "2026-11-27",
@@ -427,7 +427,246 @@
 "backfilled": "2026-11-27",
 "name": "AbCellera Biologics Inc.",
 "read": "2026-11-27",
-"releases": [],
+"releases": [
+{
+"call_time": "5:00 p.m. ET",
+"kind": "schedule",
+"period": "Full Year 2023",
+"period_key": "2023FY",
+"published_et": "2024-01-23 16:05",
+"report_date": "2024-02-20",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report Full Year 2023 Financial Results on February 20, 2024",
+"url": "https://www.businesswire.com/news/home/20240123261868/en/AbCellera-to-Report-Full-Year-2023-Financial-Results-on-February-20-2024/"
+},
+{
+"call_time": "5:00 p.m. ET",
+"kind": "schedule",
+"period": "First Quarter 2024",
+"period_key": "2024Q1",
+"published_et": "2024-04-03 16:05",
+"report_date": "2024-05-07",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report First Quarter 2024 Financial Results on May 7, 2024",
+"url": "https://www.businesswire.com/news/home/20240403603286/en/AbCellera-to-Report-First-Quarter-2024-Financial-Results-on-May-7-2024/"
+},
+{
+"kind": "results",
+"period": "Q1 2024",
+"period_key": "2024Q1",
+"published_et": "2024-05-07 16:05",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"title": "AbCellera Reports Q1 2024 Business Results",
+"url": "https://www.businesswire.com/news/home/20240507073711/en/AbCellera-Reports-Q1-2024-Business-Results/"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "Second Quarter 2024",
+"period_key": "2024Q2",
+"published_et": "2024-06-25 16:05",
+"report_date": "2024-08-06",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report Second Quarter 2024 Financial Results on August 6, 2024",
+"url": "https://www.businesswire.com/news/home/20240625594162/en/AbCellera-to-Report-Second-Quarter-2024-Financial-Results-on-August-6-2024/"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "Third Quarter 2024",
+"period_key": "2024Q3",
+"published_et": "2024-09-26 16:05",
+"report_date": "2024-11-04",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report Third Quarter 2024 Financial Results on November 4, 2024",
+"url": "https://www.businesswire.com/news/home/20240926882302/en/AbCellera-to-Report-Third-Quarter-2024-Financial-Results-on-November-4-2024/"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "Full Year 2024",
+"period_key": "2024FY",
+"published_et": "2025-01-21 16:05",
+"report_date": "2025-02-27",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report Full Year 2024 Financial Results on February 27, 2025",
+"url": "https://www.businesswire.com/news/home/20250121134637/en/AbCellera-to-Report-Full-Year-2024-Financial-Results-on-February-27-2025/"
+},
+{
+"kind": "results",
+"period": "Full Year 2024",
+"period_key": "2024FY",
+"published_et": "2025-02-27 16:05",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"title": "AbCellera Reports Full Year 2024 Business Results",
+"url": "https://www.businesswire.com/news/home/20250227428090/en/AbCellera-Reports-Full-Year-2024-Business-Results/"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "First Quarter 2025",
+"period_key": "2025Q1",
+"published_et": "2025-04-03 16:05",
+"report_date": "2025-05-08",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report First Quarter 2025 Financial Results on May 8, 2025",
+"url": "https://www.businesswire.com/news/home/20250403307038/en/AbCellera-to-Report-First-Quarter-2025-Financial-Results-on-May-8-2025/"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "Second Quarter 2025",
+"period_key": "2025Q2",
+"published_et": "2025-07-07 16:05",
+"report_date": "2025-08-07",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report Second Quarter 2025 Financial Results on August 7, 2025",
+"url": "https://www.businesswire.com/news/home/20250707945378/en/AbCellera-to-Report-Second-Quarter-2025-Financial-Results-on-August-7-2025/"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "Third Quarter 2025",
+"period_key": "2025Q3",
+"published_et": "2025-09-29 16:05",
+"report_date": "2025-11-06",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report Third Quarter 2025 Financial Results on November 6, 2025",
+"url": "https://www.businesswire.com/news/home/20250929862522/en/AbCellera-to-Report-Third-Quarter-2025-Financial-Results-on-November-6-2025/"
+},
+{
+"kind": "results",
+"period": "Q3 2025",
+"period_key": "2025Q3",
+"published_et": "2025-11-06 16:05",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"title": "AbCellera Reports Q3 2025 Business Results",
+"url": "https://www.businesswire.com/news/home/20251106420463/en/AbCellera-Reports-Q3-2025-Business-Results/"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "Full Year 2025",
+"period_key": "2025FY",
+"published_et": "2026-01-22 16:05",
+"report_date": "2026-02-24",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report Full Year 2025 Financial Results on February 24, 2026",
+"url": "https://www.businesswire.com/news/home/20260122259748/en/AbCellera-to-Report-Full-Year-2025-Financial-Results-on-February-24-2026/"
+},
+{
+"kind": "results",
+"period": "Full Year 2025",
+"period_key": "2025FY",
+"published_et": "2026-02-24 16:05",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"title": "AbCellera Reports Full Year 2025 Business Results",
+"url": "https://www.businesswire.com/news/home/20260224767346/en/AbCellera-Reports-Full-Year-2025-Business-Results/"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "First Quarter 2026",
+"period_key": "2026Q1",
+"published_et": "2026-04-01 16:05",
+"report_date": "2026-05-11",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report First Quarter 2026 Financial Results on May 11, 2026",
+"url": "https://www.businesswire.com/news/home/20260401189819/en/AbCellera-to-Report-First-Quarter-2026-Financial-Results-on-May-11-2026/"
+},
+{
+"kind": "results",
+"period": "Q1 2026",
+"period_key": "2026Q1",
+"published_et": "2026-05-11 16:05",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"title": "AbCellera Reports Q1 2026 Business Results & Announces Positive Interim Phase 1 Clinical Data for ABCL635",
+"url": "https://www.businesswire.com/news/home/20260511135503/en/AbCellera-Reports-Q1-2026-Business-Results-Announces-Positive-Interim-Phase-1-Clinical-Data-for-ABCL635/"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "Second Quarter 2026",
+"period_key": "2026Q2",
+"published_et": "2026-07-07 16:05",
+"report_date": "2026-08-05",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report Second Quarter 2026 Financial Results on August 5, 2026",
+"url": "https://www.businesswire.com/news/home/20260707637618/en/AbCellera-to-Report-Second-Quarter-2026-Financial-Results-on-August-5-2026/"
+},
+{
+"kind": "results",
+"period": "Q2 2026",
+"period_key": "2026Q2",
+"published_et": "2026-08-05 16:05",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"title": "AbCellera Reports Q2 2026 Business Results",
+"url": "https://www.businesswire.com/news/home/20260805538498/en/AbCellera-Reports-Q2-2026-Business-Results/"
+},
+{
+"call_time": null,
+"kind": "schedule",
+"period": "Third Quarter 2026",
+"period_key": "2026Q3",
+"published_et": "2026-10-01 16:05",
+"report_date": "2026-11-09",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"timing": null,
+"timing_words": null,
+"title": "AbCellera to Report Third Quarter 2026 Financial Results on November 9, 2026",
+"url": "https://www.businesswire.com/news/home/20260930581206/en/AbCellera-to-Report-Third-Quarter-2026-Financial-Results-on-November-9-2026/"
+},
+{
+"kind": "results",
+"period": "Q3 2026",
+"period_key": "2026Q3",
+"published_et": "2026-11-09 16:05",
+"site": "businesswire.com",
+"stem": "AbCellera",
+"title": "AbCellera Reports Q3 2026 Business Results",
+"url": "https://www.businesswire.com/news/home/20261109441631/en/AbCellera-Reports-Q3-2026-Business-Results/"
+}
+],
 "tracked": true
 },
 "ABEO": {
@@ -1994,7 +2233,7 @@
 "published_et": "2024-02-21 16:05",
 "report_date": "2024-02-28",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report Fourth Quarter and Full Year 2023 Financial Results on February 28, 2024",
@@ -2006,7 +2245,7 @@
 "period_key": "2023Q4+FY",
 "published_et": "2024-02-28 16:05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "title": "ADMA Biologics Announces Fourth Quarter and Full Year 2023 Financial Results and Provides Business Update",
 "url": "https://www.globenewswire.com/news-release/2024/02/28/2837428/33130/en/ADMA-Biologics-Announces-Fourth-Quarter-and-Full-Year-2023-Financial-Results-and-Provides-Business-Update.html"
 },
@@ -2018,7 +2257,7 @@
 "published_et": "2024-05-02 07:00",
 "report_date": "2024-05-09",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report First Quarter 2024 Financial Results on May 9, 2024",
@@ -2030,7 +2269,7 @@
 "period_key": "2024Q1",
 "published_et": "2024-05-09 16:05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "title": "ADMA Biologics Announces First Quarter 2024 Financial Results and Provides Business Update",
 "url": "https://www.globenewswire.com/news-release/2024/05/09/2879184/33130/en/ADMA-Biologics-Announces-First-Quarter-2024-Financial-Results-and-Provides-Business-Update.html"
 },
@@ -2042,7 +2281,7 @@
 "published_et": "2024-08-01 07:00",
 "report_date": "2024-08-08",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report Second Quarter 2024 Financial Results on August 8, 2024",
@@ -2056,7 +2295,7 @@
 "published_et": "2024-10-29 16:10",
 "report_date": "2024-11-07",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report Third Quarter 2024 Financial Results on November 7, 2024",
@@ -2070,7 +2309,7 @@
 "published_et": "2025-02-25 07:00",
 "report_date": "2025-03-03",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report Fourth Quarter and Full Year 2024 Financial Results on March 3, 2025",
@@ -2082,7 +2321,7 @@
 "period_key": "2024Q4+FY",
 "published_et": "2025-03-03 16:05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "title": "ADMA Biologics Announces Fourth Quarter and Full Year 2024 Financial Results and Provides Business Update",
 "url": "https://www.globenewswire.com/news-release/2025/03/03/3036037/33130/en/ADMA-Biologics-Announces-Fourth-Quarter-and-Full-Year-2024-Financial-Results-and-Provides-Business-Update.html"
 },
@@ -2094,7 +2333,7 @@
 "published_et": "2025-04-30 07:00",
 "report_date": "2025-05-07",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report First Quarter 2025 Financial Results on May 7, 2025",
@@ -2106,7 +2345,7 @@
 "period_key": "2025Q1",
 "published_et": "2025-05-07 16:05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "title": "ADMA Biologics Announces First Quarter 2025 Financial Results and Provides Business Update",
 "url": "https://www.globenewswire.com/news-release/2025/05/07/3076554/33130/en/ADMA-Biologics-Announces-First-Quarter-2025-Financial-Results-and-Provides-Business-Update.html"
 },
@@ -2118,7 +2357,7 @@
 "published_et": "2025-07-30 07:00",
 "report_date": "2025-08-06",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report Second Quarter 2025 Financial Results on August 6, 2025",
@@ -2130,7 +2369,7 @@
 "period_key": "2025Q2",
 "published_et": "2025-08-06 16:05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "title": "ADMA Biologics Announces Second Quarter 2025 Financial Results and Provides Business Update",
 "url": "https://www.globenewswire.com/news-release/2025/08/06/3128654/33130/en/ADMA-Biologics-Announces-Second-Quarter-2025-Financial-Results-and-Provides-Business-Update.html"
 },
@@ -2142,7 +2381,7 @@
 "published_et": "2025-10-29 07:00",
 "report_date": "2025-11-05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report Third Quarter 2025 Financial Results on November 5, 2025",
@@ -2154,7 +2393,7 @@
 "period_key": "2025Q3",
 "published_et": "2025-11-05 16:05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "title": "ADMA Biologics Announces Third Quarter 2025 Financial Results and Provides Business Update",
 "url": "https://www.globenewswire.com/news-release/2025/11/05/3181938/33130/en/ADMA-Biologics-Announces-Third-Quarter-2025-Financial-Results-and-Provides-Business-Update.html"
 },
@@ -2166,7 +2405,7 @@
 "published_et": "2026-02-18 07:00",
 "report_date": "2026-02-25",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report Fourth Quarter and Full Year 2025 Financial Results on February 25, 2026",
@@ -2178,7 +2417,7 @@
 "period_key": "2025Q4+FY",
 "published_et": "2026-02-25 16:05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "title": "ADMA Biologics Reports Record Fourth Quarter and Full Year 2025 Financial Results and Provides Business Update",
 "url": "https://www.globenewswire.com/news-release/2026/02/25/3245009/33130/en/ADMA-Biologics-Reports-Record-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Provides-Business-Update.html"
 },
@@ -2190,7 +2429,7 @@
 "published_et": "2026-04-29 07:00",
 "report_date": "2026-05-06",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report First Quarter 2026 Financial Results on May 6, 2026",
@@ -2202,7 +2441,7 @@
 "period_key": "2026Q1",
 "published_et": "2026-05-06 16:05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "title": "ADMA Biologics Reports First Quarter 2026 Financial Results and Provides Business Update",
 "url": "https://www.globenewswire.com/news-release/2026/05/06/3289333/33130/en/adma-biologics-reports-first-quarter-2026-financial-results-and-provides-business-update.html"
 },
@@ -2214,7 +2453,7 @@
 "published_et": "2026-07-29 07:00",
 "report_date": "2026-08-05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report Second Quarter 2026 Financial Results on August 5, 2026",
@@ -2226,7 +2465,7 @@
 "period_key": "2026Q2",
 "published_et": "2026-08-05 16:05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "title": "ADMA Biologics Reports Second Quarter 2026 Financial Results and Provides Business Update",
 "url": "https://www.globenewswire.com/news-release/2026/08/05/3339691/33130/en/adma-biologics-reports-second-quarter-2026-financial-results-and-provides-business-update.html"
 },
@@ -2238,7 +2477,7 @@
 "published_et": "2026-10-28 07:00",
 "report_date": "2026-11-04",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "timing": null,
 "timing_words": null,
 "title": "ADMA Biologics to Report Third Quarter 2026 Financial Results on November 4, 2026",
@@ -2250,7 +2489,7 @@
 "period_key": "2026Q3",
 "published_et": "2026-11-04 16:05",
 "site": "globenewswire.com",
-"stem": "ADMA BIOLOGICS",
+"stem": "ADMA",
 "title": "ADMA Biologics Reports Third Quarter 2026 Financial Results and Provides Business Update",
 "url": "https://www.globenewswire.com/news-release/2026/11/04/3395815/33130/en/adma-biologics-reports-third-quarter-2026-financial-results-and-provides-business-update.html"
 }
@@ -5228,6 +5467,16 @@
 "stem": "Amarin",
 "title": "Amarin Reports 2026 Second Quarter Financial Results Demonstrating Early Success of Fully Partnered International Commercial Strategy and Continued Leading U.S. Market Presence",
 "url": "https://www.globenewswire.com/news-release/2026/07/29/3335093/18362/en/amarin-reports-2026-second-quarter-financial-results-demonstrating-early-success-of-fully-partnered-international-commercial-strategy-and-continued-leading-u-s-market-presence.html"
+},
+{
+"kind": "results",
+"period": "third quarter ended September 30, 2026",
+"period_key": "2026Q3",
+"published_et": "2026-10-28 07:00",
+"site": "globenewswire.com",
+"stem": "Amarin",
+"title": "Amarin Reports 2026 Third Quarter Financial Results, Achieves Positive Net Income",
+"url": "https://www.globenewswire.com/news-release/2026/10/28/3390024/18362/en/amarin-reports-2026-third-quarter-financial-results-achieves-positive-net-income.html"
 }
 ],
 "tracked": true
@@ -5803,6 +6052,16 @@
 "url": "https://www.globenewswire.com/news-release/2024/02/07/2825036/0/en/ANI-Pharmaceuticals-to-Discuss-Fourth-Quarter-and-Full-Year-2023-Financial-Results-on-February-29-2024-at-8-30-a-m-ET.html"
 },
 {
+"kind": "results",
+"period": "fourth quarter and full year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"published_et": "2024-02-29 06:50",
+"site": "globenewswire.com",
+"stem": "ANI",
+"title": "ANI Pharmaceuticals Reports Fourth Quarter and Record Full-Year 2023 Financial Results and Provides 2024 Guidance",
+"url": "https://www.globenewswire.com/news-release/2024/02/29/2837800/0/en/ANI-Pharmaceuticals-Reports-Fourth-Quarter-and-Record-Full-Year-2023-Financial-Results-and-Provides-2024-Guidance.html"
+},
+{
 "call_time": null,
 "kind": "schedule",
 "period": "First Quarter 2024",
@@ -6059,7 +6318,18 @@
 "backfilled": "2026-11-27",
 "name": "Adlai Nortye Group Ltd.",
 "read": "2026-11-27",
-"releases": [],
+"releases": [
+{
+"kind": "results",
+"period": "First Half 2026",
+"period_key": "2026H1",
+"published_et": "2026-08-14 07:00",
+"site": "globenewswire.com",
+"stem": "Adlai Nortye",
+"title": "Adlai Nortye Ltd. Reports Unaudited First Half 2026 Financial Results and Highlights Recent Operational Progress",
+"url": "https://www.globenewswire.com/news-release/2026/08/14/3345240/0/en/adlai-nortye-ltd-reports-unaudited-first-half-2026-financial-results-and-highlights-recent-operational-progress.html"
+}
+],
 "tracked": true
 },
 "ANNX": {
@@ -9570,6 +9840,16 @@
 },
 {
 "kind": "results",
+"period": "first quarter ended March 31, 2025",
+"period_key": "2025Q1",
+"published_et": "2025-05-08 07:05",
+"site": "globenewswire.com",
+"stem": "Axogen",
+"title": "Axogen, Inc. Reports 2025 First Quarter Financial Results",
+"url": "https://www.globenewswire.com/news-release/2025/05/08/3077097/0/en/Axogen-Inc-Reports-2025-First-Quarter-Financial-Results.html"
+},
+{
+"kind": "results",
 "period": "Third Quarter 2025",
 "period_key": "2025Q3",
 "published_et": "2025-10-29 07:00",
@@ -11409,7 +11689,6 @@
 "tracked": true
 },
 "BIOA": {
-"backfilled": "2026-11-27",
 "name": "BioAge Labs, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -11487,14 +11766,12 @@
 "tracked": true
 },
 "BIVI": {
-"backfilled": "2026-11-27",
 "name": "Biovie Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "BLSM": {
-"backfilled": "2026-11-27",
 "name": "BlossomHill Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -11522,7 +11799,6 @@
 "tracked": true
 },
 "BLTE": {
-"backfilled": "2026-11-27",
 "name": "Belite Bio, Inc",
 "read": "2026-11-27",
 "releases": [
@@ -11590,7 +11866,6 @@
 "tracked": true
 },
 "BMEA": {
-"backfilled": "2026-11-27",
 "name": "Biomea Fusion, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -11708,7 +11983,6 @@
 "tracked": true
 },
 "BMRN": {
-"backfilled": "2026-11-27",
 "name": "Biomarin Pharmaceutical Inc",
 "read": "2026-11-27",
 "releases": [
@@ -11806,7 +12080,6 @@
 "tracked": true
 },
 "BMY": {
-"backfilled": "2026-11-27",
 "name": "Bristol-Myers Squibb Company",
 "read": "2026-11-27",
 "releases": [
@@ -12016,7 +12289,6 @@
 "tracked": true
 },
 "BNTX": {
-"backfilled": "2026-11-27",
 "name": "BioNTech SE",
 "read": "2026-11-27",
 "releases": [
@@ -12312,7 +12584,6 @@
 "tracked": true
 },
 "BOLT": {
-"backfilled": "2026-11-27",
 "name": "Bolt Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -12420,7 +12691,6 @@
 "tracked": true
 },
 "BRVE": {
-"backfilled": "2026-11-27",
 "name": "Braveheart Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -12448,7 +12718,6 @@
 "tracked": true
 },
 "BSEM": {
-"backfilled": "2026-11-27",
 "name": "BioStem Technologies, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -12714,7 +12983,6 @@
 "tracked": true
 },
 "BTAI": {
-"backfilled": "2026-11-27",
 "name": "BioXcel Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -12844,7 +13112,6 @@
 "tracked": true
 },
 "BYSI": {
-"backfilled": "2026-11-27",
 "name": "BeyondSpring Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -12882,7 +13149,6 @@
 "tracked": true
 },
 "CABA": {
-"backfilled": "2026-11-27",
 "name": "Cabaletta Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -12990,7 +13256,6 @@
 "tracked": true
 },
 "CADL": {
-"backfilled": "2026-11-27",
 "name": "Candel Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13098,7 +13363,6 @@
 "tracked": true
 },
 "CALC": {
-"backfilled": "2026-11-27",
 "name": "CalciMedica, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13186,7 +13450,6 @@
 "tracked": true
 },
 "CANF": {
-"backfilled": "2026-11-27",
 "name": "Can-Fite BioPharma Ltd.",
 "read": "2026-11-27",
 "releases": [
@@ -13214,7 +13477,6 @@
 "tracked": true
 },
 "CAPR": {
-"backfilled": "2026-11-27",
 "name": "Capricor Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13414,7 +13676,6 @@
 "tracked": true
 },
 "CASI": {
-"backfilled": "2026-11-27",
 "name": "CASI Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13512,7 +13773,6 @@
 "tracked": true
 },
 "CBIO": {
-"backfilled": "2026-11-27",
 "name": "Crescent Biopharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13580,7 +13840,6 @@
 "tracked": true
 },
 "CCCC": {
-"backfilled": "2026-11-27",
 "name": "C4 Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13688,7 +13947,6 @@
 "tracked": true
 },
 "CELC": {
-"backfilled": "2026-11-27",
 "name": "Celcuity Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -13944,7 +14202,6 @@
 "tracked": true
 },
 "CERS": {
-"backfilled": "2026-11-27",
 "name": "Cerus Corp",
 "read": "2026-11-27",
 "releases": [
@@ -14210,7 +14467,6 @@
 "tracked": true
 },
 "CGEM": {
-"backfilled": "2026-11-27",
 "name": "Cullinan Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -14308,7 +14564,6 @@
 "tracked": true
 },
 "CGEN": {
-"backfilled": "2026-11-27",
 "name": "Compugen Ltd.",
 "read": "2026-11-27",
 "releases": [
@@ -14590,7 +14845,6 @@
 "tracked": true
 },
 "CGON": {
-"backfilled": "2026-11-27",
 "name": "CG Oncology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -14678,7 +14932,6 @@
 "tracked": true
 },
 "CGTX": {
-"backfilled": "2026-11-27",
 "name": "Cognition Therapeutics Inc",
 "read": "2026-11-27",
 "releases": [
@@ -14778,7 +15031,6 @@
 "tracked": true
 },
 "CHRS": {
-"backfilled": "2026-11-27",
 "name": "Coherus Oncology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15014,7 +15266,6 @@
 "tracked": true
 },
 "CING": {
-"backfilled": "2026-11-27",
 "name": "Cingulate Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15112,7 +15363,6 @@
 "tracked": true
 },
 "CLDI": {
-"backfilled": "2026-11-27",
 "name": "Calidi Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15220,7 +15470,6 @@
 "tracked": true
 },
 "CLDX": {
-"backfilled": "2026-11-27",
 "name": "Celldex Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15308,7 +15557,6 @@
 "tracked": true
 },
 "CLLS": {
-"backfilled": "2026-11-27",
 "name": "Cellectis S.A.",
 "read": "2026-11-27",
 "releases": [
@@ -15566,7 +15814,6 @@
 "tracked": true
 },
 "CLRB": {
-"backfilled": "2026-11-27",
 "name": "Cellectar Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15734,7 +15981,6 @@
 "tracked": true
 },
 "CLYM": {
-"backfilled": "2026-11-27",
 "name": "Climb Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -15822,14 +16068,12 @@
 "tracked": true
 },
 "CMND": {
-"backfilled": "2026-11-27",
 "name": "Clearmind Medicine Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "CMPS": {
-"backfilled": "2026-11-27",
 "name": "COMPASS Pathways plc",
 "read": "2026-11-27",
 "releases": [
@@ -16045,7 +16289,6 @@
 "tracked": true
 },
 "CMPX": {
-"backfilled": "2026-11-27",
 "name": "Compass Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16103,7 +16346,6 @@
 "tracked": true
 },
 "CNTA": {
-"backfilled": "2026-11-27",
 "name": "Centessa Pharmaceuticals plc",
 "read": "2026-11-27",
 "releases": [
@@ -16191,7 +16433,6 @@
 "tracked": true
 },
 "CNTX": {
-"backfilled": "2026-11-27",
 "name": "Context Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16309,7 +16550,6 @@
 "tracked": true
 },
 "COAG": {
-"backfilled": "2026-11-27",
 "name": "Hemab Therapeutics",
 "read": "2026-11-27",
 "releases": [
@@ -16341,7 +16581,6 @@
 "tracked": true
 },
 "COCP": {
-"backfilled": "2026-11-27",
 "name": "Cocrystal Pharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16409,7 +16648,6 @@
 "tracked": true
 },
 "COGT": {
-"backfilled": "2026-11-27",
 "name": "Cogent Biosciences",
 "read": "2026-11-27",
 "releases": [
@@ -16507,7 +16745,6 @@
 "tracked": true
 },
 "CORT": {
-"backfilled": "2026-11-27",
 "name": "Corcept Therapeutics Inc",
 "read": "2026-11-27",
 "releases": [
@@ -16597,7 +16834,6 @@
 "tracked": true
 },
 "COYA": {
-"backfilled": "2026-11-27",
 "name": "Coya Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16665,7 +16901,6 @@
 "tracked": true
 },
 "CRBP": {
-"backfilled": "2026-11-27",
 "name": "Corbus Pharmaceuticals Holdings, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16723,7 +16958,6 @@
 "tracked": true
 },
 "CRBU": {
-"backfilled": "2026-11-27",
 "name": "Caribou Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16821,7 +17055,6 @@
 "tracked": true
 },
 "CRDF": {
-"backfilled": "2026-11-27",
 "name": "Cardiff Oncology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -16919,7 +17152,6 @@
 "tracked": true
 },
 "CRIS": {
-"backfilled": "2026-11-27",
 "name": "Curis Inc",
 "read": "2026-11-27",
 "releases": [
@@ -17081,7 +17313,6 @@
 "tracked": true
 },
 "CRNX": {
-"backfilled": "2026-11-27",
 "name": "Crinetics Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -17329,7 +17560,6 @@
 "tracked": true
 },
 "CRSP": {
-"backfilled": "2026-11-27",
 "name": "CRISPR Therapeutics AG",
 "read": "2026-11-27",
 "releases": [
@@ -17447,7 +17677,6 @@
 "tracked": true
 },
 "CRVO": {
-"backfilled": "2026-11-27",
 "name": "CervoMed Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -17535,7 +17764,6 @@
 "tracked": true
 },
 "CRVS": {
-"backfilled": "2026-11-27",
 "name": "Corvus Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -17743,14 +17971,12 @@
 "tracked": true
 },
 "CSLLY": {
-"backfilled": "2026-11-27",
 "name": "Csl Ltd",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "CSTL": {
-"backfilled": "2026-11-27",
 "name": "Castle Biosciences INC",
 "read": "2026-11-27",
 "releases": [
@@ -17974,7 +18200,6 @@
 "tracked": true
 },
 "CTMX": {
-"backfilled": "2026-11-27",
 "name": "CytomX Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18198,7 +18423,6 @@
 "tracked": true
 },
 "CTY": {
-"backfilled": "2026-11-27",
 "name": "City Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18216,7 +18440,6 @@
 "tracked": true
 },
 "CUE": {
-"backfilled": "2026-11-27",
 "name": "Cue Biopharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18334,7 +18557,6 @@
 "tracked": true
 },
 "CYTK": {
-"backfilled": "2026-11-27",
 "name": "Cytokinetics Inc",
 "read": "2026-11-27",
 "releases": [
@@ -18452,7 +18674,6 @@
 "tracked": true
 },
 "DFTX": {
-"backfilled": "2026-11-27",
 "name": "Definium Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18528,7 +18749,6 @@
 "tracked": true
 },
 "DNLI": {
-"backfilled": "2026-11-27",
 "name": "Denali Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18684,7 +18904,6 @@
 "tracked": true
 },
 "DNTH": {
-"backfilled": "2026-11-27",
 "name": "Dianthus Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18722,7 +18941,6 @@
 "tracked": true
 },
 "DSGN": {
-"backfilled": "2026-11-27",
 "name": "Design Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -18850,7 +19068,6 @@
 "tracked": true
 },
 "DSNKY": {
-"backfilled": "2026-11-27",
 "name": "Daiichi Sankyo Company, Limited",
 "read": "2026-11-27",
 "releases": [
@@ -18878,7 +19095,6 @@
 "tracked": true
 },
 "DTIL": {
-"backfilled": "2026-11-27",
 "name": "Precision BioSciences",
 "read": "2026-11-27",
 "releases": [
@@ -19164,7 +19380,6 @@
 "tracked": true
 },
 "DWTX": {
-"backfilled": "2026-11-27",
 "name": "Dogwood Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -19308,7 +19523,6 @@
 "tracked": true
 },
 "DYN": {
-"backfilled": "2026-11-27",
 "name": "Dyne Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -19426,7 +19640,6 @@
 "tracked": true
 },
 "EBS": {
-"backfilled": "2026-11-27",
 "name": "Emergent BioSolutions",
 "read": "2026-11-27",
 "releases": [
@@ -19642,7 +19855,6 @@
 "tracked": true
 },
 "EDIT": {
-"backfilled": "2026-11-27",
 "name": "Editas Medicine, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -19798,7 +20010,6 @@
 "tracked": true
 },
 "EIKN": {
-"backfilled": "2026-11-27",
 "name": "Eikon Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -19846,7 +20057,6 @@
 "tracked": true
 },
 "ELTX": {
-"backfilled": "2026-11-27",
 "name": "Elicio Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -19954,7 +20164,6 @@
 "tracked": true
 },
 "ELVN": {
-"backfilled": "2026-11-27",
 "name": "Enliven Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -19992,7 +20201,6 @@
 "tracked": true
 },
 "ENGN": {
-"backfilled": "2026-11-27",
 "name": "enGene Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20010,14 +20218,12 @@
 "tracked": true
 },
 "ENTA": {
-"backfilled": "2026-11-27",
 "name": "Enanta Pharmaceuticals Inc",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "EQ": {
-"backfilled": "2026-11-27",
 "name": "Equillium, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20105,7 +20311,6 @@
 "tracked": true
 },
 "ERAS": {
-"backfilled": "2026-11-27",
 "name": "Erasca, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20233,14 +20438,12 @@
 "tracked": true
 },
 "ESLA": {
-"backfilled": "2026-11-27",
 "name": "Estrella Immunopharma, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "ETON": {
-"backfilled": "2026-11-27",
 "name": "Eton Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20536,7 +20739,6 @@
 "tracked": true
 },
 "EVMN": {
-"backfilled": "2026-11-27",
 "name": "Evommune, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20594,7 +20796,6 @@
 "tracked": true
 },
 "EWTX": {
-"backfilled": "2026-11-27",
 "name": "Edgewise Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -20682,7 +20883,6 @@
 "tracked": true
 },
 "EXEL": {
-"backfilled": "2026-11-27",
 "name": "Exelixis",
 "read": "2026-11-27",
 "releases": [
@@ -20930,7 +21130,6 @@
 "tracked": true
 },
 "EYPT": {
-"backfilled": "2026-11-27",
 "name": "EyePoint, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -21130,7 +21329,6 @@
 "tracked": true
 },
 "FBIO": {
-"backfilled": "2026-11-27",
 "name": "Fortress Biotech, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -21228,14 +21426,12 @@
 "tracked": true
 },
 "FDMT": {
-"backfilled": "2026-11-27",
 "name": "4D Molecular Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "FTH": {
-"backfilled": "2026-11-27",
 "name": "Faeth Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -21263,7 +21459,6 @@
 "tracked": true
 },
 "GERN": {
-"backfilled": "2026-11-27",
 "name": "Geron Corporation",
 "read": "2026-11-27",
 "releases": [
@@ -21525,7 +21720,6 @@
 "tracked": true
 },
 "GHRS": {
-"backfilled": "2026-11-27",
 "name": "GH Research PLC",
 "read": "2026-11-27",
 "releases": [
@@ -21653,7 +21847,6 @@
 "tracked": true
 },
 "GILD": {
-"backfilled": "2026-11-27",
 "name": "Gilead Sciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -21873,7 +22066,6 @@
 "tracked": true
 },
 "GKOS": {
-"backfilled": "2026-11-27",
 "name": "GLAUKOS Corp",
 "read": "2026-11-27",
 "releases": [
@@ -22125,7 +22317,6 @@
 "tracked": true
 },
 "GLPG": {
-"backfilled": "2026-11-27",
 "name": "Galapagos N.V.",
 "read": "2026-11-27",
 "releases": [
@@ -22193,14 +22384,12 @@
 "tracked": true
 },
 "GLSI": {
-"backfilled": "2026-11-27",
 "name": "Greenwich LifeSciences, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "GLUE": {
-"backfilled": "2026-11-27",
 "name": "Monte Rosa Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -22332,7 +22521,6 @@
 "tracked": true
 },
 "GMAB": {
-"backfilled": "2026-11-27",
 "name": "Genmab A/S",
 "read": "2026-11-27",
 "releases": [
@@ -22390,7 +22578,6 @@
 "tracked": true
 },
 "GOSS": {
-"backfilled": "2026-11-27",
 "name": "Gossamer Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -22502,7 +22689,6 @@
 "tracked": true
 },
 "GPCR": {
-"backfilled": "2026-11-27",
 "name": "Structure Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -22570,28 +22756,24 @@
 "tracked": true
 },
 "GRCE": {
-"backfilled": "2026-11-27",
 "name": "Grace Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "GRFS": {
-"backfilled": "2026-11-27",
 "name": "Grifols SA",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "GSK": {
-"backfilled": "2026-11-27",
 "name": "GSK plc",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "GUTS": {
-"backfilled": "2026-11-27",
 "name": "Fractyl Health, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -22853,7 +23035,6 @@
 "tracked": true
 },
 "HALO": {
-"backfilled": "2026-11-27",
 "name": "Halozyme Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23129,7 +23310,6 @@
 "tracked": true
 },
 "HCWB": {
-"backfilled": "2026-11-27",
 "name": "HCW Biologics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23247,7 +23427,6 @@
 "tracked": true
 },
 "HELP": {
-"backfilled": "2026-11-27",
 "name": "Helus Pharma Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23295,14 +23474,12 @@
 "tracked": true
 },
 "HOTH": {
-"backfilled": "2026-11-27",
 "name": "Hoth Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "HOWL": {
-"backfilled": "2026-11-27",
 "name": "Werewolf Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23410,7 +23587,6 @@
 "tracked": true
 },
 "HRMY": {
-"backfilled": "2026-11-27",
 "name": "Harmony Biosciences Holdings, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23588,7 +23764,6 @@
 "tracked": true
 },
 "HUMA": {
-"backfilled": "2026-11-27",
 "name": "Humacyte, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23690,7 +23865,6 @@
 "tracked": true
 },
 "IBIO": {
-"backfilled": "2026-11-27",
 "name": "iBio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23768,7 +23942,6 @@
 "tracked": true
 },
 "IBRX": {
-"backfilled": "2026-11-27",
 "name": "ImmunityBio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23796,7 +23969,6 @@
 "tracked": true
 },
 "IDYA": {
-"backfilled": "2026-11-27",
 "name": "IDEAYA Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -23924,7 +24096,6 @@
 "tracked": true
 },
 "IKT": {
-"backfilled": "2026-11-27",
 "name": "Inhibikase Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24026,7 +24197,6 @@
 "tracked": true
 },
 "ILMN": {
-"backfilled": "2026-11-27",
 "name": "Illumina, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24312,7 +24482,6 @@
 "tracked": true
 },
 "IMA": {
-"backfilled": "2026-11-27",
 "name": "ImageneBio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24370,14 +24539,12 @@
 "tracked": true
 },
 "IMMP": {
-"backfilled": "2026-11-27",
 "name": "IMMUTEP Ltd",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "IMMX": {
-"backfilled": "2026-11-27",
 "name": "Immix Biopharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24395,7 +24562,6 @@
 "tracked": true
 },
 "IMNM": {
-"backfilled": "2026-11-27",
 "name": "Immunome, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24483,7 +24649,6 @@
 "tracked": true
 },
 "IMRX": {
-"backfilled": "2026-11-27",
 "name": "Immuneering Corporation",
 "read": "2026-11-27",
 "releases": [
@@ -24611,7 +24776,6 @@
 "tracked": true
 },
 "IMTX": {
-"backfilled": "2026-11-27",
 "name": "Immatics N.V.",
 "read": "2026-11-27",
 "releases": [
@@ -24729,7 +24893,6 @@
 "tracked": true
 },
 "IMUX": {
-"backfilled": "2026-11-27",
 "name": "Immunic, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24831,14 +24994,12 @@
 "tracked": true
 },
 "IMVT": {
-"backfilled": "2026-11-27",
 "name": "Immunovant, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "INBX": {
-"backfilled": "2026-11-27",
 "name": "Inhibrx Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -24956,7 +25117,6 @@
 "tracked": true
 },
 "INCY": {
-"backfilled": "2026-11-27",
 "name": "Incyte Corp",
 "read": "2026-11-27",
 "releases": [
@@ -25028,7 +25188,6 @@
 "tracked": true
 },
 "INDP": {
-"backfilled": "2026-11-27",
 "name": "Indaptus Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -25126,7 +25285,6 @@
 "tracked": true
 },
 "INDV": {
-"backfilled": "2026-11-27",
 "name": "Indivior Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -25288,7 +25446,6 @@
 "tracked": true
 },
 "INO": {
-"backfilled": "2026-11-27",
 "name": "Inovio Pharmaceuticals",
 "read": "2026-11-27",
 "releases": [
@@ -25584,7 +25741,6 @@
 "tracked": true
 },
 "INSM": {
-"backfilled": "2026-11-27",
 "name": "INSMED Inc",
 "read": "2026-11-27",
 "releases": [
@@ -25866,14 +26022,12 @@
 "tracked": true
 },
 "INTE": {
-"backfilled": "2026-11-27",
 "name": "Integral Acquisition Corporation 1",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "INTS": {
-"backfilled": "2026-11-27",
 "name": "Intensity Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26009,7 +26163,6 @@
 "tracked": true
 },
 "INVA": {
-"backfilled": "2026-11-27",
 "name": "Innoviva, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26097,7 +26250,6 @@
 "tracked": true
 },
 "IONI": {
-"backfilled": "2026-11-27",
 "name": "I-ON Digital Corp.",
 "read": "2026-11-27",
 "releases": [
@@ -26115,7 +26267,6 @@
 "tracked": true
 },
 "IONS": {
-"backfilled": "2026-11-27",
 "name": "Ionis Pharmaceuticals Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26247,7 +26398,6 @@
 "tracked": true
 },
 "IOVA": {
-"backfilled": "2026-11-27",
 "name": "Iovance Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26447,7 +26597,6 @@
 "tracked": true
 },
 "IPHA": {
-"backfilled": "2026-11-27",
 "name": "Innate Pharma SA",
 "read": "2026-11-27",
 "releases": [
@@ -26565,7 +26714,6 @@
 "tracked": true
 },
 "IPSC": {
-"backfilled": "2026-11-27",
 "name": "Century Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26673,14 +26821,12 @@
 "tracked": true
 },
 "IPSEY": {
-"backfilled": "2026-11-27",
 "name": "Ipsen S.A.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "IRD": {
-"backfilled": "2026-11-27",
 "name": "Opus Genetics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26758,7 +26904,6 @@
 "tracked": true
 },
 "IRLA": {
-"backfilled": "2026-11-27",
 "name": "IRulya Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26776,7 +26921,6 @@
 "tracked": true
 },
 "IRON": {
-"backfilled": "2026-11-27",
 "name": "Disc Medicine, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26864,7 +27008,6 @@
 "tracked": true
 },
 "IRWD": {
-"backfilled": "2026-11-27",
 "name": "Ironwood Pharmaceuticals Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -26932,7 +27075,6 @@
 "tracked": true
 },
 "IVA": {
-"backfilled": "2026-11-27",
 "name": "Inventiva S.A.",
 "read": "2026-11-27",
 "releases": [
@@ -27010,14 +27152,12 @@
 "tracked": true
 },
 "IVEVF": {
-"backfilled": "2026-11-27",
 "name": "Inventiva S.A.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "IVVD": {
-"backfilled": "2026-11-27",
 "name": "Invivyd, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27145,14 +27285,12 @@
 "tracked": true
 },
 "IXHL": {
-"backfilled": "2026-11-27",
 "name": "Incannex Healthcare Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "JAGX": {
-"backfilled": "2026-11-27",
 "name": "Jaguar Health, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27190,7 +27328,6 @@
 "tracked": true
 },
 "JANX": {
-"backfilled": "2026-11-27",
 "name": "Janux Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27278,7 +27415,6 @@
 "tracked": true
 },
 "JAZZ": {
-"backfilled": "2026-11-27",
 "name": "Jazz Pharmaceuticals plc",
 "read": "2026-11-27",
 "releases": [
@@ -27420,7 +27556,6 @@
 "tracked": true
 },
 "JBIO": {
-"backfilled": "2026-11-27",
 "name": "Jade Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27498,7 +27633,6 @@
 "tracked": true
 },
 "JNJ": {
-"backfilled": "2026-11-27",
 "name": "Johnson & Johnson",
 "read": "2026-11-27",
 "releases": [
@@ -27616,7 +27750,6 @@
 "tracked": true
 },
 "JSPR": {
-"backfilled": "2026-11-27",
 "name": "Jasper Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27744,7 +27877,6 @@
 "tracked": true
 },
 "KALV": {
-"backfilled": "2026-11-27",
 "name": "KalVista Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27786,7 +27918,6 @@
 "tracked": true
 },
 "KARD": {
-"backfilled": "2026-11-27",
 "name": "Kardigan, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27814,7 +27945,6 @@
 "tracked": true
 },
 "KLRA": {
-"backfilled": "2026-11-27",
 "name": "Kailera Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27852,7 +27982,6 @@
 "tracked": true
 },
 "KLRS": {
-"backfilled": "2026-11-27",
 "name": "Kalaris Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -27930,7 +28059,6 @@
 "tracked": true
 },
 "KOD": {
-"backfilled": "2026-11-27",
 "name": "Kodiak Sciences Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28072,7 +28200,6 @@
 "tracked": true
 },
 "KPTI": {
-"backfilled": "2026-11-27",
 "name": "Karyopharm Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28344,7 +28471,6 @@
 "tracked": true
 },
 "KROS": {
-"backfilled": "2026-11-27",
 "name": "Keros Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28462,7 +28588,6 @@
 "tracked": true
 },
 "KRRO": {
-"backfilled": "2026-11-27",
 "name": "Korro Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28570,7 +28695,6 @@
 "tracked": true
 },
 "KRYS": {
-"backfilled": "2026-11-27",
 "name": "Krystal Biotech, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -28760,7 +28884,6 @@
 "tracked": true
 },
 "KURA": {
-"backfilled": "2026-11-27",
 "name": "Kura Oncology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29036,7 +29159,6 @@
 "tracked": true
 },
 "KYMR": {
-"backfilled": "2026-11-27",
 "name": "Kymera Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29236,7 +29358,6 @@
 "tracked": true
 },
 "KYNB": {
-"backfilled": "2026-11-27",
 "name": "Kyntra Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29326,7 +29447,6 @@
 "tracked": true
 },
 "KYTX": {
-"backfilled": "2026-11-27",
 "name": "Kyverna Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29454,14 +29574,12 @@
 "tracked": true
 },
 "KZIA": {
-"backfilled": "2026-11-27",
 "name": "Kazia Therapeutics LTD",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "LBRX": {
-"backfilled": "2026-11-27",
 "name": "LB Pharmaceuticals Inc",
 "read": "2026-11-27",
 "releases": [
@@ -29519,7 +29637,6 @@
 "tracked": true
 },
 "LEGN": {
-"backfilled": "2026-11-27",
 "name": "Legend Biotech Corp",
 "read": "2026-11-27",
 "releases": [
@@ -29617,7 +29734,6 @@
 "tracked": true
 },
 "LENZ": {
-"backfilled": "2026-11-27",
 "name": "LENZ Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -29827,14 +29943,12 @@
 "tracked": true
 },
 "LEXX": {
-"backfilled": "2026-11-27",
 "name": "Lexaria Bioscience Corp.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "LGND": {
-"backfilled": "2026-11-27",
 "name": "Ligand Pharmaceuticals INC",
 "read": "2026-11-27",
 "releases": [
@@ -30076,7 +30190,6 @@
 "tracked": true
 },
 "LLY": {
-"backfilled": "2026-11-27",
 "name": "Eli Lilly and Company",
 "read": "2026-11-27",
 "releases": [
@@ -30194,7 +30307,6 @@
 "tracked": true
 },
 "LNTH": {
-"backfilled": "2026-11-27",
 "name": "Lantheus Holdings Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -30282,7 +30394,6 @@
 "tracked": true
 },
 "LONA": {
-"backfilled": "2026-11-27",
 "name": "LeonaBio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -30330,7 +30441,6 @@
 "tracked": true
 },
 "LPCN": {
-"backfilled": "2026-11-27",
 "name": "Lipocine",
 "read": "2026-11-27",
 "releases": [
@@ -30378,7 +30488,6 @@
 "tracked": true
 },
 "LQDA": {
-"backfilled": "2026-11-27",
 "name": "Liquidia Corp",
 "read": "2026-11-27",
 "releases": [
@@ -30598,7 +30707,6 @@
 "tracked": true
 },
 "LSTA": {
-"backfilled": "2026-11-27",
 "name": "Lisata Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -30760,7 +30868,6 @@
 "tracked": true
 },
 "LTGO": {
-"backfilled": "2026-11-27",
 "name": "Latigo Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -30788,7 +30895,6 @@
 "tracked": true
 },
 "LTRN": {
-"backfilled": "2026-11-27",
 "name": "Lantern Pharma Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31032,7 +31138,6 @@
 "tracked": true
 },
 "LXEO": {
-"backfilled": "2026-11-27",
 "name": "Lexeo Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31174,7 +31279,6 @@
 "tracked": true
 },
 "LXRX": {
-"backfilled": "2026-11-27",
 "name": "Lexicon Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31418,7 +31522,6 @@
 "tracked": true
 },
 "LYEL": {
-"backfilled": "2026-11-27",
 "name": "Lyell Immunopharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31526,14 +31629,12 @@
 "tracked": true
 },
 "MAIA": {
-"backfilled": "2026-11-27",
 "name": "MAIA Biotechnology, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "MANE": {
-"backfilled": "2026-11-27",
 "name": "Veradermics, Inc",
 "read": "2026-11-27",
 "releases": [
@@ -31581,7 +31682,6 @@
 "tracked": true
 },
 "MAZE": {
-"backfilled": "2026-11-27",
 "name": "Maze Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31669,7 +31769,6 @@
 "tracked": true
 },
 "MBRX": {
-"backfilled": "2026-11-27",
 "name": "Moleculin Biotech, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31867,7 +31966,6 @@
 "tracked": true
 },
 "MBX": {
-"backfilled": "2026-11-27",
 "name": "MBX Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -31945,7 +32043,6 @@
 "tracked": true
 },
 "MDGL": {
-"backfilled": "2026-11-27",
 "name": "Madrigal Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -32189,7 +32286,6 @@
 "tracked": true
 },
 "MESO": {
-"backfilled": "2026-11-27",
 "name": "Mesoblast Ltd",
 "read": "2026-11-27",
 "releases": [
@@ -32217,7 +32313,6 @@
 "tracked": true
 },
 "MGNX": {
-"backfilled": "2026-11-27",
 "name": "MacroGenics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -32375,7 +32470,6 @@
 "tracked": true
 },
 "MGTX": {
-"backfilled": "2026-11-27",
 "name": "MeiraGTx Holdings plc",
 "read": "2026-11-27",
 "releases": [
@@ -32493,7 +32587,6 @@
 "tracked": true
 },
 "MIRM": {
-"backfilled": "2026-11-27",
 "name": "Mirum Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -32605,7 +32698,6 @@
 "tracked": true
 },
 "MIST": {
-"backfilled": "2026-11-27",
 "name": "Milestone Pharmaceuticals Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -32789,14 +32881,12 @@
 "tracked": true
 },
 "MKKGY": {
-"backfilled": "2026-11-27",
 "name": "Merck KGaA (EMD Serono)",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "MLTX": {
-"backfilled": "2026-11-27",
 "name": "MoonLake Immunotherapeutics",
 "read": "2026-11-27",
 "releases": [
@@ -32874,7 +32964,6 @@
 "tracked": true
 },
 "MLYS": {
-"backfilled": "2026-11-27",
 "name": "Mineralys Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -33118,7 +33207,6 @@
 "tracked": true
 },
 "MNKD": {
-"backfilled": "2026-11-27",
 "name": "MannKind Corporation",
 "read": "2026-11-27",
 "releases": [
@@ -33306,14 +33394,12 @@
 "tracked": true
 },
 "MNOV": {
-"backfilled": "2026-11-27",
 "name": "Medicinova Inc",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "MOLN": {
-"backfilled": "2026-11-27",
 "name": "Molecular Partners AG",
 "read": "2026-11-27",
 "releases": [
@@ -33365,7 +33451,6 @@
 "tracked": true
 },
 "MPLT": {
-"backfilled": "2026-11-27",
 "name": "MapLight Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -33413,7 +33498,6 @@
 "tracked": true
 },
 "MRK": {
-"backfilled": "2026-11-27",
 "name": "Merck & Co., Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -33461,7 +33545,6 @@
 "tracked": true
 },
 "MRKR": {
-"backfilled": "2026-11-27",
 "name": "Marker Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -33509,7 +33592,6 @@
 "tracked": true
 },
 "MRNA": {
-"backfilled": "2026-11-27",
 "name": "Moderna Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -33785,14 +33867,12 @@
 "tracked": true
 },
 "MSLE": {
-"backfilled": "2026-11-27",
 "name": "Satellos Bioscience Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "MTVA": {
-"backfilled": "2026-11-27",
 "name": "MetaVia Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -33860,7 +33940,6 @@
 "tracked": true
 },
 "MYGN": {
-"backfilled": "2026-11-27",
 "name": "Myriad Genetics INC",
 "read": "2026-11-27",
 "releases": [
@@ -34080,7 +34159,6 @@
 "tracked": true
 },
 "NAMS": {
-"backfilled": "2026-11-27",
 "name": "NewAmsterdam Pharma Company N.V.",
 "read": "2026-11-27",
 "releases": [
@@ -34118,7 +34196,6 @@
 "tracked": true
 },
 "NBTX": {
-"backfilled": "2026-11-27",
 "name": "Nanobiotix S.A.",
 "read": "2026-11-27",
 "releases": [
@@ -34156,7 +34233,6 @@
 "tracked": true
 },
 "NERV": {
-"backfilled": "2026-11-27",
 "name": "Minerva Neurosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -34264,7 +34340,6 @@
 "tracked": true
 },
 "NGNE": {
-"backfilled": "2026-11-27",
 "name": "Neurogene Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -34392,7 +34467,6 @@
 "tracked": true
 },
 "NKTR": {
-"backfilled": "2026-11-27",
 "name": "Nektar Therapeutics",
 "read": "2026-11-27",
 "releases": [
@@ -34604,7 +34678,6 @@
 "tracked": true
 },
 "NMRA": {
-"backfilled": "2026-11-27",
 "name": "Neumora Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -34764,7 +34837,6 @@
 "tracked": true
 },
 "NRIX": {
-"backfilled": "2026-11-27",
 "name": "Nurix Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -34892,7 +34964,6 @@
 "tracked": true
 },
 "NSRX": {
-"backfilled": "2026-11-27",
 "name": "Nasus Pharma",
 "read": "2026-11-27",
 "releases": [
@@ -34910,7 +34981,6 @@
 "tracked": true
 },
 "NTLA": {
-"backfilled": "2026-11-27",
 "name": "Intellia Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -35008,7 +35078,6 @@
 "tracked": true
 },
 "NUVB": {
-"backfilled": "2026-11-27",
 "name": "Nuvation Bio Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -35204,7 +35273,6 @@
 "tracked": true
 },
 "NUVL": {
-"backfilled": "2026-11-27",
 "name": "Nuvalent, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -35312,7 +35380,6 @@
 "tracked": true
 },
 "NVAX": {
-"backfilled": "2026-11-27",
 "name": "Novavax INC",
 "read": "2026-11-27",
 "releases": [
@@ -35538,7 +35605,6 @@
 "tracked": true
 },
 "NVCR": {
-"backfilled": "2026-11-27",
 "name": "NovoCure Limited",
 "read": "2026-11-27",
 "releases": [
@@ -35716,7 +35782,6 @@
 "tracked": true
 },
 "NVCT": {
-"backfilled": "2026-11-27",
 "name": "Nuvectis Pharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -35828,21 +35893,18 @@
 "tracked": true
 },
 "NVO": {
-"backfilled": "2026-11-27",
 "name": "Novo Nordisk A/S",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "NVS": {
-"backfilled": "2026-11-27",
 "name": "Novartis Ag",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "OBX": {
-"backfilled": "2026-11-27",
 "name": "Obsidian Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -35860,7 +35922,6 @@
 "tracked": true
 },
 "OCGN": {
-"backfilled": "2026-11-27",
 "name": "Ocugen, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -36114,7 +36175,6 @@
 "tracked": true
 },
 "OCS": {
-"backfilled": "2026-11-27",
 "name": "Oculis Holding AG",
 "read": "2026-11-27",
 "releases": [
@@ -36302,7 +36362,6 @@
 "tracked": true
 },
 "OCUL": {
-"backfilled": "2026-11-27",
 "name": "Ocular Therapeutix, Inc",
 "read": "2026-11-27",
 "releases": [
@@ -36450,7 +36509,6 @@
 "tracked": true
 },
 "ODTX": {
-"backfilled": "2026-11-27",
 "name": "Odyssey Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -36488,14 +36546,12 @@
 "tracked": true
 },
 "OGEN": {
-"backfilled": "2026-11-27",
 "name": "Oragenics INC",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "OGN": {
-"backfilled": "2026-11-27",
 "name": "Organon & Co.",
 "read": "2026-11-27",
 "releases": [
@@ -36585,7 +36641,6 @@
 "tracked": true
 },
 "OLMA": {
-"backfilled": "2026-11-27",
 "name": "Olema Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -36693,7 +36748,6 @@
 "tracked": true
 },
 "OMER": {
-"backfilled": "2026-11-27",
 "name": "Omeros Corp",
 "read": "2026-11-27",
 "releases": [
@@ -36857,7 +36911,6 @@
 "tracked": true
 },
 "ONC": {
-"backfilled": "2026-11-27",
 "name": "BeOne Medicines Ltd.",
 "read": "2026-11-27",
 "releases": [
@@ -37009,7 +37062,6 @@
 "tracked": true
 },
 "ONCY": {
-"backfilled": "2026-11-27",
 "name": "Oncolytics Biotech Inc",
 "read": "2026-11-27",
 "releases": [
@@ -37067,7 +37119,6 @@
 "tracked": true
 },
 "ORIC": {
-"backfilled": "2026-11-27",
 "name": "Oric Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -37185,7 +37236,6 @@
 "tracked": true
 },
 "ORKA": {
-"backfilled": "2026-11-27",
 "name": "Oruka Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -37283,7 +37333,6 @@
 "tracked": true
 },
 "OTLK": {
-"backfilled": "2026-11-27",
 "name": "Outlook Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -37429,14 +37478,12 @@
 "tracked": true
 },
 "OTSKY": {
-"backfilled": "2026-11-27",
 "name": "Otsuka Pharmaceutical",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "OVID": {
-"backfilled": "2026-11-27",
 "name": "Ovid Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -37554,7 +37601,6 @@
 "tracked": true
 },
 "PALI": {
-"backfilled": "2026-11-27",
 "name": "Palisade Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -37632,7 +37678,6 @@
 "tracked": true
 },
 "PBLS": {
-"backfilled": "2026-11-27",
 "name": "Parabilis Medicines, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -37660,14 +37705,12 @@
 "tracked": true
 },
 "PBM": {
-"backfilled": "2026-11-27",
 "name": "Psyence Biomedical Ltd.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "PBYI": {
-"backfilled": "2026-11-27",
 "name": "Puma Biotechnology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -37845,7 +37888,6 @@
 "tracked": true
 },
 "PCVX": {
-"backfilled": "2026-11-27",
 "name": "Vaxcyte, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -38005,7 +38047,6 @@
 "tracked": true
 },
 "PEPG": {
-"backfilled": "2026-11-27",
 "name": "PepGen Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -38093,7 +38134,6 @@
 "tracked": true
 },
 "PFE": {
-"backfilled": "2026-11-27",
 "name": "Pfizer Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -38221,7 +38261,6 @@
 "tracked": true
 },
 "PGEN": {
-"backfilled": "2026-11-27",
 "name": "Precigen, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -38427,7 +38466,6 @@
 "tracked": true
 },
 "PHAR": {
-"backfilled": "2026-11-27",
 "name": "Pharming Group N.V.",
 "read": "2026-11-27",
 "releases": [
@@ -38479,7 +38517,6 @@
 "tracked": true
 },
 "PHAT": {
-"backfilled": "2026-11-27",
 "name": "Phathom Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -38737,7 +38774,6 @@
 "tracked": true
 },
 "PHIO": {
-"backfilled": "2026-11-27",
 "name": "Phio Pharmaceuticals Corp.",
 "read": "2026-11-27",
 "releases": [
@@ -38835,14 +38871,12 @@
 "tracked": true
 },
 "PHRRF": {
-"backfilled": "2026-11-27",
 "name": "PharmaTher Holdings Ltd.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "PHVS": {
-"backfilled": "2026-11-27",
 "name": "Pharvaris N.V.",
 "read": "2026-11-27",
 "releases": [
@@ -38970,7 +39004,6 @@
 "tracked": true
 },
 "PLRX": {
-"backfilled": "2026-11-27",
 "name": "Pliant Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -39078,7 +39111,6 @@
 "tracked": true
 },
 "PLX": {
-"backfilled": "2026-11-27",
 "name": "Protalix BioTherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -39252,7 +39284,6 @@
 "tracked": true
 },
 "PMN": {
-"backfilled": "2026-11-27",
 "name": "ProMIS Neurosciences Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -39422,7 +39453,6 @@
 "tracked": true
 },
 "PPBT": {
-"backfilled": "2026-11-27",
 "name": "Purple Biotech Ltd.",
 "read": "2026-11-27",
 "releases": [
@@ -39520,7 +39550,6 @@
 "tracked": true
 },
 "PRAX": {
-"backfilled": "2026-11-27",
 "name": "Praxis Precision Medicines Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -39692,7 +39721,6 @@
 "tracked": true
 },
 "PRLD": {
-"backfilled": "2026-11-27",
 "name": "Prelude Therapeutics Incorporated",
 "read": "2026-11-27",
 "releases": [
@@ -39800,7 +39828,6 @@
 "tracked": true
 },
 "PRME": {
-"backfilled": "2026-11-27",
 "name": "Prime Medicine, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -39898,7 +39925,6 @@
 "tracked": true
 },
 "PROK": {
-"backfilled": "2026-11-27",
 "name": "Prokidney Corp.",
 "read": "2026-11-27",
 "releases": [
@@ -40006,7 +40032,6 @@
 "tracked": true
 },
 "PRQR": {
-"backfilled": "2026-11-27",
 "name": "ProQR Therapeutics N.V.",
 "read": "2026-11-27",
 "releases": [
@@ -40084,7 +40109,6 @@
 "tracked": true
 },
 "PRTA": {
-"backfilled": "2026-11-27",
 "name": "Prothena Corporation plc",
 "read": "2026-11-27",
 "releases": [
@@ -40256,14 +40280,12 @@
 "tracked": true
 },
 "PRTC": {
-"backfilled": "2026-11-27",
 "name": "PureTech Health plc",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "PTCT": {
-"backfilled": "2026-11-27",
 "name": "Ptc Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -40559,7 +40581,6 @@
 "tracked": true
 },
 "PTGX": {
-"backfilled": "2026-11-27",
 "name": "Protagonist Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -40677,7 +40698,6 @@
 "tracked": true
 },
 "PTIX": {
-"backfilled": "2026-11-27",
 "name": "Protagenic Therapeutics",
 "read": "2026-11-27",
 "releases": [
@@ -40695,7 +40715,6 @@
 "tracked": true
 },
 "PVLA": {
-"backfilled": "2026-11-27",
 "name": "Palvella Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -40895,7 +40914,6 @@
 "tracked": true
 },
 "PYPD": {
-"backfilled": "2026-11-27",
 "name": "PolyPid Ltd.",
 "read": "2026-11-27",
 "releases": [
@@ -41171,7 +41189,6 @@
 "tracked": true
 },
 "PYXS": {
-"backfilled": "2026-11-27",
 "name": "Pyxis Oncology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -41289,7 +41306,6 @@
 "tracked": true
 },
 "QNCX": {
-"backfilled": "2026-11-27",
 "name": "Quince Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -41367,7 +41383,6 @@
 "tracked": true
 },
 "QTTB": {
-"backfilled": "2026-11-27",
 "name": "Q32 Bio Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -41475,7 +41490,6 @@
 "tracked": true
 },
 "QURE": {
-"backfilled": "2026-11-27",
 "name": "uniQure N.V.",
 "read": "2026-11-27",
 "releases": [
@@ -41573,7 +41587,6 @@
 "tracked": true
 },
 "RAPP": {
-"backfilled": "2026-11-27",
 "name": "Rapport Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -41601,7 +41614,6 @@
 "tracked": true
 },
 "RARE": {
-"backfilled": "2026-11-27",
 "name": "Ultragenyx Pharmaceutical Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -41719,7 +41731,6 @@
 "tracked": true
 },
 "RCKT": {
-"backfilled": "2026-11-27",
 "name": "Rocket Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -41807,7 +41818,6 @@
 "tracked": true
 },
 "RCUS": {
-"backfilled": "2026-11-27",
 "name": "Arcus Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -41885,14 +41895,12 @@
 "tracked": true
 },
 "RDY": {
-"backfilled": "2026-11-27",
 "name": "Dr. Reddy's Laboratories Limited",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "REGN": {
-"backfilled": "2026-11-27",
 "name": "Regeneron Pharmaceuticals Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -42160,14 +42168,12 @@
 "tracked": true
 },
 "REPL": {
-"backfilled": "2026-11-27",
 "name": "Replimune Group, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "RGNX": {
-"backfilled": "2026-11-27",
 "name": "REGENXBIO Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -42295,14 +42301,12 @@
 "tracked": true
 },
 "RHHBY": {
-"backfilled": "2026-11-27",
 "name": "Roche Holding AG",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "RIGL": {
-"backfilled": "2026-11-27",
 "name": "Rigel Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -42598,7 +42602,6 @@
 "tracked": true
 },
 "RLAY": {
-"backfilled": "2026-11-27",
 "name": "Relay Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -42880,7 +42883,6 @@
 "tracked": true
 },
 "RNAC": {
-"backfilled": "2026-11-27",
 "name": "Cartesian Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -42948,14 +42950,12 @@
 "tracked": true
 },
 "RNAZ": {
-"backfilled": "2026-11-27",
 "name": "Transcode Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "RNXT": {
-"backfilled": "2026-11-27",
 "name": "RenovoRx",
 "read": "2026-11-27",
 "releases": [
@@ -43027,14 +43027,12 @@
 "tracked": true
 },
 "ROIV": {
-"backfilled": "2026-11-27",
 "name": "Roivant Sciences Ltd.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "RPRX": {
-"backfilled": "2026-11-27",
 "name": "Royalty Pharma plc",
 "read": "2026-11-27",
 "releases": [
@@ -43310,7 +43308,6 @@
 "tracked": true
 },
 "RTSN": {
-"backfilled": "2026-11-27",
 "name": "Retension Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -43328,7 +43325,6 @@
 "tracked": true
 },
 "RVMD": {
-"backfilled": "2026-11-27",
 "name": "Revolution Medicines, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -43624,7 +43620,6 @@
 "tracked": true
 },
 "RXRX": {
-"backfilled": "2026-11-27",
 "name": "Recursion Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -43866,7 +43861,6 @@
 "tracked": true
 },
 "RYTM": {
-"backfilled": "2026-11-27",
 "name": "Rhythm Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -44134,7 +44128,6 @@
 "tracked": true
 },
 "SABS": {
-"backfilled": "2026-11-27",
 "name": "SAB Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -44230,7 +44223,6 @@
 "tracked": true
 },
 "SANA": {
-"backfilled": "2026-11-27",
 "name": "Sana Biotechnology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -44298,14 +44290,12 @@
 "tracked": true
 },
 "SCNLF": {
-"backfilled": "2026-11-27",
 "name": "Scancell Holdings plc",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "SCTX": {
-"backfilled": "2026-11-27",
 "name": "Scribe Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -44333,7 +44323,6 @@
 "tracked": true
 },
 "SCYX": {
-"backfilled": "2026-11-27",
 "name": "Scynexis Inc",
 "read": "2026-11-27",
 "releases": [
@@ -44441,7 +44430,6 @@
 "tracked": true
 },
 "SEPN": {
-"backfilled": "2026-11-27",
 "name": "Septerna, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -44529,7 +44517,6 @@
 "tracked": true
 },
 "SER": {
-"backfilled": "2026-11-27",
 "name": "Serina Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -44647,7 +44634,6 @@
 "tracked": true
 },
 "SGMT": {
-"backfilled": "2026-11-27",
 "name": "Sagimet Biosciences Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -44735,7 +44721,6 @@
 "tracked": true
 },
 "SIGA": {
-"backfilled": "2026-11-27",
 "name": "Siga Technologies Inc",
 "read": "2026-11-27",
 "releases": [
@@ -44977,7 +44962,6 @@
 "tracked": true
 },
 "SION": {
-"backfilled": "2026-11-27",
 "name": "Sionna Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -45065,7 +45049,6 @@
 "tracked": true
 },
 "SKYE": {
-"backfilled": "2026-11-27",
 "name": "Skye Bioscience, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -45185,7 +45168,6 @@
 "tracked": true
 },
 "SLDB": {
-"backfilled": "2026-11-27",
 "name": "Solid Biosciences Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -45303,7 +45285,6 @@
 "tracked": true
 },
 "SLGL": {
-"backfilled": "2026-11-27",
 "name": "Sol-Gel Technologies Ltd.",
 "read": "2026-11-27",
 "releases": [
@@ -45411,7 +45392,6 @@
 "tracked": true
 },
 "SLN": {
-"backfilled": "2026-11-27",
 "name": "Silence Therapeutics plc",
 "read": "2026-11-27",
 "releases": [
@@ -45533,7 +45513,6 @@
 "tracked": true
 },
 "SLNO": {
-"backfilled": "2026-11-27",
 "name": "Soleno Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -45615,7 +45594,6 @@
 "tracked": true
 },
 "SLS": {
-"backfilled": "2026-11-27",
 "name": "SELLAS Life Sciences Group, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -45723,7 +45701,6 @@
 "tracked": true
 },
 "SMMT": {
-"backfilled": "2026-11-27",
 "name": "Summit Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -45829,7 +45806,6 @@
 "tracked": true
 },
 "SNDX": {
-"backfilled": "2026-11-27",
 "name": "Syndax Pharmaceuticals Inc",
 "read": "2026-11-27",
 "releases": [
@@ -46125,7 +46101,6 @@
 "tracked": true
 },
 "SNGX": {
-"backfilled": "2026-11-27",
 "name": "Soligenix, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -46223,7 +46198,6 @@
 "tracked": true
 },
 "SNSE": {
-"backfilled": "2026-11-27",
 "name": "Sensei Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -46331,14 +46305,12 @@
 "tracked": true
 },
 "SNY": {
-"backfilled": "2026-11-27",
 "name": "Sanofi",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "SPRO": {
-"backfilled": "2026-11-27",
 "name": "Spero Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -46602,7 +46574,6 @@
 "tracked": true
 },
 "SPRY": {
-"backfilled": "2026-11-27",
 "name": "ARS Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -46720,7 +46691,6 @@
 "tracked": true
 },
 "SPTX": {
-"backfilled": "2026-11-27",
 "name": "Seaport Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -46758,7 +46728,6 @@
 "tracked": true
 },
 "SRPT": {
-"backfilled": "2026-11-27",
 "name": "Sarepta Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -47010,7 +46979,6 @@
 "tracked": true
 },
 "SRRK": {
-"backfilled": "2026-11-27",
 "name": "Scholar Rock Holding Corporation",
 "read": "2026-11-27",
 "releases": [
@@ -47206,7 +47174,6 @@
 "tracked": true
 },
 "SRZN": {
-"backfilled": "2026-11-27",
 "name": "Surrozen, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -47324,7 +47291,6 @@
 "tracked": true
 },
 "STOK": {
-"backfilled": "2026-11-27",
 "name": "Stoke Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -47412,7 +47378,6 @@
 "tracked": true
 },
 "STRO": {
-"backfilled": "2026-11-27",
 "name": "Sutro Biopharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -47540,7 +47505,6 @@
 "tracked": true
 },
 "STTK": {
-"backfilled": "2026-11-27",
 "name": "Shattuck Labs, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -47638,7 +47602,6 @@
 "tracked": true
 },
 "SUPN": {
-"backfilled": "2026-11-27",
 "name": "Supernus Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -47656,7 +47619,6 @@
 "tracked": true
 },
 "SVRA": {
-"backfilled": "2026-11-27",
 "name": "Savara",
 "read": "2026-11-27",
 "releases": [
@@ -47734,7 +47696,6 @@
 "tracked": true
 },
 "SWTX": {
-"backfilled": "2026-11-27",
 "name": "SpringWorks Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -47848,7 +47809,6 @@
 "tracked": true
 },
 "SYRE": {
-"backfilled": "2026-11-27",
 "name": "Spyre Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -47976,7 +47936,6 @@
 "tracked": true
 },
 "TAK": {
-"backfilled": "2026-11-27",
 "name": "Takeda Pharmaceutical Company Limited",
 "read": "2026-11-27",
 "releases": [
@@ -48044,7 +48003,6 @@
 "tracked": true
 },
 "TARA": {
-"backfilled": "2026-11-27",
 "name": "Protara Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -48142,7 +48100,6 @@
 "tracked": true
 },
 "TARS": {
-"backfilled": "2026-11-27",
 "name": "Tarsus Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -48398,7 +48355,6 @@
 "tracked": true
 },
 "TCRX": {
-"backfilled": "2026-11-27",
 "name": "TScan Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -48516,7 +48472,6 @@
 "tracked": true
 },
 "TECX": {
-"backfilled": "2026-11-27",
 "name": "Tectonic Therapeutic, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -48594,7 +48549,6 @@
 "tracked": true
 },
 "TENX": {
-"backfilled": "2026-11-27",
 "name": "Tenax Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -48702,7 +48656,6 @@
 "tracked": true
 },
 "TEVA": {
-"backfilled": "2026-11-27",
 "name": "Teva Pharmaceutical Industries",
 "read": "2026-11-27",
 "releases": [
@@ -48894,7 +48847,6 @@
 "tracked": true
 },
 "TLSI": {
-"backfilled": "2026-11-27",
 "name": "TriSalus Life Sciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -48972,14 +48924,12 @@
 "tracked": true
 },
 "TLX": {
-"backfilled": "2026-11-27",
 "name": "Telix Pharmaceuticals Limited",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "TMO": {
-"backfilled": "2026-11-27",
 "name": "Thermo Fisher Scientific Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -49237,7 +49187,6 @@
 "tracked": true
 },
 "TNGX": {
-"backfilled": "2026-11-27",
 "name": "Tango Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -49329,7 +49278,6 @@
 "tracked": true
 },
 "TNXP": {
-"backfilled": "2026-11-27",
 "name": "Tonix Pharmaceuticals Holding Corp.",
 "read": "2026-11-27",
 "releases": [
@@ -49485,7 +49433,6 @@
 "tracked": true
 },
 "TRAW": {
-"backfilled": "2026-11-27",
 "name": "Traws Pharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -49587,7 +49534,6 @@
 "tracked": true
 },
 "TRAX": {
-"backfilled": "2026-11-27",
 "name": "First Tracks Biotherapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -49625,7 +49571,6 @@
 "tracked": true
 },
 "TRDA": {
-"backfilled": "2026-11-27",
 "name": "Entrada Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -49733,7 +49678,6 @@
 "tracked": true
 },
 "TRVI": {
-"backfilled": "2026-11-27",
 "name": "Trevi Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -50029,14 +49973,12 @@
 "tracked": true
 },
 "TRXB": {
-"backfilled": "2026-11-27",
 "name": "TRex Bio, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "TSHA": {
-"backfilled": "2026-11-27",
 "name": "Taysha Gene Therapies, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -50164,7 +50106,6 @@
 "tracked": true
 },
 "TTRX": {
-"backfilled": "2026-11-27",
 "name": "Turn Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -50222,7 +50163,6 @@
 "tracked": true
 },
 "TURN": {
-"backfilled": "2026-11-27",
 "name": "180 Degree Capital Corp.",
 "read": "2026-11-27",
 "releases": [
@@ -50258,7 +50198,6 @@
 "tracked": true
 },
 "TVRD": {
-"backfilled": "2026-11-27",
 "name": "Tvardi Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -50336,7 +50275,6 @@
 "tracked": true
 },
 "TVTX": {
-"backfilled": "2026-11-27",
 "name": "Travere Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -50608,7 +50546,6 @@
 "tracked": true
 },
 "TYRA": {
-"backfilled": "2026-11-27",
 "name": "Tyra Biosciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -50736,14 +50673,12 @@
 "tracked": true
 },
 "UCBJY": {
-"backfilled": "2026-11-27",
 "name": "UCB SA",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "UNCY": {
-"backfilled": "2026-11-27",
 "name": "Unicycive Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -50871,7 +50806,6 @@
 "tracked": true
 },
 "UPB": {
-"backfilled": "2026-11-27",
 "name": "Upstream Bio, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -50949,7 +50883,6 @@
 "tracked": true
 },
 "URGN": {
-"backfilled": "2026-11-27",
 "name": "UroGen Pharma Ltd.",
 "read": "2026-11-27",
 "releases": [
@@ -51139,7 +51072,6 @@
 "tracked": true
 },
 "UTHR": {
-"backfilled": "2026-11-27",
 "name": "United Therapeutics Corporation",
 "read": "2026-11-27",
 "releases": [
@@ -51383,7 +51315,6 @@
 "tracked": true
 },
 "VALN": {
-"backfilled": "2026-11-27",
 "name": "Valneva SE",
 "read": "2026-11-27",
 "releases": [
@@ -51493,14 +51424,12 @@
 "tracked": true
 },
 "VCRE": {
-"backfilled": "2026-11-27",
 "name": "Vicore Pharma Holding AB",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "VERA": {
-"backfilled": "2026-11-27",
 "name": "Vera Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -51608,7 +51537,6 @@
 "tracked": true
 },
 "VIR": {
-"backfilled": "2026-11-27",
 "name": "Vir Biotechnology, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -51790,7 +51718,6 @@
 "tracked": true
 },
 "VKTX": {
-"backfilled": "2026-11-27",
 "name": "Viking Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -52072,7 +51999,6 @@
 "tracked": true
 },
 "VNDA": {
-"backfilled": "2026-11-27",
 "name": "Vanda Pharmaceuticals Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -52368,14 +52294,12 @@
 "tracked": true
 },
 "VOGX": {
-"backfilled": "2026-11-27",
 "name": "Vogenx, Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "VOR": {
-"backfilled": "2026-11-27",
 "name": "Vor Bio",
 "read": "2026-11-27",
 "releases": [
@@ -52473,7 +52397,6 @@
 "tracked": true
 },
 "VRDN": {
-"backfilled": "2026-11-27",
 "name": "Viridian Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -52585,7 +52508,6 @@
 "tracked": true
 },
 "VRTX": {
-"backfilled": "2026-11-27",
 "name": "Vertex",
 "read": "2026-11-27",
 "releases": [
@@ -52847,7 +52769,6 @@
 "tracked": true
 },
 "VSTM": {
-"backfilled": "2026-11-27",
 "name": "Verastem, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -53019,7 +52940,6 @@
 "tracked": true
 },
 "VTGN": {
-"backfilled": "2026-11-27",
 "name": "Vistagen Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -53137,7 +53057,6 @@
 "tracked": true
 },
 "VTRS": {
-"backfilled": "2026-11-27",
 "name": "Viatris Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -53423,7 +53342,6 @@
 "tracked": true
 },
 "VTVT": {
-"backfilled": "2026-11-27",
 "name": "vTv Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -53481,7 +53399,6 @@
 "tracked": true
 },
 "VXRT": {
-"backfilled": "2026-11-27",
 "name": "Vaxart, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -53573,7 +53490,6 @@
 "tracked": true
 },
 "VYGR": {
-"backfilled": "2026-11-27",
 "name": "Voyager Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -53641,7 +53557,6 @@
 "tracked": true
 },
 "WHWK": {
-"backfilled": "2026-11-27",
 "name": "Whitehawk Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -53719,7 +53634,6 @@
 "tracked": true
 },
 "WVE": {
-"backfilled": "2026-11-27",
 "name": "Wave Life Sciences, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -53837,7 +53751,6 @@
 "tracked": true
 },
 "XENE": {
-"backfilled": "2026-11-27",
 "name": "Xenon Pharmaceuticals Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -54119,7 +54032,6 @@
 "tracked": true
 },
 "XERS": {
-"backfilled": "2026-11-27",
 "name": "Xeris Biopharma Holdings, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -54333,7 +54245,6 @@
 "tracked": true
 },
 "XFOR": {
-"backfilled": "2026-11-27",
 "name": "X4 Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -54507,7 +54418,6 @@
 "tracked": true
 },
 "XNCR": {
-"backfilled": "2026-11-27",
 "name": "Xencor Inc",
 "read": "2026-11-27",
 "releases": [
@@ -54625,7 +54535,6 @@
 "tracked": true
 },
 "XOMA": {
-"backfilled": "2026-11-27",
 "name": "XOMA Royalty Corp.",
 "read": "2026-11-27",
 "releases": [
@@ -54677,14 +54586,12 @@
 "tracked": true
 },
 "XRTX": {
-"backfilled": "2026-11-27",
 "name": "XORTX Therapeutics Inc.",
 "read": "2026-11-27",
 "releases": [],
 "tracked": true
 },
 "YARW": {
-"backfilled": "2026-11-27",
 "name": "Yarrow Bioscience, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -54712,7 +54619,6 @@
 "tracked": true
 },
 "ZBIO": {
-"backfilled": "2026-11-27",
 "name": "Zenas BioPharma, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -54800,7 +54706,6 @@
 "tracked": true
 },
 "ZLAB": {
-"backfilled": "2026-11-27",
 "name": "Zai Lab Limited",
 "read": "2026-11-27",
 "releases": [
@@ -55052,7 +54957,6 @@
 "tracked": true
 },
 "ZNTL": {
-"backfilled": "2026-11-27",
 "name": "Zentalis Pharmaceuticals, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -55170,7 +55074,6 @@
 "tracked": true
 },
 "ZURA": {
-"backfilled": "2026-11-27",
 "name": "Zura Bio Ltd",
 "read": "2026-11-27",
 "releases": [
@@ -55278,7 +55181,6 @@
 "tracked": true
 },
 "ZVRA": {
-"backfilled": "2026-11-27",
 "name": "Zevra Therapeutics, Inc.",
 "read": "2026-11-27",
 "releases": [
@@ -55450,7 +55352,6 @@
 "tracked": true
 },
 "ZYME": {
-"backfilled": "2026-11-27",
 "name": "Zymeworks Inc.",
 "read": "2026-11-27",
 "releases": [
