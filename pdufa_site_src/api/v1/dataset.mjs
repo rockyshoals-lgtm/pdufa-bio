@@ -33296,46 +33296,6 @@ export default [
   }
  },
  {
-  "id": "readout_vir_2027-03-31-tobevibart",
-  "t": "VIR",
-  "company": "Vir Biotechnology, Inc.",
-  "d": "2027-03-31",
-  "dp": "quarter",
-  "name": "tobevibart + elebsiran ECLIPSE 3 topline data",
-  "type": "Readout",
-  "ta": "Infectious",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://investors.vir.bio/news/news-details/2026/Vir-Biotechnology-Provides-Corporate-Update-and-Reports-Third-Quarter-2026-Financial-Results/default.aspx",
-  "ua": "2026-11-26T21:03:06Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "chronic hepatitis delta (vs bulevirtide)",
-   "market_cap_usd": null,
-   "program": "tobevibart + elebsiran",
-   "trial": "ECLIPSE 3",
-   "guided_precision": "quarter",
-   "guided_window": "2027-Q1",
-   "guided_label": "first quarter of 2027",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-04",
-   "guidance_text": "Topline data from the ECLIPSE 2 and ECLIPSE 3 trials are expected in the first quarter of 2027.",
-   "source_url": "https://investors.vir.bio/news/news-details/2026/Vir-Biotechnology-Provides-Corporate-Update-and-Reports-Third-Quarter-2026-Financial-Results/default.aspx",
-   "source": "company guidance (company release)",
-   "readout_described": "topline data",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened Vir Q3 release 2026-11-04: 'Topline data from the ECLIPSE 2 and ECLIPSE 3 trials are expected in the first quarter of 2027'; ECLIPSE 3 compares the regimen to bulevirtide in bulevirtide-naive patients. NCT07142811 registry title names ECLIPSE 3 (registry says Phase 2b).",
-   "date_history": [
-    {
-     "date": "2027-03-31",
-     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
-    }
-   ],
-   "supersedes_estimate": "readout_vir_2026-11-15",
-   "ta_basis": "Company release: indication stated as chronic hepatitis delta (vs bulevirtide)"
-  },
-  "dm": "2027-03"
- },
- {
   "id": "readout_vxrt_2027-12-31-oral",
   "t": "VXRT",
   "company": "Vaxart, Inc.",
@@ -38730,5 +38690,81 @@ export default [
    ]
   },
   "dm": "2027-03"
+ },
+ {
+  "id": "readout_cgen_2027-12-31",
+  "t": "CGEN",
+  "company": "Compugen Ltd.",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "rilvegostomig Phase 3 ARTEMIDE-Biliary01 (run by partner AstraZeneca) high-level results",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://www.prnewswire.com/il/news-releases/compugen-reports-third-quarter-2026-results-302933203.html",
+  "ua": "2026-11-27T00:36:09Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "adjuvant treatment of biliary tract cancer after resection (760 participants)",
+   "market_cap_usd": null,
+   "program": "rilvegostomig",
+   "trial": "ARTEMIDE-Biliary01 (Phase 3, run by partner AstraZeneca)",
+   "guided_precision": "half",
+   "guided_window": "2027-H2",
+   "guided_label": "in H2 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-09",
+   "guidance_text": "Phase 3 rilvegostomig high-level results from partner AstraZeneca anticipated in H2 2027 from ARTEMIDE-Biliary01 trial",
+   "source_url": "https://www.prnewswire.com/il/news-releases/compugen-reports-third-quarter-2026-results-302933203.html",
+   "source": "company guidance (company release)",
+   "readout_described": "high-level results",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Re-opened Compugen's own PR Newswire release dated Nov 9, 2026: headline bullet and CEO quote both give H2 / second half of 2027 for ARTEMIDE-Biliary01 high-level results; indication adjuvant biliary tract cancer, 760 participants.",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-09)"
+    }
+   ],
+   "ta_basis": "Company release: indication stated as adjuvant treatment of biliary tract cancer"
+  }
+ },
+ {
+  "id": "readout_abvx_2027-12-31",
+  "t": "ABVX",
+  "company": "Abivax SA",
+  "d": "2027-12-31",
+  "dp": "year",
+  "name": "obefazimod Phase 2b ENHANCE-CD induction trial topline results",
+  "type": "Readout",
+  "ta": "Immunology",
+  "cap": "",
+  "st": "Guided",
+  "url": "https://ir.abivax.com/news-releases/news-release-details/abivax-presents-business-updates-and-first-half-2026-financial",
+  "ua": "2026-11-27T00:36:09Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Crohn's disease",
+   "market_cap_usd": null,
+   "program": "obefazimod",
+   "trial": "Phase 2b ENHANCE-CD induction trial",
+   "guided_precision": "year",
+   "guided_window": "2027",
+   "guided_label": "Mid-2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-09-21",
+   "guidance_text": "Mid-2027 – Topline results from the Phase 2b ENHANCE-CD induction trial evaluating obefazimod in CD",
+   "source_url": "https://ir.abivax.com/news-releases/news-release-details/abivax-presents-business-updates-and-first-half-2026-financial",
+   "source": "company guidance (company release)",
+   "readout_described": "topline results",
+   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Re-opened Abivax's own release dated Sept 21, 2026: 'Mid-2027 – Topline results from the Phase 2b ENHANCE-CD induction trial evaluating obefazimod in CD'. Checked the Nov 20 and Nov 24 2026 releases: no different ENHANCE-CD timing.",
+   "date_history": [
+    {
+     "date": "2027-12-31",
+     "note": "created 2026-11-26 from the company's own statement (press release 2026-09-21)"
+    }
+   ],
+   "ta_basis": "Company release: indication stated as Crohn's disease"
+  }
  }
 ];

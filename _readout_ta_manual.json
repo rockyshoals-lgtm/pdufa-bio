@@ -2878,12 +2878,6 @@
    "source": "https://investors.denalitherapeutics.com/news-releases/news-release-details/denali-therapeutics-reports-third-quarter-2026-financial-results",
    "tagged": "2026-11-26 readout mine; hand decision from the company's stated indication"
   },
-  "readout_vir_2027-03-31-tobevibart": {
-   "ta": "Infectious",
-   "basis": "Company release: indication stated as chronic hepatitis delta (vs bulevirtide)",
-   "source": "https://investors.vir.bio/news/news-details/2026/Vir-Biotechnology-Provides-Corporate-Update-and-Reports-Third-Quarter-2026-Financial-Results/default.aspx",
-   "tagged": "2026-11-26 readout mine; hand decision from the company's stated indication"
-  },
   "readout_vxrt_2027-12-31-oral": {
    "ta": "Infectious",
    "basis": "Company release: indication stated as COVID-19",
@@ -3699,6 +3693,18 @@
    "basis": "Sponsor SEC filing: indication stated as postpartum depression",
    "source": "https://www.sec.gov/Archives/edgar/data/1535955/000149315226050842/ex99-1.htm",
    "tagged": "2026-11-26 readout mine G; hand decision from the company's stated indication"
+  },
+  "readout_cgen_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "Company release: indication stated as adjuvant treatment of biliary tract cancer",
+   "source": "https://www.prnewswire.com/il/news-releases/compugen-reports-third-quarter-2026-results-302933203.html",
+   "tagged": "2026-11-27"
+  },
+  "readout_abvx_2027-12-31": {
+   "ta": "Immunology",
+   "basis": "Company release: indication stated as Crohn's disease",
+   "source": "https://ir.abivax.com/news-releases/news-release-details/abivax-presents-business-updates-and-first-half-2026-financial",
+   "tagged": "2026-11-27"
   }
  },
  "nct_mismatch": [
