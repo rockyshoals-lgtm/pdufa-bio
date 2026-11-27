@@ -914,6 +914,20 @@ def main():
                      + (("Announced" if dec0[1] == "Approved" else "Complete Response Letter announced")
                         if dec0[3] else ("Approved" if dec0[1] == "Approved" else "Complete Response Letter"))
                      + f" {pretty(dec0[0])} | pdufa.bio")
+        # 2026-11-27 (Bing AI citations): "<drug> pdufa date" is the query shape we win most often
+        # (asundexian 78%, cemdisiran 59%), and the drug page answered it only in the description.
+        # A drug with a live day-precision PDUFA date now states that date in its title, from the
+        # same row the description uses. Month or quarter estimates keep the default title: a
+        # title never promotes an estimate to a day.
+        _upd = next((r for r in up
+                     if str(r.get("type") or "").upper() == "PDUFA"
+                     and str(r.get("st") or "").lower() != "under review"
+                     and (r.get("dp") or "day") == "day"
+                     and re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d") or ""))), None)
+        if _upd is not None:
+            title = f"{name} PDUFA Date: {pretty(_upd['d'])} and Catalyst History | pdufa.bio"
+            if len(html.unescape(title)) > 100:
+                title = f"{name} PDUFA Date: {pretty(_upd['d'])} | pdufa.bio"
         if len(html.unescape(title)) > 100:
             title = f"{name} FDA Catalysts | pdufa.bio"
         # Clause-fitting, not slicing: desc[:158] cut two long drug names mid-word on the first
