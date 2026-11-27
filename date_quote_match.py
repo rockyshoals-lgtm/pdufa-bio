@@ -29,8 +29,9 @@ import re
 MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september",
           "october", "november", "december"]
 ABBR = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
-ORD_Q = {1: "first", 2: "second", 3: "third", 4: "fourth"}
-ORD_H = {1: "first", 2: "second"}
+# 2026-11-26: numeric ordinals too ("in the 2nd half of 2027", Prelude Therapeutics Q3 2026 release).
+ORD_Q = {1: "(?:first|1st)", 2: "(?:second|2nd)", 3: "(?:third|3rd)", 4: "(?:fourth|4th)"}
+ORD_H = {1: "(?:first|1st)", 2: "(?:second|2nd)"}
 
 
 def norm(s):
