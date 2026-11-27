@@ -31,6 +31,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 import sys as _sys
 _sys.path.insert(0, HERE)
 from readout_links import drug_page as _drug_page, drug_title as _drug_title  # noqa: E402
+from whole_decision_names import page_names as _page_names, whole as _whole  # noqa: E402
 SITE = os.path.join(HERE, 'pdufa_site_src')
 TODAY = dt.date.today().isoformat()
 try:
@@ -219,6 +220,15 @@ def load_data():
         lab = re.sub(r'\s+', ' ', lab)[:70]
         if lab.lower() in ('price-only', 'price only', ''):
             lab = ''   # placeholder archive row -> no fake drug label; the page says 'FDA decision'
+        if not lab:
+            # 2026-11-27 phone pass: the archive row now reads "<span>Approved</span>: NAME", not "— NAME", so every
+            # hub decision row (397 of 397) said only "FDA decision". The name comes from that row, made whole
+            # from the decision page's own names when an old build cut it, else from the page's <title> name.
+            m = re.search(r'</span>:\s*([^<]+)', body)
+            names = _page_names(f'{tk}-{d}')
+            lab = _whole(html.unescape(m.group(1)).strip(), names) if m and m.group(1).strip() else (names[1] or '')
+            if lab.lower() in ('price-only', 'price only'):
+                lab = ''
         past[tk].append(dict(date=d, outcome=outc, label=lab))
 
     # company name also from decision pages: every decision page is one vote (this is what

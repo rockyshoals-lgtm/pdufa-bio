@@ -34,6 +34,11 @@ def home(bad):
     doc = io.open(os.path.join(SITE, "index.html"), encoding="utf-8", errors="replace").read()
     if ".dg .dn{min-width:0;overflow:hidden;text-overflow:ellipsis" not in doc:
         bad.append("home: the style that truncates the drug name and keeps the date is gone")
+    # 2026-11-27 phone pass: at 500px the wrap rule (then max-width:480px) did not apply, so cards read
+    # "Bezuclastinib…", "Gazyva (…" and "MR-107A-0…". The name gets its own line on any phone width.
+    wrap = re.search(r"@media\(max-width:(\d+)px\)\{\.dg\{flex-wrap:wrap", doc)
+    if not wrap or int(wrap.group(1)) < 540:
+        bad.append("home: the phone rule that puts the drug name on its own line is missing or stops below 540px")
     lst = doc[doc.find('<div class="list">'):doc.find("Recently decided")]
     cards = re.findall(r'<span class="dg">(.*?)</span></span>', lst, re.S)
     if not cards:
