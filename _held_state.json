@@ -1,6 +1,6 @@
 {
  "held_since": "2026-11-27T06:08:08Z",
- "consecutive_held_runs": 3,
+ "consecutive_held_runs": 4,
  "emailed_at": "2026-11-27T08:26:54Z",
  "leads": [
   {
@@ -33,6 +33,13 @@
   },
   {
    "source": "drug_pages",
+   "row_id": "drug:ov329-global",
+   "key": "ov329-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+   "text": "/drug/ov329-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
    "row_id": "drug:budoprutug-global",
    "key": "budoprutug-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
    "text": "/drug/budoprutug-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
@@ -43,13 +50,6 @@
    "row_id": "drug:escmid-global",
    "key": "escmid-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
    "text": "/drug/escmid-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
-   "first_seen": "2026-11-27T06:08:08Z"
-  },
-  {
-   "source": "drug_pages",
-   "row_id": "drug:ov329-global",
-   "key": "ov329-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
-   "text": "/drug/ov329-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
    "first_seen": "2026-11-27T06:08:08Z"
   },
   {
