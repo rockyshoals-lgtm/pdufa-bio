@@ -35,6 +35,7 @@ META_RE = re.compile(r"In 2026, \d+ of \d+ sourced decisions came early\.")
 FAQ_Q = "Does the FDA always decide by the PDUFA date?"
 FAQ_RE = re.compile(r'\{"@type":"Question","name":"Does the FDA always decide by the PDUFA date\?",'
                     r'"acceptedAnswer":\{"@type":"Answer","text":"[^"]*"\}\}')
+CARD_RE = re.compile(r'<div class="card" data-faq-timing>.*?</div></div>', re.S)
 FAQ_ANCHOR = '{"@type":"FAQPage","mainEntity":['
 BODY_RE = re.compile(r"of the \d+ sourced 2026 decisions in (<a [^>]*>our decision-timing study</a>), "
                      r"\d+ came before the goal date, \d+ landed on it and \d+ [^.<]*")
@@ -58,6 +59,14 @@ def main():
         new = new.replace(FAQ_ANCHOR, FAQ_ANCHOR + faq + ",", 1)
     else:
         print("WARN: no FAQPage on the learn page; timing question not added")
+    # The same answer as a visible FAQ card, so the structured data never says more than the page shows.
+    card = (f'<div class="card" data-faq-timing><b>{FAQ_Q}</b><div class="sub" style="margin-top:6px">No. The PDUFA date is '
+            f'a goal, not a promise. Of the {n} sourced 2026 decisions in the pdufa.bio decision-timing study, {early} came '
+            f'before the goal date, {on} landed on it and {late} came after it.</div></div>')
+    if CARD_RE.search(new):
+        new = CARD_RE.sub(lambda _: card, new)
+    elif "<h2>FAQ</h2>" in new:
+        new = new.replace("<h2>FAQ</h2>", "<h2>FAQ</h2>" + card, 1)
     if new != doc:
         io.open(PAGE, "w", encoding="utf-8").write(new)
         print(f"learn timing: rewritten to {early} of {n} early, {on} on, {late} late")
