@@ -73,6 +73,17 @@ def https(u):
     return re.sub(r"^http://", "https://", str(u or ""))
 
 
+LABEL_URL = re.compile(r"^https://www\.accessdata\.fda\.gov/drugsatfda_docs/label/\d{4}/[^\s\"<>]+\.pdf$", re.I)
+
+
+def label_url(x):
+    """The approved label's PDF, or "" when Drugs@FDA's record does not point at one. 2026-11-27: openFDA lists
+    Vyvgart Hytrulo's April 2025 label (BLA 761304, s008) at .../appletter/2025/761304Orig1s008lbl, an approval-letter
+    folder and no file type; it was published as "approved label (PDF)". Only a PDF in the label folder is linked."""
+    u = https((x or {}).get("label"))
+    return u if LABEL_URL.match(u) else ""
+
+
 def load_rows():
     s = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
     return json.loads(s[s.index("["):s.rindex("]") + 1])
@@ -201,8 +212,8 @@ def block(apps, fetched, words=frozenset()):
         docs = []
         if x.get("letter"):
             docs.append(f'<a href="{esc(https(x["letter"]))}" rel="noopener" {LINK}>approval letter (PDF)</a>')
-        if x.get("label"):
-            docs.append(f'<a href="{esc(https(x["label"]))}" rel="noopener" {LINK}>approved label (PDF)</a>')
+        if label_url(x):
+            docs.append(f'<a href="{esc(label_url(x))}" rel="noopener" {LINK}>approved label (PDF)</a>')
         docs.append(f'<a href="{overview(x["app"])}" rel="noopener" {LINK}>Drugs@FDA entry</a>')
         b = shown_brand(x, words)
         nm = (esc(b) + (f' ({esc(x["generic"])})' if x.get("generic") else "")) if b else esc(x.get("generic") or "")
