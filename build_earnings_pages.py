@@ -44,6 +44,7 @@ sys.path.insert(0, HERE)
 from build_crl_companies import BASE, page  # noqa: E402
 from build_crl_facts import esc, pretty  # noqa: E402
 from fetch_earnings_dates import period_end  # noqa: E402
+from fetch_earnings_sec import fresh  # noqa: E402
 from site_dates import eastern_today  # noqa: E402
 
 CACHE = os.path.join(HERE, "_earnings_dates.json")
@@ -52,7 +53,8 @@ SEC_SITE = "SEC EDGAR (Form 8-K, Item 2.02)"
 # fetch_earnings_sec.py stores the median minutes from the newswire release to the 8-K accepted the same day; a few
 # minutes to a few hours is normal (filers furnish the release after it goes out). Outside this range the 8-K times
 # are being read in the wrong time zone, and no 8-K row is used.
-SEC_CHECK_MIN, SEC_CHECK_MAX = -30, 240
+SEC_CHECK_MIN, SEC_CHECK_MAX = -30, 90
+SEC_CHECK_N = 10
 SITE = os.path.join(HERE, "pdufa_site_src")
 RECENT_DAYS = 30
 MIN_PERIODS = 2          # a ticker page needs this many periods read, or an announced day ahead or passed
@@ -103,7 +105,7 @@ def is_8k(r):
     return (r or {}).get("site") == SEC_SITE
 
 
-def sec_rows(path):
+def sec_rows(path, wire=None):
     """ticker -> results rows from the companies' own 8-K filings under Item 2.02 (fetch_earnings_sec.py), only those
     whose Item 2.02 text names the period and calls them results, and only while the cache's time self-check holds.
     Returns ({}, reason) when the 8-K rows are not used."""
@@ -112,9 +114,14 @@ def sec_rows(path):
     except Exception:  # noqa: BLE001
         return {}, "no 8-K cache"
     chk = c.get("check") or {}
-    med = chk.get("median_min")
-    if chk.get("n", 0) >= 10 and (med is None or not SEC_CHECK_MIN <= med <= SEC_CHECK_MAX):
-        return {}, f"8-K times fail the self-check (median {med} min from the newswire release over {chk.get('n')})"
+    med, n = chk.get("median_min"), chk.get("n") or 0
+    # fail closed: too few pairs to check the time zone is no check at all
+    if n < SEC_CHECK_N or med is None or not SEC_CHECK_MIN <= med <= SEC_CHECK_MAX:
+        return {}, f"8-K times fail the self-check (median {med} min from the newswire release over {n})"
+    dn, db = chk.get("dated") or 0, chk.get("dated_bad") or 0
+    if dn < 20 or db > 0.05 * dn:
+        return {}, f"8-K times fail EDGAR's filing-date rule ({db} of {dn})"
+    wire = wire or {}
     out = {}
     for tk, ent in (c.get("tickers") or {}).items():
         if not TICKER_OK.match(tk or "") or not isinstance(ent, dict):
@@ -126,6 +133,10 @@ def sec_rows(path):
             if not re.fullmatch(r"20\d\d-\d\d-\d\d \d\d:\d\d", a) or not ok_url(f.get("url")) or \
                     not str(f["url"]).startswith("https://www.sec.gov/Archives/edgar/data/"):
                 continue
+            if not fresh(f["period_key"], d_of(a)):
+                continue                       # the period must have ended before the filing, within weeks
+            if any(x and abs((x - d_of(a)).days) <= 1 for x in wire.get(tk, [])):
+                continue                       # a newswire results release went out within a day: that is the record
             out.setdefault(tk, []).append({
                 "kind": "results", "published_et": a, "period": f.get("period") or "", "period_key": f["period_key"],
                 "title": f"Form 8-K, Item 2.02 (Results of Operations and Financial Condition), filed "
@@ -163,7 +174,7 @@ def periods(rel):
     published after the latest announcement of a period and no later than its report day."""
     out = collections.defaultdict(lambda: {"schedules": [], "results": None, "postponed": [], "keys": set()})
     loose = []
-    ks = {r.get("period_key") or "" for r in rel}
+    ks = {r.get("period_key") or "" for r in rel if not is_8k(r)}   # the company's own wording, not an 8-K's
     # a company that prints its quarters as calendar quarters ('Third Quarter 2026') and never as fiscal ones uses
     # 'fiscal year' for the calendar year ('Fourth Quarter and Fiscal Year 2025'): read those keys as calendar
     calendar_co = any(re.fullmatch(r"20\d\dQ[1-3]", k) for k in ks) and \
@@ -203,6 +214,14 @@ def periods(rel):
             out[hits[0]]["keys"] |= out[k]["keys"]
             out[hits[0]]["postponed"] += out[k]["postponed"]
             del out[k]
+    for k, p in out.items():
+        r = p["results"]
+        if is_8k(r):
+            n8 = sum(1 for x in rel if is_8k(x) and norm_key(x.get("period_key")) == k)
+            early = p["schedules"] and d_of(r["published_et"]) < d_of(p["schedules"][-1]["report_date"])
+            if n8 > 1 or early:
+                # two 8-Ks claim one period, or one came before the day the company announced: neither is used
+                p["results"] = None
     for p in out.values():
         if p["schedules"] and not p["results"]:
             s = p["schedules"][-1]
@@ -225,6 +244,8 @@ def status_of(p, today):
 
 def days_after_end(k, r):
     """Calendar days from the end of the period the results release names to the release; None for fiscal periods."""
+    if is_8k(r):
+        return None                            # an 8-K's acceptance day need not be the release day
     end = period_end((r or {}).get("period_key") or k)
     d = d_of(r.get("published_et")) if r else None
     return (d - end).days if end and d else None
@@ -251,7 +272,10 @@ def display_name(n):
 
 def load(path, sec_path=SEC_CACHE):
     c = json.load(io.open(path, encoding="utf-8"))
-    sec, why = sec_rows(sec_path) if sec_path else ({}, "")
+    wire = {tk: [d_of(r.get("published_et")) for r in (v.get("releases") or [])
+                 if isinstance(r, dict) and r.get("kind") == "results"]
+            for tk, v in (c.get("tickers") or {}).items() if isinstance(v, dict)}
+    sec, why = sec_rows(sec_path, wire) if sec_path else ({}, "")
     c["_sec_note"] = why
     T = {}
     for tk, v in (c.get("tickers") or {}).items():
@@ -304,7 +328,7 @@ def rel_link(r, text=None):
 
 def res_time(r):
     """When the results went out, as the source shows it: the newswire time, or the 8-K's acceptance time marked."""
-    return esc(fmt_et(r["published_et"])) + (" (8-K filed)" if is_8k(r) else "")
+    return esc(fmt_et(r["published_et"])) + (" (8-K, accepted by EDGAR)" if is_8k(r) else "")
 
 
 def when(s):
@@ -382,10 +406,12 @@ SOURCE = ('Every date on this page comes from the company\'s own press release a
           'used: where a company has not announced its next report day, this page shows none. A release is matched to '
           'a ticker only when it prints the ticker\'s exchange tag or its headline opens with the company\'s name; '
           'law-firm and shareholder-alert releases are left out. Where no newswire results release was read for a '
-          'period, the company\'s own Form 8-K under Item 2.02 (Results of Operations and Financial Condition) stands '
-          'in, marked &ldquo;8-K&rdquo;: its time is when the SEC\'s EDGAR system accepted the filing, which can be '
-          'minutes or hours after the release itself went out, and only an 8-K whose Item 2.02 text names the period '
-          'and calls the figures results is used (a preliminary update is not). Facts only, not investment advice.')
+          'period, the company\'s own Form 8-K under Item 2.02 (Results of Operations and Financial Condition) can '
+          'stand in, marked &ldquo;8-K&rdquo;: its time is when the SEC\'s EDGAR system accepted it, which can be '
+          'minutes or hours after the release itself went out, so no day count is given for it. An 8-K is used only '
+          'when its Item 2.02 text says the company put out its results for one period that had ended, not before '
+          'the report day the company announced, and not when two 8-Ks claim the same period; a preliminary update '
+          'or a notice of the report date is never used. Facts only, not investment advice.')
 
 
 def hub(T, pages, today, fetched, n_csv):
@@ -445,9 +471,11 @@ def hub(T, pages, today, fetched, n_csv):
         B.append('</table>')
     if passed:
         passed.sort(key=lambda x: (x[0], x[1]), reverse=True)
+        sec_on = any(is_8k(p["results"]) for t in T.values() for p in t["P"].values())
         B += [f'<h2>Announced days that passed with no results release read ({len(passed)})</h2>',
-              '<p class="sub">The company announced a report day, the day has passed, and neither a results release '
-              'nor an 8-K under Item 2.02 for that period is among the releases and filings read. That can mean the release was not carried under the company\'s '
+              '<p class="sub">The company announced a report day, the day has passed, and no results release '
+              + ('(nor an 8-K under Item 2.02 that this page can use) ' if sec_on else '') +
+              'for that period is among the releases read. That can mean the release was not carried under the company\'s '
               'ticker, or its headline names the period in words this page does not read; it does not show that the '
               'company did not report.</p>',
               '<table><tr><th>Announced day</th><th>Company</th><th>Period</th><th>Announcement</th></tr>']
@@ -511,16 +539,20 @@ def ticker_page(tk, T, pages, today, fetched, site):
     if done:
         _, k, _, _, _, r = done[0]
         if is_8k(r):
-            lede += (f' Its latest results, for {esc(label(k, t["P"][k]))}, were filed with the SEC on Form 8-K on '
-                     f'{esc(fmt_et(r["published_et"]))}.')
+            lede += (f' Its latest results, for {esc(label(k, t["P"][k]))}, were furnished to the SEC on Form 8-K '
+                     f'(accepted by EDGAR {esc(fmt_et(r["published_et"]))}).')
         else:
             lede += f' Its latest results release, for {esc(label(k, t["P"][k]))}, went out on {esc(fmt_et(r["published_et"]))}.'
     title = f"{nm} ({tk}) Earnings Dates | pdufa.bio"
+    src = ("its own press releases and SEC filings" if any(is_8k(p["results"]) for p in t["P"].values())
+           else "its own press releases")
     desc = (f"{nm} ({tk}) earnings dates: the report days it announced and when each results release went out, "
-            f"from its own press releases.")
+            f"from {src}.")
     if len(desc) > 155:                     # search engines cut longer descriptions mid-word
-        desc = (f"{tk} earnings dates: the report days the company announced and when each results release went out, "
-                f"from its own press releases.")
+        desc = (f"{tk} earnings dates: the report days the company announced and when each results came out, "
+                f"from {src}.")
+    if len(desc) > 155:
+        desc = f"{tk} earnings dates: announced report days and results dates, from {src}."
     B = [f'<h1>{esc(nm)} ({esc(tk)}) <span class="g">earnings dates</span></h1>',
          f'<p class="sub" data-earn="lede">{lede}</p>',
          '<table><tr><th>Period</th><th>Report day announced</th><th>Results released</th>'

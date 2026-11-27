@@ -11,7 +11,7 @@ no results release, and only for what the filing itself says.
     non-EDGAR row is never used
   * against _earnings_sec.json when present: every stored filing is an 8-K with Item 2.02 and an EDGAR link
 
-PLANT=1 makes the self-check pass at a five-hour shift (a time-zone error) and the guard must fail.
+PLANT=1 loosens the builder's time check until a five-hour shift (a time-zone error) passes; the guard must fail.
 """
 import io
 import json
@@ -39,7 +39,29 @@ PARSE = [
     ("On August 7, 2025, the Company issued a press release announcing financial results for the three months ended "
      "June 30, 2025.", "2025-08-07 16:05", "results", "2025Q2"),
     ("On November 12, 2026, the Company announced its financial results for the year ended December 31, 2025 and the "
-     "six months ended June 30, 2026.", "2026-11-12 08:00", "results", "2025FY"),
+     "six months ended June 30, 2026.", "2026-11-12 08:00", "no_period", None),
+    # red team, 2026-11-27: wording that only mentions results, or results of another time, is never results
+    ("On October 20, 2026, the Company issued a press release announcing that it will release financial results for "
+     "the third quarter ended September 30, 2026 after the market close on November 12, 2026.", "2026-10-20 08:00",
+     "not_results", None),
+    ("On October 22, 2026, the Company issued a press release announcing the date of its third quarter 2026 financial "
+     "results conference call.", "2026-10-22 08:00", "not_results", None),
+    ("On January 12, 2026, the Company announced certain unaudited financial results for the fourth quarter and full "
+     "year ended December 31, 2025.", "2026-01-12 07:00", "preliminary", "2025Q4+FY"),
+    ("In connection with the proposed public offering, the Company is disclosing certain financial results for the "
+     "quarter ended September 30, 2026.", "2026-10-25 07:00", "preliminary", "2026Q3"),
+    ("On September 8, 2026, the Company posted an updated corporate presentation, which includes financial results "
+     "for the quarter ended June 30, 2026.", "2026-09-08 08:00", "not_results", None),
+    ("On November 10, 2026, the Company announced financial results for the quarter ended December 31, 2026.",
+     "2026-11-10 16:05", "no_period", None),
+    ("On November 10, 2026, the Company announced its financial results for the third quarter ended September 30, "
+     "2025.", "2026-11-10 16:05", "no_period", None),
+    ("On August 12, 2026, the Company issued a press release announcing its financial results for the quarter and "
+     "year ended June 30, 2026.", "2026-08-12 16:05", "no_period", None),
+    ("On November 5, 2026, the Company issued a press release announcing its financial results for the three months "
+     "ended September 30, 2026 compared with the three months ended September 30, 2025. The information in this Item "
+     "2.02 shall not be deemed filed or otherwise subject to the liabilities of that section.", "2026-11-05 16:05",
+     "results", "2026Q3"),
     ("On February 4, 2026, the Company issued a press release announcing its financial results for its first quarter "
      "of fiscal 2026 ended December 31, 2025.", "2026-02-04 16:10", "results", "FY2026Q1"),
     ("On November 3, 2026, Roivant Sciences Ltd. issued a press release announcing its financial results for the "
@@ -92,58 +114,89 @@ def F(acc, st, k, a="2026-10-28 06:07"):
 
 def build_checks(plant=False):
     f = []
+    if plant:
+        B.SEC_CHECK_MAX = 400           # the planted fault: a check loose enough to pass a five-hour shift
     wire = {"tickers": {
         "AAA": {"name": "Alpha Inc.", "releases": [
             R("schedule", "2026-10-10 08:00", "2026Q3", report_date="2026-10-28"),
-            R("results", "2026-10-28 16:05", "2026Q3")]},
+            R("results", "2026-10-28 16:05", "2026Q3"),
+            R("results", "2026-07-29 16:05", "2026Q2")]},
         "BBB": {"name": "Beta Inc.", "releases": [
-            R("schedule", "2026-10-15 08:00", "2026Q3", report_date="2026-11-04")]},
+            R("schedule", "2026-10-15 08:00", "2026Q3", report_date="2026-11-04"),
+            R("schedule", "2026-11-10 08:00", "2026Q4", report_date="2027-02-20")]},
         "CCC": {"name": "Gamma Inc.", "releases": []},
+        "DDD": {"name": "Delta Inc.", "releases": []},
+        "FYC": {"name": "Fiscal Co.", "releases": [
+            R("results", "2026-08-20 16:05", "FY2026Q4"), R("results", "2025-08-21 16:05", "FY2025Q4")]},
     }}
-    sec = {"check": {"n": 40, "median_min": 300.0 if plant else 7.0}, "tickers": {
-        "AAA": {"filings": F("0000000001-26-000001", "results", "2026Q3", "2026-10-28 16:01")},
+    good = {"n": 40, "median_min": 7.0, "dated": 200, "dated_bad": 0}
+    sec = {"check": good, "tickers": {
+        # filed 30 minutes AFTER the newswire release: the release is the record, and the 8-K is not used at all
+        "AAA": {"filings": {**F("0000000001-26-000001", "results", "2026Q3", "2026-10-28 16:35"),
+                            # two days from any release, for a period the newswire also has: kept, but the release wins
+                            **F("0000000001-26-000002", "results", "2026Q2", "2026-07-31 08:00")}},
         "BBB": {"filings": {**F("0000000002-26-000001", "results", "2026Q3", "2026-11-04 16:10"),
-                            **F("0000000002-26-000002", "preliminary", "2026Q2", "2026-07-08 07:00")}},
+                            **F("0000000002-26-000002", "preliminary", "2026Q2", "2026-07-08 07:00"),
+                            # before the announced day of February 20: never used
+                            **F("0000000002-26-000003", "results", "2026Q4", "2027-02-10 07:00")}},
         "CCC": {"filings": {**F("0000000003-26-000001", "results", "2026Q3", "2026-11-05 07:00"),
                             **F("0000000003-26-000002", "results", "2026Q2", "2026-08-06 07:00"),
                             **F("0000000003-26-000003", "no_period", None, "2026-05-07 07:00"),
+                            **F("0000000003-26-000005", "results", "2025Q3", "2026-11-12 07:00"),   # stale period
                             "0000000003-26-000004": dict(F("x", "results", "2026Q1", "2026-05-01 07:00")["x"],
                                                          url="https://example.com/fake-8k")}},
+        # two 8-Ks claim one period: neither is used
+        "DDD": {"filings": {**F("0000000004-26-000001", "results", "2025Q4", "2026-01-12 07:00"),
+                            **F("0000000004-26-000002", "results", "2025Q4", "2026-03-02 16:05")}},
+        # a fiscal-year company: an 8-K's calendar key must not relabel its fiscal releases
+        "FYC": {"filings": F("0000000005-26-000001", "results", "2026Q3", "2026-11-03 16:01")},
     }}
     d = tempfile.mkdtemp()
     wp, sp = os.path.join(d, "w.json"), os.path.join(d, "s.json")
     json.dump(wire, io.open(wp, "w", encoding="utf-8"))
-    json.dump(sec, io.open(sp, "w", encoding="utf-8"))
-    c, T = B.load(wp, sp)
+
+    def load(chk):
+        json.dump(dict(sec, check=chk), io.open(sp, "w", encoding="utf-8"))
+        return B.load(wp, sp)
+    c, T = load(good)
     today = B.d_of("2026-11-20")
     if c.get("_sec_note"):
         return [f"8-K rows dropped: {c['_sec_note']}"]
-    a = T["AAA"]["P"]["2026Q3"]["results"]
-    if B.is_8k(a) or a["published_et"] != "2026-10-28 16:05":
-        f.append("AAA: the 8-K (filed earlier) replaced the newswire release")
+    for k in ("2026Q3", "2026Q2"):
+        if B.is_8k(T["AAA"]["P"][k]["results"]):
+            f.append(f"AAA {k}: an 8-K replaced or stood beside the newswire release")
+    if any(r.get("accession") == "0000000001-26-000001" for r in T["AAA"]["rel"]):
+        f.append("AAA: an 8-K within a day of a newswire results release was kept")
     b = T["BBB"]["P"]
     if B.status_of(b["2026Q3"], today)[1] != "reported" or not B.is_8k(b["2026Q3"]["results"]):
         f.append("BBB: the 8-K did not make the passed announced day reported")
     if "2026Q2" in b:
         f.append("BBB: a preliminary 8-K was used as results")
+    if b["2026Q4"]["results"]:
+        f.append("BBB: an 8-K dated before the announced report day was used")
     if set(T.get("CCC", {}).get("P", {})) != {"2026Q3", "2026Q2"}:
         f.append(f"CCC: 8-K-only periods {sorted(T.get('CCC', {}).get('P', {}))}, want 2026Q2 and 2026Q3 "
-                 "(no-period and non-EDGAR rows never used)")
+                 "(no-period, stale and non-EDGAR rows never used)")
     if "CCC" in T and not B.has_page(T["CCC"], today):
         f.append("CCC: two 8-K periods but no page")
+    if any(p["results"] for p in T.get("DDD", {}).get("P", {}).values()):
+        f.append("DDD: two 8-Ks for one period, and one was used")
+    fy = T["FYC"]["P"]
+    if "FY2026Q4" not in fy or any(k.endswith("+FY") for k in fy):
+        f.append(f"FYC: a fiscal company's releases were relabeled calendar: {sorted(fy)}")
     by_q = B.gather(T, today)[3]
-    if any(tk != "AAA" for v in by_q.values() for _, tk in v):
+    if any(tk in ("BBB", "CCC") for v in by_q.values() for _, tk in v):
         f.append("8-K rows entered the cross-company quarter statistics")
-    if "CCC" in T and "(8-K filed)" not in B.res_time(T["CCC"]["P"]["2026Q3"]["results"]):
-        f.append("an 8-K time is not marked as the filing time")
-    # the self-check: a five-hour median is a time-zone error and drops every 8-K row
-    bad = dict(sec, check={"n": 40, "median_min": 300.0})
-    json.dump(bad, io.open(sp, "w", encoding="utf-8"))
-    c2, T2 = B.load(wp, sp)
-    if plant:
-        T2 = T                          # the planted run pretends the guard let the shifted rows through
-    if "BBB" in T2 and any(B.is_8k(p["results"]) for p in T2["BBB"]["P"].values()):
-        f.append("a failed time self-check (median 300 min) still let 8-K rows through")
+    if "CCC" in T:
+        r = T["CCC"]["P"]["2026Q3"]["results"]
+        if "(8-K, accepted by EDGAR)" not in B.res_time(r) or B.days_after_end("2026Q3", r) is not None:
+            f.append("an 8-K time is not marked, or it was given a day count")
+    # the time checks fail closed: a five-hour median, too few pairs, or EDGAR's filing-date rule broken
+    for chk, why in ((dict(good, median_min=300.0), "a five-hour median"), (dict(good, n=3), "three pairs"),
+                     (dict(good, dated_bad=40), "40 of 200 filings off EDGAR's filing-date rule")):
+        _, T2 = load(chk)
+        if any(B.is_8k(p["results"]) for t in T2.values() for p in t["P"].values()):
+            f.append(f"8-K rows used despite {why}")
     return f
 
 
@@ -160,8 +213,12 @@ def cache_checks():
                 f.append(f"{tk} {acc}: not an 8-K with Item 2.02")
             if not str(x.get("url", "")).startswith("https://www.sec.gov/Archives/edgar/data/"):
                 f.append(f"{tk} {acc}: link is not an EDGAR filing")
-            if x.get("status") == "results" and not x.get("period_key"):
-                f.append(f"{tk} {acc}: results with no period")
+            if x.get("status") == "results" and not S.fresh(x.get("period_key"), B.d_of(x.get("accepted_et"))):
+                f.append(f"{tk} {acc}: results for {x.get('period_key')} not ended within {S.MAX_DAYS} days "
+                         f"before {x.get('accepted_et')}")
+    dn, db = S.filing_date_check(c)
+    if dn >= 20 and db > 0.05 * dn:
+        f.append(f"{db} of {dn} stored 8-K times break EDGAR's filing-date rule: the time zone is being misread")
     return f, f"{n} stored filings, check {c.get('check')}"
 
 

@@ -55,7 +55,7 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from fetch_earnings_dates import period_of  # noqa: E402
+from fetch_earnings_dates import is_results, period_end, period_of  # noqa: E402
 
 CACHE = os.path.join(HERE, "_earnings_sec.json")
 NEWSWIRE = os.path.join(HERE, "_earnings_dates.json")
@@ -63,7 +63,7 @@ TICKERS = os.path.join(HERE, "sec_company_tickers.json")
 UA = {"User-Agent": "pdufa.bio builder support@pdufa.bio", "Accept-Encoding": "identity"}
 FROM = "2024-01-01"
 PAUSE = 0.15                       # SEC asks for no more than 10 requests a second
-RULES_VERSION = 1                  # bump when the parse rules change: every opened filing is re-read
+RULES_VERSION = 2                  # bump when the parse rules change: every opened filing is re-read
 ACC = re.compile(r"^\d{10}-\d{2}-\d{6}$")
 
 
@@ -86,8 +86,27 @@ def text_of(raw):
 P_ITEM = re.compile(r"\bItem\s*2\.02\.?\s*(?:[-:.]\s*)?Results\s+of\s+Operations\s+and\s+Financial\s+Condition\.?",
                     re.I)
 P_NEXT = re.compile(r"\bItem\s*(?:[1-8]\.\d\d|9\.01)\b", re.I)
+# figures that are not the period's reported results: preliminary or selected numbers (a January conference update, an
+# offering), anything still subject to the audit
 P_PRELIM = re.compile(r"\bpreliminary\b|\bestimated\s+(?:unaudited\s+)?(?:revenue|cash|net\s+product)|"
-                      r"\bexpects?\s+to\s+report\b|\banticipates?\s+reporting\b", re.I)
+                      r"\bexpects?\s+to\s+report\b|\banticipates?\s+reporting\b|\bunaudited\b|\bselected\b|"
+                      r"\bcertain\s+(?:\w+\s+){0,3}(?:results|information|figures)\b|\bsubject\s+to\b|"
+                      r"\bin\s+connection\s+with\b|\boffering\b|\bprospectus\b", re.I)
+# an 8-K that only mentions results: a notice of the report date or call, a presentation, a non-reliance, restatement
+# or late-filing notice
+P_NOT = re.compile(r"\bwill\b|\bto\s+(?:report|release|announce|host|present)\b|\bdate\s+of\b|\bconference\s+call\b|"
+                   r"\bwebcast\b|\bscheduled?\b|\bplans?\s+to\b|\bpresentation\b|\bslides?\b|\bpreviously\s+issued\b|"
+                   r"\bnon-?reliance\b|\brestate|\b12b-25\b|\blate\s+fil|\bunable\s+to\s+file\b", re.I)
+P_ABOUT = re.compile(r"\bresults\b|\bfinancial\s+information\b|\brevenues?\b|\bcash\b", re.I)
+P_BOILER = re.compile(r"\bsubject\s+to\s+the\s+liabilit\w*|\bin\s+connection\s+with\s+(?:this|the)\s+(?:item|filing|report)",
+                      re.I)
+# the company says it put the results out: "issued a press release announcing its financial results for ..."
+P_DID = re.compile(r"\b(?:issued|released|published|disseminated|announced|reported|announcing|reporting)\b"
+                   r"[^.]{0,160}?\b(?:financial|operating|quarterly|annual|fiscal|earnings)\s+results\b|"
+                   r"\b(?:announced|reported|announcing|reporting)\s+(?:its\s+)?results\s+of\s+operations\b", re.I)
+P_ENDED = re.compile(r"\bended\s+(january|february|march|april|may|june|july|august|september|october|november|"
+                     r"december)\s+(\d{1,2}),?\s+(20\d\d)\b", re.I)
+MAX_DAYS = 135                     # a quarter's results come within weeks of its end; a 10-K filer's within 90 days
 P_RESULTS = re.compile(r"\b(?:financial|operating|quarterly|annual|fiscal|earnings)\s+results\b|"
                        r"\bresults\s+of\s+operations\s+for\b|\breport(?:ed|ing)?\s+(?:its\s+)?(?:financial\s+)?results\b|"
                        r"\bfinancial\s+condition\s+(?:as\s+of|for)\b", re.I)
@@ -130,34 +149,62 @@ def period_202(s, pub):
         q = mon // 3
         if (o and ORD[o.lower()] != q) or fisc or (yr_kind or "").strip().lower() == "fiscal":
             return m.group(0), None
+        if yr_and and q != 4:
+            return m.group(0), None            # 'quarter and year ended June 30': a June fiscal year
         return m.group(0), f"{y}Q{q}" + ("+FY" if q == 4 and yr_and else "")
     return period_of(s, pub)
 
 
+def fresh(k, pub):
+    """The period ended before the filing and no more than MAX_DAYS before it. A fiscal key (no calendar end) only
+    when its fiscal year is the filing's year or the next."""
+    if not k or not pub:
+        return False
+    end = period_end(k)
+    if end:
+        return end < pub and (pub - end).days <= MAX_DAYS
+    m = re.match(r"FY(20\d\d)", k)
+    return bool(m) and int(m.group(1)) in (pub.year, pub.year + 1)
+
+
+def one_period(s):
+    """Two different 'ended <day>' periods in one sentence (a year and a later half year) leave the period unclear;
+    the same day a year apart is a prior-year comparison and is fine."""
+    days = {(m.group(1).lower(), int(m.group(2)), int(m.group(3))) for m in P_ENDED.finditer(s)}
+    return len({(mo, d) for mo, d, _ in days}) <= 1 and len(days) <= 2
+
+
 def classify(seg, accepted):
-    """(status, printed period, period key) for an Item 2.02 paragraph."""
+    """(status, printed period, period key) for an Item 2.02 paragraph. Results only from a sentence in which the
+    company says it put its results out (past tense), for one period that ended within MAX_DAYS before the filing."""
     if not seg:
         return "no_item", None, None
     pub = dt.date.fromisoformat(accepted[:10]) if accepted else None
-    sent = re.split(r"(?<=[a-z0-9\)])\.\s+(?=[A-Z])", seg)
-    lead = " ".join(sent[:3])
-    if P_PRELIM.search(lead):
-        p, k = period_202(lead, pub)
-        return "preliminary", p, k
+    sent = [P_BOILER.sub(" ", x) for x in re.split(r"(?<=[a-z0-9\)])\.\s+(?=[A-Z])", seg)]
+    for x in sent[:3]:
+        if P_ABOUT.search(x) and P_PRELIM.search(x):
+            p, k = period_202(x, pub)
+            return "preliminary", p, k
     if not P_RESULTS.search(seg):
         return "not_results", None, None
     for s in sent[:4]:
-        if P_RESULTS.search(s) or re.search(r"\bquarter|months\s+ended|year\s+ended", s, re.I):
-            p, k = period_202(s, pub)
-            if k:
-                return "results", p, k
-    return "no_period", None, None
+        if not P_DID.search(s):
+            continue
+        if P_NOT.search(s):
+            return "not_results", None, None
+        if not one_period(s):
+            return "no_period", None, None
+        p, k = period_202(s, pub)
+        if k and fresh(k, pub):
+            return "results", p, k
+        return "no_period", p, None
+    return "not_results", None, None
 
 
-def get(url, as_json=False, tries=3):
+def get(url, as_json=False, tries=2):
     for i in range(tries):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=15) as r:
                 b = r.read()
             time.sleep(PAUSE)
             return json.loads(b.decode("utf-8", "replace")) if as_json else b.decode("utf-8", "replace")
@@ -169,7 +216,7 @@ def get(url, as_json=False, tries=3):
         except Exception:  # noqa: BLE001
             if i == tries - 1:
                 raise
-        time.sleep(2 + 3 * i)
+        time.sleep(2)
     return None
 
 
@@ -226,8 +273,50 @@ def self_check(cache, wire_all):
     return {"n": len(diffs), "median_min": round(statistics.median(diffs), 1) if diffs else None}
 
 
+def filing_date_check(cache):
+    """EDGAR dates a filing accepted after 17:30 Eastern on the next business day, and accepts none before 06:00. Read
+    in the right zone, every 8-K obeys that; read in the wrong one (UTC taken for Eastern), many would not. Returns
+    (filings checked, filings that break it)."""
+    n = bad = 0
+    for ent in (cache.get("tickers") or {}).values():
+        for f in (ent.get("filings") or {}).values():
+            a, fd = str(f.get("accepted_et") or ""), str(f.get("filing_date") or "")
+            if len(a) < 16 or len(fd) < 10:
+                continue
+            n += 1
+            late = a[11:16] >= "17:30"
+            if a[11:13] < "06" or (late and fd <= a[:10]) or (not late and fd != a[:10]):
+                bad += 1
+    return n, bad
+
+
+def same_company(a, b):
+    """The SEC registrant and the company the newswire names share their first word (a reused ticker or a rename
+    fails, and that ticker is not read)."""
+    def first(x):
+        w = [t for t in re.findall(r"[a-z0-9]+", (x or "").lower()) if t not in ("the", "inc", "corp")]
+        return w[0] if w else ""
+    return bool(first(a)) and first(a) == first(b)
+
+
 def doc_url(cik, acc, name):
     return f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc.replace('-', '')}/{name}"
+
+
+def exhibit_status(text, accepted):
+    """(status, period, key) from the EX-99.1 release's headline, or None. The headline (its first words after the
+    exhibit label) is read by the newswire rules, so a schedule notice, topline data, a presentation or a preliminary
+    update is not a results headline."""
+    head = re.sub(r"^(?:EX-99\.?1\s+)?(?:\S+\.html?\s+)?(?:Exhibit\s+99\.?1\s+)?", "", text[:600], flags=re.I)[:220]
+    pub = dt.date.fromisoformat(accepted[:10]) if accepted else None
+    if P_PRELIM.search(head):
+        p, k = period_of(head, pub)
+        return "preliminary", p, k
+    if is_results(head):
+        p, k = period_of(head, pub)
+        if k and fresh(k, pub):
+            return "results", p, k
+    return None
 
 
 def read_filing(cik, acc, primary, accepted):
@@ -235,8 +324,8 @@ def read_filing(cik, acc, primary, accepted):
     raw = get(doc_url(cik, acc, primary)) if primary else None
     seg = item_202(text_of(raw)) if raw else ""
     st, p, k = classify(seg, accepted)
-    if st in ("results", "preliminary") or not raw:
-        return st, p, k, "8-K"
+    if st not in ("no_period", "no_item") or not raw:
+        return st, p, k, "8-K"            # a notice, a presentation or a preliminary update: its exhibit is not read
     # the body names no period: the release itself (EX-99.1), first lines only
     idx = get(doc_url(cik, acc, "index.json"), as_json=True) or {}
     items = ((idx.get("directory") or {}).get("item")) or []
@@ -248,22 +337,23 @@ def read_filing(cik, acc, primary, accepted):
     rel = get(doc_url(cik, acc, sorted(ex)[0]))
     if not rel:
         return st, p, k, "8-K"
-    head = text_of(rel)[:1200]
-    pub = dt.date.fromisoformat(accepted[:10]) if accepted else None
-    if P_PRELIM.search(head[:500]):
-        p2, k2 = period_of(head[:500], pub)
-        return "preliminary", p2, k2, "EX-99.1"
-    if P_RESULTS.search(head) or re.search(r"\bReports?\b", head[:300]):
-        p2, k2 = period_of(head[:400], pub)
-        if k2:
-            return "results", p2, k2, "EX-99.1"
+    r = exhibit_status(text_of(rel), accepted)
+    if r:
+        return r + ("EX-99.1",)
     return st, p, k, "8-K"
+
+
+def save(cache):
+    tmp = CACHE + ".tmp"
+    with io.open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(cache, fh, ensure_ascii=False, indent=0, sort_keys=True)
+    os.replace(tmp, CACHE)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--tickers", default="")
-    ap.add_argument("--budget-min", type=float, default=8.0)
+    ap.add_argument("--budget-min", type=float, default=7.0)
     ap.add_argument("--max-docs", type=int, default=400)
     a = ap.parse_args()
     if not os.environ.get("CI") and not os.environ.get("EARNINGS_SEC_LOCAL"):
@@ -276,7 +366,14 @@ def main():
     except Exception as e:  # noqa: BLE001
         print(f"::warning::earnings 8-K: {os.path.basename(TICKERS)} unreadable ({type(e).__name__}); nothing read")
         return 0
-    cache = json.load(io.open(CACHE, encoding="utf-8")) if os.path.exists(CACHE) else {}
+    try:
+        cache = json.load(io.open(CACHE, encoding="utf-8")) if os.path.exists(CACHE) else {}
+        if not isinstance(cache, dict):
+            raise ValueError("not an object")
+    except Exception as e:  # noqa: BLE001
+        print(f"::warning::earnings 8-K: {os.path.basename(CACHE)} unreadable ({type(e).__name__}); starting it again")
+        cache = {}
+    before = json.dumps({k: v for k, v in cache.items() if k != "fetched"}, sort_keys=True)
     if cache.get("rules_version") != RULES_VERSION:
         for ent in (cache.get("tickers") or {}).values():
             for f in (ent.get("filings") or {}).values():
@@ -304,6 +401,10 @@ def main():
                 return 3
             continue
         lists += 1
+        if not same_company((sub or {}).get("name"), names.get(tk)):
+            tks.pop(tk, None)
+            print(f"  {tk}: EDGAR registrant {str((sub or {}).get('name'))[:40]!r} is not {names.get(tk)!r}; skipped")
+            continue
         rec = ((sub or {}).get("filings") or {}).get("recent") or {}
         cols = ["accessionNumber", "form", "items", "filingDate", "acceptanceDateTime", "primaryDocument"]
         if not all(isinstance(rec.get(c), list) for c in cols):
@@ -332,19 +433,20 @@ def main():
                 continue
             docs += 1
             f.update({"status": st, "period": p, "period_key": k, "where": where})
+            if docs % 25 == 0:
+                save(cache)                    # a step cut off by its timeout keeps what it opened
     for ent in tks.values():
         for f in (ent.get("filings") or {}).values():
             if f.get("status") in stats:
                 stats[f["status"]] += 1
     cache["check"] = self_check(cache, {tk: [(p, k) for p, k in v] for tk, v in wire.items()})
-    cache["fetched"] = dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+    cache["check"]["dated"], cache["check"]["dated_bad"] = filing_date_check(cache)
     if lists == 0:
         print("::warning::earnings 8-K: no filing list read; cache untouched")
         return 3
-    tmp = CACHE + ".tmp"
-    with io.open(tmp, "w", encoding="utf-8") as fh:
-        json.dump(cache, fh, ensure_ascii=False, indent=0, sort_keys=True)
-    os.replace(tmp, CACHE)
+    if json.dumps({k: v for k, v in cache.items() if k != "fetched"}, sort_keys=True) != before:
+        cache["fetched"] = dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+        save(cache)                            # unchanged: not rewritten, so the commit carries no churn
     print(f"earnings 8-K: {lists} filing lists, {docs} filings opened; " +
           ", ".join(f"{v} {k}" for k, v in stats.items()) +
           f"; 8-K minus newswire median {cache['check']['median_min']} min over {cache['check']['n']}")
