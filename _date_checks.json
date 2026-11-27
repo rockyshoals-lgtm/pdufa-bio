@@ -3740,11 +3740,11 @@
    "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
   },
   "readout_mdgl_2027-12-31-resmetirom": {
-   "checked": "2026-11-26",
-   "verdict": "CONFIRMED",
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
    "source": "https://www.globenewswire.com/news-release/2026/11/03/3394036/0/en/madrigal-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
-   "by": "red team 2026-11-26",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "by": "manual",
+   "note": "Duplicate of readout_mdgl_2027-12-31 (same company release and session/statement, drug named in the other order); removed 2026-11-27, readout_mdgl_2027-12-31 is the one listing."
   },
   "readout_dnli_2027-06-30-biib122": {
    "checked": "2026-11-26",
@@ -3859,25 +3859,25 @@
    "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
   },
   "readout_adct_2026-12-14-loncastuxi": {
-   "checked": "2026-11-26",
-   "verdict": "CONFIRMED",
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
    "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "by": "red team 2026-11-26",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "by": "manual",
+   "note": "Duplicate of readout_adct_2026-12-14 (same company release and session/statement, drug named in the other order); removed 2026-11-27, readout_adct_2026-12-14 is the one listing."
   },
   "readout_adct_2026-12-13-loncastuxi": {
-   "checked": "2026-11-26",
-   "verdict": "CONFIRMED",
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
    "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "by": "red team 2026-11-26",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "by": "manual",
+   "note": "Duplicate of readout_adct_2026-12-13 (same company release and session/statement, drug named in the other order); removed 2026-11-27, readout_adct_2026-12-13 is the one listing."
   },
   "readout_sls_2026-12-14-tambicicli": {
-   "checked": "2026-11-26",
-   "verdict": "CONFIRMED",
-   "source": "https://www.globenewswire.com/news-release/2026/11/4/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
-   "by": "red team 2026-11-26",
-   "note": "From the row's own red-team note: source re-opened, quote, program, timing and date checked."
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
+   "by": "manual",
+   "note": "Duplicate of readout_sls_2026-12-14 (same company release and session/statement, drug named in the other order); removed 2026-11-27, readout_sls_2026-12-14 is the one listing."
   },
   "readout_clym_2026-12-13": {
    "checked": "2026-11-26",

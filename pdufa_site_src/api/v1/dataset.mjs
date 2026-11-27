@@ -18276,7 +18276,8 @@ export default [
      "note": "created 2026-11-17 from the company's own statement (press release 2026-11-04)"
     }
    ],
-   "ta_basis": "Company release: indication stated as Relapsed/refractory AML after venetoclax-based therapy"
+   "ta_basis": "Company release: indication stated as Relapsed/refractory AML after venetoclax-based therapy",
+   "dedupe_note": "2026-11-27: a second copy of this readout (readout_sls_2026-12-14-tambicicli), added Nov 26 from the same company release with the drug named the other way round, was removed; this row is the one listing."
   }
  },
  {
@@ -19237,7 +19238,8 @@ export default [
      "note": "created 2026-11-17 from the company's own statement (press release 2026-11-03)"
     }
    ],
-   "ta_basis": "Company release: indication stated as Compensated MASH cirrhosis (F4c)"
+   "ta_basis": "Company release: indication stated as Compensated MASH cirrhosis (F4c)",
+   "dedupe_note": "2026-11-27: a second copy of this readout (readout_mdgl_2027-12-31-resmetirom), added Nov 26 from the same company release with the drug named the other way round, was removed; this row is the one listing."
   }
  },
  {
@@ -23928,7 +23930,8 @@ export default [
      "note": "created 2026-11-17 from the company's own statement (press release 2026-11-04)"
     }
    ],
-   "ta_basis": "Company release: indication stated as relapsed/refractory diffuse large B-cell lymphoma (r/r DLBCL)"
+   "ta_basis": "Company release: indication stated as relapsed/refractory diffuse large B-cell lymphoma (r/r DLBCL)",
+   "dedupe_note": "2026-11-27: a second copy of this readout (readout_adct_2026-12-14-loncastuxi), added Nov 26 from the same company release with the drug named the other way round, was removed; this row is the one listing."
   }
  },
  {
@@ -23966,7 +23969,8 @@ export default [
      "note": "created 2026-11-17 from the company's own statement (press release 2026-11-04)"
     }
    ],
-   "ta_basis": "Company release: indication stated as relapsed/refractory large B-cell lymphoma"
+   "ta_basis": "Company release: indication stated as relapsed/refractory large B-cell lymphoma",
+   "dedupe_note": "2026-11-27: a second copy of this readout (readout_adct_2026-12-13-loncastuxi), added Nov 26 from the same company release with the drug named the other way round, was removed; this row is the one listing."
   }
  },
  {
@@ -33391,45 +33395,6 @@ export default [
   }
  },
  {
-  "id": "readout_mdgl_2027-12-31-resmetirom",
-  "t": "MDGL",
-  "company": "Madrigal Pharmaceuticals, Inc.",
-  "d": "2027-12-31",
-  "dp": "year",
-  "name": "resmetirom (Rezdiffra) MAESTRO-NASH OUTCOMES Phase 3 data",
-  "type": "Readout",
-  "ta": "Hepatology",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.globenewswire.com/news-release/2026/11/03/3394036/0/en/madrigal-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
-  "ua": "2026-11-26T21:03:06Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "compensated MASH cirrhosis (F4c)",
-   "market_cap_usd": null,
-   "program": "resmetirom (Rezdiffra)",
-   "trial": "MAESTRO-NASH OUTCOMES Phase 3",
-   "guided_precision": "year",
-   "guided_window": "2027",
-   "guided_label": "late 2027",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-03",
-   "guidance_text": "MAESTRO NASH OUTCOMES on track, data expected late 2027.",
-   "source_url": "https://www.globenewswire.com/news-release/2026/11/03/3394036/0/en/madrigal-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
-   "source": "company guidance (company release)",
-   "readout_described": "data",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened Madrigal Q3 release 2026-11-03: 'MAESTRO NASH OUTCOMES on track, data expected late 2027'. Same NCT05500222. Later law-firm notices about Madrigal contain no company timing change.",
-   "date_history": [
-    {
-     "date": "2027-12-31",
-     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-03)"
-    }
-   ],
-   "supersedes_estimate": "readout_mdgl_2026-12-15",
-   "ta_basis": "Company release: indication stated as compensated MASH cirrhosis (F4c)"
-  }
- },
- {
   "id": "readout_dnli_2027-06-30-biib122",
   "t": "DNLI",
   "company": "Denali Therapeutics Inc.",
@@ -34324,123 +34289,6 @@ export default [
     }
    ],
    "ta_basis": "Company release: indication stated as Dravet syndrome"
-  }
- },
- {
-  "id": "readout_adct_2026-12-14-loncastuxi",
-  "t": "ADCT",
-  "company": "ADC Therapeutics SA",
-  "d": "2026-12-14",
-  "dp": "day",
-  "name": "loncastuximab tesirine (ZYNLONTA) + rituximab vs R-GemOx LOTIS-5, Phase 3 results, ASH\u2026",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-  "ua": "2026-11-26T21:03:06Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "relapsed or refractory DLBCL",
-   "market_cap_usd": null,
-   "program": "loncastuximab tesirine (ZYNLONTA) + rituximab vs R-GemOx",
-   "trial": "LOTIS-5, Phase 3",
-   "guided_precision": "day",
-   "guided_window": "2026-12-14",
-   "guided_label": "Monday, December 14, 2026, 3:00-3:15 p.m. CT (ASH oral)",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-04",
-   "guidance_text": "Monday, December 14, 2026, 3:00 - 3:15 p.m. CT",
-   "source_url": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "source": "company guidance (company release)",
-   "readout_described": "Phase 3 results, ASH oral (Abstract #920)",
-   "date_quote": "Monday, December 14, 2026, 3:00 - 3:15 p.m. CT",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened ADC Therapeutics 11/04/2026 release: Abstract #920 oral, results from Phase 3 LOTIS-5 (lonca + rituximab), Monday Dec 14, 2026 3:00-3:15 p.m. CT.",
-   "date_history": [
-    {
-     "date": "2026-12-14",
-     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
-    }
-   ],
-   "ta_basis": "Company release: indication stated as relapsed or refractory DLBCL"
-  }
- },
- {
-  "id": "readout_adct_2026-12-13-loncastuxi",
-  "t": "ADCT",
-  "company": "ADC Therapeutics SA",
-  "d": "2026-12-13",
-  "dp": "day",
-  "name": "loncastuximab tesirine + glofitamab LOTIS-7, Phase 1b updated results, ASH oral\u2026",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-  "ua": "2026-11-26T21:03:06Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "relapsed/refractory large B-cell lymphoma",
-   "market_cap_usd": null,
-   "program": "loncastuximab tesirine + glofitamab",
-   "trial": "LOTIS-7, Phase 1b",
-   "guided_precision": "day",
-   "guided_window": "2026-12-13",
-   "guided_label": "Sunday, December 13, 2026, 12:00-12:15 p.m. CT (ASH oral)",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-04",
-   "guidance_text": "Sunday, December 13, 2026, 12:00 - 12:15 p.m. CT",
-   "source_url": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "source": "company guidance (company release)",
-   "readout_described": "updated results, ASH oral (Abstract #619)",
-   "date_quote": "Sunday, December 13, 2026, 12:00 - 12:15 p.m. CT",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same ADCT release: Abstract #619 oral, updated results from Phase 1b LOTIS-7, Sunday Dec 13, 2026 12:00-12:15 p.m. CT.",
-   "date_history": [
-    {
-     "date": "2026-12-13",
-     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
-    }
-   ],
-   "ta_basis": "Company release: indication stated as relapsed/refractory large B-cell lymphoma"
-  }
- },
- {
-  "id": "readout_sls_2026-12-14-tambicicli",
-  "t": "SLS",
-  "company": "SELLAS Life Sciences Group, Inc.",
-  "d": "2026-12-14",
-  "dp": "day",
-  "name": "tambiciclib (SLS009) + azacitidine + venetoclax Phase 2 dose-ranging study Phase 2 data,\u2026",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.globenewswire.com/news-release/2026/11/4/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
-  "ua": "2026-11-26T21:03:06Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "relapsed/refractory AML after prior venetoclax-based therapy",
-   "market_cap_usd": null,
-   "program": "tambiciclib (SLS009) + azacitidine + venetoclax",
-   "trial": "Phase 2 dose-ranging study",
-   "guided_precision": "day",
-   "guided_window": "2026-12-14",
-   "guided_label": "Monday, December 14, 2026, 6:00-8:00 PM CST (ASH poster)",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-04",
-   "guidance_text": "Monday, December 14, 2026, 6:00 \u2013 8:00 PM CST",
-   "source_url": "https://www.globenewswire.com/news-release/2026/11/4/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
-   "source": "company guidance (company release)",
-   "readout_described": "Phase 2 data, ASH poster (Abstract 5155)",
-   "date_quote": "Monday, December 14, 2026, 6:00 \u2013 8:00 PM CST",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened SELLAS 11/04/2026 release: poster abstract 5155, tambiciclib (SLS009) + aza/ven in R/R AML after prior venetoclax, results from a Phase 2 study, Monday Dec 14, 2026 6:00-8:00 PM CST.",
-   "date_history": [
-    {
-     "date": "2026-12-14",
-     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
-    }
-   ],
-   "ta_basis": "Company release: indication stated as relapsed/refractory AML after prior venetoclax-based therapy"
   }
  },
  {
