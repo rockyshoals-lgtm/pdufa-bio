@@ -94,6 +94,8 @@ def find_row(tk, name, m, ms, items, lead_source, today):
             continue
         if not (X._mlo(m) <= pub_et <= hi) or not X.anchors(title, m, ms) or not X.own(tk, name, title, text):
             continue
+        if not X.early_ok(title, text[:X.EXCERPT], pub_et, m):
+            continue                          # a notice of talks to come: a later release is the data
         code, yr = X.study_code(m["code"]), m["start"][:4]
         row = {"key": f"{tk}|{code}|{yr}", "ticker": tk, "company": name, "conf": code, "meeting_code": m["code"],
                "year": int(yr), "conf_full": f"{m['name']} {yr}", "meeting_start": m["start"],

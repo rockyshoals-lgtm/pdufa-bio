@@ -58,7 +58,7 @@ EARLY_DAYS, LATE_DAYS = 42, 1
 EARLY_DATE = "2026-06-05"   # the published study stops 2026-06-04
 WINDOWS = [("runup_30d", -30), ("runup_20d", -20), ("runup_10d", -10), ("runup_5d", -5)]
 
-RULES_VERSION = 4   # bump when a headline or attribution rule changes: stored rows are re-checked, every ticker re-read
+RULES_VERSION = 5   # bump when a headline or attribution rule changes: stored rows are re-checked, every ticker re-read
 
 # How each meeting is named in headlines. The code itself (word-bounded) always counts unless it is in NO_BARE;
 # these add the names companies actually print. Longest names are tried first, so "ESMO Asia" never lands on ESMO.
@@ -94,6 +94,7 @@ ALIASES = {
     "ENA": ["EORTC-NCI-AACR", "EORTC NCI AACR", "EORTC/NCI/AACR"],
     "SABCS": ["San Antonio Breast Cancer Symposium"],
     "AES": ["American Epilepsy Society"],
+    "ADPD": ["AD/PD"],
 }
 # Name shapes with an edition number in the middle ("American Diabetes Association's 86th Scientific Sessions").
 RX_ALIASES = {
@@ -118,6 +119,7 @@ EXCLUDE = {
     "ADA": re.compile(r"Advanced Technologies (?:&|and) Treatments|ATTD|American Dental", re.I),
     "ERS": re.compile(r"Lung Science Conference|Sleep and Breathing Conference", re.I),
     "ASH": re.compile(r"Meeting on Hematologic Malignancies|Highlights of ASH|ASH/?ASCO|ASH Medical Educational", re.I),
+    "ENDO": re.compile(r"Pediatric Endocrine", re.I),    # BMRN 2026-05-02 was at the Pediatric Endocrine Society
     "ESMO": re.compile(r"Virtual Plenary|ESMO (?:GI|Breast|TAT|Gyn\w*|Sarcoma|Lung|Targeted|Asia|IO|Immuno)|"
                        r"World Congress on Gastrointestinal", re.I),
 }
@@ -135,10 +137,42 @@ FUTURE = re.compile(r"\b(to (?:present|report|showcase|highlight|share|host|part
                     r"conference call|KOL)\b", re.I)
 # "Announces (Late-Breaking) Presentation(s) of ... Data at" is a notice of a talk unless a past-tense verb or
 # a reported result follows.
-NOTICE = re.compile(r"\bannounc\w*\s+(?:[\w-]+\s+){0,4}presentations?\b", re.I)
+NOTICE = re.compile(r"\bannounc\w*\s+(?:\S+\s+){0,4}presentations?\b", re.I)   # \S: 'AlloNK®' is one word
 PAST = re.compile(r"\b(presented|reported|showed|shows|showing|demonstrat\w*|achieved|met|improved|reduced)\b", re.I)
 NOT_DATA = re.compile(r"\b(inducement|financial results|quarter|investor alert|law firm|class action|"
                       r"shareholder)\b", re.I)
+
+
+# Red team 2026-11-27. A release out before the meeting opens reports data only if its own opening says so: one that
+# says the data "will be presented", "has been selected" or is "to be shared" (Takeda 31 days before ESMO 2026, Gilead
+# on ASH's abstract day) is a notice of talks, unless it already gives a result in figures.
+ANNOUNCES = re.compile(r"\b(will (?:be )?present(?:ed)?|to be (?:presented|shared|featured|highlighted|delivered)|"
+                       r"will be (?:shared|featured|highlighted|delivered|showcased)|(?:has|have) been (?:selected|"
+                       r"accepted)|announced upcoming|upcoming (?:data )?presentations?)\b", re.I)
+FIGURES = re.compile(r"\d+(?:\.\d+)?\s?%|\bp\s?[<=]\s?0?\.\d|\bHR\s?[=:]?\s?0?\.\d|\b\d+ of \d+ (?:patients|participants)",
+                     re.I)
+
+
+def all_codes():
+    rows = json.load(io.open(os.path.join(HERE, "conferences.json"), encoding="utf-8"))["conferences"]
+    if os.path.exists(EXTRA):
+        rows = rows + json.load(io.open(EXTRA, encoding="utf-8"))["meetings"]
+    return sorted({c["code"] for c in rows if c.get("code")})
+
+
+def early_ok(title, text, pub, m):
+    """A release out before meeting m opens anchors it only if it reports data (not a notice of talks to come) and
+    its headline names no other meeting (Acumen's 'at AD/PD 2025 and AAN' came out during AD/PD, before AAN)."""
+    if pub >= m["start"]:
+        return True
+    if ANNOUNCES.search(text or "") and not FIGURES.search(text or ""):
+        return False
+    for code in all_codes():
+        if code == m["code"] or code.startswith(m["code"] + " ") or m["code"].startswith(code + " "):
+            continue
+        if any(p.search(title) for p in _pat({"code": code})):
+            return False
+    return True
 
 
 def meetings(since, today):
@@ -260,6 +294,7 @@ def passes(r, ms, name):
     hi = (dt.date.fromisoformat(m["end"]) + dt.timedelta(days=LATE_DAYS)).isoformat()
     t = r.get("release_title", "")
     return (lo <= r.get("anchor", "") <= hi and anchors(t, m, ms)
+            and early_ok(t, r.get("release_excerpt", ""), r.get("anchor", ""), m)
             and own(r["ticker"], name, t, stored_text(r)))
 
 
@@ -431,6 +466,8 @@ def main():
                 hi = (dt.date.fromisoformat(m["end"]) + dt.timedelta(days=LATE_DAYS)).isoformat()
                 if not (_mlo(m) <= pub_et <= hi) or not anchors(title, m, ms):
                     continue
+                if not early_ok(title, text[:EXCERPT], pub_et, m):
+                    continue                      # a notice of talks to come: a later release is the data
                 if not own(tk, name, title, text):
                     continue
                 code = study_code(m["code"])
