@@ -48,6 +48,36 @@ except Exception:  # noqa: BLE001
     _past_due = None
 
 
+
+_TGT = re.compile(r'<span>FDA PDUFA target date</span><b>(\d{4}-\d{2}-\d{2})')
+
+
+def _page_target(slug):
+    """The goal date a /pdufa/{slug} page itself states, or '' (a decided page states none)."""
+    try:
+        with open(os.path.join(SITE, 'pdufa', slug, 'index.html'), encoding='utf-8', errors='replace') as f:
+            m = _TGT.search(f.read())
+        return m.group(1) if m else ''
+    except OSError:
+        return ''
+
+
+def pick_event_slug(tk, drug, date, slugs):
+    """The /pdufa/ page for one slate row (OMW round 2, 2026-11-27).
+
+    Matching by drug token alone took the FIRST page that shared a word, so on the Cogent hub both
+    pending bezuclastinib rows (SUMMIT, Dec 30 2026; AdvSM, Jun 29 2027) linked the decided GIST page
+    (approved Nov 24 as Ekitna). Among the pages that share a drug token, take the one that states
+    this row's goal date; else the first that still states a goal date; else the old first match."""
+    dtoks = {w.lower() for w in re.findall(r'[A-Za-z]{4,}', drug or '')}
+    cands = [s for s in slugs.get(tk, []) if dtoks & set(s.lower().replace('-', ' ').split())]
+    if not cands:
+        return ''
+    tg = {s: _page_target(s) for s in cands}
+    day = str(date or '')[:10]
+    return next((s for s in cands if day and tg[s] == day), None) \
+        or next((s for s in cands if tg[s]), None) or cands[0]
+
 def _past_due_by_ticker():
     out = {}
     if _past_due is None:
@@ -343,19 +373,16 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
     # resurrect exactly the decided-as-pending phantoms we spent sessions removing. The slate is
     # the authoritative forward calendar; link each slate row to a matching detail page by drug
     # token when one exists, else to the month calendar. Never link a swept page back onto a hub.
-    def _href(drug):
-        dtoks = {w.lower() for w in re.findall(r'[A-Za-z]{4,}', drug)}
-        for s in slugs.get(tk, []):
-            if dtoks & set(s.lower().replace('-', ' ').split()):
-                return f'/pdufa/{s}'
-        return '/calendar'
+    def _href(drug, date=''):
+        s = pick_event_slug(tk, drug, date, slugs)
+        return f'/pdufa/{s}' if s else '/calendar'
 
     if overdue:
         out.append('<h2>Past the goal date, no decision yet</h2>')
         for c in sorted(overdue, key=lambda x: x.get('date') or ''):
             x = pdue[str(c.get('date'))]
             drug = c.get('drug') or x.get('drug') or ''
-            href = x.get('url') if str(x.get('url') or '').startswith('/pdufa/') else _href(drug)
+            href = x.get('url') if str(x.get('url') or '').startswith('/pdufa/') else _href(drug, c.get('date'))
             if x.get('miss_date') and x.get('miss_text'):
                 st = (f'On {pretty(x["miss_date"])} the sponsor said the FDA would not act by the goal date'
                       + ('; the review is ongoing' if 'ongoing' in x['miss_text'].lower() else '')
@@ -370,12 +397,7 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
         out.append('<h2>Upcoming FDA catalysts</h2>')
         for c in up:
             drug, ind, date = c.get('drug') or '', c.get('indication') or '', c.get('date') or ''
-            href = '/calendar'
-            dtoks = {w.lower() for w in re.findall(r'[A-Za-z]{4,}', drug)}
-            for s in slugs.get(tk, []):
-                stoks = set(s.lower().replace('-', ' ').split())
-                if dtoks & stoks:
-                    href = f'/pdufa/{s}'; break
+            href = _href(drug, date)
             label = f'{tk} · {pretty(date)}' if date else tk
             d2 = ' — '.join(x for x in (esc(drug) or 'FDA decision', esc(ind)) if x)
             out.append(f'<a class="row" href="{href}"><span class="t">{label}</span>'
