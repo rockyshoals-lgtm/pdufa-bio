@@ -49,8 +49,10 @@ export default async (req, res) => {
   }
   const q = req.query || {};
   const plain = x => !!x && typeof x === 'object' && !Array.isArray(x);
-  // A paused post (a later release by the sponsor may change it) is not shown until the review confirms it.
-  let posts = Object.values(plain(state.pub) ? state.pub : {}).filter(plain).filter(p => p.status !== 'paused').sort((a, b) => (Date.parse(b.posted_at) || 0) - (Date.parse(a.posted_at) || 0));
+  // A paused post (a later release by the sponsor may change it) is not shown until the review confirms it; nor is a
+  // post with any status the watch never writes (a hand edit, red team 10).
+  const SHOWN = new Set(['posted', 'confirmed', 'retracted']);
+  let posts = Object.values(plain(state.pub) ? state.pub : {}).filter(plain).filter(p => SHOWN.has(p.status)).sort((a, b) => (Date.parse(b.posted_at) || 0) - (Date.parse(a.posted_at) || 0));
   if (q.id) posts = posts.filter(p => p.id === String(q.id));
   if (q.ticker) { const t = String(q.ticker).toUpperCase(); posts = posts.filter(p => p.ticker === t); }
   const b = plain(state.beat) ? state.beat : {};

@@ -489,27 +489,40 @@ export function onFeedSite(item) {
  *    * or names the opposite decision ("complete response" after an approval post, an FDA approval after a letter
  *      post) and names the drug.
  *  Any wording at all: the headline need not parse. */
-const RETRACTS = /\b(?:retract\w*|withdr[ae]w\w*|correct(?:s|ed|ion|ions|ing)?|incorrect\w*|clarif\w*|erroneous\w*|in error|mistaken\w*|misstat\w*|inaccura\w*|disregard\w*|rescind\w*|supersed\w*|prematur\w*|inadvertent\w*|fabricat\w*|fraudulent\w*|fake|false|untrue|bogus|forged|spoofed|hoax\w*|unfounded|unauthori[sz]ed|not authentic|did not (?:issue|occur|receive|approve)|has not (?:occurred|been (?:received|issued|approved|granted))|not (?:yet )?(?:received|approved|issued)|no (?:fda |u\.s\. )?(?:decision|approval|action)|(?:remains|still|continues to be) under (?:fda |regulatory )?review|(?:amend|updat)(?:s|ed|es|ing|e)? (?:(?:its|the|an?|earlier|previous|previously issued|prior)\s+)*(?:press |news )?release)\b/i;
+const RETRACTS = /\b(?:retract\w*|withdr[ae]w\w*|correct(?:s|ed|ion|ions|ing)?|incorrect\w*|clarif\w*|erroneous\w*|in error|mistaken\w*|misstat\w*|inaccura\w*|disregard\w*|rescind\w*|supersed\w*|prematur\w*|inadvertent\w*|fabricat\w*|fraudulent\w*|fake|false|untrue|bogus|forged|spoofed|hoax\w*|unfounded|unauthori[sz]ed|not authentic|did not (?:issue|occur|receive|approve)|has not (?:occurred|been (?:received|issued|approved|granted))|not (?:yet )?(?:received|approved|issued)|no (?:fda |u\.s\. )?(?:decision|approval|action)|(?:remains|still|continues to be) under (?:fda |regulatory )?review|(?:amend|updat|revis|reissu|restat)(?:s|ed|es|ing|e)? (?:(?:its|the|an?|earlier|previous|previously issued|prior)\s+)*(?:press |news )?release|revised|den(?:y|ies|ied|ying|ial)|misinformation|misleading|fictitious|fictional|impostor|imposter|not (?:issued|authori[sz]ed) by|regulatory update|update on (?:the )?(?:FDA|regulatory|PDUFA|NDA|BLA|sNDA|sBLA)|extend\w* (?:the |its )?(?:FDA |regulatory |PDUFA )?(?:review|goal|action)|(?:PDUFA|goal|action) (?:goal )?date (?:extension|extended|moved|chang\w*|delay\w*)|major amendment)\b/i;
 export const CORRECTS = RETRACTS;
 const CRL_WORDS = /\b(?:complete response|CRL|not approvable)\b/i;
 const APPROVAL_WORDS = /\bFDA\b[^.;]*\bapprov(?:es|ed|al)\b(?!able)|\bapprov(?:es|ed|al)\b[^.;]*\bFDA\b/i;
 export function corrections(item, armed, pub) {
   const t = norm(clean(item.ctitle || item.title || ''));
-  if (!t || !Number.isFinite(item.atMs)) return [];
+  const amended = item.channel === 'edgar' && /\/A$/i.test(String(item.form || ''));   // an amended filing (8-K/A)
+  if (!t && !amended) return [];
   let rows = [];
   if (item.channel === 'edgar') rows = armed.rows.filter(r => r.cik && Number(r.cik) === Number(item.cik));
-  else if (item.channel === 'rss' && item.fresh === true && onFeedSite(item)) rows = armed.rows.filter(r => (r.feeds || []).includes(item.feed));
+  else if (item.channel === 'rss' && onFeedSite(item)) rows = armed.rows.filter(r => (r.feeds || []).includes(item.feed));
   if (!rows.length) return [];
-  const flags = RETRACTS.test(t);
+  const flags = amended || RETRACTS.test(t);
   return rows.filter(r => {
     const p = (pub || {})[r.id];
     if (!p || typeof p !== 'object' || p.status !== 'posted') return false;      // confirmed: the review agreed
     const src = Date.parse((p.source || {}).published_at || '');
-    if (!Number.isFinite(src) || item.atMs <= src || (p.source || {}).url === item.url) return false;
+    const ran = Number(p.run_ms);
+    const same = (p.source || {}).url === item.url;
+    // After the post: dated at or after its source (a tie counts, red team 10), or first seen by the watch in or after
+    // the run that posted it (an item with no usable time, or one dated before its source). The post's own source
+    // counts only when the feed has retitled it.
+    const later = !same && ((Number.isFinite(item.atMs) && Number.isFinite(src) && item.atMs >= src)
+      || (Number.isFinite(ran) && Number(item.firstMs) >= ran));
+    const retitled = same && item.channel === 'rss' && typeof p.headline === 'string' && !!item.title
+      && norm(clean(item.title)) !== norm(clean(p.headline));
+    if (!later && !retitled) return false;
     const named = (r.terms || []).some(x => termIn(x, t));
     const others = armed.rows.some(o => o.id !== r.id && (o.terms || []).some(x => termIn(x, t)));
     const opposite = p.kind === 'crl' ? APPROVAL_WORDS.test(t) : CRL_WORDS.test(t);
-    return (flags && (named || !others)) || (opposite && named);
+    // An outcome with no drug named ("Receives Complete Response Letter from the FDA") pauses; one naming another
+    // drug code ("... for MLS-999") does not.
+    const code = (t.match(/\b[A-Z]{1,6}-?\d{2,6}[A-Z]?\b/g) || []).some(c => !(r.terms || []).some(x => termIn(x, c) || termIn(c, x)));
+    return (flags && (named || !others)) || (opposite && (named || (!others && !code)));
   }).map(r => r.id);
 }
 
@@ -532,7 +545,11 @@ export function reconcile(pub, armed, nowMs) {
     const man = m0 === undefined ? '' : (typeof m0 === 'string' && m0.trim() ? m0.trim() : 'Withdrawn by pdufa.bio.');
     const st = (armed.status || {})[id];
     const srcDay = Date.parse(String((r.source || {}).published_at || '').slice(0, 10) + 'T12:00:00Z');
-    const late = !Number.isFinite(srcDay) || nowMs - srcDay >= 3 * DAY;
+    // three days from the source's own time (red team 10), not from its day
+    const srcMs = Date.parse(String((r.source || {}).published_at || ''));
+    const late = !Number.isFinite(srcMs) || nowMs - srcMs >= 3 * DAY;
+    // A status this watch never writes (a hand edit) is treated as paused: hidden until the review decides.
+    if (!['posted', 'paused', 'confirmed', 'retracted'].includes(r.status)) r.status = 'paused';
     const unconfirmed = () => Object.assign(r, { status: 'retracted', retracted_at: etIso(nowMs),
       retract_reason: 'The full review had not confirmed this three days after the source, so it was withdrawn.' });
     if (man && r.status !== 'retracted') {
@@ -656,6 +673,14 @@ export function correctionHeadline(html) {
   const rb = rawBlocks(html);
   const dl = dateline(rb.map(b => b.text));
   return rb.slice(0, dl ? dl.i : Math.min(rb.length, 4)).map(b => b.text).join(' ').slice(0, 600);
+}
+
+/** A filing with no press release exhibit: the opening of its Item 7.01 or 8.01 text (800 characters), read only for
+ *  corrections (red team 10). '' when it has neither item. */
+export function itemText(html) {
+  const t = rawBlocks(html).map(b => b.text).join(' ');
+  const m = t.match(/\bItem\s*(?:7\.01|8\.01)\b[.:\s]*/i);
+  return m ? t.slice(m.index + m[0].length, m.index + m[0].length + 800) : '';
 }
 
 /** The exhibit's dateline day, 'YYYY-MM-DD', or ''. */

@@ -1,7 +1,7 @@
 import ARMED from '../_watch_armed.mjs';
 import { kvReady, kv } from '../_stripe.mjs';
-import { READ_LUA } from '../_live_read.mjs';
-import { check, etIso, sentence, sourceLabel, reconcile, corrections, correctionHeadline, parseFeed, exhibitHeadline, exhibitDate, headlineKind, pageDay,
+import { READ_LUA, WRITE_LUA } from '../_live_read.mjs';
+import { check, etIso, sentence, sourceLabel, reconcile, corrections, correctionHeadline, itemText, parseFeed, exhibitHeadline, exhibitDate, headlineKind, pageDay,
   readState, readControl }
   from '../_live_check.mjs';
 
@@ -50,7 +50,7 @@ async function get(url, { ua = UA_SITE, ms = 6000, limit = 1500000, until = Infi
 }
 
 /** EDGAR: the exhibit of each new filing by an armed sponsor is read ONCE and remembered in state.seen. */
-async function edgarItems(ua, beat, seen, until, listed) {
+async function edgarItems(ua, beat, seen, until, listed, nowMs) {
   const ciks = new Set(ARMED.rows.filter(r => r.cik).map(r => Number(r.cik)));
   const fresh = [];
   let read = 0;
@@ -76,17 +76,23 @@ async function edgarItems(ua, beat, seen, until, listed) {
     const ex = names.filter(n => /ex(?:hibit)?[-_]?99|press/i.test(n)).sort()[0];
     const doc = ex ? await get(`${base}/${ex}`, { ua, until }) : '';
     if (ex && !doc) return;
+    // No press release exhibit: the filing's own text (Item 7.01 or 8.01) is read for corrections only (red team 10).
+    const docs = ex ? [] : names.filter(n => !/^ex|[-_]ex\d|^R\d+\.htm|FilingSummary/i.test(n)).sort();
+    const main = docs.find(n => /8-?k|6-?k|form/i.test(n)) || docs[0];
+    const body = main ? await get(`${base}/${main}`, { ua, until }) : '';
+    if (main && !body) return;
     const cos = ARMED.rows.filter(r => Number(r.cik) === f.cik).flatMap(r => [r.company, ...(r.aliases || [])]);
-    seen[`edgar|${f.acc}`] = { form: f.form, cik: f.cik, atMs: f.atMs, url: ex ? `${base}/${ex}` : base,
+    seen[`edgar|${f.acc}`] = { form: f.form, cik: f.cik, atMs: f.atMs, first: nowMs, url: ex ? `${base}/${ex}` : base,
                                title: ex ? exhibitHeadline(doc, cos) : '', exDay: ex ? exhibitDate(doc) : '',
                                // what a correction is read from: the text above the dateline, struck-out text included
-                               ctitle: ex ? correctionHeadline(doc) : '' };
+                               ctitle: ex ? correctionHeadline(doc) : itemText(body) };
   }));
   beat.edgar = read ? 'read' : 'unreadable';
   return Object.entries(seen).filter(([k, v]) => k.startsWith('edgar|') && plain(v)
-      && ((typeof v.title === 'string' && v.title) || (typeof v.ctitle === 'string' && v.ctitle)))
+      && ((typeof v.title === 'string' && v.title) || (typeof v.ctitle === 'string' && v.ctitle) || /\/A$/i.test(String(v.form || ''))))
     .map(([k, v]) => ({ channel: 'edgar', form: v.form, cik: v.cik, title: typeof v.title === 'string' ? v.title : '',
-                        ctitle: typeof v.ctitle === 'string' ? v.ctitle : '', exDay: v.exDay, url: v.url, atMs: v.atMs, key: k }));
+                        ctitle: typeof v.ctitle === 'string' ? v.ctitle : '', exDay: v.exDay, url: v.url, atMs: v.atMs, key: k,
+                        firstMs: Number(v.first) || 0 }));
 }
 
 /** Sponsor feeds. A feed is first read as a baseline: nothing in it then is ever posted, so an old release the feed
@@ -107,7 +113,7 @@ async function rssItems(beat, until, rss, nowMs) {
     for (const i of list) {
       if (!rss.urls[i.url]) rss.urls[i.url] = { f: base ? 0 : nowMs, d: '', n: 0 };
       rss.urls[i.url].seen = nowMs;
-      items.push({ ...i, channel: 'rss', feed: f, key: `rss|${i.url}`, fresh: rss.urls[i.url].f > 0 });
+      items.push({ ...i, channel: 'rss', feed: f, key: `rss|${i.url}`, fresh: rss.urls[i.url].f > 0, firstMs: Number(rss.urls[i.url].f) || 0 });
     }
   }
   // Read the page of a fresh item that could be a decision (at most 4 a minute, 5 reads each).
@@ -213,7 +219,7 @@ export default async (req, res) => {
   const ua = (process.env.SEC_USER_AGENT || '').trim();
 
   const [edgar, rssList] = await Promise.all([
-    ua ? edgarItems(ua, beat, seen, until, listed) : (beat.edgar = 'SEC_USER_AGENT not set', []),
+    ua ? edgarItems(ua, beat, seen, until, listed, nowMs) : (beat.edgar = 'SEC_USER_AGENT not set', []),
     rssItems(beat, until, rss, nowMs),
   ]);
 
@@ -240,7 +246,7 @@ export default async (req, res) => {
     const rec = {
       id: c.row.id, ticker: c.row.t, kind: c.kind, text: sentence(item, c.row),
       source: { label: sourceLabel(item), url: item.url, published_at: etIso(item.atMs), channel: item.channel },
-      posted_at: etIso(Date.now()), minutes_after_source: Math.max(0, Math.floor((Date.now() - item.atMs) / 60000)),
+      posted_at: etIso(Date.now()), run_ms: nowMs, headline: item.title, minutes_after_source: Math.max(0, Math.floor((Date.now() - item.atMs) / 60000)),
       page: c.row.url, status: 'posted', check: `headline "${item.title.slice(0, 160)}" names ${c.term} and an FDA ${c.kind === 'approval' ? 'approval' : 'complete response letter'}`,
     };
     // A later release by the sponsor in this same read that contradicts or retracts it: never posted (red team 8).
@@ -266,7 +272,11 @@ export default async (req, res) => {
     || JSON.stringify(stopped) !== JSON.stringify(stopped0) || stopAt !== stopAt0 || doneChanged || JSON.stringify(rssFirst(rssOut)) !== JSON.stringify(rssFirst(rss0));
   const lastBeat = Date.parse((plain(state.beat) && state.beat.at) || '') || 0;
   if (changed || seenChanged || shadowNew.length || nowMs - lastBeat > 10 * 60000) {
-    try { await kv('SET', 'live:state', JSON.stringify({ pub, beat, seen: seenOut, stopped, stopAt, done, rss: rssOut })); } catch (e) { return res.status(503).json({ error: 'store write failed' }); }
+    // Written only while this run still holds the lock, so a run that overran never overwrites a newer one's pauses
+    // (red team 10); the lock is released with the write.
+    let wrote;
+    try { wrote = await kv('EVAL', WRITE_LUA, '2', 'live:lock', 'live:state', String(nowMs), JSON.stringify({ pub, beat, seen: seenOut, stopped, stopAt, done, rss: rssOut })); } catch (e) { return res.status(503).json({ error: 'store write failed' }); }
+    if (Number(wrote) !== 1) return res.status(200).json({ ok: true, skipped: 'lock lost; a newer run writes' });
   }
   return res.status(200).json({ ok: true, changed, posts: Object.keys(pub).length });
 };
