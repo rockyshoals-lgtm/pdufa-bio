@@ -69,25 +69,10 @@ def stamps(doc):
     return out
 
 
-LASTMOD_STATE = os.path.join(HERE, "_sitemap_lastmod.json")
-STALE_DAYS = 7
-
-
-def content_change_dates():
-    """page path relative to the repo ('pdufa_site_src/...') -> its recorded content-change date."""
-    try:
-        import json
-        st = json.load(io.open(LASTMOD_STATE, encoding="utf-8"))
-        return {k.replace("\\", "/"): dt.date.fromisoformat(v["date"]) for k, v in st.items()
-                if isinstance(v, dict) and re.match(r"^\d{4}-\d{2}-\d{2}$", str(v.get("date") or ""))}
-    except Exception:  # noqa: BLE001
-        return {}
-
-
-def daily_ok(stamp, today, recorded):
-    """A daily page may say today, or the day its content last changed; never a day after the Eastern build date."""
-    return stamp <= today and (stamp == today or (recorded is not None and stamp == recorded
-                                                  and (today - recorded).days <= STALE_DAYS))
+def body_stamped(doc):
+    """A stamp in the page's own text, not the freshness strip's 'Page updated' content date."""
+    doc = BUILT_SPAN.sub("", doc)
+    return any(not doc[max(0, m.start() - 5):m.start()].endswith("Page ") for m in STAMP.finditer(doc))
 
 
 def test_one_date_per_page():
@@ -110,11 +95,13 @@ def test_one_date_per_page():
         if len(found) > 1:
             bad.append(f"{rel}: {len(found)} different stamp dates on one page: "
                        + ", ".join(sorted(d.isoformat() for d in found)))
-        elif found and p.endswith(tuple(d.replace("/", os.sep) for d in DAILY)):
-            stamp = next(iter(found))
-            rec = cc.get(os.path.relpath(p, HERE).replace("\\", "/"))
-            if not daily_ok(stamp, today, rec):
-                bad.append(f"{rel}: stamped {stamp}, Eastern build date is {today}, recorded content change {rec}")
+        elif found and p.endswith(tuple(d.replace("/", os.sep) for d in DAILY)) \
+                and found != {today}:
+            bad.append(f"{rel}: stamped {next(iter(found))}, Eastern build date is {today}")
+        if p.endswith(tuple(d.replace("/", os.sep) for d in DAILY)) and not body_stamped(doc):
+            # 2026-11-27 (run 577): a daily page with no date in its own text keeps yesterday's content-change date
+            # whenever nothing else on it changes, and the check above then fails only on those days
+            bad.append(f"{rel}: a page rebuilt daily must state the build's Eastern date in its own text")
     assert not bad, "page(s) stamped with more than one date, or the wrong clock:\n  " \
         + "\n  ".join(bad)
 
