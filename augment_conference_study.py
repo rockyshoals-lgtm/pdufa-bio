@@ -81,7 +81,7 @@ def main():
         f'<div style="background:#0c1d38;border:1px solid #f0c86a;border-radius:12px;'
         f'padding:13px 15px;margin:14px 0"><b style="color:#f0c86a">Read this first</b>'
         f'<div style="color:#9db3d4;font-size:13.5px;margin-top:6px;line-height:1.65">'
-        f"Every figure on this page is {crf.ANCHOR_CAVEAT}. {crf.audit_sentence()} Until "
+        f"Every study figure on this page is {crf.ANCHOR_CAVEAT}. {crf.audit_sentence()} Until "
         f"every row is recomputed on one anchor, no sentence here implies that presenting "
         f"caused the move. {crf.NOT_FORECAST} {crf.SELECTION_CAVEAT}</div></div>"
         f"<h2>Distribution: before, on the day, and after</h2>"
