@@ -823,8 +823,8 @@ export function parseFeed(xml) {
 // A page that no longer reads as a release (no dateline) pauses at once when new text on it reads as a correction;
 // otherwise it is a failed read, tried again.
 const REL = String.raw`(?:press |news )?(?:release|statement|announcement)`;
-const NEW_CORR = new RegExp(String.raw`\b(?:correct(?:ion|ions|ed|s|ing)\b|amend(?:s|ed|ing)? (?:the |this |its |our |an? )?(?:earlier |previous |prior )?${REL}|amended ${REL}|${REL} (?:was |has been |is |is being )?(?:amended|revised|removed|withdrawn|retracted|replaced|updated to)|revised ${REL}|retract\w*|withdr[ae]w\w* (?:the |this |its |our |an? )?(?:earlier |previous |prior )?${REL}|(?:is|was|are|were|has been|have been|hereby) (?:\w+ ){0,2}withdrawn\b|removed (?:the |this |its |our )?${REL}|in error|errat(?:um|a)\b|contained an error|should have (?:read|stated|said)|updated to reflect|issued prematurely|prematurely (?:issued|released)|not be relied (?:up)?on(?! as\b)|incorrect\w*|inaccura\w*|erroneous\w*|misstat\w*|mistaken\w*|disregard\w*|supersed\w*|rescind\w*|replac(?:es|ed|ing) (?:the |an? |our )?(?:earlier |previous |prior )?${REL}|no longer (?:accurate|valid|correct|stands)|editor'?s note|clarif\w*|important notice)\b`, 'i');
-const NEW_PENDING = /\b(?:has not (?:yet )?(?:acted|taken action|approved|granted|decided)|did not (?:grant|approve)|not (?:yet )?(?:been )?(?:approved|granted)(?!\s+(?:for use|in|outside)\b)|not (?:yet )?received (?:FDA |US )?approval|has yet to (?:act|approve|take action|decide)|(?:remains|still|continues to be|is) under (?:FDA |regulatory |agency )?review|tentative(?:ly)? approv\w*|(?:extend\w*|delay\w*|postpon\w*|mov(?:ed|es|ing)) (?:the |its )?(?:PDUFA |goal |target |review |action )+(?:goal |action )?date|(?:PDUFA|goal|action|review) (?:goal |action )?date (?:has been |was |is )?(?:extended|delayed|postponed|moved|missed)|delay\w* (?:its |the |a )?(?:approval|decision|action)|no (?:FDA |US )?(?:decision|action|approval) (?:has been|was|yet))\b/i;
+const NEW_CORR = new RegExp(String.raw`\b(?:correct(?:ion|ions|ed|s|ing)\b|amend(?:s|ed|ing)? (?:\w+ ){0,4}${REL}|amended ${REL}|${REL} (?:was |has been |is |is being )?(?:amended|revised|removed|withdrawn|retracted|replaced|updated to)|revised ${REL}|retract\w*|withdr[ae]w\w* (?:\w+ ){0,4}${REL}|(?:is|was|are|were|has been|have been|hereby) (?:\w+ ){0,2}withdrawn\b|removed (?:\w+ ){0,4}${REL}|in error|errat(?:um|a)\b|contained an error|should have (?:read|stated|said)|updated to reflect|issued prematurely|prematurely (?:issued|released)|not be relied (?:up)?on(?! as\b)|incorrect\w*|inaccura\w*|erroneous\w*|misstat\w*|mistaken\w*|disregard\w*|supersed\w*|rescind\w*|replac(?:es|ed|ing) (?:\w+ ){0,4}${REL}|no longer (?:accurate|valid|correct|stands)|editor'?s note|clarif\w*|important notice)\b`, 'i');
+const NEW_PENDING = /\b(?:has not (?:yet )?(?:acted|taken action|approved|granted|decided)|did not (?:grant|approve)|not (?:yet )?(?:been )?(?:approved|granted)(?!\s+(?:for use\b|outside\b|in (?:Europe|the EU|the European|Japan|China|Canada|the UK|the United Kingdom|Australia|Switzerland|any other|other countries|other markets|other regions)\b))|not (?:yet )?received (?:FDA |US )?approval|has yet to (?:act|approve|take action|decide)|(?:remains|still|continues to be|is) under (?:FDA |regulatory |agency )?review|tentative(?:ly)? approv\w*|(?:extend\w*|delay\w*|postpon\w*|mov(?:ed|es|ing)) (?:the |its )?(?:PDUFA |goal |target |review |action )+(?:goal |action )?date|(?:PDUFA|goal|action|review) (?:goal |action )?date (?:has been |was |is )?(?:extended|delayed|postponed|moved|missed)|delay\w* (?:its |the |a )?(?:approval|decision|action)|no (?:FDA |US )?(?:decision|action|approval) (?:has been|was|yet))\b/i;
 const LABEL = /^\W*(?:updated?|revised|corrected|correction|correcting and replacing|retraction|retracted|withdrawn|important notice|notice|editor'?s note|erratum|clarification)\W*$/i;
 const OPP_FOR_APPROVAL = /\b(?:complete response|CRL|not approvable|refus\w* to file|declin\w* to approve)\b/i;
 const OPP_FOR_CRL = /\b(?:FDA|agency)\b[^.;]{0,60}\b(?:approved|granted (?:full |accelerated |traditional )?approval)\b|\bapproved by the (?:US )?FDA\b/i;
@@ -868,17 +868,24 @@ function seenBlocks(rb) {
   const src = rb.src, tags = [...src.matchAll(/<\s*(\/)?\s*([a-z][a-z0-9-]*)\b[^>]*>/gi)];
   const stack = [], names = new Map();
   let hid = 0, furn = 0, t = 0;
-  const pop = () => { const x = stack.pop(); names.set(x.name, names.get(x.name) - 1); if (x.hide) hid--; if (FURN.has(x.name)) furn--; };
+  // page furniture counts only where the page closes every one it opens: a <nav> left open never turns the release
+  // that follows it into furniture (red team 19)
+  const bal = {};
+  for (const m of tags) { const n = m[2].toLowerCase(); if (FURN.has(n)) bal[n] = (bal[n] || 0) + (m[1] ? -1 : 1); }
+  const isFurn = n => FURN.has(n) && bal[n] === 0;
+  const pop = () => { const x = stack.pop(); names.set(x.name, names.get(x.name) - 1); if (x.hide) hid--; if (x.furn) furn--; };
   const close = name => { if ((names.get(name) || 0) > 0) { while (stack.length && stack[stack.length - 1].name !== name) pop(); pop(); } };
   return rb.map(b => {
-    for (; t < tags.length && tags[t].index < b.start; t++) {
+    // the tags before the block's first word count too ("<nav><a>Home</a>" is a nav's block)
+    const lead = b.start + (b.raw.match(/^(?:\s*<[^<>]*>)*/) || [''])[0].length;
+    for (; t < tags.length && tags[t].index < lead; t++) {
       const m = tags[t], name = m[2].toLowerCase();
       if (m[1]) close(name);
       else {
         if (BLOCK_START.has(name) && stack.length && stack[stack.length - 1].name === 'p') pop();   // a block start closes an open <p>, as in a browser
         if (VOID.has(name) || /\/\s*>$/.test(m[0])) continue;
         const hide = HIDDEN.test(m[0]) || HIDE_CLASS.test(m[0]);
-        stack.push({ name, hide }); names.set(name, (names.get(name) || 0) + 1); if (hide) hid++; if (FURN.has(name)) furn++;
+        const fu = isFurn(name); stack.push({ name, hide, furn: fu }); names.set(name, (names.get(name) || 0) + 1); if (hide) hid++; if (fu) furn++;
       }
     }
     // the block's own tag sits in the gap just before it, so it is on the stack; a struck-out block is struck by its own words
@@ -898,9 +905,9 @@ function readPage(html, channel, title, companies = []) {
   let head = '';
   if (dl) {
     if (channel === 'edgar') head = exhibitHeadline(page, companies);
-    // as the posting check reads it (pageDay): the feed title stands as a block above the dateline; a copy hidden on
-    // phones or desktops is the page's own layout (red team 18), and text that WAS seen and is now hidden pauses below
-    else { const want = canon(title); if (rb.slice(0, dl.i).some(b => canon(b.text) === want && !hiddenMarks(b.raw))) head = title; }
+    // the feed title stands above the dateline in a copy a reader can see, outside page furniture (a breadcrumb or a
+    // news list never stands in for it; red team 19); a copy shown only on phones or only on desktops is enough
+    else { const want = canon(title); if (bl.slice(0, dl.i).some(b => canon(b.text) === want && !b.hidden && !b.furn && !hiddenMarks(b.raw))) head = title; }
   }
   return { rb, bl, dl, head, vis, hid };
 }

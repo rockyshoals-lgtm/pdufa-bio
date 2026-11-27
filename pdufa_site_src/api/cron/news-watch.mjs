@@ -337,6 +337,9 @@ export default async (req, res) => {
       held.push({ key: item.key, why: c.why });
       continue;
     }
+    // A sponsor's page posts only when the right-after check can read it the same way (red team 18): its print is
+    // what each re-read is compared with.
+    if (item.channel === 'rss' && !item.print) { held.push({ key: item.key, why: 'the release page could not be read for the right-after check' }); continue; }
     const rec = {
       id: c.row.id, ticker: c.row.t, kind: c.kind, text: sentence(item, c.row),
       source: { label: sourceLabel(item), url: item.url, published_at: etIso(item.atMs), channel: item.channel },

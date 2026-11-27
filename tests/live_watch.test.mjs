@@ -909,3 +909,23 @@ test('the right-after check, red team 18: page layouts that are not changes, and
   assert.equal(headlineKind("FDA <approves<>Apnimed's AD109 for Obstructive Sleep Apnea (OSA)").kind, null);
   assert.equal(clean('p<0.05 and <b>bold</b> a < b'), 'p 0.05 and bold a b');
 });
+
+test('the right-after check, red team 19: a nav left open, a headline only in furniture, US status, withdrawal wording', () => {
+  const r = ARMED.rows[0];
+  const H = 'Mineralys Therapeutics Announces FDA Approval of Lorundrostat for Hypertension';
+  const OK = 'RADNOR, Pa., Dec. 1, 2026 -- Mineralys Therapeutics today announced that the FDA has approved lorundrostat for adults with hypertension.';
+  const URL0 = 'https://ir.mineralys.com/news/1';
+  const src = { channel: 'rss', url: URL0, published_at: '2026-12-01T16:05:00-05:00' };
+  const cmp = (base, now) => compareSource(now, { id: r.id, kind: 'approval', headline: H, source: src,
+    source_print: sourcePrint(base, 'rss', H, [r.company], 'approval', r.terms, URL0) }, r, [r.company], URL0);
+  const open = `<nav><ul><li>News</li></ul><main><h1>${H}</h1><p>${OK}</p><p>About Mineralys</p></main>`;
+  for (const x of ['Correction: this release was issued in error.', 'The FDA has not yet approved lorundrostat.', 'The FDA issued a complete response letter for lorundrostat.'])
+    assert.equal(cmp(open, open.replace('<p>About', `<p>${x}</p><p>About`)).ok, false, x);
+  assert.equal(cmp(open, open.replace(`<p>${OK}</p>`, `<p><s>${OK}</s></p>`)).ok, false);
+  const base = `<nav><a>${H}</a></nav><h1>${H}</h1><p>${OK}</p><p>About Mineralys</p>`;
+  assert.equal(cmp(base, base.replace(`<h1>${H}</h1>`, `<h1><del>${H}</del></h1>`)).ok, false, 'a struck headline with a copy in the breadcrumb');
+  assert.equal(sourcePrint(`<nav><a>${H}</a></nav><p>${OK}</p>`, 'rss', H, [r.company], 'approval', r.terms, URL0), null, 'a headline only in furniture is no headline');
+  for (const x of ['Lorundrostat has not been approved in the United States.', 'Lorundrostat is not yet approved in the U.S.', 'Mineralys withdraws the December 1 press release.'])
+    assert.equal(cmp(base, base.replace('<p>About', `<p>${x}</p><p>About`)).ok, false, x);
+  assert.deepEqual(cmp(base, base.replace('<p>About', '<p>Lorundrostat is not approved in Europe.</p><p>About')), { ok: true });
+});
