@@ -5747,6 +5747,13 @@
    "source": "https://www.globenewswire.com/news-release/2026/11/23/3408877/0/en/inventiva-reports-unaudited-2026-third-quarter-financial-results.html",
    "by": "manual",
    "note": "Retired 2026-11-27: registry row for NCT04849728 duplicated readout_iva_2026-12-31"
+  },
+  "readout_annx_2026-10-15": {
+   "checked": "2026-11-27",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398918/0/en/annexon-reports-third-quarter-2026-financial-results-business-updates-and-key-anticipated-milestones.html",
+   "by": "manual",
+   "note": "Annexon Q3 release Nov 9: ARCHER II Month 15 primary endpoint assessment on track for Q4 2026"
   }
  }
 }
