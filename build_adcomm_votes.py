@@ -46,7 +46,8 @@ B, E = "<!--ADCV:BEGIN-->", "<!--ADCV:END-->"
 def use_phrase(ind):
     """'for <indication>', unless the label wording already starts with its own preposition.
     2026-11-27: "for to reduce the risk of ..." and "for in combination with ..." were live on 8 rows."""
-    ind = ind[:1].lower() + ind[1:]
+    if not ind[1:2].isupper():          # "ANCA-associated", "HFpEF": an acronym keeps its capitals
+        ind = ind[:1].lower() + ind[1:]
     if re.match(r"(to|in|as|for)\b", ind):
         return "indication: " + ind
     return "for " + ind
@@ -121,7 +122,8 @@ def card(m, today):
     qrows = []
     for q in sorted(m["questions"], key=lambda q: q.get("n") or 0):
         mark = ' <span class="ov">overall question</span>' if q.get("is_overall") else ""
-        ab = int(q.get("abstain") or 0)
+        # None = the source gave yes and no only. Show that, never a 0 nobody counted.
+        ab = "n/s" if q.get("abstain") is None else int(q["abstain"])
         qrows.append(f'<tr><td class="qn">Q{esc(q.get("n"))}</td><td>{esc(q.get("text"))}{mark}</td>'
                      f'<td class="v">{int(q.get("yes") or 0)}</td><td class="v">{int(q.get("no") or 0)}</td>'
                      f'<td class="v">{ab}</td></tr>')
@@ -133,6 +135,9 @@ def card(m, today):
         gap = (dt.date.fromisoformat(ad) - dt.date.fromisoformat(m["meeting_date"])).days
         who = "The FDA" if m.get("action_source_type") == "fda" else "The sponsor reported that the FDA"
         act = f'{who} {ACTION_WORD[a]} on {esc(pretty(ad))}, {gap} days after the meeting.'
+    elif a in ("approved", "crl") and m.get("fda_action_date_note"):
+        who = "The FDA" if m.get("action_source_type") == "fda" else "The sponsor reported that the FDA"
+        act = f'{who} {ACTION_WORD[a]}. {esc(m["fda_action_date_note"])}.'
     elif a == "withdrawn":
         act = "The application was withdrawn" + (f" ({esc(pretty(ad))})" if ad and ISO.match(ad) else "") + "."
     elif a == "pending":
@@ -149,6 +154,9 @@ def card(m, today):
     elif lv == "tie":
         verdict = " The overall vote was tied."
     note = f' <span class="q">{esc(m["public_note"])}</span>' if m.get("public_note") else ""
+    if any(q.get("abstain") is None for q in m["questions"]):
+        note += ' <span class="q">n/s: the source gave yes and no counts only, not abstentions.</span>'
+
     src = (f' Sources: <a href="{esc(m["vote_source_url"])}" rel="nofollow noopener">'
            f'{"FDA minutes" if m.get("vote_source_type") == "fda" else "sponsor release on the vote"}</a>'
            + (f' &middot; <a href="{esc(m["action_source_url"])}" rel="nofollow noopener">'
