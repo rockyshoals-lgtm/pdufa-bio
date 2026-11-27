@@ -366,9 +366,62 @@ def event_link(tk, date, drug, ds):
     return link_for(tk)
 
 
-def render_upcoming(cats, key):
+_CODE_NAME = re.compile(r"^[A-Z]{1,6}-?\d[\w-]*$")   # a sponsor code like MR-107A-02 or CGT9486
+
+
+def card_name(raw, href="", qualify=False):
+    """The short drug name a phone card shows (OMW round 2, 2026-11-27).
+
+    Dataset names carry trial and indication suffixes ("Relacorilant - (GRACE resubmission)",
+    "Gazyva (obinutuzumab) - systemic lupus erythematosus (ALLEGORY)"). On a 360-500px card the
+    date shares the line, so those names were cut into fragments like "Relacorilant - (...".
+    The card keeps the drug's own name; the event page one tap away carries the full detail.
+    A hand-verified calendar label (_calendar_row_labels.json) wins for its event page, so a
+    slate artifact like "lorundrostat Dose 1" reads "Lorundrostat". A bare sponsor code keeps
+    its plain-language gloss ("MR-107A-02 (fast-acting meloxicam)"), since the code alone says
+    nothing to a reader."""
+    raw = re.sub(r"\s+", " ", str(raw or "")).strip()
+    if qualify:
+        # The same sponsor also sits in Recently decided or has a second card: keep the trial tag so
+        # "Bezuclastinib (SUMMIT)" pending never reads as the decided bezuclastinib (GIST) beside it.
+        tag = re.findall(r"\(([^()]{2,40})\)", raw.split(" - ", 1)[1]) if " - " in raw else []
+        return f"{card_name(raw)} ({tag[-1]})" if tag else raw
+    lab = _verified_labels().get(href.rstrip("/"))
+    if lab:
+        return lab.split(":", 1)[0].strip()
+    name = raw.split(" - ", 1)[0].strip()             # drop " - (TRIAL)" / " - indication"
+    name = re.sub(r"\s+Dose \d+$", "", name, flags=re.I)  # slate artifact
+    base = name.split(" (", 1)[0].strip()
+    if base and not _CODE_NAME.match(base):
+        name = base
+    if name[:1].islower() and re.match(r"^[a-z]+(\s|$)", name):
+        name = name[0].upper() + name[1:]
+    return name or raw
+
+
+_VL = None
+
+
+def _verified_labels():
+    global _VL
+    if _VL is None:
+        _VL = {}
+        try:
+            for e in json.load(open(os.path.join(HERE, "_calendar_row_labels.json"), encoding="utf-8")).get("labels", []):
+                if e.get("href") and e.get("label"):
+                    _VL[e["href"].rstrip("/")] = e["label"]
+        except (OSError, ValueError):
+            pass
+    return _VL
+
+
+def render_upcoming(cats, key, decided_tickers=()):
     rows = []
     ds = _dataset_rows()
+    # A sponsor with two cards, or one also in Recently decided, must not read alike once suffixes are
+    # dropped (red team 2026-11-27: COGT bezuclastinib SUMMIT pending beside bezuclastinib GIST decided).
+    _short = [(c["ticker"], card_name(c.get("drug") or c.get("name") or c["ticker"])) for c in cats]
+    _clash = {k for k in _short if _short.count(k) > 1 or k[0] in set(decided_tickers)}
     for c in cats:
         tk, cap = c["ticker"], c.get("cap", "")
         date = str(c["date"])[:10]
@@ -381,7 +434,7 @@ def render_upcoming(cats, key):
             label = f"PDUFA window {win}"
             if win.lower() == "not announced":      # the sponsor states no goal date at all
                 big, small, label = "TBA", "date", "PDUFA date not announced"
-            drug = esc(c.get("drug") or c.get("name") or tk)
+            drug = esc(card_name(c.get("drug") or c.get("name") or tk, href, qualify=(tk, card_name(c.get("drug") or c.get("name") or tk)) in _clash))
             rows.append(
                 f'<a class="row" href="{href}"><span class="cd"><b>{esc(big)}</b>'
                 f'<i>{esc(small)}</i></span>'
@@ -395,7 +448,7 @@ def render_upcoming(cats, key):
         # what crawlers index and what a reader sees before JS runs, and "-1 days" reads as a bug.
         cd_n, cd_u = (str(d), "days" if d != 1 else "day") if d > 0 else \
                      ("0", "today" if d == 0 else "due")
-        drug = esc(c.get("drug") or c.get("name") or tk)
+        drug = esc(card_name(c.get("drug") or c.get("name") or tk, href, qualify=(tk, card_name(c.get("drug") or c.get("name") or tk)) in _clash))
         spk = sparkline(poly_closes(key, tk))
         rows.append(
             f'<a class="row" href="{href}"><span class="cd"><b>{cd_n}</b>'
@@ -650,7 +703,7 @@ def main():
         print(f"  next  {c['ticker']:6s} {str(c['date'])[:10]}  {(c.get('drug') or '')[:30]}")
 
     html = open(HOME, encoding="utf-8").read()
-    html = replace_block(html, '<div class="list">', render_upcoming(cats, key))
+    html = replace_block(html, '<div class="list">', render_upcoming(cats, key, {r[0] for r in decs}))
     html = replace_block(html, '<div class="decs">', render_decided(decs, key))
     html = stamp_study_size(html)  # keep the headline study count from drifting
     html = stamp_freshness(html)   # server-render the "Data through {date}" badge for non-JS crawlers
