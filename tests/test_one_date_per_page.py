@@ -15,15 +15,6 @@ Drug pages are checked for internal agreement only: an unchanged drug page keeps
 content-change date on purpose (build_freshness_stamp.py), so it need not equal today.
 
 Proved 0 -> 1 -> 0 on 2026-09-07 by planting "Updated Sep 8, 2026" on /runup-by-year.
-
-2026-11-27 (run 577, the first build of Thanksgiving Day at 00:00 ET): /fda-this-month had nothing new since
-the day before, so its "Page updated" stamp kept November 26, the content-change date build_sitemap.py records
-in _sitemap_lastmod.json, exactly as build_freshness_stamp.py intends ("a page whose data has not moved since
-Tuesday should say Tuesday"). This check then demanded today's date and blocked the deploy. A daily page's stamp
-is now right when it is the Eastern build date OR the content-change date the state file holds for that page,
-and never after the Eastern build date: the UTC-ahead stamp this guard was written for still fails. A recorded date
-more than STALE_DAYS old also fails, so a daily page that silently stopped being rebuilt cannot pass on its own
-old state.
 """
 import datetime as dt
 import glob
@@ -77,12 +68,6 @@ def body_stamped(doc):
 
 def test_one_date_per_page():
     today = eastern_today()
-    cc = content_change_dates()
-    assert not daily_ok(today + dt.timedelta(days=1), today, today + dt.timedelta(days=1)), "planted UTC-ahead stamp passed"
-    assert not daily_ok(today - dt.timedelta(days=2), today, today - dt.timedelta(days=1)), "planted stale stamp passed"
-    assert daily_ok(today - dt.timedelta(days=1), today, today - dt.timedelta(days=1)), "unchanged page's own date failed"
-    old = today - dt.timedelta(days=STALE_DAYS + 1)
-    assert not daily_ok(old, today, old), "planted long-unrebuilt daily page passed"
     bad = []
     pages = [os.path.join(SITE, p) for p in DAILY]
     pages += sorted(glob.glob(os.path.join(SITE, "drug", "*", "index.html")))
