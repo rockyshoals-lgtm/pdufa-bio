@@ -37,6 +37,25 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 sys.path.insert(0, HERE)
 from refresh_provenance_counts import page_kind  # noqa: E402
+from site_dates import eastern_today  # noqa: E402  (RULE 1: "today" is Eastern, not the runner's UTC clock)
+try:  # one rule for "past its goal date", shared with the home box and the ticker hubs
+    from build_home_past_due import past_due as _past_due  # noqa: E402
+except Exception:  # noqa: BLE001
+    _past_due = None
+_PD = None
+
+
+def past_due_for(tk):
+    """The ticker's PDUFA rows whose goal date passed with no decision on record (build_home_past_due rule)."""
+    global _PD
+    if _PD is None:
+        _PD = {}
+        try:
+            for x in (_past_due() if _past_due else []):
+                _PD.setdefault(x["t"], []).append(x)
+        except Exception as ex:  # noqa: BLE001
+            print(f"  past-due list unavailable: {ex}")
+    return _PD.get(str(tk).upper(), [])
 _KIND = {}
 
 
@@ -84,14 +103,41 @@ def company_of(html_doc, tk):
 
 
 def faqs(tk, company, rows, decisions, runup, cohort):
-    today = dt.date.today().isoformat()
+    today = eastern_today().isoformat()
     out = []
 
     # 1. The timing question. This is the query.
     upcoming = sorted([r for r in rows if (r.get("d") or "") >= today
                        and str(r.get("st") or "").lower() not in ("decided", "withdrawn")],
                       key=lambda r: r["d"])
-    if upcoming:
+    # 2026-11-27 (Savara): a goal date that has passed with no decision is the first thing a reader asking "when is the
+    # next FDA decision" needs. /ticker/SVRA answered "June 2027 ... Molgramostim (readout)" and left out the pending
+    # MOLBREEVI BLA, whose Nov 22 goal had passed (Savara said Nov 20 the FDA would not act by it). State it first.
+    overdue = past_due_for(tk)
+    if overdue:
+        parts = []
+        for x in overdue:
+            s = (f"The FDA goal date for {x['drug']} was {pretty(x['goal'], x.get('dp') or 'day')} and has passed "
+                 f"with no FDA decision on record as of {pretty(today, 'day')}")
+            if x.get("miss_date") and x.get("miss_text"):
+                who = company if company and str(company).upper() != str(tk).upper() else "the sponsor"
+                s += (f"; on {pretty(x['miss_date'], 'day')} {who} said the FDA would not act by that date"
+                      + (" and that the review is ongoing" if "ongoing" in x["miss_text"].lower() else ""))
+            parts.append(s + ".")
+        nxt = ""
+        if upcoming:
+            n = upcoming[0]
+            raw = str(n.get("type") or "catalyst")
+            typ = raw.upper() if raw.lower() == "pdufa" else raw.lower()
+            nm = n.get("name") or "an undisclosed program"
+            nxt = (f" The next dated catalyst on our calendar is {nm if typ.lower() in nm.lower() else f'{nm} ({typ})'}"
+                   f", {pretty(n['d'], n.get('dp') or 'day')}.")
+        out.append((
+            f"When is the next FDA decision or readout for {company} ({tk})?",
+            f"No new FDA goal date is on record. {' '.join(parts)}{nxt} Dates are taken from FDA notices, company filings "
+            f"or ClinicalTrials.gov, and we do not publish a specific day when the source only gives a month or a "
+            f"quarter."))
+    elif upcoming:
         n = upcoming[0]
         when = pretty(n["d"], n.get("dp") or "day")
         conf = {"day": "a confirmed date",

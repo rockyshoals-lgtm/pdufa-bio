@@ -44,6 +44,18 @@ def pretty(iso):
     return f"{MON[d.month]} {d.day}, {d.year}"
 
 
+def unpast_faq(doc):
+    """Undo the past-tense FAQ sentence (when a row is decided, withdrawn or re-dated, the page's own builders own it)."""
+    def _back(m):
+        try:
+            iso = dt.datetime.strptime(m.group(3), "%B %d, %Y").date().isoformat()
+        except ValueError:
+            return m.group(0)
+        return f"The FDA PDUFA target date for {m.group(1)} ({m.group(2)}) is {iso} for "
+    return re.sub(r"The FDA PDUFA goal date for ([A-Z]{1,6}) \(([^)]{1,120})\) was ([A-Z][a-z]+ \d{1,2}, \d{4}), "
+                  r"which has passed[^.]*\. That goal date was for ", _back, doc)
+
+
 def main():
     try:
         entries = json.load(io.open(LEDGER, encoding="utf-8")).get("passed", [])
@@ -97,6 +109,7 @@ def main():
                 new = doc
                 if B in new:
                     new = new.split(B, 1)[0] + new.split(E, 1)[1]
+                new = unpast_faq(new)
                 g = pretty(e["goal_date"])
                 for tail in (" to treat", " for"):
                     new = new.replace(f" was under FDA review, with a goal date of {g} that has "
@@ -213,6 +226,23 @@ def main():
             new = new.replace("FDA PDUFA target date", "FDA goal date (ANDA)")
             new = new.replace(f"When is the {slug.split('-')[0]} PDUFA date?",
                               f"When is the {slug.split('-')[0]} FDA goal date?")
+        # 2026-11-27 (Savara): the FAQ still answered "When is the SVRA PDUFA date?" with "The FDA PDUFA target date for
+        # SVRA (Savara) is 2026-11-22", present tense, five days after that date passed. Once the goal date is behind us,
+        # restate it in the past tense (visible FAQ and FAQPage JSON-LD carry the same sentence). Idempotent: the new
+        # sentence carries no "as of" date, so a re-run leaves it unchanged.
+        if dt.date.fromisoformat(goal) < today:
+            if miss_date and miss_text:
+                tail = (f"; on {pretty(miss_date)} the sponsor said the FDA would not act by it"
+                        + (" and that the review is ongoing" if "ongoing" in miss_text.lower() else "")
+                        + ", and no decision has been published")
+            elif fc_date and fc_text:
+                tail = f"; the sponsor disclosed a first-cycle action on {pretty(fc_date)} and no approval has been published"
+            else:
+                tail = ", with no decision published"
+            new = re.sub(
+                r"The FDA PDUFA target date for ([A-Z]{1,6}) \(([^)]{1,120})\) is " + re.escape(goal) + r" for ",
+                lambda m: (f"The FDA PDUFA goal date for {m.group(1)} ({m.group(2)}) was {pretty(goal)}, which has "
+                           f"passed{tail}. That goal date was for "), new)
         # 2026-11-21 red team: the sponsor says the FDA will not act by the goal date and gives no new date, so the page's
         # schema.org Event is postponed, not scheduled (EventPostponed: "postponed to a date not yet known").
         if miss_date and miss_text:
@@ -239,6 +269,7 @@ def main():
                      r"public decision,( to treat| for)", r" is under FDA review\1", new)
         new = re.sub(r"candidate whose FDA goal date of [A-Z][a-z]+ \d{1,2}, \d{4} passed with no public decision, for",
                      "candidate under FDA review for", new)
+        new = unpast_faq(new)
         io.open(p, "w", encoding="utf-8").write(new)
         n += 1
         print(f"  /pdufa/{slug}: passed-banner retired (row no longer pending past its goal)")

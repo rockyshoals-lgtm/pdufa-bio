@@ -93,11 +93,11 @@
    "note": "8-K EX-99.1 (2026-10-28) contains the quote verbatim. Q3 release (2026-11-05, GlobeNewswire): 'accepted by the FDA with a February 28, 2027 PDUFA target action date.'"
   },
   "pdufa_svra_2026-11-22": {
-   "checked": "2026-11-17",
-   "verdict": "CONFIRMED",
-   "source": "https://www.sec.gov/Archives/edgar/data/1160308/000119312526219371/svra-20260331.htm",
-   "by": "red team 2026-11-17",
-   "note": "Q1 10-Q (2026-05-12) contains the major-amendment / three-month extension sentence with the November 22, 2026 date. Q3 10-Q (filed ~Nov 2026) financial notes say MOLBREEVI is 'under regulatory review"
+   "checked": "2026-11-27",
+   "verdict": "FIXED",
+   "source": "https://www.businesswire.com/news/home/20261120300122/en/Savara-Informed-That-FDA-Will-Not-Take-Action-on-the-Molgramostim-BLA-for-Autoimmune-Pulmonary-Alveolar-Proteinosis-Autoimmune-PAP-by-the-PDUFA-Date/",
+   "by": "manual",
+   "note": "Savara Nov 20: FDA will not act by the Nov 22 goal date; review ongoing; no revised date. Ticker hub, FAQs and search now say past goal date."
   },
   "pdufa_vstm_2027-02-07": {
    "checked": "2026-11-25",
