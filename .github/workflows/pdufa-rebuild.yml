@@ -893,6 +893,15 @@ jobs:
           python link_crl_app_history.py || echo "::warning::application history blocks not rebuilt"
           python add_amlx_avexitide.py
 
+      # 2026-11-27 (David approved adding the red-teamed company-release conference rows): they go on the study page in
+      # their own section, side by side with the curated study, never folded into its headline (the page's own rule
+      # since the July revert). After augment_conference_study.py, whose block this one follows. FMP only prices each
+      # row's point-in-time market cap once (_conference_runup_mcap.json). Guard: tests/test_conference_runup_added.py.
+      - name: "Conference study: company-release rows beside the study (side by side, own CSV)"
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python conference_runup_added.py || echo "::warning::conference company-release section not rebuilt"
+
       - name: Explain what a PDUFA date is (plain English + FAQ schema)
         run: python build_explainer.py
 
@@ -1466,6 +1475,7 @@ jobs:
           git add -f pdufa_site_src/fda-approvals/data/approvals-by-type.csv 2>/dev/null || true   # /fda-approvals/types download (*.csv is ignored)
           git add -f pdufa_site_src/earnings/data/earnings-dates.csv 2>/dev/null || true   # /earnings download (*.csv is ignored)
           git add -f pdufa_site_src/devices/decisions/data/device-decisions.csv 2>/dev/null || true   # /devices/decisions download (*.csv is ignored)
+          git add -f pdufa_site_src/research/conference-runup/conference-runup-company-releases.csv 2>/dev/null || true   # study page's company-release rows download (*.csv is ignored)
           # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot
           # reach openFDA reads the newest release, not the August 2026 file (red team of /crl/data, Nov 22)
           git add CRL_corpus_openFDA_*.json 2>/dev/null || true
@@ -1477,7 +1487,7 @@ jobs:
           # moat caches (2026-11-26), one file per git add: a pathspec that does not exist aborts the whole add
           # chembl_synonyms_cache.json (2026-11-27): never staged, so every run re-asked ChEMBL for 568 names and spent
           # 15 of its 55 minutes in one step (run 578, 06:13-06:28 ET)
-          for f in _earnings_dates.json _fda_devices.json _conference_runup_additions.json _conference_runup_backfill.json chembl_synonyms_cache.json; do
+          for f in _earnings_dates.json _fda_devices.json _conference_runup_additions.json _conference_runup_backfill.json chembl_synonyms_cache.json _conference_runup_mcap.json; do
             if [ -f "$f" ]; then git add "$f" || echo "::warning::could not stage $f"; fi
           done
           git add _google_indexed.json _google_index_status.json _google_search_stats.json 2>/dev/null || true   # gsc_index_status.py

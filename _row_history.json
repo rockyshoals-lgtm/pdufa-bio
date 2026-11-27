@@ -2,9 +2,9 @@
 "first_sha": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
 "first_ts": "2026-07-26 00:07 ET",
 "first_rows": 388,
-"versions": 492,
-"last_sha": "b024cdce7ee86640b49f91a3a78b15ad26b6bd31",
-"last_ts": "2026-11-26 23:37 ET",
+"versions": 496,
+"last_sha": "b1ffa99cd885cc4413c6ac8048980cfecd899e9f",
+"last_ts": "2026-11-27 04:35 ET",
 "rebuilds": [],
 "changes": [
 {
@@ -37566,6 +37566,18 @@
 "name": "remibrutinib (Rhapsido) Phase 3 (chronic pruritus of unknown origin, two trials) readout",
 "st_was": "",
 "st_now": "Guided"
+},
+{
+"sha": "6aa42f3ac287e6bc4b4e0578dc7e6afecb697cfc",
+"ts": "2026-11-27 01:04 ET",
+"id": "readout_rlay_2026-12-14-zovegalisi",
+"field": "row",
+"old": "",
+"new": "left",
+"t": "RLAY",
+"name": "zovegalisib ReInspire, Phase 1/2 updated ReInspire data, ASH oral",
+"st_was": "Guided",
+"st_now": ""
 }
 ]
 }

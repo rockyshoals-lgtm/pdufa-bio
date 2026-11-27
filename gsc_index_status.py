@@ -24,6 +24,9 @@ import json
 import os
 import re
 import sys
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -33,6 +36,10 @@ INDEXED = os.path.join(HERE, "_google_indexed.json")
 STATS = os.path.join(HERE, "_google_search_stats.json")
 REQ_LIST = os.path.join(HERE, "_google_request_indexing.txt")
 BASE = "https://www.pdufa.bio"
+# Each inspection takes ~6 s, so 150 in a row cost 16 minutes of every rebuild (run 578, 2026-11-27). Inspect in
+# parallel (the API allows 600 a minute) and stop at a time budget; the stalest pages come first, so the rest go next run.
+WORKERS = int(os.environ.get("GSC_WORKERS", "6"))
+BUDGET_S = float(os.environ.get("GSC_BUDGET_S", "240"))
 sys.path.insert(0, HERE)
 
 
@@ -138,21 +145,33 @@ def main():
 
     # 1. URL Inspection, read-only
     todo = pick(paths, status, today, a.max)
-    n_ok = 0
-    for p in todo:
+    local, stop, lock, t0 = threading.local(), threading.Event(), threading.Lock(), time.monotonic()
+
+    def inspect(p):
+        if stop.is_set() or time.monotonic() - t0 > BUDGET_S:
+            return 0
         try:
-            r = svc.urlInspection().index().inspect(body={"inspectionUrl": BASE + (p if p != "/" else "/"),
-                                                          "siteUrl": prop}).execute()
+            if not hasattr(local, "svc"):  # googleapiclient's http object is not thread-safe: one client per thread
+                local.svc = build("searchconsole", "v1", credentials=creds, cache_discovery=False)
+            r = local.svc.urlInspection().index().inspect(body={"inspectionUrl": BASE + (p if p != "/" else "/"),
+                                                                "siteUrl": prop}).execute()
             ir = (r.get("inspectionResult") or {}).get("indexStatusResult") or {}
-            status[p] = {"state": ir.get("coverageState"), "verdict": ir.get("verdict"),
-                         "crawled": (ir.get("lastCrawlTime") or "")[:10] or None, "checked": today}
-            n_ok += 1
+            with lock:
+                status[p] = {"state": ir.get("coverageState"), "verdict": ir.get("verdict"),
+                             "crawled": (ir.get("lastCrawlTime") or "")[:10] or None, "checked": today}
+            return 1
         except Exception as e:  # noqa: BLE001
             msg = str(e)
             print(f"  inspect {p}: {type(e).__name__}: {msg[:140]}")
-            if "429" in msg or "quota" in msg.lower():
+            if ("429" in msg or "quota" in msg.lower()) and not stop.is_set():
+                stop.set()
                 print("  quota reached; stopping inspections for this run")
-                break
+            return 0
+
+    with ThreadPoolExecutor(max_workers=max(1, WORKERS)) as ex:
+        n_ok = sum(ex.map(inspect, todo))
+    if time.monotonic() - t0 > BUDGET_S and n_ok < len(todo):
+        print(f"  time budget reached after {n_ok} of {len(todo)}; the rest next run")
     io.open(STATUS, "w", encoding="utf-8").write(json.dumps(status, indent=0, sort_keys=True))
     idx = load(INDEXED, {})
     idx["_note"] = ("Paths Search Console reports as indexed (URL Inspection API verdict PASS), kept each rebuild by "
