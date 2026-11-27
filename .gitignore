@@ -147,3 +147,21 @@ pdufa_live_tracker/tracker_positions.png
 sweepstakes/
 SweepRunner.zip
 odin_conversation_bundle_*.zip
+
+# credentials and trade records removed 2026-11-27
+alpaca.txt
+pdufa_bio_preview/_STAGING_PASSWORD.txt
+python\ odin_v812_fda_enrich.py\ \^.txt
+odin_all_in_one_15y.py
+odin_lunarcrush_batch.py
+phase3_orats_stage1_pilot.py
+phase3_orats_stage2_full.py
+phase3_orats_stage2b_skinny.py
+q2_options_scan_apr19_v2.py
+q2_options_scan_v3.py
+run_crawler_full.sh
+pdufa_bio_preview/CAPR_trade_summary.html
+Portfolio_Rescore_Apr18_Honest.docx
+portfolio_options_apr7.json
+t60_q2_portfolio_scores.json
+HINT_Q2_Portfolio_Analysis.docx
