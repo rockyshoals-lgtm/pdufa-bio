@@ -50,6 +50,8 @@ CASES = {
     "Primary IgA nephropathy": "primary IgA nephropathy",
     "Relapsed/refractory multiple myeloma": "relapsed/refractory multiple myeloma",
     "HIV": "HIV",
+    "Early Alzheimer's disease": "early Alzheimer's disease",
+    "Myasthenia Gravis": "Myasthenia Gravis",
 }
 
 
