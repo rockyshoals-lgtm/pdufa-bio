@@ -558,6 +558,18 @@ jobs:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python extend_conference_runup.py || echo "::warning::_conference_runup_additions.json not refreshed this run"
 
+      # 2026-11-27 (moat: conference run-up backfill). 439 older presentations (2022 to June 2026) named in SEC filings
+      # that the published study leaves out, re-dated by the additions' rule from the company's own release (the lead
+      # file's single date per meeting is not used), against organiser-dated meetings in conf_study/meetings_past.json.
+      # Each lead is read once. Writes _conference_runup_backfill.json only; no page reads it until the rows are
+      # red-teamed. Guard: tests/test_conference_runup_backfill.py.
+      - name: "Conference run-up backfill: older presentations re-dated from company releases (cache only)"
+        timeout-minutes: 14
+        continue-on-error: true
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python backfill_conference_runup.py || echo "::warning::_conference_runup_backfill.json not refreshed this run"
+
       # 2026-11-26 (moat: earnings pages). /earnings and /earnings/<TICKER> from _earnings_dates.json: report days the
       # companies announced in their own releases that are still ahead, results of the last 30 days, days from quarter
       # end to results, and a CSV. Nothing estimated. After the cache step, before the sitemap and the normalisers.
@@ -1439,7 +1451,7 @@ jobs:
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
           git add _date_checks.json 2>/dev/null || true   # recheck_upcoming_dates.py's CONFIRMED re-reads
           # moat caches (2026-11-26), one file per git add: a pathspec that does not exist aborts the whole add
-          for f in _earnings_dates.json _fda_devices.json _conference_runup_additions.json; do
+          for f in _earnings_dates.json _fda_devices.json _conference_runup_additions.json _conference_runup_backfill.json; do
             if [ -f "$f" ]; then git add "$f" || echo "::warning::could not stage $f"; fi
           done
           git add _google_indexed.json _google_index_status.json _google_search_stats.json 2>/dev/null || true   # gsc_index_status.py

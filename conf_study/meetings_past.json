@@ -1,0 +1,663 @@
+{
+ "_note": "Past meeting editions (2022 to mid-2026) for the conference run-up backfill. Each date is from the organiser's own page or its own release, quoted. Used only by backfill_conference_runup.py.",
+ "_verified_on": "2026-11-27",
+ "meetings": [
+  {
+   "code": "AACR",
+   "name": "AACR Annual Meeting 2022",
+   "start": "2022-04-08",
+   "end": "2022-04-13",
+   "city": "New Orleans, US",
+   "source": "https://www.aacr.org/meeting/aacr-annual-meeting-2022/",
+   "source_quote": "April 8-13, 2022 | Ernest N. Morial Convention Center | New Orleans, Louisiana"
+  },
+  {
+   "code": "WCLC",
+   "name": "IASLC 2022 World Conference on Lung Cancer",
+   "start": "2022-08-06",
+   "end": "2022-08-09",
+   "city": "Vienna, AT",
+   "source": "https://wclc2022.iaslc.org/?p=8905",
+   "source_quote": "The IASLC 2022 World Conference on Lung Cancer will take place August 6 – 9, 2022 in the beautiful city of Vienna, Austria."
+  },
+  {
+   "code": "AAD",
+   "name": "2023 AAD Annual Meeting",
+   "start": "2023-03-17",
+   "end": "2023-03-21",
+   "city": "New Orleans, US",
+   "source": "https://meetings.aad.org/IA2022/AskMe/Details/R4nP07guzg5Dpuc6d9xSy",
+   "source_quote": "The 2023 AAD Annual Meeting will be held in New Orleans, Louisiana, from March 17-21."
+  },
+  {
+   "code": "AACR",
+   "name": "AACR Annual Meeting 2023",
+   "start": "2023-04-14",
+   "end": "2023-04-19",
+   "city": "Orlando, US",
+   "source": "https://www.aacr.org/meeting/aacr-annual-meeting-2023/",
+   "source_quote": "April 14-19, 2023 | Orange County Convention Center | Orlando, Florida"
+  },
+  {
+   "code": "AAN",
+   "name": "2023 AAN Annual Meeting",
+   "start": "2023-04-22",
+   "end": "2023-04-27",
+   "city": "Boston, US",
+   "source": "https://www.aan.com/events/2023-annual-meeting",
+   "source_quote": "The 75th Annual Meeting took place in Boston and online April 22-27, 2023."
+  },
+  {
+   "code": "ASGCT",
+   "name": "ASGCT 26th Annual Meeting",
+   "start": "2023-05-16",
+   "end": "2023-05-20",
+   "city": "Los Angeles, US",
+   "source": "https://asgct.org/events/annual-meeting-archives",
+   "source_quote": "26th Annual Meeting May 16-20, 2023 | Los Angeles, CA + Virtual"
+  },
+  {
+   "code": "ATS",
+   "name": "ATS 2023 International Conference",
+   "start": "2023-05-19",
+   "end": "2023-05-24",
+   "city": "Washington, US",
+   "source": "https://conference.thoracic.org/program/resources/2023/final-program.pdf",
+   "source_quote": "Washington, DC | May 19-24 2023"
+  },
+  {
+   "code": "EASL",
+   "name": "EASL Congress 2023",
+   "start": "2023-06-21",
+   "end": "2023-06-24",
+   "city": "Vienna, AT",
+   "source": "https://easl.eu/?p=33422",
+   "source_quote": "21-24 Jun 2023 ... Messe Wien | Vienna, Austria"
+  },
+  {
+   "code": "ESMO",
+   "name": "ESMO Congress 2023",
+   "start": "2023-10-20",
+   "end": "2023-10-24",
+   "city": "Madrid, ES",
+   "source": "https://esmo.org/newsroom/press-releases/esmo-congress-2023-20-24-october-2023-madrid-spain",
+   "source_quote": "ESMO Congress 2023, 20-24 October 2023 Madrid, Spain"
+  },
+  {
+   "code": "ASN",
+   "name": "ASN Kidney Week 2023",
+   "start": "2023-11-01",
+   "end": "2023-11-05",
+   "city": "Philadelphia, US",
+   "source": "https://www.asn-online.org/education/kidneyweek/archives/past.aspx",
+   "source_quote": "Kidney Week returned to Philadelphia, PA for the first time since 2014 ... Philadelphia, PA November 1 - 5"
+  },
+  {
+   "code": "SITC",
+   "name": "SITC 2023 (38th Annual Meeting & Pre-Conference Programs)",
+   "start": "2023-11-01",
+   "end": "2023-11-05",
+   "city": "San Diego, US",
+   "source": "https://sitcancer.org/edu/41st-annual-meeting/archive",
+   "source_quote": "SITC 2023 November 1–5, 2023 San Diego, CA"
+  },
+  {
+   "code": "AHA",
+   "name": "AHA Scientific Sessions 2023",
+   "start": "2023-11-11",
+   "end": "2023-11-13",
+   "city": "Philadelphia, US",
+   "source": "https://www.eurekalert.org/news-releases/1006691",
+   "source_quote": "The meeting, to be held in Philadelphia, Saturday, Nov. 11 through Monday, Nov. 13,"
+  },
+  {
+   "code": "ASH",
+   "name": "65th ASH Annual Meeting and Exposition",
+   "start": "2023-12-09",
+   "end": "2023-12-12",
+   "city": "San Diego, US",
+   "source": "https://www.hematology.org/meetings/annual-meeting/past-meetings",
+   "source_quote": "65th ASH Annual Meeting and Exposition December 9-12, 2023 | San Diego, CA"
+  },
+  {
+   "code": "ASCO GI",
+   "name": "2024 ASCO Gastrointestinal Cancers Symposium",
+   "start": "2024-01-18",
+   "end": "2024-01-20",
+   "city": "San Francisco, US",
+   "source": "https://society.asco.org/about-asco/press-center/news-releases/2024-symposium-feature-new-research-ctdna-immunotherapy-other",
+   "source_quote": "The 2024 ASCO Gastrointestinal Cancers Symposium, taking place January 18-20 in San Francisco, California and online,"
+  },
+  {
+   "code": "AAAAI",
+   "name": "2024 AAAAI Annual Meeting",
+   "start": "2024-02-23",
+   "end": "2024-02-26",
+   "city": "Washington, US",
+   "source": "https://impact.aaaai.org/optimizing-your-2024-annual-meeting-experience",
+   "source_quote": "Research presented at the AAAAI Annual Meeting, February 23-26 in Washington, DC, ... Sessions held as part of the 2024 Annual Meeting will take place at the Walter E. Washington Convention Center"
+  },
+  {
+   "code": "AAD",
+   "name": "2024 AAD Annual Meeting",
+   "start": "2024-03-08",
+   "end": "2024-03-12",
+   "city": "San Diego, US",
+   "source": "https://digitaleditions.walsworth.com/publication/?i=814769",
+   "source_quote": "The AAD is bringing the world’s largest dermatology meeting to San Diego for its 2024 AAD Annual Meeting, March 8-12."
+  },
+  {
+   "code": "AACR",
+   "name": "AACR Annual Meeting 2024",
+   "start": "2024-04-05",
+   "end": "2024-04-10",
+   "city": "San Diego, US",
+   "source": "https://www.aacr.org/meeting/aacr-annual-meeting-2024/",
+   "source_quote": "April 5-10, 2024 | San Diego Convention Center | San Diego, California"
+  },
+  {
+   "code": "ACC",
+   "name": "ACC.24 Annual Scientific Session",
+   "start": "2024-04-06",
+   "end": "2024-04-08",
+   "city": "Atlanta, US",
+   "source": "https://www.acc.org/latest-in-cardiology/articles/2024/03/01/01/42/editors-corner-acc24-here-at-last",
+   "source_quote": "the stage is set for this year's Annual Scientific Session (ACC.24) in Atlanta from April 6-8."
+  },
+  {
+   "code": "AAN",
+   "name": "2024 AAN Annual Meeting",
+   "start": "2024-04-13",
+   "end": "2024-04-18",
+   "city": "Denver, US",
+   "source": "https://www.aan.com/events/2024-annual-meeting",
+   "source_quote": "The 76th Annual Meeting took place in Denver and online April 13-18, 2024."
+  },
+  {
+   "code": "ARVO",
+   "name": "ARVO 2024 Annual Meeting",
+   "start": "2024-05-05",
+   "end": "2024-05-09",
+   "city": "Seattle, US",
+   "source": "https://www.arvo.org/uploads/files/general/Annual-Meeting/Pocket-Guides/arvo-2024-annual-meeting-pocket-guide.pdf",
+   "source_quote": "The ARVO 2024 Annual Meeting, held in Seattle, Wash., May 5 – 9, is an accredited continuing education activity."
+  },
+  {
+   "code": "ASGCT",
+   "name": "ASGCT 27th Annual Meeting",
+   "start": "2024-05-07",
+   "end": "2024-05-11",
+   "city": "Baltimore, US",
+   "source": "https://asgct.org/events/annual-meeting-archives",
+   "source_quote": "27th Annual Meeting May 7-11, 2024 | Baltimore, MD + Virtual"
+  },
+  {
+   "code": "ATS",
+   "name": "ATS 2024 International Conference",
+   "start": "2024-05-17",
+   "end": "2024-05-22",
+   "city": "San Diego, US",
+   "source": "https://www.eurekalert.org/news-releases/1005268",
+   "source_quote": "presentation at the ATS 2024 International Conference in San Diego, May 17-22."
+  },
+  {
+   "code": "ASCO",
+   "name": "2024 ASCO Annual Meeting",
+   "start": "2024-05-31",
+   "end": "2024-06-04",
+   "city": "Chicago, US",
+   "source": "https://society.asco.org/about-asco/press-center/news-releases/new-cancer-research-impacting-treatment-prevention-early",
+   "source_quote": "The 2024 ASCO Annual Meeting will take place May 31-June 4 in Chicago and online."
+  },
+  {
+   "code": "EASL",
+   "name": "EASL Congress 2024",
+   "start": "2024-06-05",
+   "end": "2024-06-08",
+   "city": "Milan, IT",
+   "source": "https://easl.eu/event/easl-congress-2024/",
+   "source_quote": "A gathering that unites the world of hepatology, taking place from 5-8 June 2024 in Milan, Italy, as well as online."
+  },
+  {
+   "code": "EULAR",
+   "name": "EULAR 2024 Congress",
+   "start": "2024-06-12",
+   "end": "2024-06-15",
+   "city": "Vienna, AT",
+   "source": "https://congress2024.eular.org/about/",
+   "source_quote": "The EULAR 2024 Congress will be held onsite, in Vienna, Austria. ... EULAR 2024 ONSITE ONLY in VIENNA, AUSTRIA | LIVE 12 - 15 JUNE"
+  },
+  {
+   "code": "EHA",
+   "name": "EHA2024 Hybrid Congress",
+   "start": "2024-06-13",
+   "end": "2024-06-16",
+   "city": "Madrid, ES",
+   "source": "https://2024.ehaweb.org/congress/previous-congresses",
+   "source_quote": "The EHA2024 Hybrid Congress has now officially come to an end (June 13-16, 2024 in Madrid, Spain)"
+  },
+  {
+   "code": "AAIC",
+   "name": "Alzheimer's Association International Conference 2024",
+   "start": "2024-07-28",
+   "end": "2024-08-01",
+   "city": "Philadelphia, US",
+   "source": "https://aaic.alz.org/highlights2024.asp",
+   "source_quote": "Highlights from AAIC 2024 | July 28 – Aug. 1, 2024 | Philadelphia, USA, and Online"
+  },
+  {
+   "code": "ERS",
+   "name": "ERS Congress 2024",
+   "start": "2024-09-07",
+   "end": "2024-09-11",
+   "city": "Vienna, AT",
+   "source": "https://www.ersnet.org/news-and-features/news/registration-opens-for-the-ers-congress-2024-vienna/",
+   "source_quote": "The event will take place in Vienna, Austria from 7–11 September"
+  },
+  {
+   "code": "WCLC",
+   "name": "IASLC 2024 World Conference on Lung Cancer",
+   "start": "2024-09-07",
+   "end": "2024-09-10",
+   "city": "San Diego, US",
+   "source": "https://www.ilcn.org/?p=6457",
+   "source_quote": "Abstract Submissions for WCLC 2024 Open Through April 5 ... which will take place from September 7-10 in San Diego, California."
+  },
+  {
+   "code": "ESMO",
+   "name": "ESMO Congress 2024",
+   "start": "2024-09-13",
+   "end": "2024-09-17",
+   "city": "Barcelona, ES",
+   "source": "https://esmo.org/newsroom/press-and-media-hub/esmo-media-releases/esmo-congress-2024-barcelona-spain-13-17-september",
+   "source_quote": "ESMO Congress 2024 Barcelona, Spain, 13-17 September"
+  },
+  {
+   "code": "ECTRIMS",
+   "name": "ECTRIMS 2024 (40th Congress of ECTRIMS)",
+   "start": "2024-09-18",
+   "end": "2024-09-20",
+   "city": "Copenhagen, DK",
+   "source": "https://ectrims.eu/previous-congresses/",
+   "source_quote": "ECTRIMS 2024 18-20 September 2024 | Copenhagen, Denmark"
+  },
+  {
+   "code": "ASN",
+   "name": "ASN Kidney Week 2024",
+   "start": "2024-10-23",
+   "end": "2024-10-27",
+   "city": "San Diego, US",
+   "source": "https://www.asn-online.org/education/kidneyweek/archives/past.aspx",
+   "source_quote": "Kidney Week 2024 took place in San Diego, CA, and featured multiple late-breaking oral sessions ... San Diego, CA October 23 - 27"
+  },
+  {
+   "code": "ACAAI",
+   "name": "ACAAI 2024 Annual Scientific Meeting",
+   "start": "2024-10-24",
+   "end": "2024-10-28",
+   "city": "Boston, US",
+   "source": "https://annualmeeting.acaai.org/2024/meeting_info.cfm",
+   "source_quote": "will take place in Boston, Massachusetts, on October 24-28, 2024"
+  },
+  {
+   "code": "CTAD",
+   "name": "Clinical Trials on Alzheimer's Disease (CTAD) 2024",
+   "start": "2024-10-29",
+   "end": "2024-11-01",
+   "city": "Madrid, ES",
+   "source": "https://www.ctad-alzheimer.com/files/files/PROGRAM_CTAD2024_WEB%20October%2014.pdf",
+   "source_quote": "CTAD 2024 ... October 29 - November 1, 2024 ... Madrid, Spain"
+  },
+  {
+   "code": "SITC",
+   "name": "SITC 2024 (39th Annual Meeting & Pre-Conference Programs)",
+   "start": "2024-11-06",
+   "end": "2024-11-10",
+   "city": "Houston, US",
+   "source": "https://sitcancer.org/edu/41st-annual-meeting/archive",
+   "source_quote": "SITC 2024 November 6–10, 2024 Houston, TX"
+  },
+  {
+   "code": "ACR",
+   "name": "ACR Convergence 2024",
+   "start": "2024-11-14",
+   "end": "2024-11-19",
+   "city": "Washington, US",
+   "source": "https://www.eurekalert.org/news-releases/1053357",
+   "source_quote": "American College of Rheumatology opens press registration for ACR Convergence 2024 ... taking place Nov. 14-19 at the Walter E. Washington Convention Center in Washington, D.C."
+  },
+  {
+   "code": "AASLD",
+   "name": "The Liver Meeting 2024",
+   "start": "2024-11-15",
+   "end": "2024-11-19",
+   "city": "San Diego, US",
+   "source": "https://aasld.org/sites/default/files/2024-05/2024%20TLM%20Teaser%20Brochure_Digital%20File.pdf",
+   "source_quote": "scheduled to take place from November 15 to 19, 2024, in the vibrant city of San Diego, California."
+  },
+  {
+   "code": "AHA",
+   "name": "AHA Scientific Sessions 2024",
+   "start": "2024-11-16",
+   "end": "2024-11-18",
+   "city": "Chicago, US",
+   "source": "https://www.eurekalert.org/news-releases/1063883",
+   "source_quote": "The meeting, Nov. 16-18, 2024, in Chicago,"
+  },
+  {
+   "code": "ASH",
+   "name": "66th ASH Annual Meeting and Exposition",
+   "start": "2024-12-07",
+   "end": "2024-12-10",
+   "city": "San Diego, US",
+   "source": "https://www.hematology.org/meetings/annual-meeting/past-meetings",
+   "source_quote": "66th ASH Annual Meeting and Exposition December 7-10, 2024 | San Diego, CA"
+  },
+  {
+   "code": "SABCS",
+   "name": "San Antonio Breast Cancer Symposium 2024",
+   "start": "2024-12-10",
+   "end": "2024-12-13",
+   "city": "San Antonio, US",
+   "source": "https://aacr.org/?p=428056",
+   "source_quote": "San Antonio Breast Cancer Symposium ... December 10-13, 2024 ... Henry B. Gonzalez Convention Center ... San Antonio, Texas"
+  },
+  {
+   "code": "ASCO GU",
+   "name": "2025 ASCO Genitourinary Cancers Symposium",
+   "start": "2025-02-13",
+   "end": "2025-02-15",
+   "city": "San Francisco, US",
+   "source": "https://www.asco.org/about-asco/press-center/news-releases/advances-prostate-cancer-treatment-community-based-screening",
+   "source_quote": "The 2025 ASCO Genitourinary Cancers Symposium will take place February 13-15 in San Francisco, California and online."
+  },
+  {
+   "code": "AAAAI",
+   "name": "2025 AAAAI / WAO Joint Congress",
+   "start": "2025-02-28",
+   "end": "2025-03-03",
+   "city": "San Diego, US",
+   "source": "https://www.prweb.com/releases/safety-measures-needed-for-college-students-with-food-allergies-302382038.html",
+   "source_quote": "Research presented at the 2025 AAAAI / WAO Joint Congress, February 28 – March 3 in San Diego, CA,"
+  },
+  {
+   "code": "AAD",
+   "name": "2025 AAD Annual Meeting",
+   "start": "2025-03-07",
+   "end": "2025-03-11",
+   "city": "Orlando, US",
+   "source": "https://meetings.aad.org/IA2024/AskMe/Details/3lGFlXSnFkqqU2d87zdq1i",
+   "source_quote": "The 2025 AAD Annual Meeting will be held in Orlando, Florida, from March 7-11 at the Orange County Convention Center."
+  },
+  {
+   "code": "ACC",
+   "name": "ACC.25 Annual Scientific Session",
+   "start": "2025-03-29",
+   "end": "2025-03-31",
+   "city": "Chicago, US",
+   "source": "https://www.acc.org/Latest-in-Cardiology/Articles/2025/03/01/42/Editors-Corner-Countdown-to-ACC25",
+   "source_quote": "Annual Scientific Session (ACC.25) in Chicago, taking place from March 29 to 31!"
+  },
+  {
+   "code": "ADPD",
+   "name": "AD/PD 2025 International Conference on Alzheimer's and Parkinson's Diseases and Related Neurological Disorders",
+   "start": "2025-04-01",
+   "end": "2025-04-05",
+   "city": "Vienna, AT",
+   "source": "https://adpd2025.kenes.com/",
+   "source_quote": "AD/PD™ 2025 will take place April 1-5, 2025 in Vienna, Austria, as the main event of the year"
+  },
+  {
+   "code": "AAN",
+   "name": "2025 AAN Annual Meeting",
+   "start": "2025-04-05",
+   "end": "2025-04-09",
+   "city": "San Diego, US",
+   "source": "https://www.aan.com/events/2025-annual-meeting",
+   "source_quote": "The 77th Annual Meeting took place in San Diego and Online April 5-9, 2025."
+  },
+  {
+   "code": "AACR",
+   "name": "AACR Annual Meeting 2025",
+   "start": "2025-04-25",
+   "end": "2025-04-30",
+   "city": "Chicago, US",
+   "source": "https://aacr.org/meeting/aacr-annual-meeting-2025/",
+   "source_quote": "April 25-30, 2025 | McCormick Place Convention Center | Chicago, Illinois"
+  },
+  {
+   "code": "ARVO",
+   "name": "ARVO 2025 Annual Meeting",
+   "start": "2025-05-04",
+   "end": "2025-05-08",
+   "city": "Salt Lake City, US",
+   "source": "https://arvo.org/globalassets/annual-meeting/arvo-2025/arvo-2025_pocket-guide.pdf",
+   "source_quote": "The ARVO 2025 Annual Meeting, held in Salt Lake City, Utah, May 4 – 8, is an accredited continuing education activity."
+  },
+  {
+   "code": "EASL",
+   "name": "EASL Congress 2025",
+   "start": "2025-05-07",
+   "end": "2025-05-10",
+   "city": "Amsterdam, NL",
+   "source": "https://easl.eu/?p=35803",
+   "source_quote": "EASL Congress 2025 ... 07-10 May 2025 ... Amsterdam, Netherlands"
+  },
+  {
+   "code": "ASGCT",
+   "name": "ASGCT 28th Annual Meeting",
+   "start": "2025-05-13",
+   "end": "2025-05-17",
+   "city": "New Orleans, US",
+   "source": "https://asgct.org/annual-meeting/future-annual-meetings",
+   "source_quote": "May 13-17, 2025 New Orleans Convention Center New Orleans, LA"
+  },
+  {
+   "code": "ATS",
+   "name": "ATS 2025 International Conference",
+   "start": "2025-05-16",
+   "end": "2025-05-21",
+   "city": "San Francisco, US",
+   "source": "https://conference.thoracic.org/program/resources/2025/final-program.pdf",
+   "source_quote": "San Francisco | May 16-21"
+  },
+  {
+   "code": "ASCO",
+   "name": "2025 ASCO Annual Meeting",
+   "start": "2025-05-30",
+   "end": "2025-06-03",
+   "city": "Chicago, US",
+   "source": "https://s3.amazonaws.com/files.oncologymeetings.org/prod/s3fs-public/2024-11/AM25ProgramByTrack.pdf",
+   "source_quote": "All sessions listed in Central Time (Chicago, IL) ... May 30 – June 3, 2025"
+  },
+  {
+   "code": "EULAR",
+   "name": "EULAR 2025 Congress",
+   "start": "2025-06-11",
+   "end": "2025-06-14",
+   "city": "Barcelona, ES",
+   "source": "https://congress2025.eular.org/programme",
+   "source_quote": "The EULAR 2025 Congress will take place at the Fira de Barcelona from Wednesday, 11 June – Saturday, 14 June 2025."
+  },
+  {
+   "code": "EHA",
+   "name": "EHA2025 Congress",
+   "start": "2025-06-12",
+   "end": "2025-06-15",
+   "city": "Milan, IT",
+   "source": "https://ehaweb.org/congress/eha2025-congress/general-information",
+   "source_quote": "June 12-15, 2025 | EHA2025 Milan, Italy - In-person and live stream"
+  },
+  {
+   "code": "ADA",
+   "name": "85th Scientific Sessions",
+   "start": "2025-06-20",
+   "end": "2025-06-23",
+   "city": "Chicago, US",
+   "source": "https://www.diabetes.org/newsroom/press-releases/american-diabetes-association-debuts-85th-scientific-sessions-breakthrough",
+   "source_quote": "From June 20–23, the American Diabetes Association® (ADA) will host the 85th Scientific Sessions in Chicago."
+  },
+  {
+   "code": "ENDO",
+   "name": "ENDO 2025",
+   "start": "2025-07-12",
+   "end": "2025-07-15",
+   "city": "San Francisco, US",
+   "source": "https://www.endocrine.org/news-and-advocacy/news-room/2025/endo-2025-opens-media-registration",
+   "source_quote": "The meeting will take place July 12-15, in San Francisco, Calif."
+  },
+  {
+   "code": "AAIC",
+   "name": "Alzheimer's Association International Conference 2025",
+   "start": "2025-07-27",
+   "end": "2025-07-31",
+   "city": "Toronto, CA",
+   "source": "https://www.alz.org/getmedia/1197f36e-0ac2-4cd0-8846-87671b9b7d5c/attendance-toolkit-aaic-2025.pdf",
+   "source_quote": "Conference® 2025 (AAIC®), July 27-31 in Toronto, Canada and online."
+  },
+  {
+   "code": "ECTRIMS",
+   "name": "ECTRIMS 2025 (41st Congress of ECTRIMS)",
+   "start": "2025-09-24",
+   "end": "2025-09-26",
+   "city": "Barcelona, ES",
+   "source": "https://ectrims.eu/previous-congresses/",
+   "source_quote": "ECTRIMS 2025 24-26 September 2025 | Barcelona, Spain"
+  },
+  {
+   "code": "ESMO",
+   "name": "ESMO Congress 2025",
+   "start": "2025-10-17",
+   "end": "2025-10-21",
+   "city": "Berlin, DE",
+   "source": "https://www.eurekalert.org/news-releases/1101602",
+   "source_quote": "The ESMO Congress 2025 will take place from 17-21 October in Berlin, Germany"
+  },
+  {
+   "code": "ENA",
+   "name": "AACR-NCI-EORTC International Conference on Molecular Targets and Cancer Therapeutics",
+   "start": "2025-10-22",
+   "end": "2025-10-26",
+   "city": "Boston, US",
+   "source": "https://www.aacr.org/?p=556637",
+   "source_quote": "AACR-NCI-EORTC International Conference on Molecular Targets and Cancer Therapeutics ... October 22-26, 2025 ... Hynes Convention Center ... Boston, Massachusetts"
+  },
+  {
+   "code": "ACR",
+   "name": "ACR Convergence 2025",
+   "start": "2025-10-24",
+   "end": "2025-10-29",
+   "city": "Chicago, US",
+   "source": "https://www.acrconvergencetoday.org/?p=12641",
+   "source_quote": "The year’s premier rheumatology conference will take place October 24–29 at McCormick Place. ... Please join us in Chicago for ACR Convergence 2025!"
+  },
+  {
+   "code": "ASN",
+   "name": "ASN Kidney Week 2025",
+   "start": "2025-11-05",
+   "end": "2025-11-09",
+   "city": "Houston, US",
+   "source": "https://www.asn-online.org/education/kidneyweek/archives/past.aspx",
+   "source_quote": "Kidney Week 2025 took place in Houston, TX, and continued the collaboration with JASN, JAMA, and NEJM ... Houston, TX November 5 - 9"
+  },
+  {
+   "code": "SITC",
+   "name": "SITC 2025 (40th Anniversary Annual Meeting & Pre-Conference Programs)",
+   "start": "2025-11-05",
+   "end": "2025-11-09",
+   "city": "National Harbor, US",
+   "source": "https://sitcancer.org/edu/41st-annual-meeting/archive",
+   "source_quote": "SITC 2025 November 5–9, 2025 National Harbor, MD"
+  },
+  {
+   "code": "ACAAI",
+   "name": "ACAAI 2025 Annual Scientific Meeting",
+   "start": "2025-11-06",
+   "end": "2025-11-10",
+   "city": "Orlando, US",
+   "source": "https://annualmeeting.acaai.org/2025/attendee_information.cfm",
+   "source_quote": "will take place in Orlando, Florida, on November 6-10, 2025"
+  },
+  {
+   "code": "AASLD",
+   "name": "The Liver Meeting 2025",
+   "start": "2025-11-07",
+   "end": "2025-11-11",
+   "city": "Washington, US",
+   "source": "https://www.aasld.org/sites/default/files/2025-11/AASLD_TLM2025_ProgramGuide_Update1022-Digital.pdf",
+   "source_quote": "NOVEMBER 7–11 Washington, D.C. aasld.org/the-liver-meeting ... welcome you to The Liver Meeting® 2025 (TLM) in Washington, D.C.!"
+  },
+  {
+   "code": "AHA",
+   "name": "AHA Scientific Sessions 2025",
+   "start": "2025-11-07",
+   "end": "2025-11-10",
+   "city": "New Orleans, US",
+   "source": "https://sessions.hub.heart.org/home/article/22878040/scientific-sessions-2025",
+   "source_quote": "Nov. 7-10 | New Orleans"
+  },
+  {
+   "code": "ASH",
+   "name": "67th ASH Annual Meeting and Exposition",
+   "start": "2025-12-06",
+   "end": "2025-12-09",
+   "city": "Orlando, US",
+   "source": "https://www.hematology.org/meetings/annual-meeting/past-meetings",
+   "source_quote": "67th ASH Annual Meeting and Exposition December 6-9, 2025 | Orlando, FL"
+  },
+  {
+   "code": "SABCS",
+   "name": "San Antonio Breast Cancer Symposium 2025",
+   "start": "2025-12-09",
+   "end": "2025-12-12",
+   "city": "San Antonio, US",
+   "source": "https://www.aacr.org/about-the-aacr/newsroom/media-advisories/reserve-housing-and-register-today-san-antonio-breast-cancer-symposium-2025-december-9-12/",
+   "source_quote": "Reserve Housing and Register Today: San Antonio Breast Cancer Symposium 2025, December 9-12 ... from December 9-12 at the Henry B. Gonzalez Convention Center in San Antonio, Texas"
+  },
+  {
+   "code": "AACR",
+   "name": "AACR Annual Meeting 2026",
+   "start": "2026-04-17",
+   "end": "2026-04-22",
+   "city": "San Diego, US",
+   "source": "https://www.aacr.org/meeting/aacr-annual-meeting-2026/",
+   "source_quote": "April 17-22, 2026 | San Diego Convention Center | San Diego, California"
+  },
+  {
+   "code": "AAN",
+   "name": "2026 AAN Annual Meeting",
+   "start": "2026-04-18",
+   "end": "2026-04-22",
+   "city": "Chicago, US",
+   "source": "https://www.aan.com/events/2026-annual-meeting",
+   "source_quote": "The 78th Annual Meeting took place in Chicago and online April 18-22, 2026."
+  },
+  {
+   "code": "ASGCT",
+   "name": "ASGCT 29th Annual Meeting",
+   "start": "2026-05-11",
+   "end": "2026-05-15",
+   "city": "Boston, US",
+   "source": "https://www.asgct.org/events-meetings/2026-annual-meeting",
+   "source_quote": "May 11 - 15, 2026 ... Boston, MA"
+  },
+  {
+   "code": "ATS",
+   "name": "ATS 2026 International Conference",
+   "start": "2026-05-15",
+   "end": "2026-05-20",
+   "city": "Orlando, US",
+   "source": "https://site.thoracic.org/events/ats-2026-international-conference",
+   "source_quote": "is planning the 2026 International Conference as an in-person program in Orlando, FL, May 15-20,2026."
+  },
+  {
+   "code": "EASL",
+   "name": "EASL Congress 2026",
+   "start": "2026-05-27",
+   "end": "2026-05-30",
+   "city": "Barcelona, ES",
+   "source": "https://easl.eu/event/easl-congress-2026/",
+   "source_quote": "Barcelona, Spain ... 27 - 30 May, 2026"
+  }
+ ]
+}
