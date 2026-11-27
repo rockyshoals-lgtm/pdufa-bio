@@ -1461,12 +1461,20 @@ jobs:
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
           git add _date_checks.json 2>/dev/null || true   # recheck_upcoming_dates.py's CONFIRMED re-reads
           # moat caches (2026-11-26), one file per git add: a pathspec that does not exist aborts the whole add
-          for f in _earnings_dates.json _fda_devices.json _conference_runup_additions.json _conference_runup_backfill.json; do
+          # chembl_synonyms_cache.json (2026-11-27): never staged, so every run re-asked ChEMBL for 568 names and spent
+          # 15 of its 55 minutes in one step (run 578, 06:13-06:28 ET)
+          for f in _earnings_dates.json _fda_devices.json _conference_runup_additions.json _conference_runup_backfill.json chembl_synonyms_cache.json; do
             if [ -f "$f" ]; then git add "$f" || echo "::warning::could not stage $f"; fi
           done
           git add _google_indexed.json _google_index_status.json _google_search_stats.json 2>/dev/null || true   # gsc_index_status.py
           git add catalysts_out/conference_presenters_mined.csv 2>/dev/null || true
           git add -f readout_miner.csv 2>/dev/null || true
+          # Self-heal: a tracked file this run changed but did not stage is a cache that will be rebuilt from scratch
+          # next run (how the ChEMBL cache cost 15 minutes a day). Name each one so it gets added above.
+          unstaged=$(git diff --name-only)
+          if [ -n "$unstaged" ]; then
+            echo "::warning::tracked files changed by this run but not committed (add them above if they are caches): $(echo $unstaged | head -c 600)"
+          fi
           if git diff --cached --quiet; then
             echo "no data changes this run — nothing to deploy"
           else
