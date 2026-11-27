@@ -911,6 +911,14 @@ jobs:
       - name: "Readouts: relink company-guided rows to this build's drug pages"
         run: python build_guided_readouts.py
 
+      # 2026-11-27 (OMW): the /readouts/<year>/<month> pages were written once and never rebuilt (December 2026 listed
+      # 49 "estimates" against 20 in the dataset; passed months said nothing of what came of them). Each month page now
+      # lists that month's reported, company-guided and registry-estimate readouts from the dataset, each program
+      # linked to its /drug page. After the drug pages (links resolve) and resolve_past_readouts.py (passed windows).
+      # Guard: tests/test_readout_months.py.
+      - name: "Readout month pages from today's dataset"
+        run: python build_readout_months.py
+
       # 2026-11-26 (GSC: /screener ranked for drug names it only printed): the screener's crawlable rows link each
       # readout to its /drug page when that page exists. The first pass runs before this build's drug pages, so this
       # second pass (idempotent: it replaces only the ssr-rows block) runs once every drug page of this build is on
