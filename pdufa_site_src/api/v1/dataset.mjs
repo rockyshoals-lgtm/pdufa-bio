@@ -5593,59 +5593,6 @@ export default [
   "dm": "2026-09"
  },
  {
-  "id": "readout_iva_2027-09-15",
-  "t": "IVA",
-  "company": "Inventiva S.A.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "IVA337",
-  "type": "Readout",
-  "ta": "Infectious",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04849728",
-  "ua": "2026-11-02T20:15:29Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04849728",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09-29",
-    "pcd_type": "actual",
-    "updated": "2026-10-29",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04849728",
-   "date_history": [
-    {
-     "date": "2027-09-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-09-15",
-     "changed": "2026-11-02",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT04849728 is now 2026-09-29 (actual; registry status active_not_recruiting, record updated 2026-10-29); the row's window moved from 2027-09 to 2026-09 on 2026-11-02. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "ACTIVE_NOT_RECRUITING",
-    "primary_completion": "2026-09-29",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT04849728"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   }
-  },
-  "dm": "2026-09"
- },
- {
   "id": "readout_kpti_2026-09-15",
   "t": "KPTI",
   "company": "Karyopharm Therapeutics Inc.",
@@ -12495,39 +12442,6 @@ export default [
   }
  },
  {
-  "id": "readout_ivevf_2026-12-31",
-  "t": "IVEVF",
-  "company": "Inventiva S.A.",
-  "d": "2026-12-31",
-  "dp": "quarter",
-  "name": "lanifibranor NATiV3 Phase 3 topline",
-  "type": "Readout",
-  "ta": "Hepatology",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.sec.gov/Archives/edgar/data/1756594/000117184326006471/exh_991.htm",
-  "ua": "2026-11-17T19:57:31Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "MASH with moderate and advanced fibrosis",
-   "market_cap_usd": null,
-   "source": "company guidance (SEC filing)",
-   "guided_precision": "quarter",
-   "guided_form": "6-K EX-99.1",
-   "guided_filed": "2026-10-06",
-   "program": "lanifibranor",
-   "guided_window": "2026-Q4",
-   "guidance_text": "topline results expected in the fourth quarter of this year.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1756594/000117184326006471/exh_991.htm",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Inventiva 6-K EX-99.1 dated 2026-10-06 (sec.gov): lanifibranor in Phase 3 NATiV3 'for the treatment of patients with MASH with moderate and advanced fibrosis, with topline results expected in the fourth quarter of this year'. Page does not say F2-F3. No newer Inventiva release found (FMP press\u2026",
-   "ta_basis": "SEC filing sentence (Inventiva EX-99.2 2026-09-28): lanifibranor NATiV3 Phase 3 in non-cirrhotic MASH",
-   "guided_label": "fourth quarter of 2026",
-   "readout_described": "Phase 3 topline",
-   "nct_stated": "NCT04849728"
-  },
-  "dm": "2026-12"
- },
- {
   "id": "readout_kynb_2026-12-31",
   "t": "KYNB",
   "company": "Kyntra Bio, Inc.",
@@ -18373,7 +18287,8 @@ export default [
      "note": "created 2026-11-17 from the company's own statement (press release 2026-11-04)"
     }
    ],
-   "ta_basis": "Company release: indication stated as Relapsed/refractory AML after venetoclax-based therapy"
+   "ta_basis": "Company release: indication stated as Relapsed/refractory AML after venetoclax-based therapy",
+   "dedupe_note": "2026-11-27: a second copy of this readout (readout_sls_2026-12-14-tambicicli), added Nov 26 from the same company release with the drug named the other way round, was removed; this row is the one listing."
   }
  },
  {
@@ -19334,7 +19249,8 @@ export default [
      "note": "created 2026-11-17 from the company's own statement (press release 2026-11-03)"
     }
    ],
-   "ta_basis": "Company release: indication stated as Compensated MASH cirrhosis (F4c)"
+   "ta_basis": "Company release: indication stated as Compensated MASH cirrhosis (F4c)",
+   "dedupe_note": "2026-11-27: a second copy of this readout (readout_mdgl_2027-12-31-resmetirom), added Nov 26 from the same company release with the drug named the other way round, was removed; this row is the one listing."
   }
  },
  {
@@ -24025,7 +23941,8 @@ export default [
      "note": "created 2026-11-17 from the company's own statement (press release 2026-11-04)"
     }
    ],
-   "ta_basis": "Company release: indication stated as relapsed/refractory diffuse large B-cell lymphoma (r/r DLBCL)"
+   "ta_basis": "Company release: indication stated as relapsed/refractory diffuse large B-cell lymphoma (r/r DLBCL)",
+   "dedupe_note": "2026-11-27: a second copy of this readout (readout_adct_2026-12-14-loncastuxi), added Nov 26 from the same company release with the drug named the other way round, was removed; this row is the one listing."
   }
  },
  {
@@ -24063,7 +23980,8 @@ export default [
      "note": "created 2026-11-17 from the company's own statement (press release 2026-11-04)"
     }
    ],
-   "ta_basis": "Company release: indication stated as relapsed/refractory large B-cell lymphoma"
+   "ta_basis": "Company release: indication stated as relapsed/refractory large B-cell lymphoma",
+   "dedupe_note": "2026-11-27: a second copy of this readout (readout_adct_2026-12-13-loncastuxi), added Nov 26 from the same company release with the drug named the other way round, was removed; this row is the one listing."
   }
  },
  {
@@ -24891,6 +24809,31 @@ export default [
     "post_5d": 1.63,
     "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    }
+  }
+ },
+ {
+  "id": "pdufa_kpti_2027-06-28",
+  "t": "KPTI",
+  "company": "Karyopharm Therapeutics Inc.",
+  "d": "2027-06-28",
+  "dp": "day",
+  "name": "XPOVIO (selinexor) + ruxolitinib - myelofibrosis (sNDA)",
+  "type": "PDUFA",
+  "ta": "Hematology",
+  "cap": "Nano",
+  "st": "Upcoming",
+  "ua": "2026-11-27T18:08:07Z",
+  "url": "/pdufa/KPTI-xpovio-myelofibrosis",
+  "_d": {
+   "indication": "Myelofibrosis, in combination with ruxolitinib",
+   "event_slug": "KPTI-xpovio-myelofibrosis",
+   "application": "sNDA",
+   "pivotal_trial": "SENTRY (Phase 3)",
+   "source": "Karyopharm press release 2026-11-17 (PR Newswire)",
+   "source_url": "https://www.prnewswire.com/news-releases/karyopharm-announces-fda-acceptance-of-supplemental-new-drug-application-for-xpovio-selinexor-plus-ruxolitinib-for-the-treatment-of-patients-with-myelofibrosis-302941279.html",
+   "source_quote": "Prescription Drug User Fee Act Target Action Date of June 28, 2027",
+   "source_note": "Release: the FDA accepted Karyopharm's sNDA for XPOVIO (selinexor) in combination with ruxolitinib for patients with myelofibrosis, based primarily on the Phase 3 SENTRY trial. Found 2026-11-27 by the readout currency sweep; the date is the sponsor's own statement. The release gives the company's listing as OTC Pink: KPTIQ.",
+   "market_cap_usd": 419608.0
   }
  },
  {
@@ -27563,7 +27506,9 @@ export default [
      "note": "created 2026-11-25 from the company's own statement (press release 2026-11-23)"
     }
    ],
-   "ta_basis": "Company release: indication stated as MASH"
+   "ta_basis": "Company release: indication stated as MASH",
+   "nct_stated": "NCT04849728",
+   "dedupe_note": "2026-11-27: the one record of the NATiV3 topline. Retired as duplicates of this row: readout_ivevf_2026-12-31 (same trial, same company, filed under the OTC symbol IVEVF; Inventiva lists as IVA on Euronext Paris and Nasdaq) and readout_iva_2027-09-15 (\"IVA337\", the registry row for NCT04849728, the same trial)."
   },
   "dm": "2026-12"
  },
@@ -33486,45 +33431,6 @@ export default [
   }
  },
  {
-  "id": "readout_mdgl_2027-12-31-resmetirom",
-  "t": "MDGL",
-  "company": "Madrigal Pharmaceuticals, Inc.",
-  "d": "2027-12-31",
-  "dp": "year",
-  "name": "resmetirom (Rezdiffra) MAESTRO-NASH OUTCOMES Phase 3 data",
-  "type": "Readout",
-  "ta": "Hepatology",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.globenewswire.com/news-release/2026/11/03/3394036/0/en/madrigal-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
-  "ua": "2026-11-26T21:03:06Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "compensated MASH cirrhosis (F4c)",
-   "market_cap_usd": null,
-   "program": "resmetirom (Rezdiffra)",
-   "trial": "MAESTRO-NASH OUTCOMES Phase 3",
-   "guided_precision": "year",
-   "guided_window": "2027",
-   "guided_label": "late 2027",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-03",
-   "guidance_text": "MAESTRO NASH OUTCOMES on track, data expected late 2027.",
-   "source_url": "https://www.globenewswire.com/news-release/2026/11/03/3394036/0/en/madrigal-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
-   "source": "company guidance (company release)",
-   "readout_described": "data",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened Madrigal Q3 release 2026-11-03: 'MAESTRO NASH OUTCOMES on track, data expected late 2027'. Same NCT05500222. Later law-firm notices about Madrigal contain no company timing change.",
-   "date_history": [
-    {
-     "date": "2027-12-31",
-     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-03)"
-    }
-   ],
-   "supersedes_estimate": "readout_mdgl_2026-12-15",
-   "ta_basis": "Company release: indication stated as compensated MASH cirrhosis (F4c)"
-  }
- },
- {
   "id": "readout_dnli_2027-06-30-biib122",
   "t": "DNLI",
   "company": "Denali Therapeutics Inc.",
@@ -34419,123 +34325,6 @@ export default [
     }
    ],
    "ta_basis": "Company release: indication stated as Dravet syndrome"
-  }
- },
- {
-  "id": "readout_adct_2026-12-14-loncastuxi",
-  "t": "ADCT",
-  "company": "ADC Therapeutics SA",
-  "d": "2026-12-14",
-  "dp": "day",
-  "name": "loncastuximab tesirine (ZYNLONTA) + rituximab vs R-GemOx LOTIS-5, Phase 3 results, ASH\u2026",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-  "ua": "2026-11-26T21:03:06Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "relapsed or refractory DLBCL",
-   "market_cap_usd": null,
-   "program": "loncastuximab tesirine (ZYNLONTA) + rituximab vs R-GemOx",
-   "trial": "LOTIS-5, Phase 3",
-   "guided_precision": "day",
-   "guided_window": "2026-12-14",
-   "guided_label": "Monday, December 14, 2026, 3:00-3:15 p.m. CT (ASH oral)",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-04",
-   "guidance_text": "Monday, December 14, 2026, 3:00 - 3:15 p.m. CT",
-   "source_url": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "source": "company guidance (company release)",
-   "readout_described": "Phase 3 results, ASH oral (Abstract #920)",
-   "date_quote": "Monday, December 14, 2026, 3:00 - 3:15 p.m. CT",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened ADC Therapeutics 11/04/2026 release: Abstract #920 oral, results from Phase 3 LOTIS-5 (lonca + rituximab), Monday Dec 14, 2026 3:00-3:15 p.m. CT.",
-   "date_history": [
-    {
-     "date": "2026-12-14",
-     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
-    }
-   ],
-   "ta_basis": "Company release: indication stated as relapsed or refractory DLBCL"
-  }
- },
- {
-  "id": "readout_adct_2026-12-13-loncastuxi",
-  "t": "ADCT",
-  "company": "ADC Therapeutics SA",
-  "d": "2026-12-13",
-  "dp": "day",
-  "name": "loncastuximab tesirine + glofitamab LOTIS-7, Phase 1b updated results, ASH oral\u2026",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-  "ua": "2026-11-26T21:03:06Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "relapsed/refractory large B-cell lymphoma",
-   "market_cap_usd": null,
-   "program": "loncastuximab tesirine + glofitamab",
-   "trial": "LOTIS-7, Phase 1b",
-   "guided_precision": "day",
-   "guided_window": "2026-12-13",
-   "guided_label": "Sunday, December 13, 2026, 12:00-12:15 p.m. CT (ASH oral)",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-04",
-   "guidance_text": "Sunday, December 13, 2026, 12:00 - 12:15 p.m. CT",
-   "source_url": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
-   "source": "company guidance (company release)",
-   "readout_described": "updated results, ASH oral (Abstract #619)",
-   "date_quote": "Sunday, December 13, 2026, 12:00 - 12:15 p.m. CT",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Same ADCT release: Abstract #619 oral, updated results from Phase 1b LOTIS-7, Sunday Dec 13, 2026 12:00-12:15 p.m. CT.",
-   "date_history": [
-    {
-     "date": "2026-12-13",
-     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
-    }
-   ],
-   "ta_basis": "Company release: indication stated as relapsed/refractory large B-cell lymphoma"
-  }
- },
- {
-  "id": "readout_sls_2026-12-14-tambicicli",
-  "t": "SLS",
-  "company": "SELLAS Life Sciences Group, Inc.",
-  "d": "2026-12-14",
-  "dp": "day",
-  "name": "tambiciclib (SLS009) + azacitidine + venetoclax Phase 2 dose-ranging study Phase 2 data,\u2026",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Guided",
-  "url": "https://www.globenewswire.com/news-release/2026/11/4/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
-  "ua": "2026-11-26T21:03:06Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "relapsed/refractory AML after prior venetoclax-based therapy",
-   "market_cap_usd": null,
-   "program": "tambiciclib (SLS009) + azacitidine + venetoclax",
-   "trial": "Phase 2 dose-ranging study",
-   "guided_precision": "day",
-   "guided_window": "2026-12-14",
-   "guided_label": "Monday, December 14, 2026, 6:00-8:00 PM CST (ASH poster)",
-   "guided_form": "press release",
-   "guided_filed": "2026-11-04",
-   "guidance_text": "Monday, December 14, 2026, 6:00 \u2013 8:00 PM CST",
-   "source_url": "https://www.globenewswire.com/news-release/2026/11/4/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
-   "source": "company guidance (company release)",
-   "readout_described": "Phase 2 data, ASH poster (Abstract 5155)",
-   "date_quote": "Monday, December 14, 2026, 6:00 \u2013 8:00 PM CST",
-   "red_team": "2026-11-26: source re-opened by an independent red-team pass; quote, program, timing and date checked. Opened SELLAS 11/04/2026 release: poster abstract 5155, tambiciclib (SLS009) + aza/ven in R/R AML after prior venetoclax, results from a Phase 2 study, Monday Dec 14, 2026 6:00-8:00 PM CST.",
-   "date_history": [
-    {
-     "date": "2026-12-14",
-     "note": "created 2026-11-26 from the company's own statement (press release 2026-11-04)"
-    }
-   ],
-   "ta_basis": "Company release: indication stated as relapsed/refractory AML after prior venetoclax-based therapy"
   }
  },
  {
