@@ -21,7 +21,7 @@ open Pro only after about 500 alert subscribers (plus about 5K visitors a month 
 | Sample | `alerts/preview/digest_2026-11-22.html` and `.txt` | This week's real data: 6 decisions recorded, 3 goal dates ahead. |
 | Privacy policy | `pdufa_site_src/privacy/index.html` | Draft. |
 | Terms of use | `pdufa_site_src/terms/index.html` | Draft. Data licence matches the CC BY 4.0 the datasets already declare. |
-| About: who runs it, contact | `pdufa_site_src/about/index.html` | Draft section between `ABOUT-DRAFT` markers: name, short bio, optional location and profile, holdings policy, contact email. |
+| About: who runs it, contact | `pdufa_site_src/about/index.html` | Draft section between `ABOUT-DRAFT` markers, filled Nov 27 from your Nov 25 reply to STAT (name, background, why Odin stays off the site, holdings line). Only the contact email is still a placeholder. |
 
 ## Email provider: Resend (no account opened)
 
