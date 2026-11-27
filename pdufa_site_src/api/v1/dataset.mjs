@@ -38502,7 +38502,7 @@ export default [
  {
   "id": "readout_bbot_2026-12-31",
   "t": "BBOT",
-  "company": "BridgeBio Oncology Therapeutics (BBOT)",
+  "company": "BridgeBio Oncology Therapeutics",
   "d": "2026-12-31",
   "dp": "quarter",
   "name": "BBO-11818, monotherapy cohorts (trial not named in release) BBO-11818 monotherapy data…",

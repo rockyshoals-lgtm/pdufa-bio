@@ -394,7 +394,7 @@ def main():
         while rid in by:
             rid = f"{base}-{n}"; n += 1
         row = {"id": rid, "t": tk, "company": (canon[tk].most_common(1)[0][0] if canon.get(tk)
-                                                       else r.get("company") or tk), "d": d, "dp": dp, "name": row_name(r),
+                                                       else re.sub(r"\s*\(\s*" + re.escape(tk) + r"\s*\)\s*$", "", r.get("company") or "") or tk), "d": d, "dp": dp, "name": row_name(r),
                "type": "Readout", "ta": "", "cap": "", "st": "Guided", "url": r.get("source_url"), "ua": NOW,
                "_d": {"nct_id": None, "indication": r.get("indication") or None, "market_cap_usd": None,
                       "program": r.get("drug"), "trial": r.get("trial")}}
