@@ -256,8 +256,10 @@ def publish_gate(orig_rows, new_rows, recs):
                      f"name comes first, or add a redirect to _drug_pages_retired.json / _drug_slug_folds.json")
     words = set()
     for x in recs:
+        drug = str(x.get("drug") or "").lower()
         for w in re.findall(r"[A-Z][A-Z0-9-]{3,}", str(x.get("trial") or "")):
-            words.add(w.lower())
+            if w.lower() not in drug:  # "UBT251 (obesity)": a drug code in the trial field is still the drug
+                words.add(w.lower())
     words -= {"phase", "part", "study", "trial"}
     for sl in sorted(set(after) - set(before)):
         if any(w in sl.split("-") for w in words):

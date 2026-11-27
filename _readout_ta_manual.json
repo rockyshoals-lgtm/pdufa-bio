@@ -3825,6 +3825,641 @@
    "ta": "Hematology",
    "basis": "company-stated indication: von Willebrand disease",
    "source": "https://www.globenewswire.com/news-release/2026/11/10/3399342/0/en/hemab-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html"
+  },
+  "readout_azn_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-datopotama": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-datopotama-2": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-datopotama-3": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-trastuzuma": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-sonesitatu": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-datopotama": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-datopotama-2": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-trastuzuma": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-camizestra": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-durvalumab": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-durvalumab-2": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-capivasert": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-puxitatug": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-saruparib": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-volrustomi": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-volrustomi-2": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-rilvegosto": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-surovatami": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-12-31-saruparib-2": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-laroprovst": {
+   "ta": "Cardiovascular",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_azn_2027-06-30-acalabruti": {
+   "ta": "Hematology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-06-30": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31-cagrilinti": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-06-30-ziltivekim": {
+   "ta": "Cardiovascular",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31-efruxiferm": {
+   "ta": "Hepatology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31-amylin": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31-ubt251": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-06-30-ubt251": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2027-12-31-cagrilinti-2": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2028-06-30": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2028-12-31": {
+   "ta": "Metabolic",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_nvo_2028-06-30-denecimig": {
+   "ta": "Hematology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_gsk_2027-06-30": {
+   "ta": "Infectious",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_gsk_2027-06-30-gsk116": {
+   "ta": "Infectious",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_gsk_2027-12-31-cabotegrav": {
+   "ta": "Infectious",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2027-06-30": {
+   "ta": "Dermatology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2027-12-31": {
+   "ta": "Dermatology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2028-12-31": {
+   "ta": "Immunology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2027-12-31-rozanolixi": {
+   "ta": "CNS",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2029-12-31": {
+   "ta": "CNS",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2028-12-31-galvokimig": {
+   "ta": "Dermatology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2029-12-31-galvokimig": {
+   "ta": "Respiratory",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_ucbjy_2029-12-31-fenflurami": {
+   "ta": "CNS",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_gsk_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_gsk_2027-12-31-velzatinib": {
+   "ta": "Oncology",
+   "basis": "drug/indication named in company source",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_j.json"
+  },
+  "readout_rcus_2027-12-31-casdatifan": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: Clear cell renal cell carcinoma (first-line)",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_tcrx_2028-06-30": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: Solid tumors",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_tyra_2027-12-31": {
+   "ta": "Rare disease",
+   "basis": "indication named in company source: Achondroplasia",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_tyra_2027-12-31-dabogratin": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: Intermediate-risk non-muscle invasive bladder cancer (IR NMIBC)",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_vktx_2028-12-31": {
+   "ta": "Metabolic",
+   "basis": "indication named in company source: Obesity",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_uthr_2027-12-31": {
+   "ta": "Respiratory",
+   "basis": "indication named in company source: Progressive pulmonary fibrosis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_vcre_2027-12-31": {
+   "ta": "Respiratory",
+   "basis": "indication named in company source: Idiopathic pulmonary fibrosis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_nvct_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: Non-small cell lung cancer",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_jazz_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: H3 K27M-mutant diffuse glioma",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_vtrs_2027-06-30": {
+   "ta": "Cardiovascular",
+   "basis": "indication named in company source: Acute myocardial infarction",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_vtrs_2027-06-30-mr130a01": {
+   "ta": "Other",
+   "basis": "indication named in company source: Contraception",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_scnlf_2027-06-30": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: Advanced melanoma",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_rhhby_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: 1L diffuse large B-cell lymphoma",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_rhhby_2027-12-31-zemocimig": {
+   "ta": "Hematology",
+   "basis": "indication named in company source: Hemophilia A",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_rhhby_2027-12-31-emicizumab": {
+   "ta": "Hematology",
+   "basis": "indication named in company source: Type 3 von Willebrand disease",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_rhhby_2027-12-31-satralizum": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Autoimmune encephalitis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_rhhby_2027-12-31-afimkibart": {
+   "ta": "Gastroenterology",
+   "basis": "indication named in company source: Ulcerative colitis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_rhhby_2027-12-31-ranibizuma": {
+   "ta": "Ophthalmology",
+   "basis": "indication named in company source: Neovascular AMD, every-9-month refills",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_rhhby_2027-12-31-nivegaceto": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Alzheimer's disease",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_rhhby_2027-12-31-afimkibart-2": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Rheumatoid arthritis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_rhhby_2027-12-31-tl1ap40": {
+   "ta": "Gastroenterology",
+   "basis": "indication named in company source: Ulcerative colitis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_rhhby_2027-12-31-ocrelizuma": {
+   "ta": "CNS",
+   "basis": "indication named in company source: RMS/PPMS",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2026-12-31": {
+   "ta": "Cardiovascular",
+   "basis": "indication named in company source: Secondary stroke prevention",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2026-12-31-delocamten": {
+   "ta": "Cardiovascular",
+   "basis": "indication named in company source: Heart failure with preserved ejection fraction",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: 1L extensive-stage small cell lung cancer",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31-golcadomid": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: High-risk 1L large B-cell lymphoma",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31-milvexian": {
+   "ta": "Cardiovascular",
+   "basis": "indication named in company source: Atrial fibrillation",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31-admilparan": {
+   "ta": "Respiratory",
+   "basis": "indication named in company source: Progressive pulmonary fibrosis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31-xanomeline": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Psychosis associated with Alzheimer's disease",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31-xanomeline-2": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Bipolar I disorder",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31-mezigdomid": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: Relapsed/refractory multiple myeloma",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31-deucravaci": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Sjögren's disease",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31-moponetug": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Early Alzheimer's disease",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31-irafamdast": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Alzheimer's disease agitation",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2027-12-31-irafamdast-2": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Multiple sclerosis spasticity",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: EGFR-mutated NSCLC",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31-pumitamig": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: 1L extensive-stage small cell lung cancer",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31-zolaripcab": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Systemic lupus erythematosus",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31-arlocabtag": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: 2-4L multiple myeloma",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31-xanomeline": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Alzheimer's disease agitation",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31-xanomeline-2": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Alzheimer's disease cognition",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31-xanomeline-3": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Adjunctive bipolar I disorder",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31-golcadomid": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: 2L+ follicular lymphoma",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31-adagrasib": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: 1L NSCLC (KRAS G12C)",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31-adagrasib-2": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: 1L NSCLC PD-L1 ≥50% (KRAS G12C)",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_bmy_2028-12-31-luspaterce": {
+   "ta": "Hematology",
+   "basis": "indication named in company source: 1L non-transfusion-dependent MDS-associated anemia",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_abbv_2027-12-31": {
+   "ta": "Dermatology",
+   "basis": "indication named in company source: Hidradenitis suppurativa",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_k.json"
+  },
+  "readout_nvs_2026-12-31": {
+   "ta": "Hematology",
+   "basis": "indication named in company source: Immune thrombocytopenia, first line",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2026-12-31-remibrutin": {
+   "ta": "Dermatology",
+   "basis": "indication named in company source: Hidradenitis suppurativa",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2026-12-31-remibrutin-2": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Chronic spontaneous urticaria, adolescents",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31-remibrutin": {
+   "ta": "Dermatology",
+   "basis": "indication named in company source: Papulopustular rosacea",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2029-12-31": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Secondary progressive multiple sclerosis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2029-12-31-remibrutin": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Food allergy (peanut, milk or egg)",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2029-12-31-remibrutin-2": {
+   "ta": "Dermatology",
+   "basis": "indication named in company source: Chronic pruritus of unknown origin",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-06-30-ianalumab": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Systemic lupus erythematosus",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31-ianalumab": {
+   "ta": "Nephrology",
+   "basis": "indication named in company source: Lupus nephritis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31-ianalumab-2": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Diffuse cutaneous systemic sclerosis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31-abelacimab": {
+   "ta": "Cardiovascular",
+   "basis": "indication named in company source: Stroke prevention in atrial fibrillation",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-06-30-zigakibart": {
+   "ta": "Nephrology",
+   "basis": "indication named in company source: IgA nephropathy",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31-dii235": {
+   "ta": "Cardiovascular",
+   "basis": "indication named in company source: Cardiovascular risk reduction, elevated Lp(a)",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31-ymi024": {
+   "ta": "Cardiovascular",
+   "basis": "indication named in company source: Cardiovascular disease risk reduction",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31-iptacopan": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Generalized myasthenia gravis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2028-12-31": {
+   "ta": "Nephrology",
+   "basis": "indication named in company source: IC-MPGN and aHUS",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31-ofatumumab": {
+   "ta": "CNS",
+   "basis": "indication named in company source: Multiple sclerosis, every-2-month (Q2M) dosing",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-06-30-stj331": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Food allergy",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31-gia632": {
+   "ta": "Dermatology",
+   "basis": "indication named in company source: Atopic dermatitis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2028-12-31-gia632": {
+   "ta": "Dermatology",
+   "basis": "indication named in company source: Lichen planus",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2028-12-31-ddy391": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Psoriatic arthritis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2028-12-31-ltp001": {
+   "ta": "Respiratory",
+   "basis": "indication named in company source: Pulmonary arterial hypertension",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2029-12-31-inclisiran": {
+   "ta": "Cardiovascular",
+   "basis": "indication named in company source: ASCVD primary prevention (CV outcomes)",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31-delpacibar": {
+   "ta": "Rare disease",
+   "basis": "indication named in company source: Duchenne muscular dystrophy (exon 44)",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2029-12-31-delpacibar": {
+   "ta": "Rare disease",
+   "basis": "indication named in company source: Duchenne muscular dystrophy (exon 44)",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2028-12-31-aaa817": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: Metastatic castration-resistant prostate cancer",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2028-12-31-pelabresib": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: Myelofibrosis",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-06-30": {
+   "ta": "Cardiovascular",
+   "basis": "indication named in company source: ASCVD secondary prevention",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2027-12-31": {
+   "ta": "Cardiovascular",
+   "basis": "indication named in company source: ASCVD secondary prevention",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2029-12-31-ianalumab": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Sjogren's disease",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2029-12-31-ddy391": {
+   "ta": "Immunology",
+   "basis": "indication named in company source: Sjogren's disease",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
+  },
+  "readout_nvs_2028-12-31-pluvicto": {
+   "ta": "Oncology",
+   "basis": "indication named in company source: Oligometastatic prostate cancer",
+   "source": "odin_cowork_dropbox/2026-11-27_readout_mine_l.json"
   }
  },
  "nct_mismatch": [

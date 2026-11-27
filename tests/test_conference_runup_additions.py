@@ -145,6 +145,11 @@ check(X.evidence("ZZQA", "Zorvexa Therapeutics, Inc.", _lead + " (NYSE: PRTN) pa
       "evidence kept from another company's tag")
 check(X.study_code("IDWeek") == "IDWEEK" and X.study_code("ESMO") == "ESMO", "study codes do not match the study")
 
+# every hand-verified presenter is read, ticker page or not (6 of 28 Aug-Nov 2026 presenters had none)
+_uni = X.universe()
+for _tk in ("TGTX", "NBP", "APRE", "ENTX"):
+    check(_tk in _uni, f"universe: verified presenter {_tk} is never read")
+
 # 2. window arithmetic ------------------------------------------------------------------------------------
 day0 = dt.date(2026, 1, 5)
 series, d = [], day0

@@ -81,7 +81,8 @@ HUBS = ["https://www.pdufa.bio/", "https://www.pdufa.bio/fda-decisions-today",
         "https://www.pdufa.bio/calendar", "https://www.pdufa.bio/decisions", "https://www.pdufa.bio/readouts",
         "https://www.pdufa.bio/fda-approval-letters", "https://www.pdufa.bio/conferences",
         # 2026-11-27: the two other pages Bing's AI answers cite most for "pdufa date" questions.
-        "https://www.pdufa.bio/learn/what-is-a-pdufa-date", "https://www.pdufa.bio/screener"]
+        "https://www.pdufa.bio/learn/what-is-a-pdufa-date", "https://www.pdufa.bio/screener",
+        "https://www.pdufa.bio/learn/what-is-pdufa", "https://www.pdufa.bio/learn/fda-advisory-committee-adcom"]
 
 
 def changed_event_urls(limit=60):

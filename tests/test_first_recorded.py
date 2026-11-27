@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""CI guard: the "first committed to pdufa.bio's public repository" line (inject_first_recorded.py) is on every
+"""CI guard: the "entered pdufa.bio's records" line (inject_first_recorded.py) is on every
 decision page recorded after the repository's first import, its time is the ledger's converted to Eastern, and the
 ledger never holds a time later than the commit it names (a first-recorded time can only move earlier).
 
@@ -47,7 +47,7 @@ def main():
             print("  FAIL " + f)
         print(f"\n{len(fails)} failure(s) -- run inject_first_recorded.py")
         return 1
-    print(f"OK -- {n} decision pages state when they were first committed (ET), matching the ledger.")
+    print(f"OK -- {n} decision pages state when they entered pdufa.bio's records (ET), matching the ledger.")
     return 0
 
 
