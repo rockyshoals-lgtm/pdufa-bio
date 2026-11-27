@@ -1064,6 +1064,20 @@
    "was": "Savara's MOLBREEVI (molgramostim) BLA listed under \"Upcoming FDA catalysts\" with its November 22, 2026 goal date, and the page FAQs gave that date in the present tense, five days after it passed.",
    "now": "Listed as past its goal date with no decision on record. On November 20, 2026 Savara said the FDA told it the agency would not act by November 22; the review is ongoing and no revised action date was given. The home page, event page and calendar already said so; the ticker page, its FAQ, the event page FAQ and site search now do too, and a test fails the build if a past-due goal is ever listed as upcoming.",
    "source": "Savara release, November 20, 2026 (Business Wire)"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/fda-decision/INCY-2026-04-08",
+   "was": "An Incyte FDA decision page dated 2026-04-08 saying Zynyz (retifanlimab-dlwr) received a Complete Response Letter that day, with no source cited.",
+   "now": "Incyte's 8-K dates the Zynyz NSCLC Complete Response Letter February 27, 2026. Nothing happened on April 8, 2026, and the page cited no source. The decision now has its page at February 27 with Incyte's filing as its source. The page is retired and redirects to /fda-decision/INCY-2026-03-06.",
+   "source": "Incyte Form 8-K, date of report February 27, 2026"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/fda-decision/MGNX-2026-04-08",
+   "was": "A MacroGenics FDA decision page dated 2026-04-08 saying Zynyz (retifanlimab-dlwr) received a Complete Response Letter that day, with no source cited.",
+   "now": "A second page, under MacroGenics, for the Zynyz NSCLC Complete Response Letter. Incyte is the applicant (MacroGenics licensed retifanlimab to Incyte and is owed milestones), and Incyte's 8-K dates the letter February 27, 2026; nothing happened on April 8. The decision has one page, under Incyte. The page is retired and redirects to /fda-decision/INCY-2026-03-06.",
+   "source": "Incyte Form 8-K, date of report February 27, 2026"
   }
  ],
  "legacy": [

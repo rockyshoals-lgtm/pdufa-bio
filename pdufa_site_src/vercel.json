@@ -4320,6 +4320,16 @@
    "source": "/pdufa/KPTI",
    "destination": "/pdufa/KPTI-xpovio-myelofibrosis",
    "permanent": true
+  },
+  {
+   "source": "/fda-decision/INCY-2026-04-08",
+   "destination": "/fda-decision/INCY-2026-03-06",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/MGNX-2026-04-08",
+   "destination": "/fda-decision/INCY-2026-03-06",
+   "permanent": true
   }
  ],
  "headers": [
