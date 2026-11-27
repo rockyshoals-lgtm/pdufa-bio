@@ -44,8 +44,11 @@ def edition_in_sentence(sentence, conf_start):
 
 def main():
     bad, checked = [], 0
-    files = [(os.path.join(CO, "conference_presenters_VERIFIED_2026-08-12.csv"), False),
-             (os.path.join(CO, "conference_presenters_mined.csv"), True)]
+    # Every verified file publishes (build_conferences.load_presenters globs them), so every one is checked:
+    # this list named only the first file, and the 2026-10-11 and later files shipped unchecked.
+    import glob
+    files = ([(v, False) for v in sorted(glob.glob(os.path.join(CO, "conference_presenters_VERIFIED_*.csv")))]
+             + [(os.path.join(CO, "conference_presenters_mined.csv"), True)])
     for path, gated in files:
         if not os.path.exists(path):
             continue
