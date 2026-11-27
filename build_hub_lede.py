@@ -264,6 +264,8 @@ def sentence(path, rows):
         if counts.get("notices"):
             # the leading figure is what test_lede_matches_table recounts against the page's rows: the
             # vote cards. The notice count follows in the same sentence.
+            # one shared count: the vote cards build_adcomm_history.py counted and the /adcomm title states
+            n = counts.get("voted", n)
             s = (f"This page lists {n} FDA advisory committee meeting{'s' if n != 1 else ''} with a hand-sourced "
                  f"vote{(' (' + when + ')') if when else ''}, and every one of the {counts['notices']} drug and biologic "
                  f"advisory committee meetings the FDA announced in the Federal Register since January 2020, each "
