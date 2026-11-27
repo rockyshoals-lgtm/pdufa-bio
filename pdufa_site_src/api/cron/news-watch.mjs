@@ -195,8 +195,7 @@ export default async (req, res) => {
     .sort((a, b) => b[1] - a[1]).slice(0, 2000));
   // Posting stops too while posts are hidden, and when a retract key names no armed row and no post (a typo would
   // otherwise withdraw nothing and say nothing).
-  const ids = new Set([...ARMED.rows.map(r => r.id), ...Object.keys(plain(ARMED.status) ? ARMED.status : {}),
-                       ...Object.keys(plain(state.pub) ? state.pub : {})]);
+  const ids = new Set([...ARMED.rows.map(r => r.id), ...Object.keys(plain(state.pub) ? state.pub : {})]);
   const badKeys = Object.keys(plain(control.retract) ? control.retract : {}).filter(k => !ids.has(k));
   const armed = { ...ARMED, publish: ARMED.publish === true && (control.publish === undefined || control.publish === true)
                     && control.hide !== true && !badKeys.length,
@@ -243,6 +242,12 @@ export default async (req, res) => {
       posted_at: etIso(Date.now()), minutes_after_source: Math.max(0, Math.floor((Date.now() - item.atMs) / 60000)),
       page: c.row.url, status: 'posted', check: `headline "${item.title.slice(0, 160)}" names ${c.term} and an FDA ${c.kind === 'approval' ? 'approval' : 'complete response letter'}`,
     };
+    // A later release by the sponsor in this same read that contradicts or retracts it: never posted (red team 8).
+    const would = { ...pub, [rec.id]: rec };
+    if ([...edgar, ...rssList].some(x => x !== item && corrections(x, armed, would).includes(rec.id))) {
+      held.push({ key: item.key, why: 'a later release by the sponsor contradicts or retracts it' });
+      continue;
+    }
     if (armed.publish) { pub = { ...pub, [rec.id]: rec }; for (const k of [rec.id, item.url, item.key]) if (k) done[k] = nowMs; }
     else { shadow.push(rec); stopped[item.key] = stopped[item.key] || nowMs; if (item.url) stopped[item.url] = stopped[item.url] || nowMs; }
   }

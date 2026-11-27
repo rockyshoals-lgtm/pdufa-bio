@@ -364,15 +364,8 @@ export function check(item, armed, posted, nowMs) {
     const xd = Date.parse(item.exDay + 'T12:00:00Z');
     if (!Number.isFinite(fd) || !Number.isFinite(xd) || Math.abs(fd - xd) > DAY) return { ok: false, why: `the source is dated ${item.exDay}, not the day it was published` };
   }
-  if (item.channel === 'rss') {
-    const host = u => { try { const x = new URL(u); return x.protocol === 'https:' ? x.hostname.toLowerCase() : ''; } catch { return ''; } };
-    const fh = host(item.feed), ih = host(item.url);
-    // The feed's own site: its host less a first label such as "investor." ("investor.bridgebio.com" -> "bridgebio.com").
-    const labels = fh.split('.');
-    const base = labels.length >= 3 && !/^(?:co|com|org|net|ac|gov|edu)$/.test(labels[labels.length - 2]) ? labels.slice(1).join('.') : fh;
-    if (!fh || !ih || !(ih === fh || ih === base || ih === 'www.' + base))
-      return { ok: false, why: 'the feed item links off the sponsor\'s own site' };
-  }
+  if (item.channel === 'rss' && !onFeedSite(item))
+    return { ok: false, why: 'the feed item links off the sponsor\'s own site' };
   const st = (armed.status || {})[r.id];
   if (st && String(st.st).toLowerCase() !== 'upcoming') return { ok: false, why: `the reviewed record already shows ${st.st}` };
   if (posted && posted[r.id]) return { ok: false, why: 'already posted' };
@@ -476,34 +469,58 @@ export function sourceLabel(item) {
   return WIRES[new URL(item.url).hostname];
 }
 
-/** A sponsor's own later release that corrects or withdraws what it said (red teams 6, 7). Returns the ids of live
- *  posts to withdraw: posts of a row of the same sponsor (same SEC filer, or a fresh item of the same feed on the
- *  sponsor's own site), sourced before this item, when the item's headline says it retracts, corrects or clarifies,
- *  or that no decision was received, and either names the drug, or (for a post the review has not yet confirmed)
- *  names the FDA or the decision together with an earlier release. Routine news that only corrects a date or a call
- *  time names neither, and a headline about another regulator (an EU withdrawal) is not about the US post. */
-export const CORRECTS = /\b(?:retract\w*|withdr[ae]w\w*|correct(?:s|ed|ion|ions|ing)?|clarif\w*|erroneous\w*|in error|mistaken\w*|misstat\w*|inaccura\w*|amend(?:s|ed|ing|ment)?|disregard\w*|rescind\w*|supersed\w*|updat(?:e|es|ed|ing) (?:to )?(?:its |the |an? )?(?:earlier|previous|previously|prior)|(?:false|untrue|fake|unfounded|incorrect) (?:media )?(?:report|reports|rumou?rs?|claims?|statements?)|has not (?:occurred|been (?:received|issued|approved|granted))|did not (?:occur|receive|approve)|not (?:yet )?(?:received|approved|issued)|no (?:fda )?(?:decision|approval|action) (?:has|was|yet))\b/i;
+/** Does a feed item link to the feed's own site? Its host, or the host less a first label such as "investor."
+ *  ("investor.bridgebio.com" -> "bridgebio.com"), https only. */
+export function onFeedSite(item) {
+  const host = u => { try { const x = new URL(u); return x.protocol === 'https:' ? x.hostname.toLowerCase() : ''; } catch { return ''; } };
+  const fh = host(item.feed), ih = host(item.url);
+  const labels = fh.split('.');
+  const base = labels.length >= 3 && !/^(?:co|com|org|net|ac|gov|edu)$/.test(labels[labels.length - 2]) ? labels.slice(1).join('.') : fh;
+  return !!fh && !!ih && (ih === fh || ih === base || ih === 'www.' + base);
+}
+
+/** A sponsor's own later release that contradicts or withdraws what a live post said (red teams 6, 7, 8). Returns the
+ *  ids of live posts to withdraw: posts of a row of the same sponsor (same SEC filer, or a fresh item of the same feed
+ *  on its own site), sourced before this item, when the item's headline:
+ *    * names the opposite decision on the drug (a complete response letter after an approval post, an approval after a
+ *      letter), or names it as a correction;
+ *    * says it retracts a release, that a release was issued in error, false or fraudulent, or tells readers to
+ *      disregard one (a post not yet confirmed by the review is withdrawn on this alone, within 7 days);
+ *    * or corrects, clarifies or denies something and names the drug or a decision word with an earlier release.
+ *  Routine news (a loan amended, guidance updated, a call time corrected) names no decision and no retraction, and a
+ *  headline about another country's regulator is not about the US post. Any wording at all: the headline need not
+ *  parse, because withdrawing is always safe; the full review then puts back what was true. */
+const RETRACTS = /\b(?:retract\w*|withdr[ae]w\w* (?:(?:its|the|an?|this|that|earlier|previous|prior|today's)\s+)*(?:press |news )?(?:release|announcement|statement)|(?:issued|published|distributed|sent) (?:in error|erroneously|by mistake|without authori[sz]ation)|in error|(?:erroneous(?:ly)?|fraudulent|fake|false|unauthori[sz]ed|bogus|forged|spoofed) (?:issued |distributed |published )?(?:press |news )?(?:release|announcement|statement)s?|disregard\w*|correction to (?:\S+\s+){0,3}?(?:press |news )?release|(?:correct|amend|updat)(?:s|ed|es|ing|e)? (?:(?:its|the|an?|earlier|previous|previously issued|prior)\s+)*(?:press |news )?release)\b/i;
+export const CORRECTS = /\b(?:retract\w*|withdr[ae]w\w*|correct(?:s|ed|ion|ions|ing)?|clarif\w*|erroneous\w*|in error|mistaken\w*|misstat\w*|inaccura\w*|disregard\w*|rescind\w*|supersed\w*|updat(?:e|es|ed|ing) (?:to )?(?:its |the |an? )?(?:previously issued|earlier|previous|prior) (?:press |news )?(?:release|announcement|statement)|(?:false|untrue|fake|unfounded|incorrect|fraudulent) (?:media )?(?:report|reports|rumou?rs?|claims?|statements?|release|press release)|has not (?:occurred|been (?:received|issued|approved|granted))|did not (?:occur|receive|approve)|not (?:yet )?(?:received|approved|issued)|no (?:fda )?(?:decision|approval|action) (?:has|was|yet))\b/i;
 const DECISION_WORDS = /\b(?:FDA|approv(?!able)\w*|complete response|CRL|PDUFA)\b/i;
 const EARLIER_WORDS = /\b(?:press release|news release|release|announcement|statement|report|earlier|previous|previously|prior)\b/i;
-const OTHER_REGULATOR = /\b(?:EMA|CHMP|MAA|European|EU|Europe|PMDA|Japan\w*|MHRA|UK|Health Canada|NMPA|China|Chinese|TGA|Australia\w*|Swissmedic)\b/;
+const CRL_WORDS = /\b(?:complete response|CRL|not approvable)\b/i;
+const APPROVAL_WORDS = /\bFDA\b[^.;]*\bapprov(?:es|ed|al)\b(?!able)|\bapprov(?:es|ed|al)\b[^.;]*\bFDA\b/i;
+const OTHER_REGULATOR = /\b(?:EMA|CHMP|MAA|European|EU|Europe|PMDA|Japan\w*|MHRA|UK|Health Canada|Canad\w*|NMPA|China|Chinese|TGA|Australia\w*|Swissmedic|Swiss|Switzerland|ANVISA|Brazil\w*|Korea\w*|MFDS|India\w*|CDSCO|Taiwan\w*|Israel\w*|Mexic\w*|COFEPRIS|Saudi|SFDA)\b/;
 export function corrections(item, armed, pub) {
   const t = norm(clean(item.ctitle || item.title || ''));
-  if (!t || !CORRECTS.test(t) || !Number.isFinite(item.atMs)) return [];
+  if (!t || !Number.isFinite(item.atMs)) return [];
   if (OTHER_REGULATOR.test(t) && !/\bFDA\b|\b(?:US|U\.S\.)\b/.test(t)) return [];
   let rows = [];
   if (item.channel === 'edgar') rows = armed.rows.filter(r => r.cik && Number(r.cik) === Number(item.cik));
-  else if (item.channel === 'rss' && item.fresh === true) {
-    const host = u => { try { return new URL(u).hostname.toLowerCase().replace(/^www\./, ''); } catch { return ''; } };
-    if (host(item.url) && host(item.url) === host(item.feed)) rows = armed.rows.filter(r => (r.feeds || []).includes(item.feed));
-  }
+  else if (item.channel === 'rss' && item.fresh === true && onFeedSite(item)) rows = armed.rows.filter(r => (r.feeds || []).includes(item.feed));
+  if (!rows.length) return [];
+  const retracts = RETRACTS.test(t), corrects = CORRECTS.test(t);
   const aboutDecision = DECISION_WORDS.test(t) && EARLIER_WORDS.test(t);
   return rows.filter(r => {
     const p = (pub || {})[r.id];
     if (!p || typeof p !== 'object' || (p.status !== 'posted' && p.status !== 'confirmed')) return false;
     const src = Date.parse((p.source || {}).published_at || '');
     if (!Number.isFinite(src) || item.atMs <= src || (p.source || {}).url === item.url) return false;
+    const named = (r.terms || []).some(x => termIn(x, t));
+    // the opposite decision, from the sponsor itself, on this drug; or, said as a correction, with no other drug named
+    // (a large sponsor's decision on another drug of its own is not about this one)
+    const others = armed.rows.filter(o => o.id !== r.id && (o.terms || []).some(x => termIn(x, t)));
+    const opposite = p.kind === 'approval' ? CRL_WORDS.test(t) : APPROVAL_WORDS.test(t);
+    if (opposite && (named || ((retracts || corrects) && !others.length))) return true;
+    if (retracts && (named || (p.status === 'posted' && !others.length && item.atMs - src <= 7 * DAY))) return true;
     // a confirmed post (the review agreed) is withdrawn only by a release that names its drug
-    return (r.terms || []).some(x => termIn(x, t)) || (aboutDecision && p.status === 'posted');
+    return corrects && (named || (aboutDecision && p.status === 'posted' && !others.length));
   }).map(r => r.id);
 }
 
@@ -576,11 +593,11 @@ const DATELINE = new RegExp(`^${CITY}(?:,\\s*(?:the\\s+)?[A-Z][A-Za-z.'\\- ]{1,3
 const ANY_DATE = new RegExp(`\\b${MON}\\s+\\d{1,2},\\s+20\\d\\d\\b|\\b\\d{1,2}[/.-]\\d{1,2}[/.-](?:20)?\\d\\d\\b|\\b20\\d\\d-\\d{2}-\\d{2}\\b`);
 // Text a reader never sees, or sees struck out, is never a headline: an exhibit that holds any is not read at all
 // (red team 4: a struck-out release, a hidden block, an old headline kept in <title>, a commented-out heading).
-const HIDDEN = /display\s*:\s*none|visibility\s*:\s*hidden|font-size\s*:\s*0(?![.\d]*[1-9])|<\s*(?:del|s|strike)\b|text-decoration[^;"']*line-through|<[^>]*\shidden(?:\s|=|\/?>)/i;
+const HIDDEN = /\bcontent\s*:\s*(?:"[^"]+"|'[^']+'|attr\b|url\b|counter)|display\s*:\s*none|visibility\s*:\s*hidden|font-size\s*:\s*0(?![.\d]*[1-9])|<\s*(?:del|s|strike)\b|text-decoration[^;"']*line-through|<[^>]*\shidden(?:\s|=|\/?>)/i;
 
 // A picture's words void the exhibit when they could change what the headline says (Word's "Description
 // automatically generated", a logo's name or a ticker do not; red team 7).
-const ALT_BAD = /\b(?:FDA|approv\w*|CRL|complete response|letter|reject\w*|den(?:y|ied|ial)|declin\w*|delay\w*|extend\w*|postpon\w*|not|no|never|update\w*|notice|warning|important|draft|superseded|void|cancel\w*)\b/i;
+const ALT_BAD = /\b(?:FDA|approv\w*|CRL|complete response|letter|reject\w*|den(?:y|ied|ial)|declin\w*|delay\w*|extend\w*|postpon\w*|not|no|never|update\w*|notice|warning|important|draft|superseded|void|cancel\w*|errat\w*|obsolete|replac\w*|sample|specimen|archiv\w*|old|mock\w*|illustrat\w*|example|invalid|test|placeholder|watermark|copy|template|preliminary|hypothetical|proposed|pending|unofficial|internal)\b/i;
 const FORMLIKE = /<\s*(?:input|textarea|select|option|button|object|embed|iframe|frame|svg|math|template|noscript|marquee)\b/i;
 
 function rawBlocks(html) {

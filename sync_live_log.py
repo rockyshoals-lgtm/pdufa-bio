@@ -95,8 +95,10 @@ def main():
     beat = (((feed.get("meta") or {}).get("watch") or {}).get("last_heartbeat")) or ""
     try:
         age = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(beat)).total_seconds() / 60
-    except ValueError:
+    except (ValueError, TypeError):           # no time, or a time with no offset: unknown (red team 8)
         age = None
+    if (((feed.get("meta") or {}).get("watch") or {}).get("posts_hidden")):
+        print("::warning::the every-minute news watch's posts are hidden by live:control (hide, a bad value, or an unknown retract key)")
     if age is None or age > 15:
         print(f"::warning::the every-minute news watch has no heartbeat in the last 15 minutes (last: {beat or 'none'})")
     log = json.load(io.open(LOG, encoding="utf-8")) if os.path.exists(LOG) else {"posts": []}

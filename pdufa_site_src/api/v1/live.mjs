@@ -30,7 +30,7 @@ export default async (req, res) => {
       // retraction that missed never leaves the post up (red team 6).
       const control = readControl(c);
       const pub = state.pub && typeof state.pub === 'object' && !Array.isArray(state.pub) ? state.pub : {};
-      const ids = new Set([...ARMED.rows.map(r => r.id), ...Object.keys(ARMED.status || {}), ...Object.keys(pub)]);
+      const ids = new Set([...ARMED.rows.map(r => r.id), ...Object.keys(pub)]);
       const rk = control.retract && typeof control.retract === 'object' ? Object.keys(control.retract) : [];
       const hideAll = control.bad || control.hide === true || rk.some(k => !ids.has(k));
       if (hideAll) state = { ...state, pub: {}, hidden: true };

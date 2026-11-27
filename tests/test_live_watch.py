@@ -155,6 +155,18 @@ def test_sync_merge_is_append_only_and_retraction_is_final():
     assert c4["posts"][0]["status"] == "confirmed" and not newly, "a retraction the watch has not recorded (no time) waits (red team 7)"
 
 
+def test_sync_warns_on_a_heartbeat_with_no_offset(tmp_path, capsys, monkeypatch):
+    s = importlib.import_module("sync_live_log")
+    f = tmp_path / "live.json"
+    f.write_text(json.dumps({"meta": {"watch": {"last_heartbeat": "2026-11-27T10:00:00", "posts_hidden": True}}, "data": []}))
+    monkeypatch.setattr(s, "LOG", str(tmp_path / "log.json"))
+    monkeypatch.setattr(s, "CORR", str(tmp_path / "corr.json"))
+    monkeypatch.setattr("sys.argv", ["sync_live_log.py", "--fixture", str(f)])
+    assert s.main() in (0, None)
+    out = capsys.readouterr().out
+    assert "no heartbeat in the last 15 minutes" in out and "posts are hidden" in out, "red team 8"
+
+
 def test_post_speed_takes_an_earlier_confirmed_live_time():
     b = importlib.import_module("build_post_speed")
     src = {"events": {"k": {"row": "pdufa_x_2026-12-22", "kind": "decision", "event": "FDA decision: approved",
