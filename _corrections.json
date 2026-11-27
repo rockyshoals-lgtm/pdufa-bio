@@ -1085,6 +1085,13 @@
    "was": "13 estimated readout dates (Gossamer seralutinib Dec 2026, Corcept relacorilant, Insmed TPIP, BeOne zanubrutinib, Ionis olezarsen and donidalorsen, MBX 2109, Supernus SPN-812, Madrigal resmetirom, Sanofi rilzabrutinib, PTC923, and two terminated Gossamer and Jasper trials) were taken from open-label extension or long-term safety studies.",
    "now": "Removed. An extension or long-term safety study's registry completion date is not a topline readout; seralutinib's extension runs until approval. The trials those studies extend, and every company-guided date, are unchanged.",
    "source": "ClinicalTrials.gov records NCT06274801, NCT04816604, NCT06736262, NCT03604198, NCT05649748, NCT04170283, NCT05681351, NCT05392114, NCT06531941, NCT02736656, NCT04951219, NCT07216079, NCT05166161 (titles read Nov 27, 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/ticker/AARD",
+   "was": "Aardvark's ARD-101 Phase 3 HERO readout (guided for Q3 2026) was listed as \"window passed, no topline announced\".",
+   "now": "Listed as stopped by the company. Aardvark's Oct 23, 2026 release says the HERO trial was terminated early after 67 of 90 planned participants, and that its data are exploratory only.",
+   "source": "Aardvark Therapeutics press release, Oct 23, 2026 (GlobeNewswire), and Q3 2026 release, Nov 13, 2026"
   }
  ],
  "legacy": [

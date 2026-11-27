@@ -206,7 +206,7 @@
   },
   {
    "id": "readout_aard_2026-09-30",
-   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+   "reason": "2026-11-27: Aardvark's Oct 23, 2026 release says the HERO trial was terminated early; served 'Stopped per company 2026-10-23' (resolution reviewed by hand)."
   },
   {
    "id": "readout_bolt_2026-09-30",
