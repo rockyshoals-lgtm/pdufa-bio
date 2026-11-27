@@ -1,7 +1,7 @@
 {
  "held_since": "2026-11-27T06:08:08Z",
- "consecutive_held_runs": 1,
- "emailed_at": null,
+ "consecutive_held_runs": 2,
+ "emailed_at": "2026-11-27T08:26:54Z",
  "leads": [
   {
    "source": "drug_pages",
@@ -33,13 +33,6 @@
   },
   {
    "source": "drug_pages",
-   "row_id": "drug:ov329-global",
-   "key": "ov329-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
-   "text": "/drug/ov329-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
-   "first_seen": "2026-11-27T06:08:08Z"
-  },
-  {
-   "source": "drug_pages",
    "row_id": "drug:budoprutug-global",
    "key": "budoprutug-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
    "text": "/drug/budoprutug-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
@@ -50,6 +43,13 @@
    "row_id": "drug:escmid-global",
    "key": "escmid-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
    "text": "/drug/escmid-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
+   "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:ov329-global",
+   "key": "ov329-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+   "text": "/drug/ov329-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
    "first_seen": "2026-11-27T06:08:08Z"
   },
   {
@@ -75,10 +75,24 @@
   },
   {
    "source": "drug_pages",
+   "row_id": "drug:sonesitatug-vedotin",
+   "key": "sonesitatug-vedotin|fda-oncology-notifications",
+   "text": "/drug/sonesitatug-vedotin fda-oncology-notifications 'vedotin' appears with approval language",
+   "first_seen": "2026-11-27T08:26:54Z"
+  },
+  {
+   "source": "drug_pages",
    "row_id": "drug:phenylephrine-hydrochloride",
    "key": "phenylephrine-hydrochloride|openfda:20261116",
    "text": "/drug/phenylephrine-hydrochloride openfda:20261116 AP 20261116 (ORIG-1, class TYPE 5)",
    "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:cabotegravir",
+   "key": "cabotegravir|openfda:20261116",
+   "text": "/drug/cabotegravir openfda:20261116 AP 20261116 (SUPPL-10, class EFFICACY)",
+   "first_seen": "2026-11-27T08:26:54Z"
   }
  ],
  "issued_keys": [
@@ -93,6 +107,7 @@
   "drug_pages|bezuclastinib-summit|fda-oncology-notifications",
   "drug_pages|bezuclastinib|fda-oncology-notifications",
   "drug_pages|budoprutug-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+  "drug_pages|cabotegravir|openfda:20261116",
   "drug_pages|enflonsia|openfda:20261014",
   "drug_pages|escmid-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
   "drug_pages|european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
@@ -106,6 +121,7 @@
   "drug_pages|rap-219-long-acting|fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset-",
   "drug_pages|rap-219-long-acting|fda-press:fda-approves-first-treatment-limb-girdle-muscular-dystrophy-",
   "drug_pages|remibrutinib|openfda:20261006",
+  "drug_pages|sonesitatug-vedotin|fda-oncology-notifications",
   "drug_pages|tecentriq|fda-oncology-notifications",
   "drug_pages|ultomiris|openfda:20261021",
   "drug_pages|venglustat|fda-press:fda-approves-first-drug-treat-neurological-symptoms-type-3-g",
