@@ -16,6 +16,7 @@ export default [
   "source_published_at_utc": "2026-10-16T16:00:00Z",
   "site_published_at": "2026-10-17T00:40:44-04:00",
   "site_published_at_utc": "2026-10-17T04:40:44Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 760
  },
  {
@@ -33,6 +34,7 @@ export default [
   "source_published_at_utc": "2026-10-16T16:00:00Z",
   "site_published_at": "2026-10-17T00:40:44-04:00",
   "site_published_at_utc": "2026-10-17T04:40:44Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 760
  },
  {
@@ -50,6 +52,7 @@ export default [
   "source_published_at_utc": "2026-10-30T11:00:00Z",
   "site_published_at": "2026-11-01T21:41:34-05:00",
   "site_published_at_utc": "2026-11-02T02:41:34Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 3821
  },
  {
@@ -67,6 +70,7 @@ export default [
   "source_published_at_utc": "2026-10-30T20:32:08Z",
   "site_published_at": "2026-11-01T21:41:34-05:00",
   "site_published_at_utc": "2026-11-02T02:41:34Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 3249
  },
  {
@@ -84,6 +88,7 @@ export default [
   "source_published_at_utc": "2026-11-09T11:59:49Z",
   "site_published_at": "2026-11-12T01:19:19-05:00",
   "site_published_at_utc": "2026-11-12T06:19:19Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 3979
  },
  {
@@ -101,6 +106,7 @@ export default [
   "source_published_at_utc": "2026-11-09T22:15:46Z",
   "site_published_at": "2026-11-12T01:19:19-05:00",
   "site_published_at_utc": "2026-11-12T06:19:19Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 3363
  },
  {
@@ -118,6 +124,7 @@ export default [
   "source_published_at_utc": "2026-11-18T23:03:00Z",
   "site_published_at": "2026-11-18T20:53:00-05:00",
   "site_published_at_utc": "2026-11-19T01:53:00Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 170
  },
  {
@@ -135,6 +142,7 @@ export default [
   "source_published_at_utc": "2026-11-20T13:00:00Z",
   "site_published_at": "2026-11-26T00:03:40-05:00",
   "site_published_at_utc": "2026-11-26T05:03:40Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 8163
  },
  {
@@ -152,6 +160,7 @@ export default [
   "source_published_at_utc": "2026-11-21T00:55:00Z",
   "site_published_at": "2026-11-21T09:14:12-05:00",
   "site_published_at_utc": "2026-11-21T14:14:12Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 799
  },
  {
@@ -169,6 +178,7 @@ export default [
   "source_published_at_utc": "2026-11-23T18:25:08Z",
   "site_published_at": "2026-11-23T23:47:16-05:00",
   "site_published_at_utc": "2026-11-24T04:47:16Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 622
  },
  {
@@ -186,6 +196,7 @@ export default [
   "source_published_at_utc": "2026-11-24T20:50:00Z",
   "site_published_at": "2026-11-24T23:15:39-05:00",
   "site_published_at_utc": "2026-11-25T04:15:39Z",
+  "site_published_by": "site_build",
   "minutes_after_source": 445
  }
 ];
