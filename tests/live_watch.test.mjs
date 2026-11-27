@@ -740,3 +740,27 @@ test('red team 11: twins of the post never pause it; baselines stay old; filing 
   assert.match(itemText(long), /issued in error/);
   assert.doesNotMatch(itemText(long), /retracts/);
 });
+
+test('red team 12: a release that quotes the post and calls it wrong is never a twin; a changed decision pauses', () => {
+  const r = ARMED.rows[0];
+  const run = ago(60);
+  const H = 'Mineralys Announces FDA Approval of Lorundrostat for Hypertension';
+  const pub = { [r.id]: { kind: 'approval', status: 'posted', run_ms: run, headline: H, source: { url: 'https://www.sec.gov/a', published_at: etIso(run) } } };
+  const ed = (title, o = {}) => ({ channel: 'edgar', cik: r.cik, title, atMs: ago(5), firstMs: ago(5), url: 'https://www.sec.gov/b', ...o });
+  for (const h of [`Mineralys Says "${H}" Is Inaccurate`, `Mineralys Denies "${H}"`, `Unauthorized Release: ${H}`, `${H} (Superseded)`,
+                   `${H} Is Untrue`, `${H} Was Misleading`, `${H} Was Issued by an Impostor`, `${H}: FDA Has Not Yet Acted`,
+                   'Mineralys Wrongly Announced FDA Approval of Lorundrostat', 'Mineralys Announces FDA Accelerated Approval of Lorundrostat for Hypertension'])
+    assert.deepEqual(corrections(ed(h), ARMED, pub), [r.id], h);
+  // the twin with a correction only in its dateline paragraph or a subhead
+  assert.deepEqual(corrections(ed(H, { ctitle: H + ' RADNOR, Pa., Dec. 1 -- This release corrects the version issued at 4:05 PM, which misstated the indication.' }), ARMED, pub), [r.id]);
+  assert.deepEqual(corrections(ed(H, { ctitle: H + ' RADNOR, Pa., Dec. 1 -- Mineralys today announced that the FDA approved lorundrostat.' }), ARMED, pub), [], 'a plain twin');
+  assert.deepEqual(corrections(ed('', { form: '8-K/A', title: H }), ARMED, pub), [r.id], 'an amended filing is never a twin');
+  // "Wrongly Announced FDA Approval" never posts as an approval
+  assert.equal(headlineKind('Mineralys Wrongly Announced FDA Approval of Lorundrostat').kind, null);
+  // prose that says the release was wrong
+  const body = t => ed('', { ctitle: t, cbody: true });
+  for (const t of ['The press release incorrectly stated that the FDA approved lorundrostat. The Company has received a complete response letter.',
+                   'The press release should not be relied upon and is hereby withdrawn.', 'The statement was inaccurate; the FDA has yet to take action.',
+                   'The release was unauthorized and premature; the FDA review is ongoing.'])
+    assert.deepEqual(corrections(body(t), ARMED, pub), [r.id], t);
+});

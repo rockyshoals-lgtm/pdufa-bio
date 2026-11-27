@@ -59,6 +59,9 @@ export const NEG_RE = new RegExp('\\b(' + [
   'without', 'instead', 'other than', 'beyond', 'except\\w*', 'exclud\\w*', 'unless', 'soon', 'untrue', 'inaccura\\w*',
   'incorrect\\w*', 'hoax\\w*', 'debunk\\w*', 'satir\\w*', 'spoof\\w*', 'parod\\w*', 'unverified', 'overturn\\w*',
   'lift\\w*', 'pull\\w*', 'recall\\w*', 'suspen\\w*', 'halt\\w*', 'last year', 'ago',
+  // a headline that says the news was wrong (red team 12)
+  'wrong\\w*', 'unauthori[sz]\\w*', 'supersed\\w*', 'misstat\\w*', 'mislead\\w*', 'misinform\\w*', 'impost\\w*',
+  'fictitious', 'unconfirmed', 'invalid\\w*', 'void\\w*',
 ].join('|') + ')\\b', 'i');
 export const ADJ_RE = /FDA-approved|FDA approved (?:drug|product|therapy|treatment|medicine)/i;
 export const OTHER_REG = /\b(EU|Europe\w*|EC|EMA|CHMP|Japan\w*|China|Chinese|NMPA|PMDA|MHRA|UK|British|Kingdom|Canad\w*|Swiss\w*|TGA|Australia\w*|Brazil\w*|ANVISA|Korea\w*|MFDS|Taiwan\w*|TFDA|Saudi|SFDA|Jordan\w*|JFDA|Israel\w*|Hong Kong|Macau|Singapore\w*|HSA|India\w*|CDSCO|Mexic\w*|COFEPRIS|Russia\w*|Thai\w*|Philippine\w*|Indonesia\w*|Turk\w*|Egypt\w*|Argentin\w*|Chile\w*|Colombia\w*|Malaysia\w*|UAE|Emirat\w*|Ministry|Ghana\w*|Nigeria\w*|Kenya\w*|South Africa\w*|Africa\w*|Asia\w*|Vietnam\w*|Pakistan\w*|Peru\w*|Ecuador\w*|Venezuela\w*|Bangladesh\w*|Sri Lanka\w*|Nepal\w*|Iran\w*|Iraq\w*|Lebanon|Kuwait\w*|Qatar\w*|Bahrain\w*|Oman\w*|Morocc\w*|Tunisia\w*|Algeria\w*|Ethiopia\w*|Uganda\w*|Tanzania\w*|Zimbabwe\w*|Zambia\w*|Philippines|New Zealand|Norw\w*|Swed\w*|Denmark|Danish|Finland|Finnish|Iceland\w*|German\w*|France|French|Ital\w*|Spain|Spanish|Portug\w*|Dutch|Netherlands|Belgi\w*|Austria\w*|Polish|Poland|Czech\w*|Hungar\w*|Roman\w*|Greece|Greek|Ukrain\w*|Kazakh\w*|Latin|Middle East|region\w*|countr\w*|abroad|territor\w*|global\w*|worldwide|international\w*|ex-U\.?S\.?|outside)\b/i;
@@ -489,14 +492,24 @@ export function onFeedSite(item) {
  *    * or names the opposite decision ("complete response" after an approval post, an FDA approval after a letter
  *      post) and names the drug.
  *  Any wording at all: the headline need not parse. */
-const RETRACTS = /\b(?:retract\w*|withdr[ae]w\w*|correct(?:s|ed|ion|ions|ing)?|incorrect\w*|clarif\w*|erroneous\w*|in error|mistaken\w*|misstat\w*|inaccura\w*|disregard\w*|rescind\w*|supersed\w*|prematur\w*|inadvertent\w*|fabricat\w*|fraudulent\w*|fake|false|untrue|bogus|forged|spoofed|hoax\w*|unfounded|unauthori[sz]ed|not authentic|did not (?:issue|occur|receive|approve)|has not (?:occurred|been (?:received|issued|approved|granted))|not (?:yet )?(?:received|approved|issued)|no (?:fda |u\.s\. )?(?:decision|approval|action)|(?:remains|still|continues to be) under (?:fda |regulatory )?review|(?:amend|updat|revis|reissu|restat)(?:s|ed|es|ing|e)? (?:(?:its|the|an?|earlier|previous|previously issued|prior)\s+)*(?:press |news )?release|den(?:y|ies|ied|ying|ial)|misinformation|misleading|fictitious|fictional|impostor|imposter|not (?:issued|authori[sz]ed) by|regulatory update|update on (?:the )?(?:FDA|regulatory|PDUFA|NDA|BLA|sNDA|sBLA)|extend\w* (?:the |its )?(?:FDA |regulatory |PDUFA )?(?:review|goal|action)|(?:PDUFA|goal|action) (?:goal )?date (?:extension|extended|moved|chang\w*|delay\w*)|major amendment)\b/i;
+const RETRACTS = /\b(?:retract\w*|withdr[ae]w\w*|correct(?:s|ed|ion|ions|ing)|wrong\w*|unauthori[sz]\w*|mislead\w*|impost\w*|imposter|invalid\w*|void\w*|incorrect\w*|clarif\w*|erroneous\w*|in error|mistaken\w*|misstat\w*|inaccura\w*|disregard\w*|rescind\w*|supersed\w*|prematur\w*|inadvertent\w*|fabricat\w*|fraudulent\w*|fake|false|untrue|bogus|forged|spoofed|hoax\w*|unfounded|unauthori[sz]ed|not authentic|did not (?:issue|occur|receive|approve)|(?:has|have) not (?:yet )?(?:acted|taken action|ruled|decided|completed)|yet to (?:act|take action|rule|decide|approve)|has not (?:occurred|been (?:received|issued|approved|granted))|not (?:yet )?(?:received|approved|issued)|no (?:fda |u\.s\. )?(?:decision|approval|action)|(?:remains|still|continues to be) under (?:fda |regulatory )?review|(?:amend|updat|revis|reissu|restat)(?:s|ed|es|ing|e)? (?:(?:its|the|an?|earlier|previous|previously issued|prior)\s+)*(?:press |news )?release|den(?:y|ies|ied|ying|ial)|misinformation|misleading|fictitious|fictional|impostor|imposter|not (?:issued|authori[sz]ed) by|regulatory update|update on (?:the )?(?:FDA|regulatory|PDUFA|NDA|BLA|sNDA|sBLA)|extend\w* (?:the |its )?(?:FDA |regulatory |PDUFA )?(?:review|goal|action)|(?:PDUFA|goal|action) (?:goal )?date (?:extension|extended|moved|chang\w*|delay\w*)|major amendment)\b/i;
 export const CORRECTS = RETRACTS;
 const CRL_WORDS = /\b(?:complete response|CRL|not approvable)\b/i;
 const APPROVAL_WORDS = /\bFDA\b[^.;]*\bapprov(?:es|ed|al)\b(?!able)|\bapprov(?:es|ed|al)\b[^.;]*\bFDA\b/i;
 // A filing's own prose (Item 7.01 / 8.01, no press release exhibit) says many things in passing ("approved to correct
 // the underlying cause"), so only plain retraction phrases count there (red team 11).
-const BODY_RETRACTS = /\b(?:retract\w*|rescind\w*|erroneous\w*|in error|inadvertent\w*|fabricat\w*|fraudulent|fictitious|fake|false|bogus|forged|hoax\w*|not authentic|did not (?:issue|approve)|not (?:issued|authori[sz]ed) by|has not (?:yet )?(?:been )?(?:approved|received|issued)|not (?:yet )?(?:been )?approved|no (?:FDA |U\.S\. )?(?:decision|approval)|(?:remains|still|continues to be) under (?:FDA |regulatory )?review|(?:correct\w*|withdr[ae]w\w*|amend\w*|revis\w*|supersed\w*|disregard\w*|clarif\w*) (?:\w+ ){0,5}(?:press |news )?release)\b/i;
-const TWIN_BREAK = /\b(?:correction\w*|corrected|correcting|retraction\w*|replac\w*|updat\w*|clarif\w*|amend\w*|revis\w*|withdr[ae]w\w*|rescind\w*|disregard\w*|false|fake|premature\w*|not)\b/i;
+const BODY_RETRACTS = /\b(?:retract\w*|incorrect\w*|inaccura\w*|unauthori[sz]\w*|prematur\w*|misstat\w*|mistaken\w*|wrong\w*|supersed\w*|untrue|den(?:y|ies|ied|ying)|not be relied (?:up)?on|(?:is|was|are|were|been|hereby|being) (?:\w+ ){0,2}withdrawn|has yet to (?:take action|act|approve|decide)|review (?:is|remains) (?:still )?ongoing|rescind\w*|erroneous\w*|in error|inadvertent\w*|fabricat\w*|fraudulent|fictitious|fake|false|bogus|forged|hoax\w*|not authentic|did not (?:issue|approve)|not (?:issued|authori[sz]ed) by|has not (?:yet )?(?:been )?(?:approved|received|issued)|not (?:yet )?(?:been )?approved|no (?:FDA |U\.S\. )?(?:decision|approval)|(?:remains|still|continues to be) under (?:FDA |regulatory )?review|(?:correct\w*|withdr[ae]w\w*|amend\w*|revis\w*|supersed\w*|disregard\w*|clarif\w*) (?:\w+ ){0,5}(?:press |news )?release)\b/i;
+const TWIN_BREAK = /\b(?:statements?|says?|said|claim\w*|reports?|reported|rumou?r\w*|den(?:y|ies|ied|ial)|no|never|\w+n't|cannot|error\w*|mistak\w*|wrong\w*|inaccura\w*|incorrect\w*|untrue|unauthori[sz]\w*|supersed\w*|mislead\w*|misstat\w*|invalid\w*|void\w*|impost\w*|fictitious|correction\w*|corrected|correcting|retraction\w*|replac\w*|updat\w*|clarif\w*|amend\w*|revis\w*|withdr[ae]w\w*|rescind\w*|disregard\w*|false|fake|premature\w*|not)\b/i;
+function isTwin(item, p) {
+  const ph = norm(clean(typeof p.headline === 'string' ? p.headline : '')).toLowerCase();
+  if (ph.length < 20) return false;
+  const bad = x => RETRACTS.test(x) || BODY_RETRACTS.test(x) || (p.kind === 'crl' ? APPROVAL_WORDS : CRL_WORDS).test(x);
+  const rest = x => { const l = norm(clean(x || '')).toLowerCase(), i = l.indexOf(ph); return i < 0 ? null : l.slice(0, i) + ' ' + l.slice(i + ph.length); };
+  const rt = rest(item.title);
+  if (rt === null || bad(rt) || TWIN_BREAK.test(rt)) return false;
+  if (item.ctitle) { const rc = rest(item.ctitle); if (rc === null || bad(rc)) return false; }
+  return true;
+}
 export function corrections(item, armed, pub) {
   const t = norm(clean(item.ctitle || item.title || ''));
   const body = item.cbody === true;
@@ -507,9 +520,6 @@ export function corrections(item, armed, pub) {
   else if (item.channel === 'rss' && onFeedSite(item)) rows = armed.rows.filter(r => (r.feeds || []).includes(item.feed));
   if (!rows.length) return [];
   const flags = amended || (body ? BODY_RETRACTS : RETRACTS).test(t);
-  // The same release again (the 8-K exhibit of a feed release, or the reverse): its own headline states the post's
-  // decision for the drug, so it confirms the post rather than contradicting it (red team 11).
-  const hk = item.title ? headlineKind(item.title).kind : null;
   return rows.filter(r => {
     const p = (pub || {})[r.id];
     if (!p || typeof p !== 'object' || p.status !== 'posted') return false;      // confirmed: the review agreed
@@ -528,16 +538,17 @@ export function corrections(item, armed, pub) {
     const retitled = same && item.channel === 'rss' && typeof p.headline === 'string' && !!item.title
       && norm(clean(item.title)) !== norm(clean(p.headline));
     if (!later && !retitled) return false;
-    if (hk === p.kind && (r.terms || []).some(x => termIn(x, norm(item.title))) && !RETRACTS.test(norm(item.title))) return false;
-    // or its headline carries the post's own headline, with nothing beside it that corrects anything
-    const ph = norm(clean(typeof p.headline === 'string' ? p.headline : '')), it = norm(clean(item.title || ''));
-    if (ph.length >= 20 && it.toLowerCase().includes(ph.toLowerCase())) {
-      const rest = it.slice(0, it.toLowerCase().indexOf(ph.toLowerCase())) + ' ' + it.slice(it.toLowerCase().indexOf(ph.toLowerCase()) + ph.length);
-      if (!BODY_RETRACTS.test(rest) && !TWIN_BREAK.test(rest)) return false;
-    }
+    // The same release again (the 8-K exhibit of a feed release, or the reverse) confirms the post rather than
+    // contradicting it: its headline holds the post's own headline, and nothing beside it, in the headline or in the
+    // text above and at the dateline, says anything was wrong or states the other outcome. An amended filing is never
+    // a twin (red teams 11 and 12).
+    if (!amended && isTwin(item, p)) return false;
     const named = (r.terms || []).some(x => termIn(x, t));
     const others = armed.rows.some(o => o.id !== r.id && (o.terms || []).some(x => termIn(x, t)));
     let opposite = p.kind === 'crl' ? APPROVAL_WORDS.test(t) : CRL_WORDS.test(t);
+    // A new headline that itself states an FDA decision on this drug, and is not the post's own headline again
+    // ("FDA Accelerated Approval" after "FDA Full Approval"): the review decides which stands (red team 12).
+    if (!body && item.title && headlineKind(item.title).kind && (r.terms || []).some(x => termIn(x, norm(item.title)))) opposite = true;
     // in a filing's prose the opposite outcome counts only when the post's own outcome is not also stated
     if (body && opposite && (p.kind === 'crl' ? CRL_WORDS.test(t) : APPROVAL_WORDS.test(t))) opposite = false;
     // An outcome with no drug named ("Receives Complete Response Letter from the FDA") pauses; one naming another
@@ -693,7 +704,8 @@ export function exhibitHeadline(html, companies = []) {
 export function correctionHeadline(html) {
   const rb = rawBlocks(html);
   const dl = dateline(rb.map(b => b.text));
-  return rb.slice(0, dl ? dl.i : Math.min(rb.length, 4)).map(b => b.text).join(' ').slice(0, 600);
+  // the dateline paragraph too: a correction may be stated only there (red team 12)
+  return rb.slice(0, dl ? dl.i + 1 : Math.min(rb.length, 4)).map(b => b.text).join(' ').slice(0, 1200);
 }
 
 /** A filing with no press release exhibit: its Item 7.01 and 8.01 text, up to Item 9.01 (3000 characters), read only for
