@@ -1092,6 +1092,13 @@
    "was": "Aardvark's ARD-101 Phase 3 HERO readout (guided for Q3 2026) was listed as \"window passed, no topline announced\".",
    "now": "Listed as stopped by the company. Aardvark's Oct 23, 2026 release says the HERO trial was terminated early after 67 of 90 planned participants, and that its data are exploratory only.",
    "source": "Aardvark Therapeutics press release, Oct 23, 2026 (GlobeNewswire), and Q3 2026 release, Nov 13, 2026"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/readouts",
+   "was": "12 estimated readout dates were taken from ClinicalTrials.gov trials of a different drug or regimen, or run by a different company, and each showed \"window passed, no topline announced\": WTX-330 (Werewolf), LCAR-B38M (Legend), AXS-14 (Axsome), lifileucel plus pembrolizumab (Iovance), Tavocept (Lantern), Elonva (Organon), NOV-002 (Cellectar), A-101 (Aclaris), CLN-081 (Cullinan), WVE-210201 (Wave), MK-7240 (listed under Thermo Fisher) and 18F-mFBG (listed under Illumina).",
+   "now": "Removed. Each trial's registry record names another drug (for example WTX-124, CLN-619, CLR 131, WVE-006), another regimen (Iovance's trial is a terminated pediatric TIL study, not lifileucel plus pembrolizumab) or another lead sponsor (Merck Sharp & Dohme for MK-7240; Innervate Radiopharmaceuticals, formerly Illumina Radiopharmaceuticals, for 18F-mFBG), so none of these dates was the company's readout. A new check compares every estimated row's drug with its trial before the site is built.",
+   "source": "ClinicalTrials.gov records NCT05479812, NCT06395870, NCT07523048, NCT06566092, NCT05933265, NCT05504720, NCT03478462, NCT07011706, NCT06381141, NCT06405633, NCT06052059 and NCT04724369, read Nov 27, 2026"
   }
  ],
  "legacy": [

@@ -338,52 +338,6 @@ export default [
   "dm": "2026-04"
  },
  {
-  "id": "readout_howl_2026-07-15",
-  "t": "HOWL",
-  "company": "Werewolf Therapeutics, Inc.",
-  "d": "2026-04-15",
-  "dp": "month",
-  "name": "WTX-330",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05479812",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05479812",
-    "status": "completed",
-    "pcd": "2026-04-22",
-    "pcd_type": "actual",
-    "updated": "2026-08-24",
-    "ongoing": false,
-    "title": "A Multicenter Phase I/Ib Dose Escalation and Expansion Study of WTX-124 as Monotherapy and in Combination With Pembrolizumab in Patients With Selected Advanced or Metastatic Solid Tumors"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "date_history": [
-    {
-     "date": "2026-07-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-04-15",
-     "changed": "2026-07-11",
-     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05479812",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "4 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-04"
- },
- {
   "id": "readout_immp_2026-10-15",
   "t": "IMMP",
   "company": "IMMUTEP Ltd",
@@ -1122,41 +1076,6 @@ export default [
     "state": "no_topline",
     "checked": "2026-11-27",
     "searched": "9 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-06"
- },
- {
-  "id": "readout_legn_2026-06-15",
-  "t": "LEGN",
-  "company": "Legend Biotech Corp",
-  "d": "2026-06-15",
-  "dp": "month",
-  "name": "LCAR-B38M CAR-T Cell",
-  "type": "Readout",
-  "ta": "Hematology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06395870",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06395870",
-    "status": "recruiting",
-    "pcd": "2026-06-30",
-    "pcd_type": "estimated",
-    "updated": "2024-11-04",
-    "ongoing": true,
-    "title": "A Phase I, Open-label Clinical Study to Evaluate the Safety, Tolerability, and Efficacy of LUCAR-G39D, a Dual-targeted Cell Preparation Targeting CD19/CD20, in Patients With Relapsed/Refractory B-cell Non-Hodgkin Lymphoma"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06395870",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-06"
@@ -1979,60 +1898,6 @@ export default [
   "dm": "2026-07"
  },
  {
-  "id": "readout_axsm_2026-07-15",
-  "t": "AXSM",
-  "company": "Axsome Therapeutics, Inc.",
-  "d": "2026-08-15",
-  "dp": "month",
-  "name": "AXS-14",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT07523048",
-  "ua": "2026-11-25T21:54:02Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT07523048",
-    "status": "completed",
-    "pcd": "2026-08-24",
-    "pcd_type": "actual",
-    "updated": "2026-11-20",
-    "ongoing": false,
-    "title": "Two-Week, Open-Label, Exploratory Neuroimaging Study Evaluating the Effect of Dextromethorphan-HBr Bupropion-HCl on Striatal Reactivity During Reward Processing in Adults With Major Depressive Disorder"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07523048",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "8 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   },
-   "date_history": [
-    {
-     "date": "2026-07-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-08-15",
-     "changed": "2026-11-25",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT07523048 is now 2026-08-24 (actual; registry status completed, record updated 2026-11-20); the row's window moved from 2026-07 to 2026-08 on 2026-11-25. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "COMPLETED",
-    "primary_completion": "2026-08-24",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT07523048"
-   }
-  },
-  "dm": "2026-08"
- },
- {
   "id": "readout_crdf_2026-07-15",
   "t": "CRDF",
   "company": "Cardiff Oncology, Inc.",
@@ -2247,84 +2112,6 @@ export default [
   "dm": "2026-07"
  },
  {
-  "id": "readout_ilmn_2026-07-15",
-  "t": "ILMN",
-  "company": "Illumina, Inc.",
-  "d": "2026-07-15",
-  "dp": "month",
-  "name": "18F-MFBG",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04724369",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04724369",
-    "status": "completed",
-    "pcd": "2026-07-30",
-    "pcd_type": "actual",
-    "updated": "2026-09-24",
-    "ongoing": false,
-    "title": "A Prospective Phase 3 Multi-center Study to Assess the Efficacy and Safety of 18F-mFBG PET Imaging in Subjects With Neuroblastoma"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04724369",
-   "registry": {
-    "overall_status": "COMPLETED",
-    "primary_completion": "2026-07-30",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT04724369"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   }
-  },
-  "dm": "2026-07"
- },
- {
-  "id": "readout_iova_2026-07-15",
-  "t": "IOVA",
-  "company": "Iovance Biotherapeutics, Inc.",
-  "d": "2026-07-15",
-  "dp": "month",
-  "name": "Lifileucel plus Pembrolizumab",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06566092",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06566092",
-    "status": "active_not_recruiting",
-    "pcd": "2026-07",
-    "pcd_type": "estimated",
-    "updated": "2026-03-31",
-    "ongoing": true,
-    "title": "A Phase 1, Multicenter, Open-label, 2-stage, Single-arm Study to Evaluate the Safety and Tolerability of an Autologous Tumor-infiltrating Lymphocytes (TIL) Regimen and Preliminary Antitumor Activity of TIL in Pediatric, Adolescent, and Young Adult Participants With Relapsed or Refractory Solid Tumors"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06566092",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "20 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-07"
- },
- {
   "id": "readout_jazz_2026-07-15",
   "t": "JAZZ",
   "company": "Jazz Pharmaceuticals plc",
@@ -2401,87 +2188,6 @@ export default [
     "state": "no_topline",
     "checked": "2026-11-27",
     "searched": "8 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   }
-  },
-  "dm": "2026-07"
- },
- {
-  "id": "readout_ltrn_2026-07-15",
-  "t": "LTRN",
-  "company": "Lantern Pharma Inc.",
-  "d": "2026-07-15",
-  "dp": "month",
-  "name": "Tavocept(BNP7787) in combination with cisplatin ",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05933265",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05933265",
-    "status": "active_not_recruiting",
-    "pcd": "2026-07-28",
-    "pcd_type": "estimated",
-    "updated": "2026-04-28",
-    "ongoing": true,
-    "title": "A Phase 1/2 Dose Escalation and Cohort Expansion Study of LP-184 in Patients With Advanced or Metastatic Solid Tumors"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05933265",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "8 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-07"
- },
- {
-  "id": "readout_ogn_2027-10-15",
-  "t": "OGN",
-  "company": "Organon & Co.",
-  "d": "2026-07-15",
-  "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05504720",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05504720",
-    "status": "completed",
-    "pcd": "2026-07-15",
-    "pcd_type": "actual",
-    "updated": "2026-08-06",
-    "ongoing": false,
-    "title": "Pembrolizumab and Trastuzumab in Combination With FLOT in the Perioperative Treatment of HER2-positive, Localized Esophagogastric Adenocarcinoma - A Phase II Trial of the AIO Study Group - PHERFLOT -"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "date_history": [
-    {
-     "date": "2027-10-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-07-15",
-     "changed": "2026-07-11",
-     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05504720",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -3918,41 +3624,6 @@ export default [
   "dm": "2026-04"
  },
  {
-  "id": "readout_clrb_2026-08-15",
-  "t": "CLRB",
-  "company": "Cellectar Biosciences, Inc.",
-  "d": "2026-08-15",
-  "dp": "month",
-  "name": "NOV-002",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT03478462",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT03478462",
-    "status": "active_not_recruiting",
-    "pcd": "2026-08-25",
-    "pcd_type": "estimated",
-    "updated": "2026-03-16",
-    "ongoing": true,
-    "title": "An Open-Label, Dose Escalation, Efficacy, and Safety Study of CLR 131 in Children, Adolescents, and Young Adults With Select Solid Tumors, Lymphoma, and Malignant Brain Tumors"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT03478462",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-08"
- },
- {
   "id": "conf_aasld_2026-11-05",
   "t": "AASLD",
   "company": "AASLD The Liver Meeting",
@@ -4336,49 +4007,6 @@ export default [
     "state": "no_topline",
     "checked": "2026-11-27",
     "searched": "7 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-08"
- },
- {
-  "id": "readout_tmo_2026-08-15",
-  "t": "TMO",
-  "company": "Thermo Fisher Scientific Inc.",
-  "d": "2026-08-15",
-  "dp": "month",
-  "name": "MK-7240",
-  "type": "Readout",
-  "ta": "Immunology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06052059",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06052059",
-    "status": "active_not_recruiting",
-    "pcd": "2026-08-12",
-    "pcd_type": "actual",
-    "updated": "2026-09-25",
-    "ongoing": true,
-    "title": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Program to Evaluate the Efficacy and Safety of MK-7240 in Participants With Moderately to Severely Active Ulcerative Colitis"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06052059",
-   "registry": {
-    "overall_status": "ACTIVE_NOT_RECRUITING",
-    "primary_completion": "2026-08-12",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT06052059"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-08"
@@ -5101,60 +4729,6 @@ export default [
   }
  },
  {
-  "id": "readout_acrs_2026-08-15",
-  "t": "ACRS",
-  "company": "Aclaris Therapeutics, Inc.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "A-101",
-  "type": "Readout",
-  "ta": "Immunology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT07011706",
-  "ua": "2026-10-12T00:26:36Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT07011706",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09-21",
-    "pcd_type": "actual",
-    "updated": "2026-09-28",
-    "ongoing": true,
-    "title": "A Randomized, Double-Blinded, Placebo-Controlled Study to Evaluate the Efficacy and Safety of ATI-045 in Patients With Moderate-to-Severe Atopic Dermatitis"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07011706",
-   "registry": {
-    "overall_status": "ACTIVE_NOT_RECRUITING",
-    "primary_completion": "2026-09-21",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT07011706"
-   },
-   "date_history": [
-    {
-     "date": "2026-08-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-09-15",
-     "changed": "2026-10-11",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT07011706 is now 2026-09-21 (actual; registry status active_not_recruiting, record updated 2026-09-28); the row's window moved from 2026-08 to 2026-09 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   }
-  },
-  "dm": "2026-09"
- },
- {
   "id": "readout_arqt_2026-09-15",
   "t": "ARQT",
   "company": "Arcutis Biotherapeutics Inc.",
@@ -5273,41 +4847,6 @@ export default [
     "state": "no_topline",
     "checked": "2026-11-27",
     "searched": "8 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-09"
- },
- {
-  "id": "readout_cgem_2026-09-15",
-  "t": "CGEM",
-  "company": "Cullinan Therapeutics, Inc.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "CLN-081",
-  "type": "Readout",
-  "ta": "Hematology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06381141",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06381141",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09",
-    "pcd_type": "estimated",
-    "updated": "2025-09-12",
-    "ongoing": true,
-    "title": "A Phase 1b, Multicenter, Open-Label, Study to Investigate the Safety and Efficacy of CLN-619 (Anti-MICA/MICB Antibody) in Patients With Relapsed and Refractory Multiple Myeloma"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06381141",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "14 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -6469,41 +6008,6 @@ export default [
     "state": "no_topline",
     "checked": "2026-11-27",
     "searched": "9 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-09"
- },
- {
-  "id": "readout_wve_2026-09-15",
-  "t": "WVE",
-  "company": "Wave Life Sciences, Inc.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "WVE-210201",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06405633",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06405633",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09",
-    "pcd_type": "estimated",
-    "updated": "2026-04-09",
-    "ongoing": true,
-    "title": "A Phase 1b/2a Open-label Single Ascending Doses (SAD) and Multiple Ascending Doses (MAD) Research Study to Evaluate Safety, Tolerability, Pharmacokinetics and Pharmacodynamics in Participants With AATD Pi*ZZ on WVE-006 (RestorAATion-2)"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06405633",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"

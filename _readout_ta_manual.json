@@ -4464,36 +4464,6 @@
  },
  "nct_mismatch": [
   {
-   "id": "readout_howl_2026-07-15",
-   "row_drug": "WTX-330",
-   "nct": "NCT05479812",
-   "registry_title": "Dose Escalation and Expansion Study of WTX-124 as Monotherapy and in Combination With Pembrolizumab (Pembro) in Patients With Selected Advan"
-  },
-  {
-   "id": "readout_ltrn_2026-07-15",
-   "row_drug": "Tavocept(BNP7787) in combination with cisplatin ",
-   "nct": "NCT05933265",
-   "registry_title": "Study of LP-184 in Patients With Advanced Solid Tumors"
-  },
-  {
-   "id": "readout_ogn_2027-10-15",
-   "row_drug": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
-   "nct": "NCT05504720",
-   "registry_title": "Evaluating Pembrolizumab, Trastuzumab and FLOT as Perioperative Treatment of HER2-positive, Localized Esophagogastric Adenocarcinoma"
-  },
-  {
-   "id": "readout_clrb_2026-08-15",
-   "row_drug": "NOV-002",
-   "nct": "NCT03478462",
-   "registry_title": "Dose Escalation Study of CLR 131 in Pediatric Relapsed/Refractory Malignant Tumors Including Neuroblastoma and Sarcomas"
-  },
-  {
-   "id": "readout_wve_2026-09-15",
-   "row_drug": "WVE-210201",
-   "nct": "NCT06405633",
-   "registry_title": "A Phase 1b/2a, Open-label Single Ascending Doses and Multiple Ascending Doses Study in Participants With Pi*ZZ AATD"
-  },
-  {
    "id": "readout_annx_2026-10-15",
    "row_drug": "Tanruprubart",
    "nct": "NCT06510816",
@@ -4548,12 +4518,6 @@
    "registry_title": "Safety and Efficacy Study of NUV-1511 in Adult Patients With Advanced Solid Tumors"
   },
   {
-   "id": "readout_iova_2026-07-15",
-   "row_drug": "Lifileucel plus Pembrolizumab",
-   "nct": "NCT06566092",
-   "registry_title": "Study of Autologous Tumor-Infiltrating Lymphocytes in Pediatric, Adolescent, and Young Adult Participants"
-  },
-  {
    "id": "readout_iova_2027-04-15",
    "row_drug": "Lifileucel plus Pembrolizumab",
    "nct": "NCT03449108",
@@ -4582,6 +4546,81 @@
    "row_drug": "Niraparib",
    "nct": "NCT05642780",
    "registry_title": "SKB264 in Combination With Pembrolizumab in Subjects With Selected Solid Tumors"
+  }
+ ],
+ "trial_name_ok": [
+  {
+   "id": "readout_calc_2026-07-15",
+   "basis": "Auxora is CalciMedica's brand name for CM4620 (registry title)",
+   "checked": "2026-11-27",
+   "title_name": "Auxora"
+  },
+  {
+   "id": "readout_cccc_2026-09-15",
+   "basis": "Cemsidomide is CFT7455; the registry record NCT04756726 is C4's CFT7455 study",
+   "checked": "2026-11-27"
+  },
+  {
+   "id": "readout_immp_2026-09-15",
+   "basis": "Eftilagimod alfa is IMP321; registry interventions name it",
+   "checked": "2026-11-27"
+  },
+  {
+   "id": "readout_cadl_2027-01-15",
+   "basis": "CAN-3110 is rQNestin34.5v.2 (registry title)",
+   "checked": "2026-11-27",
+   "title_name": "rQNestin34.5v.2"
+  },
+  {
+   "id": "readout_siga_2027-01-15",
+   "basis": "TPOXX is the brand name of tecovirimat (registry title)",
+   "checked": "2026-11-27",
+   "title_name": "TPOXX"
+  },
+  {
+   "id": "readout_aim_2027-04-15",
+   "basis": "Registry interventions for NCT03899987 name rintatolimod (Ampligen)",
+   "checked": "2026-11-27"
+  },
+  {
+   "id": "readout_cldx_2027-04-15",
+   "basis": "Registry interventions for NCT05349890 name CDX-1140; Celldex is a collaborator",
+   "checked": "2026-11-27"
+  },
+  {
+   "id": "readout_ions_2027-06-15",
+   "basis": "AKCEA-APOCIII-LRX is olezarsen (registry title)",
+   "checked": "2026-11-27",
+   "title_name": "AKCEA-APOCIII-LRX"
+  },
+  {
+   "id": "readout_kytx_2027-06-15",
+   "basis": "Registry interventions for NCT06475495 name KYV101; Kyverna is a collaborator",
+   "checked": "2026-11-27"
+  },
+  {
+   "id": "readout_btai_2027-07-15",
+   "basis": "BXCL501 is dexmedetomidine sublingual film, now Teva's (registry title)",
+   "checked": "2026-11-27",
+   "title_name": "BXCL501"
+  },
+  {
+   "id": "readout_maia_2027-09-15",
+   "basis": "THIO is 6-thio-2'-deoxyguanosine (registry title)",
+   "checked": "2026-11-27",
+   "title_name": "THIO"
+  },
+  {
+   "id": "readout_legn_2027-12-15",
+   "basis": "LB1908 is Legend's Claudin 18.2-targeted CAR-T (registry title)",
+   "checked": "2026-11-27",
+   "title_name": "Claudin 18.2"
+  },
+  {
+   "id": "readout_otlk_2027-12-15",
+   "basis": "ONS-5010 is Outlook's ophthalmic bevacizumab (registry title)",
+   "checked": "2026-11-27",
+   "title_name": "ONS-5010"
   }
  ]
 }
