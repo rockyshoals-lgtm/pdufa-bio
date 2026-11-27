@@ -293,6 +293,7 @@ def main():
                        "description": f"{n_ext} FDA PDUFA goal date extensions with the original and extended dates quoted "
                                       "from sponsor documents or FDA records, the reason stated, and the FDA action.",
                        "url": "https://www.pdufa.bio/pdufa-date-changes", "isAccessibleForFree": True,
+                       "license": "https://creativecommons.org/licenses/by/4.0/",
                        "creator": {"@type": "Organization", "name": "pdufa.bio", "url": "https://www.pdufa.bio/"},
                        "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
                                          "contentUrl": f"https://www.pdufa.bio/pdufa-date-changes/{CSV_NAME}"}]},
