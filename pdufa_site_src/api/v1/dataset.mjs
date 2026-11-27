@@ -1559,7 +1559,7 @@ export default [
   "cap": "Large",
   "st": "Decided",
   "url": "/ticker/AZN",
-  "ua": "2026-07-11T15:23:27Z",
+  "ua": "2026-11-27T23:31:30Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04493853",
@@ -1570,7 +1570,9 @@ export default [
     "updated": "2026-05-05",
     "slip": null
    },
-   "indication": "Dephosphorylated Phosphatase and Tensin Homolog (dPTEN) Hormone-Sensitive Prostate Cancer (HSPC)",
+   "indication": "In combination with abiraterone and prednisone, adults with metastatic androgen pathway modulation-naïve or -sensitive (mAPMN/S) prostate cancer (previously referred to as metastatic hormone-sensitive prostate cancer) that is PTEN-deficient as detected by an FDA-authorized test",
+   "indication_short": "PTEN-deficient metastatic hormone-sensitive prostate cancer, with abiraterone and prednisone",
+   "indication_source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-capivasertib-abiraterone-and-prednisone-pten-deficient-androgen-pathway-modulation",
    "market_cap_usd": 570498143397.0,
    "cash_runway_months": 11.41,
    "days_to_decision": -10,

@@ -39,6 +39,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # the build, from one shared function (site_dates.py), never the runner's UTC clock.
 import sys as _sys; _sys.path.insert(0, HERE)
 from site_dates import eastern_today as _eastern_today
+from drug_names import lower_first  # noqa: E402
 
 SITE = os.path.join(HERE, "pdufa_site_src")
 OUT = os.path.join(SITE, "drug")
@@ -291,13 +292,9 @@ and company filings. pdufa.bio is not affiliated with the FDA.</div>
 # the first letter wrote "igA Nephropathy", "parkinson's disease", "sanfilippo syndrome", "thyroid Eye Disease".
 # The label's own lead-in ("In combination with X, adults with ...") moves after the patients; a use that starts
 # with a verb reads "to reduce ..."; a first word is lower-cased only when it is a plain word, not an acronym,
-# an eponym or the start of a title-case name.
+# an eponym or the start of a title-case name (drug_names.lower_first).
 _IND_LEAD = re.compile(r"^(in combination with|with|as monotherapy or in combination with|as an? (?:add-on|adjunct(?:ive)?)"
                        r"(?: (?:therapy|treatment))? to) ([^,;]+), (.+)$", re.I | re.S)
-_IND_EPONYM = re.compile(r"^(?:[A-Z][a-z]+(?:'|&#x27;|\u2019)s\b|[A-Z][a-z]+ (?:disease|syndrome)\b|(?:Alexander|Sanfilippo|"
-                         r"Parkinson|Alzheimer|Crohn|Huntington|Duchenne|Becker|Fabry|Gaucher|Pompe|Hunter|Hurler|Cushing|"
-                         r"Graves|Hodgkin|Kaposi|Castleman|Niemann|Dravet|Lennox|Rett|Angelman|Prader|Hashimoto|"
-                         r"Friedreich|Batten|Stargardt|Leber|Alport|Sj[oö]gren|Waldenstr)\b)")
 _IND_VERBS = {"reduce", "prevent", "treat", "lower", "improve", "increase", "delay", "slow", "maintain", "induce",
               "decrease", "relieve", "control", "manage"}
 
@@ -312,13 +309,7 @@ def indication_clause(i):
         rest = m.group(3)
         head, sep, tail = rest.partition(";")
         t = f"{head.rstrip()}, {lead} {m.group(2).strip()}" + (sep + tail if sep else "")
-    w = t.split(" ")
-    first = w[0] if w else ""
-    second = w[1] if len(w) > 1 else ""
-    plain = first[:1].isupper() and first[1:] == first[1:].lower() and first[1:].replace("-", "").replace("/", "").isalpha()
-    titled = second[:1].isupper() and second[1:2].islower() and second[1:] == second[1:].lower()
-    if plain and not titled and not _IND_EPONYM.match(t):
-        t = first[:1].lower() + t[1:]
+    t = lower_first(t)
     if t.split(" ", 1)[0] in _IND_VERBS:
         t = "to " + t
     return t
