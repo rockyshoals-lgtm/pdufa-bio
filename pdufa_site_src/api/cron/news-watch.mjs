@@ -50,51 +50,60 @@ async function get(url, { ua = UA_SITE, ms = 6000, limit = 1500000, until = Infi
 }
 
 /** A read that keeps the status: {status, txt, url}, or null when nothing came back (a timeout, a network error). */
-async function getStatus(url, { ua = UA_SITE, ms = 6000, limit = 1500000, until = Infinity } = {}) {
+async function getStatus(url, { ua = UA_SITE, ms = 6000, limit = 1500000, until = Infinity, manual = false } = {}) {
   const left = until - Date.now();
   if (left < 500) return null;
   const ac = new AbortController();
   const timer = setTimeout(() => ac.abort(), Math.min(ms, left));
   try {
-    const r = await fetch(url, { headers: { 'User-Agent': ua, Accept: '*/*' }, signal: ac.signal, redirect: 'follow' });
+    // The SEC's contact line never follows a redirect (red team 14): a moved SEC file is answered as moved.
+    const r = await fetch(url, { headers: { 'User-Agent': ua, Accept: '*/*' }, signal: ac.signal, redirect: manual ? 'manual' : 'follow' });
+    if (!r.ok) { try { await r.body?.cancel(); } catch {} }
     return { status: r.status, txt: r.ok ? (await r.text()).slice(0, limit) : '', url: r.url || url };
   } catch { return null; } finally { clearTimeout(timer); }
 }
 
 /** The right-after check (David, 2026-11-27, "Right after"): each post's source is read again in the minute after it
  *  posts, then 30 minutes and 3 hours after, and the post is paused (hidden until the full review confirms it) when the
- *  source no longer says it, is gone, moved to another site, or cannot be read again within five minutes of posting.
- *  Later re-reads that cannot get through (the network, the SEC's rate limit) are tried again each minute for ten
- *  minutes and then skipped; only what the source says, or a source that is gone, pauses a post after the first. */
+ *  source no longer says it, is gone or moved, or (a sponsor's page) cannot be read again within four minutes of the
+ *  first try. An SEC file never changes once filed, so only its removal or what it says pauses a post: the SEC's rate
+ *  limit or a slow minute never does (red team 14). Re-reads that cannot get through are tried each minute for ten
+ *  minutes and then skipped. At most two SEC files and six posts in all are read per run. */
 async function recheckPosts(pub, ua, until, nowMs) {
   const out = {};                                               // id -> fields to set, applied only to a post still up
   const pause = (id, why) => { out[id] = { status: 'paused', paused_at: etIso(nowMs),
     paused_reason: `the right-after check of the source failed: ${why}` }; };
+  let sec = 0;
   const due = Object.entries(pub).filter(([, p]) => p && p.status === 'posted' && Number.isFinite(Number(p.run_ms))
-    && (Number(p.checks) || 0) < RECHECK_AT.length && nowMs - Number(p.run_ms) >= RECHECK_AT[Number(p.checks) || 0]).slice(0, 6);
+    && (Number(p.checks) || 0) < RECHECK_AT.length && nowMs - Number(p.run_ms) >= RECHECK_AT[Number(p.checks) || 0])
+    .filter(([, p]) => (p.source || {}).channel !== 'edgar' || ++sec <= 2).slice(0, 6);
   await Promise.all(due.map(async ([id, p]) => {
-    const n = Number(p.checks) || 0, src = p.source || {};
-    const row = ARMED.rows.find(r => r.id === id);
-    const host = u => { try { return new URL(u).hostname.toLowerCase(); } catch { return ''; } };
-    const edgar = src.channel === 'edgar';
-    if (!row || !/^https:\/\//i.test(String(src.url || '')) || (edgar && host(src.url) !== 'www.sec.gov'))
-      return pause(id, 'the post has no source this check can read');
-    if (edgar && !ua) return;                                   // the SEC is not read without its contact line
-    const got = await getStatus(src.url, { ua: edgar ? ua : UA_SITE, until });
-    const fail = why => {
-      const tries = (Number(p.tries) || 0) + 1;
-      if (n === 0 && nowMs - Number(p.run_ms) >= 5 * 60000) return pause(id, why);
-      if (n > 0 && tries >= 10) { out[id] = { checks: n + 1, tries: 0 }; return; }
-      out[id] = { tries };
-    };
-    if (!got) return fail('the source could not be read again');
-    if (got.status === 404 || got.status === 410) return pause(id, 'the source is no longer at its address');
-    if (got.status < 200 || got.status >= 300) return fail(`the source answered ${got.status}`);
-    if (host(got.url) !== host(src.url) || !/^https:/i.test(got.url)) return pause(id, 'the source now sends readers to another site');
-    const cos = [row.company, ...(row.aliases || [])].filter(Boolean);
-    const r = recheckSource(got.txt, p, row, cos);
-    if (!r.ok) return pause(id, r.why);
-    out[id] = { checks: n + 1, tries: 0, rechecked_at: etIso(nowMs) };
+    try {
+      const n = Number(p.checks) || 0, src = p.source || {};
+      const row = ARMED.rows.find(r => r.id === id);
+      const host = u => { try { return new URL(u).hostname.toLowerCase(); } catch { return ''; } };
+      const edgar = src.channel === 'edgar';
+      const fail = why => {
+        const tries = (Number(p.tries) || 0) + 1, first = Number(p.first_try) > 0 ? Number(p.first_try) : nowMs;
+        if (!edgar && n === 0 && nowMs - first >= 4 * 60000) return pause(id, why);
+        if ((edgar || n > 0) && tries >= 10) { out[id] = { checks: n + 1, tries: 0, first_try: 0 }; return; }
+        out[id] = { tries, first_try: first };
+      };
+      if (!row) return pause(id, 'the drug is no longer on the list this check reads');
+      if (!/^https:\/\//i.test(String(src.url || '')) || (edgar && host(src.url) !== 'www.sec.gov'))
+        return pause(id, 'the post has no source this check can read');
+      if (edgar && !ua) return fail('the SEC is not read without its contact line');
+      const got = await getStatus(src.url, { ua: edgar ? ua : UA_SITE, until, manual: edgar });
+      if (!got) return fail('the source could not be read again');
+      if (got.status === 404 || got.status === 410) return pause(id, 'the source is no longer at its address');
+      if (edgar && got.status >= 300 && got.status < 400) return pause(id, 'the SEC now sends readers to another address');
+      if (got.status < 200 || got.status >= 300) return fail(`the source answered ${got.status}`);
+      if (host(got.url) !== host(src.url) || !/^https:/i.test(got.url)) return pause(id, 'the source now sends readers to another site');
+      const cos = [row.company, ...(row.aliases || [])].filter(Boolean);
+      const r = recheckSource(got.txt, p, row, cos);
+      if (!r.ok) return pause(id, r.why);
+      out[id] = { checks: n + 1, tries: 0, first_try: 0, rechecked_at: etIso(nowMs) };
+    } catch { /* one post's re-read never stops the run; it is tried again next minute */ }
   }));
   return out;
 }

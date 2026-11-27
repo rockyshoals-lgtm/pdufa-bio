@@ -655,9 +655,16 @@ function rawBlocks(html) {
     .replace(/<head\b[\s\S]*?(?:<\/head>|$)/gi, ' ').replace(/<title\b[\s\S]*?(?:<\/title>|$)/gi, ' ')
     .replace(/<(script|style)[\s\S]*?(?:<\/\1>|$)/gi, ' ')
     .replace(/\s+/g, ' ')                                              // a source line break is not a block break
-    .replace(/<br\b[^>]*>/gi, ' ')                                     // a headline broken over two lines stays whole
-    .replace(/<\/?(?:p|div|tr|td|th|h\d|li|table|center|section|article|header|ul|ol|blockquote)\b[^>]*>/gi, '\n');
-  return s.split(/\n+/).map(raw => ({ raw, text: clean(raw) })).filter(b => b.text);
+    .replace(/<br\b[^>]*>/gi, ' ');                                   // a headline broken over two lines stays whole
+  // Each block keeps where it sits in the prepared page (start, end), so the right-after check can read the block
+  // tags around it, whose styles the blocks themselves no longer carry.
+  const out = [], re = /<\/?(?:p|div|tr|td|th|h\d|li|table|center|section|article|header|ul|ol|blockquote)\b[^>]*>/gi;
+  let at = 0, m;
+  const push = (a, b) => { const raw = s.slice(a, b), text = clean(raw); if (text) out.push({ raw, text, start: a, end: b }); };
+  while ((m = re.exec(s))) { push(at, m.index); at = m.index + m[0].length; }
+  push(at, s.length);
+  out.src = s;
+  return out;
 }
 
 function blocks(html) { return rawBlocks(html).map(b => b.text); }
@@ -787,12 +794,14 @@ export function parseFeed(xml) {
 }
 
 // ---------- the right-after check (David, 2026-11-27: "Right after") ----------
+// A correction notice in the paragraph after the dateline (red team 14). Narrow on purpose: "not approved in Europe"
+// in a second paragraph is ordinary news.
+const SECOND_RETRACTS = /\b(?:in error|not be relied (?:up)?on|retract\w*|errat(?:um|a)|incorrect\w*|erroneous\w*|inadvertent\w*|(?:an? |the )?(?:earlier|previous|prior|original) version|correction\s*:|(?:is|was|are|were|has been|have been|hereby) (?:\w+ ){0,2}withdrawn|(?:FDA|agency) (?:has not|did not) (?:yet )?approve)/i;
+// A label right above the headline that marks the release as changed (red team 14).
+const BANNER = /^\s*(?:correction|corrected|retraction|retracted|update|updated|notice|withdrawn|amended|revised|erratum)\b/i;
+// An approval stated outright, for a letter post whose source now says approved (red team 14).
+const SAYS_APPROVED = /\bFDA\b[^.;]{0,80}\b(?:has|have) (?:now )?approved\b|\bapproved by the FDA\b/i;
 
-/** A post goes up as soon as the automatic check of its headline passes; the source is then read again in the next
- *  minute(s), and later, and the post is paused (hidden until the full review) unless the source still says it:
- *  the same headline above the same day's dateline, an opening (the dateline paragraph and the one after it) that
- *  names the drug and states the same outcome, and a dateline paragraph with nothing that walks it back. Returns {ok, why}.
- *  html: the source page as read again; rec: the post; row: its armed row; companies: the sponsor's names. */
 export function recheckSource(html, rec, row, companies = []) {
   const ch = (rec.source || {}).channel;
   if (ch !== 'edgar' && ch !== 'rss') return { ok: false, why: 'the post has no source this check can read' };
@@ -806,21 +815,31 @@ export function recheckSource(html, rec, row, companies = []) {
   if (!Number.isFinite(a) || !Number.isFinite(b) || Math.abs(a - b) > DAY) return { ok: false, why: `the source is now dated ${day}` };
   if (ch === 'edgar' && canon(exhibitHeadline(html, companies)) !== canon(rec.headline || ''))
     return { ok: false, why: 'the exhibit headline has changed' };
+  // From the headline (the last block above the dateline that is the headline) through the paragraph after the
+  // dateline, read in the page itself, block tags and their styles included (red team 14: a struck-out or hidden
+  // paragraph, a hidden old opening, a struck-out headline).
+  const want = canon(rec.headline || '');
+  let h = -1;
+  for (let i = dl.i - 1; i >= 0; i--) if (canon(rb[i].text) === want) { h = i; break; }
+  if (h < 0) return { ok: false, why: 'the source no longer shows the headline above its dateline' };
+  const from = h > 0 ? rb[h - 1].end : 0, to = rb[dl.i + 2] ? rb[dl.i + 2].start : rb.src.length;
+  if (HIDDEN.test(rb.src.slice(from, to)) || rb.slice(h, dl.i + 2).some(x => hiddenMarks(x.raw)))
+    return { ok: false, why: 'the headline or opening has hidden or struck-through text' };
+  // A label right above the headline, or anything between the headline and the dateline, that walks it back.
+  const above = rb.slice(Math.max(0, h - 2), h).filter(x => !SKIP.some(r => r.test(x.text)));
+  if (above.some(x => BANNER.test(x.text) || BODY_RETRACTS.test(x.text)) || rb.slice(h + 1, dl.i).some(x => BODY_RETRACTS.test(x.text)))
+    return { ok: false, why: 'a line around the headline marks the release as changed' };
   const open = rb.slice(dl.i, dl.i + 2);
-  // a struck-through or hidden word in the opening is an edit (red team 5)
-  if (open.some(x => hiddenMarks(x.raw)) || HIDDEN.test(open.map(x => x.raw).join(' '))) return { ok: false, why: 'the opening has hidden or struck-through text' };
-  const lead = open.map(x => x.text).join(' ').slice(0, 2400);
-  const nl = norm(lead);
-  if (!(row && (row.terms || []).some(x => termIn(x, nl)))) return { ok: false, why: 'the opening does not name the drug' };
+  const us = x => norm(x).replace(/\bU\.\s?S\.(?=\s)/g, 'US');          // "the U.S. FDA": the periods end no sentence
+  const lead = us(open.map(x => x.text).join(' ').slice(0, 4000));
+  if (!(row && (row.terms || []).some(x => termIn(x, lead)))) return { ok: false, why: 'the opening does not name the drug' };
   if (!(rec.kind === 'approval' ? APPROVAL_WORDS : CRL_WORDS).test(lead))
     return { ok: false, why: `the opening does not state ${rec.kind === 'approval' ? 'an FDA approval' : 'a complete response letter'}` };
-  // Walk-back words are read in the dateline paragraph alone: the next ones often say, rightly, that the drug is "not
-  // approved" elsewhere or for other uses.
-  const first = open[0].text.slice(0, 1600);
+  const first = us(open[0].text.slice(0, 4000));
   if (BODY_RETRACTS.test(first)) return { ok: false, why: 'the opening holds words that walk the outcome back' };
+  if (open[1] && SECOND_RETRACTS.test(us(open[1].text.slice(0, 4000)))) return { ok: false, why: 'the paragraph after the dateline corrects the release' };
   if (rec.kind === 'approval' && CRL_WORDS.test(first)) return { ok: false, why: 'the opening also mentions a complete response letter' };
+  if (rec.kind === 'crl' && SAYS_APPROVED.test(first)) return { ok: false, why: 'the opening now states an approval' };
   return { ok: true, why: '' };
 }
-
-/** When each re-read is due, from the run that posted: the next minute, then 30 minutes and 3 hours after. */
-export const RECHECK_AT = [60000, 30 * 60000, 3 * 3600000];
+export const RECHECK_AT = [45000, 30 * 60000, 3 * 3600000];

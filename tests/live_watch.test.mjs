@@ -816,5 +816,38 @@ test('the right-after check: the source read again must still say the same thing
   assert.equal(recheckSource(`<h1>${H}</h1><p>${OK}</p>`, fr, r, cos).ok, true);
   assert.equal(recheckSource(`<h1>Mineralys Reports Third Quarter Results</h1><p>${OK}</p>`, fr, r, cos).ok, false);
   assert.match(recheckSource(`<h1>${H}</h1><p>${OK} <s>approved</s></p>`, fr, r, cos).why, /hidden or struck/);
-  assert.deepEqual(RECHECK_AT, [60000, 1800000, 10800000]);
+  assert.deepEqual(RECHECK_AT, [45000, 1800000, 10800000]);
+});
+
+test('the right-after check, red team 14: banners, hidden blocks, second-paragraph corrections, the FDA named in full', () => {
+  const r = ARMED.rows[0];
+  const H = 'Mineralys Therapeutics Announces FDA Approval of Lorundrostat for Hypertension';
+  const D = 'RADNOR, Pa., Dec. 1, 2026 (GLOBE NEWSWIRE) -- Mineralys Therapeutics today announced that ';
+  const OK = D + 'the FDA has approved lorundrostat for adults with hypertension.';
+  const src = ch => ({ channel: ch, url: ch === 'rss' ? 'https://ir.mineralys.com/news/1' : 'https://www.sec.gov/Archives/x/ex99.htm', published_at: '2026-12-01T16:05:00-05:00' });
+  const rec = (o = {}) => ({ id: r.id, kind: 'approval', headline: H, status: 'posted', source: src('rss'), ...o });
+  const cos = [r.company];
+  const ok = (html, o) => assert.deepEqual(recheckSource(html, rec(o), r, cos), { ok: true, why: '' }, html);
+  const bad = (html, re, o) => { const x = recheckSource(html, rec(o), r, cos); assert.equal(x.ok, false, html); assert.match(x.why, re); };
+  // a feed page keeps its menus and furniture above the headline
+  ok(`<nav><ul><li>News</li><li>Investors</li></ul></nav><h1>${H}</h1><p>${OK}</p><p>About Mineralys.</p>`);
+  // a banner above the headline
+  bad(`<p>RETRACTED: This press release was issued in error.</p><h1>${H}</h1><p>${OK}</p>`, /around the headline/);
+  bad(`<p>Correction</p><h1>${H}</h1><p>${OK}</p>`, /around the headline/);
+  // hidden or struck-through at block level
+  bad(`<h1>${H}</h1><p style="text-decoration: line-through">${OK}</p>`, /hidden or struck/);
+  bad(`<h1>${H}</h1><div style="display:none"><p>${OK}</p></div><p>RADNOR, Pa., Dec. 1, 2026 -- withdrawn</p>`, /hidden or struck|does not name|dateline/);
+  bad(`<h1><s>${H}</s></h1><p>${OK}</p>`, /hidden or struck|headline/);
+  // a correction in the paragraph after the dateline
+  bad(`<h1>${H}</h1><p>${OK}</p><p>Correction: the FDA has not approved lorundrostat; the earlier release was issued in error and should not be relied upon.</p>`, /corrects the release/);
+  ok(`<h1>${H}</h1><p>${OK}</p><p>Lorundrostat is not approved in Europe.</p>`);
+  // a letter post whose page now says approved
+  const C = 'Mineralys Therapeutics Receives Complete Response Letter from FDA for Lorundrostat';
+  bad(`<h1>${C}</h1><p>${D}the FDA has approved lorundrostat for hypertension.</p><p>An earlier version of this release incorrectly referred to a complete response letter.</p>`,
+    /states an approval|corrects|does not state/, { kind: 'crl', headline: C });
+  // the FDA named in full is the FDA
+  ok(`<h1>${H}</h1><p>${D}the U.S. Food and Drug Administration has approved lorundrostat for adults with hypertension.</p>`);
+  ok(`<h1>${H}</h1><p>${D}it received approval from the U.S. Food and Drug Administration for lorundrostat in hypertension.</p>`);
+  // an SEC exhibit with a struck-through opening is caught, with either reason
+  bad(`<p>Exhibit 99.1</p><p>${H}</p><p style="text-decoration:line-through">${OK}</p>`, /hidden or struck|no longer reads cleanly/, { source: src('edgar') });
 });
