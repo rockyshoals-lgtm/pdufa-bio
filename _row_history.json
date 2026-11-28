@@ -2,9 +2,9 @@
 "first_sha": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
 "first_ts": "2026-07-26 00:07 ET",
 "first_rows": 388,
-"versions": 519,
-"last_sha": "a16c0ab1cbb613114553653bb0709508523b75e7",
-"last_ts": "2026-11-27 22:26 ET",
+"versions": 521,
+"last_sha": "3b00b5019a22b1318b6f33196f481724048902cd",
+"last_ts": "2026-11-27 22:52 ET",
 "rebuilds": [],
 "changes": [
 {
@@ -38140,6 +38140,30 @@
 "new": "https://www.globenewswire.com/news-release/2026/11/27/3411473/0/en/sol-gel-technologies-to-host-conference-call-to-discuss-top-line-results-from-pivotal-phase-3-clinical-trial-of-sgt-610-in-gorlin-syndrome.html",
 "t": "SLGL",
 "name": "SGT-610 (patidegib gel, 2%) Pivotal Phase 3 top-line",
+"st_was": "Guided",
+"st_now": "Guided"
+},
+{
+"sha": "8f42a2dd44abdfde4a11f3191deee655ef6dee67",
+"ts": "2026-11-27 22:48 ET",
+"id": "readout_qncx_2027-03-31",
+"field": "t",
+"old": "QNCX",
+"new": "IRLA",
+"t": "IRLA",
+"name": "LAM-001 (inhaled rapamycin) Phase 2 data",
+"st_was": "Guided",
+"st_now": "Guided"
+},
+{
+"sha": "8f42a2dd44abdfde4a11f3191deee655ef6dee67",
+"ts": "2026-11-27 22:48 ET",
+"id": "readout_qncx_2027-03-31",
+"field": "company",
+"old": "Quince Therapeutics, Inc.",
+"new": "IRulya Therapeutics Inc. (formerly Quince Therapeutics, QNCX)",
+"t": "IRLA",
+"name": "LAM-001 (inhaled rapamycin) Phase 2 data",
 "st_was": "Guided",
 "st_now": "Guided"
 }

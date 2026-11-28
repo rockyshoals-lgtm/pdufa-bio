@@ -2,9 +2,9 @@
  "about": "Changes to 12 fields (listed under fields) of each row of pdufa.bio's published dataset (/api/v1), read from the site's recorded versions (commit and first_commit/last_commit are each version's id). Times are each version's time in US Eastern. Changes to this site's records, not FDA or company actions. st_was and st_now are the row's status in the earlier and the later version.",
  "first_commit": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
  "first_time_et": "2026-07-26 00:07 ET",
- "last_commit": "a16c0ab1cbb613114553653bb0709508523b75e7",
- "last_time_et": "2026-11-27 22:26 ET",
- "versions": 519,
+ "last_commit": "3b00b5019a22b1318b6f33196f481724048902cd",
+ "last_time_et": "2026-11-27 22:52 ET",
+ "versions": 521,
  "rebuilds": [],
  "fields": {
   "t": "ticker",
@@ -38155,6 +38155,30 @@
    "new": "https://www.globenewswire.com/news-release/2026/11/27/3411473/0/en/sol-gel-technologies-to-host-conference-call-to-discuss-top-line-results-from-pivotal-phase-3-clinical-trial-of-sgt-610-in-gorlin-syndrome.html",
    "t": "SLGL",
    "name": "SGT-610 (patidegib gel, 2%) Pivotal Phase 3 top-line",
+   "st_was": "Guided",
+   "st_now": "Guided"
+  },
+  {
+   "sha": "8f42a2dd44abdfde4a11f3191deee655ef6dee67",
+   "ts": "2026-11-27 22:48 ET",
+   "id": "readout_qncx_2027-03-31",
+   "field": "t",
+   "old": "QNCX",
+   "new": "IRLA",
+   "t": "IRLA",
+   "name": "LAM-001 (inhaled rapamycin) Phase 2 data",
+   "st_was": "Guided",
+   "st_now": "Guided"
+  },
+  {
+   "sha": "8f42a2dd44abdfde4a11f3191deee655ef6dee67",
+   "ts": "2026-11-27 22:48 ET",
+   "id": "readout_qncx_2027-03-31",
+   "field": "company",
+   "old": "Quince Therapeutics, Inc.",
+   "new": "IRulya Therapeutics Inc. (formerly Quince Therapeutics, QNCX)",
+   "t": "IRLA",
+   "name": "LAM-001 (inhaled rapamycin) Phase 2 data",
    "st_was": "Guided",
    "st_now": "Guided"
   }

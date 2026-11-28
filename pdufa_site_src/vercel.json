@@ -2922,6 +2922,11 @@
    "permanent": true
   },
   {
+   "source": "/ticker/QNCX",
+   "destination": "/ticker/IRLA",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -4434,11 +4439,6 @@
   {
    "source": "/drug/xrx",
    "destination": "/ticker/XRTX",
-   "permanent": true
-  },
-  {
-   "source": "/ticker/QNCX",
-   "destination": "/ticker/IRLA",
    "permanent": true
   }
  ],
