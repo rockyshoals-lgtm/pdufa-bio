@@ -822,7 +822,68 @@
    "end": "2027-06-13",
    "city": "Barcelona, ES",
    "focus": "Haematology",
-   "source": "https://ehaweb.org/connect-network/eha2027-congress"
+   "source": "https://ehaweb.org/connect-network/eha2027-congress",
+   "key_dates_source": "https://ehaweb.org/connect-network/eha2027-congress/eha2027-abstract-submission",
+   "key_dates_read": "2026-11-28",
+   "key_dates_page": "EHA2027 abstract submission",
+   "key_dates": [
+    {
+     "when": "January 1, 2027",
+     "iso": "2027-01-01",
+     "kind": "submission_open",
+     "what": "Abstract submission opens"
+    },
+    {
+     "when": "March 1, 2027, 23:59 CET",
+     "iso": "2027-03-01",
+     "kind": "submission_deadline",
+     "what": "Abstract submission deadline"
+    },
+    {
+     "when": "April 23, 2027",
+     "iso": "2027-04-23",
+     "kind": "notify",
+     "what": "Deadline for telling authors how their abstracts were allocated"
+    },
+    {
+     "when": "April 30, 2027",
+     "iso": "2027-04-30",
+     "kind": "submission_open",
+     "what": "Late-breaking abstract submission opens"
+    },
+    {
+     "when": "May 6, 2027, 09:00 CEST",
+     "iso": "2027-05-06",
+     "kind": "lba_deadline",
+     "what": "Late-breaking abstract submission deadline"
+    },
+    {
+     "when": "May 11, 2027, 15:30 CEST",
+     "iso": "2027-05-11",
+     "kind": "release",
+     "what": "Accepted abstracts available online"
+    },
+    {
+     "when": "May 21, 2027",
+     "iso": "2027-05-21",
+     "kind": "notify",
+     "what": "Deadline for telling authors how their late-breaking abstracts were allocated"
+    },
+    {
+     "when": "June 1, 2027, 15:30 CEST",
+     "iso": "2027-06-01",
+     "kind": "lba_release",
+     "what": "Accepted late-breaking abstracts available online"
+    },
+    {
+     "when": "June 10-13, 2027",
+     "iso": "2027-06-10",
+     "kind": "meeting",
+     "what": "EHA2027 Congress, Barcelona, Spain",
+     "source": "https://ehaweb.org/connect-network/eha2027-congress",
+     "source_page": "EHA2027 Congress"
+    }
+   ]
   },
   {
    "code": "EAN",
