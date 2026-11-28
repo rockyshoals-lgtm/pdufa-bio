@@ -121,15 +121,15 @@
 },
 "pdufa_site_src/calendar/index.html": {
 "date": "2026-11-27",
-"hash": "40140cdb69a0c7a7",
+"hash": "425dee2c98e39142",
 "hv": 3,
-"ts": "2026-11-27T20:02:44-05:00"
+"ts": "2026-11-27T21:31:04-05:00"
 },
 "pdufa_site_src/changes/index.html": {
 "date": "2026-11-27",
-"hash": "7bd9f99d95db58f8",
+"hash": "4b63efb1c3359c13",
 "hv": 3,
-"ts": "2026-11-27T20:57:18-05:00"
+"ts": "2026-11-27T21:31:02-05:00"
 },
 "pdufa_site_src/clinical-trial-success-rates/index.html": {
 "date": "2026-11-18",
@@ -139,9 +139,9 @@
 },
 "pdufa_site_src/condition/cancer/index.html": {
 "date": "2026-11-27",
-"hash": "90e28406a221b3c6",
+"hash": "dba81ce65a4ad662",
 "hv": 3,
-"ts": "2026-11-27T20:02:40-05:00"
+"ts": "2026-11-27T21:31:00-05:00"
 },
 "pdufa_site_src/condition/cardiovascular/index.html": {
 "date": "2026-11-27",
@@ -10530,9 +10530,9 @@
 },
 "pdufa_site_src/drug/sgt-610/index.html": {
 "date": "2026-11-27",
-"hash": "fc2845f1f1bbf55d",
+"hash": "849a26ffe302d47d",
 "hv": 3,
-"ts": "2026-11-27T01:44:52-05:00"
+"ts": "2026-11-27T21:31:00-05:00"
 },
 "pdufa_site_src/drug/shingrix/index.html": {
 "date": "2026-11-18",
@@ -18153,9 +18153,9 @@
 },
 "pdufa_site_src/pdufa/MRK-ifinatamab-deruxtecan/index.html": {
 "date": "2026-11-27",
-"hash": "0bfe35c08b0d6b4c",
+"hash": "7dae87f602520ec2",
 "hv": 3,
-"ts": "2026-11-27T20:57:18-05:00"
+"ts": "2026-11-27T21:31:02-05:00"
 },
 "pdufa_site_src/pdufa/MRK-keytruda/index.html": {
 "date": "2026-11-27",
@@ -18736,9 +18736,9 @@
 },
 "pdufa_site_src/readouts/2026/november/index.html": {
 "date": "2026-11-27",
-"hash": "ee444680337f0bb4",
+"hash": "b5ac3d50cad53c9f",
 "hv": 3,
-"ts": "2026-11-27T17:46:21-05:00"
+"ts": "2026-11-27T21:31:02-05:00"
 },
 "pdufa_site_src/readouts/2026/october/index.html": {
 "date": "2026-11-27",
@@ -18826,15 +18826,15 @@
 },
 "pdufa_site_src/readouts/index.html": {
 "date": "2026-11-27",
-"hash": "4a2192cad6f6421c",
+"hash": "c3c0025d365d2f11",
 "hv": 3,
-"ts": "2026-11-27T20:02:42-05:00"
+"ts": "2026-11-27T21:31:02-05:00"
 },
 "pdufa_site_src/readouts/oncology/index.html": {
 "date": "2026-11-27",
-"hash": "40ddf906b99d2c8c",
+"hash": "204fdef6706988cd",
 "hv": 3,
-"ts": "2026-11-27T20:02:42-05:00"
+"ts": "2026-11-27T21:31:02-05:00"
 },
 "pdufa_site_src/readouts/rare-disease/index.html": {
 "date": "2026-11-27",
@@ -18915,15 +18915,15 @@
 },
 "pdufa_site_src/screener/index.html": {
 "date": "2026-11-27",
-"hash": "cea73a9d835c0bed",
+"hash": "0ccd4744e292ff0f",
 "hv": 3,
-"ts": "2026-11-27T20:02:43-05:00"
+"ts": "2026-11-27T21:31:04-05:00"
 },
 "pdufa_site_src/sitemap/index.html": {
 "date": "2026-11-27",
-"hash": "2eb7541673c04ee7",
+"hash": "4e0871e5e758261c",
 "hv": 3,
-"ts": "2026-11-27T20:57:18-05:00"
+"ts": "2026-11-27T21:31:02-05:00"
 },
 "pdufa_site_src/sls/index.html": {
 "date": "2026-11-27",
@@ -21248,9 +21248,9 @@
 },
 "pdufa_site_src/ticker/SLGL/index.html": {
 "date": "2026-11-27",
-"hash": "500c2cd45e12ce76",
+"hash": "d5f0836e550a0cba",
 "hv": 3,
-"ts": "2026-11-27T05:18:52-05:00"
+"ts": "2026-11-27T21:31:03-05:00"
 },
 "pdufa_site_src/ticker/SLN/index.html": {
 "date": "2026-11-27",
@@ -21726,9 +21726,9 @@
 },
 "pdufa_site_src/tickers/index.html": {
 "date": "2026-11-27",
-"hash": "b944299c646b82c1",
+"hash": "309b085507a936d3",
 "hv": 3,
-"ts": "2026-11-27T20:02:44-05:00"
+"ts": "2026-11-27T21:31:04-05:00"
 },
 "pdufa_site_src/vktx/index.html": {
 "date": "2026-11-27",
