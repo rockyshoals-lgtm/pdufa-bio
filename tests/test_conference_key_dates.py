@@ -4,7 +4,7 @@
 WHY (2026-11-28): "asco 2027" sat at Bing position 7.5 with 0 clicks while Copilot cited asco.org for the
 same question. People searching a meeting months ahead want its calendar: when abstracts are due, when the
 titles post, when the embargo lifts. conferences.json now carries that calendar (key_dates) for the editions
-where the organiser's "Dates to Know" page was read, and build_conference_pages.py / build_conference_faq.py
+where the organiser's key dates page ("Dates to Know" at ASCO, "Key Dates" at AACR; key_dates_page) was read, and build_conference_pages.py / build_conference_faq.py
 render it. A wrong date here is worse than none, so this holds:
 
   1. every key_dates list names its source on the organiser's own host and the day it was read;
@@ -61,6 +61,9 @@ def test_conference_key_dates():
             dt.date.fromisoformat(c.get("key_dates_read") or "")
         except ValueError:
             bad.append(f"{tag}: key_dates_read {c.get('key_dates_read')!r} is not a date")
+        pname = c.get("key_dates_page", "Dates to Know")
+        if not isinstance(pname, str) or not (3 <= len(pname) <= 40) or "<" in pname:
+            bad.append(f"{tag}: key_dates_page {pname!r} is not the organiser's page title")
         for k in c["key_dates"]:
             when, what, iso, kind = k.get("when") or "", k.get("what") or "", k.get("iso"), k.get("kind")
             if not when or not what or kind not in KINDS:
@@ -87,6 +90,8 @@ def test_conference_key_dates():
         if f"Key dates for {tag}" not in doc:
             bad.append(f"/conference/{slug(c['code'])}: no Key dates section")
         else:
+            if f">{pname}</a> page" not in doc:
+                bad.append(f"/conference/{slug(c['code'])}: the source note does not name the organiser's {pname!r} page")
             for k in c["key_dates"]:
                 if k["when"] not in doc:
                     bad.append(f"/conference/{slug(c['code'])}: key date {k['when']!r} not shown")
