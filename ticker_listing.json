@@ -1,0 +1,13 @@
+{
+ "_note": "Company listings that changed while pdufa.bio keeps the original ticker as its page address (/ticker/<key>), so old links and search results still land. Each entry is the company's own statement. Read by build_ticker_hubs.py; /ticker/<current> redirects to /ticker/<key> (pdufa_site_src/vercel.json). Guard: tests/test_ticker_listing.py.",
+ "KPTI": {
+  "current": "KPTIQ",
+  "venue": "OTC Pink",
+  "former": "Nasdaq: KPTI",
+  "since": "2026-11-17",
+  "source": "Karyopharm press release, Nov 17, 2026 (PR Newswire), which names the company as Karyopharm Therapeutics Inc. (OTC Pink: KPTIQ); its Nov 4, 2026 release still gave Nasdaq: KPTI",
+  "source_url": "https://www.prnewswire.com/news-releases/karyopharm-announces-fda-acceptance-of-supplemental-new-drug-application-for-xpovio-selinexor-plus-ruxolitinib-for-the-treatment-of-patients-with-myelofibrosis-302941279.html",
+  "context": "On Nov 2, 2026 Karyopharm announced a restructuring support agreement with its lenders and noteholders and a court-supervised sale process, with Ayrmid Ltd. as lead bidder.",
+  "context_url": "https://www.prnewswire.com/news-releases/karyopharm-therapeutics-inc-announces-planned-merger-with-ayrmid-ltd-to-strengthen-company-for-the-future-302926356.html"
+ }
+}

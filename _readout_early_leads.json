@@ -1,11 +1,12 @@
 {
- "_note": "Leads only, never published: a sponsor headline with results language for a trial whose registry window is still ahead. Verify the release is this trial's readout (not an interim, a different stage or a different trial) before a row is changed. Written by resolve_past_readouts.py.",
+ "_note": "Leads only, never published: a sponsor headline with results language for a trial whose registry or company-guided window is still open. Verify the release is this trial's readout (not an interim, a different stage or a different trial) before a row is changed. Written by resolve_past_readouts.py.",
  "checked": "2026-11-27",
- "rows_checked": 68,
+ "rows_checked": 711,
  "leads": [
   {
    "id": "readout_idya_2027-04-15",
    "t": "IDYA",
+   "st": "Estimated",
    "nct": "NCT05907954",
    "window": "2027-04",
    "headline": "IDEAYA Biosciences and Servier Announce Data From Three Clinical Trials at ESMO 2026 Supporting the Potential of Darovasertib to Become a Foundational New Therapy for Patients Across the Treatment Jou",
@@ -16,6 +17,7 @@
   {
    "id": "readout_vktx_2027-07-15",
    "t": "VKTX",
+   "st": "Estimated",
    "nct": "NCT07104500",
    "window": "2027-07",
    "headline": "Viking Therapeutics Announces Positive Topline Results from Maintenance Study of GLP-1/GIP Agonist VK2735 Demonstrating the Promise of Multiple Maintenance Dosing Regimens",
@@ -26,31 +28,12 @@
   {
    "id": "readout_nvcr_2027-08-15",
    "t": "NVCR",
+   "st": "Estimated",
    "nct": "NCT05764954",
    "window": "2027-08",
    "headline": "Novocure Announces Topline Data from the Phase 3 TRIDENT Trial Evaluating Earlier Use of Tumor Treating Fields Therapy in Newly Diagnosed Glioblastoma",
    "date": "2026-06-18",
    "url": "https://www.businesswire.com/news/home/20260618609714/en/Novocure-Announces-Topline-Data-from-the-Phase-3-TRIDENT-Trial-Evaluating-Earlier-Use-of-Tumor-Treating-Fields-Therapy-in-Newly-Diagnosed-Glioblastoma/",
-   "found": "2026-11-27"
-  },
-  {
-   "id": "readout_bhvn_2027-09-15",
-   "t": "BHVN",
-   "nct": "NCT06980649",
-   "window": "2027-09",
-   "headline": "Biohaven Drives New Research in Graves' Disease: Phase 3 Pivotal Trial with BHV-1300 Underway and Three Scientific Posters at the 2026 American Thyroid Association Annual (ATA) Meeting",
-   "date": "2026-11-05",
-   "url": "https://www.prnewswire.com/news-releases/biohaven-drives-new-research-in-graves-disease-phase-3-pivotal-trial-with-bhv-1300-underway-and-three-scientific-posters-at-the-2026-american-thyroid-association-annual-ata-meeting-302930094.html",
-   "found": "2026-11-27"
-  },
-  {
-   "id": "readout_anvs_2027-12-15",
-   "t": "ANVS",
-   "nct": "NCT06709014",
-   "window": "2027-12",
-   "headline": "Annovis Reaches Full Enrollment in Pivotal Phase 3 Trial of Buntanetap for Early Alzheimer's Disease",
-   "date": "2026-07-07",
-   "url": "https://www.globenewswire.com/news-release/2026/07/07/3323032/0/en/annovis-reaches-full-enrollment-in-pivotal-phase-3-trial-of-buntanetap-for-early-alzheimer-s-disease.html",
    "found": "2026-11-27"
   }
  ]

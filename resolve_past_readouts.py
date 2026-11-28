@@ -31,6 +31,7 @@ import re
 import sys
 import time
 import urllib.parse
+import unicodedata
 import urllib.request
 
 try:
@@ -199,6 +200,67 @@ def future_estimate(row):
     return isinstance(blk, dict) and str(blk.get("nct") or "").upper().startswith("NCT")
 
 
+def future_guided(row, today):
+    """2026-11-27: a company-guided readout whose window is still open or ahead and has no recorded outcome. The early
+    pass looked only at registry estimates; a "Q4 2026" row whose topline came out in October stayed "upcoming"
+    until the quarter closed."""
+    if row.get("type") != "Readout" or str(row.get("st") or "") != "Guided":
+        return False
+    if row.get("dp") == "day" or ((row.get("_d") or {}).get("resolution") or {}).get("state"):
+        return False
+    return str(row.get("d") or "") >= today.isoformat()
+
+
+def _as_trial(row):
+    """A guided row has no registry record; its indication and trial name stand in for the registry title, so the
+    headline must still share a disease word with it (see match_release)."""
+    d = row.get("_d") or {}
+    if isinstance(d.get("nct_id"), dict) and d["nct_id"].get("title"):
+        return row
+    t = " ".join(str(d.get(k) or "") for k in ("indication", "trial"))
+    return {**row, "_d": {**d, "nct_id": {"title": t}}}
+
+
+def _fold(text):
+    """Lower-case ASCII ("Sjögren's" -> "sjogren's"), so an accented disease name still matches a headline."""
+    return unicodedata.normalize("NFKD", str(text or "")).encode("ascii", "ignore").decode().lower()
+
+
+# all-caps headline words that are conferences, agencies or terms, not trial names
+NOT_TRIALS = set("""PHASE FDA EMA NMPA PMDA CHMP NICE ASCO ESMO AACR SABCS EULAR AASLD EASL EADV AAAAI CTAD AAIC
+ISTH IDWEEK ACTRIMS ECTRIMS DDW UEGW ERS CHEST ESC AHA ACC ASN ASGCT WCLC JPM NASDAQ NYSE TSX AIM ADR CEO CFO
+NASH MASH COVID HIV AIDS CAR STAT TRUE FALSE DATA""".split())
+
+
+def _trial_names(text):
+    """Trial acronyms (ECLIPSE 2, EMBRACE, BROADEN2) in a row's trial field or a headline, as (word, number)."""
+    out = set()
+    for w, n in re.findall(r"\b([A-Z]{4,})(?:[\s-]?(\d{1,2})\b)?", str(text or "")):
+        if w not in NOT_TRIALS:
+            out.add((w, n or ""))
+    return out
+
+
+def _guided_headline_ok(row, title):
+    """2026-11-27 first wide run: 9 guided-row leads, none real. A guided row has no registry record, so its
+    headline match rests on the company's own words: the headline must name the row's disease (Kymera's BROADEN2
+    atopic dermatitis topline is not its BREADTH asthma readout; BMS's POETYK SLE results are not POETYK SjS), and a
+    headline that names a trial must name this row's trial (Vir's ECLIPSE 1 is not ECLIPSE 2 or 3; Helus's APPROACH
+    is not EMBRACE)."""
+    d = row.get("_d") or {}
+    ind = {w for w in re.findall(r"[a-z]{4,}", _fold(d.get("indication"))) if w not in GENERIC}
+    head = set(re.findall(r"[a-z]{4,}", _fold(title)))
+    mine, named = _trial_names(d.get("trial")), _trial_names(title)
+    if mine and named:
+        if not any((w, n) in named or (not n and any(x[0] == w for x in named)) for w, n in mine):
+            return False
+    # Naming this row's trial stands in for naming the disease only when the name is the whole trial: POETYK
+    # SjS-1's family word POETYK is shared with BMS's POETYK SLE-1 and SLE-2.
+    trial = str(d.get("trial") or "")
+    whole = {(w, n) for w, n in mine if n or not re.search(re.escape(w) + r"\s+[A-Za-z]{2,}-?\d", trial)}
+    return bool(ind & head) or any((w, n) in named or (not n and any(x[0] == w for x in named)) for w, n in whole)
+
+
 def early_leads(rows, key, cache, fetch=None, today=None):
     """2026-11-27: the pass above only looks for a sponsor release once a registry window has PASSED. Humacyte
     reported V012's primary endpoint at a prespecified interim on Jun 10, 2026 and MediciNova reported MN-001's
@@ -210,7 +272,7 @@ def early_leads(rows, key, cache, fetch=None, today=None):
     fetch = fetch or fetch_prs
     today = today or TODAY
     since = (today - dt.timedelta(days=400)).isoformat()
-    todo = [r for r in rows if future_estimate(r)]
+    todo = [r for r in rows if future_estimate(r) or future_guided(r, today)]
     by_tk = {}
     for r in todo:
         by_tk.setdefault(r["t"], []).append(r)
@@ -228,18 +290,30 @@ def early_leads(rows, key, cache, fetch=None, today=None):
         # A lead needs a results word in its headline: the first run (Nov 27) listed "Pivotal Trial ... Underway"
         # and "Reaches Full Enrollment in Pivotal Phase 3 Trial", which the passed-window match tolerates only
         # because a passed window has nothing else to be.
-        hit = match_release(r, [p for p in prs if EARLY_WORDS.search(p[0])], toks, since, multi)
+        start, cand = since, [p for p in prs if EARLY_WORDS.search(p[0])]
+        if r.get("st") == "Guided":
+            if not (r.get("_d") or {}).get("indication"):
+                continue
+            # A release from before the company guided this readout as still to come cannot be it, and neither can
+            # the guiding release itself: Pharming's and ProMIS's quarterly releases that set the timing, Beam's
+            # BEACON topline and AbbVie's INTREPID topline that each guided a LATER, fuller readout (Nov 27 run).
+            filed = str((r.get("_d") or {}).get("guided_filed") or "")[:10]
+            cand = [p for p in cand if (not filed or str(p[2] or "") > filed) and _guided_headline_ok(r, p[0])]
+            start = max(since, filed)
+        hit = match_release(_as_trial(r), cand, toks, start, multi)
         if hit:
-            blk = r["_d"]["nct_id"]
-            leads.append({"id": r["id"], "t": r["t"], "nct": blk.get("nct"), "window": r.get("dm") or str(r.get("d"))[:7],
+            blk = (r["_d"].get("nct_id") if isinstance(r["_d"].get("nct_id"), dict) else None) or {}
+            leads.append({"id": r["id"], "t": r["t"], "st": r.get("st"), "nct": blk.get("nct"),
+                          "window": (r["_d"].get("guided_label") if r.get("st") == "Guided" else None)
+                          or r.get("dm") or str(r.get("d"))[:7],
                           "headline": hit[0][:200], "date": hit[1], "url": hit[2], "found": today.isoformat()})
     out = {"_note": "Leads only, never published: a sponsor headline with results language for a trial whose "
-                    "registry window is still ahead. Verify the release is this trial's readout (not an interim, "
+                    "registry or company-guided window is still open. Verify the release is this trial's readout (not an interim, "
                     "a different stage or a different trial) before a row is changed. Written by "
                     "resolve_past_readouts.py.", "checked": today.isoformat(), "rows_checked": len(todo),
            "leads": leads}
     io.open(EARLY_LEADS, "w", encoding="utf-8").write(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
-    print(f"early-release leads: {len(leads)} of {len(todo)} future-window estimated rows (see _readout_early_leads.json)")
+    print(f"early-release leads: {len(leads)} of {len(todo)} future-window estimated/guided rows (see _readout_early_leads.json)")
     for x in leads:
         print(f"  LEAD {x['id']}: {x['date']} {x['headline'][:120]}")
     return leads
@@ -314,12 +388,14 @@ def main():
             n_none += 1
     print(f"sponsor release found {n_rel}; no topline as of today {n_none}; registry results-posted only {n_reg}; "
           f"terminated/kept {n_skip}")
+    if not a.dry_run:
+        io.open(DATASET, "w", encoding="utf-8").write(src[:i] + json.dumps(rows, indent=1, ensure_ascii=False) + src[j:])
+    # 2026-11-27: the lead pass now covers ~300 sponsors (guided rows too), so it runs AFTER the dataset is written:
+    # a slow FMP day that hits the step's time limit loses only the leads, never the passed-window findings.
     if key and not a.no_early:
         early_leads(rows, key, cache)
     if a.dry_run:
         print("--dry-run: nothing written")
-        return 0
-    io.open(DATASET, "w", encoding="utf-8").write(src[:i] + json.dumps(rows, indent=1, ensure_ascii=False) + src[j:])
     return 0
 
 

@@ -1127,6 +1127,34 @@
    "was": "Truqap (capivasertib) was listed as approved on June 12, 2026 for \"Dephosphorylated Phosphatase and Tensin Homolog (dPTEN) Hormone-Sensitive Prostate Cancer (HSPC)\".",
    "now": "Approved, with abiraterone and prednisone, for adults with metastatic androgen pathway modulation-naïve or -sensitive prostate cancer (previously called metastatic hormone-sensitive prostate cancer) that is PTEN-deficient. The old wording came from a tracker row that expanded \"dPTEN\" wrongly; the indication is now the FDA's own text, also on /drug/truqap.",
    "source": "FDA approval notice, June 12, 2026"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/ticker/ARVN",
+   "was": "Arvinas's VERITAC-3 Phase 3 trial of vepdegestrant plus palbociclib (NCT05909397) was listed as an upcoming readout, estimated December 2026 from the registry.",
+   "now": "Removed. Arvinas said on Jan 10, 2025 that VERITAC-3 \"will not proceed beyond the study lead-in\", so the registry's December 2026 date is the lead-in's, not a Phase 3 readout.",
+   "source": "Arvinas press release, Jan 10, 2025 (company IR site)"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/ticker/RNAC",
+   "was": "Cartesian's Phase 2 trial of Descartes-08 in lupus (SLE, NCT06038474) was listed as an upcoming readout, estimated December 2026 from the registry.",
+   "now": "Removed. On Nov 13, 2025 Cartesian reported early data from 3 patients and said it would pause development of Descartes-08 in SLE, including enrollment in the trial. No readout is guided.",
+   "source": "Cartesian Therapeutics press release, Nov 13, 2025 (GlobeNewswire)"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/ticker/INCY",
+   "was": "Incyte's Phase 3 trial of axatilimab with corticosteroids in chronic GVHD (NCT06585774) was listed as an upcoming readout, estimated September 2027 from the registry.",
+   "now": "Removed as a second listing of one readout. Syndax, which co-develops axatilimab, said on Nov 2, 2026 that it expects topline data from this Phase 3 trial in early 2028; that row stays under SNDX.",
+   "source": "Syndax press release, Nov 2, 2026 (GlobeNewswire)"
+  },
+  {
+   "date": "2026-11-28",
+   "page": "/ticker/KPTI",
+   "was": "Karyopharm's page showed only the ticker KPTI, its former Nasdaq symbol.",
+   "now": "The page now says Karyopharm is listed as KPTIQ on OTC Pink, as its Nov 17, 2026 release states, and /ticker/KPTIQ leads to it. The page keeps the KPTI address so existing links still work.",
+   "source": "Karyopharm press release, Nov 17, 2026 (PR Newswire)"
   }
  ],
  "legacy": [
