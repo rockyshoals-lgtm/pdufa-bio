@@ -10526,37 +10526,6 @@ export default [
   "dm": "2026-12"
  },
  {
-  "id": "readout_arvn_2026-12-15",
-  "t": "ARVN",
-  "company": "Arvinas, Inc.",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "ARV-471",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05909397",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05909397",
-    "status": "active_not_recruiting",
-    "pcd": "2026-12-30",
-    "pcd_type": "estimated",
-    "updated": "2026-02-06",
-    "ongoing": true,
-    "title": "A PHASE 3, RANDOMIZED, OPEN-LABEL, MULTICENTER STUDY OF VEPDEGESTRANT (ARV-471/PF-07850327) PLUS PALBOCICLIB VERSUS LETROZOLE PLUS PALBOCICLIB FOR THE TREATMENT OF PARTICIPANTS WITH ESTROGEN RECEPTOR POSITIVE, HER2 NEGATIVE BREAST CANCER WHO HAVE NOT RECEIVED ANY PRIOR SYSTEMIC ANTI CANCER TREATMENT FOR ADVANCED DISEASE (VERITAC-3)",
-    "brief_title": "Vepdegestrant (ARV-471/PF-07850327) + Palbociclib vs Letrozole + Palbociclib in ER(+)/HER2(-) Advanced Breast Cancer"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05909397"
-  },
-  "dm": "2026-12"
- },
- {
   "id": "readout_bcda_2026-12-15",
   "t": "BCDA",
   "company": "BioCardia, Inc.",
@@ -10784,37 +10753,6 @@ export default [
     "basis": "the release's trial design (Phase 2, randomized, double-blind, placebo-controlled, 40 patients with NAFLD and hypertriglyceridemia associated with T2DM, 24 weeks) matches the registry record, and it reports both registry co-primary measures at Week 24"
    }
   }
- },
- {
-  "id": "readout_rnac_2026-12-15",
-  "t": "RNAC",
-  "company": "Cartesian Therapeutics, Inc.",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "Descartes-08",
-  "type": "Readout",
-  "ta": "Immunology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06038474",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06038474",
-    "status": "active_not_recruiting",
-    "pcd": "2026-12-01",
-    "pcd_type": "estimated",
-    "updated": "2026-03-23",
-    "ongoing": true,
-    "title": "Descartes-08 for Patients With Systemic Lupus Erythematosus",
-    "brief_title": "Descartes-08 for Patients With Systemic Lupus Erythematosus"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06038474"
-  },
-  "dm": "2026-12"
  },
  {
   "id": "readout_sny_2026-12-15",
@@ -15466,43 +15404,6 @@ export default [
   "dm": "2027-09"
  },
  {
-  "id": "readout_incy_2027-09-15",
-  "t": "INCY",
-  "company": "Incyte Corp",
-  "d": "2027-09-15",
-  "dp": "month",
-  "name": "axatilimab",
-  "type": "Readout",
-  "ta": "Immunology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06585774",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06585774",
-    "status": "recruiting",
-    "pcd": "2027-09-28",
-    "pcd_type": "estimated",
-    "updated": "2026-11-12",
-    "ongoing": true,
-    "title": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Study of Axatilimab and Corticosteroids as Initial Treatment for Chronic Graft-Versus-Host Disease (AXemplify-357)",
-    "brief_title": "A Study to Evaluate Axatilimab and Corticosteroids as Initial Treatment for Chronic Graft-Versus-Host Disease"
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06585774",
-   "ta_basis": "ClinicalTrials.gov conditions: Chronic Graft-versus-host-disease",
-   "name_fix": {
-    "checked": "2026-11-17",
-    "was": "Corticosteroids",
-    "why": "the linked ClinicalTrials.gov record tests axatilimab, not Corticosteroids"
-   }
-  },
-  "dm": "2027-09"
- },
- {
   "id": "readout_maia_2027-09-15",
   "t": "MAIA",
   "company": "MAIA Biotechnology, Inc.",
@@ -19450,7 +19351,9 @@ export default [
      "note": "created 2026-11-17 from the company's own statement (press release 2026-11-02)"
     }
    ],
-   "ta_basis": "Company release: indication stated as Chronic GVHD"
+   "ta_basis": "Company release: indication stated as Chronic GVHD",
+   "nct_stated": "NCT06585774",
+   "supersedes_estimate": "readout_incy_2027-09-15"
   }
  },
  {
