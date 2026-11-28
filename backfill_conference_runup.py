@@ -17,8 +17,9 @@ arithmetic. A lead with no such release gets no row (it is not dated some other 
 MEETINGS: conferences.json, conf_study/meetings_extra.json and conf_study/meetings_past.json (past editions, each date
 quoted from the organiser's own page). A lead whose edition has no organiser-dated entry gets no row.
 
-Writes _conference_runup_backfill.json only. Nothing here is published: rows are folded into the study only after a
-red team. Incremental: each lead is read once (again when RULES_VERSION changes). Guard:
+Writes _conference_runup_backfill.json only. conference_runup_added.py publishes its complete rows beside the study
+on every rebuild (since #333), under exactly the rules above, so a lead file is red-teamed before it is merged.
+Incremental: each lead is read once (again when RULES_VERSION changes). Guard:
 tests/test_conference_runup_backfill.py.
 
     python backfill_conference_runup.py [--budget-min 8] [--price-min 3]
