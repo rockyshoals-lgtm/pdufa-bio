@@ -92,21 +92,22 @@ def main():
         # 2026-11-28: the organiser's own abstract calendar, where conferences.json carries it (key_dates, read
         # from the organiser's Dates to Know page). Answered in the organiser's words and precision.
         kd = {k.get("kind"): k for k in (nxt.get("key_dates") or [])} if nxt.get("key_dates_source") else {}
+        pg = lambda r: r.get("source_page") if r.get("source") else (nxt.get('key_dates_page') or 'Dates to Know')
         if "release" in kd:
             r = kd["release"]
             qa.append((f"When are {code} {year} abstracts released?",
-                       f"{r['when']}, according to the organiser's {nxt.get('key_dates_page') or 'Dates to Know'} page: "
+                       f"{r['when']}, according to the organiser's {pg(r)} page: "
                        f"{r['what'][0].lower() + r['what'][1:]}."
                        + (f" Abstract titles post earlier: {kd['titles']['when']}." if "titles" in kd else "")))
         if "lba_release" in kd:
             r = kd["lba_release"]
             qa.append((f"When are {code} {year} late-breaking abstracts released?",
-                       f"{r['when']}, according to the organiser's {nxt.get('key_dates_page') or 'Dates to Know'} page: "
+                       f"{r['when']}, according to the organiser's {pg(r)} page: "
                        f"{r['what'][0].lower() + r['what'][1:]}."))
         if "submission_deadline" in kd:
             r = kd["submission_deadline"]
             qa.append((f"What is the {code} {year} abstract submission deadline?",
-                       f"{r['when']}, according to the organiser's {nxt.get('key_dates_page') or 'Dates to Know'} page."
+                       f"{r['when']}, according to the organiser's {pg(r)} page."
                        + (f" The late-breaking deadline is {kd['lba_deadline']['when']}." if "lba_deadline" in kd else "")))
 
         pres = BC.presenters_for(nxt, presenters) if hasattr(BC, "presenters_for") else []
