@@ -1155,6 +1155,13 @@
    "was": "Karyopharm's page showed only the ticker KPTI, its former Nasdaq symbol.",
    "now": "The page now says Karyopharm is listed as KPTIQ on OTC Pink, as its Nov 17, 2026 release states, and /ticker/KPTIQ leads to it. The page keeps the KPTI address so existing links still work.",
    "source": "Karyopharm press release, Nov 17, 2026 (PR Newswire)"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/ticker/IRLA",
+   "was": "IRulya Therapeutics' Phase 2 LAM-001 readout in bronchiolitis obliterans syndrome (data guided to Q1 2027) was listed under its old name and ticker, Quince Therapeutics (QNCX), so the IRLA page gave a Q1 2028 readout as the company's next catalyst.",
+   "now": "The readout is on the IRLA page, which now gives Q1 2027 as the next catalyst. /ticker/QNCX leads to it. IRulya's stock has traded on Nasdaq as IRLA since Oct 12, 2026.",
+   "source": "Quince Therapeutics press release, Oct 9, 2026 (GlobeNewswire); IRulya press release, Nov 13, 2026"
   }
  ],
  "legacy": [

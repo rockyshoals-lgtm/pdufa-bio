@@ -13934,8 +13934,8 @@ export default [
  },
  {
   "id": "readout_qncx_2027-03-31",
-  "t": "QNCX",
-  "company": "Quince Therapeutics, Inc.",
+  "t": "IRLA",
+  "company": "IRulya Therapeutics Inc. (formerly Quince Therapeutics, QNCX)",
   "d": "2027-03-31",
   "dp": "quarter",
   "name": "LAM-001 (inhaled rapamycin) Phase 2 data",
@@ -13961,7 +13961,20 @@ export default [
    "guided_window": "2027-Q1",
    "guided_label": "first quarter of 2027",
    "readout_described": "Phase 2 data",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Exact sentence on 2026-11-13 IRulya release; BOS = 'Bronchiolitis Obliterans Syndrome Post Lung Transplant'; LAM-001 inhaled rapamycin (sirolimus)."
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Exact sentence on 2026-11-13 IRulya release; BOS = 'Bronchiolitis Obliterans Syndrome Post Lung Transplant'; LAM-001 inhaled rapamycin (sirolimus).",
+   "ticker_history": [
+    {
+     "ticker": "QNCX",
+     "until": "2026-10-11"
+    },
+    {
+     "ticker": "IRLA",
+     "from": "2026-10-12",
+     "changed": "2026-11-27",
+     "source_url": "https://www.globenewswire.com/news-release/2026/10/09/3378039/0/en/quince-therapeutics-relaunches-as-irulya-therapeutics-with-a-focus-on-the-clinical-development-of-lam-001-targeting-a-key-pathway-in-pulmonary-disease.html",
+     "why": "Quince Therapeutics relaunched as IRulya Therapeutics; its common stock trades on Nasdaq as IRLA effective Oct 12, 2026 (company release, Oct 9, 2026)."
+    }
+   ]
   },
   "dm": "2027-03"
  },
