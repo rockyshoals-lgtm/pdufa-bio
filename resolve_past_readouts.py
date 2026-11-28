@@ -31,6 +31,7 @@ import re
 import sys
 import time
 import urllib.parse
+import unicodedata
 import urllib.request
 
 try:
@@ -220,6 +221,46 @@ def _as_trial(row):
     return {**row, "_d": {**d, "nct_id": {"title": t}}}
 
 
+def _fold(text):
+    """Lower-case ASCII ("Sjögren's" -> "sjogren's"), so an accented disease name still matches a headline."""
+    return unicodedata.normalize("NFKD", str(text or "")).encode("ascii", "ignore").decode().lower()
+
+
+# all-caps headline words that are conferences, agencies or terms, not trial names
+NOT_TRIALS = set("""PHASE FDA EMA NMPA PMDA CHMP NICE ASCO ESMO AACR SABCS EULAR AASLD EASL EADV AAAAI CTAD AAIC
+ISTH IDWEEK ACTRIMS ECTRIMS DDW UEGW ERS CHEST ESC AHA ACC ASN ASGCT WCLC JPM NASDAQ NYSE TSX AIM ADR CEO CFO
+NASH MASH COVID HIV AIDS CAR STAT TRUE FALSE DATA""".split())
+
+
+def _trial_names(text):
+    """Trial acronyms (ECLIPSE 2, EMBRACE, BROADEN2) in a row's trial field or a headline, as (word, number)."""
+    out = set()
+    for w, n in re.findall(r"\b([A-Z]{4,})(?:[\s-]?(\d{1,2})\b)?", str(text or "")):
+        if w not in NOT_TRIALS:
+            out.add((w, n or ""))
+    return out
+
+
+def _guided_headline_ok(row, title):
+    """2026-11-27 first wide run: 9 guided-row leads, none real. A guided row has no registry record, so its
+    headline match rests on the company's own words: the headline must name the row's disease (Kymera's BROADEN2
+    atopic dermatitis topline is not its BREADTH asthma readout; BMS's POETYK SLE results are not POETYK SjS), and a
+    headline that names a trial must name this row's trial (Vir's ECLIPSE 1 is not ECLIPSE 2 or 3; Helus's APPROACH
+    is not EMBRACE)."""
+    d = row.get("_d") or {}
+    ind = {w for w in re.findall(r"[a-z]{4,}", _fold(d.get("indication"))) if w not in GENERIC}
+    head = set(re.findall(r"[a-z]{4,}", _fold(title)))
+    mine, named = _trial_names(d.get("trial")), _trial_names(title)
+    if mine and named:
+        if not any((w, n) in named or (not n and any(x[0] == w for x in named)) for w, n in mine):
+            return False
+    # Naming this row's trial stands in for naming the disease only when the name is the whole trial: POETYK
+    # SjS-1's family word POETYK is shared with BMS's POETYK SLE-1 and SLE-2.
+    trial = str(d.get("trial") or "")
+    whole = {(w, n) for w, n in mine if n or not re.search(re.escape(w) + r"\s+[A-Za-z]{2,}-?\d", trial)}
+    return bool(ind & head) or any((w, n) in named or (not n and any(x[0] == w for x in named)) for w, n in whole)
+
+
 def early_leads(rows, key, cache, fetch=None, today=None):
     """2026-11-27: the pass above only looks for a sponsor release once a registry window has PASSED. Humacyte
     reported V012's primary endpoint at a prespecified interim on Jun 10, 2026 and MediciNova reported MN-001's
@@ -246,16 +287,20 @@ def early_leads(rows, key, cache, fetch=None, today=None):
         if not prs or not toks:
             continue
         multi = len([x for x in by_tk[r["t"]] if drug_tokens(x)[:1] == toks[:1]]) > 1
-        start = since
-        if r.get("st") == "Guided":
-            # a release from before the company guided this readout as still to come cannot be that readout
-            start = max(since, str((r.get("_d") or {}).get("guided_filed") or "")[:10])
-            if not (r.get("_d") or {}).get("indication") and not (r.get("_d") or {}).get("trial"):
-                continue
         # A lead needs a results word in its headline: the first run (Nov 27) listed "Pivotal Trial ... Underway"
         # and "Reaches Full Enrollment in Pivotal Phase 3 Trial", which the passed-window match tolerates only
         # because a passed window has nothing else to be.
-        hit = match_release(_as_trial(r), [p for p in prs if EARLY_WORDS.search(p[0])], toks, start, multi)
+        start, cand = since, [p for p in prs if EARLY_WORDS.search(p[0])]
+        if r.get("st") == "Guided":
+            if not (r.get("_d") or {}).get("indication"):
+                continue
+            # A release from before the company guided this readout as still to come cannot be it, and neither can
+            # the guiding release itself: Pharming's and ProMIS's quarterly releases that set the timing, Beam's
+            # BEACON topline and AbbVie's INTREPID topline that each guided a LATER, fuller readout (Nov 27 run).
+            filed = str((r.get("_d") or {}).get("guided_filed") or "")[:10]
+            cand = [p for p in cand if (not filed or str(p[2] or "") > filed) and _guided_headline_ok(r, p[0])]
+            start = max(since, filed)
+        hit = match_release(_as_trial(r), cand, toks, start, multi)
         if hit:
             blk = (r["_d"].get("nct_id") if isinstance(r["_d"].get("nct_id"), dict) else None) or {}
             leads.append({"id": r["id"], "t": r["t"], "st": r.get("st"), "nct": blk.get("nct"),

@@ -152,6 +152,50 @@ def main():
     if gl2:
         bad.append(f"a release before the guidance, or in another disease, must not be a lead: {gl2}")
 
+    # 2026-11-27, first wide run: nine guided-row leads, none real. Each real headline (title and date as listed)
+    # against its row must be dropped, and the same rows' genuine early toplines must still be leads.
+    def guided(tk, prog, trial, ind, filed):
+        return {"id": f"readout_{tk.lower()}_g", "t": tk, "name": prog, "type": "Readout", "st": "Guided",
+                "d": "2027-12-31", "dp": "year", "_d": {"program": prog, "trial": trial, "indication": ind,
+                                                       "guided_filed": filed, "guided_label": "2027"}}
+    false_leads = [
+        (guided("VIR", "Elebsiran", "ECLIPSE 2 (Phase 3)", "chronic hepatitis delta (CHD)", "2026-11-08"),
+         "Vir Biotechnology Announces Primary Endpoint Met in Pivotal Phase 3 ECLIPSE 1 Trial for Elebsiran and "
+         "Tobevibart in Chronic Hepatitis Delta", "2026-11-20"),
+        (guided("HELP", "HLP003", "Phase 3 EMBRACE", "Major depressive disorder", "2026-11-01"),
+         "Helus Pharma Announces Positive Topline Results from Phase 3 APPROACH Study evaluating HLP003 as Adjunctive "
+         "Treatment in Major Depressive Disorder", "2026-11-16"),
+        (guided("KYMR", "KT-621", "BREADTH (Phase 2b)", "Asthma", "2026-10-29"),
+         "Kymera Therapeutics Announces Positive Results from BROADEN2 Phase 2b Clinical Trial of KT-621, a "
+         "First-in-Class, Oral STAT6 Degrader, in Patients with Moderate to Severe Atopic Dermatitis", "2026-11-23"),
+        (guided("BMY", "Deucravacitinib", "Phase 3 POETYK SjS-1", "Sj\u00f6gren's disease", "2026-10-29"),
+         "Bristol Myers Squibb Announces Results from Phase 3 POETYK SLE-1 and POETYK SLE-2 Trials Evaluating "
+         "Sotyktu (deucravacitinib) in Systemic Lupus Erythematosus", "2026-11-25"),
+        (guided("BEAM", "Risto-cel", "BEACON Phase 1/2 (pivotal)", "Sickle cell disease", "2026-11-10"),
+         "Beam Therapeutics Announces Positive Topline Pivotal Data from BEACON Phase 1/2 Trial of Risto-cel in "
+         "Patients with Sickle Cell Disease", "2026-11-10"),
+    ]
+    real_leads = [
+        (guided("VIR", "Elebsiran", "ECLIPSE 2 (Phase 3)", "chronic hepatitis delta (CHD)", "2026-11-08"),
+         "Vir Biotechnology Announces Primary Endpoint Met in Phase 3 ECLIPSE 2 Trial for Elebsiran in Chronic "
+         "Hepatitis Delta", "2026-12-01"),
+        (guided("HELP", "HLP003", "Phase 3 EMBRACE", "Major depressive disorder", "2026-11-01"),
+         "Helus Pharma Announces Positive Topline Results from Phase 3 EMBRACE Study of HLP003 in MDD", "2026-12-01"),
+        (guided("BMY", "Deucravacitinib", "Phase 3 POETYK SjS-1", "Sj\u00f6gren's disease", "2026-10-29"),
+         "Bristol Myers Squibb Announces Topline Results from Phase 3 POETYK SjS-1 Trial of Sotyktu (deucravacitinib) "
+         "in Sj\u00f6gren's Disease", "2026-12-01"),
+    ]
+    for want, cases in ((False, false_leads), (True, real_leads)):
+        for grow, head, day in cases:
+            orig_out, R.EARLY_LEADS = R.EARLY_LEADS, os.devnull
+            try:
+                got = R.early_leads([grow], "k", {}, fetch=lambda *a, **k: [(head, grow["name"].lower(), day, "x")],
+                                    today=dt.date(2026, 11, 27))
+            finally:
+                R.EARLY_LEADS = orig_out
+            if bool(got) != want:
+                bad.append(f"{grow['t']} {grow['_d']['trial']}: {'missed' if want else 'false'} lead from '{head[:70]}'")
+
     if bad:
         print("FAIL -- the past-readout resolver would miss or mis-assign a sponsor's results release:")
         for b in bad:
