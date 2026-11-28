@@ -4283,12 +4283,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/drug/18f-mfbg": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/drug/4d-110": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -4308,12 +4302,6 @@
 "verdict": "NEUTRAL"
 },
 "/drug/6-thio-2-deoxyguanosine": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/drug/a-101": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -4925,12 +4913,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/drug/axs-14": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/azenosertib-denali": {
 "checked": "2026-11-25",
 "crawled": null,
@@ -5520,12 +5502,6 @@
 "verdict": "NEUTRAL"
 },
 "/drug/cln-049": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/drug/cln-081": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -7217,12 +7193,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/drug/lcar-b38m-car-t": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/drug/lenacapavir": {
 "checked": "2026-11-27",
 "crawled": null,
@@ -7553,12 +7523,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/drug/mk-7240": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/mk-8527": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -7836,12 +7800,6 @@
 "verdict": "NEUTRAL"
 },
 "/drug/nivolumab": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/drug/nov-002": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -9275,12 +9233,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/drug/tavocept": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/tebipenem-hbr": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -9935,12 +9887,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/drug/wtx-330": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/wve-006": {
 "checked": "2026-11-25",
 "crawled": null,
@@ -9949,12 +9895,6 @@
 },
 "/drug/wve-007": {
 "checked": "2026-11-25",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/drug/wve-210201": {
-"checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -17015,12 +16955,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/ticker/ACRS": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/ticker/ACRV": {
 "checked": "2026-11-27",
 "crawled": null,
@@ -17987,12 +17921,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/ticker/ILMN": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/ticker/IMA": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -18333,12 +18261,6 @@
 "checked": "2026-11-27",
 "crawled": null,
 "state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/ticker/LTRN": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/ticker/LXEO": {
@@ -19200,12 +19122,6 @@
 "verdict": "NEUTRAL"
 },
 "/ticker/TLX": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/ticker/TMO": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "URL is unknown to Google",
