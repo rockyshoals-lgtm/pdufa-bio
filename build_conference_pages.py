@@ -80,6 +80,39 @@ def hub_exists(tk):
     return bool(tk) and os.path.exists(os.path.join(SITE, "ticker", tk, "index.html"))
 
 
+# 2026-11-28 (Bing: "asco 2027" at position 7.5 with 0 clicks; Copilot cited asco.org, not us): someone searching a
+# meeting's name months ahead wants its calendar: when abstracts are due, when titles post, when the embargo lifts.
+# The organiser publishes those on a "Dates to Know" page; conferences.json now carries them as read there
+# (key_dates, with key_dates_source and key_dates_read), in the organiser's own precision: "Late May 2027" stays
+# that, never turned into a day. Rendered only where the organiser's list was read; nothing is projected.
+def key_dates_html(c, today=None):
+    kd = c.get("key_dates") or []
+    if not kd or not c.get("key_dates_source"):
+        return ""
+    today = today or eastern_today().isoformat()
+    rows = []
+    for k in kd:
+        iso = k.get("iso") or ""
+        passed = bool(iso) and iso < today and k.get("kind") != "meeting"
+        # divs, not a <table>: a table needs a mobile scroll box (tests/test_mobile_layout.py), and two short
+        # stacked lines read better on a phone anyway
+        rows.append(f'<div style="padding:6px 0;border-top:1px solid #1e3a63"><div style="color:#e3ba5e;font-weight:700">'
+                    f'{esc(k["when"])}' + (' <span style="color:#8aa0bf;font-weight:400">(passed)</span>' if passed else '')
+                    + f'</div><div style="color:#cfe0f5">{esc(k["what"])}</div></div>')
+    read = c.get("key_dates_read") or ""
+    try:
+        y, m, d = (int(x) for x in read.split("-"))
+        read_h = f"{MONF[m - 1]} {d}, {y}"
+    except Exception:  # noqa: BLE001
+        read_h = read
+    return (f'<h2>Key dates for {esc(c["code"])} {esc(c["start"][:4])}</h2>'
+            f'<div class="card"><div style="font-size:13.5px">{"".join(rows)}</div>'
+            f'<div class="note" style="margin:8px 0 0">From the organiser\'s '
+            f'<a href="{esc(c["key_dates_source"])}" rel="nofollow noopener" style="color:#6fb6ff">Dates to Know</a> page'
+            + (f', read {esc(read_h)}' if read_h else '') + '. Dates the organiser gives only as a part of a month are '
+            'shown as given, and times are as the organiser states them.</div></div>')
+
+
 def core_html(c, pres, mined):
     code, name, year = c["code"], c["name"], c["start"][:4]
     out = [f'<p class="sub">{esc(short_span(c))} &middot; {esc(c.get("city") or "location per organiser")} &middot; '
@@ -92,8 +125,9 @@ def core_html(c, pres, mined):
            + (f'<div class="kv"><span>Organiser</span><b><a href="{esc(c["source"])}" rel="nofollow noopener" '
               f'style="color:#6fb6ff">{esc(organiser_host(c["source"]))}</a></b></div>'
               if c.get("source") else "")
-           + '</div>',
-           '<h2>Biotech presenters</h2>']
+           + '</div>']
+    out.append(key_dates_html(c))
+    out.append('<h2>Biotech presenters</h2>')
     if pres:
         cards = []
         for r in pres:
@@ -141,12 +175,18 @@ def head_bits(c, pres):
         title = f"{code} {year}: {short_span(c)}" + (f", {city}" if city else "") + ": biotech presenters | pdufa.bio"
     tail = (f"{len(pres)} biotech presenter{'s' if len(pres) != 1 else ''} sourced to company filings."
             if pres else "Biotech presenters listed as companies announce them in filings and releases.")
+    rel = next((k for k in c.get("key_dates") or [] if k.get("kind") == "release"), None)
+    if rel and c.get("key_dates_source"):
+        tail += f" Abstracts released {', '.join(rel['when'].split(', ')[:2])}."
     where = f" in {c.get('city')}" if c.get("city") else ""
     desc = f"{name} ({code}) {year}: {short_span(c)}{where}. {c.get('focus') or 'Medical'} meeting, dates from the organiser. {tail}"
     if len(desc) > 158:
         desc = f"{name} {year}: {short_span(c)}{where}. {tail}"
     if len(desc) > 158:
         desc = f"{code} {year}: {short_span(c)}{where}. {tail}"
+    if len(desc) > 158 and rel and c.get("key_dates_source"):
+        desc = (f"{code} {year}: {short_span(c)}{where}. Abstracts released {', '.join(rel['when'].split(', ')[:2])}. "
+                "Biotech presenters from company filings and releases.")
     ev = {"@context": "https://schema.org", "@type": "Event", "name": f"{name} ({code}) {year}",
           "startDate": c["start"], "endDate": c["end"],
           "eventStatus": "https://schema.org/EventScheduled",
