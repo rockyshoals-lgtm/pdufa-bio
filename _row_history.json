@@ -2,9 +2,9 @@
 "first_sha": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
 "first_ts": "2026-07-26 00:07 ET",
 "first_rows": 388,
-"versions": 514,
-"last_sha": "95dedcfbbfc4ab000ee18bc575a93b4fa3652385",
-"last_ts": "2026-11-27 20:40 ET",
+"versions": 516,
+"last_sha": "da6b9283a7a23918738150cb2e23a08c6da67a43",
+"last_ts": "2026-11-27 21:00 ET",
 "rebuilds": [],
 "changes": [
 {
@@ -38106,6 +38106,42 @@
 "name": "Descartes-08",
 "st_was": "Estimated",
 "st_now": ""
+},
+{
+"sha": "ad3d4fabbad23de1632471282844e97a3a410e28",
+"ts": "2026-11-27 20:54 ET",
+"id": "readout_slgl_2026-12-31",
+"field": "dp",
+"old": "month",
+"new": "day",
+"t": "SLGL",
+"name": "SGT-610 (patidegib gel, 2%) Pivotal Phase 3 top-line",
+"st_was": "Guided",
+"st_now": "Guided"
+},
+{
+"sha": "ad3d4fabbad23de1632471282844e97a3a410e28",
+"ts": "2026-11-27 20:54 ET",
+"id": "readout_slgl_2026-12-31",
+"field": "url",
+"old": "https://www.globenewswire.com/news-release/2026/11/12/3401588/0/en/sol-gel-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+"new": "https://www.globenewswire.com/news-release/2026/11/27/3411473/0/en/sol-gel-technologies-to-host-conference-call-to-discuss-top-line-results-from-pivotal-phase-3-clinical-trial-of-sgt-610-in-gorlin-syndrome.html",
+"t": "SLGL",
+"name": "SGT-610 (patidegib gel, 2%) Pivotal Phase 3 top-line",
+"st_was": "Guided",
+"st_now": "Guided"
+},
+{
+"sha": "ad3d4fabbad23de1632471282844e97a3a410e28",
+"ts": "2026-11-27 20:54 ET",
+"id": "readout_slgl_2026-12-31",
+"field": "source_url",
+"old": "https://www.globenewswire.com/news-release/2026/11/12/3401588/0/en/sol-gel-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+"new": "https://www.globenewswire.com/news-release/2026/11/27/3411473/0/en/sol-gel-technologies-to-host-conference-call-to-discuss-top-line-results-from-pivotal-phase-3-clinical-trial-of-sgt-610-in-gorlin-syndrome.html",
+"t": "SLGL",
+"name": "SGT-610 (patidegib gel, 2%) Pivotal Phase 3 top-line",
+"st_was": "Guided",
+"st_now": "Guided"
 }
 ]
 }

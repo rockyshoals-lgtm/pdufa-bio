@@ -539,6 +539,546 @@
 "state": "Submitted and indexed",
 "verdict": "PASS"
 },
+"/crl/2024": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/april": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/april/12": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/april/16": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/april/17": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/april/19": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/april/20": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/april/21": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/april/22": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/april/5": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/april/8": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/august": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/august/16": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/august/19": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/august/20": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/august/8": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/august/9": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/december": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/december/11": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/december/13": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/december/16": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/december/19": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/december/20": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/december/23": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/december/5": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/february": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/february/22": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/february/26": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/february/27": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/february/9": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/january": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/january/12": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/january/17": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/january/19": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/january/23": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/january/24": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/january/25": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/january/30": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/january/4": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/january/8": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/july": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/july/1": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/july/10": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/july/11": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/july/15": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/july/16": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/july/25": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/july/26": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/june": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/june/12": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/june/13": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/june/14": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/june/18": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/june/26": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/june/27": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/june/28": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march/11": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march/22": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march/25": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march/26": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march/27": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march/29": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march/4": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march/6": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march/7": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/march/8": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/may": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/may/10": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/may/16": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/may/24": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/november": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/november/14": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/november/15": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/november/19": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/november/27": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/november/4": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/october": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/october/10": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/october/21": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/october/22": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/october/25": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/october/29": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/october/7": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/october/8": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/october/9": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/september": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/september/18": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/september/19": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2024/september/30": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/crl/2025": {
 "checked": "2026-11-25",
 "crawled": "2026-11-25",
@@ -551,14 +1091,158 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/crl/2025/april/18": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/april/2": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/april/20": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/april/23": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/april/25": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/april/28": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/april/29": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/april/3": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/crl/2025/august": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/crl/2025/august/1": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/august/18": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/august/19": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/august/27": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/august/28": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/august/5": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/august/6": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/crl/2025/december": {
 "checked": "2026-11-20",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/december/12": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/december/16": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/december/17": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/december/22": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/december/23": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/december/24": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/december/30": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/december/31": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/december/9": {
+"checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -575,14 +1259,128 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/crl/2025/january/15": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/january/16": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/january/17": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/january/3": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/january/31": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/crl/2025/july": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/crl/2025/july/11": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/july/18": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/july/21": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/july/22": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/july/28": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/july/30": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/july/7": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/july/9": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/crl/2025/june": {
 "checked": "2026-11-20",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/june/2": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/june/20": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/june/25": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/june/26": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/june/27": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/june/30": {
+"checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -593,8 +1391,68 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/crl/2025/march/10": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/march/11": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/march/12": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/march/13": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/march/20": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/march/26": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/march/27": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/march/28": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/crl/2025/may": {
 "checked": "2026-11-20",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/may/15": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/may/29": {
+"checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -605,8 +1463,50 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/crl/2025/november/2": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/november/24": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/november/26": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/november/4": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/november/5": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/november/6": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/crl/2025/october": {
 "checked": "2026-11-20",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/2025/october/1": {
+"checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"

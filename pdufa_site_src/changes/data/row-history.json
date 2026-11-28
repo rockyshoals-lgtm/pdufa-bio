@@ -2,9 +2,9 @@
  "about": "Changes to 12 fields (listed under fields) of each row of pdufa.bio's published dataset (/api/v1), read from the site's recorded versions (commit and first_commit/last_commit are each version's id). Times are each version's time in US Eastern. Changes to this site's records, not FDA or company actions. st_was and st_now are the row's status in the earlier and the later version.",
  "first_commit": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
  "first_time_et": "2026-07-26 00:07 ET",
- "last_commit": "95dedcfbbfc4ab000ee18bc575a93b4fa3652385",
- "last_time_et": "2026-11-27 20:40 ET",
- "versions": 514,
+ "last_commit": "da6b9283a7a23918738150cb2e23a08c6da67a43",
+ "last_time_et": "2026-11-27 21:00 ET",
+ "versions": 516,
  "rebuilds": [],
  "fields": {
   "t": "ticker",
@@ -38121,6 +38121,42 @@
    "name": "Descartes-08",
    "st_was": "Estimated",
    "st_now": ""
+  },
+  {
+   "sha": "ad3d4fabbad23de1632471282844e97a3a410e28",
+   "ts": "2026-11-27 20:54 ET",
+   "id": "readout_slgl_2026-12-31",
+   "field": "dp",
+   "old": "month",
+   "new": "day",
+   "t": "SLGL",
+   "name": "SGT-610 (patidegib gel, 2%) Pivotal Phase 3 top-line",
+   "st_was": "Guided",
+   "st_now": "Guided"
+  },
+  {
+   "sha": "ad3d4fabbad23de1632471282844e97a3a410e28",
+   "ts": "2026-11-27 20:54 ET",
+   "id": "readout_slgl_2026-12-31",
+   "field": "url",
+   "old": "https://www.globenewswire.com/news-release/2026/11/12/3401588/0/en/sol-gel-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+   "new": "https://www.globenewswire.com/news-release/2026/11/27/3411473/0/en/sol-gel-technologies-to-host-conference-call-to-discuss-top-line-results-from-pivotal-phase-3-clinical-trial-of-sgt-610-in-gorlin-syndrome.html",
+   "t": "SLGL",
+   "name": "SGT-610 (patidegib gel, 2%) Pivotal Phase 3 top-line",
+   "st_was": "Guided",
+   "st_now": "Guided"
+  },
+  {
+   "sha": "ad3d4fabbad23de1632471282844e97a3a410e28",
+   "ts": "2026-11-27 20:54 ET",
+   "id": "readout_slgl_2026-12-31",
+   "field": "source_url",
+   "old": "https://www.globenewswire.com/news-release/2026/11/12/3401588/0/en/sol-gel-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+   "new": "https://www.globenewswire.com/news-release/2026/11/27/3411473/0/en/sol-gel-technologies-to-host-conference-call-to-discuss-top-line-results-from-pivotal-phase-3-clinical-trial-of-sgt-610-in-gorlin-syndrome.html",
+   "t": "SLGL",
+   "name": "SGT-610 (patidegib gel, 2%) Pivotal Phase 3 top-line",
+   "st_was": "Guided",
+   "st_now": "Guided"
   }
  ]
 }
