@@ -333,8 +333,19 @@ def load_data():
     return fwd, past, name, slugs, readouts, confs
 
 
+def _listing():
+    """2026-11-28: listings that changed while the hub keeps its original address (ticker_listing.json). Karyopharm's
+    Nov 17, 2026 release names it "OTC Pink: KPTIQ"; /ticker/KPTI kept showing only KPTI."""
+    try:
+        d = json.load(open(os.path.join(HERE, 'ticker_listing.json'), encoding='utf-8'))
+    except (OSError, ValueError):
+        return {}
+    return {k: v for k, v in d.items() if not k.startswith('_') and isinstance(v, dict) and v.get('current')}
+
+
 def render(tk, fwd, past, name, slugs, readouts, confs):
     company = name.get(tk, '')
+    lst = _listing().get(tk)
     disp = f'{tk} — {esc(company)}' if company else tk
     pdue = _pastdue().get(tk, {})
     overdue = [c for c in fwd.get(tk, []) if str(c.get('date') or '') in pdue]
@@ -343,6 +354,9 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
     desc = (f'{tk}{" (" + esc(company) + ")" if company else ""} FDA catalyst hub: '
             f'{n_up} upcoming PDUFA/decision page(s) and {n_past} past FDA decision(s) with dates '
             f'and outcomes. Facts only — verify against primary filings.')
+    if lst:   # the current symbol goes first, where search snippets show it
+        desc = (f'{tk}, now {esc(lst["current"])} ({esc(lst["venue"])}){", " + esc(company) if company else ""}: '
+                f'{n_up} upcoming PDUFA/decision page(s), {n_past} past FDA decision(s). Facts only.')
     if len(desc) > 158:      # long company names blow the 160 cap (the /ticker/IRD CI red)
         desc = desc[:158].rsplit(' ', 1)[0].rstrip(',;:') + '.'
     url = f'https://www.pdufa.bio/ticker/{tk}'
@@ -381,6 +395,18 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
     sub.append(f'{n_up} upcoming' if n_up else 'no upcoming catalyst on file')
     sub.append(f'{n_past} past FDA decision{"s" if n_past != 1 else ""}')
     out.append(f'<div class="sub">{" · ".join(sub)}</div>')
+    if lst:
+        su = str(lst.get('source_url') or '')
+        src = f'<a href="{esc(su)}" rel="nofollow noopener">company release</a>' if su.startswith('https://') else 'company release'
+        # "since" is the first company statement of the new listing, not the day the listing moved
+        line = (f'Now listed as <b>{esc(lst["current"])}</b> ({esc(lst["venue"])}), per the {pretty(lst["since"])} '
+                f'{src}; formerly {esc(lst.get("former") or tk)}. This page keeps the {tk} address.')
+        cu = str(lst.get('context_url') or '')
+        if lst.get('context'):
+            ctx = esc(lst['context']).rstrip('.')
+            line += ' ' + ctx + (f' (<a href="{esc(cu)}" rel="nofollow noopener">release</a>)'
+                                 if cu.startswith('https://') else '') + '.'
+        out.append(f'<p class="sub" data-listing="{esc(lst["current"])}">{line}</p>')
 
     # Upcoming — driven by the CURRENT SLATE, not the /pdufa slug directories.
     # The slug dirs are stale static pages: a swept/decided catalyst (e.g. MRK-keytruda, approved

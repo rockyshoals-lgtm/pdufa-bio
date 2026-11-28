@@ -1148,6 +1148,13 @@
    "was": "Incyte's Phase 3 trial of axatilimab with corticosteroids in chronic GVHD (NCT06585774) was listed as an upcoming readout, estimated September 2027 from the registry.",
    "now": "Removed as a second listing of one readout. Syndax, which co-develops axatilimab, said on Nov 2, 2026 that it expects topline data from this Phase 3 trial in early 2028; that row stays under SNDX.",
    "source": "Syndax press release, Nov 2, 2026 (GlobeNewswire)"
+  },
+  {
+   "date": "2026-11-28",
+   "page": "/ticker/KPTI",
+   "was": "Karyopharm's page showed only the ticker KPTI, its former Nasdaq symbol.",
+   "now": "The page now says Karyopharm is listed as KPTIQ on OTC Pink, as its Nov 17, 2026 release states, and /ticker/KPTIQ leads to it. The page keeps the KPTI address so existing links still work.",
+   "source": "Karyopharm press release, Nov 17, 2026 (PR Newswire)"
   }
  ],
  "legacy": [
