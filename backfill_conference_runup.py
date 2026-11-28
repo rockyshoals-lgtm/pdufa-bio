@@ -41,6 +41,7 @@ LEADS_DRIVE = os.path.join(HERE, "conf_study", "conference_backfill_leads_drive_
 PAST = os.path.join(HERE, "conf_study", "meetings_past.json")
 CACHE = os.path.join(HERE, "_conference_runup_backfill.json")
 CUTOFF = "2026-06-05"     # the published study stops 2026-06-04; later rows belong to the additions
+NO_MEETING = "no organiser-dated meeting before the cut-off"
 FIELDS = ("runup_30d", "runup_20d", "runup_10d", "runup_5d", "event_day", "post_5d", "post_10d")
 
 
@@ -136,6 +137,12 @@ def main():
     cache = json.load(io.open(CACHE, encoding="utf-8")) if os.path.exists(CACHE) else {}
     same_rules = cache.get("rules_version") == X.RULES_VERSION
     done = cache.get("done", {}) if same_rules else {}
+    for k, why in list(done.items()):                # an edition dated since the lead was settled: read it again
+        if why == NO_MEETING:
+            _, conf, yr = k.split("|")
+            m = mk.get((conf, yr))
+            if m is not None and m["start"] < CUTOFF:
+                done.pop(k)
     nm = names()
     rows, dropped = {}, 0
     for r in cache.get("rows", []):
@@ -159,7 +166,7 @@ def main():
             continue
         m = mk.get((conf, yr))
         if m is None or m["start"] >= CUTOFF:
-            done[k] = "no organiser-dated meeting before the cut-off"
+            done[k] = NO_MEETING
             continue
         if not owns(m):
             # EULAR 2026 ran Jun 3-6: CGEM's first release came Jun 6, after the study stops, and failed the
