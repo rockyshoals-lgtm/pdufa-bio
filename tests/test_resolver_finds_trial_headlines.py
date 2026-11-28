@@ -124,6 +124,33 @@ def main():
         bad.append(f"an early primary-endpoint release must be listed as a lead for its future-window row: {leads}")
     if json.dumps(huma, sort_keys=True) != before:
         bad.append("the early-lead pass must never change a row")
+    # 2026-11-27: company-guided rows with an open window get the same lead pass. A release from before the company
+    # guided the readout as still to come is not it, and the headline must share a word with the row's indication.
+    gd = {"id": "readout_zzzz_2026-12-31", "t": "ZZZZ", "name": "Zentamab Phase 2 topline", "type": "Readout",
+          "st": "Guided", "d": "2026-12-31", "dp": "quarter",
+          "_d": {"program": "Zentamab", "indication": "generalized myasthenia gravis", "trial": "ZEN-201 Phase 2",
+                 "guided_filed": "2026-08-05", "guided_label": "fourth quarter of 2026"}}
+    gprs = [("Zentamab Reports Positive Topline Results from Phase 2 Trial in Generalized Myasthenia Gravis",
+             "zentamab", "2026-10-20", "g-hit"),
+            ("Zentamab Reports Positive Topline Results from Phase 1 Trial in Generalized Myasthenia Gravis",
+             "zentamab", "2026-07-01", "g-before-guidance"),
+            ("Zentamab Reports Positive Topline Results in Immune Thrombocytopenia",
+             "zentamab", "2026-11-01", "g-other-disease")]
+    orig_out, R.EARLY_LEADS = R.EARLY_LEADS, os.devnull
+    try:
+        gl = R.early_leads([gd], "k", {}, fetch=lambda *a, **k: gprs, today=dt.date(2026, 11, 27))
+    finally:
+        R.EARLY_LEADS = orig_out
+    if [x.get("url") for x in gl] != ["g-hit"]:
+        bad.append(f"a guided Q4 row's in-window topline release must be its one lead: {gl}")
+    gl2 = None
+    orig_out, R.EARLY_LEADS = R.EARLY_LEADS, os.devnull
+    try:
+        gl2 = R.early_leads([gd], "k", {}, fetch=lambda *a, **k: gprs[1:], today=dt.date(2026, 11, 27))
+    finally:
+        R.EARLY_LEADS = orig_out
+    if gl2:
+        bad.append(f"a release before the guidance, or in another disease, must not be a lead: {gl2}")
 
     if bad:
         print("FAIL -- the past-readout resolver would miss or mis-assign a sponsor's results release:")
