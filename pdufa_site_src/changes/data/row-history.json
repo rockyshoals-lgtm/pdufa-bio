@@ -2,9 +2,9 @@
  "about": "Changes to 12 fields (listed under fields) of each row of pdufa.bio's published dataset (/api/v1), read from the site's recorded versions (commit and first_commit/last_commit are each version's id). Times are each version's time in US Eastern. Changes to this site's records, not FDA or company actions. st_was and st_now are the row's status in the earlier and the later version.",
  "first_commit": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
  "first_time_et": "2026-07-26 00:07 ET",
- "last_commit": "621478942c45f0f7d46e84dd051cb65538417728",
- "last_time_et": "2026-11-27 18:55 ET",
- "versions": 510,
+ "last_commit": "4e7f50cf6016bf15b9ed77f87a4be436c3f0ab78",
+ "last_time_et": "2026-11-27 20:05 ET",
+ "versions": 513,
  "rebuilds": [],
  "fields": {
   "t": "ticker",
@@ -38085,6 +38085,42 @@
    "name": "MN-001 (tipelukast)",
    "st_was": "Estimated",
    "st_now": "Reported"
+  },
+  {
+   "sha": "650d7255d90c02d94e527ab857c629c6a2a6c61b",
+   "ts": "2026-11-27 19:39 ET",
+   "id": "readout_arvn_2026-12-15",
+   "field": "row",
+   "old": "",
+   "new": "left",
+   "t": "ARVN",
+   "name": "ARV-471",
+   "st_was": "Estimated",
+   "st_now": ""
+  },
+  {
+   "sha": "650d7255d90c02d94e527ab857c629c6a2a6c61b",
+   "ts": "2026-11-27 19:39 ET",
+   "id": "readout_incy_2027-09-15",
+   "field": "row",
+   "old": "",
+   "new": "left",
+   "t": "INCY",
+   "name": "axatilimab",
+   "st_was": "Estimated",
+   "st_now": ""
+  },
+  {
+   "sha": "650d7255d90c02d94e527ab857c629c6a2a6c61b",
+   "ts": "2026-11-27 19:39 ET",
+   "id": "readout_rnac_2026-12-15",
+   "field": "row",
+   "old": "",
+   "new": "left",
+   "t": "RNAC",
+   "name": "Descartes-08",
+   "st_was": "Estimated",
+   "st_now": ""
   }
  ]
 }

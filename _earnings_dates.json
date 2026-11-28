@@ -1,5 +1,5 @@
 {
-"fetched": "2026-11-28T00:12:34Z",
+"fetched": "2026-11-28T01:18:37Z",
 "from": "2024-01-01",
 "parser_version": 6,
 "tickers": {
@@ -42729,14 +42729,16 @@
 "tracked": true
 },
 "RDY": {
+"backfilled": "2026-11-28",
 "name": "Dr. Reddy's Laboratories Limited",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "REGN": {
+"backfilled": "2026-11-28",
 "name": "Regeneron Pharmaceuticals Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "8:30 a.m. ET",
@@ -43002,14 +43004,16 @@
 "tracked": true
 },
 "REPL": {
+"backfilled": "2026-11-28",
 "name": "Replimune Group, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "RGNX": {
+"backfilled": "2026-11-28",
 "name": "REGENXBIO Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -43135,14 +43139,16 @@
 "tracked": true
 },
 "RHHBY": {
+"backfilled": "2026-11-28",
 "name": "Roche Holding AG",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "RIGL": {
+"backfilled": "2026-11-28",
 "name": "Rigel Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -43436,8 +43442,9 @@
 "tracked": true
 },
 "RLAY": {
+"backfilled": "2026-11-28",
 "name": "Relay Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -43717,8 +43724,9 @@
 "tracked": true
 },
 "RNAC": {
+"backfilled": "2026-11-28",
 "name": "Cartesian Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -43784,14 +43792,16 @@
 "tracked": true
 },
 "RNAZ": {
+"backfilled": "2026-11-28",
 "name": "Transcode Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "RNXT": {
+"backfilled": "2026-11-28",
 "name": "RenovoRx",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -43861,14 +43871,89 @@
 "tracked": true
 },
 "ROIV": {
+"backfilled": "2026-11-28",
 "name": "Roivant Sciences Ltd.",
-"read": "2026-11-27",
-"releases": [],
+"read": "2026-11-28",
+"releases": [
+{
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "Fourth Quarter and Fiscal Year Ended March 31, 2024",
+"period_key": "FY2024Q4",
+"published_et": "2024-05-16 16:05",
+"report_date": "2024-05-30",
+"site": "globenewswire.com",
+"stem": "Roivant",
+"timing": null,
+"timing_words": null,
+"title": "Roivant to Report Financial Results for the Fourth Quarter and Fiscal Year Ended March 31, 2024, and Provide Business Update on Thursday, May 30, 2024",
+"url": "https://www.globenewswire.com/news-release/2024/05/16/2883858/34323/en/Roivant-to-Report-Financial-Results-for-the-Fourth-Quarter-and-Fiscal-Year-Ended-March-31-2024-and-Provide-Business-Update-on-Thursday-May-30-2024.html"
+},
+{
+"kind": "results",
+"period": "Fourth Quarter and Fiscal Year Ended March 31, 2024",
+"period_key": "FY2024Q4",
+"published_et": "2024-05-30 07:00",
+"site": "globenewswire.com",
+"stem": "Roivant",
+"title": "Roivant Reports Financial Results for the Fourth Quarter and Fiscal Year Ended March 31, 2024, and Provides Business Update",
+"url": "https://www.globenewswire.com/news-release/2024/05/30/2890597/34323/en/Roivant-Reports-Financial-Results-for-the-Fourth-Quarter-and-Fiscal-Year-Ended-March-31-2024-and-Provides-Business-Update.html"
+},
+{
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "Fourth Quarter and Fiscal Year Ended March 31, 2025",
+"period_key": "FY2025Q4",
+"published_et": "2025-05-15 16:10",
+"report_date": "2025-05-29",
+"site": "globenewswire.com",
+"stem": "Roivant",
+"timing": null,
+"timing_words": null,
+"title": "Roivant to Report Financial Results for the Fourth Quarter and Fiscal Year Ended March 31, 2025 and Provide Business Update on Thursday, May 29, 2025",
+"url": "https://www.globenewswire.com/news-release/2025/05/15/3082655/34323/en/Roivant-to-Report-Financial-Results-for-the-Fourth-Quarter-and-Fiscal-Year-Ended-March-31-2025-and-Provide-Business-Update-on-Thursday-May-29-2025.html"
+},
+{
+"kind": "results",
+"period": "Fourth Quarter and Fiscal Year Ended March 31, 2025",
+"period_key": "FY2025Q4",
+"published_et": "2025-05-29 07:00",
+"site": "globenewswire.com",
+"stem": "Roivant",
+"title": "Roivant Reports Financial Results for the Fourth Quarter and Fiscal Year Ended March 31, 2025, and Provides Business Update",
+"url": "https://www.globenewswire.com/news-release/2025/05/29/3090172/34323/en/Roivant-Reports-Financial-Results-for-the-Fourth-Quarter-and-Fiscal-Year-Ended-March-31-2025-and-Provides-Business-Update.html"
+},
+{
+"call_time": "8:00 a.m. ET",
+"kind": "schedule",
+"period": "Fourth Quarter and Fiscal Year Ended March 31, 2026",
+"period_key": "FY2026Q4",
+"published_et": "2026-05-11 16:05",
+"report_date": "2026-05-20",
+"site": "globenewswire.com",
+"stem": "Roivant",
+"timing": null,
+"timing_words": null,
+"title": "Roivant to Report Financial Results for the Fourth Quarter and Fiscal Year Ended March 31, 2026 and Provide Business Update on Wednesday, May 20, 2026",
+"url": "https://www.globenewswire.com/news-release/2026/05/11/3292332/34323/en/roivant-to-report-financial-results-for-the-fourth-quarter-and-fiscal-year-ended-march-31-2026-and-provide-business-update-on-wednesday-may-20-2026.html"
+},
+{
+"kind": "results",
+"period": "Fourth Quarter and Fiscal Year Ended March 31, 2026",
+"period_key": "FY2026Q4",
+"published_et": "2026-05-20 07:00",
+"site": "globenewswire.com",
+"stem": "Roivant",
+"title": "Roivant Reports Financial Results for the Fourth Quarter and Fiscal Year Ended March 31, 2026 and Provides Business Update",
+"url": "https://www.globenewswire.com/news-release/2026/05/20/3298334/34323/en/Roivant-Reports-Financial-Results-for-the-Fourth-Quarter-and-Fiscal-Year-Ended-March-31-2026-and-Provides-Business-Update.html"
+}
+],
 "tracked": true
 },
 "RPRX": {
+"backfilled": "2026-11-28",
 "name": "Royalty Pharma plc",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "8:00 a.m. ET",
@@ -44142,8 +44227,9 @@
 "tracked": true
 },
 "RTSN": {
+"backfilled": "2026-11-28",
 "name": "Retension Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -44159,8 +44245,9 @@
 "tracked": true
 },
 "RVMD": {
+"backfilled": "2026-11-28",
 "name": "Revolution Medicines, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -44454,8 +44541,9 @@
 "tracked": true
 },
 "RXRX": {
+"backfilled": "2026-11-28",
 "name": "Recursion Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -44668,6 +44756,16 @@
 "url": "https://www.globenewswire.com/news-release/2026/04/29/3283673/0/en/Recursion-to-Report-First-Quarter-2026-Business-Updates-and-Financial-Results-on-May-6.html"
 },
 {
+"kind": "results",
+"period": "first quarter ended March 31, 2026",
+"period_key": "2026Q1",
+"published_et": "2026-05-06 06:30",
+"site": "globenewswire.com",
+"stem": "Recursion",
+"title": "Recursion Reports First Quarter Financial Results and Provides Business Update",
+"url": "https://www.globenewswire.com/news-release/2026/05/06/3288617/0/en/Recursion-Reports-First-Quarter-Financial-Results-and-Provides-Business-Update.html"
+},
+{
 "call_time": "8:00 a.m. ET",
 "kind": "schedule",
 "period": "Second Quarter 2026",
@@ -44695,8 +44793,9 @@
 "tracked": true
 },
 "RYTM": {
+"backfilled": "2026-11-28",
 "name": "Rhythm Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -44962,8 +45061,9 @@
 "tracked": true
 },
 "SABS": {
+"backfilled": "2026-11-28",
 "name": "SAB Biotherapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -45057,8 +45157,9 @@
 "tracked": true
 },
 "SANA": {
+"backfilled": "2026-11-28",
 "name": "Sana Biotechnology, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -45124,14 +45225,16 @@
 "tracked": true
 },
 "SCNLF": {
+"backfilled": "2026-11-28",
 "name": "Scancell Holdings plc",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "SCTX": {
+"backfilled": "2026-11-28",
 "name": "Scribe Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -45157,8 +45260,9 @@
 "tracked": true
 },
 "SCYX": {
+"backfilled": "2026-11-28",
 "name": "Scynexis Inc",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -45264,8 +45368,9 @@
 "tracked": true
 },
 "SEPN": {
+"backfilled": "2026-11-28",
 "name": "Septerna, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -45351,8 +45456,9 @@
 "tracked": true
 },
 "SER": {
+"backfilled": "2026-11-28",
 "name": "Serina Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -45468,8 +45574,9 @@
 "tracked": true
 },
 "SGMT": {
+"backfilled": "2026-11-28",
 "name": "Sagimet Biosciences Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -45555,8 +45662,9 @@
 "tracked": true
 },
 "SIGA": {
+"backfilled": "2026-11-28",
 "name": "Siga Technologies Inc",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "4:30 p.m. ET",
@@ -45796,8 +45904,9 @@
 "tracked": true
 },
 "SION": {
+"backfilled": "2026-11-28",
 "name": "Sionna Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -45883,8 +45992,9 @@
 "tracked": true
 },
 "SKYE": {
+"backfilled": "2026-11-28",
 "name": "Skye Bioscience, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -46002,8 +46112,9 @@
 "tracked": true
 },
 "SLDB": {
+"backfilled": "2026-11-28",
 "name": "Solid Biosciences Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -46119,8 +46230,9 @@
 "tracked": true
 },
 "SLGL": {
+"backfilled": "2026-11-28",
 "name": "Sol-Gel Technologies Ltd.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -46226,8 +46338,9 @@
 "tracked": true
 },
 "SLN": {
+"backfilled": "2026-11-28",
 "name": "Silence Therapeutics plc",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "8:00 a.m. ET",
@@ -46347,8 +46460,9 @@
 "tracked": true
 },
 "SLNO": {
+"backfilled": "2026-11-28",
 "name": "Soleno Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -46428,8 +46542,9 @@
 "tracked": true
 },
 "SLS": {
+"backfilled": "2026-11-28",
 "name": "SELLAS Life Sciences Group, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -46535,8 +46650,9 @@
 "tracked": true
 },
 "SMMT": {
+"backfilled": "2026-11-28",
 "name": "Summit Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "9:00 a.m. ET",
@@ -46567,6 +46683,16 @@
 "url": "https://www.businesswire.com/news/home/20240214959630/en/Summit-Therapeutics-to-Host-Fourth-Quarter-Full-Year-2023-Financial-Results-Operational-Progress-Call-on-February-20-2024/"
 },
 {
+"kind": "results",
+"period": "Fourth Quarter and Year Ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"published_et": "2024-02-20 07:00",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Financial Results and Operational Progress for the Fourth Quarter and Year Ended December 31, 2023",
+"url": "https://www.businesswire.com/news/home/20240220111373/en/Summit-Therapeutics-Reports-Financial-Results-and-Operational-Progress-for-the-Fourth-Quarter-and-Year-Ended-December-31-2023/"
+},
+{
 "call_time": "9:00 a.m. ET",
 "kind": "schedule",
 "period": "First Quarter 2024",
@@ -46579,6 +46705,16 @@
 "timing_words": "before the market opens",
 "title": "Summit Therapeutics to Host First Quarter 2024 Financial Results & Operational Progress Call on May 1, 2024",
 "url": "https://www.businesswire.com/news/home/20240424405745/en/Summit-Therapeutics-to-Host-First-Quarter-2024-Financial-Results-Operational-Progress-Call-on-May-1-2024/"
+},
+{
+"kind": "results",
+"period": "First Quarter Ended March 31, 2024",
+"period_key": "2024Q1",
+"published_et": "2024-05-01 07:00",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Financial Results and Operational Progress for the First Quarter Ended March 31, 2024",
+"url": "https://www.businesswire.com/news/home/20240501878504/en/Summit-Therapeutics-Reports-Financial-Results-and-Operational-Progress-for-the-First-Quarter-Ended-March-31-2024/"
 },
 {
 "call_time": "9:00 a.m. ET",
@@ -46595,6 +46731,26 @@
 "url": "https://www.businesswire.com/news/home/20241023350811/en/Summit-Therapeutics-to-Host-Third-Quarter-2024-Financial-Results-Operational-Progress-Call-on-October-30-2024/"
 },
 {
+"kind": "results",
+"period": "Third Quarter and Nine Months Ended September 30, 2024",
+"period_key": "2024Q3",
+"published_et": "2024-10-30 07:00",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Operational Progress and Financial Results for the Third Quarter and Nine Months Ended September 30, 2024",
+"url": "https://www.businesswire.com/news/home/20241030447809/en/Summit-Therapeutics-Reports-Operational-Progress-and-Financial-Results-for-the-Third-Quarter-and-Nine-Months-Ended-September-30-2024/"
+},
+{
+"kind": "results",
+"period": "Fourth Quarter and Twelve Months Ended December 31, 2024",
+"period_key": "2024Q4+FY",
+"published_et": "2025-02-24 06:05",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Financial Results and Operational Progress for the Fourth Quarter and Twelve Months Ended December 31, 2024",
+"url": "https://www.businesswire.com/news/home/20250224090103/en/Summit-Therapeutics-Reports-Financial-Results-and-Operational-Progress-for-the-Fourth-Quarter-and-Twelve-Months-Ended-December-31-2024/"
+},
+{
 "call_time": "4:30 p.m. ET",
 "kind": "schedule",
 "period": "First Quarter 2025",
@@ -46607,6 +46763,36 @@
 "timing_words": "after the market closes",
 "title": "Summit Therapeutics to Host First Quarter 2025 Financial Results & Operational Progress Call on May 1, 2025",
 "url": "https://www.businesswire.com/news/home/20250424810995/en/Summit-Therapeutics-to-Host-First-Quarter-2025-Financial-Results-Operational-Progress-Call-on-May-1-2025/"
+},
+{
+"kind": "results",
+"period": "First Quarter Ended March 31, 2025",
+"period_key": "2025Q1",
+"published_et": "2025-05-01 16:09",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Financial Results and Operational Progress for the First Quarter Ended March 31, 2025",
+"url": "https://www.businesswire.com/news/home/20250501292458/en/Summit-Therapeutics-Reports-Financial-Results-and-Operational-Progress-for-the-First-Quarter-Ended-March-31-2025/"
+},
+{
+"kind": "results",
+"period": "Second Quarter Ended June 30, 2025",
+"period_key": "2025Q2",
+"published_et": "2025-08-11 17:03",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Financial Results and Operational Progress for the Second Quarter Ended June 30, 2025",
+"url": "https://www.businesswire.com/news/home/20250811380438/en/Summit-Therapeutics-Reports-Financial-Results-and-Operational-Progress-for-the-Second-Quarter-Ended-June-30-2025/"
+},
+{
+"kind": "results",
+"period": "Third Quarter and Nine Months Ended September 30, 2025",
+"period_key": "2025Q3",
+"published_et": "2025-10-20 06:45",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Financial Results and Operational Progress for the Third Quarter and Nine Months Ended September 30, 2025",
+"url": "https://www.businesswire.com/news/home/20251020040157/en/Summit-Therapeutics-Reports-Financial-Results-and-Operational-Progress-for-the-Third-Quarter-and-Nine-Months-Ended-September-30-2025/"
 },
 {
 "call_time": "4:30 p.m. ET",
@@ -46623,6 +46809,26 @@
 "url": "https://www.businesswire.com/news/home/20260217315211/en/Summit-Therapeutics-to-Host-Fourth-Quarter-and-Full-Year-2025-Financial-Results-Operational-Progress-Call-on-February-23-2026/"
 },
 {
+"kind": "results",
+"period": "Fourth Quarter and Year Ended December 31, 2025",
+"period_key": "2025Q4+FY",
+"published_et": "2026-02-23 16:05",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Financial Results and Operational Progress for the Fourth Quarter and Year Ended December 31, 2025",
+"url": "https://www.businesswire.com/news/home/20260223856924/en/Summit-Therapeutics-Reports-Financial-Results-and-Operational-Progress-for-the-Fourth-Quarter-and-Year-Ended-December-31-2025/"
+},
+{
+"kind": "results",
+"period": "First Quarter Ended March 31, 2026",
+"period_key": "2026Q1",
+"published_et": "2026-04-30 16:32",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Financial Results and Operational Progress for the First Quarter Ended March 31, 2026",
+"url": "https://www.businesswire.com/news/home/20260430114442/en/Summit-Therapeutics-Reports-Financial-Results-and-Operational-Progress-for-the-First-Quarter-Ended-March-31-2026/"
+},
+{
 "call_time": "4:30 p.m. ET",
 "kind": "schedule",
 "period": "Second Quarter 2026",
@@ -46635,13 +46841,34 @@
 "timing_words": null,
 "title": "Summit Therapeutics to Host Second Quarter 2026 Financial Results & Operational Progress Call on July 23, 2026",
 "url": "https://www.businesswire.com/news/home/20260716883728/en/Summit-Therapeutics-to-Host-Second-Quarter-2026-Financial-Results-Operational-Progress-Call-on-July-23-2026/"
+},
+{
+"kind": "results",
+"period": "Second Quarter and Six Months Ended June 30, 2026",
+"period_key": "2026Q2",
+"published_et": "2026-07-23 16:05",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Financial Results and Operational Progress for the Second Quarter and Six Months Ended June 30, 2026",
+"url": "https://www.businesswire.com/news/home/20260723317187/en/Summit-Therapeutics-Reports-Financial-Results-and-Operational-Progress-for-the-Second-Quarter-and-Six-Months-Ended-June-30-2026/"
+},
+{
+"kind": "results",
+"period": "Third Quarter and Nine Months Ended September 30, 2026",
+"period_key": "2026Q3",
+"published_et": "2026-11-04 16:36",
+"site": "businesswire.com",
+"stem": "Summit",
+"title": "Summit Therapeutics Reports Financial Results and Operational Progress for the Third Quarter and Nine Months Ended September 30, 2026",
+"url": "https://www.businesswire.com/news/home/20261104735455/en/Summit-Therapeutics-Reports-Financial-Results-and-Operational-Progress-for-the-Third-Quarter-and-Nine-Months-Ended-September-30-2026/"
 }
 ],
 "tracked": true
 },
 "SNDX": {
+"backfilled": "2026-11-28",
 "name": "Syndax Pharmaceuticals Inc",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -46935,8 +47162,9 @@
 "tracked": true
 },
 "SNGX": {
+"backfilled": "2026-11-28",
 "name": "Soligenix, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -47032,8 +47260,9 @@
 "tracked": true
 },
 "SNSE": {
+"backfilled": "2026-11-28",
 "name": "Sensei Biotherapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -47139,14 +47368,16 @@
 "tracked": true
 },
 "SNY": {
+"backfilled": "2026-11-28",
 "name": "Sanofi",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "SPRO": {
+"backfilled": "2026-11-28",
 "name": "Spero Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -47408,8 +47639,9 @@
 "tracked": true
 },
 "SPRY": {
+"backfilled": "2026-11-28",
 "name": "ARS Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -47525,8 +47757,9 @@
 "tracked": true
 },
 "SPTX": {
+"backfilled": "2026-11-28",
 "name": "Seaport Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -47562,8 +47795,9 @@
 "tracked": true
 },
 "SRPT": {
+"backfilled": "2026-11-28",
 "name": "Sarepta Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -47813,8 +48047,9 @@
 "tracked": true
 },
 "SRRK": {
+"backfilled": "2026-11-28",
 "name": "Scholar Rock Holding Corporation",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48008,8 +48243,9 @@
 "tracked": true
 },
 "SRZN": {
+"backfilled": "2026-11-28",
 "name": "Surrozen, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48125,8 +48361,9 @@
 "tracked": true
 },
 "STOK": {
+"backfilled": "2026-11-28",
 "name": "Stoke Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48212,8 +48449,9 @@
 "tracked": true
 },
 "STRO": {
+"backfilled": "2026-11-28",
 "name": "Sutro Biopharma, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48339,8 +48577,9 @@
 "tracked": true
 },
 "STTK": {
+"backfilled": "2026-11-28",
 "name": "Shattuck Labs, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48436,8 +48675,9 @@
 "tracked": true
 },
 "SUPN": {
+"backfilled": "2026-11-28",
 "name": "Supernus Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48453,8 +48693,9 @@
 "tracked": true
 },
 "SVRA": {
+"backfilled": "2026-11-28",
 "name": "Savara",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48530,8 +48771,9 @@
 "tracked": true
 },
 "SWTX": {
+"backfilled": "2026-11-28",
 "name": "SpringWorks Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48643,8 +48885,9 @@
 "tracked": true
 },
 "SYRE": {
+"backfilled": "2026-11-28",
 "name": "Spyre Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48770,8 +49013,9 @@
 "tracked": true
 },
 "TAK": {
+"backfilled": "2026-11-28",
 "name": "Takeda Pharmaceutical Company Limited",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48837,8 +49081,9 @@
 "tracked": true
 },
 "TARA": {
+"backfilled": "2026-11-28",
 "name": "Protara Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -48934,8 +49179,9 @@
 "tracked": true
 },
 "TARS": {
+"backfilled": "2026-11-28",
 "name": "Tarsus Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "8 a.m. ET",
@@ -49189,8 +49435,9 @@
 "tracked": true
 },
 "TCRX": {
+"backfilled": "2026-11-28",
 "name": "TScan Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -49306,8 +49553,9 @@
 "tracked": true
 },
 "TECX": {
+"backfilled": "2026-11-28",
 "name": "Tectonic Therapeutic, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -49383,8 +49631,9 @@
 "tracked": true
 },
 "TENX": {
+"backfilled": "2026-11-28",
 "name": "Tenax Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -49490,8 +49739,9 @@
 "tracked": true
 },
 "TEVA": {
+"backfilled": "2026-11-28",
 "name": "Teva Pharmaceutical Industries",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "8:00 a.m. ET",
@@ -49681,8 +49931,9 @@
 "tracked": true
 },
 "TLSI": {
+"backfilled": "2026-11-28",
 "name": "TriSalus Life Sciences, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -49758,14 +50009,16 @@
 "tracked": true
 },
 "TLX": {
+"backfilled": "2026-11-28",
 "name": "Telix Pharmaceuticals Limited",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "TMO": {
+"backfilled": "2026-11-28",
 "name": "Thermo Fisher Scientific Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "8:30 a.m. ET",
@@ -50021,8 +50274,9 @@
 "tracked": true
 },
 "TNGX": {
+"backfilled": "2026-11-28",
 "name": "Tango Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -50112,8 +50366,9 @@
 "tracked": true
 },
 "TNXP": {
+"backfilled": "2026-11-28",
 "name": "Tonix Pharmaceuticals Holding Corp.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -50267,8 +50522,9 @@
 "tracked": true
 },
 "TRAW": {
+"backfilled": "2026-11-28",
 "name": "Traws Pharma, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -50368,8 +50624,9 @@
 "tracked": true
 },
 "TRAX": {
+"backfilled": "2026-11-28",
 "name": "First Tracks Biotherapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -50405,8 +50662,9 @@
 "tracked": true
 },
 "TRDA": {
+"backfilled": "2026-11-28",
 "name": "Entrada Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -50512,8 +50770,9 @@
 "tracked": true
 },
 "TRVI": {
+"backfilled": "2026-11-28",
 "name": "Trevi Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "4:30 p.m. ET",
@@ -50807,14 +51066,16 @@
 "tracked": true
 },
 "TRXB": {
+"backfilled": "2026-11-28",
 "name": "TRex Bio, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "TSHA": {
+"backfilled": "2026-11-28",
 "name": "Taysha Gene Therapies, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -50940,8 +51201,9 @@
 "tracked": true
 },
 "TTRX": {
+"backfilled": "2026-11-28",
 "name": "Turn Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -50997,8 +51259,9 @@
 "tracked": true
 },
 "TURN": {
+"backfilled": "2026-11-28",
 "name": "180 Degree Capital Corp.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "9 a.m. ET",
@@ -51032,8 +51295,9 @@
 "tracked": true
 },
 "TVRD": {
+"backfilled": "2026-11-28",
 "name": "Tvardi Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -51109,8 +51373,9 @@
 "tracked": true
 },
 "TVTX": {
+"backfilled": "2026-11-28",
 "name": "Travere Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -51380,8 +51645,9 @@
 "tracked": true
 },
 "TYRA": {
+"backfilled": "2026-11-28",
 "name": "Tyra Biosciences, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -51507,14 +51773,16 @@
 "tracked": true
 },
 "UCBJY": {
+"backfilled": "2026-11-28",
 "name": "UCB SA",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "UNCY": {
+"backfilled": "2026-11-28",
 "name": "Unicycive Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -51640,8 +51908,9 @@
 "tracked": true
 },
 "UPB": {
+"backfilled": "2026-11-28",
 "name": "Upstream Bio, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -51717,9 +51986,30 @@
 "tracked": true
 },
 "URGN": {
+"backfilled": "2026-11-28",
 "name": "UroGen Pharma Ltd.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
+{
+"kind": "results",
+"period": "first quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"published_et": "2024-05-13 08:00",
+"site": "businesswire.com",
+"stem": "UroGen",
+"title": "UroGen Pharma Announces Date for ENVISION Data, New Long-Term Jelmyto Durability Data, and Reports 2024 First Quarter Financial Results and Business Highlights",
+"url": "https://www.businesswire.com/news/home/20240513271801/en/UroGen-Pharma-Announces-Date-for-ENVISION-Data-New-Long-Term-Jelmyto-Durability-Data-and-Reports-2024-First-Quarter-Financial-Results-and-Business-Highlights/"
+},
+{
+"kind": "results",
+"period": "third quarter ended September 30, 2024",
+"period_key": "2024Q3",
+"published_et": "2024-11-06 08:00",
+"site": "businesswire.com",
+"stem": "UroGen",
+"title": "UroGen Pharma Reports 2024 Third Quarter Financial Results and Business Highlights, Including the Potential Launch of UGN-102 in 2025",
+"url": "https://www.businesswire.com/news/home/20241106678091/en/UroGen-Pharma-Reports-2024-Third-Quarter-Financial-Results-and-Business-Highlights-Including-the-Potential-Launch-of-UGN-102-in-2025/"
+},
 {
 "call_time": "10:00 a.m. ET",
 "kind": "schedule",
@@ -51906,8 +52196,9 @@
 "tracked": true
 },
 "UTHR": {
+"backfilled": "2026-11-28",
 "name": "United Therapeutics Corporation",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "9:00 a.m. ET",
@@ -52149,8 +52440,9 @@
 "tracked": true
 },
 "VALN": {
+"backfilled": "2026-11-28",
 "name": "Valneva SE",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -52258,14 +52550,16 @@
 "tracked": true
 },
 "VCRE": {
+"backfilled": "2026-11-28",
 "name": "Vicore Pharma Holding AB",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "VERA": {
+"backfilled": "2026-11-28",
 "name": "Vera Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -52371,8 +52665,9 @@
 "tracked": true
 },
 "VIR": {
+"backfilled": "2026-11-28",
 "name": "Vir Biotechnology, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -52552,8 +52847,9 @@
 "tracked": true
 },
 "VKTX": {
+"backfilled": "2026-11-28",
 "name": "Viking Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "4:30 p.m. ET",
@@ -52833,8 +53129,9 @@
 "tracked": true
 },
 "VNDA": {
+"backfilled": "2026-11-28",
 "name": "Vanda Pharmaceuticals Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "4:30 p.m. ET",
@@ -53128,14 +53425,16 @@
 "tracked": true
 },
 "VOGX": {
+"backfilled": "2026-11-28",
 "name": "Vogenx, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "VOR": {
+"backfilled": "2026-11-28",
 "name": "Vor Bio",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -53231,8 +53530,9 @@
 "tracked": true
 },
 "VRDN": {
+"backfilled": "2026-11-28",
 "name": "Viridian Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -53342,8 +53642,9 @@
 "tracked": true
 },
 "VRTX": {
+"backfilled": "2026-11-28",
 "name": "Vertex",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "4:30 p.m. ET",
@@ -53603,8 +53904,9 @@
 "tracked": true
 },
 "VSTM": {
+"backfilled": "2026-11-28",
 "name": "Verastem, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -53774,8 +54076,9 @@
 "tracked": true
 },
 "VTGN": {
+"backfilled": "2026-11-28",
 "name": "Vistagen Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -53891,8 +54194,9 @@
 "tracked": true
 },
 "VTRS": {
+"backfilled": "2026-11-28",
 "name": "Viatris Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -54176,9 +54480,30 @@
 "tracked": true
 },
 "VTVT": {
+"backfilled": "2026-11-28",
 "name": "vTv Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
+{
+"kind": "results",
+"period": "fourth quarter and year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"published_et": "2024-03-13 08:00",
+"site": "globenewswire.com",
+"stem": "vTv",
+"title": "vTv Therapeutics Announces 2023 Fourth Quarter and Full Year Financial Results and Provides Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2024/03/13/2845355/0/en/vTv-Therapeutics-Announces-2023-Fourth-Quarter-and-Full-Year-Financial-Results-and-Provides-Corporate-Update.html"
+},
+{
+"kind": "results",
+"period": "first quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"published_et": "2024-05-09 16:51",
+"site": "globenewswire.com",
+"stem": "vTv",
+"title": "vTv Therapeutics Announces 2024 First Quarter Financial Results and Provides Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2024/05/09/2879263/0/en/vTv-Therapeutics-Announces-2024-First-Quarter-Financial-Results-and-Provides-Corporate-Update.html"
+},
 {
 "kind": "results",
 "period": "Second Quarter 2025",
@@ -54233,8 +54558,9 @@
 "tracked": true
 },
 "VXRT": {
+"backfilled": "2026-11-28",
 "name": "Vaxart, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -54324,8 +54650,9 @@
 "tracked": true
 },
 "VYGR": {
+"backfilled": "2026-11-28",
 "name": "Voyager Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -54391,8 +54718,9 @@
 "tracked": true
 },
 "WHWK": {
+"backfilled": "2026-11-28",
 "name": "Whitehawk Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -54468,8 +54796,9 @@
 "tracked": true
 },
 "WVE": {
+"backfilled": "2026-11-28",
 "name": "Wave Life Sciences, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -54585,8 +54914,9 @@
 "tracked": true
 },
 "XENE": {
+"backfilled": "2026-11-28",
 "name": "Xenon Pharmaceuticals Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -54866,8 +55196,9 @@
 "tracked": true
 },
 "XERS": {
+"backfilled": "2026-11-28",
 "name": "Xeris Biopharma Holdings, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "8:30 a.m. ET",
@@ -55079,8 +55410,9 @@
 "tracked": true
 },
 "XFOR": {
+"backfilled": "2026-11-28",
 "name": "X4 Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -55252,8 +55584,9 @@
 "tracked": true
 },
 "XNCR": {
+"backfilled": "2026-11-28",
 "name": "Xencor Inc",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -55369,8 +55702,9 @@
 "tracked": true
 },
 "XOMA": {
+"backfilled": "2026-11-28",
 "name": "XOMA Royalty Corp.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -55420,14 +55754,16 @@
 "tracked": true
 },
 "XRTX": {
+"backfilled": "2026-11-28",
 "name": "XORTX Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "YARW": {
+"backfilled": "2026-11-28",
 "name": "Yarrow Bioscience, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -55453,8 +55789,9 @@
 "tracked": true
 },
 "ZBIO": {
+"backfilled": "2026-11-28",
 "name": "Zenas BioPharma, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -55540,8 +55877,9 @@
 "tracked": true
 },
 "ZLAB": {
+"backfilled": "2026-11-28",
 "name": "Zai Lab Limited",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "8:00 a.m. ET",
@@ -55791,8 +56129,9 @@
 "tracked": true
 },
 "ZNTL": {
+"backfilled": "2026-11-28",
 "name": "Zentalis Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -55908,8 +56247,9 @@
 "tracked": true
 },
 "ZURA": {
+"backfilled": "2026-11-28",
 "name": "Zura Bio Ltd",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -56015,8 +56355,9 @@
 "tracked": true
 },
 "ZVRA": {
+"backfilled": "2026-11-28",
 "name": "Zevra Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "4:30 p.m. ET",
@@ -56186,8 +56527,9 @@
 "tracked": true
 },
 "ZYME": {
+"backfilled": "2026-11-28",
 "name": "Zymeworks Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "4:30 p.m. ET",

@@ -91,7 +91,8 @@ ALIASES = {
     "SNO": ["Society for Neuro-Oncology"],
     "ASTRO": ["American Society for Radiation Oncology"],
     "WMS": ["World Muscle Society"],
-    "ENA": ["EORTC-NCI-AACR", "EORTC NCI AACR", "EORTC/NCI/AACR"],
+    "ENA": ["EORTC-NCI-AACR", "EORTC NCI AACR", "EORTC/NCI/AACR",
+            "AACR-NCI-EORTC", "AACR NCI EORTC", "AACR/NCI/EORTC"],   # the name rotates with the host (2025: AACR first)
     "SABCS": ["San Antonio Breast Cancer Symposium"],
     "AES": ["American Epilepsy Society"],
     "ADPD": ["AD/PD"],
