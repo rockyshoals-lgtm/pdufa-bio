@@ -1,7 +1,7 @@
 {
  "_note": "Leads only, never published: a sponsor headline with results language for a trial whose registry window is still ahead. Verify the release is this trial's readout (not an interim, a different stage or a different trial) before a row is changed. Written by resolve_past_readouts.py.",
  "checked": "2026-11-27",
- "rows_checked": 68,
+ "rows_checked": 65,
  "leads": [
   {
    "id": "readout_idya_2027-04-15",

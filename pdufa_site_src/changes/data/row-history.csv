@@ -3171,3 +3171,6 @@ time_et,commit,row_id,ticker,name,field,old,new,status_was,status_now
 2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_mnov_2026-12-15,MNOV,MN-001 (tipelukast),dp,month,day,Estimated,Reported
 2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_mnov_2026-12-15,MNOV,MN-001 (tipelukast),st,Estimated,Reported,Estimated,Reported
 2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_mnov_2026-12-15,MNOV,MN-001 (tipelukast),url,https://clinicaltrials.gov/study/NCT05464784,https://www.globenewswire.com/news-release/2026/09/28/3369686/7767/en/medicinova-announces-topline-results-from-mn-001-natg-202-clinical-trial-of-mn-001-tipelukast.html,Estimated,Reported
+2026-11-27 19:39 ET,650d7255d90c02d94e527ab857c629c6a2a6c61b,readout_arvn_2026-12-15,ARVN,ARV-471,row,,left,Estimated,
+2026-11-27 19:39 ET,650d7255d90c02d94e527ab857c629c6a2a6c61b,readout_incy_2027-09-15,INCY,axatilimab,row,,left,Estimated,
+2026-11-27 19:39 ET,650d7255d90c02d94e527ab857c629c6a2a6c61b,readout_rnac_2026-12-15,RNAC,Descartes-08,row,,left,Estimated,
