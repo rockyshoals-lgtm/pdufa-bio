@@ -108,6 +108,7 @@ def inferred_note(k, where):
             f"{'is' if k == 1 else 'are'} not counted here.")
 
 
+TRACK_FROM = "January 2025"            # set from the data in main(): the first month with a tracked decision
 START = (2024, 1)                      # 2026-11-28: was 2025-01; the company-announced record starts January 2024
 ANN_PATH = os.path.join(HERE, "crl_company_announced.json")
 _D = dt.date.fromisoformat
@@ -125,18 +126,39 @@ def announced():
 _GENERIC = {"insulin", "subcutaneous", "once", "proposed", "high"}
 
 
-def match_tracked(r, trk):
-    """The /fda-decision page of the tracked CRL this announcement is, or '': same ticker (or, with no ticker, the
-    drug's first word in the tracked drug) within 7 days of the announcement."""
-    w = re.sub(r"[^a-z0-9]", "", (r["drug_short"].split() or [""])[0].lower())
-    key = w if len(w) >= 5 and w not in _GENERIC else ""
+def _toks(s):
+    """Words of 4+ characters, plus each code with its hyphen dropped ('GTx-104' -> 'gtx104')."""
+    s = str(s).lower()
+    words = set(re.findall(r"[a-z0-9]+", s)) | {re.sub(r"[^a-z0-9]", "", w) for w in s.split()}
+    return {w for w in words if len(w) >= 4 and w not in _GENERIC}
+
+
+def match_tracked(r, trk, taken=None):
+    """The /fda-decision page of the tracked CRL this announcement is, or '': within 7 days of the announcement, the
+    drug named alike (a shared word of 4+ characters) and, where the announcement has a ticker, the same ticker. The
+    nearest such decision wins; one in taken (already matched to another announcement) is skipped."""
+    mine = _toks(r["drug"] + " " + r["drug_short"])
+    best = None
     for iso, t, drug, href in trk:
-        if abs((_D(iso) - _D(r["announce_date"])).days) > 7:
+        gap = abs((_D(iso) - _D(r["announce_date"])).days)
+        if gap > 7 or (taken and href in taken) or (r["ticker"] and t != r["ticker"]):
             continue
-        if (r["ticker"] and t == r["ticker"]) or \
-                (not r["ticker"] and key and key in (drug + " " + page_drug(href)).lower()):
-            return href
-    return ""
+        if not mine & _toks(drug + " " + page_drug(href)):
+            continue
+        if best is None or gap < best[0]:
+            best = (gap, href)
+    return best[1] if best else ""
+
+
+def match_all(ann, trk):
+    """{announcement id: decision href or ''}, one to one, oldest announcement first."""
+    out, taken = {}, set()
+    for r in sorted(ann, key=lambda r: (r["announce_date"], r["id"])):
+        h = match_tracked(r, trk, taken)
+        out[r["id"]] = h
+        if h:
+            taken.add(h)
+    return out
 
 
 def _slug(s):
@@ -243,6 +265,7 @@ def short_drug(d):
         if len(out) + len(w) + 1 > 28:
             break
         out = (out + " " + w).strip()
+    out = re.sub(r"(?:\s+(?:with|and|plus|in|for|of|or))+$", "", out, flags=re.I)   # never end on a connector
     return (out[:1].upper() + out[1:]) if out else ""
 
 
@@ -256,6 +279,21 @@ def page_drug(href):
     if not os.path.exists(p):
         return ""
     m = _KV_DRUG.search(io.open(p, encoding="utf-8", errors="replace").read())
+    d = html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip() if m else ""
+    if d.count("(") > d.count(")"):             # 2026-11-28: 'RP1 (...) and OPDIVO (' on a page; never print it open
+        d = d[:d.rfind("(")].rstrip(" ,;:-")
+    return d
+
+
+_KV_CO = re.compile(r"<span>Company</span><b>(.*?)</b>", re.S)
+
+
+def page_company(href):
+    """The company a decision page states in its key facts, or ''."""
+    p = os.path.join(SITE, href.strip("/"), "index.html")
+    if not os.path.exists(p):
+        return ""
+    m = _KV_CO.search(io.open(p, encoding="utf-8", errors="replace").read())
     return html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip() if m else ""
 
 
@@ -346,17 +384,18 @@ def page(y, m, letters, ours, n_dec, upd, prev_, next_, ann=(), days=(), trackin
                   f"{len(ours)} {'was a Complete Response Letter' if len(ours) == 1 else 'were Complete Response Letters'}."
                   + inferred_note(INFERRED.get(f"{y}-{m:02d}", 0), f"in {name}"))
     else:
-        first += "pdufa.bio's record of tracked PDUFA decisions starts in January 2025, so it holds none for this month."
+        first += f"pdufa.bio's record of tracked PDUFA decisions starts in {TRACK_FROM}, so it holds none for this month."
     if ann:
         first += (f" Companies also announced {nlet(ann)} {'more ' if ours else ''}Complete Response "
                   f"Letter{'s' if nlet(ann) != 1 else ''} in {name} in their own press releases or filings"
                   + (", not among the tracked decisions" if ours else "") + "; each is listed below with its source.")
-    desc = (f"FDA complete response letters {name}: {nlet(ann)} announced by companies, {n} released by the FDA, "
-            f"{len(ours)} among PDUFA decisions pdufa.bio tracked. Sources linked." if tracking else
-            f"FDA complete response letters {name}: {nlet(ann)} announced by companies and {n} released by the FDA, "
-            f"each with its dated source.")
-    if len(desc) > 158:
-        desc = f"FDA complete response letters {name}: {nlet(ann)} company-announced, {n} FDA-released, {len(ours)} tracked."
+    k_ann = nlet(ann)
+    if tracking:
+        desc = (f"FDA complete response letters {name}: {n} released by the FDA, {len(ours)} among PDUFA decisions "
+                f"pdufa.bio tracked" + (f", {k_ann} more announced by companies" if k_ann else "") + ". Sources linked.")
+    else:
+        desc = (f"FDA complete response letters {name}: {n} released by the FDA"
+                + (f" and {k_ann} announced by companies" if k_ann else "") + ", each with its dated source.")
     which = []
     if ours:
         which.append(f"Among the PDUFA decisions pdufa.bio tracked in {name}, the FDA issued Complete Response Letters "
@@ -435,11 +474,11 @@ def page(y, m, letters, ours, n_dec, upd, prev_, next_, ann=(), days=(), trackin
             + f'<h2>Released by the FDA, dated {name} &middot; {n}</h2>'
             + (f'<table><tr><th>Letter date</th><th>Company</th><th>Application</th><th>openFDA status</th><th>Letter</th></tr>'
                f'{rows}</table>' if n else f'<div class="sub">None in the release as of its last update{(" (" + esc(upd) + ")") if upd else ""}.</div>')
-            + f'<h2>Complete Response Letters among decisions pdufa.bio tracked &middot; {len(ours)}</h2>'
-            + (f'<table><tr><th>FDA action</th><th>Ticker</th><th>Drug</th><th>Source</th></tr>{trows}</table>' if ours
-               else f'<div class="sub">None: the {n_dec} tracked decision{"s" if n_dec != 1 else ""} this month '
-                    f'{"was an approval" if n_dec == 1 else "were approvals" if n_dec else "(no tracked decisions)"}.</div>'
-               if tracking else '<div class="sub">pdufa.bio&#x27;s tracked PDUFA decisions start in January 2025.</div>')
+            + ((f'<h2>Complete Response Letters among decisions pdufa.bio tracked &middot; {len(ours)}</h2>'
+                + (f'<table><tr><th>FDA action</th><th>Ticker</th><th>Drug</th><th>Source</th></tr>{trows}</table>' if ours
+                   else f'<div class="sub">None: the {n_dec} tracked decision{"s" if n_dec != 1 else ""} this month '
+                        f'{"was an approval" if n_dec == 1 else "were approvals" if n_dec else "(no tracked decisions)"}.</div>'))
+               if tracking else '')
             + f'<div class="sub" style="font-size:13px;margin-top:18px">A Complete Response Letter is the FDA&#x27;s notice that it '
               f'will not approve an application in its current form; it is not a permanent rejection, and the sponsor can '
               f'resubmit. The counts come from different records and are not added together; a company announcement that is '
@@ -465,7 +504,7 @@ def year_page(y, months_here, by, ours, alld, upd, years, annm=None, tracking=Tr
              + (f". Of the {ndec} FDA decisions on PDUFA goal dates pdufa.bio tracked in {span}, {len(trk)} "
                 + ("was a Complete Response Letter." if len(trk) == 1 else "were Complete Response Letters.")
                 + inferred_note(sum(INFERRED.get(k, 0) for k in keys), f"in {span}") if tracking else
-                ". pdufa.bio's record of tracked PDUFA decisions starts in January 2025, so it holds none for this year.")
+                f". pdufa.bio's record of tracked PDUFA decisions starts in {TRACK_FROM}, so it holds none for this year.")
              + (f" Companies also announced {nlet(ann)} {'more ' if trk else ''}Complete Response Letter"
                 f"{'s' if nlet(ann) != 1 else ''} in {span} in their own press releases or filings"
                 + (", not among the tracked decisions" if trk else "") + "." if ann else ""))
@@ -473,7 +512,8 @@ def year_page(y, months_here, by, ours, alld, upd, years, annm=None, tracking=Tr
              if tracking else f"FDA Complete Response Letters {y}: {nlet(ann)} Company-Announced, {len(letters)} "
                               f"Released Letters | pdufa.bio")
     desc = (f"FDA complete response letters of {y} by month: {len(letters)} in the FDA's release (openFDA), "
-            f"{len(trk)} among PDUFA decisions pdufa.bio tracked, {nlet(ann)} more announced by companies."
+            f"{len(trk)} among PDUFA decisions pdufa.bio tracked" + (f", {nlet(ann)} more announced by companies."
+                                                                    if nlet(ann) else ". Sources linked.")
             if tracking else f"FDA complete response letters of {y} by month: {len(letters)} in the FDA's release "
                              f"(openFDA) and {nlet(ann)} announced by companies, each with its dated source.")
     if len(desc) > 158:
@@ -518,13 +558,12 @@ def year_page(y, months_here, by, ours, alld, upd, years, annm=None, tracking=Tr
             f'<h1>FDA complete response letters, {y}</h1>'
             f'<!--CRLYEARLEDE:BEGIN--><p class="sub" style="color:#cfe0f5">{esc(first)}</p><!--CRLYEARLEDE:END-->'
             f'<h2>By month</h2><table><tr><th>Month</th><th>Released by the FDA</th><th>CRLs among tracked decisions</th>'
-            f'<th>Tracked decisions</th><th>More announced by companies</th></tr>{mrows}</table>'
+            f'<th>Tracked decisions</th><th>More announced by companies (on file)</th></tr>{mrows}</table>'
             + (f'<h2>Announced by the company, {y} &middot; {nlet(ann)}</h2><table>{ANN_HEAD}'
                f'{ann_rows(sorted(ann, key=lambda r: (r["announce_date"], r["id"]), reverse=True))}</table>' if ann else '')
-            + f'<h2>Complete Response Letters among decisions pdufa.bio tracked &middot; {len(trk)}</h2>'
-            + (f'<table><tr><th>FDA action</th><th>Ticker</th><th>Drug</th><th>Source</th></tr>{trows}</table>' if trk
-               else '<div class="sub">None.</div>' if tracking
-               else '<div class="sub">pdufa.bio&#x27;s tracked PDUFA decisions start in January 2025.</div>')
+            + ((f'<h2>Complete Response Letters among decisions pdufa.bio tracked &middot; {len(trk)}</h2>'
+                + (f'<table><tr><th>FDA action</th><th>Ticker</th><th>Drug</th><th>Source</th></tr>{trows}</table>'
+                   if trk else '<div class="sub">None.</div>')) if tracking else '')
             + f'<h2>Released by the FDA, dated {y} &middot; {len(letters)}</h2>'
             + (f'<table><tr><th>Letter date</th><th>Company</th><th>Application</th><th>Letter</th></tr>{lrows}</table>'
                if letters else '<div class="sub">None in the release as of its last update.</div>')
@@ -562,26 +601,31 @@ def day_page(iso, A, A2, T, F, upd, prev_, next_, thref):
     y, m = d.year, d.month
     when = long_date(iso)
     url = BASE + day_href(iso)
-    items = []
+    items, named = [], set()          # named: first words of companies already named, so one letter is named once
+    first_word = lambda c: (short_company(c).lower().split() or [""])[0]
     for r in A + A2:
         it = title_item(r)
         if it not in items:
             items.append(it)
+        named.add(first_word(r["company_short"]))
+        named.add(first_word(r["company"]))
     for _, t, drug, href in sorted(T):
         it = f"{short_drug(page_drug(href) or drug)} ({t})" if short_drug(page_drug(href) or drug) else t
         if it not in items:
             items.append(it)
-    if not items:
-        for l in F:
-            c = short_company(l["company"])
-            if c and c not in items:
-                items.append(c)
-    total = nlet(A) + nlet(A2) + len(T) + len(F)
-    head = f"FDA Complete Response Letter{'s' if total > 1 else ''} {when}: "
+        named.add(first_word(page_company(href)))
+    for l in F:                         # FDA-released letters to a company not already named are named too
+        c = short_company(l["company"])
+        if c and first_word(c) not in named and c not in items:
+            items.append(c)
+    many = len(items) > 1 or nlet(A) + nlet(A2) > 1
+    head = f"FDA Complete Response Letter{'s' if many else ''} {when}: "
     room = 98 - len(head) - len(" | pdufa.bio")
     title = head + fit_names(items, room) + " | pdufa.bio"
-    d0 = f"FDA complete response letter{'s' if total > 1 else ''} {when}: "
-    d1 = ", with the company's dated release or filing, or the FDA's own letter."
+    d0 = f"FDA complete response letter{'s' if many else ''} {when}: "
+    srcs = (["the company's dated release or filing"] if A or A2 else []) + (["the FDA's own letter"] if F else []) \
+        + (["pdufa.bio's decision page"] if T and not (A or A2 or F) else [])
+    d1 = ", with " + ", or ".join(srcs) + "."
     desc = d0 + fit_names(items, 158 - len(d0) - len(d1), "more") + d1
     lede = [ann_sentence(r, with_date=False) for r in A]
     lede += [f"The Complete Response Letter that {r['company_short']} announced on {long_date(r['announce_date'])} for "
@@ -622,7 +666,7 @@ def day_page(iso, A, A2, T, F, upd, prev_, next_, thref):
             f'<div style="font-size:12px;color:#94a9c9;margin:16px 0 4px"><a href="/" style="color:#94a9c9">Home</a> &rsaquo; '
             f'<a href="/crl" style="color:#94a9c9">CRL letters</a> &rsaquo; <a href="/crl/{y}" style="color:#94a9c9">{y}</a>'
             f' &rsaquo; <a href="/crl/{y}/{MON[m - 1]}" style="color:#94a9c9">{MON[m - 1].capitalize()}</a> &rsaquo; {d.day}</div>'
-            f'<h1>FDA complete response letters, {when}</h1>'
+            f'<h1>FDA complete response letter{"s" if many else ""}, {when}</h1>'
             f'<!--CRLDAYLEDE:BEGIN--><p class="sub" style="color:#cfe0f5">{esc(" ".join(lede))}</p><!--CRLDAYLEDE:END-->'
             + (f'<h2>Announced by the company on {when} &middot; {nlet(A)}</h2><table>{ANN_HEAD}{ann_rows(A, thref)}</table>'
                if A else '')
@@ -650,15 +694,18 @@ def main():
     td = eastern_today()
     ann = announced()
     trk_all = [o for v in ours.values() for o in v]
-    thref = {r["id"]: match_tracked(r, trk_all) for r in ann}
+    thref = match_all(ann, trk_all)
     track_start = min(alld) if alld else "9999-99"
+    global TRACK_FROM
+    if alld:
+        TRACK_FROM = f"{MON[int(track_start[5:]) - 1].capitalize()} {track_start[:4]}"
     annm = collections.defaultdict(list)          # month -> announcements not already among its tracked decisions
     for r in ann:
         if not thref[r["id"]]:
             annm[r["announce_date"][:7]].append(r)
     start = f"{START[0]}-{START[1]:02d}-01"
     days = set(r["announce_date"] for r in ann) | {r["crl_date"] for r in ann if r["crl_date"]} \
-        | {o[0] for o in trk_all} | {l["iso"] for l in letters}
+        | {o[0] for o in trk_all} | {l["iso"] for l in letters if l.get("cr")}   # CR letters only (not provisional etc.)
     days = sorted(d for d in days if start <= d <= td.isoformat())
     months, (y, m) = [], START
     while (y, m) <= (td.year, td.month):
@@ -689,9 +736,9 @@ def main():
     for i, d in enumerate(days):
         A = [r for r in ann if r["announce_date"] == d]
         A2 = [r for r in ann if r["crl_date"] == d and r["announce_date"] != d]
-        hrefs = {thref[r["id"]] for r in A if thref[r["id"]]}
+        hrefs = {thref[r["id"]] for r in A + A2 if thref[r["id"]]}
         T = [o for o in trk_all if o[0] == d and o[3] not in hrefs]
-        F = sorted((l for l in letters if l["iso"] == d), key=lambda l: (l["company"], l["app"]))
+        F = sorted((l for l in letters if l["iso"] == d and l.get("cr")), key=lambda l: (l["company"], l["app"]))
         doc = day_page(d, A, A2, T, F, upd, days[i - 1] if i else None, days[i + 1] if i + 1 < len(days) else None,
                        thref)
         if not a.dry_run:
@@ -705,7 +752,7 @@ def main():
             if sub.isdigit() and f"/crl/{y}/{MON[m - 1]}/{sub}" not in want and not a.dry_run:
                 import shutil
                 shutil.rmtree(os.path.join(md, sub))
-    print(f"  day pages: {len(days)} ({days[0]} to {days[-1]}); company announcements {len(ann)}, "
+    print(f"  day pages: {len(days)}" + (f" ({days[0]} to {days[-1]})" if days else "") + f"; company announcements {len(ann)}, "
           f"{sum(1 for v in thref.values() if v)} matched to tracked decisions")
     # month index on /crl
     hub = os.path.join(SITE, "crl", "index.html")

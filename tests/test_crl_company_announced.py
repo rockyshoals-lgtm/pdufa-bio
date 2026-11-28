@@ -10,8 +10,13 @@ What this holds:
   * every record is on its own day page with its source link, and on the day page of its letter date if that differs;
   * a record that is one of the tracked decisions is not listed again in the month page's company table, and one that
     is not is listed there, with its source;
-  * every letter in the FDA's release dated 2024 on is on its day page; every day page is backed by a record; every
-    month page links each of its day pages; titles say the date and fit.
+  * every Complete Response letter in the FDA's release dated 2024 on is on its day page (provisional determinations
+    and other letter types are not CRLs and get none); every day page is backed by a record; every month page links
+    each of its day pages; titles say the date and fit;
+  * no decision page or source is listed twice on a day page (2026-11-28 red team: an announcement whose letter date
+    was a tracked decision's date showed twice);
+  * each announcement matches the tracked decision pinned below and no other (a wrong match hides a CRL from its
+    month page); a month page's description counts the announcements its table lists.
 """
 import collections, datetime as dt, glob, html, io, json, os, re, sys
 
@@ -21,6 +26,51 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 APPS = {"NDA", "BLA", "sNDA", "sBLA", "biosimilar BLA", ""}
 KINDS = {"press release", "SEC 8-K", "stock-exchange disclosure", "earnings release", "company statement",
          "company announcement"}
+
+
+# announcement id -> the tracked decision it is (reviewed 2026-11-28); every other announcement matches none
+PINNED = {
+    "2025-01-16-atara-biotherapeutics-ebvallo": "/fda-decision/ATRA-2025-01-16",
+    "2025-03-28-milestone-pharmaceutical-cardamyst": "/fda-decision/MIST-2025-03-28",
+    "2025-04-03-aldeyra-therapeutics-reproxalap": "/fda-decision/ALDX-2025-04-03",
+    "2025-04-18-regeneron-pharmaceutical-eylea-hd": "/fda-decision/REGN-2025-04-20",
+    "2025-04-28-telix-pharmaceuticals-tlx101-cdx": "/fda-decision/TLX-2025-04-28",
+    "2025-06-30-unicycive-therapeutics-oxylanthanum-carbonate": "/fda-decision/UNCY-2025-06-30",
+    "2025-07-11-capricor-therapeutics-deramiocel": "/fda-decision/CAPR-2025-07-11",
+    "2025-07-11-ultragenyx-pharmaceutica-ux111": "/fda-decision/RARE-2025-07-11",
+    "2025-07-18-roche-columvi": "/fda-decision/RHHBY-2025-07-18",
+    "2025-07-22-replimune-group-rp1": "/fda-decision/REPL-2025-07-22",
+    "2025-08-01-regeneron-pharmaceutical-odronextamab": "/fda-decision/REGN-2025-07-30",
+    "2025-08-19-ptc-therapeutics-vatiquinone": "/fda-decision/PTCT-2025-08-19",
+    "2025-08-28-outlook-therapeutics-ons-5010-lytenava": "/fda-decision/OTLK-2025-08-28",
+    "2025-08-28-telix-pharmaceuticals-tlx250-cdx": "/fda-decision/TLX-2025-08-28",
+    "2025-09-23-biogen-nusinersen": "/fda-decision/BIIB-2025-09-23",
+    "2025-09-23-scholar-rock-apitegromab": "/fda-decision/SRRK-2025-09-23",
+    "2025-10-01-fortress-biotech-cutx-101": "/fda-decision/FBIO-2025-10-01",
+    "2025-11-02-alvotech-avt05": "/fda-decision/ALVO-2025-11-02",
+    "2025-11-04-biohaven-vyglxia": "/fda-decision/BHVN-2025-11-04",
+    "2025-12-24-sanofi-tolebrutinib": "/fda-decision/SNY-2025-12-24",
+    "2025-12-31-corcept-therapeutics-relacorilant": "/fda-decision/CORT-2025-12-31",
+    "2025-12-31-dr-reddy-s-laboratories-avt03": "/fda-decision/RDY-2025-12-31",
+    "2025-12-31-outlook-therapeutics-ons-5010-lytenava": "/fda-decision/OTLK-2025-12-31",
+    "2026-01-12-atara-biotherapeutics-ebvallo": "/fda-decision/ATRA-2026-01-12",
+    "2026-02-01-pharming-group-joenja": "/fda-decision/PHAR-2026-02-01",
+    "2026-02-02-aquestive-therapeutics-anaphylm": "/fda-decision/AQST-2026-02-02",
+    "2026-02-03-astrazeneca-saphnelo": "/fda-decision/AZN-2026-02-03",
+    "2026-02-09-regenxbio-rgx-121": "/fda-decision/RGNX-2026-02-09",
+    "2026-02-13-disc-medicine-bitopertin": "/fda-decision/IRON-2026-02-13",
+    "2026-03-06-incyte-zynyz": "/fda-decision/INCY-2026-03-06",
+    "2026-03-17-aldeyra-therapeutics-reproxalap": "/fda-decision/ALDX-2026-03-17",
+    "2026-04-10-replimune-group-rp1": "/fda-decision/REPL-2026-04-10",
+    "2026-04-23-abbvie-trenibotulinumtoxine": "/fda-decision/ABBV-2026-04-23",
+    "2026-04-23-grace-therapeutics-gtx-104": "/fda-decision/GRCE-2026-04-23",
+    "2026-06-02-cingulate-ctx-1301": "/fda-decision/CING-2026-06-02",
+    "2026-06-22-achieve-life-sciences-cytisinicline": "/fda-decision/ACHV-2026-06-22",
+    "2026-06-26-lantheus-holdings-lnth-2501": "/fda-decision/LNTH-2026-06-26",
+    "2026-06-30-unicycive-therapeutics-oxylanthanum-carbonate": "/fda-decision/UNCY-2026-06-30",
+    "2026-11-15-summit-therapeutics-ivonescimab": "/fda-decision/SMMT-2026-11-15",
+    "2026-11-20-capricor-therapeutics-deramiocel": "/fda-decision/CAPR-2026-11-20",
+}
 
 
 def read(path):
@@ -60,6 +110,10 @@ def main():
     ours, _ = b.tracked()
     trk = [o for v in ours.values() for o in v]
     letters, _ = b.corpus()
+    got = b.match_all(recs, trk)
+    for i, h in got.items():
+        if h != PINNED.get(i, ""):
+            bad.append(f"{i}: matched to {h or 'no tracked decision'}, reviewed match is {PINNED.get(i) or 'none'}")
     for r in recs:
         src = html.escape(r["source_url"], quote=True)
         day = read(b.day_href(r["announce_date"]))
@@ -72,7 +126,7 @@ def main():
         d = b._D(r["announce_date"])
         month = read(f"/crl/{d.year}/{b.MON[d.month - 1]}") or ""
         listed = src in month
-        href = b.match_tracked(r, trk)
+        href = got[r["id"]]
         if href and listed:
             bad.append(f"{r['id']}: listed in its month page's company table and as tracked decision {href}")
         if not href and not listed:
@@ -82,7 +136,7 @@ def main():
 
     days = {r["announce_date"] for r in recs} | {r["crl_date"] for r in recs if r["crl_date"]} | {o[0] for o in trk}
     for l in letters:
-        if l["iso"] >= "2024-01-01":
+        if l["iso"] >= "2024-01-01" and l.get("cr"):
             days.add(l["iso"])
             doc = read(b.day_href(l["iso"]))
             if doc is None or html.escape(l["url"], quote=True) not in doc:
@@ -115,6 +169,22 @@ def main():
             bad.append(f"{x}: title {t!r}")
         for blob in re.findall(r'<script type="application/ld\+json">(.*?)</script>', doc, re.S):
             json.loads(blob)
+        tables = "".join(re.findall(r"<table>.*?</table>", doc, re.S))
+        for h in re.findall(r'href="(/fda-decision/[^"]+|https://[^"]+)"', tables):
+            if h.startswith("https://download.open.fda.gov/"):
+                continue                 # the FDA's file can be dated twice in its own release; one row per record
+            if tables.count(f'href="{h}"') > 1:
+                bad.append(f"{x}: {h} listed twice"); break
+    months = collections.defaultdict(list)
+    for r in recs:
+        if not got[r["id"]]:
+            months[r["announce_date"][:7]].append(r)
+    for k, rs in months.items():
+        doc = read(f"/crl/{k[:4]}/{b.MON[int(k[5:]) - 1]}") or ""
+        dm = re.search(r'<meta name="description" content="([^"]*)"', doc)
+        n = b.nlet(rs)
+        if not dm or not re.search(rf"\b{n} (?:more )?announced by companies", html.unescape(dm.group(1))):
+            bad.append(f"/crl/{k}: description does not say {n} announced by companies")
 
     if bad:
         print(f"FAIL: {len(bad)} company-announced CRL problem(s)")
