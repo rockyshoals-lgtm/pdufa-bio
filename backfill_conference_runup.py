@@ -5,7 +5,11 @@ study leaves out, re-dated by the same rule as the additions (cache only).
 LEADS: conf_study/conference_backfill_leads_2026-11-27.csv lists 439 (ticker, meeting, year) presentations named in
 SEC filings; conf_study/conference_backfill_leads_drive_2026-11-27.csv adds 43 presentations from the owner's
 Drive conference files (4 ASCO 2026 on 2026-11-27, 39 more 2023-2026 on 2026-11-28), each confirmed by the company's own
-release naming the meeting (each lead_source is that release). The lead files' own dates and prices are NOT used: its "anchor" was one calendar date per meeting edition
+release naming the meeting (each lead_source is that release). conf_study/conference_backfill_leads_fmp_2026-11-28.csv
+adds 26 ASCO 2026 presenters found by reading every FMP press release from 2026-04-17 to 2026-06-05 whose headline
+names ASCO and reports data (tickers already in a lead file left out; four OTC foreign lines and one inactive line
+dropped; six releases FMP filed under another company's symbol listed under the presenter's own Nasdaq ticker,
+checked against FMP's symbol search). The lead files' own dates and prices are NOT used: its "anchor" was one calendar date per meeting edition
 (conf_registry.json), not the filing's, and some of those dates were weeks off the meeting (AACR 2022 as March 8; the
 meeting ran April 8-13). Each lead is only a pointer to look for the company's own release.
 
@@ -38,6 +42,7 @@ import fetch_earnings_dates as FE  # noqa: E402
 
 LEADS = os.path.join(HERE, "conf_study", "conference_backfill_leads_2026-11-27.csv")
 LEADS_DRIVE = os.path.join(HERE, "conf_study", "conference_backfill_leads_drive_2026-11-27.csv")
+LEADS_FMP = os.path.join(HERE, "conf_study", "conference_backfill_leads_fmp_2026-11-28.csv")
 PAST = os.path.join(HERE, "conf_study", "meetings_past.json")
 CACHE = os.path.join(HERE, "_conference_runup_backfill.json")
 CUTOFF = "2026-06-05"     # the published study stops 2026-06-04; later rows belong to the additions
@@ -64,7 +69,7 @@ def all_meetings():
 
 def leads():
     out, seen = [], set()
-    for f in (LEADS, LEADS_DRIVE):
+    for f in (LEADS, LEADS_DRIVE, LEADS_FMP):
         if os.path.exists(f):
             for r in csv.DictReader(io.open(f, encoding="utf-8-sig")):
                 if lead_key(r) not in seen:
