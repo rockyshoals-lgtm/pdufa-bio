@@ -3,8 +3,9 @@
 study leaves out, re-dated by the same rule as the additions (cache only).
 
 LEADS: conf_study/conference_backfill_leads_2026-11-27.csv lists 439 (ticker, meeting, year) presentations named in
-SEC filings; conf_study/conference_backfill_leads_drive_2026-11-27.csv adds 4 ASCO 2026 presentations from the
-owner's Drive conference files that a company release confirmed (each lead_source is that release). The lead files' own dates and prices are NOT used: its "anchor" was one calendar date per meeting edition
+SEC filings; conf_study/conference_backfill_leads_drive_2026-11-27.csv adds 43 presentations from the owner's
+Drive conference files (4 ASCO 2026 on 2026-11-27, 39 more 2023-2026 on 2026-11-28), each confirmed by the company's own
+release naming the meeting (each lead_source is that release). The lead files' own dates and prices are NOT used: its "anchor" was one calendar date per meeting edition
 (conf_registry.json), not the filing's, and some of those dates were weeks off the meeting (AACR 2022 as March 8; the
 meeting ran April 8-13). Each lead is only a pointer to look for the company's own release.
 
