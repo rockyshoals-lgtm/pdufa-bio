@@ -186,6 +186,7 @@ def match_release(row, prs, toks, start, multi):
 
 
 EARLY_LEADS = os.path.join(HERE, "_readout_early_leads.json")
+EARLY_WORDS = re.compile(r"\b(?:top-?line|results?|data|met|missed|achieved|did\s+not\s+meet|primary\s+endpoint)\b", re.I)
 
 
 def future_estimate(row):
@@ -224,7 +225,10 @@ def early_leads(rows, key, cache, fetch=None, today=None):
         if not prs or not toks:
             continue
         multi = len([x for x in by_tk[r["t"]] if drug_tokens(x)[:1] == toks[:1]]) > 1
-        hit = match_release(r, prs, toks, since, multi)
+        # A lead needs a results word in its headline: the first run (Nov 27) listed "Pivotal Trial ... Underway"
+        # and "Reaches Full Enrollment in Pivotal Phase 3 Trial", which the passed-window match tolerates only
+        # because a passed window has nothing else to be.
+        hit = match_release(r, [p for p in prs if EARLY_WORDS.search(p[0])], toks, since, multi)
         if hit:
             blk = r["_d"]["nct_id"]
             leads.append({"id": r["id"], "t": r["t"], "nct": blk.get("nct"), "window": r.get("dm") or str(r.get("d"))[:7],
