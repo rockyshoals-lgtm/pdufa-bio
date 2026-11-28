@@ -4430,6 +4430,11 @@
    "source": "/drug/xrx",
    "destination": "/ticker/XRTX",
    "permanent": true
+  },
+  {
+   "source": "/ticker/KPTIQ",
+   "destination": "/ticker/KPTI",
+   "permanent": true
   }
  ],
  "headers": [
