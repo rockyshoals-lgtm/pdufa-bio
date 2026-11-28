@@ -84,16 +84,33 @@ def clean_indication(raw):
     return s
 
 
+_EPONYM_LEAD = re.compile(r"^(?:[A-Z][a-z]+(?:'|&#x27;|\u2019)s\b|[A-Z][a-z]+ (?:disease|syndrome)\b)")
+
+
 def lower_first(s):
-    """Indication text mid-sentence: lower-case a leading capital unless it is an acronym/proper."""
+    """Indication text mid-sentence: lower-case a leading capital unless it is an acronym/proper.
+
+    2026-11-27: also keeps an eponym ("Sanfilippo syndrome", "Alexander disease", any "X's ...") and the first word of
+    a title-case name ("Thyroid Eye Disease", "Myasthenia Gravis", "Plaque Psoriasis"), which read "thyroid Eye
+    Disease" and "myasthenia Gravis" before."""
     if not s:
         return s
-    w = s.split(" ", 1)[0]
-    if len(w) > 1 and w[0].isupper() and w[1:].islower() and w.lower() not in {
-            "parkinson's", "alzheimer's", "crohn's", "hodgkin", "huntington's", "niemann-pick",
-            "duchenne", "fabry", "pompe", "gaucher", "hunter", "noonan", "alexander", "menkes", "wilson's"}:
-        return w.lower() + s[len(w):]
+    w = s.split(" ", 2)
+    first, second = w[0], (w[1] if len(w) > 1 else "")
+    # a second word that is itself an eponym ("Early Alzheimer's disease") does not make the name title-case
+    titled = (second[:1].isupper() and second[1:2].islower() and second[1:] == second[1:].lower()
+              and not _EPONYM_LEAD.match(" ".join(w[1:])) and second.lower().rstrip(".,") not in _EPONYMS)
+    if (len(first) > 1 and first[0].isupper() and first[1:].islower() and not titled and not _EPONYM_LEAD.match(s)
+            and first.lower() not in _EPONYMS):
+        return first[0].lower() + s[1:]
     return s
+
+
+_EPONYMS = {
+    "parkinson's", "alzheimer's", "crohn's", "hodgkin", "huntington's", "niemann-pick", "duchenne", "fabry", "pompe",
+    "gaucher", "hunter", "noonan", "alexander", "menkes", "wilson's", "sanfilippo", "dravet", "rett", "angelman",
+    "friedreich", "batten", "stargardt", "leber", "alport", "cushing", "graves", "kaposi", "castleman", "hashimoto",
+    "becker", "barth", "canavan", "krabbe"}
 
 
 def clean_company(raw):

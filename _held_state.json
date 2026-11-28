@@ -1,6 +1,6 @@
 {
  "held_since": "2026-11-27T06:08:08Z",
- "consecutive_held_runs": 9,
+ "consecutive_held_runs": 10,
  "emailed_at": "2026-11-27T08:26:54Z",
  "leads": [
   {
@@ -33,9 +33,9 @@
   },
   {
    "source": "drug_pages",
-   "row_id": "drug:escmid-global",
-   "key": "escmid-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
-   "text": "/drug/escmid-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
+   "row_id": "drug:ov329-global",
+   "key": "ov329-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+   "text": "/drug/ov329-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
    "first_seen": "2026-11-27T06:08:08Z"
   },
   {
@@ -47,9 +47,9 @@
   },
   {
    "source": "drug_pages",
-   "row_id": "drug:ov329-global",
-   "key": "ov329-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
-   "text": "/drug/ov329-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
+   "row_id": "drug:escmid-global",
+   "key": "escmid-global|fda-press:fda-launches-global-reliance-disclosure-program-expand-patie",
+   "text": "/drug/escmid-global fda-press:fda-launches-global-reliance-disclosure-program-expand-patie 'global' appears with approval language",
    "first_seen": "2026-11-27T06:08:08Z"
   },
   {
@@ -68,17 +68,17 @@
   },
   {
    "source": "drug_pages",
-   "row_id": "drug:sonesitatug-vedotin",
-   "key": "sonesitatug-vedotin|fda-oncology-notifications",
-   "text": "/drug/sonesitatug-vedotin fda-oncology-notifications 'vedotin' appears with approval language",
-   "first_seen": "2026-11-27T08:26:54Z"
-  },
-  {
-   "source": "drug_pages",
    "row_id": "drug:abs-201-headline",
    "key": "abs-201-headline|fda-oncology-notifications",
    "text": "/drug/abs-201-headline fda-oncology-notifications 'headline' appears with approval language",
    "first_seen": "2026-11-27T06:08:08Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:sonesitatug-vedotin",
+   "key": "sonesitatug-vedotin|fda-oncology-notifications",
+   "text": "/drug/sonesitatug-vedotin fda-oncology-notifications 'vedotin' appears with approval language",
+   "first_seen": "2026-11-27T08:26:54Z"
   },
   {
    "source": "drug_pages",

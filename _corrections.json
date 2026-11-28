@@ -1120,6 +1120,13 @@
    "was": "Humacyte's V012 Phase 3 trial of the ATEV in female dialysis patients (NCT05908084) was listed as an upcoming readout, estimated June 2027 from the registry.",
    "now": "Listed as reported on Jun 10, 2026, when Humacyte announced that a prespecified interim analysis met the trial's primary endpoint. Our results finder only looked for a sponsor release after a registry window had passed; it now also flags results releases for windows still ahead, for us to check.",
    "source": "Humacyte press release, Jun 10, 2026 (GlobeNewswire)"
+  },
+  {
+   "date": "2026-11-27",
+   "page": "/fda-decision/AZN-2026-06-12",
+   "was": "Truqap (capivasertib) was listed as approved on June 12, 2026 for \"Dephosphorylated Phosphatase and Tensin Homolog (dPTEN) Hormone-Sensitive Prostate Cancer (HSPC)\".",
+   "now": "Approved, with abiraterone and prednisone, for adults with metastatic androgen pathway modulation-naïve or -sensitive prostate cancer (previously called metastatic hormone-sensitive prostate cancer) that is PTEN-deficient. The old wording came from a tracker row that expanded \"dPTEN\" wrongly; the indication is now the FDA's own text, also on /drug/truqap.",
+   "source": "FDA approval notice, June 12, 2026"
   }
  ],
  "legacy": [

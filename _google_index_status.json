@@ -5897,12 +5897,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/drug/donidalorsen": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/dordaviprone": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -7469,12 +7463,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/drug/mbx-2109": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/drug/mbx-4291": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -8471,12 +8459,6 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
-"/drug/ptc923": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
 "/drug/pumitamig": {
 "checked": "2026-11-27",
 "crawled": null,
@@ -8945,12 +8927,6 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
-"/drug/seralutinib": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
 "/drug/setmelanotide": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -9129,12 +9105,6 @@
 "checked": "2026-11-21",
 "crawled": null,
 "state": "URL is unknown to Google",
-"verdict": "NEUTRAL"
-},
-"/drug/spn-812": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/drug/spravato": {
@@ -9504,12 +9474,6 @@
 "verdict": "NEUTRAL"
 },
 "/drug/trenibotulinumtoxine": {
-"checked": "2026-11-21",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/drug/treprostinil-palmitil": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -11429,6 +11393,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/earnings/IMVT": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/earnings/INBX": {
 "checked": "2026-11-27",
 "crawled": null,
@@ -11571,6 +11541,12 @@
 "checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/earnings/KALV": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/earnings/KARD": {
@@ -12245,6 +12221,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/earnings/ROIV": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/earnings/RPRX": {
 "checked": "2026-11-27",
 "crawled": null,
@@ -12435,6 +12417,12 @@
 "checked": "2026-11-27",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/earnings/SUPN": {
+"checked": "2026-11-27",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/earnings/SVRA": {
@@ -17904,12 +17892,6 @@
 "verdict": "NEUTRAL"
 },
 "/ticker/GMAB": {
-"checked": "2026-11-20",
-"crawled": null,
-"state": "Discovered - currently not indexed",
-"verdict": "NEUTRAL"
-},
-"/ticker/GOSS": {
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
