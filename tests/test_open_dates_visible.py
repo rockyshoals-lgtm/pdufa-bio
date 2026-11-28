@@ -39,6 +39,11 @@ def home(bad):
     wrap = re.search(r"@media\(max-width:(\d+)px\)\{\.dg\{flex-wrap:wrap", doc)
     if not wrap or int(wrap.group(1)) < 540:
         bad.append("home: the phone rule that puts the drug name on its own line is missing or stops below 540px")
+    # 2026-11-28: on its own line a long name was still cut to one line ("MR-107A-02 (fast-acting meloxic...") at
+    # 500px. On a phone the name wraps to two lines before it is cut.
+    rule = re.search(r"@media\(max-width:\d+px\)\{\.dg\{flex-wrap:wrap[^@]*?\.dg \.dn\{([^}]*)\}", doc)
+    if not rule or "white-space:normal" not in rule.group(1) or "-webkit-line-clamp:2" not in rule.group(1):
+        bad.append("home: on a phone the drug name must wrap to two lines (white-space:normal, line-clamp 2)")
     lst = doc[doc.find('<div class="list">'):doc.find("Recently decided")]
     cards = re.findall(r'<span class="dg">(.*?)</span></span>', lst, re.S)
     if not cards:
