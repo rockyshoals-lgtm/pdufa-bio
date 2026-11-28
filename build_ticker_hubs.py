@@ -392,7 +392,16 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
         sub.append(esc(company))
     if overdue:
         sub.append(f'{len(overdue)} past {"its" if len(overdue) == 1 else "their"} goal date')
-    sub.append(f'{n_up} upcoming' if n_up else 'no upcoming catalyst on file')
+    # 2026-11-28 (live check): /ticker/SLGL said "no upcoming catalyst on file" above its own Nov 30 Phase 3 topline
+    # row. The count is of FDA decision pages; a hub with readouts still ahead says so.
+    n_rd = sum(1 for r in readouts.get(tk, []) if r.get('status') != 'Reported' and not r.get('outcome')
+               and not r.get('resolution') and _window_end(r['date'], r.get('precision')) >= _ET_TODAY)
+    if n_up:
+        sub.append(f'{n_up} upcoming')
+    elif n_rd:
+        sub.append(f'no upcoming FDA decision on file, {n_rd} upcoming readout{"s" if n_rd != 1 else ""}')
+    else:
+        sub.append('no upcoming catalyst on file')
     sub.append(f'{n_past} past FDA decision{"s" if n_past != 1 else ""}')
     out.append(f'<div class="sub">{" · ".join(sub)}</div>')
     if lst:

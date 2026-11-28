@@ -330,7 +330,11 @@ def main():
             # (ZVRA and JAGX after their retired rows came off: "No past FDA decision on file. Source document and
             # measured run-up on every one.")
             empty = bool(state) and all(b.lower().startswith("no ") for b in state)
-            return fit([f"{co} ({tk}) FDA catalyst hub.", nxt, hist,
+            # 2026-11-28: a company whose listing changed (ticker_listing.json; Karyopharm, now KPTIQ on OTC Pink)
+            # keeps its hub address; the current symbol leads the snippet, where a searcher for it looks.
+            lm = re.search(r'data-listing="([^"]+)"', doc)
+            lead = f"{tk}, now {html.unescape(lm.group(1))}: " if lm else ""
+            return fit([f"{lead}{co} ({tk}) FDA catalyst hub." if not lm else f"{lead}{co} FDA catalyst hub.", nxt, hist,
                         "" if empty else " Source document and measured run-up on every one."])
 
         co = short_company(name_of.get(tk, ""), tk)
