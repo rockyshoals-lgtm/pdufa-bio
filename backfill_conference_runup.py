@@ -9,7 +9,9 @@ release naming the meeting (each lead_source is that release). conf_study/confer
 adds 26 ASCO 2026 presenters found by reading every FMP press release from 2026-04-17 to 2026-06-05 whose headline
 names ASCO and reports data (tickers already in a lead file left out; four OTC foreign lines and one inactive line
 dropped; six releases FMP filed under another company's symbol listed under the presenter's own Nasdaq ticker,
-checked against FMP's symbol search). The lead files' own dates and prices are NOT used: its "anchor" was one calendar date per meeting edition
+checked against FMP's symbol search), and 11 Digestive Disease Week 2025/2026 presenters found the same way (FMP
+releases 2025-03-22..05-09 and 2026-03-21..05-08 with DDW in the headline; five symbols FMP filed wrongly corrected
+the same way). The lead files' own dates and prices are NOT used: its "anchor" was one calendar date per meeting edition
 (conf_registry.json), not the filing's, and some of those dates were weeks off the meeting (AACR 2022 as March 8; the
 meeting ran April 8-13). Each lead is only a pointer to look for the company's own release.
 
