@@ -230,8 +230,13 @@ def block(apps, fetched, words=frozenset()):
             'padding:14px 16px;margin:18px 0"><h2 style="font-size:17px;margin:0 0 6px;color:#e3ba5e">FDA label record '
             '(Drugs@FDA)</h2>' + '<div style="height:10px"></div>'.join(groups)
             + f'<p class="note" style="font-size:12px;color:#94a9c9;margin:8px 0 0">From Drugs@FDA, the FDA&#x27;s database '
-            f'of approved drugs{asof}. The approved label is the full prescribing information: indication, dosing and '
-            f'warnings.' + (' Products are those Drugs@FDA lists as marketed on the application.'
+            f'of approved drugs{asof}. '
+            + ('The approved label is the full prescribing information: indication, dosing and warnings.'
+               if any(label_url(x) for x in apps) else
+               # 2026-11-28: the label often posts days after the letter (10 of 34 November approvals had none yet);
+               # the note no longer points at a label the card does not link.
+               'Drugs@FDA lists no approved label for this action yet; the link appears here once the FDA posts it.')
+            + (' Products are those Drugs@FDA lists as marketed on the application.'
                             if any(x.get("products") for x in apps) else '') + '</p></div>' + E)
 
 
