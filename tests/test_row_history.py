@@ -264,7 +264,11 @@ def main():
     for r, c in zip(rows, exp):
         cells = [text_of(x) for x in re.findall(r"<td[^>]*>(.*?)</td>", r, re.S)]
         who = f"{c['t']} · {c['name']}" if c["name"] else c["t"]
-        want = [c["ts"], f"{who} {c['id']}".strip(), NAMES[c["field"]], cell(c, "old"), cell(c, "new")]
+        # A page reads whitespace collapsed; the ledger keeps a value as recorded. 2026-11-27: LTRN's name ends in a
+        # space ("... with cisplatin "), so the ledger's "name id" had two spaces where the page shows one, and every
+        # rebuild was blocked though the page showed exactly the ledger's words. Compare both as a reader sees them.
+        want = [re.sub(r"\s+", " ", x).strip() for x in
+                (c["ts"], f"{who} {c['id']}", NAMES[c["field"]], cell(c, "old"), cell(c, "new"))]
         hrefs = re.findall(r'href="([^"]*)"', r)
         if cells != want or hrefs:   # 2026-11-27: the repository is to go private; the table links nothing
             fails.append(f"/changes: a table row reads {cells[:4]}, the ledger's entry is {want[:4]}")

@@ -78,11 +78,18 @@ jobs:
       # builds on top of whatever the previous run pushed. tests/test_rebuild_starts_from_newest_main.py keeps it.
       - name: Start from the newest main (a queued run otherwise builds the tree it was dispatched on)
         if: github.ref == 'refs/heads/main'
+        # A run's step list is fixed from the commit it was dispatched on. If newer main changed this workflow, its
+        # scripts and tests may need steps this run does not have (run 46059511146 ran #361's label-record test
+        # without #361's label-record steps and blocked), so the run then builds the tree its steps belong to.
         run: |
           before=$(git rev-parse --short=9 HEAD)
           git fetch --depth=1 origin main
-          git reset --hard FETCH_HEAD
-          echo "checked out $before; building $(git rev-parse --short=9 HEAD), the newest main"
+          if git diff --quiet HEAD FETCH_HEAD -- .github/workflows/pdufa-rebuild.yml; then
+            git reset --hard FETCH_HEAD
+            echo "checked out $before; building $(git rev-parse --short=9 HEAD), the newest main"
+          else
+            echo "::warning::newest main $(git rev-parse --short=9 FETCH_HEAD) changes this workflow; building $before, the tree these steps belong to (the next run builds the newest)"
+          fi
 
       - uses: actions/setup-python@v6
         with:
@@ -1499,6 +1506,7 @@ jobs:
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
           git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json _crl_first_seen.json _crl_letter_slugs.json _row_history.json
+          git add -f _readout_early_leads.json 2>/dev/null || true   # 2026-11-27: early sponsor results releases for future registry windows (leads to verify, never published)
           git add -f runup_study_excluded.csv   # .gitignore has *.csv; this one is the study's audit trail of removed rows
           git add -f pdufa_site_src/crl/data/crl-letters.csv 2>/dev/null || true   # *.csv is ignored; the CRL dataset download
           git add -f pdufa_site_src/crl/data/crl-review-clock.csv 2>/dev/null || true   # /crl/review-clock download

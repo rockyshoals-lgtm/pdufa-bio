@@ -31,6 +31,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 import sys as _sys
 _sys.path.insert(0, HERE)
 from readout_links import drug_page as _drug_page, drug_title as _drug_title  # noqa: E402
+from whole_decision_names import page_names as _page_names, whole as _whole  # noqa: E402
 SITE = os.path.join(HERE, 'pdufa_site_src')
 TODAY = dt.date.today().isoformat()
 try:
@@ -219,6 +220,15 @@ def load_data():
         lab = re.sub(r'\s+', ' ', lab)[:70]
         if lab.lower() in ('price-only', 'price only', ''):
             lab = ''   # placeholder archive row -> no fake drug label; the page says 'FDA decision'
+        if not lab:
+            # 2026-11-27 phone pass: the archive row now reads "<span>Approved</span>: NAME", not "— NAME", so every
+            # hub decision row (397 of 397) said only "FDA decision". The name comes from that row, made whole
+            # from the decision page's own names when an old build cut it, else from the page's <title> name.
+            m = re.search(r'</span>:\s*([^<]+)', body)
+            names = _page_names(f'{tk}-{d}')
+            lab = _whole(html.unescape(m.group(1)).strip(), names) if m and m.group(1).strip() else (names[1] or '')
+            if lab.lower() in ('price-only', 'price only'):
+                lab = ''
         past[tk].append(dict(date=d, outcome=outc, label=lab))
 
     # company name also from decision pages: every decision page is one vote (this is what
@@ -254,6 +264,8 @@ def load_data():
                                       label=(r.get('_d') or {}).get('guided_label'),
                                       status=r.get('st'),
                                       resolution=((r.get('_d') or {}).get('resolution') or {}).get('state'),
+                                      res_date=str(((r.get('_d') or {}).get('resolution') or {}).get('date') or ''),
+                                      res_url=((r.get('_d') or {}).get('resolution') or {}).get('url'),
                                       reg_status=str(((r.get('_d') or {}).get('registry') or {}).get('overall_status') or ''),
                                       drug_page=_drug_page(r)))
             nm = r.get('company')
@@ -448,9 +460,17 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
                 if r.get('precision') == 'day' and r.get('resolution') == 'no_topline':
                     # 2026-11-27: a dated presentation is not a topline window (NTLA ISA e-poster, INBX CTOS talk).
                     lab = 'Scheduled date passed, no company results release found'
+                if r.get('resolution') == 'sponsor_release' and len(r.get('res_date') or '') == 10:
+                    # 2026-11-27 (live check): KPTI's XPORT-EC-042 row read "2026-05 Results released", the registry
+                    # month beside the label, as if results came out in May. They came out on Jul 30 (PR Newswire).
+                    # The hub now names the release day and links the release.
+                    lab = 'Results released ' + pretty(r['res_date'])
                 badge = '<span class="badge past">' + lab + '</span>'
             when = (pretty(r['date']) if r.get('precision') == 'day' else esc(r['label']) if (r.get('precision') == 'year' and r.get('label')) else r['date'][:4] if r.get('precision') == 'year' else r['date'][:7])  # 2026-11-17: a year-precision window is not its December
             href = r.get('url') or '/readouts'
+            if r.get('resolution') == 'sponsor_release' and str(r.get('res_url') or '').startswith('https://') \
+                    and r.get('status') != 'Reported':
+                href = r['res_url']
             ext = ' rel="nofollow"' if str(href).startswith('http') else ''
             out.append(f'<a class="row" href="{esc(href)}"{ext}>'
                        f'<span class="t">{when}{badge}</span>'

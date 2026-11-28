@@ -5754,6 +5754,111 @@
    "source": "https://www.globenewswire.com/news-release/2026/11/09/3398918/0/en/annexon-reports-third-quarter-2026-financial-results-business-updates-and-key-anticipated-milestones.html",
    "by": "manual",
    "note": "Annexon Q3 release Nov 9: ARCHER II Month 15 primary endpoint assessment on track for Q4 2026"
+  },
+  "readout_goss_2026-12-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT06274801",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT06274801 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_goss_2027-12-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT04816604",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT04816604 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_jspr_2026-08-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT06736262",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT06736262 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_cort_2026-12-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT03604198",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT03604198 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_insm_2026-12-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT05649748",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT05649748 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_onc_2026-12-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT04170283",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT04170283 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_ions_2027-03-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT05681351",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT05681351 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_mbx_2027-05-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT06531941",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT06531941 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_supn_2026-09-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT02736656",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT02736656 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_mdgl_2027-03-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT04951219",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT04951219 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_sny_2026-11-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT07216079",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT07216079 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_ptct_2026-06-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT05166161",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT05166161 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_ions_2026-12-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://clinicaltrials.gov/study/NCT05392114",
+   "by": "manual",
+   "note": "Retired 2026-11-27: NCT05392114 is a standalone extension / long-term safety study per its registry title, not a topline readout"
+  },
+  "readout_aard_2026-09-30": {
+   "checked": "2026-11-27",
+   "verdict": "STOPPED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/23/3387158/0/en/aardvark-therapeutics-reports-exploratory-data-from-the-terminated-hero-and-open-label-extension-trials.html",
+   "by": "manual",
+   "note": "Company release Oct 23 2026: HERO terminated early after 67 of 90 planned participants; exploratory data only. Q3 release Nov 13 2026 repeats it."
+  },
+  "readout_kpti_2026-08-15": {
+   "checked": "2026-11-27",
+   "verdict": "RESOLVED",
+   "source": "https://www.prnewswire.com/news-releases/karyopharm-announces-topline-results-from-phase-3-xport-ec-042-trial-in-endometrial-cancer-302839314.html",
+   "by": "manual",
+   "note": "Karyopharm release Jul 30 2026: XPORT-EC-042 (NCT05611931) topline; did not meet its PFS primary endpoint."
   }
  }
 }

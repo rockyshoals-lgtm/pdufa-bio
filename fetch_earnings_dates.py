@@ -56,7 +56,7 @@ UA = {"User-Agent": "pdufa.bio-research-script/1.0"}
 FROM = "2024-01-01"
 # Bump when the parse rules change: every ticker is then re-read from FROM (90 a run); its old rows stay until its
 # full read replaces them.
-PARSER_VERSION = 5
+PARSER_VERSION = 6                 # 6: "<ordinal> Quarter (and Nine Months) Ended <date>", "Reports Unaudited ...", "Biologics"
 
 MONTHS = {m: i + 1 for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july", "august",
                                           "september", "october", "november", "december"])}
@@ -77,6 +77,13 @@ P_MONTHS_ENDED = re.compile(r"\b(three(?:\s+and\s+(?:six|nine|twelve))?|six|nine
                             r"(and\s+(?:full\s+|fiscal\s+)?year\s+)?"
                             r"ended\s+(january|february|march|april|may|june|july|august|september|october|november|"
                             r"december)\s+(\d{1,2}),?\s+(20\d\d)\b", re.I)
+# "Third Quarter and Nine Months Ended September 30, 2026", "Second Quarter Ended September 30, 2026", "Fiscal Fourth
+# Quarter and Year Ended September 30, 2026", "the Quarter Ended September 30, 2026" (2026-11-27: SMMT, IMVT, ROIV, ENTA
+# results were all missed because the year sits in the end date, not beside the quarter)
+P_Q_ENDED = re.compile(r"\b(?:(first|second|third|fourth|1st|2nd|3rd|4th)[\s-]+)?(fiscal\s+)?(?:(first|second|third|fourth)"
+                       r"[\s-]+)?quarter(?:\s+(?:and|&)\s+(?:(six|nine|twelve)[\s-]+months|((?:full|fiscal)\s+)?year))?"
+                       r"[\s-]+ended\s+(january|february|march|april|may|june|july|august|september|october|november|"
+                       r"december)\s+(\d{1,2}),?\s+(20\d\d)\b", re.I)
 P_HALF = re.compile(r"\b(first|second)[\s-]+half(?:[\s-]+(?:of\s+)?(?:year\s+)?(20\d\d))?\b|\b(H[12])\s*(20\d\d)\b", re.I)
 
 RESULTS_WORD = re.compile(r"\b(financial results|results|earnings)\b", re.I)
@@ -92,7 +99,8 @@ ABOUT_RESULTS = re.compile(r"^\s*(?:and\s+)?(conference call|call|webcast|teleco
                            r"timing)\b", re.I)
 # words that, inside the matched 'Announces ... Third Quarter 2026 ... Results' span, make it about a call, a plan or a
 # preliminary figure rather than the results themselves
-NOT_IN_STRONG = re.compile(r"\b(conference|call|webcast|teleconference|will|plans?|to|preliminary|unaudited|date|"
+NOT_IN_STRONG = re.compile(r"\b(conference|call|webcast|teleconference|will|plans?|to|preliminary|unaudited|selected?|"
+                           r"estimated|expected|anticipated|date|"
                            r"timing|schedule\w*|postpone\w*|delay\w*|upcoming)\b", re.I)
 SCHEDULE_LEAD = re.compile(r"\b(date|dates|timing|upcoming|schedule[sd]?)\b", re.I)
 # law-firm and shareholder-alert releases are never earnings rows (word forms chosen so 'Investigational' and
@@ -154,6 +162,9 @@ def period_of(text, published=None):
         # "fiscal year" may not be the calendar year, so it gets a fiscal key (no calendar day count)
         fy = m.group(1).lower().startswith("fiscal")
         return m.group(0), (f"FY{m.group(2)}Q4" if fy else f"{m.group(2)}Q4+FY")
+    m = P_Q_ENDED.search(t)
+    if m and _q_ended_key(m, pub_y):
+        return m.group(0), _q_ended_key(m, pub_y)
     # "Financial Results for the Three Months Ended September 30, 2026" (no quarter named): the period that ends on the
     # printed day, only when that day ends a calendar quarter
     m = P_MONTHS_ENDED.search(t)
@@ -227,6 +238,35 @@ def period_of(text, published=None):
     return None, None
 
 
+def _q_ended_key(m, pub_y):
+    """Key for a 'quarter ... ended <date>' match. The end date must close a calendar quarter. A named quarter that is
+    not that calendar quarter is the company's fiscal numbering: kept only as the fiscal fourth quarter (its fiscal
+    year is the one ending that day), since any other fiscal year label would be a guess."""
+    o1, fiscal, o2, months, yr_and = m.group(1), m.group(2), m.group(3), m.group(4), m.group(5) is not None
+    mon, day, y = MONTHS[m.group(6).lower()], int(m.group(7)), m.group(8)
+    yr_and = yr_and or bool(re.search(r"\byear\b", m.group(0)[:m.start(6) - m.start(0)], re.I))
+    if int(y) > pub_y or (mon, day) not in ((3, 31), (6, 30), (9, 30), (12, 31)):
+        return None
+    qd = mon // 3
+    o = o1 or o2
+    if not o:
+        return None        # "Quarter Ended September 30" names no quarter: for a March or June fiscal year it is not Q3
+    q = ORD[o.lower()]
+    want = {"six": 2, "nine": 3, "twelve": 4}.get((months or "").lower())
+    if q != qd:
+        if q == 4 and (yr_and or want == 4) and (want in (None, 4)):
+            return f"FY{y}Q4"
+        return None
+    q = qd
+    if want is not None and want != q:
+        return None
+    if yr_and and q != 4:
+        return None
+    if fiscal:
+        return f"FY{y}Q{q}"
+    return f"{y}Q{q}" + ("+FY" if q == 4 and (yr_and or want == 4) else "")
+
+
 def period_end(key):
     """Last day of a calendar-quarter / half / calendar-year key; None for fiscal keys (their calendar is the
     company's own)."""
@@ -255,8 +295,10 @@ def is_results(title):
         return False
     m = STRONG_RESULTS.search(t)
     if m and not _future_verb(t, m) and period_of(m.group(0))[0]:
-        if ABOUT_RESULTS.match(t[m.end():]) or SCHEDULE_LEAD.search(m.group(0)) or NOT_IN_STRONG.search(
-                m.group(0)[len(m.group(1)):]):
+        # 'Reports Unaudited Third Quarter 2026 Financial Results' (Belite Bio): 'unaudited' straight after the verb is
+        # just the quarter's usual state; 'Selected / Estimated Unaudited ...' still marks preliminary figures
+        rest = re.sub(r"^\s+(?:its\s+|the\s+)?unaudited\b", " ", m.group(0)[len(m.group(1)):], flags=re.I)
+        if ABOUT_RESULTS.match(t[m.end():]) or SCHEDULE_LEAD.search(m.group(0)) or NOT_IN_STRONG.search(rest):
             return False            # 'Announces Third Quarter 2026 Financial Results Conference Call'
         return True
     if POSTPONED.search(t):
@@ -477,7 +519,7 @@ def short_name(name):
     n = re.sub(r"\s+&\s+Co\b.*$", "", n)                 # 'Merck & Co., Inc.' -> 'Merck'
     n = re.sub(r",?\s+(Inc|Incorporated|Corp|Corporation|Co|Company|Ltd|Limited|plc|N\.V|NV|S\.A|SA|AG|SE|A/S|AB|ASA|"
                r"Holdings?|Group|International|Therapeutics|Pharmaceuticals?|Pharma|Biosciences|Bio|Biotherapeutics|"
-               r"Biopharma|Biotech|Technologies|Medical|Sciences|Oncology|Industries|Genetics|LLC)\.?(?![A-Za-z]).*$",
+               r"Biopharma|Biotech|Biologics|Technologies|Medical|Sciences|Oncology|Industries|Genetics|LLC)\.?(?![A-Za-z]).*$",
                "", n, flags=re.I)
     n = re.sub(r"\s+(and|&)$", "", n.strip(" ,."), flags=re.I)
     return n if len(n) >= 2 else clean(name)

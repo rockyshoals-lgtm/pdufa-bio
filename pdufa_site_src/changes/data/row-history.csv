@@ -3138,3 +3138,36 @@ time_et,commit,row_id,ticker,name,field,old,new,status_was,status_now
 2026-11-27 13:23 ET,d1f7e168667eb36820b61344aa2ca6bcc9444549,readout_ivevf_2026-12-31,IVEVF,lanifibranor NATiV3 Phase 3 topline,row,,left,Guided,
 2026-11-27 13:23 ET,d1f7e168667eb36820b61344aa2ca6bcc9444549,readout_mdgl_2027-12-31-resmetirom,MDGL,resmetirom (Rezdiffra) MAESTRO-NASH OUTCOMES Phase 3 data,row,,left,Guided,
 2026-11-27 13:23 ET,d1f7e168667eb36820b61344aa2ca6bcc9444549,readout_sls_2026-12-14-tambicicli,SLS,"tambiciclib (SLS009) + azacitidine + venetoclax Phase 2 dose-ranging study Phase 2 data,…",row,,left,Guided,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_cort_2026-12-15,CORT,Relacorilant,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_goss_2026-12-15,GOSS,Seralutinib,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_goss_2027-12-15,GOSS,Seralutinib,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_insm_2026-12-15,INSM,Treprostinil Palmitil Inhalation Powder,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_ions_2026-12-15,IONS,Donidalorsen,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_ions_2027-03-15,IONS,Olezarsen,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_jspr_2026-08-15,JSPR,Briquilimab,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_mbx_2027-05-15,MBX,MBX 2109,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_mdgl_2027-03-15,MDGL,Resmetirom,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_onc_2026-12-15,ONC,Zanubrutinib (long-term extension),row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_ptct_2026-06-15,PTCT,PTC923,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_sny_2026-11-15,SNY,Rilzabrutinib,row,,left,Estimated,
+2026-11-27 17:01 ET,d9b5ee45cb9d657ed18475f7b6d628e10edce52f,readout_supn_2026-09-15,SUPN,SPN-812,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_acrs_2026-08-15,ACRS,A-101,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_axsm_2026-07-15,AXSM,AXS-14,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_cgem_2026-09-15,CGEM,CLN-081,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_clrb_2026-08-15,CLRB,NOV-002,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_howl_2026-07-15,HOWL,WTX-330,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_ilmn_2026-07-15,ILMN,18F-MFBG,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_iova_2026-07-15,IOVA,Lifileucel plus Pembrolizumab,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_legn_2026-06-15,LEGN,LCAR-B38M CAR-T Cell,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_ltrn_2026-07-15,LTRN,Tavocept(BNP7787) in combination with cisplatin ,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_ogn_2027-10-15,OGN,150μg CFA (Elonva®) at stimulation day (SD) 1 an,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_tmo_2026-08-15,TMO,MK-7240,row,,left,Estimated,
+2026-11-27 17:44 ET,1956c0df1a2b06d48c5b5f614d35d27bc1652892,readout_wve_2026-09-15,WVE,WVE-210201,row,,left,Estimated,
+2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_huma_2026-10-15,HUMA,Human Acellular Vessel,d,2027-06-15,2026-06-10,Estimated,Reported
+2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_huma_2026-10-15,HUMA,Human Acellular Vessel,dp,month,day,Estimated,Reported
+2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_huma_2026-10-15,HUMA,Human Acellular Vessel,st,Estimated,Reported,Estimated,Reported
+2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_huma_2026-10-15,HUMA,Human Acellular Vessel,url,https://clinicaltrials.gov/study/NCT05908084,https://www.globenewswire.com/news-release/2026/06/10/3310082/0/en/Humacyte-ATEV-Met-Superiority-Primary-Endpoint-Compared-to-Standard-of-Care-AV-Fistula-in-Interim-Analysis-of-V012-Phase-3-Study-in-Female-Dialysis-Access-Patients.html,Estimated,Reported
+2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_mnov_2026-12-15,MNOV,MN-001 (tipelukast),d,2026-12-15,2026-09-28,Estimated,Reported
+2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_mnov_2026-12-15,MNOV,MN-001 (tipelukast),dp,month,day,Estimated,Reported
+2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_mnov_2026-12-15,MNOV,MN-001 (tipelukast),st,Estimated,Reported,Estimated,Reported
+2026-11-27 18:11 ET,734c32c634f39200405b7ce7870cc333bcb65759,readout_mnov_2026-12-15,MNOV,MN-001 (tipelukast),url,https://clinicaltrials.gov/study/NCT05464784,https://www.globenewswire.com/news-release/2026/09/28/3369686/7767/en/medicinova-announces-topline-results-from-mn-001-natg-202-clinical-trial-of-mn-001-tipelukast.html,Estimated,Reported

@@ -2902,6 +2902,21 @@
    "permanent": true
   },
   {
+   "source": "/pdufa/KPTI",
+   "destination": "/pdufa/KPTI-xpovio-myelofibrosis",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/INCY-2026-04-08",
+   "destination": "/fda-decision/INCY-2026-03-06",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/MGNX-2026-04-08",
+   "destination": "/fda-decision/INCY-2026-03-06",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -3072,6 +3087,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/belantamab-mafodotin",
+   "destination": "/drug/blenrep",
+   "permanent": true
+  },
+  {
    "source": "/drug/belimumab",
    "destination": "/drug/benlysta",
    "permanent": true
@@ -3152,6 +3172,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/cyclobenzaprine-hydrochloride",
+   "destination": "/drug/tonmya",
+   "permanent": true
+  },
+  {
    "source": "/drug/daratumumab-and-hyaluronidase-fihj",
    "destination": "/drug/darzalex-faspro",
    "permanent": true
@@ -3229,6 +3254,11 @@
   {
    "source": "/drug/dostarlimab-gxly",
    "destination": "/drug/jemperli",
+   "permanent": true
+  },
+  {
+   "source": "/drug/doxycycline-hyclate",
+   "destination": "/drug/bacfenssi",
    "permanent": true
   },
   {
@@ -3349,6 +3379,11 @@
   {
    "source": "/drug/glofitamab-gxbm",
    "destination": "/drug/columvi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/gozetotide",
+   "destination": "/drug/gozellix",
    "permanent": true
   },
   {
@@ -3477,6 +3512,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/lenacapavir-sodium",
+   "destination": "/drug/yeztugo",
+   "permanent": true
+  },
+  {
    "source": "/drug/lifileucel-plus",
    "destination": "/drug/lifileucel",
    "permanent": true
@@ -3499,11 +3539,6 @@
   {
    "source": "/drug/long-acting-anti-myostatin-antibody",
    "destination": "/drug/ibio-600",
-   "permanent": true
-  },
-  {
-   "source": "/drug/long-term-extension",
-   "destination": "/drug/zanubrutinib",
    "permanent": true
   },
   {
@@ -4087,6 +4122,16 @@
    "permanent": true
   },
   {
+   "source": "/drug/18f-mfbg",
+   "destination": "/readouts",
+   "permanent": true
+  },
+  {
+   "source": "/drug/a-101",
+   "destination": "/ticker/ACRS",
+   "permanent": true
+  },
+  {
    "source": "/drug/ab-101",
    "destination": "/ticker/ARTV",
    "permanent": true
@@ -4109,6 +4154,11 @@
   {
    "source": "/drug/atumelnant",
    "destination": "/ticker/CRNX",
+   "permanent": true
+  },
+  {
+   "source": "/drug/axs-14",
+   "destination": "/ticker/AXSM",
    "permanent": true
   },
   {
@@ -4152,6 +4202,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/cln-081",
+   "destination": "/ticker/CGEM",
+   "permanent": true
+  },
+  {
    "source": "/drug/comp360-psilocybin",
    "destination": "/ticker/CMPS",
    "permanent": true
@@ -4177,6 +4232,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/donidalorsen",
+   "destination": "/ticker/IONS",
+   "permanent": true
+  },
+  {
    "source": "/drug/elranatamab",
    "destination": "/ticker/PFE",
    "permanent": true
@@ -4184,6 +4244,11 @@
   {
    "source": "/drug/fcx-007",
    "destination": "/drug",
+   "permanent": true
+  },
+  {
+   "source": "/drug/lcar-b38m-car-t",
+   "destination": "/ticker/LEGN",
    "permanent": true
   },
   {
@@ -4197,6 +4262,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/mbx-2109",
+   "destination": "/ticker/MBX",
+   "permanent": true
+  },
+  {
    "source": "/drug/mecbotamab-vedotin",
    "destination": "/ticker/BCAB",
    "permanent": true
@@ -4204,6 +4274,11 @@
   {
    "source": "/drug/mk-3475",
    "destination": "/ticker/GILD",
+   "permanent": true
+  },
+  {
+   "source": "/drug/mk-7240",
+   "destination": "/ticker/MRK",
    "permanent": true
   },
   {
@@ -4222,8 +4297,18 @@
    "permanent": true
   },
   {
+   "source": "/drug/nov-002",
+   "destination": "/ticker/CLRB",
+   "permanent": true
+  },
+  {
    "source": "/drug/pi-2620",
    "destination": "/ticker/LNTH",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ptc923",
+   "destination": "/ticker/PTCT",
    "permanent": true
   },
   {
@@ -4252,6 +4337,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/seralutinib",
+   "destination": "/ticker/GOSS",
+   "permanent": true
+  },
+  {
    "source": "/drug/sgt-003",
    "destination": "/ticker/SLDB",
    "permanent": true
@@ -4264,6 +4354,16 @@
   {
    "source": "/drug/sotagliflozin",
    "destination": "/ticker/LXRX",
+   "permanent": true
+  },
+  {
+   "source": "/drug/spn-812",
+   "destination": "/ticker/SUPN",
+   "permanent": true
+  },
+  {
+   "source": "/drug/tavocept",
+   "destination": "/ticker/LTRN",
    "permanent": true
   },
   {
@@ -4287,6 +4387,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/treprostinil-palmitil",
+   "destination": "/ticker/INSM",
+   "permanent": true
+  },
+  {
    "source": "/drug/ttx",
    "destination": "/ticker/RNAZ",
    "permanent": true
@@ -4307,28 +4412,23 @@
    "permanent": true
   },
   {
+   "source": "/drug/wtx-330",
+   "destination": "/ticker/HOWL",
+   "permanent": true
+  },
+  {
    "source": "/drug/wve",
+   "destination": "/ticker/WVE",
+   "permanent": true
+  },
+  {
+   "source": "/drug/wve-210201",
    "destination": "/ticker/WVE",
    "permanent": true
   },
   {
    "source": "/drug/xrx",
    "destination": "/ticker/XRTX",
-   "permanent": true
-  },
-  {
-   "source": "/pdufa/KPTI",
-   "destination": "/pdufa/KPTI-xpovio-myelofibrosis",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/INCY-2026-04-08",
-   "destination": "/fda-decision/INCY-2026-03-06",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/MGNX-2026-04-08",
-   "destination": "/fda-decision/INCY-2026-03-06",
    "permanent": true
   }
  ],

@@ -20,7 +20,9 @@ export default [
     "pcd_type": "actual",
     "updated": "2026-07-01",
     "ongoing": false,
-    "results_posted": "2025-03-12"
+    "results_posted": "2025-03-12",
+    "title": "A Phase 2/3 Study for the Evaluation of Safety and Efficacy of Humacyte's ATEV for Vascular Replacement or Reconstruction in Patients With Life or Limb-threatening Vascular Trauma",
+    "brief_title": "Humacyte Acellular Tissue Engineered Vessel (ATEV) in Patients With Vascular Trauma"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -75,7 +77,9 @@ export default [
     "pcd": "2025-05-20",
     "pcd_type": "actual",
     "updated": "2026-07-23",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Phase II/III, Randomised, Double-Blind Clinical Trial to Determine the Safety and Efficacy of IHL-42X in Subjects With Obstructive Sleep Apnoea Who Are Intolerant, Non-Compliant, or Na\u00efve to Positive Airway Pressure",
+    "brief_title": "RePOSA-Revealing the Efficacy of IHL-42X Use in Patients With OSA"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -102,9 +106,12 @@ export default [
     "source_url": "https://clinicaltrials.gov/study/NCT06146101"
    },
    "resolution": {
-    "state": "no_topline",
+    "state": "sponsor_release",
+    "date": "2025-07-30",
+    "headline": "Incannex Reports Positive Topline Results from RePOSA Phase 2 Trial of IHL-42X",
+    "url": "https://www.globenewswire.com/news-release/2025/07/30/3124000/0/en/Incannex-Reports-Positive-Topline-Results-from-RePOSA-Phase-2-Trial-of-IHL-42X.html",
     "checked": "2026-11-27",
-    "searched": "2 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "basis": "sponsor press-release headline with results language that names the drug, or names this trial's disease while its text names the drug; outcome not summarised here"
    }
   },
   "dm": "2025-05"
@@ -129,7 +136,9 @@ export default [
     "pcd": "2026-03-31",
     "pcd_type": "actual",
     "updated": "2026-09-29",
-    "ongoing": false
+    "ongoing": false,
+    "title": "The Use of Two YUTIQ Versus Sham for Treatment of Chronic Non Infectious Intraocular Inflammation Affecting the Posterior Segment (TYNI Trial)",
+    "brief_title": "The Use of Two YUTIQ Versus Sham for Treatment of Chronic Non Infectious Intraocular Inflammation Affecting the Posterior Segment"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -158,7 +167,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "25 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-03"
@@ -183,7 +192,9 @@ export default [
     "pcd": "2026-04-06",
     "pcd_type": "actual",
     "updated": "2026-08-27",
-    "ongoing": false
+    "ongoing": false,
+    "title": "Auxora for the Treatment of AKI and Modulation of Injurious \"Crosstalk\" With the Lung: A Randomized Control Trial (KOURAGE)",
+    "brief_title": "A Study of Auxora in Patients With AKI and Injurious Lung \"Crosstalk\""
    },
    "indication": null,
    "market_cap_usd": null,
@@ -240,7 +251,9 @@ export default [
     "pcd": "2026-04-29",
     "pcd_type": "actual",
     "updated": "2026-10-01",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Randomized, Double-Blind, Controlled, Parallel Group Study With the INTERCEPT Blood System for Red Blood Cells in Regions at Potential Risk for Zika Virus Transfusion-Transmitted Infections (RedeS)",
+    "brief_title": "INTERCEPT Blood System for RBCs Study in Regions at Potential Risk for Zika Virus Transfusion-Transmitted Infections"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -269,7 +282,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "18 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-04"
@@ -294,7 +307,9 @@ export default [
     "pcd": "2026-04-20",
     "pcd_type": "actual",
     "updated": "2026-07-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "First in Human Phase 1/2 Trial of ELI-002 7P Immunotherapy as Treatment for Subjects With Kirsten Rat Sarcoma (KRAS)/Neuroblastoma RAS Viral Oncogene Homolog (NRAS) Mutated Pancreatic Ductal Adenocarcinoma (PDAC) and Other Solid Tumors",
+    "brief_title": "A Study of ELI-002 7P in Subjects With KRAS/NRAS Mutated Solid Tumors"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -323,52 +338,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   }
-  },
-  "dm": "2026-04"
- },
- {
-  "id": "readout_howl_2026-07-15",
-  "t": "HOWL",
-  "company": "Werewolf Therapeutics, Inc.",
-  "d": "2026-04-15",
-  "dp": "month",
-  "name": "WTX-330",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05479812",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05479812",
-    "status": "completed",
-    "pcd": "2026-04-22",
-    "pcd_type": "actual",
-    "updated": "2026-08-24",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "date_history": [
-    {
-     "date": "2026-07-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-04-15",
-     "changed": "2026-07-11",
-     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05479812",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "4 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "30 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-04"
@@ -393,7 +363,9 @@ export default [
     "pcd": "2026-04-30",
     "pcd_type": "actual",
     "updated": "2026-07-29",
-    "ongoing": false
+    "ongoing": false,
+    "title": "AIPAC-003 (Active Immunotherapy and PAClitaxel): A Randomized, Double-blind, Placebo-controlled Phase 3 Trial Testing Eftilagimod Alpha (Soluble LAG-3) in HER2-neg/Low Metastatic Breast Cancer Patients Receiving Paclitaxel, Following an Open-label Dose Optimization",
+    "brief_title": "Study in Metastatic Breast Cancer Patients Receiving Eftilagimod Alpha or Placebo in Combination With Paclitaxel Chemotherapy"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -443,7 +415,9 @@ export default [
     "pcd": "2026-05-22",
     "pcd_type": "actual",
     "updated": "2026-10-28",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3, Randomized, Placebo-Controlled, Double-Blind, Multicenter Trial of Selinexor in Maintenance Therapy After Systemic Therapy for Patients With p53 Wild-Type, Advanced or Recurrent Endometrial Carcinoma",
+    "brief_title": "Selinexor in Maintenance Therapy After Systemic Therapy for Participants With p53 Wild-Type, Advanced or Recurrent Endometrial Carcinoma"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -469,9 +443,14 @@ export default [
     }
    ],
    "resolution": {
-    "state": "no_topline",
+    "state": "sponsor_release",
+    "date": "2026-07-30",
+    "headline": "Karyopharm Announces Topline Results from Phase 3 XPORT-EC-042 Trial in Endometrial Cancer",
+    "url": "https://www.prnewswire.com/news-releases/karyopharm-announces-topline-results-from-phase-3-xport-ec-042-trial-in-endometrial-cancer-302839314.html",
+    "quote": "The Trial Did Not Meet the Primary Endpoint of Progression-Free Survival (PFS)",
     "checked": "2026-11-27",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "reviewed": "2026-11-27",
+    "basis": "sponsor's own topline release for this trial (XPORT-EC-042 = NCT05611931), read by hand"
    }
   },
   "dm": "2026-05"
@@ -496,7 +475,9 @@ export default [
     "pcd": "2026-05-28",
     "pcd_type": "actual",
     "updated": "2026-11-11",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3, Parallel-group, Randomized, Double-blind, 3-arm, Placebo-controlled, Multicenter Study to Investigate the Efficacy and Safety of Subcutaneous Sonelokimab in Male and Female Participants Aged 18 Years and Over With Active Psoriatic Arthritis Who Are Naive to Biologic DMARDs",
+    "brief_title": "Evaluation of Sonelokimab in Patients With Active Psoriatic Arthritis Naive to Biologic Disease-Modifying Antirheumatic Drug"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -557,7 +538,9 @@ export default [
     "pcd": "2026-05-22",
     "pcd_type": "actual",
     "updated": "2026-07-09",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Confirmatory Phase 3 Multicenter, Randomized, Double-Blind, Placebo-Controlled Study of the Efficacy of Topical HyBryte\u2122 (Hypericin Sodium) and Visible-Light Activation for the Treatment of Cutaneous T-Cell Lymphoma (CTCL)",
+    "brief_title": "Confirmatory Study of Topical HyBryte\u2122 vs. Placebo for the Treatment of CTCL"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -615,7 +598,9 @@ export default [
     "pcd": "2026-06-20",
     "pcd_type": "actual",
     "updated": "2026-07-08",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Phase 2a, Randomized, Placebo-controlled, Double-blind Study to Assess the Safety, Pharmacokinetics, and Pharmacodynamics of AGMB-129 in Patients With Fibrostenotic Crohn's Disease",
+    "brief_title": "STENOVA - A Study to Evaluate Safety, Tolerability, PK and PD of AGMB-129 in Patients With Fibrostenotic Crohn's Disease"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -643,7 +628,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "13 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-06"
@@ -668,7 +653,9 @@ export default [
     "pcd": "2026-06-15",
     "pcd_type": "actual",
     "updated": "2026-08-19",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-label, Single Center Study Assessing Tenapanor as a Non-CFTR-mediated Treatment of CF-related Constipation in People With CF.",
+    "brief_title": "Assessing Tenapanor as a Treatment of CF-related Constipation."
    },
    "indication": null,
    "market_cap_usd": null,
@@ -686,7 +673,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "60 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "245 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-06"
@@ -711,7 +698,9 @@ export default [
     "pcd": "2026-06-18",
     "pcd_type": "actual",
     "updated": "2026-10-27",
-    "ongoing": false
+    "ongoing": false,
+    "title": "Phase 3, Randomized, Controlled, Open-label Study to Compare the Efficacy and Safety of Bemnifosbuvir-Ruzasvir Fixed-dose Combination (BEM/RZR FDC) Versus Sofosbuvir-Velpatasvir Fixed-dose Combination (SOF/VEL FDC) in Subjects With Chronic Hepatitis C Virus (HCV) Infection",
+    "brief_title": "C-BEYOND: Efficacy and Safety of BEM/RZR vs. SOF/VEL in Subjects With Chronic HCV"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -720,7 +709,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "14 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    },
    "date_history": [
     {
@@ -765,7 +754,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "26 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "56 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-06"
@@ -791,7 +780,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "9 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "38 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-06"
@@ -808,7 +797,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -844,7 +833,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ERS",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -929,7 +918,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -994,7 +983,9 @@ export default [
     "pcd": "2026-09-16",
     "pcd_type": "actual",
     "updated": "2026-11-04",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Open Label Dose-escalation and Dose-expansion Study to Evaluate the Safety, Expansion, Persistence and Clinical Activity of UCART22 (Allogeneic Engineered T-cells Expressing Anti-CD22 Chimeric Antigen Receptor) in Patients With Relapsed or refractoryCD22+ B-cell Acute Lymphoblastic Leukemia (B-ALL)",
+    "brief_title": "Phase 1/2 Study of UCART22 in Patients With Relapsed or Refractory CD22+ B-cell Acute Lymphoblastic Leukemia (BALLI-01)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -1003,7 +994,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "25 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "27 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    },
    "date_history": [
     {
@@ -1047,7 +1038,9 @@ export default [
     "pcd": "2026-06-02",
     "pcd_type": "actual",
     "updated": "2026-08-31",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Phase 1/2, Open-label Study Evaluating the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics, and Efficacy of SNS-101 (Anti VISTA) as Monotherapy and in Combination With Cemiplimab in Patients With Advanced Solid Tumors",
+    "brief_title": "A Study of SNS-101 (Anti VISTA) Monotherapy and in Combination With Cemiplimab in Patients With Advanced Solid Tumors"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -1076,7 +1069,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "15 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "26 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-06"
@@ -1102,41 +1095,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "9 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-06"
- },
- {
-  "id": "readout_legn_2026-06-15",
-  "t": "LEGN",
-  "company": "Legend Biotech Corp",
-  "d": "2026-06-15",
-  "dp": "month",
-  "name": "LCAR-B38M CAR-T Cell",
-  "type": "Readout",
-  "ta": "Hematology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06395870",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06395870",
-    "status": "recruiting",
-    "pcd": "2026-06-30",
-    "pcd_type": "estimated",
-    "updated": "2024-11-04",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06395870",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "24 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-06"
@@ -1161,7 +1120,9 @@ export default [
     "pcd": "2026-06-25",
     "pcd_type": "actual",
     "updated": "2026-09-08",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Phase 2a Randomized, Double-blind, Placebo-controlled Proof-of-concept Study to Evaluate the Safety, Tolerability, Pharmacodynamics, and Pharmacokinetics of SION-719 When Added to Physician-prescribed Trikafta\u00ae in People With Cystic Fibrosis Who Are Homozygous for the F508del Mutation",
+    "brief_title": "Proof-of-concept Study to Evaluate the Safety, Tolerability, Pharmacodynamics, and Pharmacokinetics of SION-719 When Added to Trikafta"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -1190,7 +1151,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "19 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "46 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-06"
@@ -1216,7 +1177,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "30 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-06"
@@ -1241,7 +1202,9 @@ export default [
     "pcd": "2026-06-30",
     "pcd_type": "actual",
     "updated": "2026-07-31",
-    "ongoing": false
+    "ongoing": false,
+    "title": "An Open Label, In-Clinic Study to Assess Respiratory Function and Safety of Escalating Doses of Nalbuphine Extended-Release Tablets (NAL ER) in Subjects With Idiopathic Pulmonary Fibrosis (IPF)",
+    "brief_title": "NAL ER IPF Respiratory Function and Safety Study"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -1259,7 +1222,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "15 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-06"
@@ -1613,7 +1576,7 @@ export default [
   "cap": "Large",
   "st": "Decided",
   "url": "/ticker/AZN",
-  "ua": "2026-07-11T15:23:27Z",
+  "ua": "2026-11-27T23:31:30Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04493853",
@@ -1624,7 +1587,9 @@ export default [
     "updated": "2026-05-05",
     "slip": null
    },
-   "indication": "Dephosphorylated Phosphatase and Tensin Homolog (dPTEN) Hormone-Sensitive Prostate Cancer (HSPC)",
+   "indication": "In combination with abiraterone and prednisone, adults with metastatic androgen pathway modulation-na\u00efve or -sensitive (mAPMN/S) prostate cancer (previously referred to as metastatic hormone-sensitive prostate cancer) that is PTEN-deficient as detected by an FDA-authorized test",
+   "indication_short": "PTEN-deficient metastatic hormone-sensitive prostate cancer, with abiraterone and prednisone",
+   "indication_source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-capivasertib-abiraterone-and-prednisone-pten-deficient-androgen-pathway-modulation",
    "market_cap_usd": 570498143397.0,
    "cash_runway_months": 11.41,
    "days_to_decision": -10,
@@ -1889,7 +1854,9 @@ export default [
     "pcd": "2026-07-14",
     "pcd_type": "actual",
     "updated": "2026-10-29",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Randomized, Double-Blind, Parallel-Group, Placebo-Controlled Phase 3 Efficacy and Safety Study of Tezepelumab in Patients With Eosinophilic Esophagitis (CROSSING).",
+    "brief_title": "Efficacy and Safety of Tezepelumab in Patients With Eosinophilic Esophagitis"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -1907,7 +1874,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "21 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "32 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -1932,7 +1899,9 @@ export default [
     "pcd": "2026-07-07",
     "pcd_type": "actual",
     "updated": "2026-08-17",
-    "ongoing": false
+    "ongoing": false,
+    "title": "4-Week, Multi-Center, Randomized, Db-Blind, Placebo-Controlled, Dose-Ranging Study to Assess the Safety & Efficacy of Tenapanor for the T/t of IBS-C in Pts. 6 to < 12 Yrs. Old",
+    "brief_title": "4-Week, Multi-center Dose-Ranging Study for the IBS-C in Pts. 6 to <12 Yrs"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -1949,63 +1918,10 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "60 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "245 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-07"
- },
- {
-  "id": "readout_axsm_2026-07-15",
-  "t": "AXSM",
-  "company": "Axsome Therapeutics, Inc.",
-  "d": "2026-08-15",
-  "dp": "month",
-  "name": "AXS-14",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT07523048",
-  "ua": "2026-11-25T21:54:02Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT07523048",
-    "status": "completed",
-    "pcd": "2026-08-24",
-    "pcd_type": "actual",
-    "updated": "2026-11-20",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07523048",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "8 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   },
-   "date_history": [
-    {
-     "date": "2026-07-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-08-15",
-     "changed": "2026-11-25",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT07523048 is now 2026-08-24 (actual; registry status completed, record updated 2026-11-20); the row's window moved from 2026-07 to 2026-08 on 2026-11-25. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "COMPLETED",
-    "primary_completion": "2026-08-24",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT07523048"
-   }
-  },
-  "dm": "2026-08"
  },
  {
   "id": "readout_crdf_2026-07-15",
@@ -2027,7 +1943,9 @@ export default [
     "pcd": "2026-07-16",
     "pcd_type": "actual",
     "updated": "2026-09-22",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1b/2 Trial of Onvansertib in Combination With NALIRIFOX for First Line Treatment of Advanced Pancreatic Cancer",
+    "brief_title": "Onvansertib in Combination With NALIRIFOX for First Line Treatment of Advanced Pancreatic Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -2044,7 +1962,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "8 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "13 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -2069,7 +1987,9 @@ export default [
     "pcd": "2026-07",
     "pcd_type": "estimated",
     "updated": "2025-07-10",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1a/1b Study of ELVN-002 for the Treatment of Patients With HER2 Mutant Non-Small Cell Lung Cancer",
+    "brief_title": "ELVN-002 in HER2 Mutant Non-Small Cell Lung Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -2078,7 +1998,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "12 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -2104,7 +2024,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "4 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "20 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -2129,7 +2049,9 @@ export default [
     "pcd": "2026-07-13",
     "pcd_type": "actual",
     "updated": "2026-11-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A 2-year Phase 3, Multicenter, Prospective, Randomized, Double-Masked, Parallel-Group Study of EYP-1901, a Tyrosine Kinase Inhibitor (TKI), Compared to Aflibercept in Subjects With Wet AMD",
+    "brief_title": "A 2-year Study of EYP-1901 in Subjects With Wet Age Related Macular Degeneration (wAMD) (LUGANO) Primary Efficacy Will be Determined at Week 56"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -2157,7 +2079,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "60 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "87 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -2182,7 +2104,9 @@ export default [
     "pcd": "2026-07-07",
     "pcd_type": "actual",
     "updated": "2026-09-28",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Randomized, Double-Blind, Placebo Controlled Study to Assess the Efficacy and Safety of Two Dose Regimens (60 mg/kg and 120 mg/kg) of Weekly Intravenous Alpha1 Proteinase Inhibitor (Human) in Subjects With Pulmonary Emphysema Due to Alpha1 Antitrypsin Deficiency",
+    "brief_title": "Efficacy and Safety of Alpha1-Proteinase Inhibitor (Human), Modified Process (Alpha-1 MP) in Subjects With Pulmonary Emphysema Due to Alpha1 Antitrypsin Deficiency (AATD)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -2211,83 +2135,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "0 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   }
-  },
-  "dm": "2026-07"
- },
- {
-  "id": "readout_ilmn_2026-07-15",
-  "t": "ILMN",
-  "company": "Illumina, Inc.",
-  "d": "2026-07-15",
-  "dp": "month",
-  "name": "18F-MFBG",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04724369",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04724369",
-    "status": "completed",
-    "pcd": "2026-07-30",
-    "pcd_type": "actual",
-    "updated": "2026-09-24",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04724369",
-   "registry": {
-    "overall_status": "COMPLETED",
-    "primary_completion": "2026-07-30",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT04724369"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   }
-  },
-  "dm": "2026-07"
- },
- {
-  "id": "readout_iova_2026-07-15",
-  "t": "IOVA",
-  "company": "Iovance Biotherapeutics, Inc.",
-  "d": "2026-07-15",
-  "dp": "month",
-  "name": "Lifileucel plus Pembrolizumab",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06566092",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06566092",
-    "status": "active_not_recruiting",
-    "pcd": "2026-07",
-    "pcd_type": "estimated",
-    "updated": "2026-03-31",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06566092",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "20 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "3 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -2313,57 +2161,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "9 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-07"
- },
- {
-  "id": "readout_jspr_2026-08-15",
-  "t": "JSPR",
-  "company": "Jasper Therapeutics, Inc.",
-  "d": "2026-07-15",
-  "dp": "month",
-  "name": "Briquilimab",
-  "type": "Readout",
-  "ta": "Immunology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06736262",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06736262",
-    "status": "terminated",
-    "pcd": "2026-07-21",
-    "pcd_type": "actual",
-    "updated": "2026-08-04",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-11-27, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
-   "date_history": [
-    {
-     "date": "2026-08-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-07-15",
-     "changed": "2026-07-11",
-     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06736262",
-   "ta_basis": "ClinicalTrials.gov conditions: Urticaria Chronic",
-   "registry": {
-    "overall_status": "TERMINATED",
-    "primary_completion": "2026-07-21",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT06736262"
+    "searched": "24 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -2388,7 +2186,9 @@ export default [
     "pcd": "2026-07-08",
     "pcd_type": "actual",
     "updated": "2026-08-04",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Phase 1b/2a, Dose Escalation Trial of Safety, Pharmacokinetic/Pharmacodynamic and Preliminary Clinical Activity of Briquilimab in Adult Patients With Chronic Spontaneous Urticaria (CSU) Who Remain Symptomatic Despite Treatment With H1 Antihistamines and/or Omalizumab, or Who Cannot Tolerate Omalizumab",
+    "brief_title": "Dose Escalation Trial Of Safety, Pharmacokinetic/Pharmacodynamic And Preliminary Clinical Activity of Briquilimab In Adult Patients With Chronic Spontaneous Urticaria (CSU)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -2417,140 +2217,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "8 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   }
-  },
-  "dm": "2026-07"
- },
- {
-  "id": "readout_ltrn_2026-07-15",
-  "t": "LTRN",
-  "company": "Lantern Pharma Inc.",
-  "d": "2026-07-15",
-  "dp": "month",
-  "name": "Tavocept(BNP7787) in combination with cisplatin ",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05933265",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05933265",
-    "status": "active_not_recruiting",
-    "pcd": "2026-07-28",
-    "pcd_type": "estimated",
-    "updated": "2026-04-28",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05933265",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "8 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-07"
- },
- {
-  "id": "readout_ogn_2027-10-15",
-  "t": "OGN",
-  "company": "Organon & Co.",
-  "d": "2026-07-15",
-  "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05504720",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05504720",
-    "status": "completed",
-    "pcd": "2026-07-15",
-    "pcd_type": "actual",
-    "updated": "2026-08-06",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "date_history": [
-    {
-     "date": "2027-10-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-07-15",
-     "changed": "2026-07-11",
-     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05504720",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-07"
- },
- {
-  "id": "readout_ptct_2026-06-15",
-  "t": "PTCT",
-  "company": "Ptc Therapeutics, Inc.",
-  "d": "2026-07-15",
-  "dp": "month",
-  "name": "PTC923",
-  "type": "Readout",
-  "ta": "Metabolic",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05166161",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05166161",
-    "status": "completed",
-    "pcd": "2026-07-21",
-    "pcd_type": "actual",
-    "updated": "2026-09-04",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "date_history": [
-    {
-     "date": "2026-06-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-07-15",
-     "changed": "2026-07-11",
-     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05166161",
-   "ta_basis": "ClinicalTrials.gov conditions: Phenylketonuria",
-   "registry": {
-    "overall_status": "COMPLETED",
-    "primary_completion": "2026-07-21",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT05166161"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "9 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "11 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -2576,7 +2243,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "23 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "39 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -2602,7 +2269,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "22 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "39 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -2627,7 +2294,9 @@ export default [
     "pcd": "2026-07-13",
     "pcd_type": "actual",
     "updated": "2026-09-16",
-    "ongoing": false
+    "ongoing": false,
+    "title": "Phase II Trial of XmAb20717 in Patients With Advanced Biliary Tract Cancers",
+    "brief_title": "XmAb20717 in Advanced Biliary Tract Cancers"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -2655,7 +2324,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "9 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-07"
@@ -3281,7 +2950,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -3310,7 +2979,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -3346,7 +3015,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -3396,7 +3065,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -3417,7 +3086,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -3438,7 +3107,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -3459,7 +3128,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -3488,7 +3157,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASN",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -3524,7 +3193,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -3581,7 +3250,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/IDWeek",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -3602,7 +3271,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESMO",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -3750,7 +3419,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/SITC",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -3848,7 +3517,9 @@ export default [
     "pcd": "2026-08-20",
     "pcd_type": "actual",
     "updated": "2026-09-18",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A 12-Week, Randomized, Double-Blind, Placebo-Controlled, Phase 3 Study to Assess the Safety and Efficacy of Tenapanor for the Treatment of Irritable Bowel Syndrome With Constipation (IBS-C) in Pediatric Patients 12 to Less Than 18 Years Old",
+    "brief_title": "Study to Assess Safety and Efficacy of Tenapanor for Treatment of IBS-C in Pediatric Patients 12 to Less Than 18 Years"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -3876,7 +3547,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "60 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "245 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-08"
@@ -3901,7 +3572,9 @@ export default [
     "pcd": "2026-08-06",
     "pcd_type": "actual",
     "updated": "2026-09-19",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Double-blind, Randomized Study to Evaluate the Efficacy and Safety of Bezisterim (NE3107) in Adults With Long COVID",
+    "brief_title": "NE3107 in Adults With Neurological Symptoms of Long COVID"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -3919,7 +3592,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "13 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-08"
@@ -3944,7 +3617,9 @@ export default [
     "pcd": "2026-04-23",
     "pcd_type": "actual",
     "updated": "2026-11-09",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled, Multicenter Study to Evaluate the Efficacy and Safety of Vosoritide in Children With Hypochondroplasia",
+    "brief_title": "Interventional Study of Vosoritide for the Treatment of Children With Hypochondroplasia"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -3983,40 +3658,6 @@ export default [
   "dm": "2026-04"
  },
  {
-  "id": "readout_clrb_2026-08-15",
-  "t": "CLRB",
-  "company": "Cellectar Biosciences, Inc.",
-  "d": "2026-08-15",
-  "dp": "month",
-  "name": "NOV-002",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT03478462",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT03478462",
-    "status": "active_not_recruiting",
-    "pcd": "2026-08-25",
-    "pcd_type": "estimated",
-    "updated": "2026-03-16",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT03478462",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-08"
- },
- {
   "id": "conf_aasld_2026-11-05",
   "t": "AASLD",
   "company": "AASLD The Liver Meeting",
@@ -4028,7 +3669,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AASLD",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -4064,7 +3705,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACR",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -4100,7 +3741,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AHA",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -4121,7 +3762,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACAAI",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -4142,7 +3783,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/SNO",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -4163,7 +3804,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -4192,7 +3833,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/CTAD",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -4221,7 +3862,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ENA",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -4332,7 +3973,9 @@ export default [
     "pcd": "2026-08",
     "pcd_type": "estimated",
     "updated": "2025-11-04",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-Label Multi-Dose Study to Evaluate the Safety and Efficacy of VDPHL01 in Male and Female Subjects With Androgenetic Alopecia",
+    "brief_title": "Safety and Efficacy of VDPHL01 in Males and Females With AGA"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -4372,7 +4015,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "37 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "54 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-08"
@@ -4398,49 +4041,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-08"
- },
- {
-  "id": "readout_tmo_2026-08-15",
-  "t": "TMO",
-  "company": "Thermo Fisher Scientific Inc.",
-  "d": "2026-08-15",
-  "dp": "month",
-  "name": "MK-7240",
-  "type": "Readout",
-  "ta": "Immunology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06052059",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06052059",
-    "status": "active_not_recruiting",
-    "pcd": "2026-08-12",
-    "pcd_type": "actual",
-    "updated": "2026-09-25",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06052059",
-   "registry": {
-    "overall_status": "ACTIVE_NOT_RECRUITING",
-    "primary_completion": "2026-08-12",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT06052059"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "10 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-08"
@@ -4465,7 +4066,9 @@ export default [
     "pcd": "2026-08-31",
     "pcd_type": "estimated",
     "updated": "2025-08-29",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1b/2a Study of Gemcitabine and Nab-paclitaxel in Combination With Avutometinib (VS-6766) and Defactinib in Patients With Previously Untreated Metastatic Adenocarcinoma of the Pancreas",
+    "brief_title": "Study of Avutometinib (VS-6766) +Defactinib With Gemcitabine and Nab-paclitaxel in Patients With Pancreatic Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -4475,7 +4078,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "20 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-08"
@@ -5162,59 +4765,6 @@ export default [
   }
  },
  {
-  "id": "readout_acrs_2026-08-15",
-  "t": "ACRS",
-  "company": "Aclaris Therapeutics, Inc.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "A-101",
-  "type": "Readout",
-  "ta": "Immunology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT07011706",
-  "ua": "2026-10-12T00:26:36Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT07011706",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09-21",
-    "pcd_type": "actual",
-    "updated": "2026-09-28",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07011706",
-   "registry": {
-    "overall_status": "ACTIVE_NOT_RECRUITING",
-    "primary_completion": "2026-09-21",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT07011706"
-   },
-   "date_history": [
-    {
-     "date": "2026-08-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-09-15",
-     "changed": "2026-10-11",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT07011706 is now 2026-09-21 (actual; registry status active_not_recruiting, record updated 2026-09-28); the row's window moved from 2026-08 to 2026-09 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
-   }
-  },
-  "dm": "2026-09"
- },
- {
   "id": "readout_arqt_2026-09-15",
   "t": "ARQT",
   "company": "Arcutis Biotherapeutics Inc.",
@@ -5235,7 +4785,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "14 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -5260,7 +4810,9 @@ export default [
     "pcd": "2026-09",
     "pcd_type": "estimated",
     "updated": "2026-03-19",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2b, Multicenter, Randomized, Double-Blind, Placebo-Controlled, Multiple Dose Study With Open-Label Extension to Assess the Efficacy, Safety, and Pharmacokinetics of Subcutaneously Administered Taldefgrobep Alfa in Adults Living With Overweight and Obesity",
+    "brief_title": "Taldefgrobep Alfa in Adults With Overweight and Obesity"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -5269,7 +4821,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "13 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -5295,7 +4847,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "20 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "22 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -5320,7 +4872,9 @@ export default [
     "pcd": "2026-09-30",
     "pcd_type": "estimated",
     "updated": "2026-03-24",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1/2 Open-Label Multi-Center Study to Characterize the Safety and Tolerability of CFT7455 in Subjects With Relapsed/Refractory Non-Hodgkin's Lymphoma or Multiple Myeloma",
+    "brief_title": "Study to Assess the Safety and Tolerability of CFT7455 in Relapsed/Refractory Non-Hodgkin's Lymphoma or Multiple Myeloma"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -5330,40 +4884,6 @@ export default [
     "state": "no_topline",
     "checked": "2026-11-27",
     "searched": "8 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-09"
- },
- {
-  "id": "readout_cgem_2026-09-15",
-  "t": "CGEM",
-  "company": "Cullinan Therapeutics, Inc.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "CLN-081",
-  "type": "Readout",
-  "ta": "Hematology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06381141",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06381141",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09",
-    "pcd_type": "estimated",
-    "updated": "2025-09-12",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06381141",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "14 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -5388,7 +4908,9 @@ export default [
     "pcd": "2026-09-23",
     "pcd_type": "actual",
     "updated": "2026-10-22",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Phase 3, Open-label, Multicenter, Pharmacokinetics, Efficacy, and Safety Study of a Recombinant Single-chain Factor VIII (rVIII-SingleChain) in Chinese Previously Treated Patients (PTPs) With Hemophilia A",
+    "brief_title": "Recombinant Single-chain Factor VIII (rVIII-SingleChain) in Chinese Participants With Hemophilia A Previously Treated With FVIII Products"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -5417,7 +4939,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "4 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "5 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -5443,7 +4965,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "4 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "20 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -5469,57 +4991,8 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "17 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "26 sponsor press releases (FMP) through 2026-11-27"
    }
-  },
-  "dm": "2026-09"
- },
- {
-  "id": "readout_goss_2027-12-15",
-  "t": "GOSS",
-  "company": "Gossamer Bio, Inc.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "Seralutinib",
-  "type": "Readout",
-  "ta": "Cardiovascular",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04816604",
-  "ua": "2026-10-12T00:27:37Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04816604",
-    "status": "terminated",
-    "pcd": "2026-09-09",
-    "pcd_type": "actual",
-    "updated": "2026-11-17",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04816604",
-   "registry": {
-    "overall_status": "TERMINATED",
-    "primary_completion": "2026-09-09",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-27",
-    "source_url": "https://clinicaltrials.gov/study/NCT04816604"
-   },
-   "date_history": [
-    {
-     "date": "2027-12-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-09-15",
-     "changed": "2026-10-11",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT04816604 is now 2026-09-09 (actual; registry status terminated, record updated 2026-10-02); the row's window moved from 2027-12 to 2026-09 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry_note": "ClinicalTrials.gov records NCT04816604 as terminated as of 2026-11-27, with primary completion 2026-09-09 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
   "dm": "2026-09"
  },
@@ -5543,7 +5016,9 @@ export default [
     "pcd": "2026-09-30",
     "pcd_type": "estimated",
     "updated": "2026-03-26",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Study of Intravesical Bacillus Calmette-Guerin (BCG) in Combination With ALT-803 (N-803) in Patients With Non-Muscle Invasive Bladder Cancer",
+    "brief_title": "A Study of Intravesical BCG in Combination With ALT-803 in Patients With Non-Muscle Invasive Bladder Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -5552,7 +5027,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "17 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -5577,7 +5052,9 @@ export default [
     "pcd": "2026-09-30",
     "pcd_type": "estimated",
     "updated": "2026-02-18",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Explorative, Open-labeled, Phase I Study to Evaluate the Feasibility and the Safety of IMP321 in Combination With Immunotherapeutic/Targeted/Chemotherapeutic Agents or Via New Routes of Application in Advanced Stage Solid Tumors",
+    "brief_title": "Feasibility and Safety of IMP321 (Eftilagimod Alpha) for Advanced Stage Solid Tumors"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -5587,7 +5064,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "250 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -5612,7 +5089,9 @@ export default [
     "pcd": "2026-09",
     "pcd_type": "estimated",
     "updated": "2026-06-30",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2, Randomized, Open-Label, Multicenter Study to Evaluate Safety and Efficacy of Single Agent Selinexor Versus Treatment of Physician's Choice in Patients With Previously Treated Myelofibrosis",
+    "brief_title": "A Study to Evaluate Single Agent Selinexor Versus Physician's Choice in Participants With Previously Treated Myelofibrosis"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -5621,7 +5100,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "33 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -5638,7 +5117,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -5659,7 +5138,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -5680,7 +5159,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -5772,7 +5251,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -6095,7 +5574,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -6116,7 +5595,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/JPM",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-01-14",
    "location": "",
@@ -6137,7 +5616,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -6158,7 +5637,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -6179,7 +5658,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -6200,7 +5679,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADPD",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-03-20",
    "location": "",
@@ -6221,7 +5700,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -6241,7 +5720,7 @@ export default [
   "ta": "Nephrology",
   "cap": "Micro",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/UNCY-olc",
   "_d": {
    "indication": "Hyperphosphatemia in patients with chronic kidney disease on dialysis (Class 2 resubmission after the June 29, 2026 CRL)",
@@ -6339,7 +5818,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "37 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "54 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -6364,7 +5843,9 @@ export default [
     "pcd": "2026-09-11",
     "pcd_type": "actual",
     "updated": "2026-10-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2, Randomized, Double-Blind, Multi-Center Study in Adult Subjects With Eosinophilic Esophagitis (EoE) to Evaluate the Safety and Efficacy of Vonoprazan 20 mg Compared to Placebo After 12 Weeks and to Evaluate the Safety and Efficacy of Vonoprazan 20 mg Up to 24 Weeks",
+    "brief_title": "A Study in Adult Participants With EoE to Evaluate Vonoprazan 20 mg Compared to Placebo After 12 Weeks and to Evaluate Vonoprazan 20 mg Up to 24 Weeks"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -6398,7 +5879,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "17 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -6423,7 +5904,9 @@ export default [
     "pcd": "2026-06-23",
     "pcd_type": "actual",
     "updated": "2026-11-20",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Phase 1/2 Study With an Open-label Dose Escalation Phase Followed by a Randomized, Double-blind Phase of SLN124 in Patients With Polycythemia Vera",
+    "brief_title": "Study to Assess SLN124 in Patients With Polycythemia Vera"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -6433,7 +5916,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "17 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    },
    "date_history": [
     {
@@ -6458,52 +5941,6 @@ export default [
   "dm": "2026-06"
  },
  {
-  "id": "readout_supn_2026-09-15",
-  "t": "SUPN",
-  "company": "Supernus Pharmaceuticals, Inc.",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "SPN-812",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT02736656",
-  "ua": "2026-11-17T19:36:47Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT02736656",
-    "status": "active_not_recruiting",
-    "pcd": "2026-12",
-    "pcd_type": "estimated",
-    "updated": "2026-11-16",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT02736656",
-   "ta_basis": "ClinicalTrials.gov conditions: Attention-Deficit/Hyperactivity Disorder",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-17",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-17"
-   },
-   "date_history": [
-    {
-     "date": "2026-09-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-12-15",
-     "changed": "2026-11-17",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT02736656 is now 2026-12 (estimated; registry status active_not_recruiting, record updated 2026-11-16); the row's window moved from 2026-09 to 2026-12 on 2026-11-17. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ]
-  },
-  "dm": "2026-12"
- },
- {
   "id": "readout_vera_2026-09-15",
   "t": "VERA",
   "company": "Vera Therapeutics Inc.",
@@ -6524,7 +5961,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "12 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -6549,7 +5986,9 @@ export default [
     "pcd": "2026-09-30",
     "pcd_type": "actual",
     "updated": "2026-10-30",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3 Randomized, Open-Label Study to Evaluate the Efficacy and Safety of Tobevibart + Elebsiran Combination Therapy in Participants With Chronic HDV Infection (ECLIPSE 1)",
+    "brief_title": "A Study to Evaluate Tobevibart + Elebsiran in Chronic HDV Infection"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -6611,41 +6050,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "9 sponsor press releases (FMP) through 2026-11-27"
-   }
-  },
-  "dm": "2026-09"
- },
- {
-  "id": "readout_wve_2026-09-15",
-  "t": "WVE",
-  "company": "Wave Life Sciences, Inc.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "WVE-210201",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06405633",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06405633",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09",
-    "pcd_type": "estimated",
-    "updated": "2026-04-09",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06405633",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-27",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-27"
+    "searched": "17 sponsor press releases (FMP) through 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -6670,7 +6075,9 @@ export default [
     "pcd": "2026-09-18",
     "pcd_type": "actual",
     "updated": "2026-10-16",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2, Multi-Center Study Consisting of a Randomized, Placebo-Controlled Period, Followed by an Open-Label Extension Period to Assess the Efficacy, Safety, and Tolerability of Tibulizumab in Adults With Hidradenitis Suppurativa",
+    "brief_title": "Tibulizumab Skin Healing and Inflammation Evaluation for Lasting Defense"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -6699,7 +6106,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "13 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -7313,10 +6720,13 @@ export default [
    "guidance_text": "d patient-focused group of individuals at such a defining inflection point,&#x201d; said Mr. Li. &#x201c;The opportunity to help advance the company&#x2019;s lead asset, ARD-101, with topline Phase 3 data expected in the third quarter of 2026, and to expand the company&#x2019;s portfolio is energizi",
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001774857/000119312526047757/ck0001774857-ex99_2.htm",
    "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-26",
-    "reviewed": "2026-11-26",
-    "searched": "Company's newest release (SEC filing (8-K Ex. 99.1, Q3 2026 press release) 2026-11-13) read 2026-11-26: no results and no timing for this readout. Site row src (Feb 12, 2026 Ex. 99.2) guided 'topline Phase 3 data expected in the third quarter of 2026' from the Phase 3 HERO trial. Q3 release\u2026"
+    "state": "company_stopped",
+    "date": "2026-10-23",
+    "url": "https://www.globenewswire.com/news-release/2026/10/23/3387158/0/en/aardvark-therapeutics-reports-exploratory-data-from-the-terminated-hero-and-open-label-extension-trials.html",
+    "quote": "The HERO trial randomized 67 of the planned 90 participants and was terminated early.",
+    "note": "Exploratory data only, per the company: \u201call efficacy data are considered exploratory.\u201d",
+    "checked": "2026-11-27",
+    "reviewed": "2026-11-27"
    }
   },
   "dm": "2026-09"
@@ -7910,7 +7320,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -7931,7 +7341,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESCMID",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-04-13",
    "location": "",
@@ -7952,7 +7362,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -7973,7 +7383,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -7994,7 +7404,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/APA",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -8015,7 +7425,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -8036,7 +7446,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Breast",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-05-14",
    "location": "",
@@ -8057,7 +7467,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/HRS",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-05-16",
    "location": "",
@@ -8078,7 +7488,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -8099,7 +7509,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -8120,7 +7530,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AUA",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-05-24",
    "location": "",
@@ -8141,7 +7551,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ERA",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-06-06",
    "location": "",
@@ -8162,7 +7572,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -8183,7 +7593,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENDO",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-06-07",
    "location": "",
@@ -8204,7 +7614,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EULAR",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-06-12",
    "location": "",
@@ -8225,7 +7635,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -8246,7 +7656,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EAN",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-06-15",
    "location": "",
@@ -8267,7 +7677,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -8288,7 +7698,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
@@ -8309,7 +7719,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ISTH",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-06-30",
    "location": "",
@@ -8330,7 +7740,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAIC",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-07-21",
    "location": "",
@@ -8351,7 +7761,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESC",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-08-30",
    "location": "",
@@ -8372,7 +7782,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ERS",
-  "ua": "2026-11-27T18:41:17Z",
+  "ua": "2026-11-27T23:50:13Z",
   "_d": {
    "end": "2027-09-14",
    "location": "",
@@ -8989,7 +8399,9 @@ export default [
     "pcd": "2026-08-04",
     "pcd_type": "actual",
     "updated": "2026-11-11",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled Study to Assess the Efficacy and Safety of Barzolvolimab in Patients With Chronic Spontaneous Urticaria Who Remain Symptomatic Despite H1 Antihistamine Treatment (EMBARQ-CSU2)",
+    "brief_title": "A Phase 3 Study of Barzolvolimab in Participants With Chronic Spontaneous Urticaria (CSU)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -9106,7 +8518,9 @@ export default [
     "pcd": "2026-10",
     "pcd_type": "estimated",
     "updated": "2026-08-27",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2b, Randomized, Double-blind, Placebo-controlled Study to Assess the Safety, Tolerability, and Efficacy of IMVT-1402 in Participants With Active Subacute Cutaneous Lupus Erythematosus (SCLE) and/or Chronic Cutaneous Lupus Erythematosus (CCLE) With or Without Systemic Manifestations",
+    "brief_title": "A Study to Assess the Safety, Tolerability, and Efficacy of IMVT-1402 in Participants With Cutaneous Lupus Erythematosus (CLE)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -9196,7 +8610,9 @@ export default [
     "pcd": "2026-10-14",
     "pcd_type": "actual",
     "updated": "2026-11-04",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Phase 3 Study of Tapinarof for the Treatment of Plaque Psoriasis in Pediatric Subjects",
+    "brief_title": "Tapinarof for the Treatment of Plaque Psoriasis in Pediatric Subjects"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -9292,7 +8708,9 @@ export default [
     "pcd": "2026-10-14",
     "pcd_type": "actual",
     "updated": "2026-10-15",
-    "ongoing": false
+    "ongoing": false,
+    "title": "Phase Ib/II Study of Capecitabine 7/7 Schedule With Neratinib in Patients With Metastatic HER2-Positive Breast Cancer",
+    "brief_title": "Capecitabine 7/7 Schedule With Neratinib in Patients With Metastatic HER2-Positive Breast Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -9347,7 +8765,9 @@ export default [
     "pcd": "2027-04-30",
     "pcd_type": "estimated",
     "updated": "2026-11-06",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Pilot Study to Evaluate the Safety and Efficacy of Zimberelimab (AB122) in Combination With Domvanalimab (AB154) and Etrumadenant (AB928) in Patients With Previously Treated Non-Small Cell Lung Cancer",
+    "brief_title": "Safety and Efficacy of Zimberelimab (AB122) in Combination With Domvanalimab (AB154) and Etrumadenant (AB928) in Patients With Previously Treated Non-Small Cell Lung Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -9451,7 +8871,9 @@ export default [
     "pcd": "2026-11-03",
     "pcd_type": "actual",
     "updated": "2026-11-12",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2 Open-label Study of Setmelanotide in Patients With Prader-Willi Syndrome",
+    "brief_title": "A Study of Setmelanotide in Patients With Prader-Willi Syndrome"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -9504,7 +8926,9 @@ export default [
     "pcd": "2026-10-30",
     "pcd_type": "estimated",
     "updated": "2026-07-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A 4-part, Open-label, Multicenter, Multinational Study of the Safety, Tolerability, Pharmacokinetics, Pharmacodynamic, and Exploratory Efficacy of Venglustat in Combination With Cerezyme in Adult Patients With Gaucher Disease Type 3 With Venglustat Monotherapy Extension",
+    "brief_title": "Venglustat in Combination With Cerezyme in Adult Patients With Gaucher Disease Type 3 With Venglustat Monotherapy Extension"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -9541,7 +8965,9 @@ export default [
     "pcd": "2026-09-07",
     "pcd_type": "actual",
     "updated": "2026-11-09",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Randomized, Double-Blind, Dose Finding and Comparison Study of the Safety and Efficacy of High Doses of Eteplirsen, Preceded by an Open-label Dose Escalation, in Patients With Duchenne Muscular Dystrophy With Deletion Mutations Amenable to Exon 51 Skipping",
+    "brief_title": "A Study to Compare Safety and Efficacy of High Doses of Eteplirsen in Participants With Duchenne Muscular Dystrophy (DMD) (MIS51ON)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -9550,7 +8976,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "18 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    },
    "date_history": [
     {
@@ -9693,7 +9119,9 @@ export default [
     "pcd": "2026-10",
     "pcd_type": "estimated",
     "updated": "2026-10-13",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-label Phase 1b/2 Study of WVE-N531 in Patients With Duchenne Muscular Dystrophy",
+    "brief_title": "Open-label Study of WVE-N531 in Patients With Duchenne Muscular Dystrophy (FORWARD-53)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -10211,7 +9639,9 @@ export default [
     "pcd": "2026-11",
     "pcd_type": "estimated",
     "updated": "2025-12-23",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Pilot Trial of Plinabulin and Pegfilgrastim to Reduce the Duration of Absolute Neutropenia After Autologous Hematopoietic Cell Transplantation for Patients With Multiple Myeloma",
+    "brief_title": "Study of Plinabulin and Pegfilgrastim in People With Multiple Myeloma Undergoing an Autologous Hematopoietic Stem Cell Transplant (AHCT)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -10241,7 +9671,9 @@ export default [
     "pcd": "2027-04-16",
     "pcd_type": "estimated",
     "updated": "2026-11-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2, Randomized, Open-label Study of Onvansertib in Combination With FOLFIRI and Bevacizumab or FOLFOX and Bevacizumab Versus FOLFIRI and Bevacizumab or FOLFOX and Bevacizumab for First-line Treatment of Metastatic Colorectal Cancer in Patients With a KRAS or NRAS Mutation",
+    "brief_title": "Study of Onvansertib in Combination With FOLFIRI and Bevacizumab or FOLFOX and Bevacizumab Versus FOLFIRI and Bevacizumab or FOLFOX and Bevacizumab for First-Line Treatment of Metastatic Colorectal Cancer in Adult Participants With a KRAS or NRAS Mutation"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -10295,36 +9727,6 @@ export default [
   "dm": "2026-11",
   "oc": "Not approvable letter",
   "dcd": "2026-11-09"
- },
- {
-  "id": "readout_sny_2026-11-15",
-  "t": "SNY",
-  "company": "Sanofi",
-  "d": "2026-11-15",
-  "dp": "month",
-  "name": "Rilzabrutinib",
-  "type": "Readout",
-  "ta": "Hematology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT07216079",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT07216079",
-    "status": "active_not_recruiting",
-    "pcd": "2026-11-25",
-    "pcd_type": "estimated",
-    "updated": "2026-11-05",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07216079",
-   "ta_basis": "ClinicalTrials.gov conditions: Immune Thrombocytopenia"
-  },
-  "dm": "2026-11"
  },
  {
   "id": "pdufa_capr_2026-08-22",
@@ -10532,12 +9934,15 @@ export default [
    "trial": "SHIELD II",
    "decision_source": "PolyPid 6-K Exhibit 99.1, November 24, 2026 (SEC EDGAR)",
    "decision_source_url": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm",
-   "decision_date_unsourced": true,
    "decision_quote": "the U.S. Food and Drug Administration (\u201cFDA\u201d) has approved the Company\u2019s New Drug Application (\u201cNDA\u201d) for BACFENSSI",
    "decision_note": "PolyPid announced the approval on November 24, 2026, four days before the November 28, 2026 goal date it disclosed. The FDA's own record of the action day was not read when this row was updated, so no early or late margin is published yet.",
    "announcement": "PolyPid 6-K Exhibit 99.1, November 24, 2026 (SEC EDGAR)",
    "announcement_url": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026123719/ea031349501ex99-1.htm",
-   "review": "NDA under Priority Review, PDUFA target action date November 28, 2026 (PolyPid 6-K, July 29, 2026). Per PolyPid, in the Phase 3 SHIELD II trial (798 patients in the primary analysis population) the primary endpoint event occurred in 10.9% of patients on BACFENSSI plus standard of care and 18.1% on standard of care alone (p=0.004); surgical site infection, a key secondary endpoint, in 3.8% and 9.5% (p=0.001)."
+   "review": "NDA under Priority Review, PDUFA target action date November 28, 2026 (PolyPid 6-K, July 29, 2026). Per PolyPid, in the Phase 3 SHIELD II trial (798 patients in the primary analysis population) the primary endpoint event occurred in 10.9% of patients on BACFENSSI plus standard of care and 18.1% on standard of care alone (p=0.004); surgical site infection, a key secondary endpoint, in 3.8% and 9.5% (p=0.001).",
+   "fda_action_date": "2026-11-24",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220740Orig1s000ltr.pdf",
+   "fda_action_record": "NDA 220740 ORIG-1",
+   "decision_date_note": "The FDA's action date, November 24, 2026, is from Drugs@FDA (NDA 220740 ORIG-1). 2026-11-24 is the day the sponsor announced it."
   },
   "oc": "Approved",
   "dcd": "2026-11-24"
@@ -10639,8 +10044,8 @@ export default [
    "decision_quote": "On November 24, 2026, the Food and Drug Administration approved bezuclastinib (Ekitna, Cogent Biosciences, Inc)",
    "decision_note": "Approved on November 24, 2026, 6 days before the November 30, 2026 goal date Cogent disclosed (8-K, August 10, 2026).",
    "fda_action_date": "2026-11-24",
-   "fda_action_source_url": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
-   "fda_action_record": "FDA oncology approval notification, November 24, 2026 (letter not yet on Drugs@FDA)",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221283Orig1s000ltr.pdf",
+   "fda_action_record": "NDA 221283 ORIG-1",
    "announcement": "FDA oncology approval notification, November 24, 2026",
    "announcement_url": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-bezuclastinib-combination-sunitinib-advanced-gastrointestinal-stromal-tumors",
    "review": "NDA under Priority Review. Per the FDA, PEAK (NCT05208047) is an open-label, randomized trial in 413 patients: median progression-free survival was 16.5 months with bezuclastinib plus sunitinib and 9.2 months with sunitinib alone (hazard ratio 0.50, 95% CI 0.39 to 0.65); overall response rate 46% and 26%. Overall survival data were not mature."
@@ -10940,7 +10345,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VRTX-povetacicept",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
@@ -10996,7 +10401,7 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/pdufa/VNDA-imsidolimab",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -11041,7 +10446,9 @@ export default [
     "pcd": "2026-12-31",
     "pcd_type": "estimated",
     "updated": "2026-09-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase II Study of FOLFIRINOX Combined With the Glycogen Synthase Kinase-3 Beta (GSK-3 \u03b2) Inhibitor Elraglusib and the Transforming Growth Factor-\u03b2 (TGF-\u03b2) Inhibitor Losartan in Patients With Untreated Metastatic Pancreatic Adenocarcinoma",
+    "brief_title": "FOLFIRINOX + Elraglusib + Losartan In Pancreatic Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11076,7 +10483,9 @@ export default [
     "pcd": "2026-12-31",
     "pcd_type": "estimated",
     "updated": "2026-10-16",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Addition of loNcasTuxImab teSirine to AcalabruTinib in Chronic Lymphocytic Leukemia(Anti-Static Study)",
+    "brief_title": "Addition of Loncastuximab Tesirine to Acalbrutinib , Chronic Lymphocytic Leukemia"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11105,7 +10514,9 @@ export default [
     "pcd": "2026-12",
     "pcd_type": "estimated",
     "updated": "2025-10-28",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-label, Single-arm, Phase Ib/IIa Trial to Evaluate the Safety and Efficacy of the EP4 Receptor Antagonist Vorbipiprant (CR6086) in Combination With the PD-1 Inhibitor Balstilimab (AGEN2034), in Patients With Pretreated Mismatch-repair-proficient and Microsatellite Stable Metastatic Colorectal Cancer, and Other Metastatic GI Cancers.",
+    "brief_title": "Vorbipiprant (CR6086) / Balstilimab (AGEN2034) Combination in Stage IV Refractory pMMR - MSS CRC, and Other Metastatic GI Cancers"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11134,7 +10545,9 @@ export default [
     "pcd": "2026-12-30",
     "pcd_type": "estimated",
     "updated": "2026-02-06",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A PHASE 3, RANDOMIZED, OPEN-LABEL, MULTICENTER STUDY OF VEPDEGESTRANT (ARV-471/PF-07850327) PLUS PALBOCICLIB VERSUS LETROZOLE PLUS PALBOCICLIB FOR THE TREATMENT OF PARTICIPANTS WITH ESTROGEN RECEPTOR POSITIVE, HER2 NEGATIVE BREAST CANCER WHO HAVE NOT RECEIVED ANY PRIOR SYSTEMIC ANTI CANCER TREATMENT FOR ADVANCED DISEASE (VERITAC-3)",
+    "brief_title": "Vepdegestrant (ARV-471/PF-07850327) + Palbociclib vs Letrozole + Palbociclib in ER(+)/HER2(-) Advanced Breast Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11163,7 +10576,9 @@ export default [
     "pcd": "2026-12",
     "pcd_type": "estimated",
     "updated": "2025-12-10",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Phase I/II Clinical Trial of Human Allogenic Culture-expanded Bone Marrow-derived Mesenchymal Stem Cells (hMSCs) in Patients With Ischemic Heart Failure With Reduced Ejection Fraction (HFrEF)",
+    "brief_title": "Clinical Trial of Human Allogenic Culture-expanded Bone Marrow-derived Mesenchymal Stem Cells"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11192,7 +10607,9 @@ export default [
     "pcd": "2026-12",
     "pcd_type": "estimated",
     "updated": "2025-01-10",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1/2, Dose-Exploration and Dose-Expansion Study Evaluating the Safety and Efficacy of Multiplex Base-Edited, Allogeneic Anti-CD7 CAR-T Cells (BEAM-201) in Relapsed/Refractory T-Cell Acute Lymphoblastic Leukemia (T-ALL) or T-Cell Lymphoblastic Lymphoma (T-LL)",
+    "brief_title": "A Study Evaluating the Safety and Efficacy of BEAM-201 in Relapsed/Refractory T-Cell Acute Lymphoblastic Leukemia (T-ALL) or T-Cell Lymphoblastic Lymphoma (T-LL)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11203,35 +10620,6 @@ export default [
     "was": "BEAM-302",
     "why": "the linked ClinicalTrials.gov record tests BEAM-201, not BEAM-302"
    }
-  },
-  "dm": "2026-12"
- },
- {
-  "id": "readout_cort_2026-12-15",
-  "t": "CORT",
-  "company": "Corcept Therapeutics Inc",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "Relacorilant",
-  "type": "Readout",
-  "ta": "Rare disease",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT03604198",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT03604198",
-    "status": "active_not_recruiting",
-    "pcd": "2026-12",
-    "pcd_type": "estimated",
-    "updated": "2026-10-30",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT03604198"
   },
   "dm": "2026-12"
  },
@@ -11255,7 +10643,9 @@ export default [
     "pcd": "2026-12-15",
     "pcd_type": "estimated",
     "updated": "2026-11-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1b/2 Study of Onvansertib in Combination With Paclitaxel in Triple-negative Metastatic Breast Cancer Patients",
+    "brief_title": "Onvansertib + Paclitaxel In TNBC"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11263,109 +10653,6 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT05383196"
   },
   "dm": "2026-12"
- },
- {
-  "id": "readout_goss_2026-12-15",
-  "t": "GOSS",
-  "company": "Gossamer Bio, Inc.",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "Seralutinib",
-  "type": "Readout",
-  "ta": "Cardiovascular",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06274801",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06274801",
-    "status": "recruiting",
-    "pcd": "2026-12",
-    "pcd_type": "estimated",
-    "updated": "2026-10-08",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06274801"
-  },
-  "dm": "2026-12"
- },
- {
-  "id": "readout_insm_2026-12-15",
-  "t": "INSM",
-  "company": "INSMED Inc",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "Treprostinil Palmitil Inhalation Powder",
-  "type": "Readout",
-  "ta": "Cardiovascular",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05649748",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05649748",
-    "status": "active_not_recruiting",
-    "pcd": "2026-12-31",
-    "pcd_type": "estimated",
-    "updated": "2026-10-15",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05649748"
-  },
-  "dm": "2026-12"
- },
- {
-  "id": "readout_ions_2026-12-15",
-  "t": "IONS",
-  "company": "Ionis Pharmaceuticals Inc.",
-  "d": "2027-12-15",
-  "dp": "month",
-  "name": "Donidalorsen",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05392114",
-  "ua": "2026-11-27T18:09:13Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05392114",
-    "status": "active_not_recruiting",
-    "pcd": "2027-12",
-    "pcd_type": "estimated",
-    "updated": "2026-11-23",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05392114",
-   "registry_match": {
-    "checked": "2026-11-17",
-    "sponsor": "Ionis Pharmaceuticals, Inc.",
-    "basis": "Only donidalorsen trial with PCD Dec-2026 is Ionis Ph3 OLE (OASISplus) NCT05392114, PCD 2026-12 est; other donidalorsen trials completed or PCD 2029-06"
-   },
-   "date_history": [
-    {
-     "date": "2026-12-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2027-12-15",
-     "changed": "2026-11-27",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT05392114 is now 2027-12 (estimated; registry status active_not_recruiting, record updated 2026-11-23); the row's window moved from 2026-12 to 2027-12 on 2026-11-27. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ]
-  },
-  "dm": "2027-12"
  },
  {
   "id": "readout_kpti_2026-12-15",
@@ -11387,7 +10674,9 @@ export default [
     "pcd": "2026-12",
     "pcd_type": "estimated",
     "updated": "2026-09-29",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2/3, Multicenter Randomized Study of Rituximab-Gemcitabine-Dexamethasone-Platinum (R-GDP) With or Without Selinexor in Patients With Relapsed/Refractory Diffuse Large B-cell Lymphoma (RR DLBCL)",
+    "brief_title": "A Study of Rituximab-Gemcitabine-Dexamethasone-Platinum (R-GDP) With or Without Selinexor in Patients With Relapsed/Refractory Diffuse Large B-cell Lymphoma"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11447,15 +10736,15 @@ export default [
   "id": "readout_mnov_2026-12-15",
   "t": "MNOV",
   "company": "Medicinova Inc",
-  "d": "2026-12-15",
-  "dp": "month",
+  "d": "2026-09-28",
+  "dp": "day",
   "name": "MN-001 (tipelukast)",
   "type": "Readout",
   "ta": "Metabolic",
   "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05464784",
-  "ua": "2026-07-11T15:23:27Z",
+  "st": "Reported",
+  "url": "https://www.globenewswire.com/news-release/2026/09/28/3369686/7767/en/medicinova-announces-topline-results-from-mn-001-natg-202-clinical-trial-of-mn-001-tipelukast.html",
+  "ua": "2026-11-27T23:07:20Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05464784",
@@ -11463,53 +10752,38 @@ export default [
     "pcd": "2026-12-31",
     "pcd_type": "estimated",
     "updated": "2026-02-03",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2, Double-Blind, Randomized, Placebo-Controlled Study to Evaluate the Safety, Tolerability and Efficacy of MN-001 in Patients Diagnosed With Non-alcoholic Fatty Liver Disease, Type 2 Diabetes Mellitus, and Hypertriglyceridemia"
    },
-   "indication": null,
+   "indication": "NAFLD with type 2 diabetes and hypertriglyceridemia",
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
+   "source": "company release (sponsor reported results before the registry window)",
    "source_url": "https://clinicaltrials.gov/study/NCT05464784",
    "name_fix": {
     "checked": "2026-11-17",
     "was": "MN-166",
     "why": "the linked ClinicalTrials.gov record tests MN-001 (tipelukast), not MN-166"
-   }
-  },
-  "dm": "2026-12"
- },
- {
-  "id": "readout_onc_2026-12-15",
-  "t": "ONC",
-  "company": "BeOne Medicines Ltd.",
-  "d": "2026-12-15",
-  "dp": "month",
-  "name": "Zanubrutinib (long-term extension)",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04170283",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04170283",
-    "status": "active_not_recruiting",
-    "pcd": "2026-12-31",
-    "pcd_type": "estimated",
-    "updated": "2026-08-26",
-    "ongoing": true
    },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04170283",
-   "registry_match": {
-    "checked": "2026-11-17",
-    "sponsor": "BeOne Medicines",
-    "basis": "Red team B: the only interventional BeOne zanubrutinib trial completing 2026-12 is the Ph3 long-term extension NCT04170283 (n=955, PCD 2026-12-31). Kept and labelled as an extension, matching the other extension rows."
+   "date_history": [
+    {
+     "date": "2026-12-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-09-28",
+     "changed": "2026-11-27",
+     "why": "The sponsor's release of 2026-09-28 reports this trial's results (the release's trial design (Phase 2, randomized, double-blind, placebo-controlled, 40 patients with NAFLD and hypertriglyceridemia associated with T2DM, 24 weeks) matches the registry record, and it reports both registry co-primary measures at Week 24). A reported row carries the day it was reported. Was 2026-12-15 (month), the registry primary-completion estimate."
+    }
+   ],
+   "review": "Medicinova Inc reported this readout on 2026-09-28: \u201cMediciNova Announces Topline Results from MN-001-NATG-202 Clinical Trial of MN-001 (Tipelukast)\u201d (company press release).",
+   "reported_source_url": "https://www.globenewswire.com/news-release/2026/09/28/3369686/7767/en/medicinova-announces-topline-results-from-mn-001-natg-202-clinical-trial-of-mn-001-tipelukast.html",
+   "program": "MN-001 (tipelukast)",
+   "trial": "MN-001-NATG-202 (Phase 2)",
+   "early_readout_check": {
+    "checked": "2026-11-27",
+    "basis": "the release's trial design (Phase 2, randomized, double-blind, placebo-controlled, 40 patients with NAFLD and hypertriglyceridemia associated with T2DM, 24 weeks) matches the registry record, and it reports both registry co-primary measures at Week 24"
    }
-  },
-  "dm": "2026-12"
+  }
  },
  {
   "id": "readout_rnac_2026-12-15",
@@ -11531,7 +10805,9 @@ export default [
     "pcd": "2026-12-01",
     "pcd_type": "estimated",
     "updated": "2026-03-23",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Descartes-08 for Patients With Systemic Lupus Erythematosus",
+    "brief_title": "Descartes-08 for Patients With Systemic Lupus Erythematosus"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11560,7 +10836,9 @@ export default [
     "pcd": "2026-12-23",
     "pcd_type": "estimated",
     "updated": "2026-11-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Parallel-group Treatment, Phase 2a, Multicenter, Randomized, Double-blind, Placebo-controlled Umbrella Study to Evaluate the Efficacy and Safety of Frexalimab, Brivekimig, and Rilzabrutinib in Participants Aged 16 to 75 Years With Primary Focal Segmental Glomerulosclerosis (FSGS) or Minimal Change Disease (MCD)",
+    "brief_title": "A Study to Evaluate the Efficacy and Safety of Frexalimab, Brivekimig, or Rilzabrutinib in Participants Aged 16 to 75 Years With Primary Focal Segmental Glomerulosclerosis or Minimal Change Disease"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11590,7 +10868,9 @@ export default [
     "pcd": "2026-12-30",
     "pcd_type": "estimated",
     "updated": "2022-08-29",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Evaluation of Safety and Efficacy of BIS-001-ER for the Treatment of Adult Focal Impaired Awareness Seizures",
+    "brief_title": "BIS-001-ER for the Treatment of Adult Focal Impaired Awareness Seizures"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11620,7 +10900,9 @@ export default [
     "pcd": "2026-12",
     "pcd_type": "estimated",
     "updated": "2026-03-26",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Multicenter, Open-Label, Randomized Phase 2a Study to Evaluate the Safety and Efficacy of Different Oral Doses of TRX-100 and Standard of Care in Participants With Influenza",
+    "brief_title": "This is an Early-stage Clinical Trial to Determine a Safe and Effective Dose for Tivoxavir Marboxil in Patients With Mild to Moderate Influenza"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11654,7 +10936,9 @@ export default [
     "pcd": "2026-08-17",
     "pcd_type": "actual",
     "updated": "2026-11-23",
-    "ongoing": false
+    "ongoing": false,
+    "title": "A Phase III, Multicenter, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of VQW-765 for the On-Demand Treatment of Acute Anxiety in Patients With Social Anxiety Disorder",
+    "brief_title": "Study to Evaluate the Efficacy and Safety of VQW-765 for the On-Demand Treatment of Social Anxiety Disorder"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -11687,7 +10971,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-27",
-    "searched": "9 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
+    "searched": "17 sponsor press releases (FMP) through 2026-11-27; ClinicalTrials.gov 2026-11-27"
    }
   },
   "dm": "2026-08"
@@ -11704,7 +10988,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CORT-relacorilant",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06108219"
@@ -11795,7 +11079,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/MLYS-lorundrostat",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
@@ -11833,7 +11117,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-anito-cel",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
@@ -11865,7 +11149,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-relutrigine",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -11930,11 +11214,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS-mr-107a-02",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
    "source_note": "Re-added 2026-08-13 after dataset loss; NDA accepted 2026-05-18, PDUFA 2026-12-27 per Viatris release.",
-   "market_cap_usd": 23179021711.0,
+   "market_cap_usd": 23158385526.0,
    "source": "Viatris Inc 8-K 2026-08-06",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1792044/000179204426000037/exhibit991-2q26earningsrel.htm",
    "source_quote": "any announced that the FDA accepted for review the New Drug Application for MR-107A-02 (fast-acting meloxicam), a non-opioid, for the treatment of moderate-to-severe acute pain. The FDA has assigned a PDUFA goal date of December 27, 2026. The Company signed a distribution agreement with Accord Healthcare to commercialize three biosimilar products (filgras",
@@ -11942,9 +11226,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-27",
-    "t120": 26.92,
-    "t30": 10.97,
-    "t7": -1.13,
+    "t120": 26.8,
+    "t30": 10.87,
+    "t7": -1.22,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -11961,7 +11245,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib-summit",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
@@ -12831,7 +12115,7 @@ export default [
   "ta": "Immunology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/RHHBY-gazyva",
   "_d": {
    "indication": "Systemic lupus erythematosus (SLE)",
@@ -12842,7 +12126,7 @@ export default [
    "source_quote": "The FDA is expected to make a decision on an approval by December 2026.",
    "event_slug": "RHHBY-gazyva",
    "source_note": "Month precision: Genentech states the month of the expected FDA decision, not a day.",
-   "market_cap_usd": 334769141795.0,
+   "market_cap_usd": 334382699843.0,
    "runup_summary": null,
    "runup_note": "Run-up is measured for day-dated goals and decided events only"
   }
@@ -13220,7 +12504,7 @@ export default [
   "ta": "Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "Myelin oligodendrocyte glycoprotein antibody-associated disease (MOGAD)",
@@ -13232,14 +12516,14 @@ export default [
    "trial": "METEOROID",
    "event_slug": "RHHBY-enspryng-mogad",
    "source_note": "sBLA, Priority Review, per Genentech release of September 9, 2026.",
-   "market_cap_usd": 334769141795.0,
+   "market_cap_usd": 334382699843.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-27",
-    "t120": 19.96,
-    "t30": 6.8,
-    "t7": 0.65,
+    "t120": 19.82,
+    "t30": 6.67,
+    "t7": 0.53,
     "source": "FMP split-adjusted daily closes"
    }
   },
@@ -13265,7 +12549,9 @@ export default [
     "pcd": "2026-12-10",
     "pcd_type": "estimated",
     "updated": "2026-11-18",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Phase I/II Study Exploring the Safety and Efficacy of Combining APL-101 With Frontline Osimertinib in Patients With EGFR-mutated Metastatic Non-small Cell Lung Cancer (NSCLC)",
+    "brief_title": "Safety and Efficacy of Combining APL-101 With Frontline Osimertinib in Patients With EGFR-mutated Metastatic Non-small Cell Lung Cancer (NSCLC)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -13310,7 +12596,8 @@ export default [
     "pcd": "2027-01",
     "pcd_type": "estimated",
     "updated": "2026-03-02",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase I Study of the Treatment of Recurrent Malignant Glioma With rQNestin34.5v.2, a Genetically Engineered HSV-1 Virus, and Immunomodulation With Cyclophosphamide"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -13344,7 +12631,9 @@ export default [
     "pcd": "2027-01",
     "pcd_type": "estimated",
     "updated": "2025-11-17",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1a/1b Study of ELVN-002 Combined With Trastuzumab in Advanced Stage HER2+ Solid Tumors, and ELVN-002 Combined With Trastuzumab and Chemotherapy in Advanced Stage HER2+ Colorectal Cancer and Breast Cancer",
+    "brief_title": "ELVN-002 With Trastuzumab +/- Chemotherapy in HER2+ Solid Tumors, Colorectal and Breast Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -13373,7 +12662,9 @@ export default [
     "pcd": "2027-01",
     "pcd_type": "estimated",
     "updated": "2026-09-23",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-label Phase 3 Study of Setrusumab in Pediatric Japanese Subjects With Osteogenesis Imperfecta Type I, III, or IV",
+    "brief_title": "Setrusumab in Pediatric Japanese Subjects With Osteogenesis Imperfecta"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -13407,7 +12698,9 @@ export default [
     "pcd": "2027-01-01",
     "pcd_type": "estimated",
     "updated": "2026-09-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1, Open-Label (JYNNEOS\u00ae), Double-Blind (TPOXX\u00ae And Placebo), Multicenter, Randomized, Placebo-Controlled, Drug-Vaccine Interaction Study To Evaluate the Impact of TPOXX on JYNNEOS Immunogenicity",
+    "brief_title": "Study to Assess the Safety and Immunogenicity of TPOXX\u00ae When Administered Orally for 28 Days With JYNNEOS"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -13428,7 +12721,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/DYN-z-rostudirsen",
   "_d": {
    "indication": "Duchenne muscular dystrophy amenable to exon 51 skipping",
@@ -13460,7 +12753,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/INSM-arikayce",
   "_d": {
    "indication": "MAC lung disease, as part of a combination antibacterial drug regimen",
@@ -13494,7 +12787,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-ulixacaltamide",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -13547,7 +12840,7 @@ export default [
   "oc": null,
   "dcd": null,
   "url": "/pdufa/PHAR-joenja",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "Activated PI3K-delta syndrome (APDS), children aged 4 years and older weighing 13 kg or more (lower-dose formulation)",
@@ -13580,7 +12873,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/AGIO-mitapivat",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
@@ -13628,7 +12921,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-yeztugo",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -13677,7 +12970,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/BBIO-infigratinib",
   "_d": {
    "indication": "Children with achondroplasia",
@@ -13710,7 +13003,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/VSTM-avmapki-fakzynja-blister-pack",
   "_d": {
    "indication": "New blister-pack presentation of the approved AVMAPKI FAKZYNJA co-pack (priority review)",
@@ -13741,7 +13034,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/RHHBY-lunsumio-polivy",
   "_d": {
    "indication": "With Polivy (polatuzumab vedotin), relapsed or refractory large B-cell lymphoma after at least one prior line of systemic therapy",
@@ -13752,14 +13045,14 @@ export default [
    "source": "Roche press release 2026-06-18 (sBLA accepted)",
    "source_url": "https://www.roche.com/media/releases/med-cor-2026-06-18",
    "source_quote": "The FDA is expected to make a decision on approval by 9 February 2027.",
-   "market_cap_usd": 334769141795.0,
+   "market_cap_usd": 334382699843.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-27",
-    "t120": 19.96,
-    "t30": 6.8,
-    "t7": 0.65,
+    "t120": 19.82,
+    "t30": 6.67,
+    "t7": 0.53,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13775,7 +13068,7 @@ export default [
   "ta": "Ophthalmology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/BLTE-tinlarebant",
   "_d": {
    "indication": "Stargardt disease type 1 (STGD1)",
@@ -13834,7 +13127,9 @@ export default [
     "pcd": "2027-02",
     "pcd_type": "estimated",
     "updated": "2026-09-16",
-    "ongoing": true
+    "ongoing": true,
+    "title": "CARTIMMUNE: A Single-Center Study of Patients With Autoimmune Diseases Receiving an Autologous Fully-Human Anti-CD19 Chimeric Antigen Receptor T-Cell (KYV 101)",
+    "brief_title": "CARTIMMUNE: Study of Patients With Autoimmune Diseases Receiving KYV-101"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -13865,7 +13160,9 @@ export default [
     "pcd": "2027-02-12",
     "pcd_type": "estimated",
     "updated": "2026-11-03",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-label, Uncontrolled, Multicenter Phase II Trial of MK-3475 (Pembrolizumab) in Children and Young Adults With Newly Diagnosed Classical Hodgkin Lymphoma With Inadequate (Slow Early) Response to Frontline Chemotherapy (KEYNOTE 667)",
+    "brief_title": "Safety and Efficacy of Pembrolizumab (MK-3475) in Children and Young Adults With Classical Hodgkin Lymphoma (MK-3475-667/KEYNOTE-667)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -13891,7 +13188,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/ARQT-zoryve",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04655313",
@@ -13936,7 +13233,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CGEM-zipalertinib",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "Relapsed EGFR exon 20 insertion non-small cell lung cancer",
@@ -13973,7 +13270,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/APMD-ad109",
   "_d": {
    "indication": "Obstructive sleep apnea",
@@ -14005,7 +13302,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/BMRN-voxzogo-achondroplasia",
   "_d": {
    "indication": "Children with achondroplasia (application for full approval)",
@@ -14019,9 +13316,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-27",
-    "t120": 20.15,
-    "t30": 21.22,
-    "t7": 16.13,
+    "t120": 20.14,
+    "t30": 21.21,
+    "t7": 16.12,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14094,7 +13391,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/PVLA-qtorin-rapamycin",
   "_d": {
    "indication": "Microcystic lymphatic malformations",
@@ -14127,7 +13424,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/EXEL-zanzalintinib",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "2L metastatic colorectal cancer",
@@ -14174,7 +13471,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/NTLA-lonvo-z",
   "_d": {
    "indication": "Hereditary angioedema",
@@ -14206,7 +13503,7 @@ export default [
   "ta": "Hematology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/BMY-reblozyl-mf",
   "_d": {
    "indication": "Adults with myelofibrosis-associated anemia receiving red blood cell transfusions, with concomitant JAK inhibitor therapy",
@@ -14215,14 +13512,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
    "source_quote": "The FDA granted a Prescription Drug User Fee Act (PDUFA) date of March 11, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 125077611999.0,
+   "market_cap_usd": 124934525991.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-27",
-    "t120": 10.11,
-    "t30": 1.02,
-    "t7": -0.26,
+    "t120": 9.99,
+    "t30": 0.91,
+    "t7": -0.37,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14247,7 +13544,9 @@ export default [
     "pcd": "2027-03-24",
     "pcd_type": "estimated",
     "updated": "2026-08-31",
-    "ongoing": true
+    "ongoing": true,
+    "title": "TACTIVE-U: AN INTERVENTIONAL SAFETY AND EFFICACY PHASE 1B/2, OPEN-LABEL UMBRELLA STUDY TO INVESTIGATE TOLERABILITY, PK, AND ANTITUMOR ACTIVITY OF VEPDEGESTRANT (ARV-471/PF-07850327), AN ORAL PROTEOLYSIS TARGETING CHIMERA, IN COMBINATION WITH OTHER ANTICANCER TREATMENTS IN PARTICIPANTS AGED 18 YEARS AND OVER WITH ER+ ADVANCED OR METASTATIC BREAST CANCER, SUB-STUDY A (ARV-471 IN COMBINATION WITH ABEMACICLIB)",
+    "brief_title": "TACTIVE-U: A Study to Learn About the Study Medicine (Vepdegestrant) When Given With Other Medicines in People With Advanced or Metastatic Breast Cancer (Sub-Study A)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -14287,7 +13586,8 @@ export default [
     "pcd": "2027-03-31",
     "pcd_type": "estimated",
     "updated": "2026-05-20",
-    "ongoing": true
+    "ongoing": true,
+    "title": "DC Migration Study to Evaluate TReg Depletion In GBM Patients With and Without Varlilumab"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -14321,7 +13621,9 @@ export default [
     "pcd": "2027-03",
     "pcd_type": "estimated",
     "updated": "2026-09-10",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-label, Multicenter, Phase 2 Study of Sacituzumab Govitecan Combinations in First-line Treatment of Patients With Advanced or Metastatic Non-Small-Cell Lung Cancer (NSCLC) Without Actionable Genomic Alterations",
+    "brief_title": "Study of Sacituzumab Govitecan Combinations in First-line Treatment of Participants With Advanced or Metastatic Non-Small-Cell Lung Cancer (NSCLC)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -14331,40 +13633,6 @@ export default [
     "checked": "2026-11-17",
     "sponsor": "Gilead Sciences",
     "basis": "Only Gilead-lead sacituzumab trial with PCD Mar-2027 is EVOKE-02 1L NSCLC Ph2 NCT05186974, PCD 2027-03 est"
-   }
-  },
-  "dm": "2027-03"
- },
- {
-  "id": "readout_ions_2027-03-15",
-  "t": "IONS",
-  "company": "Ionis Pharmaceuticals Inc.",
-  "d": "2027-03-15",
-  "dp": "month",
-  "name": "Olezarsen",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05681351",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT05681351",
-    "status": "active_not_recruiting",
-    "pcd": "2027-03",
-    "pcd_type": "estimated",
-    "updated": "2025-11-26",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05681351",
-   "registry_match": {
-    "checked": "2026-11-17",
-    "sponsor": "Ionis Pharmaceuticals, Inc.",
-    "basis": "Only olezarsen trial with PCD Jan..May-2027 is the sHTG OLE NCT05681351, PCD 2027-03 est"
    }
   },
   "dm": "2027-03"
@@ -14389,7 +13657,9 @@ export default [
     "pcd": "2027-03",
     "pcd_type": "estimated",
     "updated": "2026-06-17",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1 First-In-Human Study of the Anti-CD73 IPH5301 Alone or in Combination With Chemotherapy and Trastuzumab in Patients With Advanced Solid Tumors",
+    "brief_title": "A Phase 1 First-In-Human Study of the Anti-CD73 IPH5301 Alone or in Combination With Chemotherapy and Trastuzumab in Patients With Advanced Solid Tumors"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -14400,36 +13670,6 @@ export default [
     "was": "Monalizumab",
     "why": "the linked ClinicalTrials.gov record tests IPH5301, not Monalizumab"
    }
-  },
-  "dm": "2027-03"
- },
- {
-  "id": "readout_mdgl_2027-03-15",
-  "t": "MDGL",
-  "company": "Madrigal Pharmaceuticals, Inc.",
-  "d": "2027-03-15",
-  "dp": "month",
-  "name": "Resmetirom",
-  "type": "Readout",
-  "ta": "Hepatology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04951219",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04951219",
-    "status": "active_not_recruiting",
-    "pcd": "2027-03",
-    "pcd_type": "estimated",
-    "updated": "2026-05-22",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04951219",
-   "ta_basis": "ClinicalTrials.gov conditions: Non-Alcoholic Fatty Liver Disease"
   },
   "dm": "2027-03"
  },
@@ -14453,7 +13693,9 @@ export default [
     "pcd": "2027-03",
     "pcd_type": "estimated",
     "updated": "2026-01-12",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1/2, First-in-Human, Safety and Efficacy Study of NUV-1511 in Adult Patients With Advanced Solid Tumors",
+    "brief_title": "Safety and Efficacy Study of NUV-1511 in Adult Patients With Advanced Solid Tumors"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -14478,7 +13720,7 @@ export default [
   "ta": "Immunology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/AQST-anaphylm",
   "_d": {
    "indication": "Anaphylaxis (Class 2 resubmission after the January 30, 2026 CRL)",
@@ -14510,7 +13752,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/MRK-enflonsia",
   "_d": {
    "indication": "RSV lower respiratory tract disease in children under 2 at increased risk, through their second RSV season",
@@ -14519,14 +13761,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set PDUFA date of March 22, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 348068647500.0,
+   "market_cap_usd": 348389130000.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-27",
-    "t120": 18.13,
-    "t30": -2.76,
-    "t7": -1.52,
+    "t120": 18.24,
+    "t30": -2.67,
+    "t7": -1.43,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14542,7 +13784,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/ETON-libervant",
   "_d": {
    "indication": "Seizure clusters, expansion to patients ages 6 to 11",
@@ -14837,7 +14079,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/HRMY-pitolisant-gr",
   "_d": {
    "indication": "Pitolisant gastro-resistant formulation (NDA accepted July 2026)",
@@ -14870,7 +14112,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/INBX-ozekibart",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "Unresectable or metastatic conventional chondrosarcoma",
@@ -14917,7 +14159,9 @@ export default [
     "pcd": "2027-04-30",
     "pcd_type": "estimated",
     "updated": "2026-06-08",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Randomized Phase 2 Study: Neoadjuvant Conditioning of Prostate Cancer Tumor Microenvironment Using a Novel Chemokine-Modulating Regimen",
+    "brief_title": "Aspirin and Rintatolimod With or Without Interferon-alpha 2b in Treating Patients With Prostate Cancer Before Surgery"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -14947,7 +14191,8 @@ export default [
     "pcd": "2027-04-15",
     "pcd_type": "estimated",
     "updated": "2026-04-21",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase I/Ib Study of Adoptively Transferred T-cell Receptor Gene-engineered T Cells (TCR-T) Targeting Patient-unique Tumor-specific Neoantigens, With in Vivo CD40 Activation and PD-1 Blockade, for Patients With Incurable Cancers"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -14981,7 +14226,9 @@ export default [
     "pcd": "2027-04-30",
     "pcd_type": "estimated",
     "updated": "2026-03-12",
-    "ongoing": true
+    "ongoing": true,
+    "title": "(Neo)Adjuvant IDE196 (Darovasertib) in Patients With Localized Ocular Melanoma",
+    "brief_title": "(Neo)Adjuvant IDE196 (Darovasertib) in Patients With Localized Ocular Melanoma"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15010,7 +14257,8 @@ export default [
     "pcd": "2027-04-30",
     "pcd_type": "estimated",
     "updated": "2026-05-19",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Clinical Study to Assess Efficacy and Safety of LN-145/LN-145-S1 (Autologous Centrally Manufactured Tumor Infiltrating Lymphocytes) Across Multiple Tumor Types"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15044,7 +14292,9 @@ export default [
     "pcd": "2027-04",
     "pcd_type": "estimated",
     "updated": "2026-07-14",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1b/2 Study of Selinexor (KPT-330) in Combination With Backbone Treatments for Relapsed/Refractory Multiple Myeloma and Newly Diagnosed Multiple Myeloma",
+    "brief_title": "Selinexor and Backbone Treatments of Multiple Myeloma Patients"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15073,7 +14323,9 @@ export default [
     "pcd": "2027-04",
     "pcd_type": "estimated",
     "updated": "2025-01-10",
-    "ongoing": true
+    "ongoing": true,
+    "title": "KYSA-7: A Phase 2, Open-Label, Randomized, Multicenter Study of KYV-101, an Autologous Fully Human Anti-CD19 Chimeric Antigen Receptor T-Cell (CD19 CAR T) Therapy, in Subjects With Refractory Primary and Secondary Progressive Multiple Sclerosis",
+    "brief_title": "KYSA-7: A Study of Anti-CD19 CAR T-Cell Therapy, in Subjects With Refractory Primary and Secondary Progressive Multiple Sclerosis"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15103,7 +14355,9 @@ export default [
     "pcd": "2027-04-30",
     "pcd_type": "estimated",
     "updated": "2025-10-23",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase I Dose Escalation / Dose Expansion Study of NBTXR3 Activated by Radiotherapy for Patients With Advanced Cancers Treated With An Anti-PD-1 Therapy",
+    "brief_title": "NBTXR3 Activated by Radiotherapy for Patients With Advanced Cancers Treated With An Anti-PD-1 Therapy"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15124,7 +14378,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/JAZZ-cannabidiol-capsule",
   "_d": {
    "indication": "Oral cannabidiol capsule formulation",
@@ -15156,7 +14410,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/MRK-idvynso",
   "_d": {
    "indication": "Adults with HIV-1 infection (treatment-naive; 96-week data in virologically suppressed adults)",
@@ -15165,14 +14419,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set a PDUFA date for both sNDAs of April 22, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 348068647500.0,
+   "market_cap_usd": 348389130000.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-27",
-    "t120": 18.13,
-    "t30": -2.76,
-    "t7": -1.52,
+    "t120": 18.24,
+    "t30": -2.67,
+    "t7": -1.43,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15189,7 +14443,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PHVS-deucrictibant-ir",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "Hereditary angioedema, on-demand",
@@ -15225,7 +14479,7 @@ export default [
   "ta": "Oncology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/IMNM-varegacestat",
   "_d": {
    "indication": "Adults with desmoid tumors",
@@ -15258,7 +14512,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AXSM-axs-12",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": "Cataplexy in narcolepsy",
@@ -15289,7 +14543,7 @@ export default [
   "ta": "Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/QURE-amt-130",
   "_d": {
    "indication": "Huntington's disease (Accelerated Approval pathway; FDA tentatively plans an advisory committee)",
@@ -15322,7 +14576,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-encaleret",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -15352,7 +14606,7 @@ export default [
   "ta": "Hematology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/BMY-mezigdomide",
   "_d": {
    "indication": "Relapsed or refractory multiple myeloma",
@@ -15361,14 +14615,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
    "source_quote": "The FDA accepted a New Drug Application for mezigdomide in combination with carfilzomib and dexamethasone (MeziKd) in patients with relapsed or refractory multiple myeloma (RRMM), granting a PDUFA date of May 13, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 125077611999.0,
+   "market_cap_usd": 124934525991.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-27",
-    "t120": 10.11,
-    "t30": 1.02,
-    "t7": -0.26,
+    "t120": 9.99,
+    "t30": 0.91,
+    "t7": -0.37,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15393,7 +14647,9 @@ export default [
     "pcd": "2027-05-31",
     "pcd_type": "estimated",
     "updated": "2026-10-13",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Study of Felzartamab in Adults With IgA Nephropathy (PREVAIL)",
+    "brief_title": "A Study to Learn About the Effects of Felzartamab Infusions on Adults With Immunoglobulin A Nephropathy (IgAN)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15427,7 +14683,8 @@ export default [
     "pcd": "2027-05-26",
     "pcd_type": "estimated",
     "updated": "2025-05-20",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Phase 1 Open-Label, Dose-Escalation Study of the Safety, Tolerability and Preliminary Efficacy of Intravitreal 4D-110 in Patients With Choroideremia"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15461,7 +14718,9 @@ export default [
     "pcd": "2027-05-10",
     "pcd_type": "estimated",
     "updated": "2026-09-24",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1/2 Study of REGN4018 (Ubamatamab), a MUC16\u00d7CD3 Bispecific Antibody, Administered Alone or in Combination With Cemiplimab in Patients With Recurrent Ovarian Cancer or Other Recurrent MUC16+ Cancers",
+    "brief_title": "Study of REGN4018 (Ubamatamab) Administered Alone or in Combination With Cemiplimab in Adult Patients With Recurrent Ovarian Cancer or Other Recurrent Mucin-16 Expressing (MUC16+) Cancers"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15495,7 +14754,9 @@ export default [
     "pcd": "2027-05-01",
     "pcd_type": "estimated",
     "updated": "2026-10-08",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1/2, Open-label, Multicenter Clinical Trial Investigating the Safety, Tolerability, Pharmacokinetics, and Antineoplastic Activity of S095035 (MAT2A Inhibitor) as a Single Agent and in Combination in Adult Participants With Advanced or Metastatic Solid Tumors With Homozygous Deletion of MTAP",
+    "brief_title": "S095035 as a Single Agent and in Combination in Adult Participants With Advanced or Metastatic Solid Tumors With Deletion of MTAP"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15516,7 +14777,7 @@ export default [
   "ta": "Immunology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/ZBIO-obexelimab",
   "_d": {
    "indication": "IgG4-related disease",
@@ -15548,7 +14809,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/BMRN-voxzogo-hypochondroplasia",
   "_d": {
    "indication": "Hypochondroplasia",
@@ -15562,9 +14823,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-27",
-    "t120": 20.15,
-    "t30": 21.22,
-    "t7": 16.13,
+    "t120": 20.14,
+    "t30": 21.21,
+    "t7": 16.12,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15580,7 +14841,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/URGN-ugn-103",
   "_d": {
    "indication": "Low-grade intermediate-risk non-muscle invasive bladder cancer (LG-IR-NMIBC)",
@@ -15620,7 +14881,9 @@ export default [
     "pcd": "2027-06-30",
     "pcd_type": "estimated",
     "updated": "2026-01-05",
-    "ongoing": true
+    "ongoing": true,
+    "title": "PHase 3, Multicenter, RandOmized, Double-masked, PlacEbo-CoNtrolled Study of TInlarebant to EXplore Safety and Efficacy in the Treatment of Geographic Atrophy (the PHOENIX Study)",
+    "brief_title": "Phase 3, Randomized, Placebo-Controlled Study of Tinlarebant to Explore Safety and Efficacy in Geographic Atrophy"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15634,15 +14897,15 @@ export default [
   "id": "readout_huma_2026-10-15",
   "t": "HUMA",
   "company": "Humacyte, Inc.",
-  "d": "2027-06-15",
-  "dp": "month",
+  "d": "2026-06-10",
+  "dp": "day",
   "name": "Human Acellular Vessel",
   "type": "Readout",
   "ta": "Nephrology",
   "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT05908084",
-  "ua": "2026-07-11T15:23:27Z",
+  "st": "Reported",
+  "url": "https://www.globenewswire.com/news-release/2026/06/10/3310082/0/en/Humacyte-ATEV-Met-Superiority-Primary-Endpoint-Compared-to-Standard-of-Care-AV-Fistula-in-Interim-Analysis-of-V012-Phase-3-Study-in-Female-Dialysis-Access-Patients.html",
+  "ua": "2026-11-27T23:07:20Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05908084",
@@ -15650,11 +14913,12 @@ export default [
     "pcd": "2027-06",
     "pcd_type": "estimated",
     "updated": "2026-06-23",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3 Randomized Study to Compare the Efficacy and Safety of the Humacyte Acellular Tissue Engineered Vessel (ATEV) With That of an Autogenous Arteriovenous Fistula (AVF) in Female Patients With End-Stage Renal Disease Requiring Hemodialysis"
    },
-   "indication": null,
+   "indication": "dialysis access in women with end-stage renal disease",
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
+   "source": "company release (sponsor reported results before the registry window)",
    "date_history": [
     {
      "date": "2026-10-15",
@@ -15664,12 +14928,24 @@ export default [
      "date": "2027-06-15",
      "changed": "2026-07-11",
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    },
+    {
+     "date": "2026-06-10",
+     "changed": "2026-11-27",
+     "why": "The sponsor's release of 2026-06-10 reports this trial's results (the registry record is the Phase 3 of the ATEV vs an autogenous AV fistula in female hemodialysis patients with catheter-free days to Month 12 as its primary measure; the release reports that measure from a prespecified interim analysis). A reported row carries the day it was reported. Was 2027-06-15 (month), the registry primary-completion estimate."
     }
    ],
    "source_url": "https://clinicaltrials.gov/study/NCT05908084",
-   "ta_basis": "ClinicalTrials.gov conditions: End Stage Renal Disease (ESRD)"
-  },
-  "dm": "2027-06"
+   "ta_basis": "ClinicalTrials.gov conditions: End Stage Renal Disease (ESRD)",
+   "review": "Humacyte, Inc. reported this readout on 2026-06-10: \u201cHumacyte ATEV Met Superiority Primary Endpoint Compared to Standard of Care AV Fistula in Interim Analysis of V012 Phase 3 Study in Female Dialysis Access Patients\u201d (company press release).",
+   "reported_source_url": "https://www.globenewswire.com/news-release/2026/06/10/3310082/0/en/Humacyte-ATEV-Met-Superiority-Primary-Endpoint-Compared-to-Standard-of-Care-AV-Fistula-in-Interim-Analysis-of-V012-Phase-3-Study-in-Female-Dialysis-Access-Patients.html",
+   "program": "ATEV (human acellular vessel)",
+   "trial": "V012 (Phase 3)",
+   "early_readout_check": {
+    "checked": "2026-11-27",
+    "basis": "the registry record is the Phase 3 of the ATEV vs an autogenous AV fistula in female hemodialysis patients with catheter-free days to Month 12 as its primary measure; the release reports that measure from a prespecified interim analysis"
+   }
+  }
  },
  {
   "id": "readout_ions_2027-06-15",
@@ -15691,7 +14967,9 @@ export default [
     "pcd": "2027-06",
     "pcd_type": "estimated",
     "updated": "2025-12-05",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-Label Safety Study of AKCEA-APOCIII-LRX Administered Subcutaneously to Patients With Familial Chylomicronemia Syndrome (FCS) Previously Treated With Volanesorsen (ISIS 304801)",
+    "brief_title": "A Study of Olezarsen (Formerly Known as AKCEA-APOCIII-LRX) Administered to Adults With Familial Chylomicronemia Syndrome (FCS) Previously Treated With Volanesorsen"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15725,7 +15003,9 @@ export default [
     "pcd": "2027-06",
     "pcd_type": "estimated",
     "updated": "2025-07-14",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Randomized Phase III Study of Standard Intensive Chemotherapy Versus Intensive Chemotherapy With CPX-351 in Adult Patients With Newly Diagnosed AML and Intermediate- or Adverse Genetics",
+    "brief_title": "Study of Standard Intensive Chemotherapy Versus Intensive Chemotherapy With CPX-351 in Adult Patients With Newly Diagnosed AML and Intermediate- or Adverse Genetics"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15759,7 +15039,9 @@ export default [
     "pcd": "2027-06",
     "pcd_type": "estimated",
     "updated": "2026-03-04",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Comparison of B-cell Depletion by Rituximab and Anti-CD 19 CAR-T Therapy in Patients With Rheumatoid Arthritis. Two-stage Interventional, Prospective, Randomized, Controlled, Open Label, Parallel-group Phase I/II Trial in Patients With Active, ACPA-positive and Treatment Refractory Rheumatoid Arthritis",
+    "brief_title": "Comparison of B-cell Depletion by Rituximab and Anti-CD 19 CAR-T Therapy in Patients With Rheumatoid Arthritis"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15780,7 +15062,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/MRK-sac-tmt",
   "_d": {
    "indication": "Adults with endometrial cancer previously treated with platinum chemotherapy and a PD-1/PD-L1 inhibitor",
@@ -15789,14 +15071,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set Prescription Drug User Fee Act (PDUFA) date of June 15, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 348068647500.0,
+   "market_cap_usd": 348389130000.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-27",
-    "t120": 18.13,
-    "t30": -2.76,
-    "t7": -1.52,
+    "t120": 18.24,
+    "t30": -2.67,
+    "t7": -1.43,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15821,7 +15103,9 @@ export default [
     "pcd": "2027-06",
     "pcd_type": "estimated",
     "updated": "2026-02-17",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-label, Multicenter Clinical Study to Evaluate the Efficacy and Safety of Inhaled Molgramostim in Pediatric Participants With Autoimmune Pulmonary Alveolar Proteinosis (aPAP).",
+    "brief_title": "Inhaled Molgramostim in Pediatric Participants With Autoimmune Pulmonary Alveolar Proteinosis (aPAP)."
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15846,7 +15130,7 @@ export default [
   "ta": "Oncology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/COGT-bezuclastinib-advsm",
   "_d": {
    "indication": "Advanced systemic mastocytosis",
@@ -15962,7 +15246,9 @@ export default [
     "pcd": "2027-07-31",
     "pcd_type": "estimated",
     "updated": "2026-11-10",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Randomized, Double-masked, Comparative Clinical Study Evaluating the Efficacy, Safety, and Immunogenicity of ABP 938 8 mg Versus EYLEA\u00ae HD (Aflibercept) Delivered Via Intravitreal Injection in Participants With Neovascular Age-related Macular Degeneration",
+    "brief_title": "A Study to Evaluate Efficacy, Safety, and Immunogenicity With ABP 938 8 mg Versus EYLEA\u00ae HD (Aflibercept) in Participants With Neovascular Age-related Macular Degeneration"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -15991,7 +15277,9 @@ export default [
     "pcd": "2027-07-31",
     "pcd_type": "estimated",
     "updated": "2026-11-23",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Randomized, Double-blind, Placebo-controlled Study to Determine Efficacy and Safety of BXCL501 in Agitation Associated With Pediatric Schizophrenia and Bipolar Disorder",
+    "brief_title": "Determining Efficacy and Safety of BXCL501 in Agitation Associated With Pediatric Schizophrenia and Bipolar Disorder"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16032,7 +15320,9 @@ export default [
     "pcd": "2027-07-01",
     "pcd_type": "estimated",
     "updated": "2025-11-20",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled, 78-Week Efficacy and Safety Study of VK2735 Administered Subcutaneously for Weight Management in Participants Without Type 2 Diabetes Who Are Obese, or Overweight With at Least One Weight-related Comorbid Condition",
+    "brief_title": "VK2735 for Weight Management Phase 3"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16061,7 +15351,8 @@ export default [
     "pcd": "2027-08",
     "pcd_type": "estimated",
     "updated": "2026-05-27",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Prospective Clinical Trial of Tumor Immunomodulation Using Tumor-Treating Fields (TTFields) in Patients With Early-Stage Resectable Lung Adenocarcinoma"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16095,7 +15386,9 @@ export default [
     "pcd": "2027-08",
     "pcd_type": "estimated",
     "updated": "2026-09-15",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Randomized, Double-blind, Multicenter Study to Determine the Effect of Triheptanoin Compared With Even-chain, Medium-chain Triglycerides (MCT) on Major Clinical Events (MCEs) in Pediatric Patients With Long-chain Fatty Acid Oxidation Disorders (LC-FAOD)",
+    "brief_title": "A Study to Determine the Effect of Triheptanoin Compared With Even-Chain MCT on MCEs in Pediatric Patients With LC-FAOD"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16129,7 +15422,9 @@ export default [
     "pcd": "2027-09",
     "pcd_type": "estimated",
     "updated": "2026-11-03",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Randomized, Open-Label, Phase 2 Study of Botensilimab (AGEN1181) as Monotherapy and in Combination With Balstilimab (AGEN2034) or Investigator's Choice Standard of Care (Regorafenib or Trifluridine and Tipiracil) for the Treatment of Refractory Metastatic Colorectal Cancer",
+    "brief_title": "A Study of Botensilimab and Balstilimab for the Treatment of Colorectal Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16158,7 +15453,9 @@ export default [
     "pcd": "2027-09",
     "pcd_type": "estimated",
     "updated": "2026-07-29",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-Label Biomarker Study of BHV-1300 in Graves' Disease",
+    "brief_title": "Study of BHV-1300 in Graves' Disease"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16188,7 +15485,9 @@ export default [
     "pcd": "2027-09-28",
     "pcd_type": "estimated",
     "updated": "2026-11-12",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Study of Axatilimab and Corticosteroids as Initial Treatment for Chronic Graft-Versus-Host Disease (AXemplify-357)",
+    "brief_title": "A Study to Evaluate Axatilimab and Corticosteroids as Initial Treatment for Chronic Graft-Versus-Host Disease"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16223,7 +15522,9 @@ export default [
     "pcd": "2027-09-30",
     "pcd_type": "estimated",
     "updated": "2026-09-13",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Multicenter, Open-Label, Dose-Finding, Phase 2 Study Evaluating THIO Sequenced With Cemiplimab (LIBTAYO\u00ae) in Subjects With Advanced Non-Small Cell Lung Cancer (NSCLC)",
+    "brief_title": "THIO Sequenced With Cemiplimab in Advanced NSCLC"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16253,7 +15554,9 @@ export default [
     "pcd": "2027-09",
     "pcd_type": "estimated",
     "updated": "2025-07-01",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1/1b Pressure Enabled Regional Immuno-Oncology Study of Pancreatic Retrograde Venous Infusion of SD-101 Alone and With Checkpoint Blockade for Locally Advanced Pancreatic Ductal Adenocarcinoma",
+    "brief_title": "Pressure Enabled Intrapancreatic Delivery of SD-101 With Checkpoint Blockade for Locally Advanced Pancreatic Adenocarcinoma"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16283,7 +15586,9 @@ export default [
     "pcd": "2027-09-30",
     "pcd_type": "estimated",
     "updated": "2026-04-15",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Motion Delos: An Open Label Study to Investigate the Safety and Efficacy of Tradipitant in Participants Affected by Motion Sickness During Travel",
+    "brief_title": "Motion Delos: An Open Label Safety and Efficacy of Tradipitant in Participants Affected by Motion Sickness"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16317,7 +15622,9 @@ export default [
     "pcd": "2027-10",
     "pcd_type": "estimated",
     "updated": "2026-11-23",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3, Randomized, Double-blind, Placebo-Controlled Study to Investigate the Effect of Tirzepatide on the Reduction of Morbidity and Mortality in Adults With Obesity",
+    "brief_title": "A Study of Tirzepatide (LY3298176) on the Reduction on Morbidity and Mortality in Adults With Obesity"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16351,7 +15658,9 @@ export default [
     "pcd": "2027-10-18",
     "pcd_type": "estimated",
     "updated": "2026-10-19",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3, Randomized, Active-Controlled, Double-Blind Clinical Study to Evaluate the Efficacy and Safety of MK-8527 Oral Once-Monthly as HIV-1 Preexposure Prophylaxis in Women",
+    "brief_title": "A Study of MK-8527 to Prevent Human Immunodeficiency Virus Type 1 (HIV-1) (MK-8527-010)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16385,7 +15694,9 @@ export default [
     "pcd": "2027-10",
     "pcd_type": "estimated",
     "updated": "2026-09-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2/3, Multicenter, Randomized, Active-Controlled, Open-label Study to Evaluate the Efficacy and Safety of Zanubrutinib in Patients With Primary Membranous Nephropathy",
+    "brief_title": "A Study to Examine the Efficacy and Safety of Zanubrutinib Given to Adults With Primary Membranous Nephropathy"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16419,7 +15730,9 @@ export default [
     "pcd": "2027-11",
     "pcd_type": "estimated",
     "updated": "2026-09-08",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Pilot Trial of Lifileucel (LN-144) for Patients With Asymptomatic Melanoma Brain Metastases and Progression on Prior PD1 Therapy",
+    "brief_title": "A Study of LN-144 in People With Metastatic Melanoma to the Brain"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16464,7 +15777,9 @@ export default [
     "pcd": "2027-11",
     "pcd_type": "estimated",
     "updated": "2026-06-23",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 2 Study to Evaluate the Safety and Efficacy of Atacicept in Multiple Autoimmune Glomerular Diseases (PIONEER)",
+    "brief_title": "Atacicept in Multiple Glomerular Diseases"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16498,7 +15813,9 @@ export default [
     "pcd": "2027-12",
     "pcd_type": "estimated",
     "updated": "2025-07-22",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase Ib Safety lead-in, Followed by Phase II Trial of ADG106 in Combination With Neoadjuvant Doxorubicin and Cyclophosphamide Followed by Paclitaxel in Stage I-III HER2 Negative Breast Cancer",
+    "brief_title": "A Phase Ib Safety lead-in, Followed by Phase II Trial of ADG106 in Combination With Neoadjuvant Chemotherapy in HER2 Negative Breast Cancer"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16527,7 +15844,9 @@ export default [
     "pcd": "2027-12",
     "pcd_type": "estimated",
     "updated": "2026-11-16",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A 6-month & 18-month Prospective, Randomized, Placebo-controlled, Double-blind Dual Clinical Trial Investigating Efficacy and Safety of Buntanetap in Treating Participants of Early Alzheimer's Disease",
+    "brief_title": "A Double-blind Dual Study Assessing Safety and Efficacy of Buntanetap in Participants With Early AD"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16556,7 +15875,9 @@ export default [
     "pcd": "2027-12",
     "pcd_type": "estimated",
     "updated": "2026-11-13",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Multicenter, Randomized, Phase 3 Study to Assess the Efficacy and Safety of INtratumorally Administered INT230-6 (SHAO, VINblastine, CIsplatin) Compared With US Standard of Care in Adults With Locally Recurrent, InoperaBLE, or Metastatic Soft Tissue Sarcomas (INVINCIBLE-3)",
+    "brief_title": "A Study to Investigate Efficacy & Safety of Intratumoral INT230-6 Compared to US Standard of Care in Adults With Soft Tissue Sarcomas (INVINCIBLE-3)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16586,7 +15907,9 @@ export default [
     "pcd": "2027-12",
     "pcd_type": "estimated",
     "updated": "2026-08-31",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 1, Open-Label, Dose Escalation and Expansion, Multicenter Study of Claudin 18.2-Targeted Chimeric Antigen Receptor T-cells in Subjects With Unresectable, Locally Advanced, or Metastatic Gastric, Gastroesophageal Junction (GEJ), Esophageal, or Pancreatic Adenocarcinoma",
+    "brief_title": "Claudin 18.2-Targeted Chimeric Antigen Receptor T-cells in Subjects With Unresectable, Locally Advanced, or Metastatic Gastric, Gastroesophageal Junction (GEJ), Esophageal, or Pancreatic Adenocarcinoma"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16620,7 +15943,9 @@ export default [
     "pcd": "2027-12",
     "pcd_type": "estimated",
     "updated": "2026-11-20",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3, Multicenter, Randomized Clinical Study to Evaluate Mirikizumab in Pediatric Crohn's Disease",
+    "brief_title": "A Study of Mirikizumab (LY3074828) in Pediatric Participants With Crohn's Disease"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16654,7 +15979,9 @@ export default [
     "pcd": "2027-12",
     "pcd_type": "estimated",
     "updated": "2026-04-21",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A 3-month Study to Compare the Safety of ONS-5010 in Vials Versus PFS in Subjects With Visual Impairment Due to Retinal Disorders, NORSE SEVEN",
+    "brief_title": "A 3-month Study to Compare the Safety of ONS-5010 in Vials Versus Pre-filled Syringe in Subjects With Visual Impairment Due to Retinal Disorders"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -16683,7 +16010,9 @@ export default [
     "pcd": "2027-12",
     "pcd_type": "estimated",
     "updated": "2026-07-17",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Multinational, Multicenter, Prospective, Randomized, Controlled, Open-Label, Phase 3 Study of Lutetium (177Lu) Rosopatamab Tetraxetan in Combination With Standard of Care Versus Standard of Care Alone in Patients With PSMA Positive Metastatic Castration-Resistant Prostate Cancer Previously After Androgen Receptor Pathway Inhibitor Treatment",
+    "brief_title": "The Study of 177Lu-TLX591 Plus SOC Versus SOC Alone in Patients With mCRPC (ProstACT Global)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -17127,47 +16456,6 @@ export default [
   }
  },
  {
-  "id": "readout_mbx_2027-05-15",
-  "t": "MBX",
-  "company": "MBX Biosciences, Inc.",
-  "d": "2028-05-15",
-  "dp": "month",
-  "name": "MBX 2109",
-  "type": "Readout",
-  "ta": "Endocrinology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06531941",
-  "ua": "2026-10-12T00:27:21Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06531941",
-    "status": "active_not_recruiting",
-    "pcd": "2028-05",
-    "pcd_type": "estimated",
-    "updated": "2026-10-06",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06531941",
-   "ta_basis": "ClinicalTrials.gov conditions: Hypoparathyroidism",
-   "date_history": [
-    {
-     "date": "2027-05-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2028-05-15",
-     "changed": "2026-10-11",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT06531941 is now 2028-05 (estimated; registry status active_not_recruiting, record updated 2026-10-06); the row's window moved from 2027-05 to 2028-05 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ]
-  },
-  "dm": "2028-05"
- },
- {
   "id": "readout_incy_2026-08-15",
   "t": "INCY",
   "company": "Incyte Corp",
@@ -17187,7 +16475,9 @@ export default [
     "pcd": "2028-06-05",
     "pcd_type": "estimated",
     "updated": "2026-09-11",
-    "ongoing": true
+    "ongoing": true,
+    "title": "A Phase 3, Randomized, Double-Blind, Safety, and Efficacy Study of Ruxolitinib Cream in Pediatric Participants With Nonsegmental Vitiligo",
+    "brief_title": "A Study to Evaluate the Safety and Efficacy of Ruxolitinib Cream in Pediatric Participants With Nonsegmental Vitiligo"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -17228,7 +16518,9 @@ export default [
     "pcd": "2029-10",
     "pcd_type": "estimated",
     "updated": "2026-10-09",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Safety and Efficacy of Mitapivat Sulfate in Adult Patients With Erythrocyte Membranopathies - Canada (SATISFY-CA)",
+    "brief_title": "To Assess Safety of Mitapivat and Provide Proof of Concept of the Efficacy of the Drug in Patients With RBC Membranopathies or CDAII."
    },
    "indication": null,
    "market_cap_usd": null,
@@ -17274,7 +16566,9 @@ export default [
     "pcd": "2031-05-31",
     "pcd_type": "estimated",
     "updated": "2026-08-06",
-    "ongoing": true
+    "ongoing": true,
+    "title": "Vadadustat for the Treatment of Nonintubated Acute Respiratory Distress Syndrome Due to Pathogen-Associated Lung Injury",
+    "brief_title": "Vadadustat for the Treatment of Nonintubated Acute Respiratory Distress Syndrome Due to Pathogen-Associated Lung Injury"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -17314,7 +16608,9 @@ export default [
     "pcd": "2033-07",
     "pcd_type": "estimated",
     "updated": "2026-11-24",
-    "ongoing": true
+    "ongoing": true,
+    "title": "An Open-Label, Multicenter, First-in-Human, Dose-Escalation, Multicohort, Phase 1/2 Study of INBRX-106 and INBRX-106 in Combination With Pembrolizumab in Subjects With Locally Advanced or Metastatic Solid Tumors",
+    "brief_title": "Study of INBRX-106 and INBRX-106 in Combination With Pembrolizumab (Keytruda\u00ae) in Subjects With Locally Advanced or Metastatic Solid Tumors (Hexavalent OX40 Agonist)"
    },
    "indication": null,
    "market_cap_usd": null,
@@ -24822,7 +24118,7 @@ export default [
   "ta": "Hematology",
   "cap": "Nano",
   "st": "Upcoming",
-  "ua": "2026-11-27T18:24:06Z",
+  "ua": "2026-11-27T23:38:48Z",
   "url": "/pdufa/KPTI-xpovio-myelofibrosis",
   "_d": {
    "indication": "Myelofibrosis, in combination with ruxolitinib",

@@ -82,6 +82,7 @@ def eff(rec):
         r["status"] = "window_moved"
     if r.get("status") == "stopped":
         r["status"] = "guidance_dropped"
+        r["was_stopped"] = True  # 2026-11-27: a passed window the company STOPPED is not "no topline" (see below)
     return r
 
 
@@ -396,7 +397,16 @@ def main():
             log["removed"].append(f"{rid}: estimate overtaken: {short(r.get('notes') or r.get('rt_reason'), 120)}")
         elif st == "guidance_dropped":
             note = short(r.get("notes") or r.get("rt_reason"), 300)
-            if str(row.get("d") or "") < TODAY:
+            if str(row.get("d") or "") < TODAY and r.get("was_stopped") and r.get("source_url") and r.get("source_date"):
+                # 2026-11-27 (Aardvark ARD-101 HERO): a red-teamed "stopped" record on a passed window was written
+                # as no_topline, so the site said "no topline announced" for a trial the company had terminated.
+                # It is the company stopping the trial: company_stopped with the company's own date, link and words.
+                # Guard: tests/test_readout_mine_stopped_applied.py.
+                dd["resolution"] = {"state": "company_stopped", "date": str(r.get("source_date"))[:10],
+                                    "url": r.get("source_url"), "quote": short(r.get("quote"), 300),
+                                    "checked": TODAY, "reviewed": TODAY}
+                log["no_topline"].append(rid)
+            elif str(row.get("d") or "") < TODAY:
                 dd["resolution"] = {"state": "no_topline", "checked": TODAY, "reviewed": TODAY,
                                     "searched": short(f"Company's newest release ({r.get('source_type')} "
                                                       f"{r.get('source_date')}) read {MINED_ON}: no results and no "

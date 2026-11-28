@@ -39,6 +39,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # the build, from one shared function (site_dates.py), never the runner's UTC clock.
 import sys as _sys; _sys.path.insert(0, HERE)
 from site_dates import eastern_today as _eastern_today
+from drug_names import lower_first  # noqa: E402
 
 SITE = os.path.join(HERE, "pdufa_site_src")
 OUT = os.path.join(SITE, "drug")
@@ -284,6 +285,34 @@ font-size:12px;line-height:1.7}}
 and company filings. pdufa.bio is not affiliated with the FDA.</div>
 </div></body></html>
 """
+
+
+# 2026-11-27 phone pass (/drug/bezuclastinib): the approved-use answer read "FDA-approved for in combination with
+# sunitinib, adults with advanced GIST ..." and "FDA-approved for reduce the occurrence of ...", and lower-casing
+# the first letter wrote "igA Nephropathy", "parkinson's disease", "sanfilippo syndrome", "thyroid Eye Disease".
+# The label's own lead-in ("In combination with X, adults with ...") moves after the patients; a use that starts
+# with a verb reads "to reduce ..."; a first word is lower-cased only when it is a plain word, not an acronym,
+# an eponym or the start of a title-case name (drug_names.lower_first).
+_IND_LEAD = re.compile(r"^(in combination with|with|as monotherapy or in combination with|as an? (?:add-on|adjunct(?:ive)?)"
+                       r"(?: (?:therapy|treatment))? to) ([^,;]+), (.+)$", re.I | re.S)
+_IND_VERBS = {"reduce", "prevent", "treat", "lower", "improve", "increase", "delay", "slow", "maintain", "induce",
+              "decrease", "relieve", "control", "manage"}
+
+
+def indication_clause(i):
+    """An indication as a clause that reads after "FDA-approved for" or "tracked on pdufa.bio:"."""
+    t = re.sub(r"\s+", " ", str(i or "")).strip()
+    m = _IND_LEAD.match(t)
+    if m:
+        lead = m.group(1).lower()
+        lead = "in combination with" if lead == "with" else lead
+        rest = m.group(3)
+        head, sep, tail = rest.partition(";")
+        t = f"{head.rstrip()}, {lead} {m.group(2).strip()}" + (sep + tail if sep else "")
+    t = lower_first(t)
+    if t.split(" ", 1)[0] in _IND_VERBS:
+        t = "to " + t
+    return t
 
 
 def main():
@@ -560,7 +589,7 @@ def main():
             if _i in ap_inds:
                 _ap_day[_i] = ((r.get("_d") or {}).get("fda_action_date") or r.get("dcd") or r.get("d") or "")
         def _ap_txt(i):
-            t = i[:1].lower() + i[1:] if i[:2] != i[:2].upper() else i
+            t = indication_clause(i)
             dd = _ap_day.get(i, "")
             return t + (f" (approved {pretty(dd, 'day')})" if re.match(r"^\d{4}-\d{2}-\d{2}$", dd) else "")
         pend_inds = [i for i in inds if i not in ap_inds and not any(
@@ -870,7 +899,8 @@ def main():
         if ap_inds or pend_inds:
             _parts = []
             if ap_inds:
-                _parts.append(f"FDA-approved for " + "; ".join(_ap_txt(i) for i in ap_inds[:2]))
+                _ap0 = "; ".join(_ap_txt(i) for i in ap_inds[:2])
+                _parts.append("FDA-approved " + ("" if _ap0.startswith("to ") else "for ") + _ap0)
             if pend_inds:
                 _parts.append(f"under review or in development for " + "; ".join(pend_inds[:2]))
             qa.append((f"What is {name} used for?",

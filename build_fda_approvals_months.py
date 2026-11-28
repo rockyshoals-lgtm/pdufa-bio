@@ -102,8 +102,10 @@ def fetch_month(y, m):
                 # 2026-11-27 (label facts): the label the FDA approved with this submission, its review priority and
                 # the products Drugs@FDA lists on the application, for the "Drugs@FDA record" block on each
                 # /fda-decision page (link_fda_label_record.py). Copied from the FDA's own record, never inferred.
+                # only a PDF in the label folder: openFDA files some labels under appletter/ with no file type
                 label = next((x.get("url") for x in s.get("application_docs") or []
-                              if str(x.get("type", "")).lower() == "label"), "")
+                              if str(x.get("type", "")).lower() == "label"
+                              and re.search(r"/drugsatfda_docs/label/\d{4}/[^\s]+\.pdf$", str(x.get("url") or ""), re.I)), "")
                 out.append({"app": appno, "brand": str(brand).title() if str(brand).isupper() else brand,
                             "generic": str(generic).lower(), "sponsor": str(a.get("sponsor_name") or "").title(),
                             "kind": "new application" if orig else "efficacy supplement",
