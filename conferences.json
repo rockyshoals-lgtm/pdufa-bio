@@ -245,7 +245,48 @@
    "end": "2026-12-15",
    "city": "New Orleans, US",
    "focus": "Haematology",
-   "source": "https://www.hematology.org/meetings/annual-meeting"
+   "source": "https://www.hematology.org/meetings/annual-meeting",
+   "key_dates_source": "https://www.hematology.org/meetings/annual-meeting",
+   "key_dates_read": "2026-11-28",
+   "key_dates_page": "Annual Meeting",
+   "key_dates": [
+    {
+     "when": "June 2, 2026",
+     "iso": "2026-06-02",
+     "kind": "submission_open",
+     "what": "Abstract submissions open"
+    },
+    {
+     "when": "August 4, 2026, 11:59 PM Pacific time",
+     "iso": "2026-08-04",
+     "kind": "submission_deadline",
+     "what": "Abstract submission deadline"
+    },
+    {
+     "when": "October 28, 2026, 11:59 PM Pacific time",
+     "iso": "2026-10-28",
+     "kind": "lba_deadline",
+     "what": "Late-breaking abstract submission deadline"
+    },
+    {
+     "when": "November 4, 2026, 9:00 AM Eastern time",
+     "iso": "2026-11-04",
+     "kind": "release",
+     "what": "Abstracts available online"
+    },
+    {
+     "when": "December 7, 2026",
+     "iso": "2026-12-07",
+     "kind": "lba_release",
+     "what": "Late-breaking abstracts available online"
+    },
+    {
+     "when": "December 12-15, 2026",
+     "iso": "2026-12-12",
+     "kind": "meeting",
+     "what": "68th ASH Annual Meeting and Exposition, Ernest N. Morial Convention Center, New Orleans"
+    }
+   ]
   },
   {
    "code": "ESMO IO",
@@ -439,7 +480,7 @@
     {
      "when": "April 2, 2027, 12:00 PM ET",
      "iso": "2027-04-02",
-     "kind": "embargo",
+     "kind": "lba_release",
      "what": "Late-breaking and clinical trials abstract texts posted to the online itinerary planner and meeting app"
     },
     {

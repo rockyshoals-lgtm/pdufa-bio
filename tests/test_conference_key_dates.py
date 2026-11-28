@@ -31,7 +31,7 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 MONF = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
         "November", "December"]
 KINDS = {"submission_open", "submission_deadline", "lba_deadline", "notify", "titles", "embargo", "release",
-         "meeting"}
+         "lba_release", "meeting"}
 
 
 def slug(code):
@@ -97,6 +97,9 @@ def test_conference_key_dates():
                     bad.append(f"/conference/{slug(c['code'])}: key date {k['when']!r} not shown")
         if any(k["kind"] == "release" for k in c["key_dates"]) and f"When are {tag} abstracts released?" not in doc:
             bad.append(f"/conference/{slug(c['code'])}: FAQ does not answer when abstracts are released")
+        if any(k["kind"] == "lba_release" for k in c["key_dates"]) and \
+                f"When are {tag} late-breaking abstracts released?" not in doc:
+            bad.append(f"/conference/{slug(c['code'])}: FAQ does not answer when late-breaking abstracts are released")
 
     for c in confs:
         if c.get("key_dates"):
