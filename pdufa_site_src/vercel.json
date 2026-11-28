@@ -1723,7 +1723,7 @@
   },
   {
    "source": "/company/quince",
-   "destination": "/ticker/QNCX",
+   "destination": "/ticker/IRLA",
    "permanent": true
   },
   {
@@ -4434,6 +4434,11 @@
   {
    "source": "/drug/xrx",
    "destination": "/ticker/XRTX",
+   "permanent": true
+  },
+  {
+   "source": "/ticker/QNCX",
+   "destination": "/ticker/IRLA",
    "permanent": true
   }
  ],
