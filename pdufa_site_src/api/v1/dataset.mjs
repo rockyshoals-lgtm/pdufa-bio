@@ -12074,26 +12074,25 @@ export default [
   "t": "SLGL",
   "company": "Sol-Gel Technologies Ltd.",
   "d": "2026-11-30",
-  "dp": "month",
+  "dp": "day",
   "name": "SGT-610 (patidegib gel, 2%) Pivotal Phase 3 top-line",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
   "st": "Guided",
-  "url": "https://www.globenewswire.com/news-release/2026/11/12/3401588/0/en/sol-gel-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
-  "ua": "2026-11-17T19:57:31Z",
+  "url": "https://www.globenewswire.com/news-release/2026/11/27/3411473/0/en/sol-gel-technologies-to-host-conference-call-to-discuss-top-line-results-from-pivotal-phase-3-clinical-trial-of-sgt-610-in-gorlin-syndrome.html",
+  "ua": "2026-11-28T02:10:00Z",
   "_d": {
    "nct_id": null,
    "indication": "Prevention of new basal cell carcinomas in Gorlin syndrome",
    "market_cap_usd": null,
    "source": "company guidance (company release)",
-   "guided_precision": "month",
+   "guided_precision": "day",
    "guided_form": "press release",
-   "guided_filed": "2026-11-12",
+   "guided_filed": "2026-11-27",
    "program": "SGT-610 (patidegib gel, 2%)",
-   "accession": "0001178913-26-002963",
-   "guidance_text": "Pivotal Phase 3 trial of SGT-610 (patidegib gel, 2%) for Gorlin syndrome ... top-line results expected in late November 2026",
-   "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3401588/0/en/sol-gel-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+   "guidance_text": "will host a conference call on Monday, November 30, 2026, at 8:00am Eastern Time to discuss top-line results from its pivotal Phase 3 clinical trial (SGT-610-01) evaluating SGT-610 (patidegib gel, 2%) for the prevention of basal cell carcinoma lesions in adult patients with Gorlin syndrome",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/27/3411473/0/en/sol-gel-technologies-to-host-conference-call-to-discuss-top-line-results-from-pivotal-phase-3-clinical-trial-of-sgt-610-in-gorlin-syndrome.html",
    "ta_basis": "Sponsor SEC filing: SGT-610 ... prevention of new BCCs (basal cell carcinomas) in Gorlin syndrome",
    "date_history": [
     {
@@ -12104,15 +12103,19 @@ export default [
      "date": "2026-11-30",
      "changed": "2026-11-17",
      "why": "Re-sourced to the company's newest statement (press release 2026-11-12): \u201clate November 2026\u201d. Was 2026-12-31 (quarter)."
+    },
+    {
+     "date": "2026-11-30",
+     "changed": "2026-11-28",
+     "why": "Sol-Gel's release of 2026-11-27 names the day: \u201cwill host a conference call on Monday, November 30, 2026, at 8:00am Eastern Time to discuss top-line results from its pivotal Phase 3 clinical trial (SGT-610-01) evaluating SGT-610 (patidegib gel, 2%) for the prevention of basal cell carcinoma lesions in adult patients with Gorlin syndrome\u201d. Was 2026-11-30 (month, \u201clate November 2026\u201d, release 2026-11-12)."
     }
    ],
-   "guided_window": "2026-11",
-   "guided_label": "late November 2026",
+   "guided_window": "2026-11-30",
+   "guided_label": "Monday, November 30, 2026, 8:00 am ET (conference call on top-line results)",
    "readout_described": "Phase 3 top-line",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Both phrases in the first highlight bullet of the 2026-11-12 Sol-Gel release; month precision for 'late November 2026'. NCT06050122: Sol-Gel, patidegib gel 2%, Gorlin syndrome. No newer SLGL release.",
+   "red_team": "2026-11-28: Sol-Gel release 2026-11-27 headline and first paragraph read; same trial (SGT-610-01, patidegib gel 2%, Gorlin syndrome, NCT06050122 per the earlier pass); the call is to discuss top-line results. 8:00 am ET = 5:00 am PT.",
    "nct_stated": "NCT06050122"
-  },
-  "dm": "2026-11"
+  }
  },
  {
   "id": "readout_sls_2026-12-31",
