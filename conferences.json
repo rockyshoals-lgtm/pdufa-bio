@@ -236,7 +236,60 @@
    "end": "2026-12-11",
    "city": "San Antonio, US",
    "focus": "Breast cancer",
-   "source": "https://www.sabcs.org/"
+   "source": "https://www.sabcs.org/",
+   "key_dates_source": "https://sabcs.org/abstracts/",
+   "key_dates_read": "2026-11-28",
+   "key_dates_page": "Abstracts",
+   "key_dates": [
+    {
+     "when": "May 1, 2026",
+     "iso": "2026-05-01",
+     "kind": "submission_open",
+     "what": "Call for abstracts opens"
+    },
+    {
+     "when": "July 13, 2026, 11:59 PM CT",
+     "iso": "2026-07-13",
+     "kind": "submission_deadline",
+     "what": "Abstract submission deadline"
+    },
+    {
+     "when": "Early September 2026",
+     "iso": null,
+     "kind": "notify",
+     "what": "Abstract decision notifications"
+    },
+    {
+     "when": "September 30, 2026, 11:59 PM CT",
+     "iso": "2026-09-30",
+     "kind": "lba_deadline",
+     "what": "Late-breaking abstract submission and edit period ends (it ran September 1-30)"
+    },
+    {
+     "when": "Mid October 2026",
+     "iso": null,
+     "kind": "notify",
+     "what": "Late-breaking abstract notifications"
+    },
+    {
+     "when": "October 30, 2026",
+     "iso": "2026-10-30",
+     "kind": "titles",
+     "what": "Abstract titles released online"
+    },
+    {
+     "when": "November 23, 2026",
+     "iso": "2026-11-23",
+     "kind": "release",
+     "what": "Full abstract text released online"
+    },
+    {
+     "when": "December 8-11, 2026",
+     "iso": "2026-12-08",
+     "kind": "meeting",
+     "what": "San Antonio Breast Cancer Symposium 2026, San Antonio"
+    }
+   ]
   },
   {
    "code": "ASH",
