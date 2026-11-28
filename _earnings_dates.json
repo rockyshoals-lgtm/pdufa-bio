@@ -1,5 +1,5 @@
 {
-"fetched": "2026-11-28T00:49:05Z",
+"fetched": "2026-11-28T01:18:37Z",
 "from": "2024-01-01",
 "parser_version": 6,
 "tickers": {
@@ -54194,8 +54194,9 @@
 "tracked": true
 },
 "VTRS": {
+"backfilled": "2026-11-28",
 "name": "Viatris Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -54479,9 +54480,30 @@
 "tracked": true
 },
 "VTVT": {
+"backfilled": "2026-11-28",
 "name": "vTv Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
+{
+"kind": "results",
+"period": "fourth quarter and year ended December 31, 2023",
+"period_key": "2023Q4+FY",
+"published_et": "2024-03-13 08:00",
+"site": "globenewswire.com",
+"stem": "vTv",
+"title": "vTv Therapeutics Announces 2023 Fourth Quarter and Full Year Financial Results and Provides Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2024/03/13/2845355/0/en/vTv-Therapeutics-Announces-2023-Fourth-Quarter-and-Full-Year-Financial-Results-and-Provides-Corporate-Update.html"
+},
+{
+"kind": "results",
+"period": "first quarter ended March 31, 2024",
+"period_key": "2024Q1",
+"published_et": "2024-05-09 16:51",
+"site": "globenewswire.com",
+"stem": "vTv",
+"title": "vTv Therapeutics Announces 2024 First Quarter Financial Results and Provides Corporate Update",
+"url": "https://www.globenewswire.com/news-release/2024/05/09/2879263/0/en/vTv-Therapeutics-Announces-2024-First-Quarter-Financial-Results-and-Provides-Corporate-Update.html"
+},
 {
 "kind": "results",
 "period": "Second Quarter 2025",
@@ -54536,8 +54558,9 @@
 "tracked": true
 },
 "VXRT": {
+"backfilled": "2026-11-28",
 "name": "Vaxart, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -54627,8 +54650,9 @@
 "tracked": true
 },
 "VYGR": {
+"backfilled": "2026-11-28",
 "name": "Voyager Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -54694,8 +54718,9 @@
 "tracked": true
 },
 "WHWK": {
+"backfilled": "2026-11-28",
 "name": "Whitehawk Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -54771,8 +54796,9 @@
 "tracked": true
 },
 "WVE": {
+"backfilled": "2026-11-28",
 "name": "Wave Life Sciences, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -54888,8 +54914,9 @@
 "tracked": true
 },
 "XENE": {
+"backfilled": "2026-11-28",
 "name": "Xenon Pharmaceuticals Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -55169,8 +55196,9 @@
 "tracked": true
 },
 "XERS": {
+"backfilled": "2026-11-28",
 "name": "Xeris Biopharma Holdings, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "8:30 a.m. ET",
@@ -55382,8 +55410,9 @@
 "tracked": true
 },
 "XFOR": {
+"backfilled": "2026-11-28",
 "name": "X4 Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": null,
@@ -55555,8 +55584,9 @@
 "tracked": true
 },
 "XNCR": {
+"backfilled": "2026-11-28",
 "name": "Xencor Inc",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -55672,8 +55702,9 @@
 "tracked": true
 },
 "XOMA": {
+"backfilled": "2026-11-28",
 "name": "XOMA Royalty Corp.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -55723,14 +55754,16 @@
 "tracked": true
 },
 "XRTX": {
+"backfilled": "2026-11-28",
 "name": "XORTX Therapeutics Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [],
 "tracked": true
 },
 "YARW": {
+"backfilled": "2026-11-28",
 "name": "Yarrow Bioscience, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -55756,8 +55789,9 @@
 "tracked": true
 },
 "ZBIO": {
+"backfilled": "2026-11-28",
 "name": "Zenas BioPharma, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -55843,8 +55877,9 @@
 "tracked": true
 },
 "ZLAB": {
+"backfilled": "2026-11-28",
 "name": "Zai Lab Limited",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "8:00 a.m. ET",
@@ -56094,8 +56129,9 @@
 "tracked": true
 },
 "ZNTL": {
+"backfilled": "2026-11-28",
 "name": "Zentalis Pharmaceuticals, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -56211,8 +56247,9 @@
 "tracked": true
 },
 "ZURA": {
+"backfilled": "2026-11-28",
 "name": "Zura Bio Ltd",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "kind": "results",
@@ -56318,8 +56355,9 @@
 "tracked": true
 },
 "ZVRA": {
+"backfilled": "2026-11-28",
 "name": "Zevra Therapeutics, Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "4:30 p.m. ET",
@@ -56489,8 +56527,9 @@
 "tracked": true
 },
 "ZYME": {
+"backfilled": "2026-11-28",
 "name": "Zymeworks Inc.",
-"read": "2026-11-27",
+"read": "2026-11-28",
 "releases": [
 {
 "call_time": "4:30 p.m. ET",

@@ -1,11 +1,12 @@
 {
- "_note": "Leads only, never published: a sponsor headline with results language for a trial whose registry window is still ahead. Verify the release is this trial's readout (not an interim, a different stage or a different trial) before a row is changed. Written by resolve_past_readouts.py.",
+ "_note": "Leads only, never published: a sponsor headline with results language for a trial whose registry or company-guided window is still open. Verify the release is this trial's readout (not an interim, a different stage or a different trial) before a row is changed. Written by resolve_past_readouts.py.",
  "checked": "2026-11-27",
- "rows_checked": 65,
+ "rows_checked": 712,
  "leads": [
   {
    "id": "readout_idya_2027-04-15",
    "t": "IDYA",
+   "st": "Estimated",
    "nct": "NCT05907954",
    "window": "2027-04",
    "headline": "IDEAYA Biosciences and Servier Announce Data From Three Clinical Trials at ESMO 2026 Supporting the Potential of Darovasertib to Become a Foundational New Therapy for Patients Across the Treatment Jou",
@@ -16,6 +17,7 @@
   {
    "id": "readout_vktx_2027-07-15",
    "t": "VKTX",
+   "st": "Estimated",
    "nct": "NCT07104500",
    "window": "2027-07",
    "headline": "Viking Therapeutics Announces Positive Topline Results from Maintenance Study of GLP-1/GIP Agonist VK2735 Demonstrating the Promise of Multiple Maintenance Dosing Regimens",
@@ -26,11 +28,111 @@
   {
    "id": "readout_nvcr_2027-08-15",
    "t": "NVCR",
+   "st": "Estimated",
    "nct": "NCT05764954",
    "window": "2027-08",
    "headline": "Novocure Announces Topline Data from the Phase 3 TRIDENT Trial Evaluating Earlier Use of Tumor Treating Fields Therapy in Newly Diagnosed Glioblastoma",
    "date": "2026-06-18",
    "url": "https://www.businesswire.com/news/home/20260618609714/en/Novocure-Announces-Topline-Data-from-the-Phase-3-TRIDENT-Trial-Evaluating-Earlier-Use-of-Tumor-Treating-Fields-Therapy-in-Newly-Diagnosed-Glioblastoma/",
+   "found": "2026-11-27"
+  },
+  {
+   "id": "readout_phar_2026-11-30",
+   "t": "PHAR",
+   "st": "Guided",
+   "nct": null,
+   "window": "in November 2026",
+   "headline": "Pharming Group reports third quarter 2026 financial results; strong revenue growth, Joenja APDS expansion and CVID topline data in November",
+   "date": "2026-10-27",
+   "url": "https://www.globenewswire.com/news-release/2026/10/27/3388693/0/en/pharming-group-reports-third-quarter-2026-financial-results-strong-revenue-growth-joenja-apds-expansion-and-cvid-topline-data-in-november.html",
+   "found": "2026-11-27"
+  },
+  {
+   "id": "readout_kymr_2027-12-31",
+   "t": "KYMR",
+   "st": "Guided",
+   "nct": null,
+   "window": "late 2027",
+   "headline": "Kymera Therapeutics Announces Positive Results from BROADEN2 Phase 2b Clinical Trial of KT-621, a First-in-Class, Oral STAT6 Degrader, in Patients with Moderate to Severe Atopic Dermatitis",
+   "date": "2026-11-23",
+   "url": "https://www.globenewswire.com/news-release/2026/11/23/3408198/0/en/kymera-therapeutics-announces-positive-results-from-broaden2-phase-2b-clinical-trial-of-kt-621-a-first-in-class-oral-stat6-degrader-in-patients-with-moderate-to-severe-atopic-derma.html",
+   "found": "2026-11-27"
+  },
+  {
+   "id": "readout_pmn_2027-03-31",
+   "t": "PMN",
+   "st": "Guided",
+   "nct": null,
+   "window": "first quarter of 2027",
+   "headline": "ProMIS Neurosciences Announces Third Quarter 2026 Financial Results and Reaffirms First Quarter 2027 Topline Data Timing",
+   "date": "2026-11-12",
+   "url": "https://www.globenewswire.com/news-release/2026/11/12/3402215/0/en/promis-neurosciences-announces-third-quarter-2026-financial-results-and-reaffirms-first-quarter-2027-topline-data-timing.html",
+   "found": "2026-11-27"
+  },
+  {
+   "id": "readout_vir_2027-03-31",
+   "t": "VIR",
+   "st": "Guided",
+   "nct": null,
+   "window": "first quarter of 2027",
+   "headline": "Vir Biotechnology Announces Primary Endpoint Met in Pivotal Phase 3 ECLIPSE 1 Trial for Elebsiran and Tobevibart in Chronic Hepatitis Delta",
+   "date": "2026-11-08",
+   "url": "https://www.businesswire.com/news/home/20261108631000/en/Vir-Biotechnology-Announces-Primary-Endpoint-Met-in-Pivotal-Phase-3-ECLIPSE-1-Trial-for-Elebsiran-and-Tobevibart-in-Chronic-Hepatitis-Delta/",
+   "found": "2026-11-27"
+  },
+  {
+   "id": "readout_vir_2027-03-31-elebsiran",
+   "t": "VIR",
+   "st": "Guided",
+   "nct": null,
+   "window": "first quarter of 2027",
+   "headline": "Vir Biotechnology Announces Primary Endpoint Met in Pivotal Phase 3 ECLIPSE 1 Trial for Elebsiran and Tobevibart in Chronic Hepatitis Delta",
+   "date": "2026-11-08",
+   "url": "https://www.businesswire.com/news/home/20261108631000/en/Vir-Biotechnology-Announces-Primary-Endpoint-Met-in-Pivotal-Phase-3-ECLIPSE-1-Trial-for-Elebsiran-and-Tobevibart-in-Chronic-Hepatitis-Delta/",
+   "found": "2026-11-27"
+  },
+  {
+   "id": "readout_beam_2027-12-31",
+   "t": "BEAM",
+   "st": "Guided",
+   "nct": null,
+   "window": "2027",
+   "headline": "Beam Therapeutics Announces Positive Topline Pivotal Data from BEACON Phase 1/2 Trial of Risto-cel in Patients with Sickle Cell Disease",
+   "date": "2026-11-10",
+   "url": "https://www.globenewswire.com/news-release/2026/11/10/3399328/0/en/beam-therapeutics-announces-positive-topline-pivotal-data-from-beacon-phase-1-2-trial-of-risto-cel-in-patients-with-sickle-cell-disease.html",
+   "found": "2026-11-27"
+  },
+  {
+   "id": "readout_help_2027-12-31",
+   "t": "HELP",
+   "st": "Guided",
+   "nct": null,
+   "window": "4Q 2027",
+   "headline": "Helus Pharma Announces Positive Topline Results from Phase 3 APPROACH Study evaluating HLP003 as Adjunctive Treatment in Major Depressive Disorder",
+   "date": "2026-11-16",
+   "url": "https://www.globenewswire.com/news-release/2026/11/16/3403358/0/en/helus-pharma-announces-positive-topline-results-from-phase-3-approach-study-evaluating-hlp003-as-adjunctive-treatment-in-major-depressive-disorder.html",
+   "found": "2026-11-27"
+  },
+  {
+   "id": "readout_bmy_2027-12-31-deucravaci",
+   "t": "BMY",
+   "st": "Guided",
+   "nct": null,
+   "window": "2027",
+   "headline": "Bristol Myers Squibb Announces Results from Phase 3 POETYK SLE-1 and POETYK SLE-2 Trials Evaluating Sotyktu (deucravacitinib) in Systemic Lupus Erythematosus",
+   "date": "2026-11-25",
+   "url": "https://www.businesswire.com/news/home/20261124680674/en/Bristol-Myers-Squibb-Announces-Results-from-Phase-3-POETYK-SLE-1-and-POETYK-SLE-2-Trials-Evaluating-Sotyktu-deucravacitinib-in-Systemic-Lupus-Erythematosus/",
+   "found": "2026-11-27"
+  },
+  {
+   "id": "readout_abbv_2027-12-31",
+   "t": "ABBV",
+   "st": "Guided",
+   "nct": null,
+   "window": "expected in 2027",
+   "headline": "AbbVie Announces Topline Results from the Phase 3 INTREPID Trial Showing Lutikizumab Significantly Improved Signs and Symptoms of Disease in Patients with Hidradenitis Suppurativa",
+   "date": "2026-10-22",
+   "url": "https://www.prnewswire.com/news-releases/abbvie-announces-topline-results-from-the-phase-3-intrepid-trial-showing-lutikizumab-significantly-improved-signs-and-symptoms-of-disease-in-patients-with-hidradenitis-suppurativa-302915895.html",
    "found": "2026-11-27"
   }
  ]
