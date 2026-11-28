@@ -471,6 +471,15 @@
    "source_quote": "All sessions listed in Central Time (Chicago, IL) ... May 30 – June 3, 2025"
   },
   {
+   "code": "ASCO",
+   "name": "2026 ASCO Annual Meeting",
+   "start": "2026-05-29",
+   "end": "2026-06-02",
+   "city": "Chicago, US",
+   "source": "https://www.asco.org/about-asco/press-center/news-releases/new-research-highlights-lifestyle-treatment-strategies-2026-annual-meeting",
+   "source_quote": "The 2026 ASCO Annual Meeting will take place May 29-June 2 in Chicago and online"
+  },
+  {
    "code": "EULAR",
    "name": "EULAR 2025 Congress",
    "start": "2025-06-11",
