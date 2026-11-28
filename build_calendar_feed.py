@@ -284,6 +284,13 @@ def inject_subscribe(kept, by_prec, stats):
         f'style="display:inline-flex;align-items:center;min-height:40px;padding:9px 15px;'
         f'border-radius:10px;background:#46d17f;color:#04121f;font-weight:700;font-size:13.5px;'
         f'text-decoration:none">Subscribe</a>'
+        # 2026-11-28 (head to head with FDA Tracker, whose free calendar is an embedded Google Calendar): webcal://
+        # opens nothing in a desktop browser without a calendar app, so Google Calendar users get a one-tap add.
+        f'<a href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fwww.pdufa.bio%2Fcalendar.ics" '
+        f'rel="noopener" '
+        f'style="display:inline-flex;align-items:center;min-height:40px;padding:9px 15px;'
+        f'border-radius:10px;border:1px solid var(--line);color:#eef4fc;font-size:13.5px;'
+        f'text-decoration:none">Add to Google Calendar</a>'
         f'<a href="/calendar.ics" download '
         f'style="display:inline-flex;align-items:center;min-height:40px;padding:9px 15px;'
         f'border-radius:10px;border:1px solid var(--line);color:#eef4fc;font-size:13.5px;'
