@@ -3,8 +3,9 @@
 study leaves out, re-dated by the same rule as the additions (cache only).
 
 LEADS: conf_study/conference_backfill_leads_2026-11-27.csv lists 439 (ticker, meeting, year) presentations named in
-SEC filings; conf_study/conference_backfill_leads_drive_2026-11-27.csv adds 4 ASCO 2026 presentations from the
-owner's Drive conference files that a company release confirmed (each lead_source is that release). The lead files' own dates and prices are NOT used: its "anchor" was one calendar date per meeting edition
+SEC filings; conf_study/conference_backfill_leads_drive_2026-11-27.csv adds 43 presentations from the owner's
+Drive conference files (4 ASCO 2026 on 2026-11-27, 39 more 2023-2026 on 2026-11-28), each confirmed by the company's own
+release naming the meeting (each lead_source is that release). The lead files' own dates and prices are NOT used: its "anchor" was one calendar date per meeting edition
 (conf_registry.json), not the filing's, and some of those dates were weeks off the meeting (AACR 2022 as March 8; the
 meeting ran April 8-13). Each lead is only a pointer to look for the company's own release.
 
@@ -16,8 +17,9 @@ arithmetic. A lead with no such release gets no row (it is not dated some other 
 MEETINGS: conferences.json, conf_study/meetings_extra.json and conf_study/meetings_past.json (past editions, each date
 quoted from the organiser's own page). A lead whose edition has no organiser-dated entry gets no row.
 
-Writes _conference_runup_backfill.json only. Nothing here is published: rows are folded into the study only after a
-red team. Incremental: each lead is read once (again when RULES_VERSION changes). Guard:
+Writes _conference_runup_backfill.json only. conference_runup_added.py publishes its complete rows beside the study
+on every rebuild (since #333), under exactly the rules above, so a lead file is red-teamed before it is merged.
+Incremental: each lead is read once (again when RULES_VERSION changes). Guard:
 tests/test_conference_runup_backfill.py.
 
     python backfill_conference_runup.py [--budget-min 8] [--price-min 3]
