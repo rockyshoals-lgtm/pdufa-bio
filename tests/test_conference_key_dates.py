@@ -4,7 +4,8 @@
 WHY (2026-11-28): "asco 2027" sat at Bing position 7.5 with 0 clicks while Copilot cited asco.org for the
 same question. People searching a meeting months ahead want its calendar: when abstracts are due, when the
 titles post, when the embargo lifts. conferences.json now carries that calendar (key_dates) for the editions
-where the organiser's key dates page ("Dates to Know" at ASCO, "Key Dates" at AACR; key_dates_page) was read, and build_conference_pages.py / build_conference_faq.py
+where the organiser's key dates page ("Dates to Know" at ASCO, "Key Dates" at AACR; key_dates_page, plus an
+optional per-entry source/source_page when the calendar spans two organiser pages) was read, and build_conference_pages.py / build_conference_faq.py
 render it. A wrong date here is worse than none, so this holds:
 
   1. every key_dates list names its source on the organiser's own host and the day it was read;
@@ -31,7 +32,7 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 MONF = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
         "November", "December"]
 KINDS = {"submission_open", "submission_deadline", "lba_deadline", "notify", "titles", "embargo", "release",
-         "lba_release", "meeting"}
+         "lba_release", "preview", "meeting"}
 
 
 def slug(code):
@@ -69,6 +70,12 @@ def test_conference_key_dates():
             if not when or not what or kind not in KINDS:
                 bad.append(f"{tag}: incomplete entry {k}")
                 continue
+            if k.get("source"):                          # an entry read from a second organiser page
+                sp = k.get("source_page")
+                if host(k["source"]) != host(c.get("source") or ""):
+                    bad.append(f"{tag}: {what!r} source {k['source']!r} is not on the organiser's host")
+                if not isinstance(sp, str) or not (3 <= len(sp) <= 40) or "<" in sp:
+                    bad.append(f"{tag}: {what!r} source_page {sp!r} is not the organiser's page title")
             if iso:
                 d = dt.date.fromisoformat(iso)
                 said = re.match(rf"^{MONF[d.month - 1]} {d.day}\b(?:-\d+)?, {d.year}\b", when)
@@ -90,8 +97,9 @@ def test_conference_key_dates():
         if f"Key dates for {tag}" not in doc:
             bad.append(f"/conference/{slug(c['code'])}: no Key dates section")
         else:
-            if f">{pname}</a> page" not in doc:
-                bad.append(f"/conference/{slug(c['code'])}: the source note does not name the organiser's {pname!r} page")
+            for nm in [pname] + [k.get("source_page") for k in c["key_dates"] if k.get("source")]:
+                if not re.search(rf">{re.escape(str(nm))}</a>(?: page|, | and )", doc):
+                    bad.append(f"/conference/{slug(c['code'])}: the source note does not name the organiser's {nm!r} page")
             for k in c["key_dates"]:
                 if k["when"] not in doc:
                     bad.append(f"/conference/{slug(c['code'])}: key date {k['when']!r} not shown")

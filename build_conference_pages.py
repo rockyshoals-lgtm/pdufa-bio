@@ -105,10 +105,18 @@ def key_dates_html(c, today=None):
         read_h = f"{MONF[m - 1]} {d}, {y}"
     except Exception:  # noqa: BLE001
         read_h = read
+    # 2026-11-28: an entry may name its own organiser page (source / source_page) when one meeting's calendar is
+    # split across two pages (ADA: deadlines on Abstracts, embargo lifts on Embargo Policy). The note names each.
+    pages = []
+    for u, n in [(c["key_dates_source"], c.get("key_dates_page") or "Dates to Know")] + \
+            [(k["source"], k.get("source_page") or "") for k in kd if k.get("source")]:
+        if (u, n) not in pages:
+            pages.append((u, n))
+    links = [f'<a href="{esc(u)}" rel="nofollow noopener" style="color:#6fb6ff">{esc(n)}</a>' for u, n in pages]
+    named = (links[0] + " page") if len(links) == 1 else (", ".join(links[:-1]) + " and " + links[-1] + " pages")
     return (f'<h2>Key dates for {esc(c["code"])} {esc(c["start"][:4])}</h2>'
             f'<div class="card"><div style="font-size:13.5px">{"".join(rows)}</div>'
-            f'<div class="note" style="margin:8px 0 0">From the organiser\'s '
-            f'<a href="{esc(c["key_dates_source"])}" rel="nofollow noopener" style="color:#6fb6ff">{esc(c.get("key_dates_page") or "Dates to Know")}</a> page'
+            f'<div class="note" style="margin:8px 0 0">From the organiser\'s {named}'
             + (f', read {esc(read_h)}' if read_h else '') + '. Dates the organiser gives only as a part of a month are '
             'shown as given, and times are as the organiser states them.</div></div>')
 

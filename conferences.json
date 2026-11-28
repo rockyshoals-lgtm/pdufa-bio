@@ -850,7 +850,66 @@
    "end": "2027-06-21",
    "city": "Washington DC, US",
    "focus": "Diabetes",
-   "source": "https://professional.diabetes.org/scientific-sessions"
+   "source": "https://professional.diabetes.org/scientific-sessions",
+   "key_dates_source": "https://professional.diabetes.org/scientific-sessions/abstracts",
+   "key_dates_read": "2026-11-28",
+   "key_dates_page": "Abstracts",
+   "key_dates": [
+    {
+     "when": "September 28, 2026",
+     "iso": "2026-09-28",
+     "kind": "submission_open",
+     "what": "Regular abstract submission opens"
+    },
+    {
+     "when": "January 5, 2027, 5:00 PM ET",
+     "iso": "2027-01-05",
+     "kind": "submission_deadline",
+     "what": "Regular abstract submission closes"
+    },
+    {
+     "when": "January 25, 2027",
+     "iso": "2027-01-25",
+     "kind": "submission_open",
+     "what": "Late-breaking abstract submission opens"
+    },
+    {
+     "when": "March 8, 2027",
+     "iso": "2027-03-08",
+     "kind": "lba_deadline",
+     "what": "Late-breaking abstract submission closes"
+    },
+    {
+     "when": "June 11, 2027",
+     "iso": "2027-06-11",
+     "kind": "preview",
+     "what": "Embargoed text of most abstracts available in the meeting app for planning (the embargo still applies)",
+     "source": "https://professional.diabetes.org/scientific-sessions/abstracts/embargo-policy",
+     "source_page": "Embargo Policy"
+    },
+    {
+     "when": "June 18, 2027, 10:30 AM ET",
+     "iso": "2027-06-18",
+     "kind": "embargo",
+     "what": "Embargo lifts for Published Only abstracts",
+     "source": "https://professional.diabetes.org/scientific-sessions/abstracts/embargo-policy",
+     "source_page": "Embargo Policy"
+    },
+    {
+     "when": "June 18, 2027, 6:30 PM ET",
+     "iso": "2027-06-18",
+     "kind": "release",
+     "what": "Embargo lifts for poster abstracts, including late-breaking posters; oral abstracts and symposia stay embargoed until their scheduled start",
+     "source": "https://professional.diabetes.org/scientific-sessions/abstracts/embargo-policy",
+     "source_page": "Embargo Policy"
+    },
+    {
+     "when": "June 18-21, 2027",
+     "iso": "2027-06-18",
+     "kind": "meeting",
+     "what": "2027 Scientific Sessions of the American Diabetes Association, Washington, D.C."
+    }
+   ]
   },
   {
    "code": "ISTH",
