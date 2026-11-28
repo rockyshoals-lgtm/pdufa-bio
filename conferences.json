@@ -245,7 +245,48 @@
    "end": "2026-12-15",
    "city": "New Orleans, US",
    "focus": "Haematology",
-   "source": "https://www.hematology.org/meetings/annual-meeting"
+   "source": "https://www.hematology.org/meetings/annual-meeting",
+   "key_dates_source": "https://www.hematology.org/meetings/annual-meeting",
+   "key_dates_read": "2026-11-28",
+   "key_dates_page": "Annual Meeting",
+   "key_dates": [
+    {
+     "when": "June 2, 2026",
+     "iso": "2026-06-02",
+     "kind": "submission_open",
+     "what": "Abstract submissions open"
+    },
+    {
+     "when": "August 4, 2026, 11:59 PM Pacific time",
+     "iso": "2026-08-04",
+     "kind": "submission_deadline",
+     "what": "Abstract submission deadline"
+    },
+    {
+     "when": "October 28, 2026, 11:59 PM Pacific time",
+     "iso": "2026-10-28",
+     "kind": "lba_deadline",
+     "what": "Late-breaking abstract submission deadline"
+    },
+    {
+     "when": "November 4, 2026, 9:00 AM Eastern time",
+     "iso": "2026-11-04",
+     "kind": "release",
+     "what": "Abstracts available online"
+    },
+    {
+     "when": "December 7, 2026",
+     "iso": "2026-12-07",
+     "kind": "lba_release",
+     "what": "Late-breaking abstracts available online"
+    },
+    {
+     "when": "December 12-15, 2026",
+     "iso": "2026-12-12",
+     "kind": "meeting",
+     "what": "68th ASH Annual Meeting and Exposition, Ernest N. Morial Convention Center, New Orleans"
+    }
+   ]
   },
   {
    "code": "ESMO IO",
@@ -398,7 +439,60 @@
    "end": "2027-04-07",
    "city": "Orlando, US",
    "focus": "Cancer research",
-   "source": "https://www.aacr.org/meeting/aacr-annual-meeting-2027/"
+   "source": "https://www.aacr.org/meeting/aacr-annual-meeting-2027/",
+   "key_dates": [
+    {
+     "when": "September 28, 2026",
+     "iso": "2026-09-28",
+     "kind": "submission_open",
+     "what": "Regular abstract submission opens"
+    },
+    {
+     "when": "November 10, 2026, 11:59 PM ET",
+     "iso": "2026-11-10",
+     "kind": "submission_deadline",
+     "what": "Regular abstract submission deadline"
+    },
+    {
+     "when": "December 21, 2026",
+     "iso": "2026-12-21",
+     "kind": "notify",
+     "what": "Regular abstract status notifications sent"
+    },
+    {
+     "when": "January 6, 2027, 11:59 PM ET",
+     "iso": "2027-01-06",
+     "kind": "lba_deadline",
+     "what": "Late-breaking and clinical trials abstract submission deadline"
+    },
+    {
+     "when": "February 3, 2027",
+     "iso": "2027-02-03",
+     "kind": "notify",
+     "what": "Late-breaking and clinical trials abstract notifications sent"
+    },
+    {
+     "when": "March 2, 2027, 4:30 PM ET",
+     "iso": "2027-03-02",
+     "kind": "release",
+     "what": "Regular abstract titles and texts posted to the online itinerary planner; late-breaking and clinical trials abstract titles posted the same day, with their texts embargoed until April 2, 2027"
+    },
+    {
+     "when": "April 2, 2027, 12:00 PM ET",
+     "iso": "2027-04-02",
+     "kind": "lba_release",
+     "what": "Late-breaking and clinical trials abstract texts posted to the online itinerary planner and meeting app"
+    },
+    {
+     "when": "April 2, 2027, 3:00 PM ET",
+     "iso": "2027-04-02",
+     "kind": "meeting",
+     "what": "AACR Annual Meeting 2027 begins, Orange County Convention Center"
+    }
+   ],
+   "key_dates_source": "https://www.aacr.org/meeting/aacr-annual-meeting-2027/key-dates/",
+   "key_dates_read": "2026-11-28",
+   "key_dates_page": "Key Dates"
   },
   {
    "code": "ESCMID",

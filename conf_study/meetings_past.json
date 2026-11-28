@@ -667,6 +667,24 @@
    "city": "Barcelona, ES",
    "source": "https://easl.eu/event/easl-congress-2026/",
    "source_quote": "Barcelona, Spain ... 27 - 30 May, 2026"
+  },
+  {
+   "code": "DDW",
+   "name": "Digestive Disease Week",
+   "start": "2025-05-03",
+   "end": "2025-05-06",
+   "city": "San Diego, US",
+   "source": "https://ddw.org/anal-cancer-rates-rising-most-among-older-white-and-hispanic-women/",
+   "source_quote": "DDW is an in-person and online meeting from May 3-6, 2025"
+  },
+  {
+   "code": "DDW",
+   "name": "Digestive Disease Week",
+   "start": "2026-05-02",
+   "end": "2026-05-05",
+   "city": "Chicago, US",
+   "source": "https://ddw.org/rectal-cancer-is-striking-earlier-and-killing-faster/",
+   "source_quote": "DDW is an in-person and online meeting from May 2-5, 2026"
   }
  ]
 }

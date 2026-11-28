@@ -96,6 +96,7 @@ ALIASES = {
     "SABCS": ["San Antonio Breast Cancer Symposium"],
     "AES": ["American Epilepsy Society"],
     "ADPD": ["AD/PD"],
+    "DDW": ["Digestive Disease Week"],
 }
 # Name shapes with an edition number in the middle ("American Diabetes Association's 86th Scientific Sessions").
 RX_ALIASES = {

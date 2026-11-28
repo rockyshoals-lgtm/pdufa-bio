@@ -108,7 +108,7 @@ def key_dates_html(c, today=None):
     return (f'<h2>Key dates for {esc(c["code"])} {esc(c["start"][:4])}</h2>'
             f'<div class="card"><div style="font-size:13.5px">{"".join(rows)}</div>'
             f'<div class="note" style="margin:8px 0 0">From the organiser\'s '
-            f'<a href="{esc(c["key_dates_source"])}" rel="nofollow noopener" style="color:#6fb6ff">Dates to Know</a> page'
+            f'<a href="{esc(c["key_dates_source"])}" rel="nofollow noopener" style="color:#6fb6ff">{esc(c.get("key_dates_page") or "Dates to Know")}</a> page'
             + (f', read {esc(read_h)}' if read_h else '') + '. Dates the organiser gives only as a part of a month are '
             'shown as given, and times are as the organiser states them.</div></div>')
 
