@@ -564,7 +564,42 @@
    "end": "2027-04-12",
    "city": "Houston, US",
    "focus": "Cardiovascular",
-   "source": "https://accscientificsession.acc.org/"
+   "source": "https://accscientificsession.acc.org/",
+   "key_dates_source": "https://accscientificsession.acc.org/Submit-Your-Science/Late-Breaking-Clinical-Trials",
+   "key_dates_read": "2026-11-28",
+   "key_dates_page": "Late-Breaking Clinical Trials",
+   "key_dates": [
+    {
+     "when": "August 25, 2026",
+     "iso": "2026-08-25",
+     "kind": "submission_open",
+     "what": "Abstracts and cases submission opens"
+    },
+    {
+     "when": "October 8, 2026, 1 p.m. ET",
+     "iso": "2026-10-08",
+     "kind": "submission_deadline",
+     "what": "Abstracts and cases submission closes"
+    },
+    {
+     "when": "October 20, 2026",
+     "iso": "2026-10-20",
+     "kind": "submission_open",
+     "what": "Late-breaking clinical trial submission opens"
+    },
+    {
+     "when": "December 1, 2026, 1 p.m. ET",
+     "iso": "2026-12-01",
+     "kind": "lba_deadline",
+     "what": "Late-breaking clinical trial submission closes"
+    },
+    {
+     "when": "April 10-12, 2027",
+     "iso": "2027-04-10",
+     "kind": "meeting",
+     "what": "ACC.27 together with the World Congress of Cardiology, Houston"
+    }
+   ]
   },
   {
    "code": "AAN",
@@ -630,7 +665,54 @@
    "end": "2027-05-18",
    "city": "Washington DC, US",
    "focus": "GI and hepatology",
-   "source": "https://ddw.org/"
+   "source": "https://ddw.org/",
+   "key_dates_source": "https://ddw.org/presenters/submit-an-abstract/",
+   "key_dates_read": "2026-11-28",
+   "key_dates_page": "Submit an Abstract",
+   "key_dates": [
+    {
+     "when": "October 22, 2026, 09:00 Eastern time",
+     "iso": "2026-10-22",
+     "kind": "submission_open",
+     "what": "Abstract submission opens"
+    },
+    {
+     "when": "December 2, 2026, 21:00 Eastern time",
+     "iso": "2026-12-02",
+     "kind": "submission_deadline",
+     "what": "Abstract submission closes"
+    },
+    {
+     "when": "February 9, 2027",
+     "iso": "2027-02-09",
+     "kind": "notify",
+     "what": "Abstract notifications sent to presenting authors"
+    },
+    {
+     "when": "March 10, 2027, 09:00 Eastern time",
+     "iso": "2027-03-10",
+     "kind": "submission_open",
+     "what": "Late-breaking abstract submission opens"
+    },
+    {
+     "when": "March 17, 2027, 17:00 Eastern time",
+     "iso": "2027-03-17",
+     "kind": "lba_deadline",
+     "what": "Late-breaking abstract submission closes"
+    },
+    {
+     "when": "March 31, 2027",
+     "iso": "2027-03-31",
+     "kind": "notify",
+     "what": "Late-breaking abstract notifications sent to presenting authors"
+    },
+    {
+     "when": "May 15-18, 2027",
+     "iso": "2027-05-15",
+     "kind": "meeting",
+     "what": "Digestive Disease Week 2027, Washington, D.C. and online"
+    }
+   ]
   },
   {
    "code": "AUA",
