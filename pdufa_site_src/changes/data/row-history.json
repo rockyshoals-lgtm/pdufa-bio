@@ -2,9 +2,9 @@
  "about": "Changes to 12 fields (listed under fields) of each row of pdufa.bio's published dataset (/api/v1), read from the site's recorded versions (commit and first_commit/last_commit are each version's id). Times are each version's time in US Eastern. Changes to this site's records, not FDA or company actions. st_was and st_now are the row's status in the earlier and the later version.",
  "first_commit": "07d961e5090acccc097cb2ee38eb9c9af384c5ba",
  "first_time_et": "2026-07-26 00:07 ET",
- "last_commit": "da6b9283a7a23918738150cb2e23a08c6da67a43",
- "last_time_et": "2026-11-27 21:00 ET",
- "versions": 516,
+ "last_commit": "81c924cca83f26e41864646b9f7008fb9b97e31e",
+ "last_time_et": "2026-11-27 21:54 ET",
+ "versions": 518,
  "rebuilds": [],
  "fields": {
   "t": "ticker",

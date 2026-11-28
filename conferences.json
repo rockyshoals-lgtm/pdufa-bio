@@ -272,7 +272,47 @@
    "end": "2027-01-23",
    "city": "San Francisco, US",
    "focus": "GI oncology",
-   "source": "https://www.asco.org/gi/dates-know"
+   "source": "https://www.asco.org/gi/dates-know",
+   "key_dates": [
+    {
+     "when": "September 22, 2026, 11:59 PM ET",
+     "iso": "2026-09-22",
+     "kind": "submission_deadline",
+     "what": "Abstract submission deadline"
+    },
+    {
+     "when": "October 22, 2026, 12:00 PM ET",
+     "iso": "2026-10-22",
+     "kind": "lba_deadline",
+     "what": "Late-breaking data submission deadline"
+    },
+    {
+     "when": "Early November 2026",
+     "iso": null,
+     "kind": "notify",
+     "what": "Abstract notifications sent to first authors"
+    },
+    {
+     "when": "Mid-December 2026",
+     "iso": null,
+     "kind": "titles",
+     "what": "Abstract titles available on the ASCO website"
+    },
+    {
+     "when": "January 19, 2027, 5:00 PM ET",
+     "iso": "2027-01-19",
+     "kind": "release",
+     "what": "Regular abstracts released on ASCO's Digital Program; late-breaking abstracts released at 7:00 AM PT on their day of presentation"
+    },
+    {
+     "when": "January 21-23, 2027",
+     "iso": "2027-01-21",
+     "kind": "meeting",
+     "what": "Gastrointestinal Cancers Symposium, Moscone West, San Francisco"
+    }
+   ],
+   "key_dates_source": "https://www.asco.org/gi/dates-know",
+   "key_dates_read": "2026-11-28"
   },
   {
    "code": "WORLD",
@@ -290,7 +330,47 @@
    "end": "2027-02-13",
    "city": "San Francisco, US",
    "focus": "GU oncology",
-   "source": "https://www.asco.org/gu/dates-know"
+   "source": "https://www.asco.org/gu/dates-know",
+   "key_dates": [
+    {
+     "when": "October 13, 2026, 11:59 PM ET",
+     "iso": "2026-10-13",
+     "kind": "submission_deadline",
+     "what": "Abstract submission deadline"
+    },
+    {
+     "when": "November 12, 2026, 12:00 PM ET",
+     "iso": "2026-11-12",
+     "kind": "lba_deadline",
+     "what": "Late-breaking data submission deadline"
+    },
+    {
+     "when": "Late November 2026",
+     "iso": null,
+     "kind": "notify",
+     "what": "Abstract notifications sent to first authors"
+    },
+    {
+     "when": "Early January 2027",
+     "iso": null,
+     "kind": "titles",
+     "what": "Abstract titles available on the ASCO website"
+    },
+    {
+     "when": "February 8, 2027, 5:00 PM ET",
+     "iso": "2027-02-08",
+     "kind": "release",
+     "what": "Regular abstracts released on ASCO's Digital Program; late-breaking abstracts released at 7:00 AM PT on their day of presentation"
+    },
+    {
+     "when": "February 11-13, 2027",
+     "iso": "2027-02-11",
+     "kind": "meeting",
+     "what": "Genitourinary Cancers Symposium, Moscone West, San Francisco"
+    }
+   ],
+   "key_dates_source": "https://www.asco.org/gu/dates-know",
+   "key_dates_read": "2026-11-28"
   },
   {
    "code": "ADPD",
@@ -432,7 +512,59 @@
    "end": "2027-06-08",
    "city": "Chicago, US",
    "focus": "Oncology",
-   "source": "https://www.asco.org/annual-meeting"
+   "source": "https://www.asco.org/annual-meeting",
+   "key_dates": [
+    {
+     "when": "November 4, 2026",
+     "iso": "2026-11-04",
+     "kind": "submission_open",
+     "what": "Abstract submission opens"
+    },
+    {
+     "when": "January 26, 2027, 11:59 PM ET",
+     "iso": "2027-01-26",
+     "kind": "submission_deadline",
+     "what": "Abstract submission deadline"
+    },
+    {
+     "when": "March 8, 2027, 12:00 PM ET",
+     "iso": "2027-03-08",
+     "kind": "lba_deadline",
+     "what": "Late-breaking abstract submission deadline (a placeholder abstract is required by the January 26 deadline)"
+    },
+    {
+     "when": "March 31, 2027",
+     "iso": "2027-03-31",
+     "kind": "notify",
+     "what": "Abstract notifications sent to first authors"
+    },
+    {
+     "when": "April 27, 2027",
+     "iso": "2027-04-27",
+     "kind": "titles",
+     "what": "Abstract titles, including late-breaking abstracts, posted on meetings.asco.org"
+    },
+    {
+     "when": "Late May 2027",
+     "iso": null,
+     "kind": "embargo",
+     "what": "Embargo lifts on regular abstracts; late-breaking abstracts stay embargoed until 7:00 AM CT on their day of presentation"
+    },
+    {
+     "when": "May 27, 2027",
+     "iso": "2027-05-27",
+     "kind": "release",
+     "what": "Majority of abstracts released on asco.org/abstracts; late-breaking abstracts released at 7:00 AM CT on their day of presentation"
+    },
+    {
+     "when": "June 4-8, 2027",
+     "iso": "2027-06-04",
+     "kind": "meeting",
+     "what": "ASCO Annual Meeting, McCormick Place, Chicago"
+    }
+   ],
+   "key_dates_source": "https://www.asco.org/annual-meeting/dates-know",
+   "key_dates_read": "2026-11-28"
   },
   {
    "code": "ENDO",
