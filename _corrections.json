@@ -1150,7 +1150,7 @@
    "source": "Syndax press release, Nov 2, 2026 (GlobeNewswire)"
   },
   {
-   "date": "2026-11-28",
+   "date": "2026-11-27",
    "page": "/ticker/KPTI",
    "was": "Karyopharm's page showed only the ticker KPTI, its former Nasdaq symbol.",
    "now": "The page now says Karyopharm is listed as KPTIQ on OTC Pink, as its Nov 17, 2026 release states, and /ticker/KPTIQ leads to it. The page keeps the KPTI address so existing links still work.",
