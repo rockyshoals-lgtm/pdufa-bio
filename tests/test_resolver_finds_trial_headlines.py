@@ -109,6 +109,17 @@ def main():
         leads = R.early_leads([huma], "k", {}, fetch=lambda *a, **k: huma_prs, today=dt.date(2026, 11, 27))
     finally:
         R.EARLY_LEADS, R.time.sleep = orig_out, orig_sleep
+    enrol = [("Annovis Reaches Full Enrollment in Pivotal Phase 3 Trial of Buntanetap for Early Alzheimer's Disease",
+              "buntanetap in early Alzheimer's disease", "2026-07-07", "a1")]
+    anvs = {"id": "readout_anvs_x", "t": "ANVS", "name": "Buntanetap", "type": "Readout", "st": "Estimated",
+            "d": "2099-12-15", "dm": "2099-12", "_d": {"nct_id": {"nct": "NCT0", "title": "A Phase 3 Study of "
+                                                               "Buntanetap in Early Alzheimer's Disease"}}}
+    orig_out, R.EARLY_LEADS = R.EARLY_LEADS, os.devnull
+    try:
+        if R.early_leads([anvs], "k", {}, fetch=lambda *a, **k: enrol, today=dt.date(2026, 11, 27)):
+            bad.append("an enrollment headline ('Pivotal Phase 3 Trial') must not be an early-results lead")
+    finally:
+        R.EARLY_LEADS = orig_out
     if [x.get("url") for x in leads] != ["h1"]:
         bad.append(f"an early primary-endpoint release must be listed as a lead for its future-window row: {leads}")
     if json.dumps(huma, sort_keys=True) != before:
