@@ -683,6 +683,7 @@ jobs:
       # press-release search; without the key it records registry facts only and claims nothing else.
       - name: "Readouts: resolve passed windows (sponsor release / no topline as of / terminated)"
         continue-on-error: true
+        timeout-minutes: 20   # 2026-11-27: the early-release lead pass reads ~300 sponsors after the dataset is written
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python resolve_past_readouts.py
